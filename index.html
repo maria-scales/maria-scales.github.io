@@ -153,10 +153,17 @@
       margin-top: 2px;
     }
 
-    .case-company {
-      font-weight: 600;
+    .case-title {
       font-size: 1rem;
+      font-weight: 700;
       color: #111827;
+      margin-bottom: 2px;
+    }
+
+    .case-company {
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: #374151;
       margin-bottom: 3px;
     }
 
@@ -358,10 +365,11 @@
     <div class="section-label">Case Studies</div>
 
     <!-- 1. Praktika -->
-    <div class="case">
+    <div class="case" id="praktika">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/praktika.png" alt="Praktika" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Scaling to Series A</div>
           <div class="case-company"><a href="https://praktika.ai" onclick="event.stopPropagation()">Praktika</a> · Marketing Lead</div>
           <div class="case-role">EdTech · AI language learning · Series A stage</div>
           <div class="case-outcome">$30M Series A · 5× revenue in &lt;3 months</div>
@@ -395,10 +403,11 @@
     </div>
 
     <!-- 2. Toloka: Unit Economy -->
-    <div class="case">
+    <div class="case" id="toloka-unit-economy">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.png" alt="Toloka" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Unit Economy Model for Media Buying</div>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Head of B2C Marketing</div>
           <div class="case-role">AI/ML crowdsourcing · Unit economy model</div>
           <div class="case-outcome">44% acquisition budget cut · revenue unchanged</div>
@@ -431,10 +440,11 @@
     </div>
 
     <!-- 3. Toloka: PMF -->
-    <div class="case">
+    <div class="case" id="toloka-pmf">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.png" alt="Toloka" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Finding Product-Market Fit</div>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Head of B2C Marketing</div>
           <div class="case-role">AI/ML crowdsourcing · Product-market fit</div>
           <div class="case-outcome">65% retention increase · 26% budget cut · revenue unchanged</div>
@@ -474,10 +484,11 @@
     </div>
 
     <!-- 4. Toloka: Seasonality -->
-    <div class="case">
+    <div class="case" id="toloka-forecasting">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.png" alt="Toloka" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Demand Forecasting</div>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Head of B2C Marketing</div>
           <div class="case-role">AI/ML crowdsourcing · Demand forecasting</div>
           <div class="case-outcome">22% budget cut · 100% fulfillment rate maintained</div>
@@ -515,10 +526,11 @@
     </div>
 
     <!-- 5. Buddy AI -->
-    <div class="case">
+    <div class="case" id="buddy">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/buddy.png" alt="Buddy AI" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Global User Acquisition</div>
           <div class="case-company"><a href="https://buddy.ai" onclick="event.stopPropagation()">Buddy AI</a> · Digital Marketing Director</div>
           <div class="case-role">AI EdTech · Global user acquisition</div>
           <div class="case-outcome">LTV +32% · LatAm ×1.5 · Turkey launch</div>
@@ -560,10 +572,11 @@
     </div>
 
     <!-- 6. Scentbird: UA Operations -->
-    <div class="case">
+    <div class="case" id="scentbird-ua">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Scaling UA via Operations</div>
           <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · Media Buyer → UA Group Head</div>
           <div class="case-role">E-commerce subscription · UA operations</div>
           <div class="case-outcome">27% CAC reduction · Meta spend ×2 in 3 months</div>
@@ -602,10 +615,11 @@
     </div>
 
     <!-- 7. Scentbird: Growth Framework -->
-    <div class="case">
+    <div class="case" id="scentbird-growth">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
+          <div class="case-title">Business Growth Framework</div>
           <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · UA Group Head</div>
           <div class="case-role">E-commerce subscription · Growth modeling</div>
           <div class="case-outcome">20% user base growth during pandemic · 5% forecast accuracy</div>
@@ -693,6 +707,26 @@
       icon.classList.add('open');
     }
   }
+
+  // Auto-open case from URL hash
+  function openFromHash() {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    const caseEl = document.getElementById(id);
+    if (!caseEl) return;
+    const header = caseEl.querySelector('.case-header');
+    const body = caseEl.querySelector('.case-body');
+    const icon = caseEl.querySelector('.case-toggle');
+    if (header && body && icon) {
+      body.classList.add('open');
+      header.classList.add('open');
+      icon.classList.add('open');
+      setTimeout(() => caseEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', openFromHash);
+  window.addEventListener('hashchange', openFromHash);
 </script>
 
 </body>
