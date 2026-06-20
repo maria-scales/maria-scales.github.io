@@ -721,7 +721,10 @@
       body.classList.add('open');
       header.classList.add('open');
       icon.classList.add('open');
-      setTimeout(() => caseEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      setTimeout(() => {
+        const top = caseEl.getBoundingClientRect().top + window.scrollY - 24;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, 100);
     }
   }
 
