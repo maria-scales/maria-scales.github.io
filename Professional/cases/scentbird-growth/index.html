@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Growth Framework – Scentbird · Maria Atamanova</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="How I built a growth forecasting framework at Scentbird that achieved 5% forecast accuracy and drove 20% user base growth during the pandemic while meeting all ROI KPIs.">
+  <link rel="canonical" href="https://mariascales.com/cases/scentbird-growth/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Business Growth Framework – Scentbird · Maria Atamanova">
+  <meta property="og:description" content="How I built a growth forecasting framework at Scentbird that achieved 5% forecast accuracy and drove 20% user base growth during the pandemic while meeting all ROI KPIs.">
+  <meta property="og:url" content="https://mariascales.com/cases/scentbird-growth/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Business Growth Framework – Scentbird · Maria Atamanova">
+  <meta name="twitter:description" content="How I built a growth forecasting framework at Scentbird that achieved 5% forecast accuracy and drove 20% user base growth during the pandemic while meeting all ROI KPIs.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .site-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: -0.01em;
+    }
+
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+
+    .site-tagline {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      padding: 16px 0;
+      font-size: 0.8125rem;
+      color: #9ca3af;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ── Page title ── */
+    .page-header {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .page-outcome {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.875rem;
+      color: #1d4ed8;
+      font-weight: 500;
+      background: #eff6ff;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* ── Company logo on case page ── */
+    .case-logo-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .case-logo-header img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    /* ── Case content ── */
+    .case-content {
+      padding: 40px 0;
+    }
+
+    .case-content h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin: 32px 0 10px;
+    }
+
+    .case-content h2:first-child { margin-top: 0; }
+
+    .case-content p {
+      color: #374151;
+      font-size: 0.9375rem;
+      margin-bottom: 12px;
+    }
+
+    .case-content ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .case-content li {
+      color: #374151;
+      font-size: 0.9375rem;
+      margin-bottom: 6px;
+    }
+
+    .case-content strong { color: #111827; }
+    .case-content em { color: #374151; }
+
+    blockquote {
+      border-left: 3px solid #e5e7eb;
+      padding: 14px 18px;
+      margin: 24px 0;
+      background: #f9fafb;
+      border-radius: 0 6px 6px 0;
+    }
+
+    blockquote p {
+      color: #4b5563 !important;
+      font-style: italic;
+      margin-bottom: 10px !important;
+    }
+
+    blockquote cite {
+      font-size: 0.8125rem;
+      color: #6b7280;
+      font-style: normal;
+      display: block;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      padding: 32px 0 48px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .back-link a {
+      font-size: 0.9375rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .back-link a:hover { color: #1e40af; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 20px;
+    }
+
+    /* ── Article list ── */
+    .article-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .article-list li {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .article-list li:last-child { border-bottom: none; }
+
+    .article-list a {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #111827;
+      margin-bottom: 3px;
+    }
+
+    .article-list a:hover { color: #1e40af; text-decoration: none; }
+
+    .article-date {
+      font-size: 0.8125rem;
+      color: #9ca3af;
+    }
+
+    /* ── Card list (cases/research index) ── */
+    .card-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card-list li {
+      padding: 20px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .card-list li:last-child { border-bottom: none; }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .card-title a { color: #111827; }
+    .card-title a:hover { color: #1e40af; }
+
+    .card-meta {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .card-outcome {
+      display: inline-block;
+      font-size: 0.8125rem;
+      color: #1d4ed8;
+      font-weight: 500;
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 40px 0 64px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .contact-links a {
+      color: #111827;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .page-title { font-size: 1.375rem; }
+      header { padding: 28px 0 24px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feel.</div>
+  </div>
+</header>
+<div class="breadcrumb">
+  <div class="container"><a href="/">Home</a><span>›</span><a href="/cases/">Cases</a><span>›</span><strong>Business Growth Framework</strong></div>
+</div>
+<div class="page-header">
+  <div class="container">
+    <div class="case-logo-header">
+      <img src="/logos/scentbird.png" alt="Scentbird">
+      <div>
+        <div class="page-title">Business Growth Framework</div>
+        <div class="page-meta"><a href="https://scentbird.com" target="_blank">Scentbird</a> · UA Group Head · E-commerce subscription · Growth modeling</div>
+      </div>
+    </div>
+    <div class="page-outcome">20% user base growth during pandemic · 5% forecast accuracy</div>
+  </div>
+</div>
+
+<section class="case-content">
+  <div class="container">
+    
+        <h2>Situation</h2>
+        <p><a href="https://scentbird.com">Scentbird</a>'s growth is directly tied to active subscriber base growth. I was responsible for the full performance marketing stream – Scentbird's primary growth engine – plus marketing-side growth prediction models.</p>
+
+        <h2>Task</h2>
+        <p>Build a growth forecasting and planning framework that could predict active user base growth, model revenue growth per channel, plan budgets, monitor ROI KPIs in real time, and forecast fulfillment demand for the warehouse team.</p>
+
+        <h2>Action</h2>
+        <p>I broke the problem into five components: LTV calculation, weekly channel reporting, budget allocation modeling, growth forecasting from historical data, and warehouse communication. I owned the reporting and budget allocation components directly.</p>
+        <p>For budget allocation, I built CAC-vs-volume curves per channel, factored in spend constraints and ceilings, and used <strong>Excel Solver</strong> to calculate the optimal allocation across the marketing mix – balancing growth and ROI. I then compared plan to actual weekly and adjusted acquisition operations accordingly.</p>
+
+        <h2>Result</h2>
+        <ul>
+          <li><strong>Active user base grew by 20%</strong> during the pandemic (February 2020 – February 2021) with all ROI KPIs met</li>
+          <li><strong>Forecast model accuracy reached 5%</strong> – beating the 7% target</li>
+          <li>Established a transparent planning process with the warehouse team, enabling supply to be planned ahead of demand</li>
+          <li>All five framework components integrated into Scentbird's core business planning process</li>
+        </ul>
+        
+    
+        <blockquote>
+          <p>"Maria is a great professional in the performance marketing field. She began working in my team at Scentbird as a Meta Ad Manager and grew to UA Group Head. She has successfully met her KPIs for three consecutive years with a top marketing budget under management of $2M/month. Maria has a solid mathematical and statistical background and a deep understanding of digital marketing channels and Ad Tech. She has a great ability to manage multiple projects and uses a very systematic approach to the team's benefit."</p>
+          <cite>– <a href="https://www.linkedin.com/in/oleg-popov-growth/" target="_blank"><strong>Oleg Popov</strong></a>, VP of User Acquisition · Scentbird</cite>
+        </blockquote>
+  </div>
+</section>
+
+<div class="back-link">
+  <div class="container">
+    <a href="/">← Back to all cases</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
