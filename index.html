@@ -728,6 +728,7 @@
 
 <script>
   function toggle(header) {
+    const caseEl = header.parentElement;
     const body = header.nextElementSibling;
     const icon = header.querySelector('.case-toggle');
     const isOpen = body.classList.contains('open');
@@ -742,6 +743,9 @@
       body.classList.add('open');
       header.classList.add('open');
       icon.classList.add('open');
+      history.replaceState(null, '', '#' + caseEl.id);
+    } else {
+      history.replaceState(null, '', window.location.pathname);
     }
   }
 
@@ -765,7 +769,22 @@
     }
   }
 
-  window.addEventListener('DOMContentLoaded', openFromHash);
+  window.addEventListener('DOMContentLoaded', () => {
+    openFromHash();
+
+    // Update hash as each case scrolls into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const caseEl = entry.target.closest('.case');
+          if (caseEl) history.replaceState(null, '', '#' + caseEl.id);
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    document.querySelectorAll('.case-header').forEach(h => observer.observe(h));
+  });
+
   window.addEventListener('hashchange', openFromHash);
 </script>
 
