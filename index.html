@@ -45,6 +45,7 @@
   }
   </script>
   <style>
+    html { scroll-behavior: smooth; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -806,6 +807,7 @@
     if (!id) return;
     const caseEl = document.getElementById(id);
     if (!caseEl) return;
+    if (!caseEl.classList.contains('case')) return; // don't auto-open for section anchors
     const header = caseEl.querySelector('.case-header');
     const body = caseEl.querySelector('.case-body');
     const icon = caseEl.querySelector('.case-toggle');
