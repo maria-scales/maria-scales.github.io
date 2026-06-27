@@ -67,6 +67,21 @@
     .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    .badge { display: inline-block; font-size: 0.6875rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.02em; vertical-align: middle; margin-left: 8px; text-transform: none; line-height: 1.5; }
+    .badge-arch { background: #dbeafe; color: #1e40af; }
+    .badge-ai { background: #d1fae5; color: #065f46; }
+    .badge-edge { background: #f3f4f6; color: #6b7280; }
+    .tldr { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px; }
+    .tldr-heading { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .tldr-group { margin-bottom: 12px; }
+    .tldr-group:last-child { margin-bottom: 0; }
+    .tldr-group-label { font-size: 0.8125rem; font-weight: 600; margin-bottom: 4px; }
+    .tldr-group-label.arch { color: #1e40af; }
+    .tldr-group-label.ai { color: #065f46; }
+    .tldr-group-label.edge { color: #6b7280; }
+    .tldr-links { font-size: 0.8125rem; color: #6b7280; line-height: 1.6; }
+    .tldr-links a { color: #6b7280; }
+    .tldr-links a:hover { color: #1e40af; text-decoration: none; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
   </style>
 </head>
@@ -88,11 +103,27 @@
 <div class="article-content">
   <div class="container">
 
+    <div class="tldr">
+      <div class="tldr-heading">TL;DR — 13 pitfalls, 3 outcomes</div>
+      <div class="tldr-group">
+        <div class="tldr-group-label arch">Resolved by Architecture (4)</div>
+        <div class="tldr-links"><a href="#pitfall-1">1. URL rot</a> · <a href="#pitfall-7">7. Flawed signal</a> · <a href="#pitfall-9">9. Timing</a> · <a href="#pitfall-12">12. LinkedIn ToS</a></div>
+      </div>
+      <div class="tldr-group">
+        <div class="tldr-group-label ai">Solved by AI (4)</div>
+        <div class="tldr-links"><a href="#pitfall-2">2. Title standardization</a> · <a href="#pitfall-3">3. List burden</a> · <a href="#pitfall-4">4. Cold start</a> · <a href="#pitfall-8">8. No feedback loop</a></div>
+      </div>
+      <div class="tldr-group">
+        <div class="tldr-group-label edge">Dismissed as Edge Case (5)</div>
+        <div class="tldr-links"><a href="#pitfall-5">5. Skip staleness</a> · <a href="#pitfall-6">6. Hard stop gaps</a> · <a href="#pitfall-10">10. Easy Apply</a> · <a href="#pitfall-11">11. Blind spot</a> · <a href="#pitfall-13">13. Bottleneck shift</a></div>
+      </div>
+    </div>
+
     <h2>Technical</h2>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-1">
       <div class="pitfall-label">Pitfall 1</div>
-      <div class="pitfall-title">Career page URL rot</div>
+      <div class="pitfall-title">Career page URL rot <span class="badge badge-arch">Resolved by Architecture</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>Companies switch ATS providers, restructure their websites, or change subdomains. A URL that returns jobs today might 404 or redirect silently in three weeks. The watch list needs URL maintenance, not just company maintenance – and silent failures here are particularly dangerous.</p>
@@ -107,9 +138,9 @@
       <div class="net-result"><strong>Net result:</strong> URL rot is a maintenance edge case, not a structural problem. Detection + visibility + a quick lookup pattern is sufficient.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-2">
       <div class="pitfall-label">Pitfall 2</div>
-      <div class="pitfall-title">Job title standardization</div>
+      <div class="pitfall-title">Job title standardization <span class="badge badge-ai">Solved by AI</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>"Growth Manager," "Performance Marketing Manager," "Acquisition Lead," and "Digital Marketing Manager" can describe identical roles at different companies. A keyword-based <code>Position_description_list</code> will miss non-standard titles systematically.</p>
@@ -124,9 +155,9 @@
 
     <h2>Structural</h2>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-3">
       <div class="pitfall-label">Pitfall 3</div>
-      <div class="pitfall-title">List maintenance burden</div>
+      <div class="pitfall-title">List maintenance burden <span class="badge badge-ai">Solved by AI</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>As the watch list grows to 80+ companies, maintaining it becomes its own job. There is no cap, pruning strategy, or review cadence defined. The time cost of list maintenance may partially offset the time saved by automation.</p>
@@ -138,9 +169,9 @@
       <div class="net-result"><strong>Net result:</strong> Cowork as the interface (conversational updates, no manual file editing) + a scheduled monthly reminder for periodic pruning.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-4">
       <div class="pitfall-label">Pitfall 4</div>
-      <div class="pitfall-title">Cold start problem</div>
+      <div class="pitfall-title">Cold start problem <span class="badge badge-ai">Solved by AI</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p><code>Company_fit_criteria_list</code> is acknowledged as "the trickiest to get," but the only suggested starting point is companies you've worked at before. For someone re-entering a market or changing industries, this is a significant bootstrap problem with no solution proposed.</p>
@@ -151,9 +182,9 @@
       </div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-5">
       <div class="pitfall-label">Pitfall 5</div>
-      <div class="pitfall-title">Skip list staleness</div>
+      <div class="pitfall-title">Skip list staleness <span class="badge badge-edge">Dismissed as Edge Case</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>A company on the skip list today – due to a hiring freeze, wrong leadership, or bad funding news – might be a great fit in six months. The skip list has no expiry date or periodic review trigger. It only grows, and stale entries quietly eliminate valid opportunities.</p>
@@ -164,9 +195,9 @@
       </div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-6">
       <div class="pitfall-label">Pitfall 6</div>
-      <div class="pitfall-title">Hard_stop_list completeness</div>
+      <div class="pitfall-title">Hard_stop_list completeness <span class="badge badge-edge">Dismissed as Edge Case</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>You can only filter for things you know to add to the list. Unknown unknowns – a company's undisclosed relocation requirement, internal culture issues, or financial instability – slip through until discovered the hard way, after time has already been spent.</p>
@@ -180,9 +211,9 @@
 
     <h2>Logical</h2>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-7">
       <div class="pitfall-label">Pitfall 7</div>
-      <div class="pitfall-title">Branch B is built on a flawed signal</div>
+      <div class="pitfall-title">Branch B is built on a flawed signal <span class="badge badge-arch">Resolved by Architecture</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>The article flags LinkedIn's algorithm for optimizing engagement over precision (the false positive problem), then relies on that same algorithm's recommendations to surface new companies in Branch B. The quality of the input determines the quality of the entire pipeline.</p>
@@ -196,9 +227,9 @@
       <div class="net-result"><strong>Net result:</strong> Branch B works as designed. The noise from LinkedIn's algorithm is a real limitation but not a structural flaw – it's filtered downstream. The practical fix is switching from passive feed to active search.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-8">
       <div class="pitfall-label">Pitfall 8</div>
-      <div class="pitfall-title">No feedback loop from outcomes</div>
+      <div class="pitfall-title">No feedback loop from outcomes <span class="badge badge-ai">Solved by AI</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>Application results – no response, rejection, interview, offer – contain the strongest signal about whether criteria are correctly calibrated. Currently that signal is discarded. The lists can be sharpened manually, but there is no mechanism to learn systematically from what is and isn't working.</p>
@@ -213,9 +244,9 @@
       <div class="net-result"><strong>Net result:</strong> For a 4–12 month search, the feedback loop is manual but lightweight – log outcomes as you go, review patterns monthly, adjust lists. The volume isn't high enough to need automation.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-9">
       <div class="pitfall-label">Pitfall 9</div>
-      <div class="pitfall-title">Timing Problem only partially solved</div>
+      <div class="pitfall-title">Timing Problem only partially solved <span class="badge badge-arch">Resolved by Architecture</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>A weekly cycle is better than monthly, but for high-competition roles in fast-moving markets, the application window can be 24–48 hours. Weekly is still too slow for those cases.</p>
@@ -230,9 +261,9 @@
 
     <h2>Coverage</h2>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-10">
       <div class="pitfall-label">Pitfall 10</div>
-      <div class="pitfall-title">Easy Apply companies excluded</div>
+      <div class="pitfall-title">Easy Apply companies excluded <span class="badge badge-edge">Dismissed as Edge Case</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>Approximately 26% of active LinkedIn employers use Easy Apply only and have no external career page. These are silently excluded from Branch A with no fallback handling.</p>
@@ -244,9 +275,9 @@
       <div class="net-result"><strong>Net result:</strong> Pitfall dissolves on its own.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-11">
       <div class="pitfall-label">Pitfall 11</div>
-      <div class="pitfall-title">Systematic blind spot</div>
+      <div class="pitfall-title">Systematic blind spot <span class="badge badge-edge">Dismissed as Edge Case</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>A manual search has random gaps – you miss things unpredictably. A list-driven system has systematic gaps: if a good company never makes it onto <code>Companies_to_watch_list</code>, it is permanently invisible, and the system still looks complete. The structured feel of the approach can create false confidence in coverage.</p>
@@ -260,9 +291,9 @@
 
     <h2>Risk</h2>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-12">
       <div class="pitfall-label">Pitfall 12</div>
-      <div class="pitfall-title">LinkedIn ToS and account suspension</div>
+      <div class="pitfall-title">LinkedIn ToS and account suspension <span class="badge badge-arch">Resolved by Architecture</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>The article notes that automating LinkedIn discovery "may conflict with LinkedIn ToS," but the practical consequence is more serious than a footnote: account suspension during an active job search means losing your primary professional network at the worst possible moment.</p>
@@ -274,9 +305,9 @@
       <div class="net-result"><strong>Net result:</strong> The pitfall doesn't exist for this design.</div>
     </div>
 
-    <div class="pitfall">
+    <div class="pitfall" id="pitfall-13">
       <div class="pitfall-label">Pitfall 13</div>
-      <div class="pitfall-title">Bottleneck shift</div>
+      <div class="pitfall-title">Bottleneck shift <span class="badge badge-edge">Dismissed as Edge Case</span></div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
         <p>If the automation works well and surfaces 15 qualified roles per week instead of 5, the time saved in sourcing is partially consumed by the increased volume of tailored applications needed. The bottleneck shifts from finding to applying, which may limit the net time gain.</p>
