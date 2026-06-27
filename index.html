@@ -349,6 +349,49 @@
       .case-header { padding: 16px; }
       .case-body { padding: 0 16px 20px; }
     }
+  
+    /* ── Site Nav ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      transition: box-shadow 0.2s;
+    }
+
+    .site-nav.scrolled {
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
+
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #6b7280;
+      padding: 13px 0;
+      margin-right: 28px;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      color: #111827;
+      border-bottom-color: #111827;
+    }
   </style>
 </head>
 <body>
@@ -360,6 +403,14 @@
     <div class="tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
   </div>
 </header>
+<nav class="site-nav">
+  <div class="container">
+    <a href="#cases" class="nav-link">Case Studies</a>
+    <a href="/articles/" class="nav-link">Writing</a>
+    <a href="/research/" class="nav-link">Research</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</nav>
 
 <!-- ── Intro ── -->
 <section class="intro">
@@ -390,7 +441,7 @@
 </section>
 
 <!-- ── Case Studies ── -->
-<section class="cases">
+<section class="cases" id="cases">
   <div class="container">
     <div class="section-label">Case Studies · <a href="/cases/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All cases →</a></div>
 
@@ -714,7 +765,7 @@
 </section>
 
 <!-- ── Footer ── -->
-<footer>
+<footer id="contact">
   <div class="container">
     <div class="section-label">Contact</div>
     <div class="contact-links">
@@ -788,5 +839,14 @@
   window.addEventListener('hashchange', openFromHash);
 </script>
 
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
