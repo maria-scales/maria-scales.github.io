@@ -887,13 +887,16 @@
     let suppressObserver = false;
 
     // "To Top" clears hash, scrolls up, and suppresses observer during scroll
-    document.getElementById('to-top-link').addEventListener('click', function(e) {
+    function scrollToTop(e) {
       e.preventDefault();
       suppressObserver = true;
       history.replaceState(null, '', window.location.pathname);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => { suppressObserver = false; }, 800);
-    });
+    }
+
+    document.getElementById('to-top-link').addEventListener('click', scrollToTop);
+    document.querySelector('.back-to-top').addEventListener('click', scrollToTop);
 
     // Update hash as each case scrolls into view
     const observer = new IntersectionObserver((entries) => {
