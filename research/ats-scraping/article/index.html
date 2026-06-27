@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Solution: Reading Career Pages Without a Browser – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="~80% of ATS platforms expose structured job data via public API. Here's the implementation map.">
+  <link rel="canonical" href="https://mariascales.com/research/ats-scraping/article/">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.3; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 24px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+    blockquote { border-left: 3px solid #e5e7eb; padding: 14px 18px; margin: 20px 0; background: #f9fafb; border-radius: 0 6px 6px 0; }
+    blockquote p { color: #4b5563 !important; font-style: italic; }
+    code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; color: #111827; }
+    pre { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 6px; padding: 16px 20px; margin: 12px 0 20px; overflow-x: auto; }
+    pre code { background: none; padding: 0; font-size: 0.8125rem; color: #374151; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 0.875rem; }
+    th { text-align: left; padding: 10px 12px; background: #f9fafb; color: #374151; font-weight: 600; border: 1px solid #e5e7eb; }
+    td { padding: 10px 12px; border: 1px solid #e5e7eb; color: #374151; }
+    tr:nth-child(even) td { background: #f9fafb; }
+    .sources { margin-top: 36px; padding-top: 24px; border-top: 1px solid #e5e7eb; }
+    .sources h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; margin-top: 0; }
+    .sources li { font-size: 0.875rem; color: #6b7280; margin-bottom: 8px; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/ats-scraping/">Reading Career Pages</a><span>›</span><strong>Full article</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">Technical Solution: Reading Career Pages Without a Browser</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+
+    <h2>The Core Insight</h2>
+    <p>Most career pages appear JS-rendered in a browser, but the data behind them is public JSON — the browser just fetches it via API after page load. If we intercept that API call instead of rendering the page, we get clean structured data with no browser automation needed.</p>
+    <p>The practical implementation splits into three tiers:</p>
+    <ol>
+      <li><strong>ATS with a documented public API</strong> → direct API call, returns clean JSON</li>
+      <li><strong>ATS with an undocumented but predictable internal endpoint</strong> → replicate the API call the browser makes</li>
+      <li><strong>Fully custom career page</strong> → headless browser (Playwright) as a last resort; since the data is public and viewable in a browser, it can always be captured this way</li>
+    </ol>
+
+    <h2>Tier 1: ATS Platforms with Public APIs</h2>
+    <p>No authentication required for any of the following.</p>
+
+    <h3>Greenhouse</h3>
+    <p>Used by a large share of tech and growth-stage companies.</p>
+    <pre><code>GET https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true</code></pre>
+    <p>Returns JSON with full job listings including title, location, and description. The <code>{token}</code> is the company's board token, visible in the URL of their Greenhouse careers page.</p>
+    <p><a href="https://developers.greenhouse.io/job-board.html" target="_blank">Docs: developers.greenhouse.io/job-board</a></p>
+
+    <h3>Lever</h3>
+    <p>Common among mid-size tech companies.</p>
+    <pre><code>GET https://api.lever.co/v0/postings/{company}</code></pre>
+    <p>Returns JSON by default. Add <code>?mode=xml</code> for XML. The <code>{company}</code> slug is visible in the careers page URL.</p>
+    <p><a href="https://hire.lever.co/developer/documentation" target="_blank">Docs: hire.lever.co/developer/documentation</a></p>
+
+    <h3>Ashby</h3>
+    <p>Fast-growing among startups and scale-ups.</p>
+    <pre><code>GET https://api.ashbyhq.com/posting-api/job-board/{clientname}?includeCompensation=true</code></pre>
+    <p>The <code>{clientname}</code> is visible in their careers page URL (<code>jobs.ashbyhq.com/{clientname}</code>).</p>
+    <p><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank">Docs: developers.ashbyhq.com</a></p>
+
+    <h3>BambooHR</h3>
+    <pre><code>GET https://{company}.bamboohr.com/jobs/embed2/json</code></pre>
+
+    <h3>SmartRecruiters</h3>
+    <pre><code>GET https://api.smartrecruiters.com/v1/companies/{company}/postings</code></pre>
+    <p>Returns JSON for public postings.</p>
+
+    <h2>Tier 2: Undocumented but Predictable Endpoints</h2>
+
+    <h3>Workday</h3>
+    <p>Used by enterprise and large companies. No official public API, but the careers page loads data via an internal CXS JSON endpoint that can be called directly:</p>
+    <pre><code>POST https://{company}.wd{n}.myworkdayjobs.com/wday/cxs/{company}/{site}/jobs</code></pre>
+    <p>Where <code>{n}</code> is typically 1, 2, 3, or 5. The full URL structure is visible in browser DevTools (Network tab → XHR requests) on any Workday careers page. Returns the same structured JSON the browser uses to render the page.</p>
+    <p>Alternatively: use Playwright to intercept the network request rather than scraping the DOM. Since the data is public and the browser can always see it, a headless browser captures it reliably without parsing HTML.</p>
+    <p><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank">Reference: jobspipe.dev/blog/workday-api-guide</a></p>
+
+    <h2>Detection Logic</h2>
+    <p>ATS detection can be automated by checking the career page URL or HTTP response headers:</p>
+    <table>
+      <thead>
+        <tr><th>ATS</th><th>Detection signal</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Greenhouse</td><td>URL contains <code>greenhouse.io</code> or <code>boards.greenhouse.io</code></td></tr>
+        <tr><td>Lever</td><td>URL contains <code>lever.co</code></td></tr>
+        <tr><td>Ashby</td><td>URL contains <code>ashbyhq.com</code></td></tr>
+        <tr><td>BambooHR</td><td>URL contains <code>bamboohr.com</code></td></tr>
+        <tr><td>SmartRecruiters</td><td>URL contains <code>smartrecruiters.com</code></td></tr>
+        <tr><td>Workday</td><td>URL contains <code>myworkdayjobs.com</code></td></tr>
+        <tr><td>Custom / unknown</td><td>Fallback to Playwright</td></tr>
+      </tbody>
+    </table>
+    <p>A simple script checks the career page URL stored in the watch list, routes to the correct handler, and falls back to Playwright if no match.</p>
+
+    <h2>Data Storage and Deduplication</h2>
+    <p>Since the data is public and structured, saving it is straightforward. Each fetched position gets stored locally (SQLite or a flat JSON file) with:</p>
+    <ul>
+      <li><code>company</code> — from watch list</li>
+      <li><code>job_id</code> — from ATS response (stable identifier)</li>
+      <li><code>title</code>, <code>location</code>, <code>url</code></li>
+      <li><code>first_seen_date</code></li>
+      <li><code>status</code> — <code>new</code> / <code>reviewed</code> / <code>shortlisted</code> / <code>skipped</code></li>
+    </ul>
+    <p>On each weekly cycle, the script compares fetched <code>job_id</code> values against stored records. Only positions with no existing record are flagged as new. This also solves the duplicate detection problem as a side effect.</p>
+
+    <h2>Coverage Estimate</h2>
+    <table>
+      <thead>
+        <tr><th>ATS</th><th>Typical share of target companies</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Greenhouse</td><td>~30% (tech, growth-stage)</td></tr>
+        <tr><td>Workday</td><td>~25% (enterprise)</td></tr>
+        <tr><td>Lever</td><td>~15% (mid-size tech)</td></tr>
+        <tr><td>Ashby</td><td>~10% (startups, scale-ups)</td></tr>
+        <tr><td>BambooHR / SmartRecruiters / other</td><td>~10%</td></tr>
+        <tr><td>Custom / unknown</td><td>~10%</td></tr>
+      </tbody>
+    </table>
+    <p>Handling the top four ATSs with direct API calls covers approximately <strong>80%</strong> of the target company universe without a browser. The remaining ~20% (custom pages) fall back to Playwright — still automatable, just slower and more brittle.</p>
+
+    <div class="sources">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://developers.greenhouse.io/job-board.html" target="_blank">Greenhouse Job Board API</a></li>
+        <li><a href="https://hire.lever.co/developer/documentation" target="_blank">Lever Developer Documentation</a></li>
+        <li><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank">Ashby Public Job Posting API</a></li>
+        <li><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank">Workday API Guide (jobspipe.dev)</a></li>
+        <li><a href="https://cavuno.com/blog/ats-platforms-public-job-posting-apis" target="_blank">6 ATS Platforms with Public Job Posting APIs (Cavuno)</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/ats-scraping/">← Back to overview</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
