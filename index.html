@@ -917,7 +917,7 @@
         if (suppressObserver) return;
         if (entry.isIntersecting) history.replaceState(null, '', '#' + entry.target.id);
       });
-    }, { rootMargin: '-20% 0px -70% 0px' });
+    }, { rootMargin: '-10% 0px -40% 0px', threshold: 0 });
 
     ['writing', 'research', 'contact'].forEach(id => {
       const el = document.getElementById(id);
