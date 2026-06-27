@@ -1,0 +1,180 @@
+<svg viewBox="0 0 700 980" xmlns="http://www.w3.org/2000/svg" role="img" font-family="'Inter', system-ui, sans-serif" font-size="13">
+  <title>Job Search Sourcing Cycle</title>
+  <desc>Flowchart of the semi-automated weekly job search cycle with two branches and feedback loops.</desc>
+
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arr-g" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-r" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#dc2626"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000012"/>
+    </filter>
+    <linearGradient id="startGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="endGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="980" fill="#f8fafc" rx="16"/>
+
+  <!-- Subtle column divider -->
+  <line x1="350" y1="40" x2="350" y2="900" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Column labels -->
+  <text x="175" y="32" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1.5">BRANCH A</text>
+  <text x="525" y="32" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1.5">BRANCH B</text>
+
+  <!-- START -->
+  <rect x="225" y="44" width="250" height="48" rx="24" fill="url(#startGrad)" filter="url(#shadow)"/>
+  <text x="350" y="64" text-anchor="middle" fill="white" font-size="12" font-weight="700" letter-spacing="0.5">START WEEKLY CYCLE</text>
+  <text x="350" y="82" text-anchor="middle" fill="#c7d2fe" font-size="11">Monitor · Filter · Qualify</text>
+
+  <!-- Split -->
+  <line x1="350" y1="92" x2="350" y2="112" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="175" y1="112" x2="525" y2="112" stroke="#cbd5e1" stroke-width="1.5"/>
+  <line x1="175" y1="112" x2="175" y2="130" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="525" y1="112" x2="525" y2="130" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- BRANCH A: Watch List -->
+  <rect x="58" y="130" width="234" height="54" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="58" y="130" width="6" height="54" rx="3" fill="#6366f1"/>
+  <text x="180" y="152" text-anchor="middle" fill="#1e293b" font-weight="700" font-size="12">Companies_to_watch_list</text>
+  <text x="180" y="172" text-anchor="middle" fill="#64748b" font-size="11">Visit career page (~74% have one)</text>
+
+  <line x1="175" y1="184" x2="175" y2="210" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond 1 -->
+  <polygon points="175,210 258,250 175,290 92,250" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="175" y="245" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">Fits position</text>
+  <text x="175" y="261" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">criteria?</text>
+
+  <line x1="92" y1="250" x2="38" y2="250" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <text x="65" y="242" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">No</text>
+  <rect x="4" y="236" width="36" height="28" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="22" y="255" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Skip</text>
+
+  <line x1="175" y1="290" x2="175" y2="316" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <text x="188" y="307" fill="#16a34a" font-size="11" font-weight="600">Yes</text>
+
+  <!-- Diamond 2 -->
+  <polygon points="175,316 258,356 175,396 92,356" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="175" y="351" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">Passes hard</text>
+  <text x="175" y="367" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">stop criteria?</text>
+
+  <line x1="92" y1="356" x2="38" y2="356" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <text x="65" y="348" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">No</text>
+  <rect x="4" y="342" width="36" height="28" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="22" y="361" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Skip</text>
+
+  <line x1="175" y1="396" x2="175" y2="422" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <text x="188" y="414" fill="#16a34a" font-size="11" font-weight="600">Yes</text>
+
+  <!-- Shortlist -->
+  <rect x="78" y="422" width="194" height="50" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="175" y="443" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">✓ Add to shortlist</text>
+  <text x="175" y="461" text-anchor="middle" fill="#4ade80" font-size="11">Ready for application</text>
+
+  <!-- BRANCH B: LinkedIn Recs -->
+  <rect x="408" y="130" width="234" height="54" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="636" y="130" width="6" height="54" rx="3" fill="#6366f1"/>
+  <text x="525" y="152" text-anchor="middle" fill="#1e293b" font-weight="700" font-size="12">LinkedIn recommendations</text>
+  <text x="525" y="172" text-anchor="middle" fill="#64748b" font-size="11">Save new companies encountered</text>
+
+  <line x1="525" y1="184" x2="525" y2="210" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond 3 -->
+  <polygon points="525,210 608,250 525,290 442,250" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="525" y="245" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">Already in</text>
+  <text x="525" y="261" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">watch / skip list?</text>
+
+  <line x1="608" y1="250" x2="658" y2="250" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <text x="633" y="242" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Yes</text>
+  <rect x="658" y="236" width="36" height="28" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="676" y="255" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Skip</text>
+
+  <line x1="525" y1="290" x2="525" y2="316" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <text x="538" y="307" fill="#16a34a" font-size="11" font-weight="600">No</text>
+
+  <!-- Fit criteria box -->
+  <rect x="413" y="316" width="224" height="54" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="413" y="316" width="6" height="54" rx="3" fill="#94a3b8"/>
+  <text x="530" y="338" text-anchor="middle" fill="#1e293b" font-weight="700" font-size="12">Evaluate company fit</text>
+  <text x="530" y="358" text-anchor="middle" fill="#64748b" font-size="11">vs. Company_fit_criteria_list</text>
+
+  <line x1="525" y1="370" x2="525" y2="396" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Diamond 4 -->
+  <polygon points="525,396 608,436 525,476 442,436" fill="white" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="525" y="431" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">Company</text>
+  <text x="525" y="447" text-anchor="middle" fill="#3730a3" font-size="11" font-weight="600">a fit?</text>
+
+  <!-- NO → skip list -->
+  <line x1="525" y1="476" x2="525" y2="502" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <text x="538" y="494" fill="#dc2626" font-size="11" font-weight="600">No</text>
+  <rect x="415" y="502" width="220" height="50" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="525" y="523" text-anchor="middle" fill="#dc2626" font-weight="700" font-size="12">→ Companies_to_skip_list</text>
+  <text x="525" y="541" text-anchor="middle" fill="#ef4444" font-size="11">Updated for future cycles</text>
+
+  <!-- YES → feedback to watch list -->
+  <line x1="608" y1="436" x2="660" y2="436" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="634" y="428" text-anchor="middle" fill="#16a34a" font-size="11" font-weight="600">Yes</text>
+  <line x1="660" y1="436" x2="660" y2="157" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="660" y1="157" x2="642" y2="157" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <text x="672" y="300" fill="#16a34a" font-size="10" text-anchor="middle" transform="rotate(90,672,300)">→ Companies_to_watch_list</text>
+
+  <!-- MERGE: clean path from shortlist down-right to review box top -->
+  <path d="M175,472 L175,590 L350,590" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5,3" fill="none"/>
+  <line x1="350" y1="590" x2="350" y2="634" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Section label -->
+  <line x1="60" y1="620" x2="640" y2="620" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="350" y="612" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="1.2">AFTER BOTH BRANCHES COMPLETE</text>
+
+  <!-- Apply box -->
+  <rect x="193" y="634" width="314" height="56" rx="12" fill="white" stroke="#c7d2fe" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="350" y="657" text-anchor="middle" fill="#1e293b" font-weight="700" font-size="13">Review shortlisted positions</text>
+  <text x="350" y="677" text-anchor="middle" fill="#64748b" font-size="11">Tailor CV to JD · Submit application</text>
+
+  <line x1="350" y1="690" x2="350" y2="714" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- END -->
+  <rect x="225" y="714" width="250" height="48" rx="24" fill="url(#endGrad)" filter="url(#shadow)"/>
+  <text x="350" y="734" text-anchor="middle" fill="white" font-size="12" font-weight="700" letter-spacing="0.5">END OF CYCLE</text>
+  <text x="350" y="752" text-anchor="middle" fill="#c7d2fe" font-size="11">Repeat next week →</text>
+
+  <!-- Feedback note -->
+  <text x="350" y="800" text-anchor="middle" fill="#94a3b8" font-size="11">Lists are updated continuously and feed into every subsequent cycle</text>
+
+  <!-- LEGEND -->
+  <rect x="60" y="818" width="580" height="88" rx="10" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="350" y="839" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1.2">LEGEND</text>
+
+  <!-- Row 1 -->
+  <rect x="82" y="850" width="14" height="14" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="102" y="862" fill="#475569" font-size="11">Positive / shortlist / watch</text>
+
+  <rect x="282" y="850" width="14" height="14" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="302" y="862" fill="#475569" font-size="11">Negative / skip</text>
+
+  <rect x="462" y="850" width="14" height="14" rx="3" fill="url(#startGrad)"/>
+  <text x="482" y="862" fill="#475569" font-size="11">Cycle start / end</text>
+
+  <!-- Row 2 -->
+  <line x1="82" y1="882" x2="102" y2="882" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="102,878.5 110,882 102,885.5" fill="#16a34a"/>
+  <text x="117" y="886" fill="#475569" font-size="11">Feedback loop to watch list</text>
+
+  <polygon points="320,875 338,882 320,889" fill="none" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="345" y="886" fill="#475569" font-size="11">Decision point</text>
+</svg>

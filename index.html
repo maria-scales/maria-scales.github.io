@@ -392,6 +392,19 @@
 
     .nav-home:hover { color: #1e40af; text-decoration: none; }
 
+    /* ── Research card ── */
+    .research-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-top: 4px; }
+    .research-card-title { font-size: 1.0625rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+    .research-card-title a { color: #111827; }
+    .research-card-title a:hover { color: #1e40af; text-decoration: none; }
+    .research-card-meta { font-size: 0.8125rem; color: #9ca3af; margin-bottom: 12px; }
+    .research-card-teaser { font-size: 0.9375rem; color: #4b5563; line-height: 1.65; margin-bottom: 14px; }
+    .research-card-read { font-size: 0.875rem; font-weight: 500; color: #1e40af; display: inline-block; margin-bottom: 16px; }
+    .research-card-sub { border-top: 1px solid #f3f4f6; padding-top: 14px; margin-top: 4px; }
+    .research-card-sub-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 8px; }
+    .research-card-sub a { display: block; font-size: 0.875rem; color: #6b7280; padding: 3px 0; text-decoration: none; }
+    .research-card-sub a:hover { color: #1e40af; }
+
     .back-to-top {
       display: inline-block;
       margin-top: 20px;
@@ -801,7 +814,18 @@
 <section class="articles" id="research">
   <div class="container">
     <div class="section-label">Systems &amp; Research · <a href="/research/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All research →</a></div>
-    <p style="color: #6b7280; font-size: 0.9375rem; padding: 16px 0;">Research and data studies coming soon.</p>
+    <div class="research-card">
+      <div class="research-card-title"><a href="/research/job-search-automation/">The Job Search Problem: A Framework for Partial Automation</a></div>
+      <div class="research-card-meta">Jun 2026 · Original research</div>
+      <div class="research-card-teaser">~65% of active job search time is consumed by repetitive, rule-based tasks. This piece breaks down the five structural problems with LinkedIn-based sourcing and proposes a semi-automated system to solve them.</div>
+      <a href="/research/job-search-automation/" class="research-card-read">Read the full article →</a>
+      <div class="research-card-sub">
+        <div class="research-card-sub-label">Also in this series</div>
+        <a href="/research/job-search-automation/65-percent/">Why sourcing accounts for ~65% of job search time</a>
+        <a href="/research/job-search-automation/7-seconds/">The 7-second resume screen: evidence and sources</a>
+        <a href="/research/job-search-automation/career-page-probability/">Probability of a career page: the math</a>
+      </div>
+    </div>
   </div>
 </section>
 
