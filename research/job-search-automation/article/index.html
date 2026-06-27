@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Job Search Problem: A Framework for Partial Automation – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="~65% of job search time goes to repetitive sourcing tasks. Here's the framework for automating them.">
+  <link rel="canonical" href="https://mariascales.com/research/job-search-automation/">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; border-bottom: 1px solid #f3f4f6; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .page-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.3; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 24px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+    blockquote { border-left: 3px solid #e5e7eb; padding: 14px 18px; margin: 20px 0; background: #f9fafb; border-radius: 0 6px 6px 0; }
+    blockquote p { color: #4b5563 !important; font-style: italic; }
+    .sub-articles { margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb; }
+    .sub-articles-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .sub-article-link { display: flex; flex-direction: column; padding: 14px 0; border-bottom: 1px solid #f3f4f6; }
+    .sub-article-link:last-child { border-bottom: none; }
+    .sub-article-link a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; }
+    .sub-article-link a:hover { color: #1e40af; text-decoration: none; }
+    .sub-article-link span { font-size: 0.8125rem; color: #9ca3af; }
+    .back-link { padding: 32px 0 48px; border-top: 1px solid #e5e7eb; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; border-top: 1px solid #e5e7eb; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/job-search-automation/">The Job Search Problem</a><span>›</span><strong>Full article</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">The Job Search Problem: A Framework for Partial Automation</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+
+    <h2>Main Logic</h2>
+    <p>LinkedIn is the biggest database of open job positions. There are several ways to find a position to apply to: pick target companies and monitor openings, search manually by location and role, follow LinkedIn recommendations, or read posts in the feed.</p>
+    <p>In practice, these tasks are treated as inherently manual — "just be active on LinkedIn, and the rest will follow." This piece looks at why that assumption is expensive, and what can be automated.</p>
+
+    <h2>Problem Statement</h2>
+    <p>The manual process breaks down into five distinct structural problems:</p>
+    <ul>
+      <li><strong>Target Company Awareness Problem.</strong> You have a list of target companies, but new relevant companies appear constantly and there is no systematic way to discover them.</li>
+      <li><strong>Target Position Awareness Problem.</strong> Monitoring a large list of companies for new openings requires significant, repetitive manual effort.</li>
+      <li><strong>Negative Company Filtering Problem.</strong> LinkedIn lets you exclude individual job postings but not entire companies. Companies you know are not a fit must be manually skipped every session.</li>
+      <li><strong>Hard Stop Criteria Filtering Problem.</strong> Custom disqualifiers — language requirements, industry restrictions, recent layoffs — have no native filter and must be applied manually every time.</li>
+      <li><strong>Timing Problem.</strong> For competitive roles, applying within the first 24–48 hours meaningfully increases response rates. Manual processes make this hard to sustain.</li>
+    </ul>
+    <p>The current application funnel compounds these problems: most companies use ATS systems that filter CVs before any human sees them (<strong>filter 1</strong>), and recruiters spend an average of ~7 seconds on initial CV review (<strong>filter 2</strong>). Both filters reward precision over volume, which makes sourcing quality — not application quantity — the real lever. Based on observed weekly job search cycles, these five problems account for approximately <strong>65% of total job search time</strong> before a single CV is tailored. <a href="/research/job-search-automation/65-percent/">See the full breakdown →</a></p>
+
+    <h2>The Task: Partial Automation</h2>
+    <h3>Initial Setup</h3>
+    <p>The system requires four input lists:</p>
+    <ol>
+      <li><strong>Company_fit_criteria_list</strong> — the criteria that define a good-fit company (stage, industry, culture signals, etc.)</li>
+      <li><strong>Companies_to_watch_list</strong> — companies that have passed fit criteria and are actively monitored</li>
+      <li><strong>Companies_to_skip_list</strong> — companies reviewed and disqualified, with a reason recorded (eliminates FOMO and keeps fit criteria sharp)</li>
+      <li><strong>Hard_stop_list</strong> — absolute disqualifiers: language requirements, specific role constraints, layoff history, etc.</li>
+      <li><strong>Position_description_list</strong> — target role keywords and seniority criteria</li>
+    </ol>
+    <p>The watch and skip lists are maintained in parallel deliberately. Knowing a company is not a fit is as valuable as knowing one is — it eliminates re-evaluation on future encounters and sharpens the criteria over time. All lists are live and updated continuously.</p>
+
+    <h3>The Cycle</h3>
+    <p>Once the lists are in place, a weekly sourcing cycle runs as follows:</p>
+    <ol>
+      <li>Go through <strong>Companies_to_watch_list</strong> → check each company's careers page (at least 74% of active LinkedIn employers have one — <a href="/research/job-search-automation/career-page-probability/">see the probability breakdown</a>)</li>
+      <li>For any new positions: check against <strong>Position_description_list</strong>, then against <strong>Hard_stop_list</strong>. If both pass → add to shortlist for application</li>
+      <li>Review new LinkedIn recommendations → save new companies encountered</li>
+      <li>For each new company not yet on either list: evaluate against <strong>Company_fit_criteria_list</strong> → update watch or skip list accordingly</li>
+      <li>Tailor CV for shortlisted roles → apply</li>
+    </ol>
+    <p>Steps 1–4 are fully automatable. Step 5 — tailoring the CV — benefits from human judgment and remains manual by design.</p>
+
+    <h2>The Cycle Diagram</h2>
+    <p>The process flow for the semi-automated sourcing cycle (v0.1):</p>
+    <div style="margin: 24px 0; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #f8fafc;">
+      <img src="/research/sourcing_cycle_diagram.svg" alt="Job Search Sourcing Cycle diagram" style="width: 100%; display: block;">
+    </div>
+
+    <h2>Where This Leaves Us</h2>
+    <p>The five problems above are not random inconveniences. They are structural properties of how LinkedIn works: a platform optimised for engagement, not for precision sourcing.</p>
+    <p>The case for partial automation rests on a simple observation: ~65% of active job search time is spent on tasks that are repetitive, rule-based, and produce no direct output. Running through a watch list, cross-referencing hard stop criteria, and verifying whether a role is still active are all deterministic operations — the same logic applied over and over to new inputs. These are exactly the conditions under which automation delivers the most value.</p>
+    <p>The two steps that remain manual — discovering new companies from LinkedIn and tailoring the CV for each role — are genuinely hard to automate well. The first may conflict with LinkedIn ToS; the second requires language and context that benefit from human input. These are the steps where time is best spent.</p>
+    <p>The architecture for this semi-automated cycle (v0.1) is currently in development.</p>
+
+    <div class="sub-articles">
+      <div class="sub-articles-label">Also in this series</div>
+      <div class="sub-article-link">
+        <a href="/research/job-search-automation/65-percent/">Why sourcing accounts for ~65% of job search time</a>
+        <span>The structural floor, friction multipliers, and personal tracking data behind the estimate</span>
+      </div>
+      <div class="sub-article-link">
+        <a href="/research/job-search-automation/7-seconds/">The 7-second resume screen: evidence and sources</a>
+        <span>Primary study, major job boards, and academic confirmations of the 6–7 second metric</span>
+      </div>
+      <div class="sub-article-link">
+        <a href="/research/job-search-automation/career-page-probability/">Probability of a career page: the math</a>
+        <span>Why at least 74% of active LinkedIn employers have a dedicated careers page</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/job-search-automation/">← Back to overview</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
