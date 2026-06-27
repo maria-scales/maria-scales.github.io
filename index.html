@@ -380,6 +380,14 @@
       padding: 13px 0;
       margin-right: auto;
       white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .site-nav.scrolled .nav-home {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .nav-home:hover { color: #1e40af; text-decoration: none; }
