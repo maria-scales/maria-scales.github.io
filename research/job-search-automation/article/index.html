@@ -89,7 +89,7 @@
 
     <h2>Main Logic</h2>
     <p>LinkedIn is the biggest database of open job positions. There are several ways to find a position to apply to: pick target companies and monitor openings, search manually by location and role, follow LinkedIn recommendations, or read posts in the feed.</p>
-    <p>In practice, these tasks are treated as inherently manual — "just be active on LinkedIn, and the rest will follow." This piece looks at why that assumption is expensive, and what can be automated.</p>
+    <p>In practice, these tasks are treated as inherently manual – "just be active on LinkedIn, and the rest will follow." This piece looks at why that assumption is expensive, and what can be automated.</p>
 
     <h2>Problem Statement</h2>
     <p>The manual process breaks down into five distinct structural problems:</p>
@@ -97,33 +97,33 @@
       <li><strong>Target Company Awareness Problem.</strong> You have a list of target companies, but new relevant companies appear constantly and there is no systematic way to discover them.</li>
       <li><strong>Target Position Awareness Problem.</strong> Monitoring a large list of companies for new openings requires significant, repetitive manual effort.</li>
       <li><strong>Negative Company Filtering Problem.</strong> LinkedIn lets you exclude individual job postings but not entire companies. Companies you know are not a fit must be manually skipped every session.</li>
-      <li><strong>Hard Stop Criteria Filtering Problem.</strong> Custom disqualifiers — language requirements, industry restrictions, recent layoffs — have no native filter and must be applied manually every time.</li>
+      <li><strong>Hard Stop Criteria Filtering Problem.</strong> Custom disqualifiers – language requirements, industry restrictions, recent layoffs – have no native filter and must be applied manually every time.</li>
       <li><strong>Timing Problem.</strong> For competitive roles, applying within the first 24–48 hours meaningfully increases response rates. Manual processes make this hard to sustain.</li>
     </ul>
-    <p>The current application funnel compounds these problems: most companies use ATS systems that filter CVs before any human sees them (<strong>filter 1</strong>), and recruiters spend an average of ~7 seconds on initial CV review (<strong>filter 2</strong>). Both filters reward precision over volume, which makes sourcing quality — not application quantity — the real lever. Based on observed weekly job search cycles, these five problems account for approximately <strong>65% of total job search time</strong> before a single CV is tailored. <a href="/research/job-search-automation/65-percent/">See the full breakdown →</a></p>
+    <p>The current application funnel compounds these problems: most companies use ATS systems that filter CVs before any human sees them (<strong>filter 1</strong>), and recruiters spend an average of ~7 seconds on initial CV review (<strong>filter 2</strong>). Both filters reward precision over volume, which makes sourcing quality – not application quantity – the real lever. Based on observed weekly job search cycles, these five problems account for approximately <strong>65% of total job search time</strong> before a single CV is tailored. <a href="/research/job-search-automation/65-percent/">See the full breakdown →</a></p>
 
     <h2>The Task: Partial Automation</h2>
     <h3>Initial Setup</h3>
     <p>The system requires four input lists:</p>
     <ol>
-      <li><strong>Company_fit_criteria_list</strong> — the criteria that define a good-fit company (stage, industry, culture signals, etc.)</li>
-      <li><strong>Companies_to_watch_list</strong> — companies that have passed fit criteria and are actively monitored</li>
-      <li><strong>Companies_to_skip_list</strong> — companies reviewed and disqualified, with a reason recorded (eliminates FOMO and keeps fit criteria sharp)</li>
-      <li><strong>Hard_stop_list</strong> — absolute disqualifiers: language requirements, specific role constraints, layoff history, etc.</li>
-      <li><strong>Position_description_list</strong> — target role keywords and seniority criteria</li>
+      <li><strong>Company_fit_criteria_list</strong> – the criteria that define a good-fit company (stage, industry, culture signals, etc.)</li>
+      <li><strong>Companies_to_watch_list</strong> – companies that have passed fit criteria and are actively monitored</li>
+      <li><strong>Companies_to_skip_list</strong> – companies reviewed and disqualified, with a reason recorded (eliminates FOMO and keeps fit criteria sharp)</li>
+      <li><strong>Hard_stop_list</strong> – absolute disqualifiers: language requirements, specific role constraints, layoff history, etc.</li>
+      <li><strong>Position_description_list</strong> – target role keywords and seniority criteria</li>
     </ol>
-    <p>The watch and skip lists are maintained in parallel deliberately. Knowing a company is not a fit is as valuable as knowing one is — it eliminates re-evaluation on future encounters and sharpens the criteria over time. All lists are live and updated continuously.</p>
+    <p>The watch and skip lists are maintained in parallel deliberately. Knowing a company is not a fit is as valuable as knowing one is – it eliminates re-evaluation on future encounters and sharpens the criteria over time. All lists are live and updated continuously.</p>
 
     <h3>The Cycle</h3>
     <p>Once the lists are in place, a weekly sourcing cycle runs as follows:</p>
     <ol>
-      <li>Go through <strong>Companies_to_watch_list</strong> → check each company's careers page (at least 74% of active LinkedIn employers have one — <a href="/research/job-search-automation/career-page-probability/">see the probability breakdown</a>)</li>
+      <li>Go through <strong>Companies_to_watch_list</strong> → check each company's careers page (at least 74% of active LinkedIn employers have one – <a href="/research/job-search-automation/career-page-probability/">see the probability breakdown</a>)</li>
       <li>For any new positions: check against <strong>Position_description_list</strong>, then against <strong>Hard_stop_list</strong>. If both pass → add to shortlist for application</li>
       <li>Review new LinkedIn recommendations → save new companies encountered</li>
       <li>For each new company not yet on either list: evaluate against <strong>Company_fit_criteria_list</strong> → update watch or skip list accordingly</li>
       <li>Tailor CV for shortlisted roles → apply</li>
     </ol>
-    <p>Steps 1–4 are fully automatable. Step 5 — tailoring the CV — benefits from human judgment and remains manual by design.</p>
+    <p>Steps 1–4 are fully automatable. Step 5 – tailoring the CV – benefits from human judgment and remains manual by design.</p>
 
     <h2>The Cycle Diagram</h2>
     <p>The process flow for the semi-automated sourcing cycle (v0.1):</p>
@@ -133,8 +133,8 @@
 
     <h2>Where This Leaves Us</h2>
     <p>The five problems above are not random inconveniences. They are structural properties of how LinkedIn works: a platform optimised for engagement, not for precision sourcing.</p>
-    <p>The case for partial automation rests on a simple observation: ~65% of active job search time is spent on tasks that are repetitive, rule-based, and produce no direct output. Running through a watch list, cross-referencing hard stop criteria, and verifying whether a role is still active are all deterministic operations — the same logic applied over and over to new inputs. These are exactly the conditions under which automation delivers the most value.</p>
-    <p>The two steps that remain manual — discovering new companies from LinkedIn and tailoring the CV for each role — are genuinely hard to automate well. The first may conflict with LinkedIn ToS; the second requires language and context that benefit from human input. These are the steps where time is best spent.</p>
+    <p>The case for partial automation rests on a simple observation: ~65% of active job search time is spent on tasks that are repetitive, rule-based, and produce no direct output. Running through a watch list, cross-referencing hard stop criteria, and verifying whether a role is still active are all deterministic operations – the same logic applied over and over to new inputs. These are exactly the conditions under which automation delivers the most value.</p>
+    <p>The two steps that remain manual – discovering new companies from LinkedIn and tailoring the CV for each role – are genuinely hard to automate well. The first may conflict with LinkedIn ToS; the second requires language and context that benefit from human input. These are the steps where time is best spent.</p>
     <p>The architecture for this semi-automated cycle (v0.1) is currently in development.</p>
 
     <div class="sub-articles">

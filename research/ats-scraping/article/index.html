@@ -91,7 +91,7 @@
   <div class="container">
 
     <h2>The Core Insight</h2>
-    <p>Most career pages appear JS-rendered in a browser, but the data behind them is public JSON — the browser just fetches it via API after page load. If we intercept that API call instead of rendering the page, we get clean structured data with no browser automation needed.</p>
+    <p>Most career pages appear JS-rendered in a browser, but the data behind them is public JSON – the browser just fetches it via API after page load. If we intercept that API call instead of rendering the page, we get clean structured data with no browser automation needed.</p>
     <p>The practical implementation splits into three tiers:</p>
     <ol>
       <li><strong>ATS with a documented public API</strong> → direct API call, returns clean JSON</li>
@@ -157,11 +157,11 @@
     <h2>Data Storage and Deduplication</h2>
     <p>Since the data is public and structured, saving it is straightforward. Each fetched position gets stored locally (SQLite or a flat JSON file) with:</p>
     <ul>
-      <li><code>company</code> — from watch list</li>
-      <li><code>job_id</code> — from ATS response (stable identifier)</li>
+      <li><code>company</code> – from watch list</li>
+      <li><code>job_id</code> – from ATS response (stable identifier)</li>
       <li><code>title</code>, <code>location</code>, <code>url</code></li>
       <li><code>first_seen_date</code></li>
-      <li><code>status</code> — <code>new</code> / <code>reviewed</code> / <code>shortlisted</code> / <code>skipped</code></li>
+      <li><code>status</code> – <code>new</code> / <code>reviewed</code> / <code>shortlisted</code> / <code>skipped</code></li>
     </ul>
     <p>On each weekly cycle, the script compares fetched <code>job_id</code> values against stored records. Only positions with no existing record are flagged as new. This also solves the duplicate detection problem as a side effect.</p>
 
@@ -179,7 +179,7 @@
         <tr><td>Custom / unknown</td><td>~10%</td></tr>
       </tbody>
     </table>
-    <p>Handling the top four ATSs with direct API calls covers approximately <strong>80%</strong> of the target company universe without a browser. The remaining ~20% (custom pages) fall back to Playwright — still automatable, just slower and more brittle.</p>
+    <p>Handling the top four ATSs with direct API calls covers approximately <strong>80%</strong> of the target company universe without a browser. The remaining ~20% (custom pages) fall back to Playwright – still automatable, just slower and more brittle.</p>
 
     <div class="sources">
       <h2>Sources</h2>

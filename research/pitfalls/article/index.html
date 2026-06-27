@@ -12,7 +12,7 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="13 potential failure modes in the job search automation system — and why most of them dissolve on closer inspection.">
+  <meta name="description" content="13 potential failure modes in the job search automation system – and why most of them dissolve on closer inspection.">
   <link rel="canonical" href="https://mariascales.com/research/pitfalls/article/">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -95,14 +95,14 @@
       <div class="pitfall-title">Career page URL rot</div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
-        <p>Companies switch ATS providers, restructure their websites, or change subdomains. A URL that returns jobs today might 404 or redirect silently in three weeks. The watch list needs URL maintenance, not just company maintenance — and silent failures here are particularly dangerous.</p>
+        <p>Companies switch ATS providers, restructure their websites, or change subdomains. A URL that returns jobs today might 404 or redirect silently in three weeks. The watch list needs URL maintenance, not just company maintenance – and silent failures here are particularly dangerous.</p>
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>This isn't a problem that needs automation — it needs detection + a quick re-discovery path, because the failure itself is rare. Three layers handle it:</p>
+        <p>This isn't a problem that needs automation – it needs detection + a quick re-discovery path, because the failure itself is rare. Three layers handle it:</p>
         <p><strong>Layer 1: Detection is already built in.</strong> The weekly cycle hits every URL anyway. If a URL returns 404, a redirect to a homepage, or an empty response, the script flags that company as "URL broken" instead of silently treating it as "no open positions." That turns an invisible failure into a visible task.</p>
         <p><strong>Layer 2: ATS-first reduces exposure significantly.</strong> For the ~80% of companies on known ATSs (Greenhouse, Lever, Ashby, etc.), the URL the script calls is controlled by the ATS provider, not the company. That token almost never changes unless the company switches ATS providers entirely. Real URL rot is mostly a problem for the ~20% on custom career pages.</p>
-        <p><strong>Layer 3: Re-discovery when it breaks.</strong> When a URL fails, a semi-automated lookup can shortlist candidates: check the company's main domain for a <code>/careers</code> or <code>/jobs</code> path; search <code>{company_name} site:greenhouse.io</code> or <code>site:lever.co</code> to detect an ATS migration; check their LinkedIn company page — the "Jobs" tab always points to the current active source.</p>
+        <p><strong>Layer 3: Re-discovery when it breaks.</strong> When a URL fails, a semi-automated lookup can shortlist candidates: check the company's main domain for a <code>/careers</code> or <code>/jobs</code> path; search <code>{company_name} site:greenhouse.io</code> or <code>site:lever.co</code> to detect an ATS migration; check their LinkedIn company page – the "Jobs" tab always points to the current active source.</p>
       </div>
       <div class="net-result"><strong>Net result:</strong> URL rot is a maintenance edge case, not a structural problem. Detection + visibility + a quick lookup pattern is sufficient.</div>
     </div>
@@ -116,10 +116,10 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p><strong>Approach 1: Give the logic.</strong> Instead of listing exact keywords, define the <em>logic</em> of what you're looking for — a semantic description that captures intent, not just title. For example: <em>"Performance marketing roles responsible for paid acquisition, unit economics, and growth metrics — regardless of whether the title says Growth, Performance, Acquisition, Digital, or Marketing."</em> In a more advanced implementation, this description is passed to an LLM to evaluate each collected job title and description against the intent.</p>
+        <p><strong>Approach 1: Give the logic.</strong> Instead of listing exact keywords, define the <em>logic</em> of what you're looking for – a semantic description that captures intent, not just title. For example: <em>"Performance marketing roles responsible for paid acquisition, unit economics, and growth metrics – regardless of whether the title says Growth, Performance, Acquisition, Digital, or Marketing."</em> In a more advanced implementation, this description is passed to an LLM to evaluate each collected job title and description against the intent.</p>
         <p><strong>Approach 2: Wide net + clustering.</strong> Collect all positions broadly, then run clustering on the results (by title similarity, description keywords, or embedding similarity) to group roles that describe the same thing. Review the clusters once to identify which match your target and tag accordingly.</p>
       </div>
-      <div class="net-result"><strong>Net result:</strong> A job search runs 4–12 months — job title conventions don't meaningfully drift in that window. Write the logic once at the start with Approach 1. Approach 2 is at most a one-time calibration exercise in week 1, not an ongoing mechanism.</div>
+      <div class="net-result"><strong>Net result:</strong> A job search runs 4–12 months – job title conventions don't meaningfully drift in that window. Write the logic once at the start with Approach 1. Approach 2 is at most a one-time calibration exercise in week 1, not an ongoing mechanism.</div>
     </div>
 
     <h2>Structural</h2>
@@ -133,7 +133,7 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>The lists are just structured data — markdown files in a folder — which means a tool like Cowork acts as a conversational database on top of them. Instead of manually editing files, you say "add X to the watch list" or "move Y to skip, they just had layoffs" and it's done. A scheduled task that runs monthly and prompts a review ("your watch list has 90 companies — do you want to audit it?") closes the cadence gap.</p>
+        <p>The lists are just structured data – markdown files in a folder – which means a tool like Cowork acts as a conversational database on top of them. Instead of manually editing files, you say "add X to the watch list" or "move Y to skip, they just had layoffs" and it's done. A scheduled task that runs monthly and prompts a review ("your watch list has 90 companies – do you want to audit it?") closes the cadence gap.</p>
       </div>
       <div class="net-result"><strong>Net result:</strong> Cowork as the interface (conversational updates, no manual file editing) + a scheduled monthly reminder for periodic pruning.</div>
     </div>
@@ -147,7 +147,7 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>Same "give the logic" approach. The person isn't actually starting cold — they have domain knowledge, market awareness, and professional history. The bottleneck was never information, it was translating that knowledge into a structured list. You give Claude the logic — <em>"I'm looking for B2B SaaS companies between Series B and Series D, European HQ, English-first culture, strong growth metrics focus"</em> — and it populates the initial list from that description.</p>
+        <p>Same "give the logic" approach. The person isn't actually starting cold – they have domain knowledge, market awareness, and professional history. The bottleneck was never information, it was translating that knowledge into a structured list. You give Claude the logic – <em>"I'm looking for B2B SaaS companies between Series B and Series D, European HQ, English-first culture, strong growth metrics focus"</em> – and it populates the initial list from that description.</p>
       </div>
     </div>
 
@@ -156,11 +156,11 @@
       <div class="pitfall-title">Skip list staleness</div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
-        <p>A company on the skip list today — due to a hiring freeze, wrong leadership, or bad funding news — might be a great fit in six months. The skip list has no expiry date or periodic review trigger. It only grows, and stale entries quietly eliminate valid opportunities.</p>
+        <p>A company on the skip list today – due to a hiring freeze, wrong leadership, or bad funding news – might be a great fit in six months. The skip list has no expiry date or periodic review trigger. It only grows, and stale entries quietly eliminate valid opportunities.</p>
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>The time horizon makes this concern irrelevant. Over a 4–12 month job search, core exclusions don't meaningfully change. If healthcare isn't a fit now, it isn't a fit for the duration of the search. Skip list staleness is a concern for a permanent, multi-year system — not a time-bounded tool.</p>
+        <p>The time horizon makes this concern irrelevant. Over a 4–12 month job search, core exclusions don't meaningfully change. If healthcare isn't a fit now, it isn't a fit for the duration of the search. Skip list staleness is a concern for a permanent, multi-year system – not a time-bounded tool.</p>
       </div>
     </div>
 
@@ -169,12 +169,12 @@
       <div class="pitfall-title">Hard_stop_list completeness</div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
-        <p>You can only filter for things you know to add to the list. Unknown unknowns — a company's undisclosed relocation requirement, internal culture issues, or financial instability — slip through until discovered the hard way, after time has already been spent.</p>
+        <p>You can only filter for things you know to add to the list. Unknown unknowns – a company's undisclosed relocation requirement, internal culture issues, or financial instability – slip through until discovered the hard way, after time has already been spent.</p>
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
         <p>We automate known things. Unknown unknowns that only surface during an interview are outside the scope of automation by definition. The interview exists precisely to surface those things. Accept the boundary.</p>
-        <p>The one nuance: when a new deal-breaker is discovered during an interview, add it to the <code>Hard_stop_list</code> for future cycles. The list self-improves over time — new data points discovered the hard way become filters that prevent the same mistake twice.</p>
+        <p>The one nuance: when a new deal-breaker is discovered during an interview, add it to the <code>Hard_stop_list</code> for future cycles. The list self-improves over time – new data points discovered the hard way become filters that prevent the same mistake twice.</p>
       </div>
     </div>
 
@@ -189,11 +189,11 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p><strong>The filter is already there.</strong> LinkedIn's noisy recommendations don't flow straight into the watch list — they pass through the human evaluation step. The flawed signal gets caught before it does any damage.</p>
-        <p><strong>Improve the signal without changing the architecture.</strong> The passive feed is the noisiest part of LinkedIn — it optimizes for engagement, not relevance. Replacing it with active LinkedIn search (filtered by company size, industry, growth stage, keywords) uses the same platform but on your terms.</p>
+        <p><strong>The filter is already there.</strong> LinkedIn's noisy recommendations don't flow straight into the watch list – they pass through the human evaluation step. The flawed signal gets caught before it does any damage.</p>
+        <p><strong>Improve the signal without changing the architecture.</strong> The passive feed is the noisiest part of LinkedIn – it optimizes for engagement, not relevance. Replacing it with active LinkedIn search (filtered by company size, industry, growth stage, keywords) uses the same platform but on your terms.</p>
         <p><strong>Optional: supplement with one cleaner source.</strong> Platforms like Crunchbase or Wellfound allow filtering by funding stage, industry, and headcount with no engagement algorithm distorting results. Adding one such source alongside LinkedIn gives Branch B a higher signal-to-noise ratio without significant extra effort.</p>
       </div>
-      <div class="net-result"><strong>Net result:</strong> Branch B works as designed. The noise from LinkedIn's algorithm is a real limitation but not a structural flaw — it's filtered downstream. The practical fix is switching from passive feed to active search.</div>
+      <div class="net-result"><strong>Net result:</strong> Branch B works as designed. The noise from LinkedIn's algorithm is a real limitation but not a structural flaw – it's filtered downstream. The practical fix is switching from passive feed to active search.</div>
     </div>
 
     <div class="pitfall">
@@ -201,16 +201,16 @@
       <div class="pitfall-title">No feedback loop from outcomes</div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
-        <p>Application results — no response, rejection, interview, offer — contain the strongest signal about whether criteria are correctly calibrated. Currently that signal is discarded. The lists can be sharpened manually, but there is no mechanism to learn systematically from what is and isn't working.</p>
+        <p>Application results – no response, rejection, interview, offer – contain the strongest signal about whether criteria are correctly calibrated. Currently that signal is discarded. The lists can be sharpened manually, but there is no mechanism to learn systematically from what is and isn't working.</p>
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
         <p><strong>What's already there.</strong> Things discovered during interviews already feed back into <code>Hard_stop_list</code>. That's a feedback loop, just not a structured one.</p>
-        <p><strong>The practical addition: outcome logging.</strong> After each application, log the result alongside the job entry — no response, rejection (at which stage), interview, offer. This is one extra field in the database. Over time, patterns emerge: consistently getting no response from companies of a certain size, or consistently advancing further with a specific type of company.</p>
-        <p><strong>Pattern analysis with Claude.</strong> Once you have a few weeks of data, you can ask: "Here are my 20 applications and outcomes — what patterns do you see?" Claude identifies which criteria seem well-calibrated and which might need adjusting.</p>
+        <p><strong>The practical addition: outcome logging.</strong> After each application, log the result alongside the job entry – no response, rejection (at which stage), interview, offer. This is one extra field in the database. Over time, patterns emerge: consistently getting no response from companies of a certain size, or consistently advancing further with a specific type of company.</p>
+        <p><strong>Pattern analysis with Claude.</strong> Once you have a few weeks of data, you can ask: "Here are my 20 applications and outcomes – what patterns do you see?" Claude identifies which criteria seem well-calibrated and which might need adjusting.</p>
         <p><strong>What not to automate.</strong> Trying to automatically infer <em>why</em> you didn't get a response isn't worth it. Ghosting happens for too many reasons unrelated to fit.</p>
       </div>
-      <div class="net-result"><strong>Net result:</strong> For a 4–12 month search, the feedback loop is manual but lightweight — log outcomes as you go, review patterns monthly, adjust lists. The volume isn't high enough to need automation.</div>
+      <div class="net-result"><strong>Net result:</strong> For a 4–12 month search, the feedback loop is manual but lightweight – log outcomes as you go, review patterns monthly, adjust lists. The volume isn't high enough to need automation.</div>
     </div>
 
     <div class="pitfall">
@@ -222,9 +222,9 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p><strong>Tier 1 (top targets) → 24–48 hour cycle.</strong> For the companies where you'd drop everything to apply immediately, a daily or 48-hour check eliminates the timing risk entirely. Technically trivial — it's just a different cron schedule for a subset of the watch list.</p>
+        <p><strong>Tier 1 (top targets) → 24–48 hour cycle.</strong> For the companies where you'd drop everything to apply immediately, a daily or 48-hour check eliminates the timing risk entirely. Technically trivial – it's just a different cron schedule for a subset of the watch list.</p>
         <p><strong>Tier 2 (everyone else) → weekly cycle.</strong> You're not racing to be first for every role, only the high-priority ones.</p>
-        <p><strong>One requirement:</strong> the cycle cadence and the human review cadence must match. If the script flags a new role every 24 hours but you only check results weekly, nothing is solved. The notification needs to surface in a way that gets seen — a daily digest rather than a dashboard you open once a week.</p>
+        <p><strong>One requirement:</strong> the cycle cadence and the human review cadence must match. If the script flags a new role every 24 hours but you only check results weekly, nothing is solved. The notification needs to surface in a way that gets seen – a daily digest rather than a dashboard you open once a week.</p>
       </div>
     </div>
 
@@ -239,7 +239,7 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>Easy Apply rarely works for a targeted, senior, or specialist job search. It is primarily used by companies with high-volume, low-specificity hiring — roles where they want maximum applicant volume rather than precision. The overlap between "Easy Apply only companies" and "companies on your watch list" is close to zero. The ~26% exclusion is not a real loss for this type of search.</p>
+        <p>Easy Apply rarely works for a targeted, senior, or specialist job search. It is primarily used by companies with high-volume, low-specificity hiring – roles where they want maximum applicant volume rather than precision. The overlap between "Easy Apply only companies" and "companies on your watch list" is close to zero. The ~26% exclusion is not a real loss for this type of search.</p>
       </div>
       <div class="net-result"><strong>Net result:</strong> Pitfall dissolves on its own.</div>
     </div>
@@ -249,11 +249,11 @@
       <div class="pitfall-title">Systematic blind spot</div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Problem</div>
-        <p>A manual search has random gaps — you miss things unpredictably. A list-driven system has systematic gaps: if a good company never makes it onto <code>Companies_to_watch_list</code>, it is permanently invisible, and the system still looks complete. The structured feel of the approach can create false confidence in coverage.</p>
+        <p>A manual search has random gaps – you miss things unpredictably. A list-driven system has systematic gaps: if a good company never makes it onto <code>Companies_to_watch_list</code>, it is permanently invisible, and the system still looks complete. The structured feel of the approach can create false confidence in coverage.</p>
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>The scenario where this pitfall actually matters requires two conditions to be true simultaneously: the company is a good fit AND has an open relevant role AND LinkedIn never surfaces it. But that last condition is self-contradicting. If a company is actively hiring for a role that matches your profile, LinkedIn's algorithm will surface it in recommendations — that's exactly what Branch B is designed to catch. There is no valid scenario where a good company with a relevant open role is permanently invisible.</p>
+        <p>The scenario where this pitfall actually matters requires two conditions to be true simultaneously: the company is a good fit AND has an open relevant role AND LinkedIn never surfaces it. But that last condition is self-contradicting. If a company is actively hiring for a role that matches your profile, LinkedIn's algorithm will surface it in recommendations – that's exactly what Branch B is designed to catch. There is no valid scenario where a good company with a relevant open role is permanently invisible.</p>
       </div>
       <div class="net-result"><strong>Net result:</strong> The pitfall does not exist in practice.</div>
     </div>
@@ -269,7 +269,7 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>The ToS risk applies to bots, scrapers, and crawlers that automate LinkedIn access. In this design, LinkedIn is touched only manually — you check recommendations yourself and save company names. That's using LinkedIn normally, which is exactly what it's designed for. The automated parts of the system (ATS API calls, career page checks) never touch LinkedIn at all. LinkedIn is intentionally kept as the manual step, which means the ToS concern was already mitigated by design before it was flagged as a pitfall.</p>
+        <p>The ToS risk applies to bots, scrapers, and crawlers that automate LinkedIn access. In this design, LinkedIn is touched only manually – you check recommendations yourself and save company names. That's using LinkedIn normally, which is exactly what it's designed for. The automated parts of the system (ATS API calls, career page checks) never touch LinkedIn at all. LinkedIn is intentionally kept as the manual step, which means the ToS concern was already mitigated by design before it was flagged as a pitfall.</p>
       </div>
       <div class="net-result"><strong>Net result:</strong> The pitfall doesn't exist for this design.</div>
     </div>
@@ -283,7 +283,7 @@
       </div>
       <div class="pitfall-block">
         <div class="pitfall-block-label">Solution</div>
-        <p>This is not a pitfall — it's the goal. More qualified roles in the pipeline means more opportunities, which is exactly what the system is designed to produce. Spending time on tailored applications is where the time <em>should</em> go — the entire point of automating sourcing is to free capacity for the high-value work of crafting strong applications. A shift in bottleneck from sourcing to applying is a success state, not a failure mode.</p>
+        <p>This is not a pitfall – it's the goal. More qualified roles in the pipeline means more opportunities, which is exactly what the system is designed to produce. Spending time on tailored applications is where the time <em>should</em> go – the entire point of automating sourcing is to free capacity for the high-value work of crafting strong applications. A shift in bottleneck from sourcing to applying is a success state, not a failure mode.</p>
       </div>
     </div>
 
