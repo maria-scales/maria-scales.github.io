@@ -878,10 +878,10 @@
 
     document.querySelectorAll('.case-header').forEach(h => observer.observe(h));
 
-    // Clear hash when scrolling into non-case sections
+    // Update hash when scrolling into non-case sections
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) history.replaceState(null, '', window.location.pathname);
+        if (entry.isIntersecting) history.replaceState(null, '', '#' + entry.target.id);
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
 
