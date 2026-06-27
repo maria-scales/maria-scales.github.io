@@ -437,7 +437,7 @@
 </header>
 <nav class="site-nav">
   <div class="container">
-    <a href="#" class="nav-home">Maria Atamanova</a>
+    <a href="#" class="nav-home" id="to-top-link">↑ To Top</a>
     <a href="#cases" class="nav-link">Case Studies</a>
     <a href="#writing" class="nav-link">Writing</a>
     <a href="#research" class="nav-link">Research</a>
@@ -866,9 +866,21 @@
   window.addEventListener('DOMContentLoaded', () => {
     openFromHash();
 
+    let suppressObserver = false;
+
+    // "To Top" clears hash, scrolls up, and suppresses observer during scroll
+    document.getElementById('to-top-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      suppressObserver = true;
+      history.replaceState(null, '', window.location.pathname);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => { suppressObserver = false; }, 800);
+    });
+
     // Update hash as each case scrolls into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        if (suppressObserver) return;
         if (entry.isIntersecting) {
           const caseEl = entry.target.closest('.case');
           if (caseEl) history.replaceState(null, '', '#' + caseEl.id);
@@ -881,6 +893,7 @@
     // Update hash when scrolling into non-case sections
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        if (suppressObserver) return;
         if (entry.isIntersecting) history.replaceState(null, '', '#' + entry.target.id);
       });
     }, { rootMargin: '-20% 0px -70% 0px' });
