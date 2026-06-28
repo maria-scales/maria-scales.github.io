@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Job Search Database: Engineering the Funnel – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="Five lists, one SQLite schema. How I translated a job search framework into a relational database that tracks companies, postings, CVs, and applications through a single pipeline.">
+  <link rel="canonical" href="https://mariascales.com/research/job-search-database/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Job Search Database: Engineering the Funnel – Maria Atamanova">
+  <meta property="og:description" content="Five lists, one SQLite schema. How I translated a job search framework into a relational database that tracks companies, postings, CVs, and applications through a single pipeline.">
+  <meta property="og:url" content="https://mariascales.com/research/job-search-database/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.3; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .research-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin: 32px 0; }
+    .research-card-meta { font-size: 0.8125rem; color: #9ca3af; margin-bottom: 12px; }
+    .research-card-teaser { font-size: 0.9375rem; color: #4b5563; line-height: 1.65; margin-bottom: 14px; }
+    .research-card-read { font-size: 0.875rem; font-weight: 500; color: #1e40af; display: inline-block; margin-bottom: 16px; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/job-search-automation/">The Job Search Problem</a><span>›</span><strong>The Job Search Database</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">The Job Search Database: Engineering the Funnel</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="container">
+  <div class="research-card">
+    <div class="research-card-meta">Jun 2026 · Original research</div>
+    <div class="research-card-teaser">Five lists from Part 1 mapped to eight SQLite tables — companies, job postings, CV versions, cover letters, applications, and a complete audit trail. The schema design decisions behind each choice, and why SQLite beats a spreadsheet for a serious job search pipeline.</div>
+    <a href="/research/job-search-database/article/" class="research-card-read">Read the full article →</a>
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/job-search-automation/">← Back to The Job Search Problem</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
