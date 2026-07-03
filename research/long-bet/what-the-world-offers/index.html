@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What the World Actually Offers – The Long Bet – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="We built the coverage matrix expecting to confirm what we suspected. It didn't. CS at 95 universities. AI at 12. France above Imperial. What the data actually showed.">
+  <link rel="canonical" href="https://mariascales.com/research/long-bet/what-the-world-offers/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What the World Actually Offers – The Long Bet – Maria Atamanova">
+  <meta property="og:description" content="We built the coverage matrix expecting to confirm what we suspected. It didn't. CS at 95 universities. AI at 12. France above Imperial. What the data actually showed.">
+  <meta property="og:url" content="https://mariascales.com/research/long-bet/what-the-world-offers/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What the World Actually Offers – The Long Bet – Maria Atamanova">
+  <meta name="twitter:description" content="We built the coverage matrix expecting to confirm what we suspected. It didn't. CS at 95 universities. AI at 12. France above Imperial. What the data actually showed.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
+    .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; border-left: 3px solid #111827; padding-left: 16px; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+
+    /* Finding callout */
+    .finding { border: 1px solid #111827; border-radius: 8px; padding: 20px 24px; margin: 20px 0; background: #f9fafb; }
+    .finding .f-claim { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 10px; line-height: 1.4; }
+    .finding .f-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    /* Chart wrapper */
+    .chart-wrap { margin: 24px 0; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; background: #fafafa; }
+    .chart-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 14px; }
+    .chart-note { font-size: 0.75rem; color: #9ca3af; margin-top: 10px; }
+
+    /* Rolls Royce big number */
+    .big-number { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 20px 0; display: flex; align-items: center; gap: 24px; background: #f9fafb; }
+    .big-number .r-num { font-size: 2.5rem; font-weight: 700; color: #111827; letter-spacing: -0.04em; line-height: 1; flex-shrink: 0; }
+    .big-number .r-title { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .big-number .r-detail { font-size: 0.875rem; color: #374151; line-height: 1.6; }
+
+    /* Dark stat pair (China) */
+    .stat-pair { display: flex; gap: 0; margin: 20px 0; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
+    .stat-block { flex: 1; padding: 20px 22px; background: #f9fafb; border-right: 1px solid #e5e7eb; }
+    .stat-block:last-child { border-right: none; }
+    .stat-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 8px; }
+    .stat-num { font-size: 2rem; font-weight: 700; color: #111827; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 6px; }
+    .stat-title { font-size: 0.875rem; font-weight: 600; color: #111827; margin-bottom: 4px; }
+    .stat-detail { font-size: 0.8125rem; color: #374151; line-height: 1.55; }
+
+    /* China heatmap */
+    .heatmap-wrap { margin: 20px 0; overflow-x: auto; }
+    .heatmap-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 10px; }
+    #china-heatmap { border-collapse: collapse; font-size: 11.5px; width: 100%; min-width: 560px; }
+    #china-heatmap th { padding: 4px 6px 8px; font-weight: 700; font-size: 10.5px; text-align: center; white-space: nowrap; }
+    #china-heatmap td { padding: 5px 6px; border-top: 1px solid #f3f4f6; }
+    .heatmap-legend { font-size: 11px; color: #6b7280; margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+    .legend-dot { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+
+    /* Reversal cards */
+    .reversal { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .rev-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; }
+    .rev-card.wrong { border-left: 3px solid #ef4444; }
+    .rev-card.open { border-left: 3px solid #f59e0b; }
+    .rev-card.right { border-left: 3px solid #10b981; }
+    .rv-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 4px; }
+    .rv-name { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .rv-logic { font-size: 0.875rem; color: #374151; line-height: 1.6; margin-bottom: 8px; }
+    .rv-verdict { font-size: 0.8125rem; font-weight: 600; }
+    .rev-card.wrong .rv-verdict { color: #ef4444; }
+    .rev-card.open .rv-verdict { color: #d97706; }
+    .rev-card.right .rv-verdict { color: #10b981; }
+
+    /* Gaps list */
+    .gaps-list { margin: 20px 0; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+    .gap-row { padding: 14px 20px; border-bottom: 1px solid #f3f4f6; }
+    .gap-row:last-child { border-bottom: none; }
+    .gap-uni-name { font-size: 0.9375rem; font-weight: 700; color: #111827; display: inline; }
+    .gap-rank-badge { font-size: 0.6875rem; font-weight: 700; background: #f3f4f6; color: #6b7280; padding: 2px 7px; border-radius: 4px; margin-left: 8px; }
+    .gap-missing { font-size: 0.875rem; color: #374151; margin-top: 4px; line-height: 1.55; }
+    .tag { display: inline-block; background: #eff6ff; color: #1e40af; font-size: 0.75rem; font-weight: 600; padding: 1px 7px; border-radius: 4px; margin: 1px 2px; }
+
+    /* Breadth bars */
+    #breadth-bars { margin: 16px 0; }
+
+    /* Leave-out section */
+    .leave-out { border-top: 2px solid #111827; padding-top: 28px; margin-top: 36px; }
+    .leave-out p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; line-height: 1.7; }
+
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .big-number { flex-direction: column; gap: 12px; } .stat-pair { flex-direction: column; } .stat-block { border-right: none; border-bottom: 1px solid #e5e7eb; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>What the World Actually Offers</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-series">The Long Bet · Article 3 of 5</div>
+    <div class="page-title">What the World Actually Offers</div>
+    <div class="page-standfirst">We built the coverage matrix expecting to confirm what we already suspected. It didn't. Almost every assumption the research started with turned out to be wrong – not slightly off, but structurally wrong.</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+
+    <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
+    <p>The data had other ideas.</p>
+
+    <h2>CS is universal. AI is a niche.</h2>
+    <p>Start with the global picture. Computer Science appears at 95 of 100 universities. Physics at 94. Chemistry at 92. Mathematics at 91. These are effectively universal – if a university is in the top 100 by research output, it almost certainly offers them.</p>
+    <p>Now zoom in on the intersection this research was actually about.</p>
+
+    <div class="finding">
+      <div class="f-claim">Standalone AI is available at 12 universities. CS is available at 95.</div>
+      <div class="f-detail">The subject everyone identifies as "the future" barely exists as an undergraduate degree at top research institutions. The gap between CS coverage and AI coverage is not marginal – it is a factor of eight. Most universities offering CS are not offering AI as a distinct programme. They are offering CS.</div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Programme coverage – universities offering each (out of 100)</div>
+      <canvas id="freqChart" height="420"></canvas>
+      <div class="chart-note">Colour = subject cluster · Hover for exact figures · 31 canonical programmes across 100 ARWU 2025 universities</div>
+    </div>
+
+    <p>Computational Biology sits at 45 universities. Bioinformatics at 54. Real numbers, not vanishingly rare. But not what someone scanning degree titles would assume. The degree title you search for is often not the degree that exists.</p>
+
+    <h2>The China question</h2>
+    <p>China has 22 universities in the top 100 by research output. Fees run at $3,000–5,000 per year for international students. Several institutions – Tsinghua (#18), Peking (#23), Zhejiang (#24), SJTU (#30) – sit in the top third of the global ranking. On cost and prestige combined, China is one of the most interesting candidates in the dataset.</p>
+    <p>Two numbers tell the story.</p>
+
+    <div class="stat-pair">
+      <div class="stat-block">
+        <div class="stat-label">2003 → 2025</div>
+        <div class="stat-num">0 → 22</div>
+        <div class="stat-title">Universities in the top 100</div>
+        <div class="stat-detail">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Programme profile</div>
+        <div class="stat-num">100%</div>
+        <div class="stat-title">Electrical Engineering coverage</div>
+        <div class="stat-detail">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
+      </div>
+    </div>
+
+    <div class="heatmap-wrap">
+      <div class="heatmap-label">Programme profile – Chinese top-100 universities</div>
+      <table id="china-heatmap">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding-left:0; color:#6b7280;">University</th>
+            <th style="color:#f97316;">App. Math</th>
+            <th style="color:#f97316;">Comp. Bio</th>
+            <th style="color:#f97316;">Bioinformatics</th>
+            <th style="color:#f97316;">Neuroscience</th>
+            <th style="width:1px; background:#e5e7eb; padding:0;"></th>
+            <th style="color:#0891b2;">Elec. Eng.</th>
+            <th style="color:#0891b2;">Systems Eng.</th>
+            <th style="color:#0891b2;">Materials Sci.</th>
+          </tr>
+        </thead>
+        <tbody id="china-heatmap-body"></tbody>
+        <tfoot>
+          <tr style="border-top: 2px solid #e5e7eb;">
+            <td style="padding:6px 0 2px; color:#6b7280; font-size:11px; font-weight:700;">Coverage</td>
+            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
+            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
+            <td style="text-align:center; color:#d97706; font-weight:700; font-size:11px;">47%</td>
+            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">0%</td>
+            <td style="width:1px; background:#e5e7eb; padding:0;"></td>
+            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">100%</td>
+            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">47%</td>
+            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">67%</td>
+          </tr>
+          <tr>
+            <td style="padding:1px 0 4px; color:#9ca3af; font-size:10px; font-style:italic;">Global avg.</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">24%</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">45%</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">54%</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">35%</td>
+            <td style="width:1px; background:#e5e7eb; padding:0;"></td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">72%</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">12%</td>
+            <td style="text-align:center; color:#9ca3af; font-size:10px;">51%</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="heatmap-legend">
+        <span><span class="legend-dot" style="background:#f97316;"></span>Bio programmes offered</span>
+        <span><span class="legend-dot" style="background:#0891b2;"></span>Engineering offered</span>
+        <span><span class="legend-dot" style="background:#f3f4f6; border:1px solid #e5e7eb;"></span>Not offered</span>
+      </div>
+    </div>
+
+    <p>Compare that trajectory to Germany: 6 universities in the top 100 in 2003, 5 in 2025. Effectively flat for two decades. China moved from nowhere to second-largest non-US presence in the ranking in the same period. The momentum story matters – and it will be examined in detail in the next article.</p>
+
+    <h2>The geography no one considers</h2>
+    <p>The standard international shortlist for STEM runs through the same destinations. Apply this research's filters and the picture shifts.</p>
+
+    <div class="reversal">
+      <div class="rev-card wrong">
+        <div class="rv-label">Obvious answer 1</div>
+        <div class="rv-name">United States / United Kingdom</div>
+        <div class="rv-logic">The default destinations for research-active STEM at elite level. Strong programme coverage. High brand recognition. Exactly what the ranking is built to identify.</div>
+        <div class="rv-verdict">✗ International fees eliminate both without full scholarship. UK: £30,000+/year. US: higher still.</div>
+      </div>
+      <div class="rev-card open">
+        <div class="rv-label">Obvious answer 2 – still investigating</div>
+        <div class="rv-name">China</div>
+        <div class="rv-logic">22 universities in the top 100 – up from zero in 2003. $3–5k/year fees. The fastest-climbing country in the ARWU ranking's history. Eliminates the cost problem entirely. Building the hardware layer of AI. Whether that ecosystem fits a math-bio trajectory needs a closer look – covered in Article 5.</div>
+        <div class="rv-verdict">~ On the list. More in Article 5.</div>
+      </div>
+      <div class="rev-card right">
+        <div class="rv-label">What the data actually shows</div>
+        <div class="rv-name">France – and Switzerland</div>
+        <div class="rv-logic">France has 4 universities in the top 100. Among them: 75% Computational Biology coverage, 75% Neuroscience, +40pp Neuroscience lift above global average. Paris-Saclay (#13) sits in the global top 15 by research output. Public university tuition for international students: ~€170/year. Switzerland adds ETH Zurich (#22) and EPFL (#44) – strong in systems engineering, low fees relative to ranking.</div>
+        <div class="rv-verdict">✓ Low cost. High programme fit. Completely absent from most shortlists.</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Key programme coverage by country – selected STEM disciplines (% of country's top-100 universities offering each)</div>
+      <canvas id="countryChart" height="260"></canvas>
+      <div class="chart-note">AI = Artificial Intelligence · CompBio = Computational Biology · BioInfo = Bioinformatics · AppMath = Applied Mathematics · Global avg shown as reference line per programme</div>
+    </div>
+
+    <h2>The UK paradox</h2>
+    <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
+
+    <div class="big-number">
+      <div class="r-num">+59<span style="font-size:1.25rem;">pp</span></div>
+      <div>
+        <div class="r-title">UK universities' AI coverage lift above the global average</div>
+        <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
+      </div>
+    </div>
+
+    <p>This is not a recommendation. It is a finding. The cost constraint is real. But any framework that eliminates the UK on cost and then optimises freely within the remaining options is working from an incomplete picture. The trade-off is explicit and does not resolve cleanly.</p>
+
+    <h2>The institution you know is not always the degree that exists</h2>
+    <p>The coverage matrix produced a tab labelled "Surprising Absences" – universities ranked in the global top 30 missing programmes you would assume they offer as a matter of course.</p>
+
+    <div class="gaps-list">
+      <div class="gap-row">
+        <span class="gap-uni-name">Harvard University</span><span class="gap-rank-badge">ARWU #1</span>
+        <div class="gap-missing">No standalone <span class="tag">Mathematics</span> – available at 91% of top-100 universities globally.</div>
+      </div>
+      <div class="gap-row">
+        <span class="gap-uni-name">MIT</span><span class="gap-rank-badge">ARWU #3</span>
+        <div class="gap-missing">No standalone <span class="tag">Electrical Engineering</span> – available at 72% globally.</div>
+      </div>
+      <div class="gap-row">
+        <span class="gap-uni-name">University of Cambridge</span><span class="gap-rank-badge">ARWU #4</span>
+        <div class="gap-missing">No standalone <span class="tag">Physics</span> or <span class="tag">Electrical Engineering</span>. Entry via Natural Sciences – a single degree covering multiple disciplines.</div>
+      </div>
+      <div class="gap-row">
+        <span class="gap-uni-name">University of Oxford</span><span class="gap-rank-badge">ARWU #6</span>
+        <div class="gap-missing">No standalone <span class="tag">Data Science</span> or <span class="tag">Electrical Engineering</span>.</div>
+      </div>
+      <div class="gap-row">
+        <span class="gap-uni-name">Rockefeller University</span><span class="gap-rank-badge">ARWU #29</span>
+        <div class="gap-missing">4 programmes total. No <span class="tag">Computer Science</span> <span class="tag">Mathematics</span> <span class="tag">Physics</span> <span class="tag">Chemistry</span> <span class="tag">Data Science</span> <span class="tag">Statistics</span> – a pure biomedical research institution.</div>
+      </div>
+    </div>
+
+    <div style="margin: 24px 0;">
+      <div style="font-size:0.6875rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#6b7280; margin-bottom:12px;">Programme breadth – selected universities (out of 31)</div>
+      <div id="breadth-bars"></div>
+    </div>
+
+    <p>These are not failures. Cambridge's Natural Sciences structure is one of the most rigorous scientific training programmes in the world. But UCSF at #21 – ranked above Edinburgh, Manchester, and Imperial – is a medical research institution. It does not teach CS or Mathematics. Neither does Karolinska (#50), UT Southwestern (#58), or MD Anderson (#86). All four appear in the top 100 by research output. None of them are universities in the sense a STEM undergraduate would recognise. Filter by rank and you may be researching institutions that do not offer the subject you came for. The brand and the degree structure are separate things. Confusing them produces incorrect shortlists.</p>
+
+    <div class="leave-out">
+      <p>The coverage matrix, the country profiles, and the surprising absences together describe the landscape as it actually exists – not as brochures present it, and not as received wisdom assumes it.</p>
+      <p>What this means for a specific student, with specific subject choices, still depends on something the coverage matrix cannot answer. That is a different question – and a different article.</p>
+    </div>
+
+    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
+      <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Also in this series</div>
+      <div style="display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6;">
+        <a href="/research/long-bet/article/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">The Problem Statement</a>
+        <span style="font-size: 0.8125rem; color: #9ca3af;">The four-constraint optimisation problem and why every obvious answer fell apart.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; padding: 8px 0;">
+        <a href="/research/long-bet/how-i-built-it/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">How I Built It</a>
+        <span style="font-size: 0.8125rem; color: #9ca3af;">Why ARWU over QS and THE, why 100 universities, and what 1,200+ normalised pairs made possible.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+
+<script>
+// China heatmap
+(function(){
+  const CHINA_UNIS = [
+    { name:"Tsinghua",       rank:18,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"Peking",         rank:23,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+    { name:"Zhejiang",       rank:24,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"SJTU",           rank:30,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"USTC",           rank:40,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"Fudan",          rank:41,  appmath:0, compbio:1, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
+    { name:"Sun Yat-sen",    rank:65,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+    { name:"HKU",            rank:67,  appmath:1, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
+    { name:"HUST",           rank:73,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"Nanjing",        rank:75,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+    { name:"Wuhan",          rank:81,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
+    { name:"Sichuan",        rank:87,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
+    { name:"Xi'an Jiaotong", rank:92,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"Central South",  rank:96,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+    { name:"City HK",        rank:99,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:1 },
+  ];
+  const fields = ['appmath','compbio','bioinfo','neuro','ee','syse','matsc'];
+  const bioFields = new Set(['appmath','compbio','bioinfo','neuro']);
+  const tbody = document.getElementById('china-heatmap-body');
+  CHINA_UNIS.forEach(u => {
+    const tr = document.createElement('tr');
+    let html = `<td style="padding:5px 0; white-space:nowrap; color:#374151; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
+    fields.forEach((f, i) => {
+      if (f === 'ee') html += `<td style="width:1px; background:#e5e7eb; padding:0;"></td>`;
+      const val = u[f];
+      const isBio = bioFields.has(f);
+      const bg = val ? (isBio ? '#f97316' : '#0891b2') : '#f3f4f6';
+      const border = val ? 'none' : '1px solid #e5e7eb';
+      html += `<td style="text-align:center; padding:5px 6px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
+    });
+    tr.innerHTML = html;
+    tbody.appendChild(tr);
+  });
+})();
+
+// Breadth bars
+(function(){
+  const UNIS = [
+    { name:"Stanford",    rank:2,  count:18, type:"broad" },
+    { name:"MIT",         rank:3,  count:17, type:"broad" },
+    { name:"Caltech",     rank:9,  count:17, type:"broad" },
+    { name:"ETH Zurich",  rank:22, count:18, type:"broad" },
+    { name:"UCSF",        rank:21, count:5,  type:"narrow" },
+    { name:"Rockefeller", rank:29, count:4,  type:"narrow" },
+    { name:"Karolinska",  rank:50, count:3,  type:"narrow" },
+    { name:"UT Southwestern", rank:58, count:3, type:"narrow" },
+  ];
+  const container = document.getElementById('breadth-bars');
+  let prevType = null;
+  UNIS.forEach(u => {
+    if (prevType === 'broad' && u.type === 'narrow') {
+      const sep = document.createElement('div');
+      sep.style.cssText = 'border-top:1px dashed #e5e7eb; margin:10px 0; position:relative;';
+      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#fff; padding:0 10px; font-size:10px; color:#9ca3af; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
+      container.appendChild(sep);
+    }
+    const pct = (u.count / 31) * 100;
+    const color = u.type === 'broad' ? '#1e40af' : '#dc2626';
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex; align-items:center; gap:10px; margin-bottom:7px;';
+    row.innerHTML = `
+      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#374151;">#${u.rank} ${u.name}</div>
+      <div style="flex:1; background:#f3f4f6; border-radius:3px; height:16px; position:relative; overflow:hidden;">
+        <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px;"></div>
+      </div>
+      <div style="width:36px; flex-shrink:0; font-size:12px; font-weight:700; color:${color};">${u.count}/31</div>
+    `;
+    container.appendChild(row);
+    prevType = u.type;
+  });
+})();
+
+// Chart 1: Programme frequency
+const PROGRAMS = [
+  {"name":"Computer Science","cluster":"CS & AI","count":95},
+  {"name":"Physics","cluster":"Physics & Astronomy","count":94},
+  {"name":"Chemistry","cluster":"Chemistry","count":92},
+  {"name":"Mathematics","cluster":"Mathematics","count":91},
+  {"name":"Statistics","cluster":"Mathematics","count":81},
+  {"name":"Data Science","cluster":"CS & AI","count":73},
+  {"name":"Electrical Engineering","cluster":"Engineering – Elec","count":72},
+  {"name":"Mechanical Engineering","cluster":"Engineering – Mech","count":65},
+  {"name":"Chemical Engineering","cluster":"Engineering – Chem","count":60},
+  {"name":"Civil Engineering","cluster":"Engineering – Civil","count":58},
+  {"name":"Biomedical Engineering","cluster":"Engineering – Biomed","count":56},
+  {"name":"Bioinformatics","cluster":"CompBio","count":54},
+  {"name":"Materials Science","cluster":"Engineering – Chem","count":51},
+  {"name":"Computational Biology","cluster":"CompBio","count":45},
+  {"name":"Earth Sciences","cluster":"Earth & Env","count":36},
+  {"name":"Neuroscience","cluster":"CompBio","count":35},
+  {"name":"Aerospace Engineering","cluster":"Engineering – Mech","count":27},
+  {"name":"Astrophysics","cluster":"Physics & Astronomy","count":24},
+  {"name":"Applied Mathematics","cluster":"Mathematics","count":24},
+  {"name":"Biochemistry","cluster":"Chemistry","count":17},
+  {"name":"Industrial Engineering","cluster":"Engineering – Other","count":15},
+  {"name":"Environmental Engineering","cluster":"Engineering – Civil","count":14},
+  {"name":"Systems Engineering","cluster":"Engineering – Other","count":12},
+  {"name":"Engineering (General)","cluster":"Engineering – Other","count":12},
+  {"name":"Artificial Intelligence","cluster":"CS & AI","count":12},
+  {"name":"Computational Science","cluster":"CS & AI","count":11},
+  {"name":"Interdisciplinary Sciences","cluster":"Interdisciplinary","count":8},
+  {"name":"Nuclear Engineering","cluster":"Engineering – Other","count":8},
+  {"name":"Operations Research","cluster":"Mathematics","count":7},
+  {"name":"Actuarial Science","cluster":"Mathematics","count":6},
+  {"name":"CS & AI (combined)","cluster":"CS & AI","count":3}
+];
+const CLUSTER_COLORS = {
+  "CS & AI":"#4f7ef8","Mathematics":"#a78bfa","Physics & Astronomy":"#f59e0b",
+  "Chemistry":"#10b981","Engineering – Elec":"#06b6d4","Engineering – Mech":"#3b82f6",
+  "Engineering – Chem":"#8b5cf6","Engineering – Civil":"#14b8a6","Engineering – Biomed":"#ec4899",
+  "Engineering – Other":"#64748b","CompBio":"#f97316","Earth & Env":"#22c55e","Interdisciplinary":"#94a3b8"
+};
+const HIGHLIGHT = ["Artificial Intelligence","Computational Biology","Bioinformatics","Applied Mathematics"];
+const bgColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLORS[p.cluster] : (CLUSTER_COLORS[p.cluster] || "#888") + "55");
+const borderColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLORS[p.cluster] : "transparent");
+
+new Chart(document.getElementById("freqChart").getContext("2d"), {
+  type:"bar",
+  data:{ labels:PROGRAMS.map(p=>p.name), datasets:[{ data:PROGRAMS.map(p=>p.count), backgroundColor:bgColors, borderColor:borderColors, borderWidth:2, borderRadius:3, borderSkipped:false }] },
+  options:{ indexAxis:"y", responsive:true, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:"#111827", titleColor:"#fff", bodyColor:"#9ca3af", padding:10, callbacks:{ label:ctx=>` ${ctx.raw} / 100 universities`, afterLabel:ctx=>`Cluster: ${PROGRAMS[ctx.dataIndex].cluster}` } } }, scales:{ x:{ max:100, grid:{color:"#f3f4f6"}, ticks:{color:"#9ca3af",callback:v=>v+"%"} }, y:{ grid:{display:false}, ticks:{ color:ctx=>HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"#111827":"#9ca3af", font:ctx=>({size:11,weight:HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"700":"400"}) } } } }
+});
+
+// Chart 2: Country comparison
+const countries = ["UK","France","China","Germany","Switzerland"];
+const keyProgs = [
+  {label:"AI",      global:12, values:{UK:71.4, France:0,    China:7.7,  Germany:0,    Switzerland:0}},
+  {label:"CompBio", global:45, values:{UK:71.4, France:75.0, China:15.4, Germany:25.0, Switzerland:25.0}},
+  {label:"BioInfo", global:54, values:{UK:71.4, France:50.0, China:46.2, Germany:75.0, Switzerland:50.0}},
+  {label:"AppMath", global:24, values:{UK:28.6, France:50.0, China:0.0,  Germany:25.0, Switzerland:0.0}},
+];
+const countryColors = {UK:"#2563eb",France:"#059669",China:"#dc2626",Germany:"#7c3aed",Switzerland:"#d97706"};
+
+new Chart(document.getElementById("countryChart").getContext("2d"), {
+  type:"bar",
+  data:{ labels:keyProgs.map(p=>p.label), datasets:[ ...countries.map(c=>({ label:c, data:keyProgs.map(p=>p.values[c]), backgroundColor:countryColors[c]+"cc", borderColor:countryColors[c], borderWidth:1.5, borderRadius:3 })), { label:"Global avg", data:keyProgs.map(p=>p.global), backgroundColor:"transparent", borderColor:"#9ca3af", borderWidth:2, type:"line", pointRadius:4, pointBackgroundColor:"#9ca3af", tension:0 } ] },
+  options:{ responsive:true, plugins:{ legend:{position:"bottom",labels:{color:"#6b7280",font:{size:11},padding:12,boxWidth:12}}, tooltip:{backgroundColor:"#111827",titleColor:"#fff",bodyColor:"#9ca3af",padding:10,callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} }, scales:{ x:{grid:{display:false},ticks:{color:"#374151",font:{size:12,weight:"600"}}}, y:{max:100,grid:{color:"#f3f4f6"},ticks:{color:"#9ca3af",callback:v=>v+"%"}} } }
+});
+</script>
+</body>
+</html>
