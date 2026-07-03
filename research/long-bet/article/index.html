@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every Obvious Answer Was Wrong – The Long Bet – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="100 universities, 19 countries, one spreadsheet. What the data actually showed — and why it contradicted almost everything we assumed going in.">
+  <link rel="canonical" href="https://mariascales.com/research/long-bet/article/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Every Obvious Answer Was Wrong – Maria Atamanova">
+  <meta property="og:description" content="100 universities, 19 countries, one spreadsheet. What the data actually showed — and why it contradicted almost everything we assumed going in.">
+  <meta property="og:url" content="https://mariascales.com/research/long-bet/article/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Every Obvious Answer Was Wrong – Maria Atamanova">
+  <meta name="twitter:description" content="100 universities, 19 countries, one spreadsheet. What the data actually showed — and why it contradicted almost everything we assumed going in.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
+    .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 24px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+
+    /* Data pills */
+    .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+    .data-pill { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 100px; flex: 1; }
+    .data-pill .num { font-size: 1.625rem; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
+    .data-pill .desc { font-size: 0.75rem; color: #6b7280; margin-top: 2px; }
+
+    /* Finding callout boxes */
+    .finding { border-left: 3px solid #111827; padding: 16px 20px; margin: 24px 0; background: #f9fafb; border-radius: 0 6px 6px 0; }
+    .finding .finding-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 8px; }
+    .finding .finding-claim { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+    .finding .finding-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    /* Rapid-fire zags */
+    .zags { margin: 24px 0; }
+    .zag { padding: 16px 0; border-bottom: 1px solid #f3f4f6; }
+    .zag:last-child { border-bottom: none; }
+    .zag-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 6px; }
+    .zag-claim { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .zag-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    /* Reframe / bridge */
+    .reframe { border: 1px solid #111827; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .reframe .finding-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 8px; }
+    .reframe .finding-claim { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+    .reframe .finding-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    .bridge { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 24px 0; background: #f9fafb; }
+    .bridge .finding-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 8px; }
+    .bridge .finding-claim { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+    .bridge .finding-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    .sub-articles { margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb; }
+    .sub-articles-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .sub-article-link { display: flex; flex-direction: column; padding: 14px 0; border-bottom: 1px solid #f3f4f6; }
+    .sub-article-link:last-child { border-bottom: none; }
+    .sub-article-link a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; }
+    .sub-article-link a:hover { color: #1e40af; text-decoration: none; }
+    .sub-article-link span { font-size: 0.8125rem; color: #9ca3af; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .data-pill { min-width: 80px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>Article 1</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-series">The Long Bet · Part 1 of 2</div>
+    <div class="page-title">Every Obvious Answer Was Wrong</div>
+    <div class="page-standfirst">We researched 100 universities across 19 countries to find the right one for my son. Here is what the data actually showed — and why it contradicted almost everything we assumed going in.</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+
+    <p>My son Andrey loves mathematics — not as a tool, but as a subject in its own right. He reads about proofs the way other kids read about football. And alongside that, he has been genuinely obsessed with longevity research for the past two years: why we age, whether it can be slowed, and what the science actually says versus what the wellness industry claims.</p>
+
+    <p>That combination — rigorous mathematics plus computational biology — is not a common one. It has no obvious degree name. And it sent me down a research rabbit hole that took most of June 2026 to complete.</p>
+
+    <p>Before we started, the answers seemed straightforward. Study Computer Science, or Mathematics, or maybe Bioinformatics. Apply to the best university you can get into. Make sure your A-levels are strong. Obvious.</p>
+
+    <p>Every one of those answers turned out to be either wrong, incomplete, or actively misleading once we looked at the data.</p>
+
+    <div class="finding">
+      <div class="finding-label">Unexpected #1</div>
+      <div class="finding-claim">You're not choosing a university. You're choosing a country — at age 16.</div>
+      <div class="finding-detail">Most families think the sequence is: finish school → apply to universities → choose where to go. The actual sequence is: choose A-levels at 16 → that locks in a regional strategy → apply at 17 → choose. The A-level decision is made two years before the application, and it is effectively a bet on which country's admissions system you're playing in. Not which university. Which country. Nobody frames it this way.</div>
+    </div>
+
+    <p>Once we understood that, the research question changed. It was no longer "which university should Andrey apply to?" It was: "which A-level combination keeps the most options open across the most countries — and which countries are actually worth considering?"</p>
+    <p>To answer that properly, we needed a map.</p>
+
+    <h2>100 universities. 19 countries. One spreadsheet.</h2>
+
+    <p>We used the <strong>ARWU 2025 ranking</strong> (the Shanghai Ranking) as the universe. ARWU ranks universities using objective research output indicators — Nobel Prizes, Fields Medals, highly cited researchers, publications in Nature and Science. For a student interested in research-level mathematics and computational biology, research output is the right signal.</p>
+
+    <div class="data-row">
+      <div class="data-pill"><div class="num">100</div><div class="desc">universities researched</div></div>
+      <div class="data-pill"><div class="num">19</div><div class="desc">countries covered</div></div>
+      <div class="data-pill"><div class="num">31</div><div class="desc">canonical STEM programmes</div></div>
+      <div class="data-pill"><div class="num">5</div><div class="desc">datasets produced</div></div>
+    </div>
+
+    <p>For each university we catalogued every STEM programme where extended or applied mathematics plays a central role: Computer Science, all branches of Engineering, Applied Mathematics, Statistics, Data Science, Physics, Computational Biology, Bioinformatics, Operations Research, Neuroscience (computational tracks), and related fields. Where university websites served static HTML, programme data was fetched and verified directly. Where sites use JavaScript rendering — roughly 80% of them — data was compiled from training knowledge and labelled accordingly.</p>
+
+    <p>The result was five interconnected datasets: STEM programme tables for all 100 universities, an A-level prerequisites analysis across 31 programmes, a coverage matrix showing which programmes appear where and at which level, a uniqueness and gaps analysis, and a direct A-level combination comparison for Andrey's specific situation.</p>
+
+    <h2>What the data showed</h2>
+
+    <div class="finding">
+      <div class="finding-label">Unexpected #2</div>
+      <div class="finding-claim">The intersection Andrey cares about barely exists as an undergraduate degree.</div>
+      <div class="finding-detail">Everyone assumes top universities offer the things that matter. But mathematics plus computational biology or bioinformatics at undergraduate level appears at roughly 20–25 of the top 100 universities. Edinburgh, Manchester, and Imperial — three of the eight highest-ranked UK universities — do not offer it at undergraduate level at all. It is postgraduate only at those institutions. You can spend three years at a world-class university and never touch the actual field you came for.</div>
+    </div>
+
+    <div class="zags">
+      <div class="zag">
+        <div class="zag-label">Unexpected #3</div>
+        <div class="zag-claim">Biology A-level only matters in one country.</div>
+        <div class="zag-detail">The UK treats Biology A-level as assumed prior knowledge for biology-adjacent programmes. This makes it feel like a universal prerequisite. It isn't. In the US, France, and China, universities teach all biology from scratch within the degree. Choosing Chemistry over Biology blocks nothing at MIT, Stanford, UCSD, or CMU. The rule that feels global is British.</div>
+      </div>
+      <div class="zag">
+        <div class="zag-label">Unexpected #4</div>
+        <div class="zag-claim">France (#13) and Switzerland (#22) are serious options nobody considers.</div>
+        <div class="zag-detail">Paris-Saclay University ranks above Imperial, Manchester, and Edinburgh on ARWU. ETH Zurich is #22. Both have exceptional mathematics programmes and no biology prerequisites at entry. Almost no UK school counsellor mentions either. The barriers are language and unfamiliarity — not quality.</div>
+      </div>
+      <div class="zag">
+        <div class="zag-label">Unexpected #5</div>
+        <div class="zag-claim">Optimising for rank and optimising for fit are different problems.</div>
+        <div class="zag-detail">For a specific intersection like maths plus computational biology, the question is which universities offer it at undergraduate level with active research groups in that area. That answer might be UCSD (#20), CMU, or ETH — not the top five. The coverage matrix makes this visible in a way that prestige rankings don't.</div>
+      </div>
+      <div class="zag">
+        <div class="zag-label">Unexpected #6</div>
+        <div class="zag-claim">Further Mathematics is worth more than any other fourth A-level.</div>
+        <div class="zag-detail">It looks like narrowing — just more of the same subject. But Further Mathematics is the single A-level that most directly signals readiness for university-level mathematics and explicitly gates Cambridge and Oxford Maths and CS programmes. Adding a fourth A-level in a softer subject to "show breadth" signals less to selective STEM programmes than FM does. Counterintuitive because it feels like narrowing. It's actually the highest-optionality move on the board.</div>
+      </div>
+      <div class="zag">
+        <div class="zag-label">Unexpected #7</div>
+        <div class="zag-claim">China has 13 ARWU top-100 universities — and almost no Western parent is looking there.</div>
+        <div class="zag-detail">Tsinghua (#18), Peking (#23), Zhejiang (#24), Shanghai Jiao Tong (#30). The research ecosystem in China around mathematics, bioinformatics, and AI is growing faster than most Western narratives acknowledge. Our working hypothesis: Chinese universities, like US ones, don't gate biology-adjacent programmes behind high school subject prerequisites. But this needs to be verified, not assumed. China is the next research chapter — and the biggest underexplored option on the map.</div>
+      </div>
+      <div class="zag">
+        <div class="zag-label">Unexpected #8</div>
+        <div class="zag-claim">Germany is on the list — but it's not a strong pick, and the trajectory matters.</div>
+        <div class="zag-detail">Germany has four ARWU top-100 universities (LMU #42, TUM #45, Heidelberg #51, Bonn #68). On paper, that looks serious. But none of them sit in the tier where the maths-plus-computational-biology intersection is strongest. More importantly, Germany's research momentum in this area is slower than Switzerland, France, or China. Being on the map isn't the same as being the right answer.</div>
+      </div>
+    </div>
+
+    <h2>The deeper finding</h2>
+
+    <div class="reframe">
+      <div class="finding-label">Unexpected #9 — the reframe</div>
+      <div class="finding-claim">The degree name barely matters. The research ecosystem does.</div>
+      <div class="finding-detail">A Mathematics degree at MIT with access to the Broad Institute is more relevant to longevity research than a Bioinformatics degree at a university where that field exists only on paper. The coverage matrix shows what's offered. It doesn't show what's happening in the labs. Programme title and actual research environment can be completely decoupled — and choosing by degree name is choosing by label, not substance.</div>
+    </div>
+
+    <h2>And the meta-finding that ties it all together</h2>
+
+    <div class="finding">
+      <div class="finding-label">Unexpected #10 — the meta-finding</div>
+      <div class="finding-claim">Every default answer turned out to be wrong.</div>
+      <div class="finding-detail">CS → too late. Top-10 university → wrong frame. UK-centric search → misses half the map. Biology A-level → only matters in one country. "Best university" → misses the fit question entirely. The research exists because every obvious answer, when tested against actual data, was either incomplete or actively misleading. That's not a failure of the process. It's the point.</div>
+    </div>
+
+    <p>The one thread this article hasn't pulled on yet is China — 13 of the top 100, growing fast, almost no Western parent looking there. That's the next research chapter. And alongside it, a different question entirely: not <em>where</em> to study, but <em>what</em> — and why that answer is also counterintuitive.</p>
+
+    <div class="bridge">
+      <div class="finding-label">Part 2 of this series</div>
+      <div class="finding-claim">Not where to study — what to study, and why the answer is counterintuitive.</div>
+      <div class="finding-detail">The second article picks up a different thread: a 150-year pattern in how technical skills move from scarce to commodity, what that means for someone graduating university in 2035, and why Computer Science — the obvious "safe" STEM choice — may already be the wrong answer. The short version: coding is just literacy now. What comes next is harder to see, and the data has a clear implication for which foundation is the longest-duration bet.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
