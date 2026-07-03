@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Built It – The Long Bet – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="Most university comparisons are built on a mistake. They compare labels, not substance. Here is how we avoided that — and what it took to build a dataset that actually holds up.">
+  <link rel="canonical" href="https://mariascales.com/research/long-bet/how-i-built-it/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How I Built It – The Long Bet – Maria Atamanova">
+  <meta property="og:description" content="Most university comparisons are built on a mistake. They compare labels, not substance. Here is how we avoided that — and what it took to build a dataset that actually holds up.">
+  <meta property="og:url" content="https://mariascales.com/research/long-bet/how-i-built-it/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How I Built It – The Long Bet – Maria Atamanova">
+  <meta name="twitter:description" content="Most university comparisons are built on a mistake. They compare labels, not substance. Here is how we avoided that — and what it took to build a dataset that actually holds up.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
+    .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+
+    /* Ranking trio */
+    .ranking-trio { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .ranking-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; }
+    .ranking-card.wrong { border-left: 3px solid #ef4444; }
+    .ranking-card.closer { border-left: 3px solid #f59e0b; }
+    .ranking-card.right { border-left: 3px solid #10b981; }
+    .r-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 4px; }
+    .r-name { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .r-detail { font-size: 0.875rem; color: #374151; line-height: 1.6; margin-bottom: 8px; }
+    .r-verdict { font-size: 0.8125rem; font-weight: 600; color: #374151; }
+    .ranking-card.wrong .r-verdict { color: #ef4444; }
+    .ranking-card.closer .r-verdict { color: #f59e0b; }
+    .ranking-card.right .r-verdict { color: #10b981; }
+
+    /* Data pills */
+    .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+    .data-pill { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 100px; flex: 1; }
+    .data-pill .num { font-size: 1.375rem; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
+    .data-pill .desc { font-size: 0.75rem; color: #6b7280; margin-top: 2px; }
+
+    /* Rolls-Royce big number */
+    .big-number { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin: 20px 0; text-align: center; background: #f9fafb; }
+    .big-number .rr-number { font-size: 3rem; font-weight: 700; color: #111827; letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
+    .big-number .rr-label { font-size: 0.9375rem; font-weight: 600; color: #374151; margin-bottom: 6px; }
+    .big-number .rr-detail { font-size: 0.875rem; color: #6b7280; }
+
+    /* Process steps */
+    .process-steps { margin: 20px 0; }
+    .process-step { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #f3f4f6; }
+    .process-step:last-child { border-bottom: none; }
+    .step-num { font-size: 1.25rem; font-weight: 700; color: #d1d5db; letter-spacing: -0.02em; flex-shrink: 0; width: 32px; }
+    .step-title { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .step-desc { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .data-pill { min-width: 80px; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>How I Built It</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-series">The Long Bet · Article 2 of 4</div>
+    <div class="page-title">How I Built It</div>
+    <div class="page-standfirst">Most university comparisons are built on a mistake. They compare labels, not substance. Here is how we avoided that — and what it took to build a dataset that actually holds up.</div>
+    <div class="page-meta">Jun 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+
+    <p>"Computer Science" at MIT, "Computing" at Imperial, "Informatics" at Edinburgh, "Informatik" at TU Munich. Four labels. One discipline. If you count them as different programmes your coverage matrix is wrong before the analysis starts — and every conclusion built on top of it inherits that error.</p>
+    <p>This is the problem nobody talks about in university research. The interesting question isn't which ranking to use. It's what you do with the raw data once you have it. Resolving that problem took longer than the analysis itself.</p>
+
+    <h2>Why the Shanghai Ranking — and not the ones you've heard of</h2>
+    <p>There are three rankings most people know. They measure different things. For this research, only one of them measured the right thing.</p>
+
+    <div class="ranking-trio">
+      <div class="ranking-card wrong">
+        <div class="r-label">Option 1</div>
+        <div class="r-name">QS World University Rankings</div>
+        <div class="r-detail">40% of the score comes from academic reputation surveys — asking professors globally what they think of other universities. That is measuring prestige, not output. Institutions can improve their score by lobbying alumni networks to respond. A university that was excellent thirty years ago and has coasted since will rank higher than one doing better work today.</div>
+        <div class="r-verdict">✗ Measures what people think</div>
+      </div>
+      <div class="ranking-card closer">
+        <div class="r-label">Option 2</div>
+        <div class="r-name">Times Higher Education (THE)</div>
+        <div class="r-detail">Better methodology, but still includes teaching reputation scores and uses citation data sensitive to field size — engineering-heavy universities rank lower than their actual research output warrants. Closer, but still partially measures perception rather than production.</div>
+        <div class="r-verdict">~ Closer, but still partial</div>
+      </div>
+      <div class="ranking-card right">
+        <div class="r-label">Option 3 — chosen</div>
+        <div class="r-name">ARWU — Academic Ranking of World Universities (Shanghai Ranking)</div>
+        <div class="r-detail">Nobel Prizes and Fields Medals held by alumni and staff. Number of highly cited researchers. Papers published in Nature and Science. Articles indexed in major citation databases. Per capita academic performance. No surveys. No self-reporting. No reputation scores. Universities cannot game it by lobbying anyone — the indicators are verifiable from external sources.</div>
+        <div class="r-verdict">✓ Measures what actually gets produced</div>
+      </div>
+    </div>
+
+    <p>For a student whose goal is to work at the research frontier of computational biology and mathematics, research output is exactly the right signal. ARWU has published this ranking annually since 2003 — the longest-running objective university ranking in the world. The 2025 edition covers over 2,500 universities; the top 1,000 are published.</p>
+
+    <h2>Why the top 100 — not 50, not 200</h2>
+    <p>Cutting at 100 was a deliberate choice, not a round number convenience. The question was: at what point does adding more universities stop adding useful signal for this specific intersection of interests?</p>
+    <p><strong>Fewer than 100 misses too much.</strong> The rare programmes that matter most — computational biology at undergraduate level, mathematical biology, bioinformatics — don't cluster exclusively in the top 20. University of Bristol (#98), University of Bonn (#68), and several Chinese universities in the 60–90 range all offer something relevant. A top-50 cut would have produced a cleaner dataset and a less accurate one.</p>
+    <p><strong>More than 100 adds volume without signal.</strong> Below rank 100, research output in frontier fields becomes thin. Institutions may be strong within their country or region, but the doctoral programmes, research groups, and lab ecosystems that make an undergraduate degree actually valuable for someone going into computational research start to disappear. The analysis needed breadth — 19 countries made it genuinely global — but not at the cost of quality.</p>
+    <p>100 was the boundary where both conditions held: broad enough to capture every serious research institution worldwide, tight enough that every institution in the dataset had demonstrable research output in at least some of the fields that mattered.</p>
+
+    <h2>Before any analysis ran</h2>
+
+    <div class="big-number">
+      <div class="rr-number">1,200+</div>
+      <div class="rr-label">university–programme pairs normalised before any analysis ran</div>
+      <div class="rr-detail">Every programme at every university — individually checked, consistently named, and assigned to a canonical category. This was the work that made everything else possible.</div>
+    </div>
+
+    <div class="data-row">
+      <div class="data-pill"><div class="num">100</div><div class="desc">universities</div></div>
+      <div class="data-pill"><div class="num">19</div><div class="desc">countries</div></div>
+      <div class="data-pill"><div class="num">31</div><div class="desc">canonical labels</div></div>
+      <div class="data-pill"><div class="num">1,200+</div><div class="desc">raw pairs resolved</div></div>
+    </div>
+
+    <p>Each of the 100 universities lists its programmes differently. Some use department names, some use degree titles, some use faculty groupings. A programme called "Natural Sciences" at Cambridge covers physics, chemistry, and biology within a single degree. "Mathematical Engineering and Information Physics" at Tokyo is one of the most mathematically rigorous undergraduate degrees in the world — but you would never find it searching for "Mathematics." Both needed to be read, understood, and mapped to the right canonical label before they could be counted.</p>
+    <p>The normalisation process produced a synonym table: every programme name encountered in the raw data, resolved to one of 31 canonical labels. "Computing," "Informatics," "Computer Engineering," "Information Technology," and "Information Systems" all resolved to Computer Science unless the programme structure made a meaningful distinction. "Bioinformatics," "Computational Biology," "Systems Biology," and "Mathematical Biology" were kept separate because they have genuinely different undergraduate entry points and research trajectories.</p>
+    <p>Only after that table was complete did the analysis begin.</p>
+
+    <h2>What the normalised data made possible</h2>
+    <p>With 1,200+ pairs resolved into consistent categories, three layers of analysis became possible — each one building on the last.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Coverage Matrix — what exists where</div>
+          <div class="step-desc">A 100-row × 31-column grid. Each cell shows whether a university offers a programme at undergraduate level, postgraduate level, both, or not at all. Immediately visible: which programmes are universal (Computer Science appears at 97 of 100 universities) and which are rare (standalone Computational Biology at UG level: fewer than 25). The matrix is the foundation everything else references.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Frequency Ranking — what's common, what's scarce</div>
+          <div class="step-desc">How many of the 100 universities offer each programme? Ranked from most common to rarest. The frequency distribution revealed something immediately surprising: the programmes that matter most for the specific intersection of mathematics and computational biology are among the rarest in the dataset — not the most common.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Uniqueness &amp; Gaps — what's rare, what's missing, what's structural</div>
+          <div class="step-desc">Which programmes appear at fewer than 10 universities? Which interdisciplinary degrees exist at UG level? Where are the coverage gaps by country — and are those gaps random or systematic? This layer turned a coverage map into a decision tool. The gaps turned out to be as informative as the presences.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>What the data showed</h2>
+    <p>The coverage matrix, the frequency rankings, and the uniqueness analysis produced a clear picture of what the global landscape of STEM education actually looks like — as opposed to what the rankings, the school counsellors, and the received wisdom suggest it looks like.</p>
+    <p>The two pictures are not the same.</p>
+
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
