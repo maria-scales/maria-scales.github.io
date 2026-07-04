@@ -28,11 +28,11 @@
     /* ── Site chrome ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 50px; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
     a { color: #1e40af; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; background: #ffffff; }
     .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
     .site-name a { color: #111827; }
     .site-name a:hover { text-decoration: none; color: #1e40af; }
@@ -47,7 +47,8 @@
     .breadcrumb a { color: #6b7280; }
     .breadcrumb a:hover { color: #1e40af; }
     .breadcrumb span { margin: 0 6px; }
-    .page-header { padding: 40px 0 32px; }
+    .page-header { padding: 40px 0 32px; background: #ffffff; }
+    .article-body { max-width: 680px; margin: 0 auto; padding: 0 24px; }
     .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
     .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
     .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; border-left: 3px solid #111827; padding-left: 16px; }
@@ -289,7 +290,7 @@
 </div>
 
 <div class="article-wrap">
-  <div class="container">
+  <div class="article-body">
 
     <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
     <p>The data had other ideas.</p>
@@ -376,7 +377,7 @@
       </div>
       <div style="font-size:11px; color:#555; margin-top:8px;">
         <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#06B6D4; vertical-align:middle; margin-right:4px;"></span>Offered &nbsp;
-        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#e8e8e8; border:1px solid #ccc; vertical-align:middle; margin-right:4px; margin-left:10px;"></span>Not offered
+        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#1a1a2e; border:1px solid #333; vertical-align:middle; margin-right:4px; margin-left:10px;"></span>Not offered
       </div>
     </div>
 
@@ -494,6 +495,7 @@
 </div>
 
 <div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
+
 <footer id="contact">
   <div class="container">
     <div class="section-label">Contact</div>
@@ -540,14 +542,14 @@
   const tbody = document.getElementById('china-heatmap-body');
   CHINA_UNIS.forEach(u => {
     const tr = document.createElement('tr');
-    tr.style.borderTop = '1px solid #eee';
-    let html = `<td style="padding:5px 8px 5px 0; white-space:nowrap; color:#444; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
+    tr.style.borderTop = '1px solid #222';
+    let html = `<td style="padding:5px 8px 5px 0; white-space:nowrap; color:#ccc; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
     fields.forEach((f) => {
       if (f === 'ee') html += `<td style="width:1px; background:#ddd; padding:0;"></td>`;
       const val = u[f];
       const isBio = bioFields.has(f);
-      const bg = val ? (isBio ? '#F97316' : '#06B6D4') : '#f0f0f0';
-      const border = val ? 'none' : '1px solid #e0e0e0';
+      const bg = val ? (isBio ? '#F97316' : '#06B6D4') : '#111';
+      const border = val ? 'none' : '1px solid #2a2a2a';
       html += `<td style="text-align:center; padding:5px 3px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
     });
     tr.innerHTML = html;
@@ -571,8 +573,8 @@
   UNIS.forEach(u => {
     if (prevType === 'broad' && u.type === 'narrow') {
       const sep = document.createElement('div');
-      sep.style.cssText = 'border-top:1px dashed #ccc; margin:10px 0; position:relative;';
-      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#fff; padding:0 10px; font-size:10px; color:#aaa; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
+      sep.style.cssText = 'border-top:1px dashed #333; margin:10px 0; position:relative;';
+      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#f9f9f9; padding:0 10px; font-size:10px; color:#555; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
       container.appendChild(sep);
     }
     const pct = (u.count / 31) * 100;
@@ -580,9 +582,9 @@
     const row = document.createElement('div');
     row.style.cssText = 'display:flex; align-items:center; gap:10px; margin-bottom:7px;';
     row.innerHTML = `
-      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#555;">#${u.rank} ${u.name}</div>
-      <div style="flex:1; background:#f0f0f0; border-radius:3px; height:16px; overflow:hidden;">
-        <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px;"></div>
+      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#ccc;">#${u.rank} ${u.name}</div>
+      <div style="flex:1; background:#1a1a1a; border-radius:3px; height:16px; position:relative; overflow:hidden;">
+        <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px; transition:width 0.3s;"></div>
       </div>
       <div style="width:36px; flex-shrink:0; font-size:12px; font-weight:700; color:${color};">${u.count}/31</div>
     `;
