@@ -51,78 +51,88 @@
     .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
     .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; border-left: 3px solid #111827; padding-left: 16px; }
     .page-meta { font-size: 0.875rem; color: #6b7280; }
-    .article-content { padding: 40px 0; }
-    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
-    .article-content h2:first-child { margin-top: 0; }
-    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
-    .article-content ul { padding-left: 20px; margin-bottom: 12px; }
-    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
-    .article-content strong { color: #111827; }
-    .article-content a { color: #1e40af; }
 
-    /* Finding callout */
-    .finding { border: 1px solid #111827; border-radius: 8px; padding: 20px 24px; margin: 20px 0; background: #f9fafb; }
-    .finding .f-claim { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 10px; line-height: 1.4; }
-    .finding .f-detail { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+    /* Article body */
+    .article-body { padding: 40px 0; }
+    .article-body p { font-size: 1rem; line-height: 1.75; color: #374151; margin-bottom: 20px; }
+    .article-body h2 { font-size: 1.375rem; font-weight: 700; color: #111827; margin: 48px 0 16px; letter-spacing: -0.02em; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body strong { color: #111827; }
+    .article-body a { color: #1e40af; }
 
-    /* Chart wrapper */
-    .chart-wrap { margin: 24px 0; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; background: #fafafa; }
-    .chart-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 14px; }
-    .chart-note { font-size: 0.75rem; color: #9ca3af; margin-top: 10px; }
+    /* Finding callout – dark */
+    .finding { background: #111827; border-radius: 10px; padding: 28px 32px; margin: 32px 0; }
+    .finding .f-claim { font-size: 1.25rem; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 12px; }
+    .finding .f-detail { font-size: 0.875rem; line-height: 1.65; color: #9ca3af; }
 
-    /* Big number stat */
-    .big-number { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 20px 0; display: flex; align-items: center; gap: 24px; background: #f9fafb; }
-    .big-number .r-num { font-size: 2.5rem; font-weight: 700; color: #111827; letter-spacing: -0.04em; line-height: 1; flex-shrink: 0; }
-    .big-number .r-title { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
-    .big-number .r-detail { font-size: 0.875rem; color: #374151; line-height: 1.6; }
+    /* Chart */
+    .chart-wrap { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px 24px 20px; margin: 32px 0; }
+    .chart-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9ca3af; margin-bottom: 16px; }
+    .chart-note { font-size: 0.6875rem; color: #9ca3af; margin-top: 12px; line-height: 1.5; }
 
-    /* Stat pair (China) */
-    .stat-pair { display: flex; gap: 0; margin: 20px 0; border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb; }
-    .stat-block { flex: 1; padding: 20px 22px; background: #f9fafb; border-right: 1px solid #e5e7eb; }
-    .stat-block:last-child { border-right: none; }
-    .stat-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 8px; }
-    .stat-num { font-size: 2rem; font-weight: 700; color: #111827; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 6px; }
-    .stat-title { font-size: 0.875rem; font-weight: 600; color: #111827; margin-bottom: 4px; }
-    .stat-detail { font-size: 0.8125rem; color: #374151; line-height: 1.55; }
+    /* China stat boxes – dark */
+    .china-stats { display: flex; gap: 0; margin: 32px 0; border-radius: 10px; overflow: hidden; }
+    .china-stat { flex: 1; padding: 28px; }
+    .china-stat.left { background: #1e2a3a; }
+    .china-stat.right { background: #111827; }
+    .cs-label { font-size: 0.6875rem; color: #4b5563; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+    .cs-num { font-size: 2.625rem; font-weight: 800; color: #ffffff; letter-spacing: -0.04em; line-height: 1.1; }
+    .cs-title { font-size: 0.9375rem; font-weight: 700; color: #ffffff; margin-top: 8px; margin-bottom: 6px; }
+    .cs-detail { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
 
     /* China heatmap */
-    .heatmap-wrap { margin: 20px 0; overflow-x: auto; }
-    .heatmap-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 10px; }
+    .heatmap-wrap { margin: 28px 0 8px; }
+    .heatmap-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 12px; }
+    .heatmap-scroll { overflow-x: auto; }
     #china-heatmap { border-collapse: collapse; font-size: 11.5px; width: 100%; min-width: 560px; }
     #china-heatmap th { padding: 4px 6px 8px; font-weight: 700; font-size: 10.5px; text-align: center; white-space: nowrap; }
     #china-heatmap td { padding: 5px 6px; border-top: 1px solid #f3f4f6; }
-    .heatmap-legend { font-size: 11px; color: #6b7280; margin-top: 8px; display: flex; align-items: center; gap: 12px; }
+    .heatmap-legend { font-size: 11px; color: #6b7280; margin-top: 8px; display: flex; gap: 14px; flex-wrap: wrap; }
 
     /* Reversal cards */
-    .reversal { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
-    .rev-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; }
-    .rev-card.wrong { border-left: 3px solid #ef4444; }
-    .rev-card.open { border-left: 3px solid #f59e0b; }
-    .rev-card.right { border-left: 3px solid #10b981; }
-    .rv-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 4px; }
-    .rv-name { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
-    .rv-logic { font-size: 0.875rem; color: #374151; line-height: 1.6; margin-bottom: 8px; }
-    .rv-verdict { font-size: 0.8125rem; font-weight: 600; }
-    .rev-card.wrong .rv-verdict { color: #ef4444; }
-    .rev-card.open .rv-verdict { color: #d97706; }
-    .rev-card.right .rv-verdict { color: #10b981; }
+    .reversal { margin: 32px 0; display: flex; flex-direction: column; gap: 3px; }
+    .rev-card { padding: 20px 24px; border-radius: 4px; }
+    .rev-card:first-child { border-radius: 10px 10px 4px 4px; }
+    .rev-card:last-child { border-radius: 4px 4px 10px 10px; }
+    .rev-card.wrong { background: #f3f4f6; }
+    .rev-card.open { background: #eff6ff; }
+    .rev-card.right { background: #111827; }
+    .rv-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 6px; }
+    .rev-card.right .rv-label { color: #4b5563; }
+    .rv-name { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .rev-card.right .rv-name { color: #ffffff; }
+    .rv-logic { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
+    .rev-card.right .rv-logic { color: #9ca3af; }
+    .rv-verdict { font-size: 0.75rem; font-weight: 700; margin-top: 10px; padding: 4px 10px; border-radius: 4px; display: inline-block; }
+    .rev-card.wrong .rv-verdict { background: #e5e7eb; color: #6b7280; }
+    .rev-card.open .rv-verdict { background: #bfdbfe; color: #1e40af; }
+    .rev-card.right .rv-verdict { background: #064e3b; color: #6ee7b7; }
+
+    /* UK big number */
+    .rolls { background: #111827; border-radius: 10px; padding: 32px 36px; margin: 32px 0; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+    .rolls .r-num { font-size: 4.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.05em; line-height: 1; flex-shrink: 0; }
+    .rolls .r-title { font-size: 0.9375rem; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
+    .rolls .r-detail { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
 
     /* Gaps list */
-    .gaps-list { margin: 20px 0; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
-    .gap-row { padding: 14px 20px; border-bottom: 1px solid #f3f4f6; display: flex; gap: 16px; align-items: flex-start; }
-    .gap-row:last-child { border-bottom: none; }
+    .gaps-list { margin: 32px 0; display: flex; flex-direction: column; gap: 3px; }
+    .gap-row { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 4px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .gap-row:first-child { border-radius: 10px 10px 4px 4px; }
+    .gap-row:last-child { border-radius: 4px 4px 10px 10px; }
     .gap-uni { min-width: 180px; flex-shrink: 0; }
-    .gap-uni-name { font-size: 0.9375rem; font-weight: 700; color: #111827; line-height: 1.3; }
-    .gap-rank-badge { display: inline-block; font-size: 0.6875rem; font-weight: 700; background: #f3f4f6; color: #6b7280; padding: 2px 7px; border-radius: 4px; margin-top: 4px; }
-    .gap-missing { font-size: 0.875rem; color: #374151; line-height: 1.65; }
-    .tag { display: inline-block; background: #eff6ff; color: #1e40af; font-size: 0.75rem; font-weight: 600; padding: 1px 7px; border-radius: 4px; margin: 1px 2px; }
+    .gap-uni-name { font-size: 0.8125rem; font-weight: 700; color: #111827; line-height: 1.3; }
+    .gap-rank-badge { display: inline-block; font-size: 0.625rem; font-weight: 700; color: #6b7280; background: #f3f4f6; border-radius: 4px; padding: 2px 7px; margin-top: 4px; }
+    .gap-missing { font-size: 0.8125rem; color: #6b7280; line-height: 1.65; }
+    .tag { display: inline-block; background: #f3f4f6; border-radius: 4px; padding: 2px 8px; margin: 2px 3px 2px 0; font-size: 0.6875rem; color: #374151; white-space: nowrap; }
 
     /* Breadth bars */
-    #breadth-bars { margin: 16px 0; }
+    .breadth-wrap { margin: 28px 0 20px; }
+    .breadth-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
+    #breadth-bars { }
 
-    /* Leave-out section */
-    .leave-out { border-top: 2px solid #111827; padding-top: 28px; margin-top: 36px; }
-    .leave-out p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; line-height: 1.7; }
+    /* Leave it out */
+    .leave-out { border-top: 2px solid #111827; padding-top: 32px; margin-top: 48px; }
+    .leave-out p { font-size: 1.0625rem; color: #374151; line-height: 1.75; margin-bottom: 20px; }
 
     .back-link { padding: 32px 0 48px; }
     .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
@@ -132,7 +142,15 @@
     .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
-    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .big-number { flex-direction: column; gap: 12px; } .stat-pair { flex-direction: column; } .stat-block { border-right: none; border-bottom: 1px solid #e5e7eb; } .gap-row { flex-direction: column; gap: 6px; } .gap-uni { min-width: unset; } }
+    @media (max-width: 600px) {
+      .page-title { font-size: 1.375rem; }
+      header { padding: 28px 0 24px; }
+      .china-stats { flex-direction: column; }
+      .rolls { flex-direction: column; gap: 16px; }
+      .rolls .r-num { font-size: 3rem; }
+      .gap-row { flex-direction: column; gap: 6px; }
+      .gap-uni { min-width: unset; }
+    }
   </style>
 </head>
 <body>
@@ -152,7 +170,8 @@
     <div class="page-meta">Jun 2026 · Original research</div>
   </div>
 </div>
-<div class="article-content">
+
+<div class="article-body">
   <div class="container">
 
     <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
@@ -179,67 +198,68 @@
     <p>China has 22 universities in the top 100 by research output. Fees run at $3,000–5,000 per year for international students. Several institutions – Tsinghua (#18), Peking (#23), Zhejiang (#24), SJTU (#30) – sit in the top third of the global ranking. On cost and prestige combined, China is one of the most interesting candidates in the dataset.</p>
     <p>Two numbers tell the story.</p>
 
-    <div class="stat-pair">
-      <div class="stat-block">
-        <div class="stat-label">2003 → 2025</div>
-        <div class="stat-num">0 → 22</div>
-        <div class="stat-title">Universities in the top 100</div>
-        <div class="stat-detail">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
+    <div class="china-stats">
+      <div class="china-stat left">
+        <div class="cs-label">2003 → 2025</div>
+        <div class="cs-num">0 → 22</div>
+        <div class="cs-title">Universities in the top 100</div>
+        <div class="cs-detail">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
       </div>
-      <div class="stat-block">
-        <div class="stat-label">Programme profile</div>
-        <div class="stat-num">100%</div>
-        <div class="stat-title">Electrical Engineering coverage</div>
-        <div class="stat-detail">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
+      <div class="china-stat right">
+        <div class="cs-label">Programme profile</div>
+        <div class="cs-num">100%</div>
+        <div class="cs-title">Electrical Engineering coverage</div>
+        <div class="cs-detail">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
       </div>
     </div>
 
     <div class="heatmap-wrap">
       <div class="heatmap-label">Programme profile – Chinese top-100 universities</div>
-      <table id="china-heatmap">
-        <thead>
-          <tr>
-            <th style="text-align:left; padding-left:0; color:#6b7280;">University</th>
-            <th style="color:#f97316;">App. Math</th>
-            <th style="color:#f97316;">Comp. Bio</th>
-            <th style="color:#f97316;">Bioinformatics</th>
-            <th style="color:#f97316;">Neuroscience</th>
-            <th style="width:1px; background:#e5e7eb; padding:0;"></th>
-            <th style="color:#0891b2;">Elec. Eng.</th>
-            <th style="color:#0891b2;">Systems Eng.</th>
-            <th style="color:#0891b2;">Materials Sci.</th>
-          </tr>
-        </thead>
-        <tbody id="china-heatmap-body"></tbody>
-        <tfoot>
-          <tr style="border-top: 2px solid #e5e7eb;">
-            <td style="padding:6px 0 2px; color:#6b7280; font-size:11px; font-weight:700;">Coverage</td>
-            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
-            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
-            <td style="text-align:center; color:#d97706; font-weight:700; font-size:11px;">47%</td>
-            <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">0%</td>
-            <td style="width:1px; background:#e5e7eb; padding:0;"></td>
-            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">100%</td>
-            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">47%</td>
-            <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">67%</td>
-          </tr>
-          <tr>
-            <td style="padding:1px 0 4px; color:#9ca3af; font-size:10px; font-style:italic;">Global avg.</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">24%</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">45%</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">54%</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">35%</td>
-            <td style="width:1px; background:#e5e7eb; padding:0;"></td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">72%</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">12%</td>
-            <td style="text-align:center; color:#9ca3af; font-size:10px;">51%</td>
-          </tr>
-        </tfoot>
-      </table>
+      <div class="heatmap-scroll">
+        <table id="china-heatmap">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding-left:0; color:#6b7280; font-weight:600;">University</th>
+              <th style="color:#f97316;">App. Math</th>
+              <th style="color:#f97316;">Comp. Bio</th>
+              <th style="color:#f97316;">Bioinformatics</th>
+              <th style="color:#f97316;">Neuroscience</th>
+              <th style="width:1px; background:#e5e7eb; padding:0;"></th>
+              <th style="color:#0891b2;">Elec. Eng.</th>
+              <th style="color:#0891b2;">Systems Eng.</th>
+              <th style="color:#0891b2;">Materials Sci.</th>
+            </tr>
+          </thead>
+          <tbody id="china-heatmap-body"></tbody>
+          <tfoot>
+            <tr style="border-top:1px solid #e5e7eb;">
+              <td style="padding:6px 0 2px; color:#6b7280; font-size:11px; font-weight:700;">Coverage</td>
+              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
+              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
+              <td style="text-align:center; color:#d97706; font-weight:700; font-size:11px;">47%</td>
+              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">0%</td>
+              <td style="width:1px; background:#e5e7eb; padding:0;"></td>
+              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">100%</td>
+              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">47%</td>
+              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">67%</td>
+            </tr>
+            <tr>
+              <td style="padding:1px 0 4px; color:#9ca3af; font-size:10px; font-style:italic;">Global avg.</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">24%</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">45%</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">54%</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">35%</td>
+              <td style="width:1px; background:#e5e7eb; padding:0;"></td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">72%</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">12%</td>
+              <td style="text-align:center; color:#9ca3af; font-size:10px;">51%</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
       <div class="heatmap-legend">
-        <span><span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#f97316; vertical-align:middle; margin-right:4px;"></span>Bio programmes offered</span>
-        <span><span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#0891b2; vertical-align:middle; margin-right:4px;"></span>Engineering offered</span>
-        <span><span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#f3f4f6; border:1px solid #e5e7eb; vertical-align:middle; margin-right:4px;"></span>Not offered</span>
+        <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#0891b2;vertical-align:middle;margin-right:4px;"></span>Offered</span>
+        <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#f3f4f6;border:1px solid #e5e7eb;vertical-align:middle;margin-right:4px;"></span>Not offered</span>
       </div>
     </div>
 
@@ -278,8 +298,8 @@
     <h2>The UK paradox</h2>
     <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
 
-    <div class="big-number">
-      <div class="r-num">+59<span style="font-size:1.25rem;">pp</span></div>
+    <div class="rolls">
+      <div class="r-num">+59<span style="font-size:1.75rem;letter-spacing:-1px;">pp</span></div>
       <div>
         <div class="r-title">UK universities' AI coverage lift above the global average</div>
         <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
@@ -329,8 +349,8 @@
       </div>
     </div>
 
-    <div style="margin: 24px 0;">
-      <div style="font-size:0.6875rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#6b7280; margin-bottom:12px;">Programme breadth – selected universities (out of 31)</div>
+    <div class="breadth-wrap">
+      <div class="breadth-label">Programme breadth – selected universities (out of 31)</div>
       <div id="breadth-bars"></div>
     </div>
 
@@ -341,7 +361,7 @@
       <p>What this means for a specific student, with specific subject choices, still depends on something the coverage matrix cannot answer. That is a different question – and a different article.</p>
     </div>
 
-    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
+    <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #e5e7eb;">
       <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Also in this series</div>
       <div style="display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6;">
         <a href="/research/long-bet/article/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">The Problem Statement</a>
@@ -368,6 +388,7 @@
     </div>
   </div>
 </footer>
+
 <script>
   (function() {
     var nav = document.querySelector('.site-nav');
@@ -377,6 +398,7 @@
     }, { passive: true });
   })();
 </script>
+
 <script>
 // China heatmap
 (function(){
@@ -494,29 +516,29 @@ const CLUSTER_COLORS = {
   "Engineering – Other":"#64748b","CompBio":"#f97316","Earth & Env":"#22c55e","Interdisciplinary":"#94a3b8"
 };
 const HIGHLIGHT = ["Artificial Intelligence","Computational Biology","Bioinformatics","Applied Mathematics"];
-const bgColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLORS[p.cluster] : (CLUSTER_COLORS[p.cluster] || "#888") + "66");
+const bgColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLORS[p.cluster] : (CLUSTER_COLORS[p.cluster]||"#888")+"66");
 const borderColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLORS[p.cluster] : "transparent");
 
 new Chart(document.getElementById("freqChart").getContext("2d"), {
   type:"bar",
   data:{ labels:PROGRAMS.map(p=>p.name), datasets:[{ data:PROGRAMS.map(p=>p.count), backgroundColor:bgColors, borderColor:borderColors, borderWidth:2, borderRadius:3, borderSkipped:false }] },
-  options:{ indexAxis:"y", responsive:true, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:"#111827", titleColor:"#fff", bodyColor:"#9ca3af", padding:10, callbacks:{ label:ctx=>` ${ctx.raw} / 100 universities (${ctx.raw}%)`, afterLabel:ctx=>`Cluster: ${PROGRAMS[ctx.dataIndex].cluster}` } } }, scales:{ x:{ max:100, grid:{color:"#f3f4f6"}, ticks:{color:"#9ca3af",callback:v=>v+"%"} }, y:{ grid:{display:false}, ticks:{ color:ctx=>HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"#111827":"#9ca3af", font:ctx=>({size:11,weight:HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"700":"400"}) } } } }
+  options:{ indexAxis:"y", responsive:true, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:"#1a1a2e", titleColor:"#fff", bodyColor:"#9ca3af", padding:10, callbacks:{ label:ctx=>` ${ctx.raw} / 100 universities (${ctx.raw}%)`, afterLabel:ctx=>`Cluster: ${PROGRAMS[ctx.dataIndex].cluster}` } } }, scales:{ x:{ max:100, grid:{color:"#efefef"}, ticks:{color:"#9ca3af",callback:v=>v+"%"} }, y:{ grid:{display:false}, ticks:{ color:ctx=>HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"#111827":"#9ca3af", font:ctx=>({size:11,weight:HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"700":"400"}) } } } }
 });
 
 // Chart 2: Country comparison
 const countries = ["UK","France","China","Germany","Switzerland"];
 const keyProgs = [
-  {label:"AI",      global:12, values:{UK:71.4, France:0,    China:7.7,  Germany:0,    Switzerland:0}},
-  {label:"CompBio", global:45, values:{UK:71.4, France:75.0, China:15.4, Germany:25.0, Switzerland:25.0}},
-  {label:"BioInfo", global:54, values:{UK:71.4, France:50.0, China:46.2, Germany:75.0, Switzerland:50.0}},
-  {label:"AppMath", global:24, values:{UK:28.6, France:50.0, China:0.0,  Germany:25.0, Switzerland:0.0}},
+  {label:"AI",      global:12, values:{UK:71.4,France:0,   China:7.7, Germany:0,   Switzerland:0}},
+  {label:"CompBio", global:45, values:{UK:71.4,France:75.0,China:15.4,Germany:25.0,Switzerland:25.0}},
+  {label:"BioInfo", global:54, values:{UK:71.4,France:50.0,China:46.2,Germany:75.0,Switzerland:50.0}},
+  {label:"AppMath", global:24, values:{UK:28.6,France:50.0,China:0.0, Germany:25.0,Switzerland:0.0}},
 ];
 const countryColors = {UK:"#2563eb",France:"#059669",China:"#dc2626",Germany:"#7c3aed",Switzerland:"#d97706"};
 
 new Chart(document.getElementById("countryChart").getContext("2d"), {
   type:"bar",
-  data:{ labels:keyProgs.map(p=>p.label), datasets:[ ...countries.map(c=>({ label:c, data:keyProgs.map(p=>p.values[c]), backgroundColor:countryColors[c]+"cc", borderColor:countryColors[c], borderWidth:1.5, borderRadius:3 })), { label:"Global avg", data:keyProgs.map(p=>p.global), backgroundColor:"transparent", borderColor:"#9ca3af", borderWidth:2, type:"line", pointRadius:4, pointBackgroundColor:"#9ca3af", tension:0 } ] },
-  options:{ responsive:true, plugins:{ legend:{position:"bottom",labels:{color:"#6b7280",font:{size:11},padding:12,boxWidth:12}}, tooltip:{backgroundColor:"#111827",titleColor:"#fff",bodyColor:"#9ca3af",padding:10,callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} }, scales:{ x:{grid:{display:false},ticks:{color:"#374151",font:{size:12,weight:"600"}}}, y:{max:100,grid:{color:"#f3f4f6"},ticks:{color:"#9ca3af",callback:v=>v+"%"}} } }
+  data:{ labels:keyProgs.map(p=>p.label), datasets:[ ...countries.map(c=>({ label:c, data:keyProgs.map(p=>p.values[c]), backgroundColor:countryColors[c]+"cc", borderColor:countryColors[c], borderWidth:1.5, borderRadius:3 })), { label:"Global avg", data:keyProgs.map(p=>p.global), backgroundColor:"transparent", borderColor:"#aaa", borderWidth:2, borderDash:[4,4], type:"line", pointRadius:4, pointBackgroundColor:"#aaa", tension:0 } ] },
+  options:{ responsive:true, plugins:{ legend:{position:"bottom",labels:{color:"#6b7280",font:{size:11},padding:12,boxWidth:12}}, tooltip:{backgroundColor:"#1a1a2e",titleColor:"#fff",bodyColor:"#9ca3af",padding:10,callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} }, scales:{ x:{grid:{display:false},ticks:{color:"#374151",font:{size:12,weight:"600"}}}, y:{max:100,grid:{color:"#efefef"},ticks:{color:"#9ca3af",callback:v=>v+"%"}} } }
 });
 </script>
 </body>
