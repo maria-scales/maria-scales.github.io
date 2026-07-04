@@ -31,53 +31,77 @@
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
     a { color: #1e40af; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; background: #ffffff; }
+    .site-header { background: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 28px 24px; }
     .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
-    .site-name a { color: #111827; }
-    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-name a { color: #111827; text-decoration: none; }
+    .site-name a:hover { color: #1e40af; }
     .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
     .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
     .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
-    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
     .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
     .nav-link:hover { color: #111827; text-decoration: none; }
     .nav-link.active { color: #111827; border-bottom-color: #111827; }
-    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
-    .breadcrumb a { color: #6b7280; }
+    .breadcrumb { max-width: 680px; margin: 0 auto; padding: 16px 24px; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; text-decoration: none; }
     .breadcrumb a:hover { color: #1e40af; }
     .breadcrumb span { margin: 0 6px; }
-    .page-header { padding: 40px 0 32px; background: #ffffff; }
-    .article-body { max-width: 680px; margin: 0 auto; padding: 0 24px; }
-    .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
-    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
-    .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; border-left: 3px solid #111827; padding-left: 16px; }
-    .page-meta { font-size: 0.875rem; color: #6b7280; }
-    .back-link { padding: 32px 0 48px; }
-    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
-    .back-link a:hover { color: #1e40af; }
-    footer { padding: 40px 0 64px; }
-    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
-    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
-    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
-    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    .site-footer { padding: 40px 24px 64px; }
+    .footer-inner { max-width: 680px; margin: 0 auto; }
+    .footer-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; text-decoration: none; }
+    .footer-links a:hover { color: #1e40af; }
 
-    /* ── Article body – from source file ── */
-    .article-wrap { padding: 0 0 60px; }
-    .article-wrap p {
+    /* ── Article – source file styles verbatim ── */
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 24px 100px;
+    }
+
+    .meta {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .standfirst {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+      border-left: 3px solid #111;
+      padding-left: 18px;
+      margin-bottom: 48px;
+    }
+
+    p {
       font-size: 16px;
       line-height: 1.75;
       color: #333;
       margin-bottom: 20px;
     }
-    .article-wrap h2 {
+
+    h2 {
       font-size: 22px;
       font-weight: 700;
       color: #111;
       margin: 48px 0 16px;
       letter-spacing: -0.3px;
     }
-    .article-wrap strong { color: #111; }
+
+    strong { color: #111; }
 
     /* Finding callout */
     .finding {
@@ -261,246 +285,343 @@
     #china-heatmap th { padding: 4px 3px 8px; font-weight: 700; font-size: 10.5px; text-align: center; white-space: nowrap; }
     #china-heatmap td { padding: 5px 3px; }
 
+    /* Also in series */
+    .series-nav {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #e8e8e8;
+    }
+    .series-nav-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+    .series-nav-item {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .series-nav-item:last-child { border-bottom: none; }
+    .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+    .series-nav-item a:hover { color: #1e40af; }
+    .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
+
     @media (max-width: 700px) {
       .rolls { flex-direction: column; gap: 16px; }
       .rolls .r-num { font-size: 48px; }
       .gap-row { flex-direction: column; gap: 6px; }
       .gap-uni { min-width: unset; }
+      h1 { font-size: 26px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div class="site-name"><a href="/">Maria Atamanova</a></div>
-    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
-  </div>
+<header class="site-header">
+  <div class="site-name"><a href="/">Maria Atamanova</a></div>
+  <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
 </header>
-<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
-<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>What the World Actually Offers</strong></div></div>
-
-<div class="page-header">
-  <div class="container">
-    <div class="page-series">The Long Bet · Ongoing Series</div>
-    <div class="page-title">What the World Actually Offers</div>
-    <div class="page-standfirst">We built the coverage matrix expecting to confirm what we already suspected. It didn't. Almost every assumption the research started with turned out to be wrong – not slightly off, but structurally wrong.</div>
-    <div class="page-meta">Jun 2026 · Original research</div>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/cases/" class="nav-link">Case Studies</a>
+    <a href="/articles/" class="nav-link">Writing</a>
+    <a href="/research/" class="nav-link active">Research</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </div>
-</div>
+</nav>
+<div class="breadcrumb"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>What the World Actually Offers</strong></div>
 
-<div class="article-wrap">
-  <div class="article-body">
+<article class="article">
 
-    <!-- v3 -->
-    <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
-    <p>The data had other ideas.</p>
+  <div class="meta">The Long Bet · Ongoing Series</div>
+  <h1>What the World Actually Offers</h1>
+  <p class="standfirst">We built the coverage matrix expecting to confirm what we already suspected. It didn't. Almost every assumption the research started with turned out to be wrong – not slightly off, but structurally wrong.</p>
 
-    <h2>CS is Universal. AI is a Niche.</h2>
-    <p>Start with the global picture. Computer Science appears at 95 of 100 universities. Physics at 94. Chemistry at 92. Mathematics at 91. These are effectively universal – if a university is in the top 100 by research output, it almost certainly offers them.</p>
-    <p>Now zoom in on the intersection this research was actually about.</p>
+  <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
+  <p>The data had other ideas.</p>
 
-    <div class="finding">
-      <div class="f-claim">Standalone AI is available at 12 universities.<br>CS is available at 95.</div>
-      <div class="f-detail">The subject everyone identifies as "the future" barely exists as an undergraduate degree at top research institutions. The gap between CS coverage and AI coverage is not marginal – it is a factor of eight. Most universities offering CS are not offering AI as a distinct programme. They are offering CS.</div>
-    </div>
+  <h2>CS is Universal. AI is a Niche.</h2>
+  <p>Start with the global picture. Computer Science appears at 95 of 100 universities. Physics at 94. Chemistry at 92. Mathematics at 91. These are effectively universal – if a university is in the top 100 by research output, it almost certainly offers them.</p>
+  <p>Now zoom in on the intersection this research was actually about.</p>
 
-    <div class="chart-wrap">
-      <div class="chart-title">Programme coverage – universities offering each (out of 100)</div>
-      <canvas id="freqChart" height="420"></canvas>
-      <div class="chart-note">Colour = subject cluster · Hover for exact figures · 31 canonical programmes across 100 ARWU 2025 universities</div>
-    </div>
-
-    <p>Computational Biology sits at 45 universities. Bioinformatics at 54. Real numbers, not vanishingly rare. But not what someone scanning degree titles would assume. The degree title you search for is often not the degree that exists.</p>
-
-    <h2>The China question</h2>
-    <p>China has 22 universities in the top 100 by research output. Fees run at $3,000–5,000 per year for international students. Several institutions – Tsinghua (#18), Peking (#23), Zhejiang (#24), SJTU (#30) – sit in the top third of the global ranking. On cost and prestige combined, China is one of the most interesting candidates in the dataset.</p>
-    <p>Two numbers tell the story.</p>
-
-    <div style="gap:0; padding:0; overflow:hidden; background:transparent; display:flex; flex-direction:row; flex-wrap:nowrap; border-radius:10px; margin:36px 0;">
-      <div style="background:#1a1a2e; padding:28px; flex:1; border-radius:10px 0 0 10px;">
-        <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">2003 → 2025</div>
-        <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">0 → 22</div>
-        <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Universities in the top 100</div>
-        <div style="font-size:13px; line-height:1.6; color:#888;">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
-      </div>
-      <div style="background:#111; padding:28px; flex:1; border-radius:0 10px 10px 0;">
-        <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Programme profile</div>
-        <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">100%</div>
-        <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Electrical Engineering coverage</div>
-        <div style="font-size:13px; line-height:1.6; color:#888;">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
-      </div>
-    </div>
-
-    <div style="margin: 28px 0 8px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:12px;">Programme profile – Chinese top-100 universities</div>
-      <div style="overflow-x:auto;">
-        <table id="china-heatmap">
-          <thead>
-            <tr>
-              <th style="text-align:left; padding:4px 8px 8px 0; color:#666; font-weight:600; white-space:nowrap;">University</th>
-              <th style="color:#F97316;">App. Math</th>
-              <th style="color:#F97316;">Comp. Bio</th>
-              <th style="color:#F97316;">Bioinformatics</th>
-              <th style="color:#F97316;">Neuroscience</th>
-              <th style="width:1px; background:#333; padding:0;"></th>
-              <th style="color:#06B6D4;">Elec. Eng.</th>
-              <th style="color:#06B6D4;">Systems Eng.</th>
-              <th style="color:#06B6D4;">Materials Sci.</th>
-            </tr>
-          </thead>
-          <tbody id="china-heatmap-body"></tbody>
-          <tfoot>
-            <tr style="border-top:1px solid #333;">
-              <td style="padding:6px 8px 2px 0; color:#888; font-size:11px; font-weight:700;">Coverage</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#e8a000; font-weight:700;">47%</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">0%</td>
-              <td style="width:1px; background:#333; padding:0;"></td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">100%</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">47%</td>
-              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">67%</td>
-            </tr>
-            <tr>
-              <td style="padding:1px 8px 4px 0; color:#555; font-size:10px; font-style:italic;">Global avg.</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">24%</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">45%</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">54%</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">35%</td>
-              <td style="width:1px; background:#333; padding:0;"></td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">72%</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">12%</td>
-              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">51%</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-      <div style="font-size:11px; color:#555; margin-top:8px;">
-        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#06B6D4; vertical-align:middle; margin-right:4px;"></span>Offered &nbsp;
-        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#1a1a2e; border:1px solid #333; vertical-align:middle; margin-right:4px; margin-left:10px;"></span>Not offered
-      </div>
-    </div>
-
-    <p>Compare that trajectory to Germany: 6 universities in the top 100 in 2003, 5 in 2025. Effectively flat for two decades. China moved from nowhere to second-largest non-US presence in the ranking in the same period. The momentum story matters – and it will be examined in detail in the next article.</p>
-
-    <h2>The geography no one considers</h2>
-    <p>The standard international shortlist for STEM runs through the same destinations. Apply this research's filters and the picture shifts.</p>
-
-    <div class="reversal">
-      <div class="rev-card wrong">
-        <div class="rv-label">Obvious answer 1</div>
-        <div class="rv-name">United States / United Kingdom</div>
-        <div class="rv-logic">The default destinations for research-active STEM at elite level. Strong programme coverage. High brand recognition. Exactly what the ranking is built to identify.</div>
-        <div class="rv-verdict">✗ International fees eliminate both without full scholarship. UK: £30,000+/year. US: higher still.</div>
-      </div>
-      <div class="rev-card open">
-        <div class="rv-label">Obvious answer 2 – still investigating</div>
-        <div class="rv-name">China</div>
-        <div class="rv-logic">22 universities in the top 100 – up from zero in 2003. $3–5k/year fees. The fastest-climbing country in the ARWU ranking's history. Eliminates the cost problem entirely. Building the hardware layer of AI. Whether that ecosystem fits a math-bio trajectory needs a closer look – covered in Article 5.</div>
-        <div class="rv-verdict">~ On the list. More in Article 5.</div>
-      </div>
-      <div class="rev-card right">
-        <div class="rv-label">What the data actually shows</div>
-        <div class="rv-name">France – and Switzerland</div>
-        <div class="rv-logic">France has 4 universities in the top 100. Among them: 75% Computational Biology coverage, 75% Neuroscience, +40pp Neuroscience lift above global average, +51pp Astrophysics, +30pp Comp Bio. Paris-Saclay (#13) sits in the global top 15 by research output. Public university tuition for international students: ~€170/year. Switzerland adds ETH Zurich (#22) and EPFL (#44) – strong in systems engineering, low fees relative to ranking.</div>
-        <div class="rv-verdict">✓ Low cost. High programme fit. Completely absent from most shortlists.</div>
-      </div>
-    </div>
-
-    <div class="chart-wrap">
-      <div class="chart-title">Key programme coverage by country – selected STEM disciplines (% of country's top-100 universities offering each)</div>
-      <canvas id="countryChart" height="260"></canvas>
-      <div class="chart-note">AI = Artificial Intelligence · CompBio = Computational Biology · BioInfo = Bioinformatics · AppMath = Applied Mathematics · Global avg shown as reference line per programme</div>
-    </div>
-
-    <h2>The UK paradox</h2>
-    <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
-
-    <div class="rolls">
-      <div class="r-num">+59<span style="font-size:28px;letter-spacing:-1px">pp</span></div>
-      <div>
-        <div class="r-title">UK universities' AI coverage lift above the global average</div>
-        <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
-      </div>
-    </div>
-
-    <p>This is not a recommendation. It is a finding. The cost constraint is real. But any framework that eliminates the UK on cost and then optimises freely within the remaining options is working from an incomplete picture. The trade-off is explicit and does not resolve cleanly.</p>
-
-    <h2>The institution you know is not always the degree that exists</h2>
-    <p>The coverage matrix produced a tab labelled "Surprising Absences" – universities ranked in the global top 30 missing programmes you would assume they offer as a matter of course.</p>
-
-    <div class="gaps-list">
-      <div class="gap-row">
-        <div class="gap-uni">
-          <div class="gap-uni-name">Harvard University</div>
-          <span class="gap-rank-badge">ARWU #1</span>
-        </div>
-        <div class="gap-missing">No standalone <span class="tag">Mathematics</span> – available at 91% of top-100 universities globally.</div>
-      </div>
-      <div class="gap-row">
-        <div class="gap-uni">
-          <div class="gap-uni-name">MIT</div>
-          <span class="gap-rank-badge">ARWU #3</span>
-        </div>
-        <div class="gap-missing">No standalone <span class="tag">Electrical Engineering</span> – available at 72% globally.</div>
-      </div>
-      <div class="gap-row">
-        <div class="gap-uni">
-          <div class="gap-uni-name">University of Cambridge</div>
-          <span class="gap-rank-badge">ARWU #4</span>
-        </div>
-        <div class="gap-missing">No standalone <span class="tag">Physics</span> or <span class="tag">Electrical Engineering</span>. Entry via Natural Sciences – a single degree covering multiple disciplines.</div>
-      </div>
-      <div class="gap-row">
-        <div class="gap-uni">
-          <div class="gap-uni-name">University of Oxford</div>
-          <span class="gap-rank-badge">ARWU #6</span>
-        </div>
-        <div class="gap-missing">No standalone <span class="tag">Data Science</span> or <span class="tag">Electrical Engineering</span>.</div>
-      </div>
-      <div class="gap-row">
-        <div class="gap-uni">
-          <div class="gap-uni-name">Rockefeller University</div>
-          <span class="gap-rank-badge">ARWU #29</span>
-        </div>
-        <div class="gap-missing">4 programmes total. No <span class="tag">Computer Science</span> <span class="tag">Mathematics</span> <span class="tag">Physics</span> <span class="tag">Chemistry</span> <span class="tag">Data Science</span> <span class="tag">Statistics</span> – a pure biomedical research institution.</div>
-      </div>
-    </div>
-
-    <div style="margin: 28px 0 20px;">
-      <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:14px;">Programme breadth – selected universities (out of 31)</div>
-      <div id="breadth-bars"></div>
-    </div>
-
-    <p>These are not failures. Cambridge's Natural Sciences structure is one of the most rigorous scientific training programmes in the world. But UCSF at #21 – ranked above Edinburgh, Manchester, and Imperial – is a medical research institution. It does not teach CS or Mathematics. Neither does Karolinska (#50), UT Southwestern (#58), or MD Anderson (#86). All four appear in the top 100 by research output. None of them are universities in the sense a STEM undergraduate would recognise. Filter by rank and you may be researching institutions that do not offer the subject you came for. The brand and the degree structure are separate things. Confusing them produces incorrect shortlists.</p>
-
-    <div class="leave-out">
-      <p>The coverage matrix, the country profiles, and the surprising absences together describe the landscape as it actually exists – not as brochures present it, and not as received wisdom assumes it.</p>
-      <p>What this means for a specific student, with specific subject choices, still depends on something the coverage matrix cannot answer. That is a different question – and a different article.</p>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #e8e8e8;">
-      <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Also in this series</div>
-      <div style="display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6;">
-        <a href="/research/long-bet/article/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">The Problem Statement</a>
-        <span style="font-size: 0.8125rem; color: #9ca3af;">The four-constraint optimisation problem and why every obvious answer fell apart.</span>
-      </div>
-      <div style="display: flex; flex-direction: column; padding: 8px 0;">
-        <a href="/research/long-bet/how-i-built-it/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">How I Built It</a>
-        <span style="font-size: 0.8125rem; color: #9ca3af;">Why ARWU over QS and THE, why 100 universities, and what 1,200+ normalised pairs made possible.</span>
-      </div>
-    </div>
-
+  <div class="finding">
+    <div class="f-claim">Standalone AI is available at 12 universities.<br>CS is available at 95.</div>
+    <div class="f-detail">The subject everyone identifies as "the future" barely exists as an undergraduate degree at top research institutions. The gap between CS coverage and AI coverage is not marginal – it is a factor of eight. Most universities offering CS are not offering AI as a distinct programme. They are offering CS.</div>
   </div>
-</div>
 
-<div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
+  <div class="chart-wrap">
+    <div class="chart-title">Programme coverage – universities offering each (out of 100)</div>
+    <canvas id="freqChart" height="420"></canvas>
+    <div class="chart-note">Colour = subject cluster · Hover for exact figures · 31 canonical programmes across 100 ARWU 2025 universities</div>
+  </div>
 
-<footer id="contact">
-  <div class="container">
-    <div class="section-label">Contact</div>
-    <div class="contact-links">
+  <p>Computational Biology sits at 45 universities. Bioinformatics at 54. Real numbers, not vanishingly rare. But not what someone scanning degree titles would assume. The degree title you search for is often not the degree that exists.</p>
+
+  <h2>The China question</h2>
+  <p>China has 22 universities in the top 100 by research output. Fees run at $3,000–5,000 per year for international students. Several institutions – Tsinghua (#18), Peking (#23), Zhejiang (#24), SJTU (#30) – sit in the top third of the global ranking. On cost and prestige combined, China is one of the most interesting candidates in the dataset.</p>
+  <p>Two numbers tell the story.</p>
+
+  <div style="gap:0; padding:0; overflow:hidden; background:transparent; display:flex; flex-direction:row; flex-wrap:nowrap; border-radius:10px; margin:36px 0;">
+    <div style="background:#1a1a2e; padding:28px; flex:1; border-radius:10px 0 0 10px;">
+      <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">2003 → 2025</div>
+      <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">0 → 22</div>
+      <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Universities in the top 100</div>
+      <div style="font-size:13px; line-height:1.6; color:#888;">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
+    </div>
+    <div style="background:#111; padding:28px; flex:1; border-radius:0 10px 10px 0;">
+      <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Programme profile</div>
+      <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">100%</div>
+      <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Electrical Engineering coverage</div>
+      <div style="font-size:13px; line-height:1.6; color:#888;">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
+    </div>
+  </div>
+
+  <div style="margin: 28px 0 8px;">
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:12px;">Programme profile – Chinese top-100 universities</div>
+    <div style="overflow-x:auto;">
+      <table id="china-heatmap">
+        <thead>
+          <tr>
+            <th style="text-align:left; padding:4px 8px 8px 0; color:#666; font-weight:600; white-space:nowrap;">University</th>
+            <th style="color:#F97316;">App. Math</th>
+            <th style="color:#F97316;">Comp. Bio</th>
+            <th style="color:#F97316;">Bioinformatics</th>
+            <th style="color:#F97316;">Neuroscience</th>
+            <th style="width:1px; background:#333; padding:0;"></th>
+            <th style="color:#06B6D4;">Elec. Eng.</th>
+            <th style="color:#06B6D4;">Systems Eng.</th>
+            <th style="color:#06B6D4;">Materials Sci.</th>
+          </tr>
+        </thead>
+        <tbody id="china-heatmap-body"></tbody>
+        <tfoot>
+          <tr style="border-top:1px solid #333;">
+            <td style="padding:6px 8px 2px 0; color:#888; font-size:11px; font-weight:700;">Coverage</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#e8a000; font-weight:700;">47%</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">0%</td>
+            <td style="width:1px; background:#333; padding:0;"></td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">100%</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">47%</td>
+            <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">67%</td>
+          </tr>
+          <tr>
+            <td style="padding:1px 8px 4px 0; color:#555; font-size:10px; font-style:italic;">Global avg.</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">24%</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">45%</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">54%</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">35%</td>
+            <td style="width:1px; background:#333; padding:0;"></td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">72%</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">12%</td>
+            <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">51%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div style="font-size:11px; color:#555; margin-top:8px;">
+      <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#06B6D4; vertical-align:middle; margin-right:4px;"></span>Offered &nbsp;
+      <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#1a1a2e; border:1px solid #333; vertical-align:middle; margin-right:4px; margin-left:10px;"></span>Not offered
+    </div>
+  </div>
+  <script>
+  (function(){
+    const CHINA_UNIS = [
+      { name:"Tsinghua",       rank:18,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"Peking",         rank:23,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+      { name:"Zhejiang",       rank:24,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"SJTU",           rank:30,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"USTC",           rank:40,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"Fudan",          rank:41,  appmath:0, compbio:1, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
+      { name:"Sun Yat-sen",    rank:65,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+      { name:"HKU",            rank:67,  appmath:1, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
+      { name:"HUST",           rank:73,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"Nanjing",        rank:75,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
+      { name:"Wuhan",          rank:81,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
+      { name:"Sichuan",        rank:87,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
+      { name:"Xi'an Jiaotong", rank:92,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"Central South",  rank:96,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
+      { name:"City HK",        rank:99,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:1 },
+    ];
+    const fields = ['appmath','compbio','bioinfo','neuro','ee','syse','matsc'];
+    const bioFields = new Set(['appmath','compbio','bioinfo','neuro']);
+    const tbody = document.getElementById('china-heatmap-body');
+    CHINA_UNIS.forEach(u => {
+      const tr = document.createElement('tr');
+      tr.style.borderTop = '1px solid #222';
+      let html = `<td style="padding:5px 8px 5px 0; white-space:nowrap; color:#ccc; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
+      fields.forEach((f) => {
+        if (f === 'ee') html += `<td style="width:1px; background:#333; padding:0;"></td>`;
+        const val = u[f];
+        const isBio = bioFields.has(f);
+        const bg = val ? (isBio ? '#F97316' : '#06B6D4') : '#111';
+        const border = val ? 'none' : '1px solid #2a2a2a';
+        html += `<td style="text-align:center; padding:5px 3px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
+      });
+      tr.innerHTML = html;
+      tbody.appendChild(tr);
+    });
+  })();
+  </script>
+
+  <p>Compare that trajectory to Germany: 6 universities in the top 100 in 2003, 5 in 2025. Effectively flat for two decades. China moved from nowhere to second-largest non-US presence in the ranking in the same period. The momentum story matters – and it will be examined in detail in the next article.</p>
+
+  <h2>The geography no one considers</h2>
+  <p>The standard international shortlist for STEM runs through the same destinations. Apply this research's filters and the picture shifts.</p>
+
+  <div class="reversal">
+    <div class="rev-card wrong">
+      <div class="rv-label">Obvious answer 1</div>
+      <div class="rv-name">United States / United Kingdom</div>
+      <div class="rv-logic">The default destinations for research-active STEM at elite level. Strong programme coverage. High brand recognition. Exactly what the ranking is built to identify.</div>
+      <div class="rv-verdict">✗ International fees eliminate both without full scholarship. UK: £30,000+/year. US: higher still.</div>
+    </div>
+    <div class="rev-card open">
+      <div class="rv-label">Obvious answer 2 – still investigating</div>
+      <div class="rv-name">China</div>
+      <div class="rv-logic">22 universities in the top 100 – up from zero in 2003. $3–5k/year fees. The fastest-climbing country in the ARWU ranking's history. Eliminates the cost problem entirely. Building the hardware layer of AI. Whether that ecosystem fits a math-bio trajectory needs a closer look – covered in Article 5.</div>
+      <div class="rv-verdict">~ On the list. More in Article 5.</div>
+    </div>
+    <div class="rev-card right">
+      <div class="rv-label">What the data actually shows</div>
+      <div class="rv-name">France – and Switzerland</div>
+      <div class="rv-logic">France has 4 universities in the top 100. Among them: 75% Computational Biology coverage, 75% Neuroscience, +40pp Neuroscience lift above global average, +51pp Astrophysics, +30pp Comp Bio. Paris-Saclay (#13) sits in the global top 15 by research output. Public university tuition for international students: ~€170/year. Switzerland adds ETH Zurich (#22) and EPFL (#44) – strong in systems engineering, low fees relative to ranking.</div>
+      <div class="rv-verdict">✓ Low cost. High programme fit. Completely absent from most shortlists.</div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Key programme coverage by country – selected STEM disciplines (% of country's top-100 universities offering each)</div>
+    <canvas id="countryChart" height="260"></canvas>
+    <div class="chart-note">AI = Artificial Intelligence · CompBio = Computational Biology · BioInfo = Bioinformatics · AppMath = Applied Mathematics · Global avg shown as reference line per programme</div>
+  </div>
+
+  <h2>The UK paradox</h2>
+  <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
+
+  <div class="rolls">
+    <div class="r-num">+59<span style="font-size:28px;letter-spacing:-1px">pp</span></div>
+    <div>
+      <div class="r-title">UK universities' AI coverage lift above the global average</div>
+      <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
+    </div>
+  </div>
+
+  <p>This is not a recommendation. It is a finding. The cost constraint is real. But any framework that eliminates the UK on cost and then optimises freely within the remaining options is working from an incomplete picture. The trade-off is explicit and does not resolve cleanly.</p>
+
+  <h2>The institution you know is not always the degree that exists</h2>
+  <p>The coverage matrix produced a tab labelled "Surprising Absences" – universities ranked in the global top 30 missing programmes you would assume they offer as a matter of course.</p>
+
+  <div class="gaps-list">
+    <div class="gap-row">
+      <div class="gap-uni">
+        <div class="gap-uni-name">Harvard University</div>
+        <span class="gap-rank-badge">ARWU #1</span>
+      </div>
+      <div class="gap-missing">No standalone <span class="tag">Mathematics</span> – available at 91% of top-100 universities globally.</div>
+    </div>
+    <div class="gap-row">
+      <div class="gap-uni">
+        <div class="gap-uni-name">MIT</div>
+        <span class="gap-rank-badge">ARWU #3</span>
+      </div>
+      <div class="gap-missing">No standalone <span class="tag">Electrical Engineering</span> – available at 72% globally.</div>
+    </div>
+    <div class="gap-row">
+      <div class="gap-uni">
+        <div class="gap-uni-name">University of Cambridge</div>
+        <span class="gap-rank-badge">ARWU #4</span>
+      </div>
+      <div class="gap-missing">No standalone <span class="tag">Physics</span> or <span class="tag">Electrical Engineering</span>. Entry via Natural Sciences – a single degree covering multiple disciplines.</div>
+    </div>
+    <div class="gap-row">
+      <div class="gap-uni">
+        <div class="gap-uni-name">University of Oxford</div>
+        <span class="gap-rank-badge">ARWU #6</span>
+      </div>
+      <div class="gap-missing">No standalone <span class="tag">Data Science</span> or <span class="tag">Electrical Engineering</span>.</div>
+    </div>
+    <div class="gap-row">
+      <div class="gap-uni">
+        <div class="gap-uni-name">Rockefeller University</div>
+        <span class="gap-rank-badge">ARWU #29</span>
+      </div>
+      <div class="gap-missing">4 programmes total. No <span class="tag">Computer Science</span> <span class="tag">Mathematics</span> <span class="tag">Physics</span> <span class="tag">Chemistry</span> <span class="tag">Data Science</span> <span class="tag">Statistics</span> – a pure biomedical research institution.</div>
+    </div>
+  </div>
+
+  <div style="margin: 28px 0 20px;">
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:14px;">Programme breadth – selected universities (out of 31)</div>
+    <div id="breadth-bars"></div>
+  </div>
+  <script>
+  (function(){
+    const UNIS = [
+      { name:"Stanford",        rank:2,  count:18, type:"broad" },
+      { name:"MIT",             rank:3,  count:17, type:"broad" },
+      { name:"Caltech",         rank:9,  count:17, type:"broad" },
+      { name:"ETH Zurich",      rank:22, count:18, type:"broad" },
+      { name:"UCSF",            rank:21, count:5,  type:"narrow" },
+      { name:"Rockefeller",     rank:29, count:4,  type:"narrow" },
+      { name:"Karolinska",      rank:50, count:3,  type:"narrow" },
+      { name:"UT Southwestern", rank:58, count:3,  type:"narrow" },
+    ];
+    const container = document.getElementById('breadth-bars');
+    let prevType = null;
+    UNIS.forEach(u => {
+      if (prevType === 'broad' && u.type === 'narrow') {
+        const sep = document.createElement('div');
+        sep.style.cssText = 'border-top:1px dashed #333; margin:10px 0; position:relative;';
+        sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#f9f9f9; padding:0 10px; font-size:10px; color:#555; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
+        container.appendChild(sep);
+      }
+      const pct = (u.count / 31) * 100;
+      const color = u.type === 'broad' ? '#4F7EF8' : '#dc2626';
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex; align-items:center; gap:10px; margin-bottom:7px;';
+      row.innerHTML = `
+        <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#ccc;">#${u.rank} ${u.name}</div>
+        <div style="flex:1; background:#1a1a1a; border-radius:3px; height:16px; position:relative; overflow:hidden;">
+          <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px; transition:width 0.3s;"></div>
+        </div>
+        <div style="width:36px; flex-shrink:0; font-size:12px; font-weight:700; color:${color};">${u.count}/31</div>
+      `;
+      container.appendChild(row);
+      prevType = u.type;
+    });
+  })();
+  </script>
+
+  <p>These are not failures. Cambridge's Natural Sciences structure is one of the most rigorous scientific training programmes in the world. But UCSF at #21 – ranked above Edinburgh, Manchester, and Imperial – is a medical research institution. It does not teach CS or Mathematics. Neither does Karolinska (#50), UT Southwestern (#58), or MD Anderson (#86). All four appear in the top 100 by research output. None of them are universities in the sense a STEM undergraduate would recognise. Filter by rank and you may be researching institutions that do not offer the subject you came for. The brand and the degree structure are separate things. Confusing them produces incorrect shortlists.</p>
+
+  <div class="leave-out">
+    <p>The coverage matrix, the country profiles, and the surprising absences together describe the landscape as it actually exists – not as brochures present it, and not as received wisdom assumes it.</p>
+    <p>What this means for a specific student, with specific subject choices, still depends on something the coverage matrix cannot answer. That is a different question – and a different article.</p>
+  </div>
+
+  <div class="series-nav">
+    <div class="series-nav-label">Also in this series</div>
+    <div class="series-nav-item">
+      <a href="/research/long-bet/article/">The Problem Statement</a>
+      <span>The four-constraint optimisation problem and why every obvious answer fell apart.</span>
+    </div>
+    <div class="series-nav-item">
+      <a href="/research/long-bet/how-i-built-it/">How I Built It</a>
+      <span>Why ARWU over QS and THE, why 100 universities, and what 1,200+ normalised pairs made possible.</span>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-label">Contact</div>
+    <div class="footer-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
       <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
       <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
@@ -520,80 +641,6 @@
 </script>
 
 <script>
-(function(){
-  const CHINA_UNIS = [
-    { name:"Tsinghua",       rank:18,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"Peking",         rank:23,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
-    { name:"Zhejiang",       rank:24,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"SJTU",           rank:30,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"USTC",           rank:40,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"Fudan",          rank:41,  appmath:0, compbio:1, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
-    { name:"Sun Yat-sen",    rank:65,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
-    { name:"HKU",            rank:67,  appmath:1, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
-    { name:"HUST",           rank:73,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"Nanjing",        rank:75,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:0 },
-    { name:"Wuhan",          rank:81,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:0 },
-    { name:"Sichuan",        rank:87,  appmath:0, compbio:0, bioinfo:1, neuro:0, ee:1, syse:0, matsc:1 },
-    { name:"Xi'an Jiaotong", rank:92,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"Central South",  rank:96,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
-    { name:"City HK",        rank:99,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:0, matsc:1 },
-  ];
-  const fields = ['appmath','compbio','bioinfo','neuro','ee','syse','matsc'];
-  const bioFields = new Set(['appmath','compbio','bioinfo','neuro']);
-  const tbody = document.getElementById('china-heatmap-body');
-  CHINA_UNIS.forEach(u => {
-    const tr = document.createElement('tr');
-    tr.style.borderTop = '1px solid #222';
-    let html = `<td style="padding:5px 8px 5px 0; white-space:nowrap; color:#ccc; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
-    fields.forEach((f) => {
-      if (f === 'ee') html += `<td style="width:1px; background:#ddd; padding:0;"></td>`;
-      const val = u[f];
-      const isBio = bioFields.has(f);
-      const bg = val ? (isBio ? '#F97316' : '#06B6D4') : '#111';
-      const border = val ? 'none' : '1px solid #2a2a2a';
-      html += `<td style="text-align:center; padding:5px 3px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
-    });
-    tr.innerHTML = html;
-    tbody.appendChild(tr);
-  });
-})();
-
-(function(){
-  const UNIS = [
-    { name:"Stanford",        rank:2,  count:18, type:"broad" },
-    { name:"MIT",             rank:3,  count:17, type:"broad" },
-    { name:"Caltech",         rank:9,  count:17, type:"broad" },
-    { name:"ETH Zurich",      rank:22, count:18, type:"broad" },
-    { name:"UCSF",            rank:21, count:5,  type:"narrow" },
-    { name:"Rockefeller",     rank:29, count:4,  type:"narrow" },
-    { name:"Karolinska",      rank:50, count:3,  type:"narrow" },
-    { name:"UT Southwestern", rank:58, count:3,  type:"narrow" },
-  ];
-  const container = document.getElementById('breadth-bars');
-  let prevType = null;
-  UNIS.forEach(u => {
-    if (prevType === 'broad' && u.type === 'narrow') {
-      const sep = document.createElement('div');
-      sep.style.cssText = 'border-top:1px dashed #333; margin:10px 0; position:relative;';
-      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#f9f9f9; padding:0 10px; font-size:10px; color:#555; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
-      container.appendChild(sep);
-    }
-    const pct = (u.count / 31) * 100;
-    const color = u.type === 'broad' ? '#4F7EF8' : '#dc2626';
-    const row = document.createElement('div');
-    row.style.cssText = 'display:flex; align-items:center; gap:10px; margin-bottom:7px;';
-    row.innerHTML = `
-      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#ccc;">#${u.rank} ${u.name}</div>
-      <div style="flex:1; background:#1a1a1a; border-radius:3px; height:16px; position:relative; overflow:hidden;">
-        <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px; transition:width 0.3s;"></div>
-      </div>
-      <div style="width:36px; flex-shrink:0; font-size:12px; font-weight:700; color:${color};">${u.count}/31</div>
-    `;
-    container.appendChild(row);
-    prevType = u.type;
-  });
-})();
-
 const PROGRAMS = [
   {"name":"Computer Science","cluster":"CS & AI","count":95},
   {"name":"Physics","cluster":"Physics & Astronomy","count":94},
