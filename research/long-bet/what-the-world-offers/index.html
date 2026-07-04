@@ -25,9 +25,10 @@
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
+    /* ── Site chrome ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 50px; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
     a { color: #1e40af; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
@@ -51,89 +52,6 @@
     .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
     .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; border-left: 3px solid #111827; padding-left: 16px; }
     .page-meta { font-size: 0.875rem; color: #6b7280; }
-
-    /* Article body */
-    .article-body { padding: 40px 0; }
-    .article-body p { font-size: 1rem; line-height: 1.75; color: #374151; margin-bottom: 20px; }
-    .article-body h2 { font-size: 1.375rem; font-weight: 700; color: #111827; margin: 48px 0 16px; letter-spacing: -0.02em; }
-    .article-body h2:first-child { margin-top: 0; }
-    .article-body strong { color: #111827; }
-    .article-body a { color: #1e40af; }
-
-    /* Finding callout – dark */
-    .finding { background: #111827; border-radius: 10px; padding: 28px 32px; margin: 32px 0; }
-    .finding .f-claim { font-size: 1.25rem; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 12px; }
-    .finding .f-detail { font-size: 0.875rem; line-height: 1.65; color: #9ca3af; }
-
-    /* Chart */
-    .chart-wrap { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px; padding: 24px 24px 20px; margin: 32px 0; }
-    .chart-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9ca3af; margin-bottom: 16px; }
-    .chart-note { font-size: 0.6875rem; color: #9ca3af; margin-top: 12px; line-height: 1.5; }
-
-    /* China stat boxes – dark */
-    .china-stats { display: flex; gap: 0; margin: 32px 0; border-radius: 10px; overflow: hidden; }
-    .china-stat { flex: 1; padding: 28px; }
-    .china-stat.left { background: #1e2a3a; }
-    .china-stat.right { background: #111827; }
-    .cs-label { font-size: 0.6875rem; color: #4b5563; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
-    .cs-num { font-size: 2.625rem; font-weight: 800; color: #ffffff; letter-spacing: -0.04em; line-height: 1.1; }
-    .cs-title { font-size: 0.9375rem; font-weight: 700; color: #ffffff; margin-top: 8px; margin-bottom: 6px; }
-    .cs-detail { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
-
-    /* China heatmap */
-    .heatmap-wrap { margin: 28px 0 8px; }
-    .heatmap-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 12px; }
-    .heatmap-scroll { overflow-x: auto; }
-    #china-heatmap { border-collapse: collapse; font-size: 11.5px; width: 100%; min-width: 560px; }
-    #china-heatmap th { padding: 4px 6px 8px; font-weight: 700; font-size: 10.5px; text-align: center; white-space: nowrap; }
-    #china-heatmap td { padding: 5px 6px; border-top: 1px solid #f3f4f6; }
-    .heatmap-legend { font-size: 11px; color: #6b7280; margin-top: 8px; display: flex; gap: 14px; flex-wrap: wrap; }
-
-    /* Reversal cards */
-    .reversal { margin: 32px 0; display: flex; flex-direction: column; gap: 3px; }
-    .rev-card { padding: 20px 24px; border-radius: 4px; }
-    .rev-card:first-child { border-radius: 10px 10px 4px 4px; }
-    .rev-card:last-child { border-radius: 4px 4px 10px 10px; }
-    .rev-card.wrong { background: #f3f4f6; }
-    .rev-card.open { background: #eff6ff; }
-    .rev-card.right { background: #111827; }
-    .rv-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9ca3af; margin-bottom: 6px; }
-    .rev-card.right .rv-label { color: #4b5563; }
-    .rv-name { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
-    .rev-card.right .rv-name { color: #ffffff; }
-    .rv-logic { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
-    .rev-card.right .rv-logic { color: #9ca3af; }
-    .rv-verdict { font-size: 0.75rem; font-weight: 700; margin-top: 10px; padding: 4px 10px; border-radius: 4px; display: inline-block; }
-    .rev-card.wrong .rv-verdict { background: #e5e7eb; color: #6b7280; }
-    .rev-card.open .rv-verdict { background: #bfdbfe; color: #1e40af; }
-    .rev-card.right .rv-verdict { background: #064e3b; color: #6ee7b7; }
-
-    /* UK big number */
-    .rolls { background: #111827; border-radius: 10px; padding: 32px 36px; margin: 32px 0; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
-    .rolls .r-num { font-size: 4.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.05em; line-height: 1; flex-shrink: 0; }
-    .rolls .r-title { font-size: 0.9375rem; font-weight: 700; color: #ffffff; margin-bottom: 6px; }
-    .rolls .r-detail { font-size: 0.8125rem; line-height: 1.6; color: #6b7280; }
-
-    /* Gaps list */
-    .gaps-list { margin: 32px 0; display: flex; flex-direction: column; gap: 3px; }
-    .gap-row { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 4px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
-    .gap-row:first-child { border-radius: 10px 10px 4px 4px; }
-    .gap-row:last-child { border-radius: 4px 4px 10px 10px; }
-    .gap-uni { min-width: 180px; flex-shrink: 0; }
-    .gap-uni-name { font-size: 0.8125rem; font-weight: 700; color: #111827; line-height: 1.3; }
-    .gap-rank-badge { display: inline-block; font-size: 0.625rem; font-weight: 700; color: #6b7280; background: #f3f4f6; border-radius: 4px; padding: 2px 7px; margin-top: 4px; }
-    .gap-missing { font-size: 0.8125rem; color: #6b7280; line-height: 1.65; }
-    .tag { display: inline-block; background: #f3f4f6; border-radius: 4px; padding: 2px 8px; margin: 2px 3px 2px 0; font-size: 0.6875rem; color: #374151; white-space: nowrap; }
-
-    /* Breadth bars */
-    .breadth-wrap { margin: 28px 0 20px; }
-    .breadth-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
-    #breadth-bars { }
-
-    /* Leave it out */
-    .leave-out { border-top: 2px solid #111827; padding-top: 32px; margin-top: 48px; }
-    .leave-out p { font-size: 1.0625rem; color: #374151; line-height: 1.75; margin-bottom: 20px; }
-
     .back-link { padding: 32px 0 48px; }
     .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
     .back-link a:hover { color: #1e40af; }
@@ -142,18 +60,216 @@
     .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
-    @media (max-width: 600px) {
-      .page-title { font-size: 1.375rem; }
-      header { padding: 28px 0 24px; }
-      .china-stats { flex-direction: column; }
+
+    /* ── Article body – from source file ── */
+    .article-wrap { padding: 0 0 60px; }
+    .article-wrap p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .article-wrap h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      margin: 48px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    .article-wrap strong { color: #111; }
+
+    /* Finding callout */
+    .finding {
+      background: #111;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .finding .f-claim {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .finding .f-detail {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #bbb;
+    }
+
+    /* Chart container */
+    .chart-wrap {
+      background: #fff;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 12px;
+      padding: 24px 24px 20px;
+      margin: 32px 0;
+    }
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .chart-wrap canvas { display: block; width: 100% !important; }
+    .chart-note {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* Rolls Royce stat */
+    .rolls {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin: 36px 0;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .rolls .r-num {
+      font-size: 68px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -4px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .rolls .r-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .rolls .r-detail {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #888;
+    }
+
+    /* Reversal three */
+    .reversal {
+      margin: 36px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .rev-card { padding: 20px 24px; border-radius: 4px; }
+    .rev-card:first-child { border-radius: 10px 10px 4px 4px; }
+    .rev-card:last-child  { border-radius: 4px 4px 10px 10px; }
+    .rev-card.wrong  { background: #f0f0f0; }
+    .rev-card.open   { background: #e8f0fb; }
+    .rev-card.right  { background: #111; }
+    .rev-card .rv-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+    .rev-card.right .rv-label { color: #555; }
+    .rev-card .rv-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 6px;
+    }
+    .rev-card.right .rv-name { color: #fff; }
+    .rev-card .rv-logic {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #666;
+    }
+    .rev-card.right .rv-logic { color: #bbb; }
+    .rev-card .rv-verdict {
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 10px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .rev-card.wrong .rv-verdict  { background: #ddd; color: #666; }
+    .rev-card.open  .rv-verdict  { background: #c2d8f5; color: #2d4a6f; }
+    .rev-card.right .rv-verdict  { background: #2d6a4f; color: #b7e4c7; }
+
+    /* Gaps table */
+    .gaps-list {
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .gap-row {
+      background: #fff;
+      border: 1.5px solid #e8e8e8;
+      border-radius: 4px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .gap-row:first-child { border-radius: 10px 10px 4px 4px; }
+    .gap-row:last-child  { border-radius: 4px 4px 10px 10px; }
+    .gap-uni { min-width: 190px; flex-shrink: 0; }
+    .gap-uni-name { font-size: 13px; font-weight: 700; color: #111; line-height: 1.3; }
+    .gap-rank-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #888;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-top: 4px;
+    }
+    .gap-missing { font-size: 13px; color: #777; line-height: 1.65; }
+    .gap-missing .tag {
+      display: inline-block;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin: 2px 3px 2px 0;
+      font-size: 11px;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    /* Leave it out */
+    .leave-out {
+      border-top: 2px solid #111;
+      padding-top: 32px;
+      margin-top: 48px;
+    }
+    .leave-out p {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    /* China heatmap */
+    #china-heatmap { border-collapse: collapse; font-size: 11.5px; width: 100%; min-width: 560px; }
+    #china-heatmap th { padding: 4px 3px 8px; font-weight: 700; font-size: 10.5px; text-align: center; white-space: nowrap; }
+    #china-heatmap td { padding: 5px 3px; }
+
+    @media (max-width: 700px) {
       .rolls { flex-direction: column; gap: 16px; }
-      .rolls .r-num { font-size: 3rem; }
+      .rolls .r-num { font-size: 48px; }
       .gap-row { flex-direction: column; gap: 6px; }
       .gap-uni { min-width: unset; }
     }
   </style>
 </head>
 <body>
+
 <header>
   <div class="container">
     <div class="site-name"><a href="/">Maria Atamanova</a></div>
@@ -162,6 +278,7 @@
 </header>
 <nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="#contact" class="nav-link">Contact</a></div></nav>
 <div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>What the World Actually Offers</strong></div></div>
+
 <div class="page-header">
   <div class="container">
     <div class="page-series">The Long Bet · Ongoing Series</div>
@@ -171,7 +288,7 @@
   </div>
 </div>
 
-<div class="article-body">
+<div class="article-wrap">
   <div class="container">
 
     <p>The goal was straightforward: map what 100 top universities actually offer across 31 STEM programme categories, then filter for the intersection that matters. Mathematics plus computational biology. Research-active institutions. Realistic cost. A-level entry.</p>
@@ -198,68 +315,68 @@
     <p>China has 22 universities in the top 100 by research output. Fees run at $3,000–5,000 per year for international students. Several institutions – Tsinghua (#18), Peking (#23), Zhejiang (#24), SJTU (#30) – sit in the top third of the global ranking. On cost and prestige combined, China is one of the most interesting candidates in the dataset.</p>
     <p>Two numbers tell the story.</p>
 
-    <div class="china-stats">
-      <div class="china-stat left">
-        <div class="cs-label">2003 → 2025</div>
-        <div class="cs-num">0 → 22</div>
-        <div class="cs-title">Universities in the top 100</div>
-        <div class="cs-detail">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
+    <div style="gap:0; padding:0; overflow:hidden; background:transparent; display:flex; flex-direction:row; flex-wrap:nowrap; border-radius:10px; margin:36px 0;">
+      <div style="background:#1a1a2e; padding:28px; flex:1; border-radius:10px 0 0 10px;">
+        <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">2003 → 2025</div>
+        <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">0 → 22</div>
+        <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Universities in the top 100</div>
+        <div style="font-size:13px; line-height:1.6; color:#888;">China entered the ARWU top 100 with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
       </div>
-      <div class="china-stat right">
-        <div class="cs-label">Programme profile</div>
-        <div class="cs-num">100%</div>
-        <div class="cs-title">Electrical Engineering coverage</div>
-        <div class="cs-detail">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
+      <div style="background:#111; padding:28px; flex:1; border-radius:0 10px 10px 0;">
+        <div style="font-size:13px; color:#555; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Programme profile</div>
+        <div style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-2px; line-height:1.1;">100%</div>
+        <div style="font-size:15px; font-weight:700; color:#fff; margin-top:8px; margin-bottom:6px;">Electrical Engineering coverage</div>
+        <div style="font-size:13px; line-height:1.6; color:#888;">Every one of China's top-100 universities offers EE – vs a 72% global average. EE is foundational for AI hardware: chips, GPUs, signal processing. China isn't ignoring AI. It's building the hardware layer of it.</div>
       </div>
     </div>
 
-    <div class="heatmap-wrap">
-      <div class="heatmap-label">Programme profile – Chinese top-100 universities</div>
-      <div class="heatmap-scroll">
+    <div style="margin: 28px 0 8px;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:12px;">Programme profile – Chinese top-100 universities</div>
+      <div style="overflow-x:auto;">
         <table id="china-heatmap">
           <thead>
             <tr>
-              <th style="text-align:left; padding-left:0; color:#6b7280; font-weight:600;">University</th>
-              <th style="color:#f97316;">App. Math</th>
-              <th style="color:#f97316;">Comp. Bio</th>
-              <th style="color:#f97316;">Bioinformatics</th>
-              <th style="color:#f97316;">Neuroscience</th>
-              <th style="width:1px; background:#e5e7eb; padding:0;"></th>
-              <th style="color:#0891b2;">Elec. Eng.</th>
-              <th style="color:#0891b2;">Systems Eng.</th>
-              <th style="color:#0891b2;">Materials Sci.</th>
+              <th style="text-align:left; padding:4px 8px 8px 0; color:#666; font-weight:600; white-space:nowrap;">University</th>
+              <th style="color:#F97316;">App. Math</th>
+              <th style="color:#F97316;">Comp. Bio</th>
+              <th style="color:#F97316;">Bioinformatics</th>
+              <th style="color:#F97316;">Neuroscience</th>
+              <th style="width:1px; background:#333; padding:0;"></th>
+              <th style="color:#06B6D4;">Elec. Eng.</th>
+              <th style="color:#06B6D4;">Systems Eng.</th>
+              <th style="color:#06B6D4;">Materials Sci.</th>
             </tr>
           </thead>
           <tbody id="china-heatmap-body"></tbody>
           <tfoot>
-            <tr style="border-top:1px solid #e5e7eb;">
-              <td style="padding:6px 0 2px; color:#6b7280; font-size:11px; font-weight:700;">Coverage</td>
-              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
-              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">7%</td>
-              <td style="text-align:center; color:#d97706; font-weight:700; font-size:11px;">47%</td>
-              <td style="text-align:center; color:#f97316; font-weight:700; font-size:11px;">0%</td>
-              <td style="width:1px; background:#e5e7eb; padding:0;"></td>
-              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">100%</td>
-              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">47%</td>
-              <td style="text-align:center; color:#0891b2; font-weight:700; font-size:11px;">67%</td>
+            <tr style="border-top:1px solid #333;">
+              <td style="padding:6px 8px 2px 0; color:#888; font-size:11px; font-weight:700;">Coverage</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">7%</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#e8a000; font-weight:700;">47%</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#F97316; font-weight:700;">0%</td>
+              <td style="width:1px; background:#333; padding:0;"></td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">100%</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">47%</td>
+              <td style="text-align:center; padding:6px 3px 2px; color:#06B6D4; font-weight:700;">67%</td>
             </tr>
             <tr>
-              <td style="padding:1px 0 4px; color:#9ca3af; font-size:10px; font-style:italic;">Global avg.</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">24%</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">45%</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">54%</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">35%</td>
-              <td style="width:1px; background:#e5e7eb; padding:0;"></td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">72%</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">12%</td>
-              <td style="text-align:center; color:#9ca3af; font-size:10px;">51%</td>
+              <td style="padding:1px 8px 4px 0; color:#555; font-size:10px; font-style:italic;">Global avg.</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">24%</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">45%</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">54%</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">35%</td>
+              <td style="width:1px; background:#333; padding:0;"></td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">72%</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">12%</td>
+              <td style="text-align:center; padding:1px 3px 4px; color:#555; font-size:10px;">51%</td>
             </tr>
           </tfoot>
         </table>
       </div>
-      <div class="heatmap-legend">
-        <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#0891b2;vertical-align:middle;margin-right:4px;"></span>Offered</span>
-        <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:#f3f4f6;border:1px solid #e5e7eb;vertical-align:middle;margin-right:4px;"></span>Not offered</span>
+      <div style="font-size:11px; color:#555; margin-top:8px;">
+        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#06B6D4; vertical-align:middle; margin-right:4px;"></span>Offered &nbsp;
+        <span style="display:inline-block; width:12px; height:12px; border-radius:2px; background:#e8e8e8; border:1px solid #ccc; vertical-align:middle; margin-right:4px; margin-left:10px;"></span>Not offered
       </div>
     </div>
 
@@ -299,7 +416,7 @@
     <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
 
     <div class="rolls">
-      <div class="r-num">+59<span style="font-size:1.75rem;letter-spacing:-1px;">pp</span></div>
+      <div class="r-num">+59<span style="font-size:28px;letter-spacing:-1px">pp</span></div>
       <div>
         <div class="r-title">UK universities' AI coverage lift above the global average</div>
         <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
@@ -349,8 +466,8 @@
       </div>
     </div>
 
-    <div class="breadth-wrap">
-      <div class="breadth-label">Programme breadth – selected universities (out of 31)</div>
+    <div style="margin: 28px 0 20px;">
+      <div style="font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; margin-bottom:14px;">Programme breadth – selected universities (out of 31)</div>
       <div id="breadth-bars"></div>
     </div>
 
@@ -361,7 +478,7 @@
       <p>What this means for a specific student, with specific subject choices, still depends on something the coverage matrix cannot answer. That is a different question – and a different article.</p>
     </div>
 
-    <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #e5e7eb;">
+    <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #e8e8e8;">
       <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Also in this series</div>
       <div style="display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6;">
         <a href="/research/long-bet/article/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">The Problem Statement</a>
@@ -400,7 +517,6 @@
 </script>
 
 <script>
-// China heatmap
 (function(){
   const CHINA_UNIS = [
     { name:"Tsinghua",       rank:18,  appmath:0, compbio:0, bioinfo:0, neuro:0, ee:1, syse:1, matsc:1 },
@@ -424,21 +540,21 @@
   const tbody = document.getElementById('china-heatmap-body');
   CHINA_UNIS.forEach(u => {
     const tr = document.createElement('tr');
-    let html = `<td style="padding:5px 0; white-space:nowrap; color:#374151; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
+    tr.style.borderTop = '1px solid #eee';
+    let html = `<td style="padding:5px 8px 5px 0; white-space:nowrap; color:#444; font-size:11.5px;">#${u.rank} ${u.name}</td>`;
     fields.forEach((f) => {
-      if (f === 'ee') html += `<td style="width:1px; background:#e5e7eb; padding:0;"></td>`;
+      if (f === 'ee') html += `<td style="width:1px; background:#ddd; padding:0;"></td>`;
       const val = u[f];
       const isBio = bioFields.has(f);
-      const bg = val ? (isBio ? '#f97316' : '#0891b2') : '#f3f4f6';
-      const border = val ? 'none' : '1px solid #e5e7eb';
-      html += `<td style="text-align:center; padding:5px 6px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
+      const bg = val ? (isBio ? '#F97316' : '#06B6D4') : '#f0f0f0';
+      const border = val ? 'none' : '1px solid #e0e0e0';
+      html += `<td style="text-align:center; padding:5px 3px;"><span style="display:inline-block; width:14px; height:14px; border-radius:2px; background:${bg}; border:${border};"></span></td>`;
     });
     tr.innerHTML = html;
     tbody.appendChild(tr);
   });
 })();
 
-// Breadth bars
 (function(){
   const UNIS = [
     { name:"Stanford",        rank:2,  count:18, type:"broad" },
@@ -455,17 +571,17 @@
   UNIS.forEach(u => {
     if (prevType === 'broad' && u.type === 'narrow') {
       const sep = document.createElement('div');
-      sep.style.cssText = 'border-top:1px dashed #e5e7eb; margin:10px 0; position:relative;';
-      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#fff; padding:0 10px; font-size:10px; color:#9ca3af; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
+      sep.style.cssText = 'border-top:1px dashed #ccc; margin:10px 0; position:relative;';
+      sep.innerHTML = '<span style="position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:#fff; padding:0 10px; font-size:10px; color:#aaa; letter-spacing:0.06em; text-transform:uppercase;">Medical research institutions</span>';
       container.appendChild(sep);
     }
     const pct = (u.count / 31) * 100;
-    const color = u.type === 'broad' ? '#1e40af' : '#dc2626';
+    const color = u.type === 'broad' ? '#4F7EF8' : '#dc2626';
     const row = document.createElement('div');
     row.style.cssText = 'display:flex; align-items:center; gap:10px; margin-bottom:7px;';
     row.innerHTML = `
-      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#374151;">#${u.rank} ${u.name}</div>
-      <div style="flex:1; background:#f3f4f6; border-radius:3px; height:16px; overflow:hidden;">
+      <div style="width:130px; flex-shrink:0; text-align:right; font-size:12px; color:#555;">#${u.rank} ${u.name}</div>
+      <div style="flex:1; background:#f0f0f0; border-radius:3px; height:16px; overflow:hidden;">
         <div style="width:${pct}%; background:${color}; height:100%; border-radius:3px;"></div>
       </div>
       <div style="width:36px; flex-shrink:0; font-size:12px; font-weight:700; color:${color};">${u.count}/31</div>
@@ -475,7 +591,6 @@
   });
 })();
 
-// Chart 1: Programme frequency
 const PROGRAMS = [
   {"name":"Computer Science","cluster":"CS & AI","count":95},
   {"name":"Physics","cluster":"Physics & Astronomy","count":94},
@@ -522,10 +637,9 @@ const borderColors = PROGRAMS.map(p => HIGHLIGHT.includes(p.name) ? CLUSTER_COLO
 new Chart(document.getElementById("freqChart").getContext("2d"), {
   type:"bar",
   data:{ labels:PROGRAMS.map(p=>p.name), datasets:[{ data:PROGRAMS.map(p=>p.count), backgroundColor:bgColors, borderColor:borderColors, borderWidth:2, borderRadius:3, borderSkipped:false }] },
-  options:{ indexAxis:"y", responsive:true, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:"#1a1a2e", titleColor:"#fff", bodyColor:"#9ca3af", padding:10, callbacks:{ label:ctx=>` ${ctx.raw} / 100 universities (${ctx.raw}%)`, afterLabel:ctx=>`Cluster: ${PROGRAMS[ctx.dataIndex].cluster}` } } }, scales:{ x:{ max:100, grid:{color:"#efefef"}, ticks:{color:"#9ca3af",callback:v=>v+"%"} }, y:{ grid:{display:false}, ticks:{ color:ctx=>HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"#111827":"#9ca3af", font:ctx=>({size:11,weight:HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"700":"400"}) } } } }
+  options:{ indexAxis:"y", responsive:true, plugins:{ legend:{display:false}, tooltip:{ backgroundColor:"#1a1a2e", titleColor:"#fff", bodyColor:"#aaa", padding:10, callbacks:{ label:ctx=>` ${ctx.raw} / 100 universities (${ctx.raw}%)`, afterLabel:ctx=>`Cluster: ${PROGRAMS[ctx.dataIndex].cluster}` } } }, scales:{ x:{ max:100, grid:{color:"#efefef"}, ticks:{color:"#aaa",callback:v=>v+"%"}, border:{color:"#e0e0e0"} }, y:{ grid:{display:false}, ticks:{ color:ctx=>HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"#111":"#999", font:ctx=>({size:11,weight:HIGHLIGHT.includes(PROGRAMS[ctx.index]?.name)?"700":"400"}) } } } }
 });
 
-// Chart 2: Country comparison
 const countries = ["UK","France","China","Germany","Switzerland"];
 const keyProgs = [
   {label:"AI",      global:12, values:{UK:71.4,France:0,   China:7.7, Germany:0,   Switzerland:0}},
@@ -538,7 +652,7 @@ const countryColors = {UK:"#2563eb",France:"#059669",China:"#dc2626",Germany:"#7
 new Chart(document.getElementById("countryChart").getContext("2d"), {
   type:"bar",
   data:{ labels:keyProgs.map(p=>p.label), datasets:[ ...countries.map(c=>({ label:c, data:keyProgs.map(p=>p.values[c]), backgroundColor:countryColors[c]+"cc", borderColor:countryColors[c], borderWidth:1.5, borderRadius:3 })), { label:"Global avg", data:keyProgs.map(p=>p.global), backgroundColor:"transparent", borderColor:"#aaa", borderWidth:2, borderDash:[4,4], type:"line", pointRadius:4, pointBackgroundColor:"#aaa", tension:0 } ] },
-  options:{ responsive:true, plugins:{ legend:{position:"bottom",labels:{color:"#6b7280",font:{size:11},padding:12,boxWidth:12}}, tooltip:{backgroundColor:"#1a1a2e",titleColor:"#fff",bodyColor:"#9ca3af",padding:10,callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} }, scales:{ x:{grid:{display:false},ticks:{color:"#374151",font:{size:12,weight:"600"}}}, y:{max:100,grid:{color:"#efefef"},ticks:{color:"#9ca3af",callback:v=>v+"%"}} } }
+  options:{ responsive:true, plugins:{ legend:{position:"bottom",labels:{color:"#666",font:{size:11},padding:12,boxWidth:12}}, tooltip:{backgroundColor:"#1a1a2e",titleColor:"#fff",bodyColor:"#aaa",padding:10,callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.raw}%`}} }, scales:{ x:{grid:{display:false},ticks:{color:"#555",font:{size:12,weight:"600"}}}, y:{max:100,grid:{color:"#efefef"},ticks:{color:"#aaa",callback:v=>v+"%"},border:{color:"#e0e0e0"}} } }
 });
 </script>
 </body>
