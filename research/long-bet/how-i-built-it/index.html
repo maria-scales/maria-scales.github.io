@@ -48,7 +48,7 @@
     .page-header { padding: 40px 0 32px; }
     .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
     .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
-    .page-standfirst { font-size: 1.0625rem; color: #4b5563; line-height: 1.6; margin-bottom: 12px; }
+    .page-standfirst { font-size: 1.0625rem; color: #4a6080; line-height: 1.6; margin-bottom: 12px; }
     .page-meta { font-size: 0.875rem; color: #6b7280; }
     .article-content { padding: 40px 0; }
     .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
@@ -62,37 +62,40 @@
 
     /* Ranking trio */
     .ranking-trio { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
-    .ranking-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 20px; }
-    .ranking-card.wrong { border-left: 3px solid #ef4444; }
-    .ranking-card.closer { border-left: 3px solid #f59e0b; }
-    .ranking-card.right { border-left: 3px solid #10b981; }
+    .ranking-card { border: 1px solid #dde3ec; border-radius: 8px; padding: 16px 20px; }
+    .ranking-card.wrong { background: #EEF2F7; border-left: 3px solid #F07A5A; }
+    .ranking-card.closer { background: #dce8f5; border-left: 3px solid #7a8fa6; }
+    .ranking-card.right { background: #1e293b; border-left: 3px solid #4F7EC7; }
     .r-label { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #9ca3af; margin-bottom: 4px; }
     .r-name { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
     .r-detail { font-size: 0.875rem; color: #374151; line-height: 1.6; margin-bottom: 8px; }
     .r-verdict { font-size: 0.8125rem; font-weight: 600; color: #374151; }
-    .ranking-card.wrong .r-verdict { color: #ef4444; }
-    .ranking-card.closer .r-verdict { color: #f59e0b; }
-    .ranking-card.right .r-verdict { color: #10b981; }
+    .ranking-card.wrong .r-verdict { color: #F07A5A; }
+    .ranking-card.closer .r-verdict { color: #2E6AAD; }
+    .ranking-card.right .r-name { color: #fff; }
+    .ranking-card.right .r-label { color: #4a6080; }
+    .ranking-card.right .r-detail { color: #8aaac4; }
+    .ranking-card.right .r-verdict { color: #4F7EC7; }
 
     /* Data pills */
     .data-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
-    .data-pill { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 100px; flex: 1; }
-    .data-pill .num { font-size: 1.375rem; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
-    .data-pill .desc { font-size: 0.75rem; color: #6b7280; margin-top: 2px; }
+    .data-pill { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 100px; flex: 1; }
+    .data-pill .num { font-size: 1.375rem; font-weight: 700; color: #2E6AAD; letter-spacing: -0.02em; }
+    .data-pill .desc { font-size: 0.75rem; color: #7a8fa6; margin-top: 2px; }
 
     /* Rolls-Royce big number */
-    .big-number { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin: 20px 0; text-align: center; background: #f9fafb; }
-    .big-number .rr-number { font-size: 3rem; font-weight: 700; color: #111827; letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
-    .big-number .rr-label { font-size: 0.9375rem; font-weight: 600; color: #374151; margin-bottom: 6px; }
-    .big-number .rr-detail { font-size: 0.875rem; color: #6b7280; }
+    .big-number { background: #EEF2F7; border: 1px solid #dde3ec; border-left: 4px solid #4F7EC7; border-radius: 8px; padding: 24px; margin: 20px 0; text-align: center; }
+    .big-number .rr-number { font-size: 3rem; font-weight: 700; color: #2E6AAD; letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
+    .big-number .rr-label { font-size: 0.9375rem; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
+    .big-number .rr-detail { font-size: 0.875rem; color: #4a6080; }
 
     /* Process steps */
     .process-steps { margin: 20px 0; }
-    .process-step { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #f3f4f6; }
+    .process-step { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid #dde3ec; }
     .process-step:last-child { border-bottom: none; }
-    .step-num { font-size: 1.25rem; font-weight: 700; color: #d1d5db; letter-spacing: -0.02em; flex-shrink: 0; width: 32px; }
-    .step-title { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
-    .step-desc { font-size: 0.9375rem; color: #374151; line-height: 1.6; }
+    .step-num { font-size: 1.25rem; font-weight: 700; color: #c0ccd8; letter-spacing: -0.02em; flex-shrink: 0; width: 32px; }
+    .step-title { font-size: 0.9375rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+    .step-desc { font-size: 0.9375rem; color: #4a6080; line-height: 1.6; }
 
     .back-link { padding: 32px 0 48px; }
     .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
@@ -210,7 +213,7 @@
     <p>The coverage matrix, the frequency rankings, and the uniqueness analysis produced a clear picture of what the global landscape of STEM education actually looks like – as opposed to what the rankings, the school counsellors, and the received wisdom suggest it looks like.</p>
     <p>The two pictures are not the same.</p>
 
-    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
+    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #dde3ec;">
       <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Next in this series</div>
       <div style="display: flex; flex-direction: column; padding: 14px 0;">
         <a href="/research/long-bet/what-the-world-offers/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">What the World Actually Offers</a>
