@@ -73,6 +73,13 @@
     .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    .series-nav { margin-top: 48px; padding-top: 28px; border-top: 1px solid #e5e7eb; }
+    .series-nav-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .series-nav-item { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+    .series-nav-item:last-child { border-bottom: none; }
+    .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+    .series-nav-item a:hover { color: #1e40af; }
+    .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
     @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } }
   </style>
 </head>
@@ -149,11 +156,23 @@
     <blockquote><p>That is not parenting. That is how a senior strategist scopes a problem.</p></blockquote>
     <p>The four-dimension optimisation framework used here – programme fit, temporal robustness, optionality, cost efficiency – is the same mental architecture applied to growth strategy, channel planning, and media mix decisions. The domain is different. The method is identical.</p>
 
-    <div class="sub-articles" style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
-      <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Next in this series</div>
-      <div style="display: flex; flex-direction: column; padding: 14px 0;">
-        <a href="/research/long-bet/how-i-built-it/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">How I Built It</a>
-        <span style="font-size: 0.8125rem; color: #9ca3af;">Why we chose ARWU over QS and THE, why 100 universities was the right cut, and what 1,200+ programme pairs made possible.</span>
+    <div class="series-nav">
+      <div class="series-nav-label">Also in this series</div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/how-i-built-it/">How I Built It</a>
+        <span>Why ARWU over QS and THE, why 100 universities, and what 1,200+ normalised pairs made possible.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/what-the-world-offers/">What the World Actually Offers</a>
+        <span>CS at 95 universities. AI at 12. France above Imperial. What the coverage matrix actually showed.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/the-unfashionable-four/">The Unfashionable Four</a>
+        <span>Four A-level subjects. Stable across 31 programmes, 100 universities, 19 countries.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/the-floor-keeps-rising/">The Floor Keeps Rising</a>
+        <span>Seven scarcity cycles since the 1880s. The compression curve that makes a four-year degree longer than a full cycle.</span>
       </div>
     </div>
 

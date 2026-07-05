@@ -105,6 +105,13 @@
     .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    .series-nav { margin-top: 48px; padding-top: 28px; border-top: 1px solid #dde3ec; }
+    .series-nav-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .series-nav-item { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+    .series-nav-item:last-child { border-bottom: none; }
+    .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+    .series-nav-item a:hover { color: #1e40af; }
+    .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
     @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .data-pill { min-width: 80px; } }
   </style>
 </head>
@@ -213,11 +220,23 @@
     <p>The coverage matrix, the frequency rankings, and the uniqueness analysis produced a clear picture of what the global landscape of STEM education actually looks like – as opposed to what the rankings, the school counsellors, and the received wisdom suggest it looks like.</p>
     <p>The two pictures are not the same.</p>
 
-    <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid #dde3ec;">
-      <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px;">Next in this series</div>
-      <div style="display: flex; flex-direction: column; padding: 14px 0;">
-        <a href="/research/long-bet/what-the-world-offers/" style="font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px;">What the World Actually Offers</a>
-        <span style="font-size: 0.8125rem; color: #9ca3af;">CS at 95 universities. AI at 12. France above Imperial. What the coverage matrix actually showed – and every assumption that turned out to be structurally wrong.</span>
+    <div class="series-nav">
+      <div class="series-nav-label">Also in this series</div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/article/">The Problem Statement</a>
+        <span>The four-constraint optimisation problem and why every obvious answer fell apart.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/what-the-world-offers/">What the World Actually Offers</a>
+        <span>CS at 95 universities. AI at 12. France above Imperial. What the coverage matrix actually showed.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/the-unfashionable-four/">The Unfashionable Four</a>
+        <span>Four A-level subjects. Stable across 31 programmes, 100 universities, 19 countries.</span>
+      </div>
+      <div class="series-nav-item">
+        <a href="/research/long-bet/the-floor-keeps-rising/">The Floor Keeps Rising</a>
+        <span>Seven scarcity cycles since the 1880s. The compression curve that makes a four-year degree longer than a full cycle.</span>
       </div>
     </div>
 
