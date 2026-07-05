@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Rising Floor — The Long Bet — Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="Each era, yesterday's scarce skill becomes the new baseline. A stacked chart showing how the floor of data and computing skills has risen, layer by layer, since the 1880s. A companion to The Floor Keeps Rising.">
+  <link rel="canonical" href="https://mariascales.com/research/long-bet/the-rising-floor/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Rising Floor — The Long Bet — Maria Atamanova">
+  <meta property="og:description" content="Each era, yesterday's scarce skill becomes the new baseline. A stacked chart showing how the floor of data and computing skills has risen, layer by layer, since the 1880s.">
+  <meta property="og:url" content="https://mariascales.com/research/long-bet/the-rising-floor/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Rising Floor — The Long Bet — Maria Atamanova">
+  <meta name="twitter:description" content="Each era, yesterday's scarce skill becomes the new baseline. A stacked chart showing how the floor of data and computing skills has risen, layer by layer, since the 1880s.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Site chrome (matches the rest of the Long Bet series) */
+    .site-header { background: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 28px 24px; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; text-decoration: none; }
+    .site-name a:hover { color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { max-width: 780px; margin: 0 auto; padding: 16px 24px; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; text-decoration: none; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .site-footer { padding: 40px 24px 64px; }
+    .footer-inner { max-width: 780px; margin: 0 auto; }
+    .footer-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; text-decoration: none; }
+    .footer-links a:hover { color: #1e40af; }
+
+    /* Article */
+    .article { max-width: 780px; margin: 0 auto; padding: 40px 24px 100px; }
+    .meta { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 20px; }
+    h1 { font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; color: #111; margin-bottom: 10px; }
+    .standfirst { font-size: 17px; line-height: 1.7; color: #4a6080; border-left: 4px solid #4F7EC7; padding-left: 18px; margin-bottom: 40px; }
+    hr { border: none; border-top: 1px solid #dde3ec; margin: 48px 0; }
+
+    /* Companion-page pointer */
+    .companion-note { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 10px; padding: 14px 18px; margin-bottom: 40px; font-size: 14px; color: #4a6080; }
+    .companion-note a { color: #1e40af; font-weight: 600; }
+
+    /* Series nav (footer) */
+    .series-nav { margin-top: 48px; padding-top: 28px; border-top: 1px solid #dde3ec; }
+    .series-nav-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .series-nav-item { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+    .series-nav-item:last-child { border-bottom: none; }
+    .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+    .series-nav-item a:hover { color: #1e40af; }
+    .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
+
+    /* ── The Rising Floor ── */
+    .floor-chart { display: flex; align-items: flex-end; gap: 6px; height: 440px; padding-bottom: 36px; position: relative; border-bottom: 1px solid #dde3ec; overflow-x: auto; }
+    .floor-col { flex: 1; min-width: 64px; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; gap: 3px; position: relative; }
+    .floor-col-label { position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #7a8fa6; white-space: nowrap; font-weight: 600; letter-spacing: 0.3px; }
+    .floor-layer { border-radius: 5px 5px 0 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 9.5px; font-weight: 700; text-align: center; padding: 4px 5px; cursor: default; }
+    .floor-layer:first-child { border-radius: 5px; }
+    .scarce-name { font-size: 10.5px; font-weight: 800; line-height: 1.2; }
+    .scarce-badge { font-size: 8px; font-weight: 800; letter-spacing: 0.6px; opacity: 0.85; border: 1px solid currentColor; border-radius: 3px; padding: 1px 5px; white-space: nowrap; }
+    .floor-legend { display: flex; gap: 20px; margin-top: 44px; flex-wrap: wrap; }
+    .floor-legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #7a8fa6; }
+    .floor-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+    @media (max-width: 600px) {
+      .floor-chart { height: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-name"><a href="/">Maria Atamanova</a></div>
+  <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+</header>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/cases/" class="nav-link">Case Studies</a>
+    <a href="/articles/" class="nav-link">Writing</a>
+    <a href="/research/" class="nav-link active">Research</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>The Rising Floor</strong>
+</div>
+
+<article class="article">
+
+  <div class="meta">The Long Bet · Companion chart to Article 5</div>
+  <h1>The Rising Floor</h1>
+  <p class="standfirst">Each era, yesterday's scarce skill becomes the new baseline. The scarce skill (highlighted, glowing) is always one layer above where the previous era left off.</p>
+
+  <div class="companion-note">This page is a single chart: a stacked view of how the floor of data-and-computing skills has risen, era by era, since the 1880s. For the full write-up of each era, see <a href="/research/long-bet/the-scarcity-ladder-timeline/">The Scarcity Ladder — A Timeline</a>. For the argument this builds toward, see <a href="/research/long-bet/the-floor-keeps-rising/">"The Floor Keeps Rising"</a> (Article 5).</div>
+
+  <div class="floor-chart" id="floorChart"></div>
+
+  <div class="floor-legend">
+    <div class="floor-legend-item"><div class="floor-legend-dot" style="background:#EEF2F7;border:1px solid #dde3ec;"></div>Commoditised / baseline</div>
+    <div class="floor-legend-item"><div class="floor-legend-dot" style="background:#EEF2F7;border:2px solid #4F7EC7;box-shadow:0 0 4px #4F7EC744;"></div>Currently scarce</div>
+    <div class="floor-legend-item"><div class="floor-legend-dot" style="background:#F0FDF4;border:2px dashed #16A34A;"></div>Hypothesis (not yet scarce)</div>
+  </div>
+
+  <p style="margin-top:32px; font-size:15px; color:#333; line-height:1.8;">Every column is a moment in time. Every layer beneath the glowing one is a skill that used to be the bottleneck and now isn't — it got tooled, and the value moved up. The 2025 → ? column shows all seven layers as fully commoditised baseline, with a dashed, unclaimed layer on top: Domain Judgment. That layer is marked differently on purpose. It hasn't happened yet, and — unlike every layer beneath it — it might not happen the same way. The other seven columns are a record. The eighth is a question.</p>
+
+  <div class="series-nav">
+    <div class="series-nav-label">Part of The Long Bet series</div>
+    <div class="series-nav-item">
+      <a href="/research/long-bet/the-floor-keeps-rising/">← The Floor Keeps Rising (Article 5)</a>
+      <span>The full argument: the compression pattern, the three layers, and why mathematics is the layer that holds.</span>
+    </div>
+    <div class="series-nav-item">
+      <a href="/research/long-bet/the-scarcity-ladder-timeline/">The Scarcity Ladder — A Timeline →</a>
+      <span>Each of the seven eras in detail — what was abundant, what was scarce, and who was elite.</span>
+    </div>
+  </div>
+
+</article>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-label">Contact</div>
+    <div class="footer-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    document.querySelector('.site-nav').classList.toggle('scrolled', window.scrollY > 0);
+  }, { passive: true });
+</script>
+
+<script>
+// ── The Rising Floor chart (light-theme rebuild) ──
+const floorLayers = [
+  { label: "Statistical\nIntuition",    color: "#7C3AED" },
+  { label: "Programming\n& Algorithms", color: "#2563EB" },
+  { label: "SQL &\nDatabases",          color: "#059669" },
+  { label: "Distributed\nSystems",      color: "#B45309" },
+  { label: "ML &\nData Science",        color: "#DB2777" },
+  { label: "Deep\nLearning",            color: "#C2410C" },
+  { label: "Coding\n(LLMs)",            color: "#2E6AAD" },
+];
+
+const floorEras = [
+  { label: "1880s–1940s", scarce: 0 },
+  { label: "1950s–1970s", scarce: 1 },
+  { label: "1980s–1990s", scarce: 2 },
+  { label: "2000–2012",   scarce: 3 },
+  { label: "2012–2020",   scarce: 4 },
+  { label: "2016–2022",   scarce: 5 },
+  { label: "2022–Now",    scarce: 6 },
+  { label: "2025→?",      scarce: -1 },
+];
+
+const floorChartEl = document.getElementById('floorChart');
+
+floorEras.forEach((era) => {
+  const col = document.createElement('div');
+  col.className = 'floor-col';
+
+  const label = document.createElement('div');
+  label.className = 'floor-col-label';
+  label.textContent = era.label;
+  col.appendChild(label);
+
+  const maxLayer = era.scarce >= 0 ? era.scarce : floorLayers.length - 1;
+
+  for (let li = maxLayer; li >= 0; li--) {
+    const layer = document.createElement('div');
+    layer.className = 'floor-layer';
+    const isScarce = li === era.scarce;
+    const heightPx = isScarce ? 80 : 28;
+    layer.style.height = heightPx + 'px';
+    layer.style.minHeight = heightPx + 'px';
+
+    if (isScarce) {
+      const c = floorLayers[li].color;
+      layer.style.background = c + '14';
+      layer.style.border = '2px solid ' + c;
+      layer.style.color = c;
+      layer.style.boxShadow = '0 0 10px 2px ' + c + '33';
+      const fullName = floorLayers[li].label.replace('\n', ' ');
+      layer.innerHTML = '<span class="scarce-name">' + fullName + '</span><span class="scarce-badge">▲ SCARCE</span>';
+    } else {
+      layer.style.background = '#EEF2F7';
+      layer.style.border = '1px solid #dde3ec';
+      layer.style.color = '#7a8fa6';
+      layer.textContent = floorLayers[li].label.split('\n')[0];
+    }
+
+    col.insertBefore(layer, col.firstChild);
+  }
+
+  // future era: show the speculative Domain Judgment layer on top, dashed
+  if (era.scarce === -1) {
+    const qLayer = document.createElement('div');
+    qLayer.className = 'floor-layer';
+    qLayer.style.height = '80px';
+    qLayer.style.minHeight = '80px';
+    qLayer.style.background = '#F0FDF4';
+    qLayer.style.border = '2px dashed #16A34A';
+    qLayer.style.color = '#16A34A';
+    qLayer.style.boxShadow = '0 0 10px 2px #16A34A22';
+    qLayer.innerHTML = '<span class="scarce-name">Domain<br>Judgment</span><span class="scarce-badge">NEXT →</span>';
+    col.insertBefore(qLayer, label);
+  }
+
+  floorChartEl.appendChild(col);
+});
+</script>
+</body>
+</html>
