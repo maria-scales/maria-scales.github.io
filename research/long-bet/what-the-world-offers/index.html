@@ -175,10 +175,10 @@
   <p>Two numbers tell the story.</p>
 
   <div class="rolls" style="margin-bottom:16px;">
-    <div class="r-num">0 → 22</div>
+    <div class="r-num">0 → 13</div>
     <div>
       <div class="r-title">Universities in the ARWU top 100 &nbsp;·&nbsp; <span style="font-weight:400; color:#7a8fa6;">2003 → 2025</span></div>
-      <div class="r-detail">China entered the ranking with zero universities in 2003. It now has 22 – more than UK (8), Germany (5), or France (4). No country has climbed faster.</div>
+      <div class="r-detail">China entered the ranking with zero universities in 2003. It now has 13 – more than UK (8), Germany (4), or France (4). No country has climbed faster.</div>
     </div>
   </div>
 
@@ -240,7 +240,7 @@
     </div>
   </div>
 
-  <p>Compare that trajectory to Germany: 6 universities in the top 100 in 2003, 5 in 2025. Effectively flat for two decades. China moved from nowhere to second-largest non-US presence in the ranking in the same period. The momentum story matters – and it will be examined in detail in the next article.</p>
+  <p>Compare that trajectory to Germany: 5 universities in the top 100 in 2003 (verified against the ARWU 2003 archive – Munich, Heidelberg, TU Munich, Göttingen, Free University of Berlin), 4 in 2025. Slowly declining for two decades. China moved from nowhere to second-largest non-US presence in the ranking in the same period. The momentum story matters.</p>
   <p>China remains on the list. It needs a second look.</p>
 
   <h2>The geography no one considers</h2>
@@ -257,12 +257,11 @@
   <div class="rolls">
     <div class="r-num">75<span style="font-size:28px;letter-spacing:-1px">%</span></div>
     <div>
-      <div class="r-title">Computational Biology coverage across French top-100 universities</div>
-      <div class="r-detail">Global average: 45%. France is not a niche option for this intersection – it is one of the strongest clusters in the dataset. Paris-Saclay (#13) sits above Imperial, Manchester, and Edinburgh by research output. Tuition at French public universities for international students: ~€170/year.</div>
+      <div class="r-title">Bioinformatics coverage across French top-100 universities (3 of 4)</div>
+      <div class="r-detail">Global average: 54%. Neuroscience: 75% (3 of 4) vs 35% globally. Data Science: 100% (all 4). France is not a niche option for this intersection – it is one of the strongest clusters in the dataset, though with only 4 institutions, each university carries a quarter of every percentage. In France the route is often a double licence (maths–biology or informatics–biology) feeding a specialised Master’s – a structure that suits a mathematically strong applicant. Licence-level teaching is in French, so language proficiency matters alongside the academic profile. Paris-Saclay (#13) sits above Imperial, Manchester, and Edinburgh by research output. Tuition at French public universities: ~€170/year for EU students; ~€2,770–3,770/year for non-EU internationals (often waived) – two orders of magnitude below UK or US fees.</div>
     </div>
   </div>
 
-  <p>Tuition for international students at French public universities: approximately €170/year.</p>
   <p>France is structurally strong in exactly the programmes that matter for the math-bio intersection. It is almost entirely absent from the shortlists of international families making this decision. Those two facts do not usually appear in the same sentence.</p>
 
   <div class="chart-wrap">
@@ -277,17 +276,19 @@
   <p>3 universities in the top 100 (Toronto #25, UBC #53, McGill #76). 100% Computational Biology coverage – +55pp above the global average. Every Canadian top-100 university offers it. Fees for international students run substantially below UK and US equivalents. Canada sits in the same category as France: structurally strong in the right programmes, almost entirely absent from the shortlists of families making this decision.</p>
 
   <h3>Japan – the anti-pattern</h3>
-  <p>Japan's reputation in technology is global. Its programme profile in this dataset is not what that reputation suggests. Data Science coverage: 0% – against a global average of 73%. Standalone AI: also 0% – against a global average of 12%. Not below average. Absent across the board. The three Japanese top-100 universities are strong in Astrophysics (66.7% coverage, +43pp above global) and Nuclear Engineering – classical, physics-based science. The computational layer that sits on top of it is missing entirely.</p>
+  <p>Japan's reputation in technology is global. Its programme profile in this dataset is not what that reputation suggests. Data Science coverage: 0% – against a global average of 73%. Standalone AI: also 0% – against a global average of 12%. Not below average. Absent across the board. The two Japanese top-100 universities (Tokyo and Kyoto) are strong in Astrophysics (both offer it, vs 24% globally) and Nuclear Engineering – classical, physics-based science. The computational layer that sits on top of it is missing entirely.</p>
+
+  <p>One caveat cuts across every country comparison above. ARWU credits research to universities – not to national research systems. France runs much of its research through CNRS; Germany through Max Planck and Fraunhofer institutes. None of that output is credited to a university, so both countries’ top-100 counts understate what the national system actually produces. For this analysis the direction of the bias matters more than its size: France’s 4 top-100 universities are, if anything, an undercount of the research environment a student would enter.</p>
 
   <h2>The UK paradox</h2>
 
   <p>Cost efficiency removes the UK from consideration early. Under a strict cost filter, it disappears from the shortlist.</p>
 
   <div class="rolls">
-    <div class="r-num">+59<span style="font-size:26px; letter-spacing:-1px;">pp</span></div>
+    <div class="r-num">+76<span style="font-size:26px; letter-spacing:-1px;">pp</span></div>
     <div>
       <div class="r-title">UK universities' AI coverage lift above the global average</div>
-      <div class="r-detail">7 of the top 100 are UK universities. 71% of them offer standalone AI – against a global average of 12%. Computational Biology: +26pp. Bioinformatics: +17pp. No other country cluster comes close on this specific combination of programmes.</div>
+      <div class="r-detail">8 of the top 100 are UK universities. 7 of the 8 offer standalone AI – 88%, against a global average of 12%. The only one that doesn’t is Cambridge. Bioinformatics: +8pp. No other country cluster comes close on AI.</div>
     </div>
   </div>
 
@@ -535,10 +536,10 @@ new Chart(document.getElementById("freqChart").getContext("2d"), {
 
 const countries = ["US","UK","France","China","Germany","Switzerland"];
 const keyProgs = [
-  {label:"AI",      global:12, values:{US:0.0,  UK:71.4, France:0,    China:7.7,  Germany:0,    Switzerland:0}},
-  {label:"CompBio", global:45, values:{US:78.4, UK:71.4, France:75.0, China:15.4, Germany:25.0, Switzerland:25.0}},
-  {label:"BioInfo", global:54, values:{US:40.5, UK:71.4, France:50.0, China:46.2, Germany:75.0, Switzerland:50.0}},
-  {label:"AppMath", global:24, values:{US:45.9, UK:28.6, France:50.0, China:0.0,  Germany:25.0, Switzerland:0.0}},
+  {label:"AI",      global:12, values:{US:0.0,  UK:87.5, France:0,    China:23.1, Germany:25.0, Switzerland:0}},
+  {label:"CompBio", global:45, values:{US:78.4, UK:37.5, France:0.0,  China:7.7,  Germany:0.0,  Switzerland:20.0}},
+  {label:"BioInfo", global:54, values:{US:40.5, UK:62.5, France:75.0, China:53.8, Germany:100.0, Switzerland:60.0}},
+  {label:"AppMath", global:24, values:{US:45.9, UK:25.0, France:0.0,  China:0.0,  Germany:0.0,  Switzerland:0.0}},
 ];
 const countryColors = {US:"#8BBDE0",UK:"#4F7EC7",France:"#7DC4A0",China:"#F07A5A",Germany:"#2E6AAD",Switzerland:"#A8D8B8"};
 
