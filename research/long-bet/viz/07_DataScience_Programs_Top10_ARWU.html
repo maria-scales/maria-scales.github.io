@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Science Programmes — Top 10 ARWU Universities</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0F172A;color:#CBD5E1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:24px}
+h1{font-size:26px;font-weight:700;color:#F1F5F9;margin-bottom:6px}
+.subtitle{color:#64748B;font-size:14px;margin-bottom:24px}
+.tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid #334155;padding-bottom:0}
+.tab{padding:10px 20px;border:none;background:none;color:#64748B;cursor:pointer;font-size:14px;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.tab:hover{color:#CBD5E1}
+.tab.active{color:#38BDF8;border-bottom-color:#38BDF8}
+.tab-content{display:none}.tab-content.active{display:block}
+.uni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.uni-card{background:#1E293B;border:1px solid #334155;border-radius:12px;padding:18px;transition:border-color .2s}
+.uni-card:hover{border-color:#475569}
+.tag{background:#1E3A5F;color:#93C5FD;font-size:11px;padding:3px 8px;border-radius:4px;margin:2px;display:inline-block}
+.source-chip{font-size:11px;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-block}
+.source-chip.checked{background:#14532D;color:#4ADE80;border:1px solid #16A34A}
+.source-chip.estimated{background:#1C1917;color:#FCD34D;border:1px solid #D97706}
+.uni-btn-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.uni-btn{padding:7px 14px;border:1px solid #334155;background:#1E293B;color:#94A3B8;border-radius:8px;cursor:pointer;font-size:13px;transition:all .2s}
+.uni-btn:hover{background:#334155;color:#F1F5F9}
+.uni-btn.active{background:#0F3460;border-color:#38BDF8;color:#38BDF8}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.detail-section{background:#0F172A;border:1px solid #334155;border-radius:10px;padding:16px}
+.section-title{font-size:13px;font-weight:700;color:#F1F5F9;margin-bottom:10px}
+.detail-section ul{padding-left:18px;font-size:13px;color:#CBD5E1;line-height:1.7}
+.matrix-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1E293B;color:#94A3B8;padding:8px 12px;text-align:center;font-weight:600;font-size:12px;border:1px solid #334155}
+.topic-name{background:#0F172A;color:#CBD5E1;padding:10px 14px;font-weight:500;border:1px solid #334155;min-width:260px;white-space:nowrap}
+.matrix-cell{text-align:center;padding:8px;border:1px solid #334155;font-size:16px}
+tr:nth-child(even){background:#0A1120}
+.career-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.career-card{background:#1E293B;border:1px solid #334155;border-radius:12px;padding:18px}
+.career-title{font-size:15px;font-weight:700;color:#F1F5F9;margin-bottom:6px}
+.career-salary{font-size:12px;color:#4ADE80;margin-bottom:8px}
+.career-desc{font-size:13px;color:#94A3B8;line-height:1.6}
+.callout{background:#0C2340;border:1px solid #1E40AF;border-radius:12px;padding:18px;margin-top:20px;font-size:14px;color:#93C5FD;line-height:1.7}
+.landscape-note{background:#1E293B;border:1px solid #334155;border-radius:10px;padding:18px;margin-bottom:20px;font-size:14px;color:#CBD5E1;line-height:1.7}
+</style>
+</head>
+<body>
+<h1>🔬 Data Science Programmes — Top 10 ARWU Universities</h1>
+<div class="subtitle">ARWU 2025 rankings · Undergraduate degree analysis · Sources checked where possible</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('overview',event)">🏛️ Overview</button>
+  <button class="tab" onclick="switchTab('detail',event)">📋 Programme Detail</button>
+  <button class="tab" onclick="switchTab('matrix',event)">🔢 Topic Comparison</button>
+  <button class="tab" onclick="switchTab('careers',event)">💼 Career Paths</button>
+</div>
+
+<div id="tab-overview" class="tab-content active">
+  <div class="landscape-note">
+    <strong>📌 Landscape note:</strong> Of the top 10 ARWU universities, only <strong>Berkeley (DS)</strong>, <strong>MIT (Course 6-14)</strong>, and <strong>Caltech (IDS)</strong> offer a fully standalone undergraduate Data Science degree. Harvard and Columbia offer it as a track or major within broader programmes. Stanford, Cambridge, Oxford, Princeton, and Chicago <em>do not</em> have a standalone DS UG degree — students typically combine CS + Statistics (or use a minor/certificate). This reflects how new the field is: the first dedicated UG DS degrees only appeared ~2018.
+  </div>
+  <div class="uni-grid">
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#38BDF8;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#1</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Harvard</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS degree — offered as a track</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">Data Science Track (within A.B. Statistics)</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistics–CS Interface</span><span class="tag">Machine Learning</span><span class="tag">Recommendation Systems</span></div>
+          <a href="https://statistics.fas.harvard.edu/degree-tracks" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#4ADE80;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#2</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Stanford</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS UG degree</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone B.S. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Learning</span><span class="tag">AI & ML Pipeline</span><span class="tag">Industry Partnerships</span></div>
+          <a href="https://statistics.stanford.edu" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#F472B6;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#3</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">MIT</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#4ADE80;margin-bottom:6px;">Standalone SB in Course 6-14 (CSEDS)</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in CS, Economics & Data Science (Course 6-14)</div>
+          <div style="margin-bottom:10px;"><span class="tag">Economics–CS Integration</span><span class="tag">Causal Inference</span><span class="tag">Econometrics</span><span class="tag">Machine Learning</span></div>
+          <a href="https://catalog.mit.edu/degree-charts/computer-science-economics-data-science-course-6-14/" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#A78BFA;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#4</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Cambridge</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇬🇧 UK</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS UG degree</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone B.A. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Learning</span><span class="tag">Applied Maths</span><span class="tag">Systems Biology</span></div>
+          <a href="https://www.undergraduate.study.cam.ac.uk" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#FBBF24;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#5</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Berkeley</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#4ADE80;margin-bottom:6px;">Full standalone B.S. in Data Science (since 2018)</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Breadth Across Domains</span><span class="tag">Foundations (Stats + CS)</span><span class="tag">Social Good Focus</span></div>
+          <a href="https://data.berkeley.edu/academics/undergraduate-programs/data-science-major" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#5EEAD4;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#6</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Oxford</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇬🇧 UK</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS UG degree</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone B.A. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Learning</span><span class="tag">AI Ethics</span><span class="tag">Logic & Formal Methods</span></div>
+          <a href="https://www.cs.ox.ac.uk/admissions/undergraduate/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#FB923C;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#7</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Princeton</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS degree — SML Minor + ORFE BSE are closest</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone B.S.E. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Machine Learning</span><span class="tag">Optimization</span><span class="tag">Theoretical Foundations</span></div>
+          <a href="https://sml.princeton.edu/" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#34D399;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#8</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Caltech</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#4ADE80;margin-bottom:6px;">Full standalone B.S. in IDS</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in Information & Data Sciences (IDS)</div>
+          <div style="margin-bottom:10px;"><span class="tag">Mathematical Foundations</span><span class="tag">Signal Processing</span><span class="tag">Information Theory</span></div>
+          <a href="https://www.cms.caltech.edu/academics/ugrad/ugrad_ids" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#F87171;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#9</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Columbia</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#4ADE80;margin-bottom:6px;">Standalone B.A. in Data Science</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.A. in Data Science (Columbia College / GS)</div>
+          <div style="margin-bottom:10px;"><span class="tag">CS & Statistics Integration</span><span class="tag">NYC Industry Access</span><span class="tag">Quantitative Finance</span></div>
+          <a href="https://datascience.columbia.edu/education/programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#C084FC;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#10</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Chicago</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:#FBBF24;margin-bottom:6px;">No standalone DS degree — offered through Statistics or CS departments</div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone B.A./B.S. in Data Science</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Rigour</span><span class="tag">Econometrics</span><span class="tag">Theoretical Foundations</span></div>
+          <a href="https://stat.uchicago.edu/academics/undergraduate-programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div></div>
+</div>
+
+<div id="tab-detail" class="tab-content">
+  <div class="uni-btn-grid"><button class="uni-btn active" id="unibtn-0" onclick="selectUni(0)">Harvard</button><button class="uni-btn" id="unibtn-1" onclick="selectUni(1)">Stanford</button><button class="uni-btn" id="unibtn-2" onclick="selectUni(2)">MIT</button><button class="uni-btn" id="unibtn-3" onclick="selectUni(3)">Cambridge</button><button class="uni-btn" id="unibtn-4" onclick="selectUni(4)">Berkeley</button><button class="uni-btn" id="unibtn-5" onclick="selectUni(5)">Oxford</button><button class="uni-btn" id="unibtn-6" onclick="selectUni(6)">Princeton</button><button class="uni-btn" id="unibtn-7" onclick="selectUni(7)">Caltech</button><button class="uni-btn" id="unibtn-8" onclick="selectUni(8)">Columbia</button><button class="uni-btn" id="unibtn-9" onclick="selectUni(9)">Chicago</button></div>
+  
+        <div id="uni-detail-0" style="display:block">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#38BDF8">#1 Harvard</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · Data Science Track (within A.B. Statistics)</div>
+            <a href="https://statistics.fas.harvard.edu/degree-tracks" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS degree — offered as a track
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>CS 1090A/B (Data Science 1/2)</li><li>Stat 110 – Probability</li><li>Stat 111 – Statistical Inference</li><li>Stat 139 – Regression</li><li>One CS course (algorithms, systems, or ML)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>CS 1090A/B – Intro to Data Science 1 & 2</li><li>Stat 109A/B – Data Science 1 & 2 (cross-listed)</li><li>CS 181 – Machine Learning</li><li>AC 215 – MLOps & Scalable AI</li><li>CS 124 – Data Structures & Algorithms</li><li>Stat 139 – Linear Models for Data Science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Natural Language Processing</li><li>Computer Vision</li><li>Reinforcement Learning (Stat 234)</li><li>Causal Inference</li><li>Big Data Analytics</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Harvard Data Science Initiative (HDSI) ties research with industry</li><li>SM in Data Science available at master's level (SEAS)</li><li>Data Science track shares courses with ML track for flexibility</li><li>Close collaboration with Harvard Medical School and Chan School of Public Health</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-1" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#4ADE80">#2 Stanford</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · No standalone B.S. in Data Science</div>
+            <a href="https://statistics.stanford.edu" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS UG degree
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Statistics B.S. covers data science via electives</li><li>CS B.S. + Statistics minor is a common path</li><li>STATS 315A/B (Applied Machine Learning) is a core DS course</li><li>Data Science track effectively formed via Statistics + CS double-major</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>CS 229 – Machine Learning</li><li>STATS 315A – Modern Applied Stats: Learning</li><li>CS 246 – Mining Massive Data Sets</li><li>CS 145 – Data Management and Data Systems</li><li>STATS 202 – Data Mining and Analysis</li><li>CS 224N – NLP with Deep Learning (graduate, accessible)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Deep Learning (CS 230)</li><li>Computer Vision (CS 231N)</li><li>Data Engineering & Databases</li><li>Causal inference</li><li>Computational social science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No dedicated UG DS degree — strongest DS preparation via CS+Statistics double</li><li>Proximity to Silicon Valley means extensive industry internship opportunities</li><li>AI research across multiple institutes (HAI, SAIL, SNAP)</li><li>Stanford's Human-Centered AI (HAI) adds responsible data science component</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-2" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#F472B6">#3 MIT</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in CS, Economics & Data Science (Course 6-14)</div>
+            <a href="https://catalog.mit.edu/degree-charts/computer-science-economics-data-science-course-6-14/" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #4ADE8033;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#4ADE80;">
+            📌 Standalone SB in Course 6-14 (CSEDS)
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Programming & Computation (6.009 / 6.100A)</li><li>Algorithms & Data Structures (6.006)</li><li>Probability (6.3700 / 6.041)</li><li>Micro & Macro Economics (14.01 / 14.02)</li><li>Econometrics & Statistics (14.32 / 14.310)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>6.100A – Introduction to CS and Programming</li><li>6.006 – Introduction to Algorithms</li><li>6.3700 – Introduction to Probability</li><li>6.C01 – Modeling with Machine Learning</li><li>14.32 – Econometrics</li><li>14.13 – Psychology and Economics</li><li>6.3900 – Introduction to Machine Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Industrial Organization / Platform Economics</li><li>Political Economy & Data</li><li>Natural Language Processing</li><li>Network Science</li><li>Mechanism Design / Auction Theory</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Unique 3-way fusion: CS + Economics + Data Science in one degree</li><li>Part of EECS and Economics departments jointly</li><li>Aligns well with policy, tech-economics, and data-driven business roles</li><li>IDSS (Institute for Data, Systems and Society) cross-departmental research</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-3" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#A78BFA">#4 Cambridge</div>
+            <div style="color:#94A3B8;">🇬🇧 UK · No standalone B.A. in Data Science</div>
+            <a href="https://www.undergraduate.study.cam.ac.uk" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS UG degree
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Mathematics Tripos covers probability & statistics</li><li>Computer Science Tripos covers ML and data algorithms</li><li>Engineering Tripos covers information theory and signal processing</li><li>Natural Sciences Tripos has computational biology pathway</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>Part II: Data Science (within Mathematics Tripos — from 2023)</li><li>Part II: Machine Learning (within CS Tripos)</li><li>Part II: Principles of Statistics (Mathematics)</li><li>NST Part II: Computational Biology</li><li>Part III: Statistical Machine Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Machine Learning and Bayesian Inference (Part III)</li><li>Information Theory</li><li>Language and Computation</li><li>Computational Neuroscience</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No standalone UG Data Science degree</li><li>Data Science appears as a Part II paper in Mathematics Tripos (introduced ~2023)</li><li>Cambridge MPhil in Data Intensive Science (graduate level)</li><li>Alan Turing Institute partnership for advanced data research</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-4" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#FBBF24">#5 Berkeley</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in Data Science</div>
+            <a href="https://data.berkeley.edu/academics/undergraduate-programs/data-science-major" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #4ADE8033;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#4ADE80;">
+            📌 Full standalone B.S. in Data Science (since 2018)
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Foundations: DATA 8 (Computational Thinking with Data)</li><li>DATA 100 – Principles & Techniques of Data Science</li><li>Probability (STAT 140 / STAT 134)</li><li>Linear Algebra (MATH 54)</li><li>Algorithms (CS 61B / CS 170)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>DATA 8 – Foundations of Data Science</li><li>DATA 100 – Principles & Techniques of DS</li><li>DATA 102 – Data, Inference, and Decisions</li><li>DATA 140 – Probability for Data Science</li><li>DATA 144 – Data Mining and Analytics</li><li>CS 189 – Introduction to Machine Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>16 domain emphasis areas (e.g. computational biology, economics, linguistics, physics)</li><li>Human Contexts and Ethics of Data (required)</li><li>Natural Language Processing</li><li>Computer Vision</li><li>Social & Political Data Science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Pioneer standalone UG DS degree at a major research university</li><li>Domain Emphasis system — structured interdisciplinary depth</li><li>Human Contexts and Ethics requirement is mandatory</li><li>Connector courses link DS skills to specific domains</li><li>Strong pipeline to Berkeley AI Research (BAIR) and RISELab</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-5" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#5EEAD4">#6 Oxford</div>
+            <div style="color:#94A3B8;">🇬🇧 UK · No standalone B.A. in Data Science</div>
+            <a href="https://www.cs.ox.ac.uk/admissions/undergraduate/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS UG degree
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Computer Science Tripos covers algorithmic data science</li><li>Mathematics & Statistics joint degree covers statistical learning</li><li>CS & Philosophy covers reasoning and data ethics</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>Machine Learning (CS, Year 3 option)</li><li>Computational Game Theory</li><li>Statistical Machine Learning</li><li>Information Theory</li><li>Probability & Statistics (Maths & Stats joint)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Algorithmic Game Theory</li><li>Computer Vision</li><li>Natural Language Processing</li><li>Quantum Computing</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No standalone UG Data Science degree</li><li>Closest options: CS + Statistics joint, or Maths & Stats with ML modules</li><li>Oxford Internet Institute offers policy and social data programmes</li><li>Oxford has an MSc in Social Data Science at the graduate level</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-6" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#FB923C">#7 Princeton</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · No standalone B.S.E. in Data Science</div>
+            <a href="https://sml.princeton.edu/" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS degree — SML Minor + ORFE BSE are closest
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>SML Minor: COS 302 (Maths for Numerical Computing & ML)</li><li>ORF 245 (Fundamentals of Statistics)</li><li>COS 324 (Introduction to Machine Learning)</li><li>ORF 350 (Analysis of Big Data)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>COS 324 – Introduction to Machine Learning</li><li>COS 302 – Mathematics for Numerical Computing and ML</li><li>ORF 350 – Analysis of Big Data</li><li>ORF 418 – Optimal Learning</li><li>COS 485 – Neural Networks: Theory and Applications</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Probabilistic ML</li><li>Reinforcement Learning</li><li>Causal Inference</li><li>NLP</li><li>Computer Vision</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No dedicated UG Data Science degree</li><li>Statistics and Machine Learning (SML) minor is very popular</li><li>Princeton AI Lab (PAI) offers strong research access</li><li>ORFE + CS double major is common for data-intensive career track</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-7" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#34D399">#8 Caltech</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in Information & Data Sciences (IDS)</div>
+            <a href="https://www.cms.caltech.edu/academics/ugrad/ugrad_ids" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #4ADE8033;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#4ADE80;">
+            📌 Full standalone B.S. in IDS
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability (ACM 116 / Ma 3)</li><li>Statistics (ACM 117 / Ma 112)</li><li>Linear Algebra (Ma 1b)</li><li>Signal Processing & Information Theory</li><li>Machine Learning (CS/CNS/EE 156)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>ACM 116 – Introduction to Probability Models</li><li>ACM 117 – Probability Theory & Stochastic Processes</li><li>EE/CNS/CS 148 – Statistical Inference</li><li>CS/CNS/EE 156 – Learning Systems</li><li>CS 38 – Introduction to Algorithms</li><li>IDS 130 – Foundations of Data Science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Application domain courses (biology, economics, astrophysics, etc.)</li><li>Computational biology</li><li>Network science</li><li>Distributed systems and data engineering</li><li>Quantum information</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Unabashedly mathematical — deepest theoretical grounding of any DS programme</li><li>Required 'domain application' courses span sciences and engineering</li><li>Tiny cohort (~30 students/year) means intense individual attention</li><li>SURF (Summer Undergraduate Research Fellowship) for all students</li><li>IDS Minor also available for students in other majors</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-8" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#F87171">#9 Columbia</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.A. in Data Science (Columbia College / GS)</div>
+            <a href="https://datascience.columbia.edu/education/programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #4ADE8033;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#4ADE80;">
+            📌 Standalone B.A. in Data Science
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Programming in Python (COMS 1004 / ENGI 1006)</li><li>Calculus & Linear Algebra</li><li>Probability Theory (STAT W4105)</li><li>Statistical Inference (STAT W4107)</li><li>Data Structures & Algorithms (COMS 3134)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>COMS 4721 – Machine Learning</li><li>COMS 4705 – Natural Language Processing</li><li>STAT W4206 – Statistical Computing & DS</li><li>COMS 4111 – Introduction to Databases</li><li>COMS 4775 – Causal Inference</li><li>STAT W4241 – Statistical Machine Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Computer Vision</li><li>Computational Neuroscience</li><li>Biomedical Informatics</li><li>Social & Economic Networks</li><li>Quantitative Finance / Risk Modelling</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Offered through Columbia College (BA) — more flexibility than SEAS</li><li>Columbia Data Science Institute as campus hub</li><li>NYC location provides unrivalled access to finance, media, and tech internships</li><li>4+1 pathway to MS in Data Science available</li><li>Joint degree options with other Columbia schools</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-9" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
+            <div style="font-size:22px;font-weight:700;color:#C084FC">#10 Chicago</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · No standalone B.A./B.S. in Data Science</div>
+            <a href="https://stat.uchicago.edu/academics/undergraduate-programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div style="background:#1E293B;border:1px solid #FBBF2433;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#FBBF24;">
+            📌 No standalone DS degree — offered through Statistics or CS departments
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Statistics B.A./B.S. is closest — strong data analysis component</li><li>CMSC (CS) courses supplement with algorithms and ML</li><li>Econometrics route via Economics department</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>STAT 22000 – Statistical Methods and Applications</li><li>STAT 27850 – Multiple Testing, Modern Inference, and Replication</li><li>CMSC 25400 – Machine Learning</li><li>STAT 34800 – Modern Statistical Methods for Data Analysis</li><li>ECON 21050 – Econometrics (applied data analysis)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Machine Learning</li><li>Bayesian data analysis</li><li>Causal inference</li><li>Text analysis (via Linguistics / CS)</li><li>Computational social science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No dedicated UG Data Science degree</li><li>Chicago's strong statistics department provides rigorous data analysis training</li><li>Computation Institute and Booth School of Business for applied DS</li><li>Strong pipeline to PhD programmes in statistics, ML, and economics</li></ul>
+            </div>
+          </div>
+        </div>
+</div>
+
+<div id="tab-matrix" class="tab-content">
+  <div class="matrix-wrap">
+    <table>
+      <thead><tr><th style="text-align:left">Feature / Topic</th><th title="Harvard">Har</th><th title="Stanford">Sta</th><th title="MIT">MIT</th><th title="Cambridge">Cam</th><th title="Berkeley">Ber</th><th title="Oxford">Oxf</th><th title="Princeton">Pri</th><th title="Caltech">Cal</th><th title="Columbia">Col</th><th title="Chicago">Chi</th></tr></thead>
+      <tbody><tr><td class='topic-name'>Standalone DS degree offered</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td></tr><tr><td class='topic-name'>Python / Programming foundation</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Statistics & Probability core</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Machine Learning / Deep Learning</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Data Engineering / Databases</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">◑</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">◑</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Econometrics / Causal Inference</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Natural Language Processing</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">◑</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Computer Vision</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">◑</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Ethics / Responsible AI</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Domain Emphasis / Elective Depth</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td></tr><tr><td class='topic-name'>Mathematical Foundations emphasis</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Interdisciplinary breadth required</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Industry/Internship integration</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td></tr><tr><td class='topic-name'>Research / Capstone project</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Signal Processing / Info Theory</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td></tr></tbody>
+    </table>
+  </div>
+  <div style="margin-top:14px;font-size:12px;color:#475569">✅ = yes/core &nbsp;|&nbsp; ◑ = partial/elective only &nbsp;|&nbsp; — = not offered / not applicable</div>
+</div>
+
+<div id="tab-careers" class="tab-content">
+  <div class="career-grid">
+    <div class="career-card">
+      <div class="career-title">🧠 Data Scientist</div>
+      <div class="career-salary">$110K–$200K+ (USA) · £60K–£120K (UK)</div>
+      <div class="career-desc">The core role: wrangling data, building models, communicating insights. DS degrees from Berkeley, MIT 6-14, and Caltech IDS are explicitly designed for this. Strong Python + stats + ML combination is essential. Top employers: Google, Meta, Amazon, Apple, Spotify, Airbnb.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">⚙️ ML Engineer</div>
+      <div class="career-salary">$130K–$250K+ (USA)</div>
+      <div class="career-desc">Building and deploying ML systems at scale. Requires strong CS and engineering skills alongside statistical knowledge. MIT 6-14 and Caltech IDS provide the strongest technical foundation. Demand is exceptionally high across tech, autonomy, and life sciences.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🏦 Quantitative Analyst / Researcher</div>
+      <div class="career-salary">$150K–$500K+ total comp</div>
+      <div class="career-desc">Data-driven finance: trading strategies, risk models, alpha generation. MIT 6-14 (econometrics track) and Princeton (ORFE) are particularly strong pipelines. Top employers: Citadel, Two Sigma, Jane Street, DE Shaw, Point72.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🌐 Data / Analytics Engineer</div>
+      <div class="career-salary">$100K–$180K (USA)</div>
+      <div class="career-desc">Building data pipelines, warehouses, and infrastructure. More engineering-focused. Databases, distributed systems, and cloud platforms are central. Growing demand across every sector. Top employers: Databricks, Snowflake, Palantir, Stripe, major banks.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🩺 Health / Bioinformatics Data Scientist</div>
+      <div class="career-salary">$90K–$170K (USA)</div>
+      <div class="career-desc">Genomics, clinical trials, precision medicine, digital health. Berkeley's domain emphasis in Computational Biology is a strong pathway. Top employers: Illumina, Genentech, 23andMe, NHS (UK), academic medical centres, pharma.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">📊 Business Intelligence / Analytics Lead</div>
+      <div class="career-salary">$90K–$150K (USA)</div>
+      <div class="career-desc">Turning company data into strategic decisions. Less research-heavy, more operational. Columbia's NYC location feeds directly into consulting and media analytics. Roles in every industry: retail, media, logistics, healthcare.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🏛️ Policy / Government Data Analyst</div>
+      <div class="career-salary">$70K–$130K (government) · More in private think tanks</div>
+      <div class="career-desc">Using data to inform public decisions: climate, healthcare, urban planning, economics. MIT 6-14's economics focus is a natural pipeline. Top employers: Treasury, HMRC (UK), Congressional Budget Office, World Bank, UN, RAND Corporation.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🔬 AI Researcher</div>
+      <div class="career-salary">$150K–$400K+ (at large AI labs)</div>
+      <div class="career-desc">Usually requires PhD, but strong UG DS programmes — especially Caltech IDS and MIT 6-14 — provide an excellent research foundation. Berkeley's BAIR connection and Caltech's mandatory research culture are standouts. Top employers: DeepMind, OpenAI, Anthropic, Google Brain, Meta AI.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>💡 The bottom line:</strong> Data Science degrees are the newest and most explicitly interdisciplinary offering from elite universities. The <em>standalone</em> DS degree (Berkeley, MIT 6-14, Caltech IDS) gives you a pre-packaged, coherent curriculum. But in practice, many employers care more about skills than degree titles — a CS + Statistics double major from Stanford or Oxford can be equally compelling. The real differentiator is depth: can you build AND interpret a model? Can you question the data collection methodology? Can you communicate uncertainty to a non-technical stakeholder? Those skills compound.
+  </div>
+
+  <div style="background:#1E293B;border:1px solid #334155;border-radius:12px;padding:20px 24px;margin-top:20px;">
+    <div style="font-size:13px;font-weight:700;color:#A78BFA;margin-bottom:14px;">💬 Data Science vs. Statistics vs. CS: how to choose?</div>
+    <div style="background:#0F172A;border-left:3px solid #A78BFA;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:12px;font-size:13px;color:#CBD5E1;line-height:1.7;">
+      <strong style="color:#A78BFA">Question:</strong> The top universities seem to offer very different approaches to Data Science — some treat it as applied statistics, some as computational mathematics, some as engineering. If the goal is a career in data, which approach actually produces the most capable graduates?
+    </div>
+    <div style="background:#0F172A;border-left:3px solid #38BDF8;border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:#CBD5E1;line-height:1.7;">
+      <strong style="color:#38BDF8">Answer:</strong> The honest answer is that the "best" approach depends on where you want to operate. <strong>Caltech IDS</strong> (mathematical/signal processing) produces students who deeply understand <em>why</em> algorithms work — excellent for research and for roles where rigour matters most (robotics, autonomous systems, fundamental ML). <strong>MIT 6-14</strong> (CS + Economics) produces students who are uniquely equipped for data-driven economic reasoning — ideal for policy, fintech, and platform companies. <strong>Berkeley DS</strong> produces broad, adaptable practitioners who can work across any domain — ideal for general industry roles and data analyst tracks. What matters for Andrey specifically is: does he want to build things (lean CS), understand things (lean Statistics/Maths), or change things (lean Economics/Policy)? The technical skills converge by the time you're 3–5 years into a career. The framing of problems is where the degree's philosophy leaves a lasting imprint.
+    </div>
+  </div>
+</div>
+
+<script>
+function switchTab(name, event) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if(event) event.target.classList.add('active');
+}
+function selectUni(idx) {
+  document.querySelectorAll('[id^="uni-detail-"]').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.uni-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('uni-detail-' + idx).style.display = 'block';
+  document.getElementById('unibtn-' + idx).classList.add('active');
+}
+</script>
+</body>
+</html>

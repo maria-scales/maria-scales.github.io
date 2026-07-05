@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STEM Uniqueness & Gaps — Top 100 ARWU</title>
+<style>
+:root{--bg:#0f172a;--panel:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#3b82f6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;font-size:13px}
+header{padding:22px 28px 14px;border-bottom:1px solid var(--border)}
+header h1{font-size:20px;font-weight:700;color:#f1f5f9}
+header p{color:var(--muted);margin-top:4px;font-size:12px}
+.tabs{display:flex;gap:2px;padding:0 28px;background:#0c1524;border-bottom:1px solid var(--border)}
+.tab{padding:12px 20px;cursor:pointer;font-size:13px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;transition:.15s}
+.tab.active{color:#f1f5f9;border-bottom-color:var(--accent)}
+.pane{display:none;padding:20px 28px}
+.pane.active{display:block}
+/* stats */
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:8px 16px}
+.stat .v{font-size:22px;font-weight:700;color:var(--accent)}
+.stat .l{font-size:11px;color:var(--muted)}
+/* rarity grid */
+.rarity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.rc{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:.15s}
+.rc:hover{border-color:var(--accent)}
+.rc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.rc-name{font-size:14px;font-weight:700}
+.rc-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.tag-vr{background:#FEE2E2;color:#991B1B}
+.tag-r{background:#FEF3C7;color:#92400E}
+.tag-u{background:#DBEAFE;color:#1E40AF}
+.tag-c{background:#DCFCE7;color:#166534}
+.rc-cluster{font-size:11px;color:var(--muted);margin-bottom:6px}
+.rc-bar-wrap{display:flex;align-items:center;gap:8px}
+.rc-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.rc-fill{height:100%;border-radius:3px}
+.rc-num{font-size:12px;font-weight:700;min-width:40px;text-align:right}
+.rc-unis{font-size:10px;color:var(--muted);margin-top:8px;line-height:1.5;display:none}
+.rc.open .rc-unis{display:block}
+/* surprises */
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.controls select,.controls input{background:var(--panel);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;font-size:12px}
+table{width:100%;border-collapse:collapse}
+th{background:#1F4E79;color:#fff;font-size:11px;font-weight:700;padding:7px 10px;text-align:left;position:sticky;top:0;z-index:10}
+td{padding:6px 10px;border-bottom:1px solid #1e293b;font-size:12px;vertical-align:middle}
+tr:hover td{background:#1a2744}
+.badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;color:#fff}
+.pill{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;color:#fff;margin:1px}
+/* country */
+.country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.cc{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
+.cc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cc-name{font-size:16px;font-weight:700}
+.cc-count{font-size:11px;color:var(--muted)}
+.cc-section{margin-top:10px}
+.cc-section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;padding:3px 8px;border-radius:4px;display:inline-block}
+.sig-label{background:#14532D;color:#86EFAC}
+.weak-label{background:#7F1D1D;color:#FCA5A5}
+.cc-entry{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:12px}
+.cc-lift{font-size:13px;font-weight:700;min-width:42px;text-align:right}
+.lift-pos{color:#4ADE80}
+.lift-neg{color:#F87171}
+.cc-prog{flex:1}
+.cc-pcts{font-size:10px;color:var(--muted);white-space:nowrap}
+.cluster-dot{width:10px;height:10px;border-radius:2px;display:inline-block;flex-shrink:0}
+</style>
+</head>
+<body>
+<header>
+  <h1>STEM Uniqueness &amp; Gaps</h1>
+  <p>Phase 3 analysis of Top 100 ARWU universities · 31 canonical programmes · 10 countries with ≥3 universities</p>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('rarity')">3A – Programme Rarity</div>
+  <div class="tab" onclick="showTab('gaps')">3B – Surprising Absences</div>
+  <div class="tab" onclick="showTab('country')">3C – Country Signatures</div>
+</div>
+
+<div id="pane-rarity" class="pane active"></div>
+<div id="pane-gaps"   class="pane"></div>
+<div id="pane-country" class="pane"></div>
+
+<script>
+const CLUSTER_COLORS = {"CS & AI":"#4F7EF8","Mathematics":"#A78BFA","Physics & Astronomy":"#F59E0B","Chemistry":"#10B981","Engineering – Electrical & Computer":"#06B6D4","Engineering – Mechanical & Aerospace":"#3B82F6","Engineering – Civil & Environmental":"#14B8A6","Engineering – Chemical & Materials":"#8B5CF6","Engineering – Biomedical":"#EC4899","Engineering – Other":"#64748B","Computational Biology & Bioinformatics":"#F97316","Earth & Environmental Sciences":"#22C55E","Interdisciplinary":"#94A3B8"};
+
+// ── DATA (inlined) ────────────────────────────────────────────────────────────
+const RARITY = [{"programme":"CS & AI","cluster":"CS & AI","count":3,"pct":3.0,"avg_rank":52.3,"tag":"Very Rare (<10)","universities":[[22,"ETH Zurich","Switzerland"],[65,"Sun Yat-sen University","China"],[99,"City University of Hong Kong","Hong Kong"]]},{"programme":"Interdisciplinary Sciences","cluster":"Interdisciplinary","count":8,"pct":8.0,"avg_rank":31.9,"tag":"Very Rare (<10)","universities":[[3,"Massachusetts Institute of Technology (MIT)","US"],[4,"University of Cambridge","UK"],[10,"University of Chicago","US"],[29,"Rockefeller University","US"],[34,"PSL University","France"],[35,"University of Copenhagen","Denmark"],[88,"The Hebrew University of Jerusalem","Israel"],[100,"Stockholm University","Sweden"]]},{"programme":"Nuclear Engineering","cluster":"Engineering – Other","count":8,"pct":8.0,"avg_rank":28.4,"tag":"Very Rare (<10)","universities":[[3,"Massachusetts Institute of Technology (MIT)","US"],[5,"University of California, Berkeley","US"],[7,"Princeton University","US"],[9,"California Institute of Technology (Caltech)","US"],[36,"University of Wisconsin, Madison","US"],[40,"University of Science and Technology of China (USTC)","China"],[49,"The University of Texas at Austin","US"],[53,"University of Illinois Urbana-Champaign (UIUC)","US"]]},{"programme":"Actuarial Science","cluster":"Mathematics","count":6,"pct":6.0,"avg_rank":53.0,"tag":"Very Rare (<10)","universities":[[35,"University of Copenhagen","Denmark"],[38,"The University of Melbourne","Australia"],[56,"National University of Singapore (NUS)","Singapore"],[65,"The University of Queensland","Australia"],[76,"KU Leuven","Belgium"],[80,"University of New South Wales (UNSW)","Australia"]]},{"programme":"Operations Research","cluster":"Mathematics","count":7,"pct":7.0,"avg_rank":22.3,"tag":"Very Rare (<10)","universities":[[7,"Princeton University","US"],[8,"Columbia University","US"],[9,"California Institute of Technology (Caltech)","US"],[12,"Cornell University","US"],[31,"Northwestern University","US"],[49,"The University of Texas at Austin","US"],[88,"The Hebrew University of Jerusalem","Israel"]]},{"programme":"Computational Science","cluster":"CS & AI","count":11,"pct":11.0,"avg_rank":43.5,"tag":"Rare (10–24)","universities":[[1,"Harvard University","US"],[3,"Massachusetts Institute of Technology (MIT)","US"],[22,"ETH Zurich","Switzerland"],[45,"Technical University of Munich (TUM)","Germany"],[49,"The University of Texas at Austin","US"],[53,"University of Illinois Urbana-Champaign (UIUC)","US"],[56,"Utrecht University","Netherlands"],[70,"University of California, Santa Barbara","US"],[83,"Ohio State University","US"],[93,"Uppsala University","Sweden"],[100,"Stockholm University","Sweden"]]},{"programme":"Artificial Intelligence","cluster":"CS & AI","count":12,"pct":12.0,"avg_rank":38.5,"tag":"Rare (10–24)","universities":[[6,"University of Oxford","UK"],[13,"University College London (UCL)","UK"],[17,"University of Washington","US"],[24,"Zhejiang University","China"],[26,"Imperial College London","UK"],[37,"The University of Edinburgh","UK"],[44,"EPFL (École Polytechnique Fédérale de Lausanne)","Switzerland"],[45,"Technical University of Munich (TUM)","Germany"],[46,"The University of Manchester","UK"],[53,"University of British Columbia","Canada"],[61,"King's College London","UK"],[73,"University of Groningen","Netherlands"]]},{"programme":"Systems Engineering","cluster":"Engineering – Other","count":12,"pct":12.0,"avg_rank":35.4,"tag":"Rare (10–24)","universities":[[4,"University of Cambridge","UK"],[5,"University of California, Berkeley","US"],[9,"California Institute of Technology (Caltech)","US"],[17,"University of Washington","US"],[24,"Zhejiang University","China"],[25,"University of Toronto","Canada"],[30,"Shanghai Jiao Tong University","China"],[40,"University of Science and Technology of China (USTC)","China"],[44,"EPFL (École Polytechnique Fédérale de Lausanne)","Switzerland"],[53,"University of British Columbia","Canada"],[73,"Huazhong University of Science and Technology (HUST)","China"],[92,"Xi'an Jiaotong University","China"]]},{"programme":"Engineering (General)","cluster":"Engineering – Other","count":12,"pct":12.0,"avg_rank":36.5,"tag":"Rare (10–24)","universities":[[6,"University of Oxford","UK"],[7,"Princeton University","US"],[12,"Cornell University","US"],[25,"University of Toronto","Canada"],[30,"Shanghai Jiao Tong University","China"],[35,"University of Copenhagen","Denmark"],[46,"The University of Manchester","UK"],[49,"The University of Texas at Austin","US"],[56,"Utrecht University","Netherlands"],[63,"University of Colorado Boulder","US"],[73,"University of Groningen","Netherlands"],[80,"University of New South Wales (UNSW)","Australia"]]},{"programme":"Biochemistry","cluster":"Chemistry","count":17,"pct":17.0,"avg_rank":26.5,"tag":"Rare (10–24)","universities":[[6,"University of Oxford","UK"],[9,"California Institute of Technology (Caltech)","US"],[10,"University of Chicago","US"],[22,"ETH Zurich","Switzerland"],[33,"University of Michigan, Ann Arbor","US"],[35,"University of Copenhagen","Denmark"],[37,"The University of Edinburgh","UK"],[42,"University of Munich (LMU)","Germany"],[46,"Kyoto University","Japan"],[51,"Heidelberg University","Germany"],[56,"Utrecht University","Netherlands"],[61,"King's College London","UK"],[64,"University of Zurich","Switzerland"],[71,"Weizmann Institute of Science","Israel"],[73,"University of Groningen","Netherlands"],[88,"The Hebrew University of Jerusalem","Israel"],[98,"University of Bristol","UK"]]},{"programme":"Industrial Engineering","cluster":"Engineering – Other","count":15,"pct":15.0,"avg_rank":44.9,"tag":"Rare (10–24)","universities":[[5,"University of California, Berkeley","US"],[8,"Columbia University","US"],[12,"Cornell University","US"],[13,"Paris-Saclay University","France"],[16,"University of California, Los Angeles (UCLA)","US"],[17,"University of Washington","US"],[18,"Tsinghua University","China"],[25,"University of Toronto","Canada"],[31,"Northwestern University","US"],[36,"University of Wisconsin, Madison","US"],[51,"University of Minnesota, Twin Cities","US"],[56,"National University of Singapore (NUS)","Singapore"],[67,"The University of Hong Kong","Hong Kong"],[79,"University of California, Irvine","US"],[81,"Seoul National University","South Korea"]]},{"programme":"Environmental Engineering","cluster":"Engineering – Civil & Environmental","count":14,"pct":14.0,"avg_rank":31.6,"tag":"Rare (10–24)","universities":[[8,"Columbia University","US"],[9,"California Institute of Technology (Caltech)","US"],[13,"Paris-Saclay University","France"],[18,"Tsinghua University","China"],[19,"Johns Hopkins University","US"],[22,"ETH Zurich","Switzerland"],[26,"Imperial College London","UK"],[30,"Shanghai Jiao Tong University","China"],[31,"The University of Tokyo","Japan"],[44,"EPFL (École Polytechnique Fédérale de Lausanne)","Switzerland"],[46,"Duke University","US"],[53,"University of Illinois Urbana-Champaign (UIUC)","US"],[92,"Xi'an Jiaotong University","China"],[99,"City University of Hong Kong","Hong Kong"]]},{"programme":"Applied Mathematics","cluster":"Mathematics","count":24,"pct":24.0,"avg_rank":33.7,"tag":"Rare (10–24)","universities":[[2,"Stanford University","US"],[3,"Massachusetts Institute of Technology (MIT)","US"],[6,"University of Oxford","UK"],[7,"Princeton University","US"],[8,"Columbia University","US"],[9,"California Institute of Technology (Caltech)","US"],[17,"University of Washington","US"],[20,"University of California, San Diego","US"],[26,"Washington University in St. Louis","US"],[28,"New York University (NYU)","US"],[36,"University of Wisconsin, Madison","US"],[46,"The University of Melbourne","Australia"],[46,"The University of Manchester","UK"],[51,"University of Minnesota, Twin Cities","US"],[53,"University of British Columbia","Canada"],[55,"University of Maryland, College Park","US"],[62,"Vanderbilt University","US"],[68,"University of Southern California (USC)","US"],[72,"University of Sydney","Australia"],[76,"McGill University","Canada"],[79,"University of California, Irvine","US"],[81,"Seoul National University","South Korea"],[88,"Nanyang Technological University (NTU)","Singapore"],[98,"University of Bristol","UK"]]},{"programme":"Astrophysics","cluster":"Physics & Astronomy","count":24,"pct":24.0,"avg_rank":40.0,"tag":"Rare (10–24)","universities":[[7,"Princeton University","US"],[10,"University of Chicago","US"],[13,"Paris-Saclay University","France"],[14,"University College London (UCL)","UK"],[34,"PSL University","France"],[35,"University of Copenhagen","Denmark"],[37,"The University of Edinburgh","UK"],[40,"University of Science and Technology of China (USTC)","China"],[42,"University of Munich (LMU)","Germany"],[43,"Sorbonne University","France"],[46,"Kyoto University","Japan"],[51,"Heidelberg University","Germany"],[56,"Utrecht University","Netherlands"],[58,"University of Geneva","Switzerland"],[64,"University of Zurich","Switzerland"],[71,"Weizmann Institute of Science","Israel"],[73,"University of Groningen","Netherlands"],[83,"University of Oslo","Norway"],[85,"Aarhus University","Denmark"],[93,"Uppsala University","Sweden"],[100,"Stockholm University","Sweden"],[4,"University of Cambridge","UK"],[10,"University of Chicago","US"],[14,"University College London (UCL)","UK"]]},{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","count":35,"pct":35.0,"avg_rank":40.6,"tag":"Uncommon (25–49)","universities":[[1,"Harvard University","US"],[4,"University of Cambridge","UK"],[7,"Princeton University","US"],[8,"Columbia University","US"],[9,"California Institute of Technology (Caltech)","US"],[10,"University of Chicago","US"],[11,"Yale University","US"],[13,"Paris-Saclay University","France"],[14,"University College London (UCL)","UK"],[15,"University of Pennsylvania","US"],[16,"University of California, Los Angeles (UCLA)","US"],[19,"Johns Hopkins University","US"],[20,"University of California, San Diego","US"],[21,"University of California, San Francisco (UCSF)","US"],[28,"New York University (NYU)","US"],[29,"Rockefeller University","US"],[33,"University of Michigan, Ann Arbor","US"],[34,"PSL University","France"],[37,"The University of Edinburgh","UK"],[43,"Sorbonne University","France"],[46,"Duke University","US"],[52,"University of Minnesota, Twin Cities","US"],[62,"Vanderbilt University","US"],[64,"University of Zurich","Switzerland"],[68,"University of Southern California (USC)","US"],[71,"Weizmann Institute of Science","Israel"],[75,"Nanjing University","China"],[76,"McGill University","Canada"],[79,"University of California, Irvine","US"],[83,"University of Oslo","Norway"],[88,"The Hebrew University of Jerusalem","Israel"],[90,"Ghent University","Belgium"],[94,"University of Basel","Switzerland"],[94,"University of Helsinki","Finland"],[100,"University of Basel","Switzerland"]]},{"programme":"Earth Sciences","cluster":"Earth & Environmental Sciences","count":36,"pct":36.0,"avg_rank":47.4,"tag":"Uncommon (25–49)","universities":[[1,"Harvard University","US"],[6,"University of Oxford","UK"],[7,"Princeton University","US"],[9,"California Institute of Technology (Caltech)","US"],[10,"University of Chicago","US"],[13,"Paris-Saclay University","France"],[16,"University of California, Los Angeles (UCLA)","US"],[22,"ETH Zurich","Switzerland"],[23,"Peking University","China"],[34,"PSL University","France"],[35,"University of Copenhagen","Denmark"],[36,"University of Wisconsin, Madison","US"],[37,"The University of Edinburgh","UK"],[40,"University of Science and Technology of China (USTC)","China"],[41,"Fudan University","China"],[42,"University of Munich (LMU)","Germany"],[43,"Sorbonne University","France"],[46,"Kyoto University","Japan"],[55,"University of Maryland, College Park","US"],[58,"University of Geneva","Switzerland"],[60,"Université Paris Cité","France"],[65,"Sun Yat-sen University","China"],[68,"University of Bonn","Germany"],[71,"Weizmann Institute of Science","Israel"],[75,"Nanjing University","China"],[76,"KU Leuven","Belgium"],[83,"University of Oslo","Norway"],[83,"University of Oslo","Norway"],[88,"The Hebrew University of Jerusalem","Israel"],[93,"Uppsala University","Sweden"],[94,"University of Helsinki","Finland"],[100,"Stockholm University","Sweden"],[62,"Vanderbilt University","US"],[79,"University of California, Irvine","US"],[88,"Nanyang Technological University (NTU)","Singapore"],[99,"City University of Hong Kong","Hong Kong"]]},{"programme":"Aerospace Engineering","cluster":"Engineering – Mechanical & Aerospace","count":27,"pct":27.0,"avg_rank":35.6,"tag":"Uncommon (25–49)","universities":[[2,"Stanford University","US"],[3,"Massachusetts Institute of Technology (MIT)","US"],[5,"University of California, Berkeley","US"],[9,"California Institute of Technology (Caltech)","US"],[12,"Cornell University","US"],[16,"University of California, Los Angeles (UCLA)","US"],[17,"University of Washington","US"],[18,"Tsinghua University","China"],[22,"ETH Zurich","Switzerland"],[24,"Zhejiang University","China"],[25,"University of Toronto","Canada"],[26,"Imperial College London","UK"],[31,"The University of Tokyo","Japan"],[33,"University of Michigan, Ann Arbor","US"],[36,"University of Wisconsin, Madison","US"],[44,"EPFL (École Polytechnique Fédérale de Lausanne)","Switzerland"],[45,"Technical University of Munich (TUM)","Germany"],[46,"The University of Manchester","UK"],[49,"The University of Texas at Austin","US"],[51,"University of Minnesota, Twin Cities","US"],[53,"University of Illinois Urbana-Champaign (UIUC)","US"],[55,"University of Maryland, College Park","US"],[62,"University of Colorado Boulder","US"],[68,"University of Southern California (USC)","US"],[72,"University of Sydney","Australia"],[81,"Seoul National University","South Korea"],[88,"Nanyang Technological University (NTU)","Singapore"]]},{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","count":45,"pct":45.0,"avg_rank":37.8,"tag":"Uncommon (25–49)","universities":[[1,"Harvard University","US"],[2,"Stanford University","US"],[4,"University of Cambridge","UK"],[5,"University of California, Berkeley","US"],[7,"Princeton University","US"],[8,"Columbia University","US"],[10,"University of Chicago","US"],[11,"Yale University","US"],[14,"University College London (UCL)","UK"],[16,"University of California, Los Angeles (UCLA)","US"],[17,"University of Washington","US"],[19,"Johns Hopkins University","US"],[20,"University of California, San Diego","US"],[21,"University of California, San Francisco (UCSF)","US"],[22,"ETH Zurich","Switzerland"],[25,"University of Toronto","Canada"],[28,"New York University (NYU)","US"],[29,"Rockefeller University","US"],[33,"University of Michigan, Ann Arbor","US"],[37,"The University of Edinburgh","UK"],[38,"The University of Melbourne","Australia"],[40,"University of Science and Technology of China (USTC)","China"],[41,"Fudan University","China"],[46,"Kyoto University","Japan"],[47,"The University of Manchester","UK"],[53,"University of British Columbia","Canada"],[56,"National University of Singapore (NUS)","Singapore"],[58,"University of Geneva","Switzerland"],[60,"Université Paris Cité","France"],[61,"King's College London","UK"],[63,"University of Colorado Boulder","US"],[64,"University of Zurich","Switzerland"],[65,"Sun Yat-sen University","China"],[65,"The University of Queensland","Australia"],[72,"University of Sydney","Australia"],[73,"Huazhong University of Science and Technology (HUST)","China"],[76,"KU Leuven","Belgium"],[76,"McGill University","Canada"],[79,"University of California, Irvine","US"],[80,"University of New South Wales (UNSW)","Australia"],[83,"University of Oslo","Norway"],[87,"Sichuan University","China"],[88,"University of Pittsburgh","US"],[91,"Ghent University","Belgium"],[94,"University of Basel","Switzerland"]]},{"programme":"Biochemistry","cluster":"Chemistry","count":17,"pct":17.0,"avg_rank":26.5,"tag":"Rare (10–24)","universities":[[6,"University of Oxford","UK"],[9,"California Institute of Technology (Caltech)","US"],[10,"University of Chicago","US"],[22,"ETH Zurich","Switzerland"],[33,"University of Michigan, Ann Arbor","US"],[35,"University of Copenhagen","Denmark"],[37,"The University of Edinburgh","UK"],[42,"University of Munich (LMU)","Germany"],[46,"Kyoto University","Japan"],[51,"Heidelberg University","Germany"],[56,"Utrecht University","Netherlands"],[61,"King's College London","UK"],[64,"University of Zurich","Switzerland"],[71,"Weizmann Institute of Science","Israel"],[73,"University of Groningen","Netherlands"],[88,"The Hebrew University of Jerusalem","Israel"],[98,"University of Bristol","UK"]]},{"programme":"Materials Science","cluster":"Engineering – Chemical & Materials","count":51,"pct":51.0,"avg_rank":38.0,"tag":"Common (50+)","universities":[]},{"programme":"Chemical Engineering","cluster":"Engineering – Chemical & Materials","count":60,"pct":60.0,"avg_rank":38.2,"tag":"Common (50+)","universities":[]},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","count":56,"pct":56.0,"avg_rank":36.4,"tag":"Common (50+)","universities":[]},{"programme":"Civil Engineering","cluster":"Engineering – Civil & Environmental","count":58,"pct":58.0,"avg_rank":38.9,"tag":"Common (50+)","universities":[]},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","count":54,"pct":54.0,"avg_rank":43.6,"tag":"Common (50+)","universities":[]},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","count":65,"pct":65.0,"avg_rank":38.8,"tag":"Common (50+)","universities":[]},{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","count":72,"pct":72.0,"avg_rank":42.8,"tag":"Common (50+)","universities":[]},{"programme":"Data Science","cluster":"CS & AI","count":73,"pct":73.0,"avg_rank":43.5,"tag":"Common (50+)","universities":[]},{"programme":"Statistics","cluster":"Mathematics","count":81,"pct":81.0,"avg_rank":41.0,"tag":"Common (50+)","universities":[]},{"programme":"Mathematics","cluster":"Mathematics","count":91,"pct":91.0,"avg_rank":42.2,"tag":"Common (50+)","universities":[]},{"programme":"Chemistry","cluster":"Chemistry","count":92,"pct":92.0,"avg_rank":43.1,"tag":"Common (50+)","universities":[]},{"programme":"Physics","cluster":"Physics & Astronomy","count":94,"pct":94.0,"avg_rank":43.0,"tag":"Common (50+)","universities":[]},{"programme":"Computer Science","cluster":"CS & AI","count":95,"pct":95.0,"avg_rank":43.7,"tag":"Common (50+)","universities":[]}];
+
+const SURPRISES = [{"rank":29,"university":"Rockefeller University","country":"US","total_progs":4,"missing":[{"prog":"Computer Science","cluster":"CS & AI","global_pct":95.0},{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Statistics","cluster":"Mathematics","global_pct":81.0},{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Chemistry","cluster":"Chemistry","global_pct":92.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":598.0},{"rank":50,"university":"Karolinska Institute","country":"Sweden","total_progs":3,"missing":[{"prog":"Computer Science","cluster":"CS & AI","global_pct":95.0},{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Chemistry","cluster":"Chemistry","global_pct":92.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":517.0},{"rank":58,"university":"UT Southwestern Medical Center","country":"US","total_progs":3,"missing":[{"prog":"Computer Science","cluster":"CS & AI","global_pct":95.0},{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Chemistry","cluster":"Chemistry","global_pct":92.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":517.0},{"rank":86,"university":"UT MD Anderson Cancer Center","country":"US","total_progs":3,"missing":[{"prog":"Computer Science","cluster":"CS & AI","global_pct":95.0},{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Chemistry","cluster":"Chemistry","global_pct":92.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":517.0},{"rank":21,"university":"University of California, San Francisco (UCSF)","country":"US","total_progs":5,"missing":[{"prog":"Computer Science","cluster":"CS & AI","global_pct":95.0},{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":425.0},{"rank":1,"university":"Harvard University","country":"US","total_progs":14,"missing":[{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0}],"surprise_score":91.0},{"rank":3,"university":"Massachusetts Institute of Technology (MIT)","country":"US","total_progs":15,"missing":[{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":72.0},{"rank":4,"university":"University of Cambridge","country":"UK","total_progs":11,"missing":[{"prog":"Physics","cluster":"Physics & Astronomy","global_pct":94.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":166.0},{"rank":6,"university":"University of Oxford","country":"UK","total_progs":10,"missing":[{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":145.0},{"rank":7,"university":"Princeton University","country":"US","total_progs":14,"missing":[{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0}],"surprise_score":73.0},{"rank":8,"university":"Columbia University","country":"US","total_progs":14,"missing":[{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0}],"surprise_score":91.0},{"rank":9,"university":"California Institute of Technology (Caltech)","country":"US","total_progs":16,"missing":[{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0},{"prog":"Statistics","cluster":"Mathematics","global_pct":81.0}],"surprise_score":154.0},{"rank":10,"university":"University of Chicago","country":"US","total_progs":13,"missing":[{"prog":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","global_pct":72.0}],"surprise_score":72.0},{"rank":11,"university":"Yale University","country":"US","total_progs":13,"missing":[{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0}],"surprise_score":73.0},{"rank":12,"university":"Cornell University","country":"US","total_progs":14,"missing":[{"prog":"Data Science","cluster":"CS & AI","global_pct":73.0}],"surprise_score":73.0},{"rank":14,"university":"University of Pennsylvania","country":"US","total_progs":13,"missing":[{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0}],"surprise_score":91.0},{"rank":19,"university":"Johns Hopkins University","country":"US","total_progs":14,"missing":[{"prog":"Mathematics","cluster":"Mathematics","global_pct":91.0},{"prog":"Statistics","cluster":"Mathematics","global_pct":81.0}],"surprise_score":172.0},{"rank":26,"university":"Imperial College London","country":"UK","total_progs":18,"missing":[{"prog":"Statistics","cluster":"Mathematics","global_pct":81.0}],"surprise_score":81.0}];
+
+const COUNTRY_PROFILES = {"Australia":{"n":5,"strengths":[{"programme":"Actuarial Science","cluster":"Mathematics","country_pct":60.0,"global_pct":6.0,"lift":54.0},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":80.0,"global_pct":56.0,"lift":24.0},{"programme":"Civil Engineering","cluster":"Engineering – Civil & Environmental","country_pct":80.0,"global_pct":58.0,"lift":22.0},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":80.0,"global_pct":54.0,"lift":26.0},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":80.0,"global_pct":65.0,"lift":15.0},{"programme":"Applied Mathematics","cluster":"Mathematics","country_pct":40.0,"global_pct":24.0,"lift":16.0}],"weaknesses":[{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","country_pct":40.0,"global_pct":45.0,"lift":-5.0},{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":0.0,"global_pct":35.0,"lift":-35.0},{"programme":"Earth Sciences","cluster":"Earth & Environmental Sciences","country_pct":0.0,"global_pct":36.0,"lift":-36.0},{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":0.0,"global_pct":24.0,"lift":-24.0}]},"Canada":{"n":3,"strengths":[{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","country_pct":100.0,"global_pct":45.0,"lift":55.0},{"programme":"Engineering (General)","cluster":"Engineering – Other","country_pct":33.3,"global_pct":12.0,"lift":21.3},{"programme":"Materials Science","cluster":"Engineering – Chemical & Materials","country_pct":66.7,"global_pct":51.0,"lift":15.7},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":66.7,"global_pct":54.0,"lift":12.7}],"weaknesses":[{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":33.3,"global_pct":35.0,"lift":-1.7},{"programme":"Earth Sciences","cluster":"Earth & Environmental Sciences","country_pct":0.0,"global_pct":36.0,"lift":-36.0},{"programme":"Aerospace Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":33.3,"global_pct":27.0,"lift":-6.3}]},"China":{"n":13,"strengths":[{"programme":"Systems Engineering","cluster":"Engineering – Other","country_pct":53.8,"global_pct":12.0,"lift":41.8},{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","country_pct":100.0,"global_pct":72.0,"lift":28.0},{"programme":"Materials Science","cluster":"Engineering – Chemical & Materials","country_pct":76.9,"global_pct":51.0,"lift":25.9},{"programme":"Environmental Engineering","cluster":"Engineering – Civil & Environmental","country_pct":38.5,"global_pct":14.0,"lift":24.5},{"programme":"Industrial Engineering","cluster":"Engineering – Other","country_pct":38.5,"global_pct":15.0,"lift":23.5},{"programme":"Chemical Engineering","cluster":"Engineering – Chemical & Materials","country_pct":84.6,"global_pct":60.0,"lift":24.6}],"weaknesses":[{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":7.7,"global_pct":35.0,"lift":-27.3},{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":7.7,"global_pct":24.0,"lift":-16.3},{"programme":"Applied Mathematics","cluster":"Mathematics","country_pct":0.0,"global_pct":24.0,"lift":-24.0},{"programme":"Biochemistry","cluster":"Chemistry","country_pct":0.0,"global_pct":17.0,"lift":-17.0}]},"France":{"n":4,"strengths":[{"programme":"Earth Sciences","cluster":"Earth & Environmental Sciences","country_pct":100.0,"global_pct":36.0,"lift":64.0},{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":75.0,"global_pct":24.0,"lift":51.0},{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":75.0,"global_pct":35.0,"lift":40.0},{"programme":"Statistics","cluster":"Mathematics","country_pct":100.0,"global_pct":81.0,"lift":19.0},{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","country_pct":75.0,"global_pct":45.0,"lift":30.0}],"weaknesses":[{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","country_pct":25.0,"global_pct":72.0,"lift":-47.0},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":25.0,"global_pct":65.0,"lift":-40.0},{"programme":"Civil Engineering","cluster":"Engineering – Civil & Environmental","country_pct":0.0,"global_pct":58.0,"lift":-58.0},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":0.0,"global_pct":56.0,"lift":-56.0}]},"Germany":{"n":4,"strengths":[{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":75.0,"global_pct":54.0,"lift":21.0},{"programme":"Earth Sciences","cluster":"Earth & Environmental Sciences","country_pct":50.0,"global_pct":36.0,"lift":14.0},{"programme":"Biochemistry","cluster":"Chemistry","country_pct":50.0,"global_pct":17.0,"lift":33.0},{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":50.0,"global_pct":24.0,"lift":26.0}],"weaknesses":[{"programme":"Data Science","cluster":"CS & AI","country_pct":50.0,"global_pct":73.0,"lift":-23.0},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":25.0,"global_pct":56.0,"lift":-31.0},{"programme":"Civil Engineering","cluster":"Engineering – Civil & Environmental","country_pct":25.0,"global_pct":58.0,"lift":-33.0},{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","country_pct":50.0,"global_pct":72.0,"lift":-22.0}]},"Israel":{"n":3,"strengths":[{"programme":"Biochemistry","cluster":"Chemistry","country_pct":66.7,"global_pct":17.0,"lift":49.7},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":66.7,"global_pct":54.0,"lift":12.7},{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","country_pct":66.7,"global_pct":45.0,"lift":21.7},{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":66.7,"global_pct":35.0,"lift":31.7}],"weaknesses":[{"programme":"Data Science","cluster":"CS & AI","country_pct":33.3,"global_pct":73.0,"lift":-39.7},{"programme":"Statistics","cluster":"Mathematics","country_pct":33.3,"global_pct":81.0,"lift":-47.7},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":33.3,"global_pct":65.0,"lift":-31.7},{"programme":"Chemical Engineering","cluster":"Engineering – Chemical & Materials","country_pct":33.3,"global_pct":60.0,"lift":-26.7}]},"Japan":{"n":3,"strengths":[{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":66.7,"global_pct":24.0,"lift":42.7},{"programme":"Nuclear Engineering","cluster":"Engineering – Other","country_pct":33.3,"global_pct":8.0,"lift":25.3},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":33.3,"global_pct":54.0,"lift":-20.7}],"weaknesses":[{"programme":"Data Science","cluster":"CS & AI","country_pct":0.0,"global_pct":73.0,"lift":-73.0},{"programme":"Statistics","cluster":"Mathematics","country_pct":33.3,"global_pct":81.0,"lift":-47.7},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":33.3,"global_pct":56.0,"lift":-22.7},{"programme":"Chemical Engineering","cluster":"Engineering – Chemical & Materials","country_pct":33.3,"global_pct":60.0,"lift":-26.7}]},"Sweden":{"n":4,"strengths":[{"programme":"Astrophysics","cluster":"Physics & Astronomy","country_pct":50.0,"global_pct":24.0,"lift":26.0},{"programme":"Computational Science","cluster":"CS & AI","country_pct":25.0,"global_pct":11.0,"lift":14.0}],"weaknesses":[{"programme":"Data Science","cluster":"CS & AI","country_pct":25.0,"global_pct":73.0,"lift":-48.0},{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","country_pct":0.0,"global_pct":72.0,"lift":-72.0},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":25.0,"global_pct":65.0,"lift":-40.0},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":25.0,"global_pct":56.0,"lift":-31.0}]},"Switzerland":{"n":4,"strengths":[{"programme":"Systems Engineering","cluster":"Engineering – Other","country_pct":50.0,"global_pct":12.0,"lift":38.0},{"programme":"Environmental Engineering","cluster":"Engineering – Civil & Environmental","country_pct":50.0,"global_pct":14.0,"lift":36.0},{"programme":"Computational Science","cluster":"CS & AI","country_pct":25.0,"global_pct":11.0,"lift":14.0},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":50.0,"global_pct":54.0,"lift":-4.0}],"weaknesses":[{"programme":"Statistics","cluster":"Mathematics","country_pct":25.0,"global_pct":81.0,"lift":-56.0},{"programme":"Mechanical Engineering","cluster":"Engineering – Mechanical & Aerospace","country_pct":25.0,"global_pct":65.0,"lift":-40.0},{"programme":"Civil Engineering","cluster":"Engineering – Civil & Environmental","country_pct":25.0,"global_pct":58.0,"lift":-33.0},{"programme":"Biomedical Engineering","cluster":"Engineering – Biomedical","country_pct":25.0,"global_pct":56.0,"lift":-31.0}]},"UK":{"n":7,"strengths":[{"programme":"Artificial Intelligence","cluster":"CS & AI","country_pct":71.4,"global_pct":12.0,"lift":59.4},{"programme":"Biochemistry","cluster":"Chemistry","country_pct":57.1,"global_pct":17.0,"lift":40.1},{"programme":"Bioinformatics","cluster":"Computational Biology & Bioinformatics","country_pct":71.4,"global_pct":54.0,"lift":17.4},{"programme":"Neuroscience","cluster":"Computational Biology & Bioinformatics","country_pct":57.1,"global_pct":35.0,"lift":22.1},{"programme":"Computational Biology","cluster":"Computational Biology & Bioinformatics","country_pct":71.4,"global_pct":45.0,"lift":26.4}],"weaknesses":[{"programme":"Statistics","cluster":"Mathematics","country_pct":42.9,"global_pct":81.0,"lift":-38.1},{"programme":"Chemical Engineering","cluster":"Engineering – Chemical & Materials","country_pct":28.6,"global_pct":60.0,"lift":-31.4},{"programme":"Electrical Engineering","cluster":"Engineering – Electrical & Computer","country_pct":42.9,"global_pct":72.0,"lift":-29.1}]}};
+
+// ── TAB LOGIC ────────────────────────────────────────────────────────────────
+function showTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['rarity','gaps','country'][i]===id));
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  if (id==='rarity' && !document.getElementById('pane-rarity').innerHTML) renderRarity();
+  if (id==='gaps'   && !document.getElementById('pane-gaps').innerHTML)   renderGaps();
+  if (id==='country'&& !document.getElementById('pane-country').innerHTML) renderCountry();
+}
+
+// ── 3A: RARITY ───────────────────────────────────────────────────────────────
+function renderRarity() {
+  const pane = document.getElementById('pane-rarity');
+  const vrare = RARITY.filter(r=>r.tag.includes('Very Rare'));
+  const rare  = RARITY.filter(r=>r.tag.includes('Rare ('));
+  const uncom = RARITY.filter(r=>r.tag.includes('Uncommon'));
+  const comm  = RARITY.filter(r=>r.tag.includes('Common'));
+
+  const tagClass = t => t.includes('Very')? 'tag-vr': t.includes('Rare (')? 'tag-r': t.includes('Uncommon')? 'tag-u': 'tag-c';
+
+  let html = `<div class="stats">
+    <div class="stat"><div class="v">${vrare.length}</div><div class="l">Very Rare (&lt;10 unis)</div></div>
+    <div class="stat"><div class="v">${rare.length}</div><div class="l">Rare (10–24 unis)</div></div>
+    <div class="stat"><div class="v">${uncom.length}</div><div class="l">Uncommon (25–49)</div></div>
+    <div class="stat"><div class="v">${comm.length}</div><div class="l">Common (50+ unis)</div></div>
+  </div>`;
+
+  for (const [group, label] of [[vrare,'Very Rare'],[rare,'Rare'],[uncom,'Uncommon'],[comm,'Common (50+)']]) {
+    if (!group.length) continue;
+    html += `<h3 style="color:#94a3b8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:18px 0 10px">${label}</h3><div class="rarity-grid">`;
+    for (const r of group) {
+      const clr = CLUSTER_COLORS[r.cluster] || '#64748B';
+      const tcls = tagClass(r.tag);
+      const pct = Math.round(r.pct);
+      const unis = r.universities.slice(0,15).map(([rk,n])=>`<span class="pill" style="background:#1e293b;color:#94a3b8;border:1px solid #334155">#${rk} ${n}</span>`).join('');
+      html += `<div class="rc" onclick="this.classList.toggle('open')">
+        <div class="rc-top">
+          <div class="rc-name">${r.programme}</div>
+          <span class="rc-tag ${tcls}">${r.tag}</span>
+        </div>
+        <div class="rc-cluster" style="color:${clr}">${r.cluster}</div>
+        <div class="rc-bar-wrap">
+          <div class="rc-bar"><div class="rc-fill" style="width:${pct}%;background:${clr}"></div></div>
+          <div class="rc-num" style="color:${clr}">${r.count}/100</div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:5px">Avg provider rank: <strong style="color:var(--text)">#${r.avg_rank}</strong> · Click to see universities</div>
+        <div class="rc-unis">${unis || '<em>See XLSX for full list</em>'}</div>
+      </div>`;
+    }
+    html += '</div>';
+  }
+  pane.innerHTML = html;
+}
+
+// ── 3B: GAPS ─────────────────────────────────────────────────────────────────
+function renderGaps() {
+  const pane = document.getElementById('pane-gaps');
+  // Sort controls
+  let html = `<div class="stats">
+    <div class="stat"><div class="v">${SURPRISES.length}</div><div class="l">Universities with surprising absences</div></div>
+    <div class="stat"><div class="v">${SURPRISES.reduce((s,x)=>s+x.missing.length,0)}</div><div class="l">Total absence instances</div></div>
+    <div class="stat"><div class="v">${SURPRISES.filter(x=>x.rank<=25).length}</div><div class="l">In top 25 ranks</div></div>
+  </div>
+  <p style="color:var(--muted);font-size:12px;margin-bottom:14px">Universities missing programmes offered by &gt;70% of all 100. Medical-specialist institutions (Rockefeller, UCSF, Karolinska, MD Anderson) are intentionally narrow — highlighted separately.</p>
+  <div class="controls">
+    <input id="g-search" placeholder="Search university…" oninput="filterGaps()">
+    <select id="g-prog" onchange="filterGaps()"><option value="">All missing programmes</option>${[...new Set(SURPRISES.flatMap(s=>s.missing.map(m=>m.prog)))].sort().map(p=>`<option value="${p}">${p}</option>`).join('')}</select>
+  </div>
+  <div style="overflow:auto"><table id="gaps-table">
+    <thead><tr>
+      <th>Rank</th><th>University</th><th>Country</th><th>Total Progs</th>
+      <th>Missing Programme</th><th>Cluster</th><th>Global %</th>
+    </tr></thead>
+    <tbody id="gaps-body"></tbody>
+  </table></div>`;
+  pane.innerHTML = html;
+  filterGaps();
+}
+
+function filterGaps() {
+  const q  = document.getElementById('g-search').value.toLowerCase();
+  const gp = document.getElementById('g-prog').value;
+  const tbody = document.getElementById('gaps-body');
+  let rows = '';
+  const MEDICAL = new Set(['Rockefeller University','Karolinska Institute','UT Southwestern Medical Center','UT MD Anderson Cancer Center','University of California, San Francisco (UCSF)']);
+  for (const s of SURPRISES) {
+    if (q && !s.university.toLowerCase().includes(q)) continue;
+    const isMed = MEDICAL.has(s.university);
+    const bg = isMed ? '#1a1a2e' : s.rank<=10 ? '#1a2038' : s.rank<=25 ? '#1a2228' : '';
+    for (const m of s.missing) {
+      if (gp && m.prog !== gp) continue;
+      const clr = CLUSTER_COLORS[m.cluster]||'#64748B';
+      rows += `<tr style="${bg?'background:'+bg:''}">
+        <td style="color:#60a5fa;font-weight:700">#${s.rank}</td>
+        <td>${isMed?'🏥 ':''}${s.university}</td>
+        <td>${s.country}</td>
+        <td style="text-align:center;color:${s.total_progs<5?'#f87171':'#94a3b8'}">${s.total_progs}</td>
+        <td style="font-weight:700">${m.prog}</td>
+        <td><span class="badge" style="background:${clr}">${m.cluster}</span></td>
+        <td style="text-align:center;font-weight:700;color:${m.global_pct>=90?'#f87171':'#fb923c'}">${m.global_pct}%</td>
+      </tr>`;
+    }
+  }
+  document.getElementById('gaps-body').innerHTML = rows || '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:20px">No matches</td></tr>';
+}
+
+// ── 3C: COUNTRY ──────────────────────────────────────────────────────────────
+function renderCountry() {
+  const pane = document.getElementById('pane-country');
+  const countries = Object.keys(COUNTRY_PROFILES);
+  let html = `<div class="stats">
+    <div class="stat"><div class="v">${countries.length}</div><div class="l">Countries analysed (≥3 unis)</div></div>
+  </div>
+  <p style="color:var(--muted);font-size:12px;margin-bottom:16px">Strength = country % at least 15pp above global average. Weakness = at least 20pp below. Lift shown vs. global baseline.</p>
+  <div class="country-grid">`;
+
+  for (const country of countries) {
+    const prof = COUNTRY_PROFILES[country];
+    const unitags = prof.unis ? prof.unis.slice(0,3).map(u=>`<span style="font-size:10px;color:var(--muted)">${u}</span>`).join(', ') : '';
+    html += `<div class="cc">
+      <div class="cc-header">
+        <div class="cc-name">${country}</div>
+        <div class="cc-count">${prof.n} universities in top 100</div>
+      </div>`;
+
+    if (prof.strengths.length) {
+      html += `<div class="cc-section"><span class="cc-section-label sig-label">▲ Strengths</span>`;
+      for (const e of prof.strengths) {
+        const clr = CLUSTER_COLORS[e.cluster]||'#64748B';
+        html += `<div class="cc-entry">
+          <span class="cluster-dot" style="background:${clr}"></span>
+          <span class="cc-prog">${e.programme}</span>
+          <span class="cc-pcts">${e.country_pct}% vs ${e.global_pct}%</span>
+          <span class="cc-lift lift-pos">+${e.lift}</span>
+        </div>`;
+      }
+      html += '</div>';
+    }
+    if (prof.weaknesses.length) {
+      html += `<div class="cc-section"><span class="cc-section-label weak-label">▼ Gaps</span>`;
+      for (const e of prof.weaknesses) {
+        const clr = CLUSTER_COLORS[e.cluster]||'#64748B';
+        html += `<div class="cc-entry">
+          <span class="cluster-dot" style="background:${clr}"></span>
+          <span class="cc-prog">${e.programme}</span>
+          <span class="cc-pcts">${e.country_pct}% vs ${e.global_pct}%</span>
+          <span class="cc-lift lift-neg">${e.lift}</span>
+        </div>`;
+      }
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  pane.innerHTML = html;
+}
+
+// init
+renderRarity();
+</script>
+</body>
+</html>

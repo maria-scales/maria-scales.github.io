@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Statistics Programmes — Top 10 ARWU Universities</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0F172A;color:#CBD5E1;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:24px}
+h1{font-size:26px;font-weight:700;color:#F1F5F9;margin-bottom:6px}
+.subtitle{color:#64748B;font-size:14px;margin-bottom:24px}
+.tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid #334155;padding-bottom:0}
+.tab{padding:10px 20px;border:none;background:none;color:#64748B;cursor:pointer;font-size:14px;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.tab:hover{color:#CBD5E1}
+.tab.active{color:#38BDF8;border-bottom-color:#38BDF8}
+.tab-content{display:none}.tab-content.active{display:block}
+.uni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.uni-card{background:#1E293B;border:1px solid #334155;border-radius:12px;padding:18px;transition:border-color .2s}
+.uni-card:hover{border-color:#475569}
+.tag{background:#1E3A5F;color:#93C5FD;font-size:11px;padding:3px 8px;border-radius:4px;margin:2px;display:inline-block}
+.source-chip{font-size:11px;padding:3px 8px;border-radius:4px;text-decoration:none;display:inline-block}
+.source-chip.checked{background:#14532D;color:#4ADE80;border:1px solid #16A34A}
+.source-chip.estimated{background:#1C1917;color:#FCD34D;border:1px solid #D97706}
+.uni-btn-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.uni-btn{padding:7px 14px;border:1px solid #334155;background:#1E293B;color:#94A3B8;border-radius:8px;cursor:pointer;font-size:13px;transition:all .2s}
+.uni-btn:hover{background:#334155;color:#F1F5F9}
+.uni-btn.active{background:#0F3460;border-color:#38BDF8;color:#38BDF8}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.detail-section{background:#0F172A;border:1px solid #334155;border-radius:10px;padding:16px}
+.section-title{font-size:13px;font-weight:700;color:#F1F5F9;margin-bottom:10px}
+.detail-section ul{padding-left:18px;font-size:13px;color:#CBD5E1;line-height:1.7}
+.matrix-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1E293B;color:#94A3B8;padding:8px 12px;text-align:center;font-weight:600;font-size:12px;border:1px solid #334155}
+.topic-name{background:#0F172A;color:#CBD5E1;padding:10px 14px;font-weight:500;border:1px solid #334155;min-width:240px;white-space:nowrap}
+.matrix-cell{text-align:center;padding:8px;border:1px solid #334155;font-size:16px}
+tr:nth-child(even){background:#0A1120}
+.career-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.career-card{background:#1E293B;border:1px solid #334155;border-radius:12px;padding:18px}
+.career-title{font-size:15px;font-weight:700;color:#F1F5F9;margin-bottom:6px}
+.career-salary{font-size:12px;color:#4ADE80;margin-bottom:8px}
+.career-desc{font-size:13px;color:#94A3B8;line-height:1.6}
+.callout{background:#0C2340;border:1px solid #1E40AF;border-radius:12px;padding:18px;margin-top:20px;font-size:14px;color:#93C5FD;line-height:1.7}
+</style>
+</head>
+<body>
+<h1>📊 Statistics Programmes — Top 10 ARWU Universities</h1>
+<div class="subtitle">ARWU 2025 rankings · Undergraduate degree analysis · Sources checked where possible</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('overview',event)">🏛️ Overview</button>
+  <button class="tab" onclick="switchTab('detail',event)">📋 Programme Detail</button>
+  <button class="tab" onclick="switchTab('matrix',event)">🔢 Topic Comparison</button>
+  <button class="tab" onclick="switchTab('careers',event)">💼 Career Paths</button>
+</div>
+
+<div id="tab-overview" class="tab-content active">
+  <div class="uni-grid">
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#38BDF8;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#1</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Harvard</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">A.B. in Statistics</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Probability Theory</span><span class="tag">Biostatistics / BCB</span><span class="tag">Machine Learning</span><span class="tag">Data Science Track</span></div>
+          <a href="https://statistics.fas.harvard.edu/undergraduate" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#4ADE80;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#2</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Stanford</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in Statistics</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Theory</span><span class="tag">Mathematical Statistics</span><span class="tag">Interdisciplinary Applications</span></div>
+          <a href="https://statistics.stanford.edu/academics/undergraduate-programs" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#F472B6;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#3</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">MIT</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in Mathematics (Statistics focus, Course 18)</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Probability Theory</span><span class="tag">Mathematical Rigour</span><span class="tag">Applied Statistics</span></div>
+          <a href="https://math.mit.edu/academics/undergrad/major/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#A78BFA;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#4</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Cambridge</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇬🇧 UK</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.A./M.Math in Mathematics (Statistics option)</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 3–4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Bayesian Statistics</span><span class="tag">Stochastic Processes</span><span class="tag">Mathematical Statistics</span></div>
+          <a href="https://www.undergraduate.study.cam.ac.uk/courses/mathematics" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#FBBF24;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#5</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Berkeley</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S. in Statistics</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Applied Statistics</span><span class="tag">Probability</span><span class="tag">Statistical Computing</span></div>
+          <a href="https://statistics.berkeley.edu/programs/undergraduate" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#5EEAD4;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#6</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Oxford</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇬🇧 UK</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.A. in Mathematics & Statistics (joint)</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 3 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Theory</span><span class="tag">Bayesian Methods</span><span class="tag">Stochastic Processes</span></div>
+          <a href="https://www.maths.ox.ac.uk/study-here/undergraduate/courses" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#FB923C;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#7</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Princeton</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.S.E. in Operations Research & Financial Engineering (ORFE)</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Optimization</span><span class="tag">Financial Engineering</span><span class="tag">Stochastic Processes</span><span class="tag">Statistical Inference</span></div>
+          <a href="https://orfe.princeton.edu/undergraduate" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#34D399;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#8</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Caltech</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">No standalone Statistics degree (nearest: ACM or Mathematics)</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Probability Theory</span><span class="tag">Applied & Computational Mathematics</span><span class="tag">Signal Processing</span></div>
+          <a href="https://www.cms.caltech.edu/academics/ugrad" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#F87171;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#9</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Columbia</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.A. in Statistics</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Statistical Theory</span><span class="tag">Probability</span><span class="tag">Financial Statistics</span></div>
+          <a href="https://stat.columbia.edu/programs/undergraduate-programs/" target="_blank" class="source-chip checked">✓ Checked</a>
+        </div>
+        <div class="uni-card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="background:#C084FC;color:#0F172A;font-weight:700;font-size:12px;padding:4px 8px;border-radius:6px;">#10</div>
+            <div style="font-size:17px;font-weight:700;color:#F1F5F9;">Chicago</div>
+            <div style="margin-left:auto;font-size:12px;color:#94A3B8;">🇺🇸 USA</div>
+          </div>
+          <div style="font-size:13px;color:#CBD5E1;margin-bottom:4px;">B.A. / B.S. in Statistics</div>
+          <div style="font-size:12px;color:#64748B;margin-bottom:10px;">Duration: 4 years</div>
+          <div style="margin-bottom:10px;"><span class="tag">Mathematical Statistics</span><span class="tag">Probability Theory</span><span class="tag">Statistical Methodology</span></div>
+          <a href="https://stat.uchicago.edu/academics/undergraduate-programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+        </div></div>
+</div>
+
+<div id="tab-detail" class="tab-content">
+  <div class="uni-btn-grid"><button class="uni-btn active" id="unibtn-0" onclick="selectUni(0)">Harvard</button><button class="uni-btn" id="unibtn-1" onclick="selectUni(1)">Stanford</button><button class="uni-btn" id="unibtn-2" onclick="selectUni(2)">MIT</button><button class="uni-btn" id="unibtn-3" onclick="selectUni(3)">Cambridge</button><button class="uni-btn" id="unibtn-4" onclick="selectUni(4)">Berkeley</button><button class="uni-btn" id="unibtn-5" onclick="selectUni(5)">Oxford</button><button class="uni-btn" id="unibtn-6" onclick="selectUni(6)">Princeton</button><button class="uni-btn" id="unibtn-7" onclick="selectUni(7)">Caltech</button><button class="uni-btn" id="unibtn-8" onclick="selectUni(8)">Columbia</button><button class="uni-btn" id="unibtn-9" onclick="selectUni(9)">Chicago</button></div>
+  
+        <div id="uni-detail-0" style="display:block">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#38BDF8">#1 Harvard</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · A.B. in Statistics · 4 years</div>
+            <a href="https://statistics.fas.harvard.edu/undergraduate" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability & Statistical Inference (Stat 110/111)</li><li>Regression & Applied Statistics (Stat 139)</li><li>Linear Algebra (Math 21B)</li><li>Multivariable Calculus (Math 21A)</li><li>Computing (CS 50 or equivalent)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>Stat 110 – Introduction to Probability</li><li>Stat 111 – Introduction to Statistical Inference</li><li>Stat 139 – Statistical Sleuthing Through Linear Models</li><li>Stat 149 – Linear Models</li><li>Stat 171 – Applied Stochastic Processes</li><li>Stat 185 – Computation & Inference in Statistics</li><li>CS 109A/B – Data Science (ML track)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Bayesian inference & hierarchical modelling</li><li>High-dimensional data analysis</li><li>Stochastic processes</li><li>Bioinformatics & computational biology</li><li>Causal inference & experimental design</li><li>Reinforcement learning (Stat 234)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>4 specialised tracks: General, Data Science, ML, BCB</li><li>AB/SM concurrent master's program available</li><li>Sports Analytics Lab</li><li>Collaboration with Harvard Data Science Initiative (HDSI)</li><li>Optional senior thesis for honours</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-1" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#4ADE80">#2 Stanford</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in Statistics · 4 years</div>
+            <a href="https://statistics.stanford.edu/academics/undergraduate-programs" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability Theory (STATS 116)</li><li>Introduction to Statistical Inference (STATS 200)</li><li>Applied Statistics / Regression (STATS 203/191)</li><li>Linear Algebra & Multivariable Calculus (MATH 51)</li><li>Computing in R and Python</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>STATS 116 – Theory of Probability</li><li>STATS 200 – Introduction to Statistical Inference</li><li>STATS 203 – Regression and Analysis of Variance</li><li>STATS 305A/B – Introduction to Statistical Modelling</li><li>CS 109 – Introduction to Probability for CS</li><li>STATS 315A – Modern Applied Statistics: Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Bayesian methods</li><li>Statistical computing & simulation</li><li>Biostatistics & epidemiology</li><li>Time series & forecasting</li><li>Finance & risk modelling</li><li>High-dimensional inference</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Joint focus with SLAC and Stanford Medical School research</li><li>Strong industry ties in Silicon Valley</li><li>Interdisciplinary breadth requirements</li><li>Close links with Stanford AI Lab (SAIL) for statistical ML</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-2" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#F472B6">#3 MIT</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in Mathematics (Statistics focus, Course 18) · 4 years</div>
+            <a href="https://math.mit.edu/academics/undergrad/major/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability & Random Variables (18.600)</li><li>Statistics for Applications (18.650)</li><li>Mathematical Statistics (18.655)</li><li>Linear Algebra (18.06)</li><li>Real Analysis (18.100)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>18.600 – Probability and Random Variables</li><li>18.650 – Statistics for Applications</li><li>18.655 – Mathematical Statistics</li><li>18.657 – Mathematics of Machine Learning</li><li>18.675 – Theory of Probability</li><li>18.S096 – Topics in Mathematics of Data Science</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Statistical learning theory</li><li>Stochastic processes</li><li>Computational statistics</li><li>Financial mathematics (15.070)</li><li>Combinatorics & graph theory</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No standalone Statistics degree — Statistics is a focus within Course 18 (Mathematics)</li><li>Access to cross-departmental Statistics & Data Science Center (IDSS)</li><li>Putnam competition culture prepares unusually strong mathematical skills</li><li>UROP research programme from Year 1</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-3" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#A78BFA">#4 Cambridge</div>
+            <div style="color:#94A3B8;">🇬🇧 UK · B.A./M.Math in Mathematics (Statistics option) · 3–4 years</div>
+            <a href="https://www.undergraduate.study.cam.ac.uk/courses/mathematics" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability (IA/IB)</li><li>Statistics (IB)</li><li>Probability & Measure (Part II)</li><li>Applied Probability (Part II)</li><li>Statistical Modelling (Part II)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>IA Probability – foundational probability</li><li>IB Statistics – inference & estimation</li><li>Part II: Probability & Measure</li><li>Part II: Applied Probability (Markov chains, renewal theory)</li><li>Part II: Statistical Modelling (GLMs, survival analysis)</li><li>Part III: Advanced Probability, Statistical Theory, Bayesian Inference</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Principles of Statistics (Part II)</li><li>Stochastic Financial Models (Part II)</li><li>Time Series and Monte Carlo Inference (Part III)</li><li>Approximate Inference & Learning (Part III)</li><li>Biostatistics (Part III)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Statistics embedded within rigorous Mathematics Tripos</li><li>No standalone Statistics degree — Part II/III papers offer specialisation</li><li>Part III (MMath) is globally renowned graduate-entry programme</li><li>Tripos examinations drive very deep mathematical mastery</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-4" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#FBBF24">#5 Berkeley</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S. in Statistics · 4 years</div>
+            <a href="https://statistics.berkeley.edu/programs/undergraduate" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Concepts of Probability (STAT 134)</li><li>Concepts of Statistics (STAT 135)</li><li>Real Analysis (MATH 104)</li><li>Linear Algebra (MATH 110)</li><li>Statistical Computing in R</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>STAT 134 – Concepts of Probability</li><li>STAT 135 – Concepts of Statistics</li><li>STAT 150 – Stochastic Processes</li><li>STAT 151A – Applied Regression (Linear Models)</li><li>STAT 153 – Introduction to Time Series</li><li>STAT 155 – Game Theory</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Bayesian data analysis</li><li>High-dimensional statistics</li><li>Statistical learning / ML</li><li>Survival analysis</li><li>Survey sampling & experimental design</li><li>Computational biology</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Standalone Statistics department (one of the oldest in the world)</li><li>Close ties to EECS and Berkeley AI Research (BAIR)</li><li>Strong emphasis on R and Python from Year 1</li><li>Double major / joint options with economics, public health</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-5" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#5EEAD4">#6 Oxford</div>
+            <div style="color:#94A3B8;">🇬🇧 UK · B.A. in Mathematics & Statistics (joint) · 3 years</div>
+            <a href="https://www.maths.ox.ac.uk/study-here/undergraduate/courses" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability (Year 1 & 2)</li><li>Statistics (Year 1 & 2)</li><li>Simulation & Statistical Programming (Year 2)</li><li>Applied Statistics (Year 3)</li><li>Linear Algebra & Analysis (core maths)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>A2 Introduction to Statistics</li><li>B8.1 Probability, Measure & Martingales</li><li>B8.4 Information Theory</li><li>SC1 Stochastic Models in Mathematical Genetics</li><li>SC2 Actuarial Science</li><li>SC7 Applied and Computational Statistics</li><li>SC8 Topics in Bayesian Statistics</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Actuarial science</li><li>Mathematical genetics</li><li>Financial statistics</li><li>Nonparametric statistics</li><li>Medical statistics</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Joint degree with Mathematics — uniquely balanced</li><li>Strong actuarial science pathway</li><li>Oxford–Man Institute links for quantitative finance research</li><li>Tutorial system provides intense one-on-one learning</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-6" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#FB923C">#7 Princeton</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.S.E. in Operations Research & Financial Engineering (ORFE) · 4 years</div>
+            <a href="https://orfe.princeton.edu/undergraduate" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability & Stochastic Systems (ORF 309)</li><li>Statistics & Data Analysis (ORF 245)</li><li>Optimization (ORF 307)</li><li>Linear Algebra & Differential Equations</li><li>Analysis of Big Data (ORF 350)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>ORF 245 – Fundamentals of Statistics</li><li>ORF 309 – Probability and Stochastic Systems</li><li>ORF 307 – Optimization</li><li>ORF 350 – Analysis of Big Data</li><li>ORF 363 – Computing and Optimization</li><li>ORF 418 – Optimal Learning</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Financial econometrics</li><li>Machine learning & statistical learning</li><li>Game theory</li><li>Network science</li><li>Transportation & logistics</li><li>Simulation & Monte Carlo methods</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>No dedicated Statistics degree — ORFE is the quantitative flagship</li><li>SML (Statistics & Machine Learning) Minor available separately</li><li>Strong preparation for finance and consulting careers</li><li>Financial Econometrics Lab & Statistics Lab on campus</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-7" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#34D399">#8 Caltech</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · No standalone Statistics degree (nearest: ACM or Mathematics) · 4 years</div>
+            <a href="https://www.cms.caltech.edu/academics/ugrad" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability (ACM / Ma 144)</li><li>Mathematical Statistics (ACM 116 / Ma 112)</li><li>Linear Algebra (Ma 1b)</li><li>Real Analysis (Ma 2)</li><li>Numerical Analysis</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>ACM 116 – Introduction to Probability Models</li><li>ACM 117 – Probability Theory and Stochastic Processes</li><li>Ma 112 – Statistics</li><li>ACM 106 – Introductory Methods of Computational Mathematics</li><li>CS/CNS/EE 156 – Learning Systems</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Stochastic processes</li><li>Statistical learning & inference</li><li>Signal processing & information theory</li><li>Mathematical biology</li><li>Econometrics (via Economics/Humanities)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>Caltech offers no standalone UG Statistics degree</li><li>ACM (Applied + Computational Mathematics) is the closest option</li><li>IDS (Information & Data Sciences) covers data-focused statistics</li><li>Extraordinarily small class sizes (< 250 undergrads/year)</li><li>Every student does research — heavy lab/SURF programme</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-8" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#F87171">#9 Columbia</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.A. in Statistics · 4 years</div>
+            <a href="https://stat.columbia.edu/programs/undergraduate-programs/" target="_blank" class="source-chip checked">✓ Checked</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Probability Theory (STAT W4105)</li><li>Statistical Inference (STAT W4107)</li><li>Linear Regression (STAT W4315)</li><li>Calculus & Linear Algebra</li><li>Data Analysis in R</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>STAT W4105 – Probability Theory</li><li>STAT W4107 – Statistical Inference</li><li>STAT W4315 – Linear Regression Models</li><li>STAT W4206 – Statistical Computing & Intro to Data Science</li><li>STAT W4241 – Statistical Machine Learning</li><li>STAT W4400 – Bayesian Statistics</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Bayesian statistics</li><li>Statistical machine learning</li><li>Time series & stochastic processes</li><li>Categorical data analysis</li><li>Survey sampling</li><li>Applied Data Mining</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>4+1 BA/MA program available</li><li>Statistical Consulting Practicum for real-world experience</li><li>Center for Applied Probability</li><li>Strong links with Columbia Business School and Financial Engineering programs</li></ul>
+            </div>
+          </div>
+        </div>
+        <div id="uni-detail-9" style="display:none">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="font-size:22px;font-weight:700;color:#C084FC">#10 Chicago</div>
+            <div style="color:#94A3B8;">🇺🇸 USA · B.A. / B.S. in Statistics · 4 years</div>
+            <a href="https://stat.uchicago.edu/academics/undergraduate-programs/" target="_blank" class="source-chip estimated">~ Training knowledge</a>
+          </div>
+          <div class="detail-grid">
+            <div class="detail-section">
+              <div class="section-title">📐 Core Areas</div><ul><li>Elementary Statistics (STAT 22000) / Statistical Theory (STAT 24400–24500)</li><li>Mathematical Probability (STAT 24300 or MATH 23500)</li><li>Applied Linear Algebra</li><li>Computing in R & Python</li><li>Real Analysis (for BS track)</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">📚 Key Courses</div><ul><li>STAT 24400 – Statistical Theory and Methods I</li><li>STAT 24500 – Statistical Theory and Methods II</li><li>STAT 24300 – Theoretical Statistics I (honours track)</li><li>STAT 25100 – Introduction to Mathematical Probability</li><li>STAT 33100 – Sample Surveys</li><li>STAT 34300 – Applied Linear Statistical Methods</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">🎯 Elective Areas</div><ul><li>Bayesian statistics</li><li>Time series analysis</li><li>Multivariate statistics</li><li>Statistical computing</li><li>Econometrics (via Economics)</li><li>Causal inference</li></ul>
+            </div>
+            <div class="detail-section">
+              <div class="section-title">⭐ Special Features</div><ul><li>BA vs BS: BS requires additional mathematics (real analysis, abstract algebra)</li><li>Joint BA/MS in Statistics available</li><li>Strong quantitative tradition — home of the 'Chicago School'</li><li>Close ties with Booth School of Business & Econometrics faculty</li></ul>
+            </div>
+          </div>
+        </div>
+</div>
+
+<div id="tab-matrix" class="tab-content">
+  <div class="matrix-wrap">
+    <table>
+      <thead><tr><th style="text-align:left">Topic</th><th title="Harvard">Har</th><th title="Stanford">Sta</th><th title="MIT">MIT</th><th title="Cambridge">Cam</th><th title="Berkeley">Ber</th><th title="Oxford">Oxf</th><th title="Princeton">Pri</th><th title="Caltech">Cal</th><th title="Columbia">Col</th><th title="Chicago">Chi</th></tr></thead>
+      <tbody><tr><td class='topic-name'>Probability Theory</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Statistical Inference</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Regression Analysis</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Bayesian Statistics</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Time Series Analysis</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Stochastic Processes</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr><tr><td class='topic-name'>Computational Statistics / R</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Machine Learning / Stat. Learning</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Biostatistics</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Financial Statistics / Econometrics</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td></tr><tr><td class='topic-name'>Experimental Design</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Nonparametric Methods</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Mathematical Statistics (proof-based)</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Signal Processing / Info Theory</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td></tr><tr><td class='topic-name'>Optimization</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Data Visualisation</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">◑</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">—</td><td class="matrix-cell">✅</td></tr><tr><td class='topic-name'>Senior Thesis / Capstone</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">✅</td><td class="matrix-cell">◑</td></tr></tbody>
+    </table>
+  </div>
+  <div style="margin-top:14px;font-size:12px;color:#475569">✅ = core/required &nbsp;|&nbsp; ◑ = partial/elective only &nbsp;|&nbsp; — = not offered</div>
+</div>
+
+<div id="tab-careers" class="tab-content">
+  <div class="career-grid">
+    <div class="career-card">
+      <div class="career-title">📈 Data Scientist / ML Engineer</div>
+      <div class="career-salary">$110K–$200K+ (USA) · £65K–£130K (UK)</div>
+      <div class="career-desc">The most direct career path. Statistics graduates are valued for their understanding of model assumptions, uncertainty quantification, and inference — skills pure CS grads often lack. Top employers: Google, Amazon, Netflix, Spotify, Two Sigma.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">💰 Quantitative Analyst (Quant)</div>
+      <div class="career-salary">$150K–$400K+ total compensation</div>
+      <div class="career-desc">Strong demand from hedge funds, investment banks, and proprietary trading firms. Stochastic processes, probability theory, and time series are directly applicable. Top employers: Jane Street, DE Shaw, Citadel, Renaissance Technologies, Goldman Sachs.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🧬 Biostatistician</div>
+      <div class="career-salary">$90K–$160K (USA) · £50K–£90K (UK)</div>
+      <div class="career-desc">Clinical trials, epidemiological research, drug development. FDA and pharmaceutical companies require rigorous statistical expertise. Particularly strong pathway from Harvard (BCB track), Oxford, Cambridge. Top employers: Pfizer, GSK, FDA, NIH, academic medical centres.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🔬 Academic / Research Statistician</div>
+      <div class="career-salary">$80K–$200K (academia) · Higher in industry research</div>
+      <div class="career-desc">Developing new statistical methodology. Usually requires a PhD. Graduates from ARWU Top 10 Statistics programmes have an excellent pipeline to top PhD programmes (Stanford, Chicago, Berkeley, Columbia).</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">📊 Actuary</div>
+      <div class="career-salary">$80K–$200K+ depending on credentials</div>
+      <div class="career-desc">Risk modelling for insurance, pensions, and finance. Oxford's actuarial science pathway is especially noted. Requires professional exams (FIA, FSA). Stable, well-compensated career with a clear progression ladder.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🏛️ Economist / Policy Analyst</div>
+      <div class="career-salary">$75K–$150K (government/NGO) · More in private sector</div>
+      <div class="career-desc">Government statistical agencies, central banks, international organisations (IMF, World Bank). Econometrics skills are central. Princeton ORFE graduates are particularly well-placed. Top employers: Federal Reserve, ONS, OECD, McKinsey Global Institute.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">⚙️ Statistical / ML Product Engineer</div>
+      <div class="career-salary">$120K–$220K (tech industry)</div>
+      <div class="career-desc">Building recommender systems, A/B testing infrastructure, search ranking, forecasting. Strong statistical foundations are critical for these roles. Top employers: Meta, Airbnb, Uber, Apple, LinkedIn.</div>
+    </div>
+    <div class="career-card">
+      <div class="career-title">🩺 Medical / Epidemiological Researcher</div>
+      <div class="career-salary">$70K–$140K (research roles)</div>
+      <div class="career-desc">Designing clinical studies, analysing trial data, public health surveillance. Combination of statistics and domain knowledge. Strong pipeline from Harvard (School of Public Health collaboration) and Oxford.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>💡 The bottom line:</strong> Statistics graduates sit at the intersection of mathematical rigour and real-world data — arguably the most versatile quantitative degree. Unlike pure maths graduates, statisticians are trained to handle messy, real-world uncertainty. Unlike CS graduates, they understand <em>why</em> models work (and when they fail). This makes them prized in any data-driven field.
+  </div>
+
+  <div style="background:#1E293B;border:1px solid #334155;border-radius:12px;padding:20px 24px;margin-top:20px;">
+    <div style="font-size:13px;font-weight:700;color:#A78BFA;margin-bottom:14px;">💬 Is Statistics different enough from CS to justify as a standalone degree?</div>
+    <div style="background:#0F172A;border-left:3px solid #A78BFA;border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:12px;font-size:13px;color:#CBD5E1;line-height:1.7;">
+      <strong style="color:#A78BFA">Question:</strong> CS is becoming general literacy for elite engineers. Statistics is also ubiquitous in every quantitative field. If both are "needed everywhere," does specialising in Statistics still give you a meaningful edge — or do you just end up needing to learn CS anyway?
+    </div>
+    <div style="background:#0F172A;border-left:3px solid #38BDF8;border-radius:0 8px 8px 0;padding:12px 16px;font-size:13px;color:#CBD5E1;line-height:1.7;">
+      <strong style="color:#38BDF8">Answer:</strong> The distinction is getting blurrier but it hasn't disappeared. What Statistics gives you that CS doesn't is a deep understanding of <em>uncertainty</em>: how to quantify it, propagate it, and make decisions under it. A CS graduate can implement a model; a statistician can tell you whether that model's confidence intervals are meaningful, whether the experimental design was valid, and whether the p-values are being interpreted correctly. In practice, the highest-value roles (quant research, clinical trial design, causal ML, economic policy) specifically require this statistical rigour. The same pattern as CS applies: Statistics is becoming baseline literacy in data roles, but the people who <em>master</em> it — who understand the theory, not just run R packages — have a compounding advantage. Specialisation on top of Statistics (by domain: genomics, finance, public policy) is exactly what separates researchers from analysts.
+    </div>
+  </div>
+</div>
+
+<script>
+function switchTab(name, event) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if(event) event.target.classList.add('active');
+}
+function selectUni(idx) {
+  document.querySelectorAll('[id^="uni-detail-"]').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.uni-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('uni-detail-' + idx).style.display = 'block';
+  document.getElementById('unibtn-' + idx).classList.add('active');
+}
+</script>
+</body>
+</html>

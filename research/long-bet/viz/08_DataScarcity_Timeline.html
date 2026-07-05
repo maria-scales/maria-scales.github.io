@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Scarcity Ladder — Data & Skills Through Time</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #070D1A;
+  color: #CBD5E1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Header ── */
+.hero {
+  padding: 48px 40px 36px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #F1F5F9;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.hero p {
+  font-size: 15px;
+  color: #64748B;
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 40px;
+  border-bottom: 1px solid #1E293B;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  color: #64748B;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all .2s;
+}
+.tab:hover { color: #CBD5E1; }
+.tab.active { color: #38BDF8; border-bottom-color: #38BDF8; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── Timeline wrapper ── */
+.timeline-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 40px 60px 72px;
+  position: relative;
+}
+
+/* vertical spine — fixed on the left */
+.timeline-wrap::before {
+  content: '';
+  position: absolute;
+  left: 52px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #1E3A5F, #334155 60%, #1E293B);
+}
+
+/* ── Era card ── */
+.era {
+  display: block;
+  margin-bottom: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.era-date {
+  display: none; /* now inline in header */
+}
+
+/* dot on spine */
+.era-dot {
+  position: absolute;
+  left: -32px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: #070D1A;
+  transition: transform .25s, box-shadow .25s;
+  z-index: 2;
+}
+.era:hover .era-dot,
+.era.open .era-dot {
+  transform: scale(1.5);
+}
+
+.era-body {
+  background: #0C1626;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  padding: 18px 22px;
+  transition: border-color .2s;
+}
+.era:hover .era-body { border-color: #334155; }
+.era.open .era-body  { border-color: #1E3A5F; }
+
+.era-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.era-icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.era-meta {
+  flex: 1;
+  min-width: 0;
+}
+.era-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 5px;
+}
+.era-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #F1F5F9;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.era-tagline {
+  font-size: 12px;
+  color: #64748B;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.era-chevron {
+  font-size: 14px;
+  color: #334155;
+  flex-shrink: 0;
+  transition: transform .25s;
+}
+.era.open .era-chevron { transform: rotate(180deg); color: #38BDF8; }
+
+/* expand/collapse detail */
+.era-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.era.open .era-detail {
+  max-height: 700px;
+}
+
+.era-detail-inner {
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.era + .era { margin-top: 10px; }
+
+.detail-block {
+  background: #070D1A;
+  border: 1px solid #1E293B;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.detail-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.detail-value {
+  font-size: 13px;
+  color: #CBD5E1;
+  line-height: 1.6;
+}
+.detail-value ul { padding-left: 16px; }
+.detail-value li { margin-bottom: 3px; }
+
+.what-happened {
+  grid-column: 1 / -1;
+}
+
+/* ── Scarcity pills ── */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+.pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+/* ── Floor-rises diagram ── */
+.floor-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+.floor-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #F1F5F9;
+  margin-bottom: 6px;
+}
+.floor-sub {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 28px;
+}
+.floor-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 480px;
+  padding-bottom: 36px;
+  position: relative;
+  border-bottom: 1px solid #1E293B;
+}
+.floor-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 3px;
+  position: relative;
+}
+.floor-col-label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #475569;
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.floor-layer {
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  padding: 4px 6px;
+  transition: opacity .2s;
+  cursor: default;
+}
+.floor-layer:first-child { border-radius: 5px; }
+
+/* scarce highlight */
+.scarce-layer {
+  box-shadow: 0 0 18px 3px;
+  position: relative;
+}
+.scarce-name {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.scarce-badge {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: 0.75;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 1px 5px;
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #64748B;
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ── Insight panel ── */
+.insight-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.insight-card {
+  background: #0F1929;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  padding: 20px;
+}
+.insight-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #F1F5F9;
+  margin-bottom: 10px;
+}
+.insight-card p {
+  font-size: 13px;
+  color: #94A3B8;
+  line-height: 1.7;
+}
+.big-quote {
+  background: #0A1628;
+  border-left: 3px solid #38BDF8;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  font-size: 15px;
+  color: #CBD5E1;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.big-quote strong { color: #38BDF8; font-style: normal; }
+
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>The Scarcity Ladder</h1>
+  <p>As each layer of data work gets democratised, the bottleneck shifts upward. What was once elite expertise becomes baseline literacy — and a new scarce skill emerges above it.</p>
+</div>
+
+<div class="tabs" style="max-width:1100px;margin:0 auto 40px;padding:0 40px;">
+  <button class="tab active" onclick="switchTab('timeline',event)">📅 Timeline</button>
+  <button class="tab" onclick="switchTab('floor',event)">📊 The Rising Floor</button>
+  <button class="tab" onclick="switchTab('insights',event)">💡 Key Insights</button>
+</div>
+
+<!-- ════════════════════════════════ TIMELINE TAB ════════════════════════════════ -->
+<div id="tab-timeline" class="tab-content active">
+<div class="timeline-wrap">
+
+  <!-- ERA 1 -->
+  <div class="era" id="era0" onclick="toggleEra(0)">
+    <div class="era-dot" style="border-color:#A78BFA;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🔭</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#A78BFA;border-color:#A78BFA44;background:#1A1040;">1880s – 1940s · Statistical Era</div>
+          <div class="era-title">The Age of Small Data</div>
+          <div class="era-tagline">"If you torture the data long enough, it will confess." — Ronald Coase</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#A78BFA;">What happened</div>
+            <div class="detail-value">Data was precious and scarce — collected by hand from experiments, censuses, agricultural trials. The challenge wasn't handling volume; it was extracting reliable signal from tiny samples rife with noise. Galton, Pearson, and Fisher invented the foundational toolkit: correlation, regression, ANOVA, hypothesis testing, experimental design.</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What was abundant</div>
+            <div class="detail-value"><ul><li>Time and patience</li><li>Physical ledgers & records</li><li>Domain expertise (biology, agriculture, economics)</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#A78BFA;border-color:#A78BFA44;background:#1A1040;">Statistical intuition</span>
+                <span class="pill" style="color:#A78BFA;border-color:#A78BFA44;background:#1A1040;">Experimental design</span>
+                <span class="pill" style="color:#A78BFA;border-color:#A78BFA44;background:#1A1040;">Probability theory</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">Academic statisticians, government actuaries, scientific researchers. A tiny priesthood with access to rigorous mathematical methods.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 2 -->
+  <div class="era" id="era1" onclick="toggleEra(1)">
+    <div class="era-dot" style="border-color:#60A5FA;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🖥️</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#60A5FA;border-color:#60A5FA44;background:#0F1F40;">1950s – 1970s · Computing Era</div>
+          <div class="era-title">Mainframes &amp; Algorithms</div>
+          <div class="era-tagline">Computers arrived. Very few people could talk to them.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#60A5FA;">What happened</div>
+            <div class="detail-value">Computers made statistical calculations feasible at scale — but required programming. Punch cards, FORTRAN, COBOL. Data lived in batch-processed files. The bottleneck shifted from mathematical intuition to: can you write code to run the analysis at all? Turing, von Neumann, Knuth defined this era.</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>Basic statistical calculation (tables replaced by computers)</li><li>Arithmetic at scale</li><li>Census & survey processing</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#60A5FA;border-color:#60A5FA44;background:#0F1F40;">Programming</span>
+                <span class="pill" style="color:#60A5FA;border-color:#60A5FA44;background:#0F1F40;">Algorithm design</span>
+                <span class="pill" style="color:#60A5FA;border-color:#60A5FA44;background:#0F1F40;">Systems architecture</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">Computer scientists and engineers at IBM, Bell Labs, government agencies. Programming was a deep specialist skill — most people never touched a terminal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 3 -->
+  <div class="era" id="era2" onclick="toggleEra(2)">
+    <div class="era-dot" style="border-color:#34D399;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🗄️</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#34D399;border-color:#34D39944;background:#0A2018;">1980s – 1990s · Database Era</div>
+          <div class="era-title">Spreadsheets, SQL &amp; PCs</div>
+          <div class="era-tagline">Data went into rows and columns. Everyone got a spreadsheet.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#34D399;">What happened</div>
+            <div class="detail-value">VisiCalc (1979) and Excel (1985) put computation in everyone's hands. Relational databases (Oracle, SQL Server) organised business data systematically. Programming was still specialist, but analysing data in Excel became a mass skill. The bottleneck shifted to: can you design and query databases? Can you build systems that store and retrieve data reliably?</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>Basic arithmetic & tabular analysis (Excel)</li><li>Statistical reporting</li><li>Word processing & document creation</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#34D399;border-color:#34D39944;background:#0A2018;">Database design</span>
+                <span class="pill" style="color:#34D399;border-color:#34D39944;background:#0A2018;">SQL & data modelling</span>
+                <span class="pill" style="color:#34D399;border-color:#34D39944;background:#0A2018;">Enterprise architecture</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">Database administrators, enterprise architects, ERP consultants (SAP, Oracle). These roles commanded high salaries precisely because the infrastructure was new and complex.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 4 -->
+  <div class="era" id="era3" onclick="toggleEra(3)">
+    <div class="era-dot" style="border-color:#FBBF24;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🌊</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#FBBF24;border-color:#FBBF2444;background:#1A1400;">2000 – 2012 · Big Data Era</div>
+          <div class="era-title">The Data Flood</div>
+          <div class="era-tagline">The internet created more data than anyone knew what to do with.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#FBBF24;">What happened</div>
+            <div class="detail-value">Google, Amazon, Facebook generated petabytes. Relational databases couldn't cope. Hadoop (2006), MapReduce, Cassandra, Kafka emerged. The challenge: data was now so large and fast that just moving and storing it was a hard engineering problem. "Big Data" became a buzzword. The bottleneck was distributed systems engineering, not analysis.</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>SQL querying (near-universal for analysts)</li><li>Basic database administration</li><li>Web development at small scale</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#FBBF24;border-color:#FBBF2444;background:#1A1400;">Distributed systems</span>
+                <span class="pill" style="color:#FBBF24;border-color:#FBBF2444;background:#1A1400;">Data engineering</span>
+                <span class="pill" style="color:#FBBF24;border-color:#FBBF2444;background:#1A1400;">Scale & reliability</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">Site Reliability Engineers, Hadoop architects, infrastructure engineers at Google, Facebook, Amazon. These people earned exceptional salaries for keeping systems running at scale.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 5 -->
+  <div class="era" id="era4" onclick="toggleEra(4)">
+    <div class="era-dot" style="border-color:#F472B6;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🧪</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#F472B6;border-color:#F472B644;background:#200A18;">2012 – 2020 · Data Science Era</div>
+          <div class="era-title">"Sexiest Job of the 21st Century"</div>
+          <div class="era-tagline">HBR 2012. Python + pandas + scikit-learn changed everything.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#F472B6;">What happened</div>
+            <div class="detail-value">Cloud platforms (AWS, GCP, Azure) commoditised infrastructure. Suddenly you didn't need to manage Hadoop clusters — you rented compute. The bottleneck shifted: now the hard part was building models that extracted value from all this stored data. Python's scientific ecosystem exploded. The "Data Scientist" emerged: half statistician, half software engineer, half domain expert (yes, three halves).</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>Infrastructure provisioning (cloud)</li><li>Distributed storage & processing</li><li>Basic data pipelines</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#F472B6;border-color:#F472B644;background:#200A18;">ML model building</span>
+                <span class="pill" style="color:#F472B6;border-color:#F472B644;background:#200A18;">Statistical modelling</span>
+                <span class="pill" style="color:#F472B6;border-color:#F472B644;background:#200A18;">Python + Stats combined</span>
+                <span class="pill" style="color:#F472B6;border-color:#F472B644;background:#200A18;">Feature engineering</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">Data Scientists at Google, Netflix, Airbnb. Kaggle grandmasters. People who could go from raw data to a deployed model. Starting salaries surpassed most engineering roles.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 6 -->
+  <div class="era" id="era5" onclick="toggleEra(5)">
+    <div class="era-dot" style="border-color:#FB923C;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🧠</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#FB923C;border-color:#FB923C44;background:#1A0C00;">2016 – 2022 · Deep Learning Era</div>
+          <div class="era-title">GPUs, Transformers &amp; Neural Nets</div>
+          <div class="era-tagline">Deep learning ate everything. AlexNet → BERT → GPT-3.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#FB923C;">What happened</div>
+            <div class="detail-value">AlexNet (2012) showed deep learning beat everything else on vision tasks. Transformers (2017) did the same for language. AutoML and sklearn made classical ML nearly a commodity. The new frontier: training large neural nets, understanding architecture choices, scaling laws. PyTorch/TensorFlow became the toolkit. The bottleneck shifted to: can you think in tensors and gradient flows?</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>Classical ML (AutoML, sklearn pipelines)</li><li>Model deployment (MLflow, SageMaker)</li><li>Data visualisation & BI tools</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What was scarce (= valuable)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#FB923C;border-color:#FB923C44;background:#1A0C00;">Deep learning architecture</span>
+                <span class="pill" style="color:#FB923C;border-color:#FB923C44;background:#1A0C00;">Large-scale training</span>
+                <span class="pill" style="color:#FB923C;border-color:#FB923C44;background:#1A0C00;">GPU/TPU systems</span>
+                <span class="pill" style="color:#FB923C;border-color:#FB923C44;background:#1A0C00;">NLP & CV research</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who was elite</div>
+            <div class="detail-value">ML researchers at DeepMind, OpenAI, Google Brain, FAIR. People who could design and train large models. Compensation reached $1M+ at the frontier. The "AI researcher" premium was extraordinary.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 7 -->
+  <div class="era" id="era6" onclick="toggleEra(6)">
+    <div class="era-dot" style="border-color:#38BDF8;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🤖</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">2022 – Now · LLM Era</div>
+          <div class="era-title">Coding Itself Gets Democratised</div>
+          <div class="era-tagline">ChatGPT, Copilot, Claude. The tool that builds tools becomes a tool.</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#38BDF8;">What happened</div>
+            <div class="detail-value">LLMs made coding itself accessible to non-programmers. A lawyer can now write a Python script. A doctor can build a simple ML model. The floor rose dramatically: tasks that required a junior data scientist in 2020 can now be done by a domain expert with good prompting skills. The bottleneck is shifting — away from "can you write code" toward "do you know what you're actually trying to achieve."</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">What got democratised</div>
+            <div class="detail-value"><ul><li>Writing code (Copilot, Claude Code)</li><li>Building standard ML pipelines</li><li>Data cleaning and transformation</li><li>Report writing & visualisation</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">What is scarce (= valuable now)</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">Domain judgment</span>
+                <span class="pill" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">Problem framing</span>
+                <span class="pill" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">AI system design</span>
+                <span class="pill" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">Evaluating model outputs</span>
+                <span class="pill" style="color:#38BDF8;border-color:#38BDF844;background:#071828;">Uncertainty reasoning</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">Who is elite now</div>
+            <div class="detail-value">People who combine deep domain expertise with the ability to direct and evaluate AI systems — not just use them. The bottleneck has moved above the technical layer.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERA 8 -->
+  <div class="era" id="era7" onclick="toggleEra(7)">
+    <div class="era-dot" style="border-color:#4ADE80;border-style:dashed;"></div>
+    <div class="era-body">
+      <div class="era-header">
+        <div class="era-icon">🔮</div>
+        <div class="era-meta">
+          <div class="era-badge" style="color:#4ADE80;border-color:#4ADE8044;background:#071A0E;border-style:dashed;">2025 → ? · What Comes Next</div>
+          <div class="era-title">The Next Scarcity</div>
+          <div class="era-tagline">If AI automates judgment too, what remains irreducibly human?</div>
+        </div>
+        <div class="era-chevron">▼</div>
+      </div>
+      <div class="era-detail">
+        <div class="era-detail-inner">
+          <div class="detail-block" style="grid-column:1/-1;">
+            <div class="detail-label" style="color:#4ADE80;">What might happen</div>
+            <div class="detail-value">As AI systems get better at problem framing, the bottleneck may shift further up — toward ethical judgment, accountability, and the ability to navigate ambiguity in contexts where being wrong has real consequences. The skills that are hardest to automate are those requiring trust, responsibility, and long-term relationships. This is an open question — and the first time in history where the answer is genuinely uncertain.</div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#F59E0B;">Will get democratised</div>
+            <div class="detail-value"><ul><li>Many knowledge work tasks</li><li>Standard analysis & reporting</li><li>Code review & debugging</li><li>Possibly: basic research synthesis</li></ul></div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#EF4444;">Hypothesis: next scarce skills</div>
+            <div class="detail-value">
+              <div class="pills">
+                <span class="pill" style="color:#4ADE80;border-color:#4ADE8044;background:#071A0E;">Ethical accountability</span>
+                <span class="pill" style="color:#4ADE80;border-color:#4ADE8044;background:#071A0E;">Institutional trust</span>
+                <span class="pill" style="color:#4ADE80;border-color:#4ADE8044;background:#071A0E;">Deep domain mastery</span>
+                <span class="pill" style="color:#4ADE80;border-color:#4ADE8044;background:#071A0E;">Cross-domain synthesis</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-block">
+            <div class="detail-label" style="color:#38BDF8;">For Andrey's generation</div>
+            <div class="detail-value">Andrey finishes A-levels ~2029 and graduates university ~2035. That's a full decade away. If the current cycle is compressing in under 5 years, there will likely be <strong>at least one more full scarcity shift</strong> before he enters the job market — meaning "Domain Judgment" itself may be partially tooled by 2035, pushing the frontier even further. The one thing that has never been automated across 150 years of this ladder is rigorous reasoning about uncertainty. A strong Statistics or Mathematics foundation is the longest-duration bet precisely because it underpins every layer of the stack.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /timeline-wrap -->
+</div><!-- /tab-timeline -->
+
+<!-- ════════════════════════════════ FLOOR TAB ════════════════════════════════ -->
+<div id="tab-floor" class="tab-content">
+<div class="floor-wrap">
+  <div class="floor-title">The Rising Floor</div>
+  <div class="floor-sub">Each era, yesterday's scarce skill becomes the new baseline. The scarce skill (highlighted) is always one layer above where it was.</div>
+
+  <div class="floor-chart" id="floorChart"></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#334155;"></div>Commoditised / baseline</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1E3A5F;border:1px solid #38BDF8;box-shadow:0 0 6px #38BDF866;"></div>Currently scarce (glowing)</div>
+  </div>
+
+  <!-- ── Compression speed chart ── -->
+  <div style="margin-top:48px; border-top:1px solid #1E293B; padding-top:40px;">
+    <div style="font-size:18px; font-weight:800; color:#F1F5F9; margin-bottom:6px;">The Acceleration</div>
+    <div style="font-size:13px; color:#64748B; margin-bottom:32px;">How long each skill remained scarce before being commoditised — the cycle is compressing dramatically.</div>
+    <div id="compressionChart" style="display:flex; flex-direction:column; gap:10px; max-width:860px;"></div>
+    <div style="margin-top:20px; font-size:12px; color:#475569; font-style:italic;">* Years = approximate duration of scarcity before commoditisation. ✦ = projected / in progress. Domain Judgment shows ??? because it may be the first layer that doesn't compress — accountability, trust, and irreversible decisions may resist automation in ways purely technical skills do not.</div>
+  </div>
+
+  <!-- ── So coding is just literacy now? ── -->
+  <div style="margin-top:48px; border-top:1px solid #1E293B; padding-top:40px;">
+    <div style="font-size:18px; font-weight:800; color:#F1F5F9; margin-bottom:8px;">So coding is just literacy now — right?</div>
+    <div style="font-size:13px; color:#64748B; margin-bottom:28px;">Yes. And it's happening faster than any previous transition.</div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:32px;">
+
+      <div style="background:#0C1626; border:1px solid #1E293B; border-radius:12px; padding:20px;">
+        <div style="font-size:12px; font-weight:700; color:#38BDF8; letter-spacing:1px; margin-bottom:10px;">THE COMPRESSION PATTERN</div>
+        <p style="font-size:13px; color:#94A3B8; line-height:1.75;">Every prior skill followed the same arc: <strong style="color:#CBD5E1;">scarce → tooled → assumed</strong>. Statistics took ~70 years to commoditise (Fisher to Excel). Programming took ~30 years. SQL took ~15 years. Each cycle compressed. Coding is compressing in under 5 — GitHub Copilot, Cursor, Claude already let you ship working software with minimal syntax knowledge.</p>
+      </div>
+
+      <div style="background:#0C1626; border:1px solid #1E293B; border-radius:12px; padding:20px;">
+        <div style="font-size:12px; font-weight:700; color:#4ADE80; letter-spacing:1px; margin-bottom:10px;">WHAT BECOMES SCARCE NEXT</div>
+        <p style="font-size:13px; color:#94A3B8; line-height:1.75;">"Domain Judgment" is really three things stacked together: <strong style="color:#CBD5E1;">knowing what to build</strong> (product sense, domain expertise); <strong style="color:#CBD5E1;">knowing if it's right</strong> (evaluating AI output, catching subtle errors); and <strong style="color:#CBD5E1;">knowing why it matters</strong> (the scientific or business reasoning underneath).</p>
+      </div>
+
+      <div style="background:#0C1626; border:1px solid #1E293B; border-radius:12px; padding:20px; grid-column:1/-1;">
+        <div style="font-size:12px; font-weight:700; color:#A78BFA; letter-spacing:1px; margin-bottom:10px;">THE IRONY — SCARCITY RETURNS TO THE FOUNDATION</div>
+        <p style="font-size:13px; color:#94A3B8; line-height:1.75;">This brings scarcity back toward the <em>bottom</em> of the stack. Not implementation skill, but the mathematical and causal reasoning that Statistics and CS always claimed to teach. The people who understood the <strong style="color:#CBD5E1;">theory</strong> — not just the tools — are the ones who can evaluate what the AI produces. A statistician who derived maximum likelihood estimators by hand thinks differently about model output than someone who only ever called <code style="background:#162032; padding:1px 5px; border-radius:3px; font-size:12px;">.fit()</code>. By the time Andrey graduates university (~2035), the implementation layer will be largely automated. What won't be is knowing whether the answer is actually correct.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Domain Judgment discussion ── -->
+  <div style="margin-top:48px; border-top:1px solid #1E293B; padding-top:40px; max-width:860px;">
+    <div style="font-size:18px; font-weight:800; color:#F1F5F9; margin-bottom:20px;">Will "Domain Judgment" also be compressed?</div>
+
+    <p style="font-size:14px; color:#94A3B8; line-height:1.85; margin-bottom:16px;">That's exactly the right question — and honestly, nobody knows.</p>
+
+    <p style="font-size:14px; color:#94A3B8; line-height:1.85; margin-bottom:16px;">Every previous layer was <em>technical</em>: it could be abstracted into a tool because it had a correct answer you could verify. Statistical inference → R. SQL joins → ORM. Neural net training → PyTorch. Each time, the scarce skill was a procedure someone could encode.</p>
+
+    <p style="font-size:14px; color:#94A3B8; line-height:1.85; margin-bottom:20px;">Domain Judgment is different because it might not have a verifiable correct answer <em>at the time you need it</em>. A doctor deciding whether to operate, an engineer deciding whether a bridge design is safe enough, a researcher deciding which hypothesis is worth five years of their life — these involve:</p>
+
+    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+      <div style="background:#0C1626; border-left:3px solid #4ADE80; border-radius:0 8px 8px 0; padding:12px 16px;">
+        <span style="color:#4ADE80; font-weight:700; font-size:13px;">Skin in the game</span>
+        <span style="color:#64748B; font-size:13px;"> — the human is accountable if wrong. AI isn't.</span>
+      </div>
+      <div style="background:#0C1626; border-left:3px solid #4ADE80; border-radius:0 8px 8px 0; padding:12px 16px;">
+        <span style="color:#4ADE80; font-weight:700; font-size:13px;">Incomplete information + irreversibility</span>
+        <span style="color:#64748B; font-size:13px;"> — no clean loss function to optimise against.</span>
+      </div>
+      <div style="background:#0C1626; border-left:3px solid #4ADE80; border-radius:0 8px 8px 0; padding:12px 16px;">
+        <span style="color:#4ADE80; font-weight:700; font-size:13px;">Earned trust</span>
+        <span style="color:#64748B; font-size:13px;"> — institutions and patients trust <em>a person</em>, not a system's output.</span>
+      </div>
+      <div style="background:#0C1626; border-left:3px solid #4ADE80; border-radius:0 8px 8px 0; padding:12px 16px;">
+        <span style="color:#4ADE80; font-weight:700; font-size:13px;">Knowing what you don't know</span>
+        <span style="color:#64748B; font-size:13px;"> — which requires having been wrong before in that domain.</span>
+      </div>
+    </div>
+
+    <p style="font-size:14px; color:#94A3B8; line-height:1.85; margin-bottom:16px;">The counterargument is that AI will get good enough that people <em>defer</em> to it anyway, effectively outsourcing judgment even if the AI isn't technically accountable. That might already be happening in radiology and legal research.</p>
+
+    <div style="background:#071A0E; border:1px dashed #4ADE8066; border-radius:12px; padding:20px 24px; margin-top:8px;">
+      <p style="font-size:14px; color:#CBD5E1; line-height:1.85; margin:0;">So the honest answer: Domain Judgment <em>might</em> compress — but if it does, what replaces it as scarce is something we can't name yet.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ════════════════════════════════ INSIGHTS TAB ════════════════════════════════ -->
+<div id="tab-insights" class="tab-content">
+<div class="insight-wrap">
+
+  <div class="big-quote">
+    "The tools that build tools keep becoming tools. <strong>What stays scarce is knowing which problem is worth solving</strong> — and having the judgment to evaluate whether you solved it."
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight-card">
+      <h3>📉 The Democratisation Pattern</h3>
+      <p>Every 10–15 years, the technical bottleneck shifts one layer up. Statistics was democratised by software (R, SPSS). Data engineering was democratised by cloud. Classical ML was democratised by AutoML and sklearn. Now coding itself is being democratised by LLMs. The pattern is remarkably consistent.</p>
+    </div>
+    <div class="insight-card">
+      <h3>📈 The Depth Advantage</h3>
+      <p>People who learned a skill <em>before</em> it was democratised carry a different kind of intuition than those who learned it via the tool. A statistician who derived maximum likelihood estimators by hand thinks differently about distributions than someone who calls <code>statsmodels.fit()</code>. This depth compounds over a career.</p>
+    </div>
+    <div class="insight-card">
+      <h3>🎯 What This Means for Choosing a Degree</h3>
+      <p>Don't chase the current scarce skill — by the time you graduate (4 years), it may be commoditised. Instead, study the foundational layer underneath: the mathematics, the probabilistic reasoning, the algorithmic thinking. These are what produce genuine depth, whatever the surface tools look like.</p>
+    </div>
+    <div class="insight-card">
+      <h3>🔁 The Constant: Uncertainty Reasoning</h3>
+      <p>Across every era, one skill has never been commoditised: the ability to reason rigorously about uncertainty. Fisher's p-values, Bayesian posterior distributions, confidence intervals in ML models — the form changes but the underlying skill is the same. Statistics, properly understood, is the long-duration bet.</p>
+    </div>
+    <div class="insight-card">
+      <h3>🌐 The Domain Convergence</h3>
+      <p>Notice that CS, Statistics, and Data Science are converging on the same problem: extracting reliable knowledge from data to make better decisions. The degree label matters less than whether you can move fluidly between the mathematical foundation, the implementation, and the domain application.</p>
+    </div>
+    <div class="insight-card">
+      <h3>🚀 Andrey's Strategic Position</h3>
+      <p>Andrey finishes A-levels ~2029 and graduates university ~2035 — a full decade away. The current LLM/coding cycle is compressing in under 5 years, so there will likely be at least one more full scarcity shift before he enters the job market. The people who will be most valuable are those with deep mathematical foundations (hard to replicate), domain expertise (takes years to build), and the ability to evaluate AI output. That combination is exactly the profile ARWU Top 10 programmes produce.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+// ── Tab switching ──
+function switchTab(name, event) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (event) event.target.classList.add('active');
+}
+
+// ── Era toggling ──
+function toggleEra(idx) {
+  const el = document.getElementById('era' + idx);
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.era').forEach(e => e.classList.remove('open'));
+  if (!wasOpen) el.classList.add('open');
+}
+
+// Open first era on load
+document.getElementById('era6').classList.add('open'); // open current era by default
+
+// ── Compression speed chart ──
+const compressionData = [
+  { label: "Statistical Intuition",    years: 60,  color: "#A78BFA", era: "1880s – 1940s", note: "Fisher to Excel/SPSS" },
+  { label: "Programming & Algorithms", years: 25,  color: "#60A5FA", era: "1950s – 1970s", note: "Mainframes to personal computing" },
+  { label: "SQL & Databases",          years: 15,  color: "#34D399", era: "1980s – 1990s", note: "Oracle to MySQL / widespread adoption" },
+  { label: "Distributed Systems",      years: 12,  color: "#FBBF24", era: "2000 – 2012",   note: "MapReduce to managed cloud (AWS, GCP)" },
+  { label: "ML & Data Science",        years: 8,   color: "#F472B6", era: "2012 – 2020",   note: "Kaggle / sklearn democratised classical ML" },
+  { label: "Deep Learning",            years: 5,   color: "#FB923C", era: "2016 – 2022",   note: "PyTorch / Keras abstracted neural nets" },
+  { label: "Coding (LLMs)",            years: 4,   color: "#38BDF8", era: "2022 – Now",    note: "GitHub Copilot → Claude → full AI agents", projected: true },
+  { label: "Domain Judgment",          years: 2,   color: "#4ADE80", era: "2025 → ???",    note: "Unknown — may compress, or may be the first layer that doesn't", projected: true, unknown: true },
+];
+
+const maxYears = 60;
+const compressionEl = document.getElementById('compressionChart');
+
+compressionData.forEach((d, i) => {
+  const pct = (d.years / maxYears) * 100;
+  const row = document.createElement('div');
+  row.style.cssText = 'display:grid; grid-template-columns:200px 1fr 52px; align-items:center; gap:12px;';
+
+  // label
+  const lbl = document.createElement('div');
+  lbl.style.cssText = 'font-size:12px; font-weight:600; color:#94A3B8; text-align:right; line-height:1.3;';
+  lbl.textContent = d.label;
+
+  // bar track
+  const track = document.createElement('div');
+  track.style.cssText = 'position:relative; height:32px; background:#0C1626; border-radius:6px; overflow:hidden; border:1px solid #1E293B;';
+
+  const bar = document.createElement('div');
+  bar.style.cssText = `width:0%; height:100%; border-radius:6px; background:${d.color}${d.projected ? '55' : '99'}; border:${d.projected ? '1px dashed '+d.color : 'none'}; display:flex; align-items:center; padding:0 10px; transition:width 1s ease; box-sizing:border-box;`;
+
+  const barNote = document.createElement('span');
+  barNote.style.cssText = `font-size:10px; color:${d.color}; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;`;
+  barNote.textContent = d.era + (d.projected ? ' ✦' : '');
+  bar.appendChild(barNote);
+  track.appendChild(bar);
+
+  // tooltip on hover
+  const tip = document.createElement('div');
+  tip.style.cssText = `position:absolute; bottom:36px; left:50%; transform:translateX(-50%); background:#0F1929; border:1px solid ${d.color}55; border-radius:8px; padding:8px 12px; font-size:11px; color:#CBD5E1; white-space:nowrap; pointer-events:none; opacity:0; transition:opacity .2s; z-index:10;`;
+  tip.innerHTML = `<strong style="color:${d.color}">${d.years}${d.projected ? '~' : ''} years</strong> &nbsp;·&nbsp; ${d.note}`;
+  track.appendChild(tip);
+  track.addEventListener('mouseenter', () => tip.style.opacity = '1');
+  track.addEventListener('mouseleave', () => tip.style.opacity = '0');
+
+  // year count
+  const yr = document.createElement('div');
+  yr.style.cssText = `font-size:13px; font-weight:800; color:${d.color}; text-align:left;`;
+  yr.textContent = d.unknown ? '???' : (d.years + (d.projected ? '~' : '') + 'y');
+
+  row.appendChild(lbl);
+  row.appendChild(track);
+  row.appendChild(yr);
+  compressionEl.appendChild(row);
+
+  // animate bars in after brief delay
+  setTimeout(() => { bar.style.width = pct + '%'; }, 100 + i * 80);
+});
+
+// ── Floor chart builder ──
+const layers = [
+  { label: "Statistical\nIntuition",    color: "#A78BFA", height: 28 },
+  { label: "Programming\n& Algorithms", color: "#60A5FA", height: 28 },
+  { label: "SQL &\nDatabases",          color: "#34D399", height: 28 },
+  { label: "Distributed\nSystems",      color: "#FBBF24", height: 28 },
+  { label: "ML &\nData Science",        color: "#F472B6", height: 28 },
+  { label: "Deep\nLearning",            color: "#FB923C", height: 28 },
+  { label: "Coding\n(LLMs)",            color: "#38BDF8", height: 28 },
+];
+
+const eras = [
+  { label: "1880s–1940s", scarce: 0 },
+  { label: "1950s–1970s", scarce: 1 },
+  { label: "1980s–1990s", scarce: 2 },
+  { label: "2000–2012",   scarce: 3 },
+  { label: "2012–2020",   scarce: 4 },
+  { label: "2016–2022",   scarce: 5 },
+  { label: "2022–Now",    scarce: 6 },
+  { label: "2025→?",      scarce: -1 },
+];
+
+const chart = document.getElementById('floorChart');
+
+eras.forEach((era, ei) => {
+  const col = document.createElement('div');
+  col.className = 'floor-col';
+
+  const label = document.createElement('div');
+  label.className = 'floor-col-label';
+  label.textContent = era.label;
+  col.appendChild(label);
+
+  // layers active in this era = all up to scarce index
+  const maxLayer = era.scarce >= 0 ? era.scarce : layers.length - 1;
+
+  for (let li = maxLayer; li >= 0; li--) {
+    const layer = document.createElement('div');
+    layer.className = 'floor-layer';
+    const isScarce = li === era.scarce;
+
+    const heightPx = isScarce ? 86 : 30;
+    layer.style.height = heightPx + 'px';
+    layer.style.minHeight = heightPx + 'px';
+
+    if (isScarce) {
+      layer.style.background = layers[li].color + '22';
+      layer.style.border = '2px solid ' + layers[li].color;
+      layer.style.color = layers[li].color;
+      layer.style.boxShadow = '0 0 18px 3px ' + layers[li].color + '44';
+      layer.classList.add('scarce-layer');
+      const fullName = layers[li].label.replace('\n', ' ');
+      layer.innerHTML =
+        '<span class="scarce-name">' + fullName + '</span>' +
+        '<span class="scarce-badge">▲ SCARCE</span>';
+    } else if (era.scarce === -1) {
+      // future — show all layers dimly with grey label
+      layer.style.background = '#1E293B';
+      layer.style.border = '1px solid #334155';
+      layer.style.color = '#475569';
+      layer.textContent = layers[li].label.split('\n')[0];
+    } else {
+      // commoditised — dark with grey label
+      layer.style.background = '#0F1D30';
+      layer.style.border = '1px solid #1E3A5F';
+      layer.style.color = '#334155';
+      layer.textContent = layers[li].label.split('\n')[0];
+    }
+
+    col.insertBefore(layer, col.firstChild);
+  }
+
+  // future era: show question mark layer on top
+  if (era.scarce === -1) {
+    const qLayer = document.createElement('div');
+    qLayer.className = 'floor-layer';
+    qLayer.style.height = '86px';
+    qLayer.style.minHeight = '86px';
+    qLayer.style.background = '#071A0E';
+    qLayer.style.border = '2px dashed #4ADE80';
+    qLayer.style.color = '#4ADE80';
+    qLayer.style.boxShadow = '0 0 18px 3px #4ADE8044';
+    qLayer.innerHTML =
+      '<span class="scarce-name">Domain<br>Judgment</span>' +
+      '<span class="scarce-badge">NEXT →</span>';
+    col.insertBefore(qLayer, label);
+  }
+
+  chart.appendChild(col);
+});
+</script>
+</body>
+</html>

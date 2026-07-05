@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A-level Prerequisites for STEM Programmes</title>
+<style>
+:root {
+  --bg: #0F172A; --bg2: #1E293B; --bg3: #334155;
+  --text: #E2E8F0; --text2: #94A3B8; --text3: #CBD5E1;
+  --accent: #38BDF8; --border: #334155;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; min-height: 100vh; }
+header { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 18px 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+header h1 { font-size: 20px; font-weight: 700; color: var(--accent); }
+header .sub { font-size: 13px; color: var(--text2); }
+.controls { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.controls input, .controls select { background: var(--bg3); border: 1px solid var(--border); color: var(--text); padding: 7px 12px; border-radius: 6px; font-size: 13px; outline: none; }
+.controls input:focus, .controls select:focus { border-color: var(--accent); }
+.controls label { font-size: 13px; color: var(--text2); }
+.tab-bar { display: flex; gap: 0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 0 24px; }
+.tab { padding: 12px 20px; cursor: pointer; font-size: 13px; color: var(--text2); border-bottom: 3px solid transparent; transition: all .15s; user-select: none; }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab:hover:not(.active) { color: var(--text); }
+.panel { display: none; padding: 0; }
+.panel.active { display: block; }
+
+/* Tab 1: Programme table */
+.prog-table-wrap { overflow-x: auto; max-height: calc(100vh - 200px); }
+table { width: 100%; border-collapse: collapse; }
+thead th { background: #1E3A5F; color: #E2E8F0; text-align: left; padding: 10px 14px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; position: sticky; top: 0; z-index: 10; white-space: nowrap; border-right: 1px solid var(--border); }
+tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+tbody tr:hover { background: rgba(56,189,248,.07); }
+tbody td { padding: 10px 14px; vertical-align: top; font-size: 13px; border-right: 1px solid var(--border); }
+.prog-name { font-weight: 700; color: var(--text); }
+.cluster-pill { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 10px; font-weight: 600; white-space: normal; word-break: break-word; line-height: 1.4; }
+.col-cluster { width: 150px; min-width: 140px; max-width: 160px; }
+.req-tag { display: inline-block; background: #7C3AED22; border: 1px solid #7C3AED88; color: #C4B5FD; padding: 3px 8px; border-radius: 5px; font-size: 12px; font-weight: 600; margin: 2px 2px 2px 0; }
+.rec-tag { display: inline-block; background: #0F4C7522; border: 1px solid #38BDF855; color: #7DD3FC; padding: 3px 8px; border-radius: 5px; font-size: 12px; margin: 2px 2px 2px 0; }
+.offer-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; white-space: nowrap; }
+.offer-AAA { background: #14532D33; color: #86EFAC; border: 1px solid #16A34A66; }
+.offer-A\*AA { background: #92400E33; color: #FCD34D; border: 1px solid #D9770066; }
+.offer-A\*A\*A { background: #7F1D1D33; color: #FCA5A5; border: 1px solid #DC262666; }
+.source-badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.source-checked { background: #065F4622; color: #6EE7B7; border: 1px solid #059669; }
+.source-estimated { background: #78350F22; color: #FCD34D; border: 1px solid #D9770066; }
+.notes-cell { font-size: 12px; color: var(--text2); max-width: 340px; line-height: 1.5; }
+
+/* Tab 2: Subject frequency */
+.subj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding: 24px; }
+.subj-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.subj-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 12px; color: var(--text2); }
+.stat-row span { font-weight: 700; font-size: 13px; }
+.bar-wrap { background: var(--bg3); border-radius: 4px; height: 8px; margin: 3px 0 10px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width .3s; }
+.req-bar { background: #7C3AED; }
+.rec-bar { background: #38BDF8; }
+.role-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-top: 4px; }
+.role-core { background: #7F1D1D33; color: #FCA5A5; border: 1px solid #DC262666; }
+.role-often { background: #92400E33; color: #FCD34D; border: 1px solid #D9770066; }
+.role-widely { background: #1E3A8A33; color: #93C5FD; border: 1px solid #2563EB66; }
+.role-sector { background: #0F172A; color: var(--text2); border: 1px solid var(--border); }
+.prog-list { margin-top: 10px; font-size: 11px; color: var(--text2); line-height: 1.6; }
+.prog-list strong { color: var(--text3); font-size: 11px; }
+
+/* Tab 3: Matrix view */
+.matrix-wrap { overflow: auto; max-height: calc(100vh - 160px); padding: 0; }
+.matrix-table { border-collapse: collapse; }
+.matrix-table th, .matrix-table td { border: 1px solid var(--border); text-align: center; }
+.matrix-table thead th { background: #1E3A5F; color: #E2E8F0; font-size: 11px; padding: 6px 8px; white-space: nowrap; position: sticky; top: 0; z-index: 10; }
+.matrix-table thead th.prog-col { font-size: 10px; writing-mode: vertical-rl; text-orientation: mixed; padding: 8px 4px; height: 180px; min-height: 180px; vertical-align: bottom; overflow: visible; }
+.matrix-table tbody td:first-child { position: sticky; left: 0; background: #1E293B; font-size: 12px; font-weight: 700; padding: 6px 12px; white-space: normal; word-break: break-word; text-align: left; z-index: 5; width: 180px; min-width: 180px; line-height: 1.4; }
+.matrix-table tbody td { padding: 4px; font-size: 11px; }
+.cell-req { background: #7C3AED; color: white; font-weight: 800; font-size: 13px; }
+.cell-rec { background: #0369A1; color: #BAE6FD; font-size: 13px; }
+.cell-none { background: var(--bg); color: var(--bg3); }
+
+.sticky-note { background: #1E293B; border-left: 3px solid var(--accent); padding: 10px 16px; margin: 16px 24px 0; border-radius: 0 8px 8px 0; font-size: 12px; color: var(--text2); }
+.sources-bar { padding: 12px 24px 14px; font-size: 12px; color: #64748B; line-height: 1.8; border-top: 1px solid #1E293B; background: #0F172A; }
+.sources-bar .sources-label { font-weight: 700; color: #94A3B8; margin-right: 6px; }
+.sources-bar a { color: #38BDF8; text-decoration: none; }
+.sources-bar a:hover { text-decoration: underline; }
+.sources-bar em { color: #FCD34D; font-style: normal; }
+.legend { display: flex; gap: 16px; align-items: center; padding: 8px 24px; background: var(--bg2); border-bottom: 1px solid var(--border); font-size: 12px; color: var(--text2); flex-wrap: wrap; }
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>A-level Prerequisites for STEM University Programmes</h1>
+    <div class="sub">31 canonical programmes · UK A-level system · Sources: Cambridge, UCL, Edinburgh (live-checked) + training knowledge (estimated)</div>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <div class="tab active" onclick="showTab(0)">📋 Programme Requirements</div>
+  <div class="tab" onclick="showTab(1)">📊 Subject Importance</div>
+  <div class="tab" onclick="showTab(2)">🔲 Requirements Matrix</div>
+</div>
+
+<!-- Tab 1: Programme table -->
+<div class="panel active" id="tab0">
+  <div class="controls">
+    <label>Search:</label>
+    <input type="text" id="searchInput" placeholder="Programme, subject, note..." oninput="filterTable()" style="width:220px">
+    <label>Cluster:</label>
+    <select id="clusterFilter" onchange="filterTable()">
+      <option value="">All clusters</option>
+    </select>
+    <label>Typical offer:</label>
+    <select id="offerFilter" onchange="filterTable()">
+      <option value="">Any offer</option>
+      <option>A*A*A</option>
+      <option>A*AA</option>
+      <option>AAA</option>
+    </select>
+    <label>Must include subject:</label>
+    <select id="subjectFilter" onchange="filterTable()">
+      <option value="">Any subject</option>
+    </select>
+    <label>Source:</label>
+    <select id="sourceFilter" onchange="filterTable()">
+      <option value="">All</option>
+      <option value="Checked">✓ Checked only</option>
+      <option value="Estimated">~ Estimated only</option>
+    </select>
+    <span id="matchCount" style="font-size:12px;color:var(--text2);margin-left:8px;"></span>
+  </div>
+  <div class="legend">
+    <span><span class="source-badge source-checked">✓ Checked</span> &nbsp;Verified from live university pages (Cambridge / UCL / Edinburgh)</span>
+    <span><span class="source-badge source-estimated">~ Estimated</span> &nbsp;Based on training knowledge — not live-verified</span>
+  </div>
+  <div class="prog-table-wrap">
+    <table id="progTable">
+      <colgroup>
+        <col style="width:150px">
+        <col class="col-cluster">
+        <col style="width:160px">
+        <col style="width:70px">
+        <col style="width:180px">
+        <col style="width:80px">
+        <col style="width:90px">
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Programme</th>
+          <th>Cluster</th>
+          <th>Required A-levels</th>
+          <th># Required</th>
+          <th>Recommended A-levels</th>
+          <th>Typical Offer</th>
+          <th>Source</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="progBody"></tbody>
+    </table>
+  </div>
+  <div class="sources-bar">
+    <span class="sources-label">📌 Data sources</span>
+    Typical offer and required subjects live-verified from official admissions pages:
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science" target="_blank">Cambridge CS</a> ·
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/engineering" target="_blank">Cambridge Engineering</a> ·
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences" target="_blank">Cambridge Natural Sciences</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/computer-science-bsc" target="_blank">UCL CS</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/data-science-bsc" target="_blank">UCL Data Science</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemistry-bsc" target="_blank">UCL Biochemistry</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/neuroscience-bsc" target="_blank">UCL Neuroscience</a> ·
+    <a href="https://www.ed.ac.uk/studying/undergraduate/degrees/index.php?action=programme&code=G5E7" target="_blank">Edinburgh AI &amp; CS</a> ·
+    <a href="https://study.ed.ac.uk/programmes/undergraduate/13-biological-sciences-biochemistry/entry-requirements" target="_blank">Edinburgh Biochemistry</a> ·
+    <a href="https://www.ox.ac.uk/admissions/undergraduate/courses/admission-requirements/admission-requirements-table" target="_blank">Oxford Admissions Table</a>
+    &nbsp;·&nbsp; Remaining entries estimated from training knowledge and marked <em>~ Estimated</em>.
+  </div>
+</div>
+
+<!-- Tab 2: Subject frequency -->
+<div class="panel" id="tab1">
+  <div class="sticky-note">
+    <strong>How to read:</strong> "Required" = listed as mandatory by UK universities · "Recommended" = strongly strengthens the application · Percentages out of 31 programmes
+  </div>
+  <div class="subj-grid" id="subjGrid"></div>
+</div>
+
+<!-- Tab 3: Matrix -->
+<div class="panel" id="tab2">
+  <div class="sticky-note">
+    <strong>🟣 Required</strong> — subject listed as mandatory &nbsp;·&nbsp; <strong>🔵 Recommended</strong> — strongly recommended &nbsp;·&nbsp; Programmes sorted by cluster
+  </div>
+  <div class="matrix-wrap">
+    <table class="matrix-table" id="matrixTable"></table>
+  </div>
+  <div class="sources-bar">
+    <span class="sources-label">📌 Data sources</span>
+    Required subjects live-verified from:
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science" target="_blank">Cambridge CS</a> ·
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/engineering" target="_blank">Cambridge Engineering</a> ·
+    <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences" target="_blank">Cambridge Natural Sciences</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/computer-science-bsc" target="_blank">UCL CS</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/data-science-bsc" target="_blank">UCL Data Science</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/biochemistry-bsc" target="_blank">UCL Biochemistry</a> ·
+    <a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/neuroscience-bsc" target="_blank">UCL Neuroscience</a> ·
+    <a href="https://www.ed.ac.uk/studying/undergraduate/degrees/index.php?action=programme&code=G5E7" target="_blank">Edinburgh AI &amp; CS</a> ·
+    <a href="https://study.ed.ac.uk/programmes/undergraduate/13-biological-sciences-biochemistry/entry-requirements" target="_blank">Edinburgh Biochemistry</a> ·
+    <a href="https://www.ox.ac.uk/admissions/undergraduate/courses/admission-requirements/admission-requirements-table" target="_blank">Oxford Admissions Table</a>
+    &nbsp;·&nbsp; Remaining entries estimated from training knowledge and marked <em>~ Estimated</em>.
+  </div>
+</div>
+
+<script>
+const PREREQS = [{"programme": "Computer Science", "cluster": "CS & AI", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Physics", "Computing"], "typical_offer": "A*A*A", "required_count": 1, "notes": "1 required subject: Mathematics. FM required if your school offers it (Cambridge); FM preferred at UCL and Oxford. Offer: A*A*A at Cambridge + UCL; A*AA at Oxford (#6 ARWU, A* in Maths/FM/CS, MAT test). 87% of Cambridge entrants had 3+ A*s.", "source": "Checked", "source_university": "Cambridge + UCL + Oxford"}, {"programme": "Data Science", "cluster": "CS & AI", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Chemistry", "Economics", "Physics", "Statistics"], "typical_offer": "A*AA", "required_count": 1, "notes": "1 required subject: Mathematics (A* expected). Preferred (not required): FM, Chemistry, Economics, Physics, Statistics. Offer A*AA. No Computing required.", "source": "Checked", "source_university": "UCL"}, {"programme": "Artificial Intelligence", "cluster": "CS & AI", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Physics", "Computing"], "typical_offer": "A*AA", "required_count": 1, "notes": "1 required subject: Mathematics at grade A (Edinburgh AI & CS). No other A-level formally required. Edinburgh offer range A*A*A*\u2013AAB; A*AA used as typical mid-range estimate.", "source": "Checked", "source_university": "Edinburgh"}, {"programme": "Computational Science", "cluster": "CS & AI", "required": ["Mathematics", "Physics or Computing"], "recommended": ["Further Mathematics", "Computing", "Physics"], "typical_offer": "A*AA", "notes": "Bridges computing and physical sciences. Physics or Computing required alongside Maths at most universities.", "source": "Estimated"}, {"programme": "CS & AI", "cluster": "CS & AI", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Computing", "Physics"], "typical_offer": "A*AA", "notes": "Interdisciplinary combination programmes (e.g. CS with AI). Mathematics required; Further Maths and Computing strongly recommended.", "source": "Estimated"}, {"programme": "Mathematics", "cluster": "Mathematics", "required": ["Mathematics", "Further Mathematics"], "recommended": ["Physics", "Computing", "Statistics"], "typical_offer": "A*A*A", "notes": "Both Maths and Further Maths required at virtually all leading universities. A* in Maths standard. STEP exam required at Cambridge.", "source": "Estimated"}, {"programme": "Statistics", "cluster": "Mathematics", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Computing", "Economics"], "typical_offer": "A*AA", "notes": "Mathematics required; Further Maths strongly preferred. Computing increasingly valued. Statistics A-level useful but not required.", "source": "Estimated"}, {"programme": "Applied Mathematics", "cluster": "Mathematics", "required": ["Mathematics", "Further Mathematics"], "recommended": ["Physics", "Computing"], "typical_offer": "A*AA", "notes": "Both Maths and Further Maths expected. Physics provides important context for applied methods.", "source": "Estimated"}, {"programme": "Operations Research", "cluster": "Mathematics", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Economics", "Computing"], "typical_offer": "AAA", "notes": "Mathematical reasoning central. Economics or Business Studies can support application alongside FM.", "source": "Estimated"}, {"programme": "Actuarial Science", "cluster": "Mathematics", "required": ["Mathematics"], "recommended": ["Further Mathematics", "Economics", "Statistics"], "typical_offer": "A*AA", "notes": "Strong Mathematics required; A* common at top universities. Economics or Business demonstrates awareness of actuarial context.", "source": "Estimated"}, {"programme": "Physics", "cluster": "Physics & Astronomy", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Chemistry"], "typical_offer": "A*A*A", "notes": "Both Maths and Physics required universally. A* in Maths/Physics standard at leading universities. FM strongly recommended.", "source": "Estimated"}, {"programme": "Astrophysics", "cluster": "Physics & Astronomy", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Chemistry"], "typical_offer": "A*AA", "notes": "As Physics entry. Mathematics and Physics required. Further Maths advantageous for degree-level work.", "source": "Estimated"}, {"programme": "Chemistry", "cluster": "Chemistry", "required": ["Chemistry", "Mathematics"], "recommended": ["Physics", "Biology", "Further Mathematics"], "typical_offer": "A*AA", "notes": "Chemistry required universally. Mathematics required at most top universities. Physics strongly recommended.", "source": "Estimated"}, {"programme": "Biochemistry", "cluster": "Chemistry", "required": ["Biology", "Chemistry"], "recommended": ["Mathematics", "Physics", "Further Mathematics"], "typical_offer": "A*AA", "required_count": 2, "notes": "2 required subjects: Biology + Chemistry (Edinburgh #39 ARWU: ABB\u2013AAA; Oxford #6: A*AA, Chem + another sci/Maths). UCL #14 additionally requires Mathematics (offer AAA; Bio+Chem+Maths all required). Cambridge #4 via Natural Sciences: Maths + 2 sciences, A*A*A offer. Safest profile: Biology + Chemistry + Mathematics.", "source": "Checked", "source_university": "Edinburgh + UCL + Oxford + Cambridge"}, {"programme": "Electrical Engineering", "cluster": "Engineering \u2013 Electrical & Computer", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Computing"], "typical_offer": "A*A*A", "required_count": 2, "notes": "2 required subjects: Mathematics + Physics. FM required if school offers it (Cambridge); FM recommended at Oxford (PAT test). Offer A*A*A at both Cambridge and Oxford Engineering Science (#4 and #6 ARWU).", "source": "Checked", "source_university": "Cambridge + Oxford"}, {"programme": "Mechanical Engineering", "cluster": "Engineering \u2013 Mechanical & Aerospace", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Chemistry"], "typical_offer": "A*AA", "notes": "Mathematics and Physics required universally. Further Maths expected at top 10 (Imperial, Cambridge). Design Technology useful.", "source": "Estimated"}, {"programme": "Aerospace Engineering", "cluster": "Engineering \u2013 Mechanical & Aerospace", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Chemistry"], "typical_offer": "A*A*A", "required_count": 2, "notes": "2 required subjects: Mathematics + Physics. FM required if offered (Cambridge Engineering). Offer A*A*A at Cambridge (#4 ARWU); Oxford Engineering Science also A*A*A (#6) \u2014 all specialisms enter via same course.", "source": "Checked", "source_university": "Cambridge + Oxford"}, {"programme": "Civil Engineering", "cluster": "Engineering \u2013 Civil & Environmental", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Geography", "Chemistry"], "typical_offer": "AAA", "notes": "Mathematics and Physics required. Further Maths valued. Geography or Geology can support context for geotechnics and structures.", "source": "Estimated"}, {"programme": "Environmental Engineering", "cluster": "Engineering \u2013 Civil & Environmental", "required": ["Mathematics"], "recommended": ["Chemistry", "Biology", "Physics", "Geography"], "typical_offer": "AAA", "notes": "Mathematics required. More flexibility in science subjects than other engineering fields. Chemistry or Biology often specified.", "source": "Estimated"}, {"programme": "Chemical Engineering", "cluster": "Engineering \u2013 Chemical & Materials", "required": ["Mathematics", "Chemistry"], "recommended": ["Physics", "Further Mathematics"], "typical_offer": "A*AA", "notes": "Mathematics and Chemistry required universally. Physics strongly recommended. FM expected at top universities (Imperial, Cambridge, UCL).", "source": "Estimated"}, {"programme": "Materials Science", "cluster": "Engineering \u2013 Chemical & Materials", "required": ["Mathematics"], "recommended": ["Physics", "Chemistry", "Further Mathematics"], "typical_offer": "A*AA", "notes": "Mathematics required. Physics or Chemistry expected at most universities. Some programmes require both. FM valued at Oxford/Cambridge.", "source": "Estimated"}, {"programme": "Biomedical Engineering", "cluster": "Engineering \u2013 Biomedical", "required": ["Mathematics", "Physics"], "recommended": ["Biology", "Chemistry", "Further Mathematics"], "typical_offer": "A*A*A", "required_count": 2, "notes": "2 required subjects: Mathematics + Physics. FM required if offered (Cambridge Engineering / Bioengineering). Oxford equivalent: Biomedical Sciences A*AA (2 from Bio/Chem/Maths/Physics). Offer A*A*A at Cambridge (#4 ARWU).", "source": "Checked", "source_university": "Cambridge + Oxford"}, {"programme": "Industrial Engineering", "cluster": "Engineering \u2013 Other", "required": ["Mathematics"], "recommended": ["Physics", "Further Mathematics", "Economics"], "typical_offer": "AAA", "notes": "Mathematics required. Physics widely expected. Economics or Business Studies can complement the industrial/management focus.", "source": "Estimated"}, {"programme": "Engineering (General)", "cluster": "Engineering \u2013 Other", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Chemistry"], "typical_offer": "A*A*A", "required_count": 2, "notes": "2 required subjects: Mathematics + Physics. FM required if school offers it (Cambridge); FM recommended at Oxford. Offer A*A*A at both Cambridge (#4) and Oxford (#6) Engineering Science.", "source": "Checked", "source_university": "Cambridge + Oxford"}, {"programme": "Systems Engineering", "cluster": "Engineering \u2013 Other", "required": ["Mathematics", "Physics"], "recommended": ["Further Mathematics", "Computing"], "typical_offer": "AAA", "notes": "Mathematics and Physics required. Computing increasingly relevant. FM strengthens quantitative preparation.", "source": "Estimated"}, {"programme": "Nuclear Engineering", "cluster": "Engineering \u2013 Other", "required": ["Mathematics", "Physics"], "recommended": ["Chemistry", "Further Mathematics"], "typical_offer": "A*AA", "notes": "Physics and Mathematics required. Strong nuclear physics component makes A-level Physics especially important. Chemistry for reactor chemistry.", "source": "Estimated"}, {"programme": "Bioinformatics", "cluster": "Computational Biology & Bioinformatics", "required": ["Mathematics", "Biology"], "recommended": ["Chemistry", "Computing", "Further Mathematics"], "typical_offer": "A*A*A", "required_count": 2, "notes": "Standalone UG Bioinformatics BSc is rare at top ARWU UK universities. Primary route at top universities is Cambridge (#4) Natural Sciences (Maths + 2 sciences, A*A*A) \u2014 Mathematical & Computational Biology track available Year 2. Imperial (#8 ARWU) Biological Sciences BSc covers bioinformatics modules (Biology required, A*AA offer). Taking Mathematics + Biology + Chemistry is the safest profile.", "source": "Estimated"}, {"programme": "Computational Biology", "cluster": "Computational Biology & Bioinformatics", "required": ["Mathematics", "Biology"], "recommended": ["Chemistry", "Computing", "Further Mathematics"], "typical_offer": "A*A*A", "required_count": 2, "notes": "At top ARWU universities, Computational Biology is typically a specialisation within a broader degree. Cambridge (#4) Natural Sciences: Maths + 2 sciences, A*A*A \u2014 Mathematical & Computational Biology is a dedicated Year 2 track (Biological pathway: ~99% take Maths, 98% Biology, 97% Chemistry). Edinburgh and UCL offer bioinformatics/computational biology as modules within CS or Biological Sciences, not standalone degrees.", "source": "Estimated"}, {"programme": "Neuroscience", "cluster": "Computational Biology & Bioinformatics", "required": ["Chemistry", "Biology or Mathematics or Physics"], "recommended": ["Mathematics", "Biology", "Psychology"], "typical_offer": "A*AA", "required_count": 2, "notes": "2 required subjects: Chemistry + one from Biology, Life & Health Sciences, Mathematics, or Physics (UCL). Offer range: AAA at UCL (#14); A*AA at Oxford (#6) via Biomedical Sciences (2 from Bio/Chem/Maths/Physics required, BMSAT test). Oxford students can specialise in Neuroscience in Year 4.", "source": "Checked", "source_university": "Oxford + UCL"}, {"programme": "Earth Sciences", "cluster": "Earth & Environmental Sciences", "required": ["Mathematics"], "recommended": ["Chemistry", "Physics", "Geography", "Biology"], "typical_offer": "AAA", "notes": "Mathematics required. Two of Chemistry, Physics, or Geography typically expected. Geography useful for geomorphology; Chemistry for geochemistry.", "source": "Estimated"}, {"programme": "Interdisciplinary Sciences", "cluster": "Interdisciplinary", "required": ["Mathematics"], "recommended": ["Physics", "Chemistry", "Biology", "Computing"], "typical_offer": "A*AA", "notes": "Broad science programmes. Maths required; at least two sciences expected. Profile tailored to intended specialisation within the programme.", "source": "Estimated"}];
+const CLUSTER_COLORS = {"CS & AI": "#4F7EF8", "Mathematics": "#A78BFA", "Physics & Astronomy": "#F59E0B", "Chemistry": "#10B981", "Engineering \u2013 Electrical & Computer": "#06B6D4", "Engineering \u2013 Mechanical & Aerospace": "#3B82F6", "Engineering \u2013 Civil & Environmental": "#14B8A6", "Engineering \u2013 Chemical & Materials": "#8B5CF6", "Engineering \u2013 Biomedical": "#EC4899", "Engineering \u2013 Other": "#64748B", "Computational Biology & Bioinformatics": "#F97316", "Earth & Environmental Sciences": "#22C55E", "Interdisciplinary": "#94A3B8"};
+const SUBJ_REQ = {"Mathematics": 30, "Physics": 12, "Computing": 1, "Further Mathematics": 2, "Chemistry": 4, "Biology": 4};
+const SUBJ_REC = {"Further Mathematics": 25, "Physics": 15, "Computing": 13, "Chemistry": 15, "Economics": 5, "Statistics": 3, "Biology": 6, "Mathematics": 2, "Geography": 3, "Psychology": 1};
+const ALL_SUBJECTS = ["Mathematics", "Physics", "Further Mathematics", "Chemistry", "Biology", "Computing", "Economics", "Geography", "Statistics", "Psychology"];
+
+const OFFER_CLASS = {"A*A*A":"offer-A*A*A","A*AA":"offer-A*AA","AAA":"offer-AAA"};
+const ROLE = s => {
+  const r = SUBJ_REQ[s] || 0, rec = SUBJ_REC[s] || 0;
+  if (r >= 20) return ["Core requirement", "role-core"];
+  if (r >= 5)  return ["Often required", "role-often"];
+  if (rec >= 15) return ["Widely recommended", "role-widely"];
+  return ["Sector-specific", "role-sector"];
+};
+
+function showTab(i) {
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.panel').forEach((p,j) => p.classList.toggle('active', i===j));
+}
+
+// ── Tab 1: Programme table ──────────────────────────────────────────────────
+const clusters = [...new Set(PREREQS.map(p => p.cluster))];
+const clusterSel = document.getElementById('clusterFilter');
+clusters.forEach(c => { const o = document.createElement('option'); o.value = o.textContent = c; clusterSel.appendChild(o); });
+
+const subjectSel = document.getElementById('subjectFilter');
+ALL_SUBJECTS.forEach(s => { const o = document.createElement('option'); o.value = o.textContent = s; subjectSel.appendChild(o); });
+
+function subjectsOf(p, type) {
+  if (type === 'req') return p.required.flatMap(x => x.split(' or ').map(s => s.trim()));
+  return p.recommended;
+}
+
+function renderTable(data) {
+  const body = document.getElementById('progBody');
+  body.innerHTML = '';
+  data.forEach(p => {
+    const clrHex = CLUSTER_COLORS[p.cluster] || '#888';
+    const reqHtml = p.required.map(r => `<span class="req-tag">${r}</span>`).join('');
+    const recHtml = p.recommended.map(r => `<span class="rec-tag">${r}</span>`).join('');
+    const oc = OFFER_CLASS[p.typical_offer] || '';
+    const src = p.source || 'Estimated';
+    const srcClass = src === 'Checked' ? 'source-checked' : 'source-estimated';
+    const srcLabel = src === 'Checked' ? '✓ Checked' : '~ Estimated';
+    const reqCount = p.required_count != null ? p.required_count : '';
+    body.insertAdjacentHTML('beforeend', `<tr>
+      <td class="prog-name">${p.programme}</td>
+      <td class="col-cluster"><span class="cluster-pill" style="background:${clrHex}22;border:1px solid ${clrHex}88;color:${clrHex}">${p.cluster}</span></td>
+      <td>${reqHtml}</td>
+      <td style="text-align:center;font-weight:700;font-size:15px;color:#C4B5FD">${reqCount}</td>
+      <td>${recHtml}</td>
+      <td><span class="offer-badge ${oc}">${p.typical_offer}</span></td>
+      <td><span class="source-badge ${srcClass}">${srcLabel}</span></td>
+      <td class="notes-cell">${p.notes}</td>
+    </tr>`);
+  });
+  document.getElementById('matchCount').textContent = `${data.length} programme${data.length!==1?'s':''}`;
+}
+
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cl = document.getElementById('clusterFilter').value;
+  const of = document.getElementById('offerFilter').value;
+  const subj = document.getElementById('subjectFilter').value;
+  const src = document.getElementById('sourceFilter').value;
+  const filtered = PREREQS.filter(p => {
+    if (cl && p.cluster !== cl) return false;
+    if (of && p.typical_offer !== of) return false;
+    if (src && (p.source || 'Estimated') !== src) return false;
+    if (subj) {
+      const allSubjs = [...subjectsOf(p,'req'), ...subjectsOf(p,'rec')];
+      if (!allSubjs.some(s => s.toLowerCase().includes(subj.toLowerCase()))) return false;
+    }
+    if (q) {
+      const txt = [p.programme, p.cluster, ...p.required, ...p.recommended, p.notes].join(' ').toLowerCase();
+      if (!txt.includes(q)) return false;
+    }
+    return true;
+  });
+  renderTable(filtered);
+}
+renderTable(PREREQS);
+
+// ── Tab 2: Subject cards ─────────────────────────────────────────────────────
+const grid = document.getElementById('subjGrid');
+ALL_SUBJECTS.forEach(s => {
+  const reqN = SUBJ_REQ[s] || 0;
+  const recN = SUBJ_REC[s] || 0;
+  const total = reqN + recN;
+  const [roleName, roleClass] = ROLE(s);
+  const reqProgs = PREREQS.filter(p => subjectsOf(p,'req').includes(s)).map(p => p.programme);
+  const recProgs = PREREQS.filter(p => p.recommended.includes(s)).map(p => p.programme);
+  grid.insertAdjacentHTML('beforeend', `
+    <div class="subj-card">
+      <h3>${s}</h3>
+      <div class="stat-row">Required by<span style="color:#C4B5FD">${reqN} programme${reqN!==1?'s':''}</span></div>
+      <div class="bar-wrap"><div class="bar-fill req-bar" style="width:${Math.round(reqN/31*100)}%"></div></div>
+      <div class="stat-row">Recommended by<span style="color:#7DD3FC">${recN} programme${recN!==1?'s':''}</span></div>
+      <div class="bar-wrap"><div class="bar-fill rec-bar" style="width:${Math.round(recN/31*100)}%"></div></div>
+      <span class="role-badge ${roleClass}">${roleName}</span>
+      ${reqProgs.length ? `<div class="prog-list"><strong>Required by:</strong> ${reqProgs.join(', ')}</div>` : ''}
+      ${recProgs.length ? `<div class="prog-list"><strong>Recommended by:</strong> ${recProgs.join(', ')}</div>` : ''}
+    </div>
+  `);
+});
+
+// ── Tab 3: Matrix ─────────────────────────────────────────────────────────────
+(function buildMatrix() {
+  const table = document.getElementById('matrixTable');
+  const thead = table.createTHead();
+  const hrow = thead.insertRow();
+  const th0 = document.createElement('th');
+  th0.textContent = 'A-level Subject';
+  th0.style.cssText = 'text-align:left;padding:6px 12px;min-width:180px;position:sticky;left:0;z-index:20;background:#1E3A5F';
+  hrow.appendChild(th0);
+  PREREQS.forEach(p => {
+    const th = document.createElement('th');
+    th.className = 'prog-col';
+    th.textContent = p.programme;
+    th.title = `${p.programme} (${p.cluster})`;
+    const clr = CLUSTER_COLORS[p.cluster] || '#888';
+    th.style.cssText = `border-bottom:3px solid ${clr};color:${clr}`;
+    hrow.appendChild(th);
+  });
+  const tbody = table.createTBody();
+  ALL_SUBJECTS.forEach(s => {
+    const row = tbody.insertRow();
+    const td0 = row.insertCell();
+    td0.textContent = s;
+    td0.style.cssText = 'position:sticky;left:0;background:#1E293B;font-weight:700;font-size:12px;padding:5px 12px;text-align:left;width:180px;min-width:180px;white-space:normal;word-break:break-word;line-height:1.4';
+    PREREQS.forEach(p => {
+      const isReq = subjectsOf(p,'req').includes(s);
+      const isRec = p.recommended.includes(s);
+      const td = row.insertCell();
+      td.className = isReq ? 'cell-req' : isRec ? 'cell-rec' : 'cell-none';
+      td.textContent = isReq ? '●' : isRec ? '○' : '';
+      td.title = isReq ? `Required for ${p.programme}` : isRec ? `Recommended for ${p.programme}` : '';
+    });
+  });
+})();
+</script>
+
+<footer style="background:#1E293B;border-top:1px solid #334155;padding:28px 32px;margin-top:32px;font-size:13px;color:#94A3B8;line-height:1.7">
+  <div style="max-width:900px">
+    <div style="font-size:15px;font-weight:700;color:#E2E8F0;margin-bottom:14px">📘 How to read A-level offer grades</div>
+
+    <p style="margin-bottom:12px">
+      <strong style="color:#CBD5E1">A*A*A means three A-level grades — one per subject.</strong>
+      Grades are listed in descending order by convention (highest first), but the order itself doesn't matter.
+      What matters is hitting the required grades <em>in the right subjects</em> — for example, Cambridge CS
+      requires the A* specifically in Mathematics, not just anywhere across your three subjects.
+    </p>
+
+    <p style="margin-bottom:16px">
+      <strong style="color:#CBD5E1">Yes, 3 A-levels is the standard.</strong>
+      UK students typically sit exactly 3 A-levels in Year 13 (some do 4, but universities don't require it).
+      The offer is made on those 3. So A*A*A is the highest possible standard 3-subject outcome, since A* is the top grade.
+    </p>
+
+    <table style="border-collapse:collapse;margin-bottom:16px;width:100%;max-width:560px">
+      <thead>
+        <tr style="background:#0F172A">
+          <th style="padding:8px 14px;text-align:left;color:#E2E8F0;border:1px solid #334155">Offer</th>
+          <th style="padding:8px 14px;text-align:left;color:#E2E8F0;border:1px solid #334155">What it means</th>
+          <th style="padding:8px 14px;text-align:left;color:#E2E8F0;border:1px solid #334155">Approx. difficulty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#FCA5A5">A*A*A</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#CBD5E1">Two A*s + one A across 3 subjects</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">Extremely competitive — top ~5% nationally</td>
+        </tr>
+        <tr style="background:#0F172A55">
+          <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#FCD34D">A*AA</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#CBD5E1">One A* + two As across 3 subjects</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">Very competitive — top ~10% nationally</td>
+        </tr>
+        <tr>
+          <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#86EFAC">AAA</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#CBD5E1">Three As across 3 subjects</td>
+          <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">Competitive — top ~20% nationally</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-bottom:20px;font-size:12px;color:#64748B">
+      The A-level grade scale from highest to lowest: <strong style="color:#94A3B8">A* → A → B → C → D → E</strong> (all passing), then U (ungraded/fail).
+      Only 2 of the top 10 ARWU universities (Cambridge #4, Oxford #6) publish A-level grade requirements.
+      The 8 US universities in the top 10 (Harvard, MIT, Stanford, Berkeley, Princeton, Columbia, Caltech, Chicago)
+      use a holistic SAT/ACT-based process and do not publish A-level offer grades.
+    </p>
+
+    <div style="border-top:1px solid #334155;padding-top:20px">
+      <div style="font-size:15px;font-weight:700;color:#E2E8F0;margin-bottom:14px">🇺🇸 Applying to US universities with A-levels</div>
+
+      <p style="margin-bottom:12px">
+        <strong style="color:#CBD5E1">A-levels are valued highly by US universities</strong> — they signal academic rigour above the standard US curriculum.
+        However, the application system is entirely different from UCAS.
+      </p>
+
+      <p style="margin-bottom:14px">
+        Applications go through <strong style="color:#CBD5E1">Common App</strong> (used by ~1,000 US universities).
+        Most students apply to 10–15 schools simultaneously, with a deadline of January 1 (regular) or November 1 (early).
+      </p>
+
+      <table style="border-collapse:collapse;margin-bottom:16px;width:100%;max-width:700px">
+        <thead>
+          <tr style="background:#0F172A">
+            <th style="padding:8px 14px;text-align:left;color:#E2E8F0;border:1px solid #334155;width:30%">Requirement</th>
+            <th style="padding:8px 14px;text-align:left;color:#E2E8F0;border:1px solid #334155">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">SAT / ACT</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              <strong style="color:#CBD5E1">Test-optional at most top universities</strong> (Harvard, Yale, Princeton, Columbia, Penn, Brown, Dartmouth).
+              MIT has reinstated the requirement. Strong scores help if submitted; skipping is fine at test-optional schools when A-level grades are strong.
+            </td>
+          </tr>
+          <tr style="background:#0F172A55">
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">Essays</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              The biggest difference from UK admissions. One main personal essay (~650 words) via Common App,
+              plus 2–8 supplemental essays per university. Most time-consuming part of the application.
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">Recommendations</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              1 letter from school counsellor + 2 from teachers (A-level subject teachers work well).
+            </td>
+          </tr>
+          <tr style="background:#0F172A55">
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">Activities list</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              Extracurriculars, competitions, research, volunteering. US admissions weighs this heavily alongside grades.
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">Transcripts</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              A-level predicted grades submitted with the application; actual results sent after exams. UK schools know how to handle this.
+            </td>
+          </tr>
+          <tr style="background:#0F172A55">
+            <td style="padding:7px 14px;border:1px solid #334155;font-weight:700;color:#CBD5E1">English test</td>
+            <td style="padding:7px 14px;border:1px solid #334155;color:#94A3B8">
+              TOEFL or IELTS usually required for non-native English speakers. Some universities waive it if A-level English was taken or if the applicant attended an English-medium school for several years.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin:0;font-size:12px;color:#64748B">
+        <strong style="color:#94A3B8">Not needed for US universities:</strong> No subject-specific admissions tests (MAT, PAT, STEP — those are UK-only) · No UCAS personal statement · No conditional offer based on predicted grades — US universities give unconditional offers or rejections.
+        Note: top US universities have very low acceptance rates (3–7% for Harvard / MIT / Stanford) and evaluate applications holistically — grades are one factor among many.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

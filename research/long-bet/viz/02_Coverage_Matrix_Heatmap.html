@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Coverage Matrix — Top 100 ARWU Universities</title>
+<style>
+  :root {
+    --bg: #0f172a; --panel: #1e293b; --border: #334155;
+    --text: #e2e8f0; --muted: #94a3b8; --accent: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 13px; }
+
+  header { padding: 24px 28px 16px; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 20px; font-weight: 700; color: #f1f5f9; }
+  header p  { color: var(--muted); margin-top: 4px; font-size: 12px; }
+
+  .controls { display: flex; gap: 12px; padding: 14px 28px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid var(--border); background: #0f172a; position: sticky; top: 0; z-index: 50; }
+  .controls input  { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 12px; width: 200px; }
+  .controls input:focus { outline: none; border-color: var(--accent); }
+  .controls select { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 6px; font-size: 12px; }
+  .controls label  { font-size: 12px; color: var(--muted); }
+  .btn { background: var(--panel); border: 1px solid var(--border); color: var(--text); padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+  .btn:hover { background: var(--border); }
+  .btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .stats { display: flex; gap: 16px; padding: 10px 28px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; }
+  .stat .val { font-size: 22px; font-weight: 700; color: var(--accent); }
+  .stat .lbl { font-size: 11px; color: var(--muted); }
+
+  .matrix-wrap { overflow: auto; padding: 0 0 20px 0; }
+  table { border-collapse: collapse; table-layout: fixed; min-width: max-content; }
+
+  .col-rank  { width: 42px; }
+  .col-uni   { width: 220px; }
+  .col-ctry  { width: 70px; }
+  .col-total { width: 50px; }
+  .col-prog  { width: 28px; }
+
+  th, td { border: 1px solid #1e293b; }
+
+  /* Sticky header */
+  thead { position: sticky; top: 0; z-index: 40; }
+  .th-cluster { text-align: center; font-size: 10px; font-weight: 700; padding: 4px 2px; color: #fff; white-space: nowrap; }
+  .th-prog { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9px; font-weight: 600; padding: 8px 2px 4px; text-align: left; color: #fff; height: 100px; }
+  .th-label { text-align: center; font-size: 11px; font-weight: 700; padding: 4px; color: #fff; background: #1F4E79; vertical-align: middle; }
+
+  /* Sticky columns */
+  .td-rank, .th-rank { position: sticky; left: 0; z-index: 20; background: #1e293b; }
+  .td-uni,  .th-uni  { position: sticky; left: 42px; z-index: 20; background: #1e293b; }
+  .td-ctry, .th-ctry { position: sticky; left: 262px; z-index: 20; background: #1e293b; }
+  thead .td-rank, thead .th-rank,
+  thead .td-uni,  thead .th-uni,
+  thead .td-ctry, thead .th-ctry { z-index: 45; }
+
+  .td-rank  { text-align: center; font-weight: 700; color: #60a5fa; padding: 4px; font-size: 11px; }
+  .td-uni   { padding: 4px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 11px; }
+  .td-ctry  { text-align: center; padding: 4px 2px; font-size: 10px; font-weight: 600; }
+  .td-total { text-align: center; font-weight: 700; font-size: 12px; }
+  .td-prog  { text-align: center; font-size: 13px; padding: 1px; }
+
+  tr.highlight { outline: 2px solid var(--accent); }
+  tr:hover td { filter: brightness(1.15); }
+
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; padding: 12px 28px 8px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+  .legend-dot  { width: 12px; height: 12px; border-radius: 3px; }
+
+  .note { color: var(--muted); font-size: 11px; padding: 4px 28px 12px; }
+
+  /* Breadth view */
+  #breadth-view { display: none; padding: 20px 28px; }
+  .breadth-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .breadth-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+  .breadth-card .bc-rank { font-size: 11px; color: var(--muted); }
+  .breadth-card .bc-name { font-size: 14px; font-weight: 600; margin: 2px 0 8px; }
+  .bc-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .bc-bar { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .bc-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg,#3b82f6,#60a5fa); }
+  .bc-num { font-size: 13px; font-weight: 700; color: #60a5fa; min-width: 30px; text-align: right; }
+  .bc-clusters { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .bc-cl { font-size: 10px; padding: 2px 6px; border-radius: 10px; color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>STEM Programme Coverage Matrix</h1>
+  <p>Top 100 ARWU-ranked universities · 31 canonical programmes · 13 subject clusters · A record = one (university × programme) pair offering STEM study.</p>
+</header>
+
+<div class="controls">
+  <input id="search" type="text" placeholder="Search university…">
+  <select id="filter-country">
+    <option value="">All countries</option>
+  </select>
+  <select id="filter-cluster">
+    <option value="">All clusters</option>
+  </select>
+  <label><input type="checkbox" id="hide-empty"> Hide universities with &lt;5 programmes</label>
+  <button class="btn active" id="btn-matrix" onclick="showView('matrix')">Heatmap</button>
+  <button class="btn" id="btn-breadth" onclick="showView('breadth')">Breadth Ranking</button>
+</div>
+
+<div class="stats" id="stats-row"></div>
+
+<div class="legend" id="legend-row"></div>
+<div class="note">★ Highlighted columns = programmes offered by ≥80 universities &nbsp;|&nbsp; Cell colour matches subject cluster</div>
+
+<div id="matrix-view">
+  <div class="matrix-wrap">
+    <table id="main-table"></table>
+  </div>
+</div>
+
+<div id="breadth-view">
+  <div class="breadth-grid" id="breadth-grid"></div>
+</div>
+
+<script>
+const RAW = {"unis": [{"name": "Harvard University", "rank": 1, "country": "US", "progs": [1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0]}, {"name": "Stanford University", "rank": 2, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0]}, {"name": "Massachusetts Institute of Technology (MIT)", "rank": 3, "country": "US", "progs": [1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1]}, {"name": "University of Cambridge", "rank": 4, "country": "UK", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1]}, {"name": "University of California, Berkeley", "rank": 5, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0]}, {"name": "University of Oxford", "rank": 6, "country": "UK", "progs": [1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0]}, {"name": "Princeton University", "rank": 7, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]}, {"name": "Columbia University", "rank": 8, "country": "US", "progs": [1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "California Institute of Technology (Caltech)", "rank": 9, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0]}, {"name": "University of Chicago", "rank": 10, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1]}, {"name": "Yale University", "rank": 11, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0]}, {"name": "Cornell University", "rank": 12, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0]}, {"name": "Paris-Saclay University", "rank": 13, "country": "France", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "University College London (UCL)", "rank": 14, "country": "UK", "progs": [1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1]}, {"name": "University of Pennsylvania", "rank": 14, "country": "US", "progs": [1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0]}, {"name": "University of California, Los Angeles (UCLA)", "rank": 16, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0]}, {"name": "University of Washington", "rank": 17, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "Tsinghua University", "rank": 18, "country": "China", "progs": [1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0]}, {"name": "Johns Hopkins University", "rank": 19, "country": "US", "progs": [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0]}, {"name": "University of California, San Diego", "rank": 20, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0]}, {"name": "University of California, San Francisco (UCSF)", "rank": 21, "country": "US", "progs": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0]}, {"name": "ETH Zurich", "rank": 22, "country": "Switzerland", "progs": [1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1]}, {"name": "Peking University", "rank": 23, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "Zhejiang University", "rank": 24, "country": "China", "progs": [1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0]}, {"name": "University of Toronto", "rank": 25, "country": "Canada", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0]}, {"name": "Imperial College London", "rank": 26, "country": "UK", "progs": [1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0]}, {"name": "Washington University in St. Louis", "rank": 26, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "New York University (NYU)", "rank": 28, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "Rockefeller University", "rank": 29, "country": "US", "progs": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0]}, {"name": "Shanghai Jiao Tong University", "rank": 30, "country": "China", "progs": [1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]}, {"name": "Northwestern University", "rank": 31, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "The University of Tokyo", "rank": 31, "country": "Japan", "progs": [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0]}, {"name": "University of Michigan, Ann Arbor", "rank": 33, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0]}, {"name": "PSL University", "rank": 34, "country": "France", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1]}, {"name": "University of Copenhagen", "rank": 35, "country": "Denmark", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]}, {"name": "University of Wisconsin, Madison", "rank": 36, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0]}, {"name": "The University of Edinburgh", "rank": 37, "country": "UK", "progs": [1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0]}, {"name": "The University of Melbourne", "rank": 38, "country": "Australia", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "University of North Carolina, Chapel Hill", "rank": 39, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0]}, {"name": "University of Science and Technology of China (USTC)", "rank": 40, "country": "China", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0]}, {"name": "Fudan University", "rank": 41, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0]}, {"name": "University of Munich (LMU)", "rank": 42, "country": "Germany", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0]}, {"name": "Sorbonne University", "rank": 43, "country": "France", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0]}, {"name": "EPFL (École Polytechnique Fédérale de Lausanne)", "rank": 44, "country": "Switzerland", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]}, {"name": "Technical University of Munich (TUM)", "rank": 45, "country": "Germany", "progs": [1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "Duke University", "rank": 46, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "Kyoto University", "rank": 46, "country": "Japan", "progs": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0]}, {"name": "The University of Manchester", "rank": 46, "country": "UK", "progs": [1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "The University of Texas at Austin", "rank": 49, "country": "US", "progs": [1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0]}, {"name": "Karolinska Institute", "rank": 50, "country": "Sweden", "progs": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "Heidelberg University", "rank": 51, "country": "Germany", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "University of Minnesota, Twin Cities", "rank": 51, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "University of British Columbia", "rank": 53, "country": "Canada", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0]}, {"name": "University of Illinois Urbana-Champaign (UIUC)", "rank": 53, "country": "US", "progs": [1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0]}, {"name": "University of Maryland, College Park", "rank": 55, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0]}, {"name": "National University of Singapore (NUS)", "rank": 56, "country": "Singapore", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "Utrecht University", "rank": 56, "country": "Netherlands", "progs": [1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0]}, {"name": "UT Southwestern Medical Center", "rank": 58, "country": "US", "progs": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "University of Geneva", "rank": 58, "country": "Switzerland", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "Université Paris Cité", "rank": 60, "country": "France", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0]}, {"name": "King's College London", "rank": 61, "country": "UK", "progs": [1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0]}, {"name": "Vanderbilt University", "rank": 62, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "University of Colorado Boulder", "rank": 62, "country": "US", "progs": [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "University of Zurich", "rank": 64, "country": "Switzerland", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0]}, {"name": "Sun Yat-sen University", "rank": 65, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "The University of Queensland", "rank": 65, "country": "Australia", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "The University of Hong Kong", "rank": 67, "country": "Hong Kong", "progs": [1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]}, {"name": "University of Bonn", "rank": 68, "country": "Germany", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "University of Southern California (USC)", "rank": 68, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "University of California, Santa Barbara", "rank": 70, "country": "US", "progs": [1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}, {"name": "Weizmann Institute of Science", "rank": 71, "country": "Israel", "progs": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0]}, {"name": "University of Sydney", "rank": 72, "country": "Australia", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "Huazhong University of Science and Technology (HUST)", "rank": 73, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0]}, {"name": "University of Groningen", "rank": 73, "country": "Netherlands", "progs": [1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]}, {"name": "Nanjing University", "rank": 75, "country": "China", "progs": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "KU Leuven", "rank": 76, "country": "Belgium", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "McGill University", "rank": 76, "country": "Canada", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "Monash University", "rank": 76, "country": "Australia", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"name": "University of California, Irvine", "rank": 79, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0]}, {"name": "University of New South Wales (UNSW)", "rank": 80, "country": "Australia", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0]}, {"name": "Seoul National University", "rank": 81, "country": "South Korea", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0]}, {"name": "Wuhan University", "rank": 81, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]}, {"name": "Ohio State University", "rank": 83, "country": "US", "progs": [1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]}, {"name": "University of Oslo", "rank": 83, "country": "Norway", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0]}, {"name": "Aarhus University", "rank": 85, "country": "Denmark", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "UT MD Anderson Cancer Center", "rank": 86, "country": "US", "progs": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "Sichuan University", "rank": 87, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "University of Pittsburgh", "rank": 88, "country": "US", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "Nanyang Technological University (NTU)", "rank": 88, "country": "Singapore", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "The Hebrew University of Jerusalem", "rank": 88, "country": "Israel", "progs": [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]}, {"name": "Ghent University", "rank": 91, "country": "Belgium", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0]}, {"name": "Xi'an Jiaotong University", "rank": 92, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]}, {"name": "Uppsala University", "rank": 93, "country": "Sweden", "progs": [1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]}, {"name": "University of Basel", "rank": 94, "country": "Switzerland", "progs": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0]}, {"name": "University of Helsinki", "rank": 94, "country": "Finland", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0]}, {"name": "Central South University", "rank": 96, "country": "China", "progs": [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]}, {"name": "Technion – Israel Institute of Technology", "rank": 97, "country": "Israel", "progs": [1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0]}, {"name": "University of Bristol", "rank": 98, "country": "UK", "progs": [1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0]}, {"name": "City University of Hong Kong", "rank": 99, "country": "Hong Kong", "progs": [1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, {"name": "Stockholm University", "rank": 100, "country": "Sweden", "progs": [1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]}], "progs": [{"name": "Computer Science", "cluster": "CS & AI"}, {"name": "Data Science", "cluster": "CS & AI"}, {"name": "Artificial Intelligence", "cluster": "CS & AI"}, {"name": "Computational Science", "cluster": "CS & AI"}, {"name": "CS & AI", "cluster": "CS & AI"}, {"name": "Mathematics", "cluster": "Mathematics"}, {"name": "Statistics", "cluster": "Mathematics"}, {"name": "Applied Mathematics", "cluster": "Mathematics"}, {"name": "Operations Research", "cluster": "Mathematics"}, {"name": "Actuarial Science", "cluster": "Mathematics"}, {"name": "Physics", "cluster": "Physics & Astronomy"}, {"name": "Astrophysics", "cluster": "Physics & Astronomy"}, {"name": "Chemistry", "cluster": "Chemistry"}, {"name": "Biochemistry", "cluster": "Chemistry"}, {"name": "Electrical Engineering", "cluster": "Engineering – Electrical & Computer"}, {"name": "Mechanical Engineering", "cluster": "Engineering – Mechanical & Aerospace"}, {"name": "Aerospace Engineering", "cluster": "Engineering – Mechanical & Aerospace"}, {"name": "Civil Engineering", "cluster": "Engineering – Civil & Environmental"}, {"name": "Environmental Engineering", "cluster": "Engineering – Civil & Environmental"}, {"name": "Chemical Engineering", "cluster": "Engineering – Chemical & Materials"}, {"name": "Materials Science", "cluster": "Engineering – Chemical & Materials"}, {"name": "Biomedical Engineering", "cluster": "Engineering – Biomedical"}, {"name": "Industrial Engineering", "cluster": "Engineering – Other"}, {"name": "Engineering (General)", "cluster": "Engineering – Other"}, {"name": "Systems Engineering", "cluster": "Engineering – Other"}, {"name": "Nuclear Engineering", "cluster": "Engineering – Other"}, {"name": "Bioinformatics", "cluster": "Computational Biology & Bioinformatics"}, {"name": "Computational Biology", "cluster": "Computational Biology & Bioinformatics"}, {"name": "Neuroscience", "cluster": "Computational Biology & Bioinformatics"}, {"name": "Earth Sciences", "cluster": "Earth & Environmental Sciences"}, {"name": "Interdisciplinary Sciences", "cluster": "Interdisciplinary"}], "clusters": ["CS & AI", "Mathematics", "Physics & Astronomy", "Chemistry", "Engineering – Electrical & Computer", "Engineering – Mechanical & Aerospace", "Engineering – Civil & Environmental", "Engineering – Chemical & Materials", "Engineering – Biomedical", "Engineering – Other", "Computational Biology & Bioinformatics", "Earth & Environmental Sciences", "Interdisciplinary"], "cluster_prog_idx": {"CS & AI": [0, 1, 2, 3, 4], "Mathematics": [5, 6, 7, 8, 9], "Physics & Astronomy": [10, 11], "Chemistry": [12, 13], "Engineering – Electrical & Computer": [14], "Engineering – Mechanical & Aerospace": [15, 16], "Engineering – Civil & Environmental": [17, 18], "Engineering – Chemical & Materials": [19, 20], "Engineering – Biomedical": [21], "Engineering – Other": [22, 23, 24, 25], "Computational Biology & Bioinformatics": [26, 27, 28], "Earth & Environmental Sciences": [29], "Interdisciplinary": [30]}};
+
+const CLUSTER_COLORS = {
+  "CS & AI":"#4F7EF8","Mathematics":"#A78BFA","Physics & Astronomy":"#F59E0B",
+  "Chemistry":"#10B981","Engineering – Electrical & Computer":"#06B6D4",
+  "Engineering – Mechanical & Aerospace":"#3B82F6","Engineering – Civil & Environmental":"#14B8A6",
+  "Engineering – Chemical & Materials":"#8B5CF6","Engineering – Biomedical":"#EC4899",
+  "Engineering – Other":"#64748B","Computational Biology & Bioinformatics":"#F97316",
+  "Earth & Environmental Sciences":"#22C55E","Interdisciplinary":"#94A3B8"
+};
+const COUNTRY_BG = {
+  "US":"#1a2a4a","UK":"#2a1a2a","China":"#1a2a1a","Germany":"#2a2a1a",
+  "France":"#2a2a1a","Switzerland":"#1a2a2a","Canada":"#1a2030",
+  "Australia":"#2a1a10","Japan":"#1e1a30","Singapore":"#1a2a20",
+  "Netherlands":"#181e30","Belgium":"#221a20","Denmark":"#1a2020",
+  "Norway":"#1a1e30","Sweden":"#221a1e","Finland":"#1a2020",
+  "Israel":"#222018","South Korea":"#1e1a28","Hong Kong":"#22201a"
+};
+
+const unis = RAW.unis;
+const progs = RAW.progs;
+const clusters = RAW.clusters;
+const clPIdx = RAW.cluster_prog_idx;
+
+// Compute prog frequency
+const progFreq = progs.map((p,i) => unis.reduce((s,u)=>s+u.progs[i],0));
+
+// Populate filters
+const countries = [...new Set(unis.map(u=>u.country))].sort();
+const csel = document.getElementById('filter-country');
+countries.forEach(c => { const o=document.createElement('option'); o.value=c; o.textContent=c; csel.appendChild(o); });
+const clsel = document.getElementById('filter-cluster');
+clusters.forEach(cl => { const o=document.createElement('option'); o.value=cl; o.textContent=cl; clsel.appendChild(o); });
+
+// Legend
+const lgd = document.getElementById('legend-row');
+clusters.forEach(cl => {
+  const d=document.createElement('div'); d.className='legend-item';
+  d.innerHTML=`<div class="legend-dot" style="background:${CLUSTER_COLORS[cl]}"></div><span>${cl}</span>`;
+  lgd.appendChild(d);
+});
+
+// Stats
+function updateStats(filtered) {
+  const totalProgs = filtered.reduce((s,u)=>s+u.progs.reduce((a,b)=>a+b,0),0);
+  const avgBreadth = filtered.length ? (filtered.reduce((s,u)=>s+u.progs.reduce((a,b)=>a+b,0),0)/filtered.length).toFixed(1) : 0;
+  const maxBreadth = filtered.length ? Math.max(...filtered.map(u=>u.progs.reduce((a,b)=>a+b,0))) : 0;
+  document.getElementById('stats-row').innerHTML = `
+    <div class="stat"><div class="val">${filtered.length}</div><div class="lbl">Universities shown</div></div>
+    <div class="stat"><div class="val">${totalProgs}</div><div class="lbl">Total (uni×prog) pairs</div></div>
+    <div class="stat"><div class="val">${avgBreadth}</div><div class="lbl">Avg programmes/uni</div></div>
+    <div class="stat"><div class="val">${maxBreadth}</div><div class="lbl">Max breadth (programmes)</div></div>
+  `;
+}
+
+function getFiltered() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const c = document.getElementById('filter-country').value;
+  const cl = document.getElementById('filter-cluster').value;
+  const hideSmall = document.getElementById('hide-empty').checked;
+  return unis.filter(u => {
+    if (q && !u.name.toLowerCase().includes(q)) return false;
+    if (c && u.country !== c) return false;
+    if (cl) { const idx=clPIdx[cl]; if (!idx.some(i=>u.progs[i])) return false; }
+    if (hideSmall && u.progs.reduce((a,b)=>a+b,0) < 5) return false;
+    return true;
+  });
+}
+
+function buildTable(filtered) {
+  const tbl = document.getElementById('main-table');
+  tbl.innerHTML = '';
+
+  // Cluster header row
+  const head = tbl.createTHead();
+  const r0 = head.insertRow();
+  // Fixed sticky headers
+  [['Rank',42,'col-rank td-rank th-rank'],['University',220,'col-uni td-uni th-uni'],['Country',70,'col-ctry td-ctry th-ctry']].forEach(([label,w,cls])=>{
+    const th=document.createElement('th');
+    th.rowSpan=2; th.textContent=label; th.className='th-label '+cls;
+    th.style.width=w+'px'; r0.appendChild(th);
+  });
+
+  // Build cluster bands
+  clusters.forEach(cl => {
+    const indices = clPIdx[cl];
+    const th = document.createElement('th');
+    th.colSpan = indices.length;
+    th.className = 'th-cluster';
+    th.style.background = CLUSTER_COLORS[cl];
+    th.textContent = cl;
+    r0.appendChild(th);
+  });
+  // Total
+  const thTot = document.createElement('th');
+  thTot.rowSpan=2; thTot.textContent='Total'; thTot.className='th-label';
+  thTot.style.background='#1F4E79'; thTot.style.width='50px';
+  r0.appendChild(thTot);
+
+  // Programme header row
+  const r1 = head.insertRow();
+  progs.forEach((p,i) => {
+    const th = document.createElement('th');
+    th.className='th-prog col-prog';
+    th.style.background = CLUSTER_COLORS[p.cluster];
+    th.title = `${p.name} — offered by ${progFreq[i]} universities`;
+    const inner = document.createElement('span');
+    inner.textContent = p.name;
+    if (progFreq[i] >= 80) inner.style.textDecoration = 'underline';
+    th.appendChild(inner);
+    r1.appendChild(th);
+  });
+
+  // Body
+  const body = tbl.createTBody();
+  filtered.forEach(u => {
+    const tr = body.insertRow();
+    const total = u.progs.reduce((a,b)=>a+b,0);
+    const ctryBg = COUNTRY_BG[u.country] || '#1e293b';
+
+    // Rank
+    const tdR = tr.insertCell(); tdR.className='td-rank'; tdR.textContent='#'+u.rank; tdR.style.background='#1e293b';
+    // Uni
+    const tdU = tr.insertCell(); tdU.className='td-uni'; tdU.textContent=u.name; tdU.title=u.name; tdU.style.background='#1e293b';
+    // Country
+    const tdC = tr.insertCell(); tdC.className='td-ctry'; tdC.textContent=u.country; tdC.style.background=ctryBg;
+
+    // Prog cells
+    u.progs.forEach((v,i) => {
+      const td = tr.insertCell();
+      td.className='td-prog col-prog';
+      if (v) {
+        const clr = CLUSTER_COLORS[progs[i].cluster];
+        td.textContent='✓';
+        td.style.background = clr + '33';
+        td.style.color = clr;
+        td.title = `${u.name} · ${progs[i].name}`;
+      } else {
+        td.style.background = '#111827';
+      }
+    });
+
+    // Total
+    const tdT = tr.insertCell();
+    tdT.className='td-total';
+    tdT.textContent=total;
+    tdT.style.color = total>=18?'#f87171':total>=14?'#fb923c':'#60a5fa';
+    tdT.style.background='#1e293b';
+  });
+}
+
+function buildBreadth(filtered) {
+  const grid = document.getElementById('breadth-grid');
+  grid.innerHTML = '';
+  const sorted = [...filtered].sort((a,b)=>b.progs.reduce((s,v)=>s+v,0)-a.progs.reduce((s,v)=>s+v,0));
+  sorted.forEach(u => {
+    const total = u.progs.reduce((a,b)=>a+b,0);
+    const clsCovered = clusters.filter(cl=>clPIdx[cl].some(i=>u.progs[i]));
+    const card = document.createElement('div');
+    card.className='breadth-card';
+    card.innerHTML = `
+      <div class="bc-rank">#${u.rank} · ${u.country}</div>
+      <div class="bc-name">${u.name}</div>
+      <div class="bc-bar-wrap">
+        <div class="bc-bar"><div class="bc-fill" style="width:${(total/31*100).toFixed(0)}%"></div></div>
+        <div class="bc-num">${total}/31</div>
+      </div>
+      <div class="bc-clusters">${clsCovered.map(cl=>`<span class="bc-cl" style="background:${CLUSTER_COLORS[cl]}">${cl.replace('Engineering – ','Eng–').replace('Computational Biology & Bioinformatics','CompBio').replace('Earth & Environmental Sciences','Earth/Env').replace('Physics & Astronomy','Phys/Astro')}</span>`).join('')}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function render() {
+  const filtered = getFiltered();
+  updateStats(filtered);
+  if (document.getElementById('matrix-view').style.display !== 'none') buildTable(filtered);
+  else buildBreadth(filtered);
+}
+
+function showView(v) {
+  document.getElementById('matrix-view').style.display = v==='matrix' ? '' : 'none';
+  document.getElementById('breadth-view').style.display = v==='breadth' ? '' : 'none';
+  document.getElementById('btn-matrix').classList.toggle('active', v==='matrix');
+  document.getElementById('btn-breadth').classList.toggle('active', v==='breadth');
+  render();
+}
+
+['search','filter-country','filter-cluster','hide-empty'].forEach(id => {
+  document.getElementById(id).addEventListener('input', render);
+  document.getElementById(id).addEventListener('change', render);
+});
+
+render();
+</script>
+</body>
+</html>

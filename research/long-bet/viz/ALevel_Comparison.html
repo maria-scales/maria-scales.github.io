@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Level Combination Comparison — Andrey</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0F172A;
+    color: #E2E8F0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 36px 32px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  h1 { font-size: 1.6rem; font-weight: 700; color: #F8FAFC; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .subtitle { font-size: 0.85rem; color: #64748B; margin-bottom: 36px; }
+
+  h2 { font-size: 1.1rem; font-weight: 700; color: #F1F5F9; margin-bottom: 16px; letter-spacing: -0.01em; }
+  h3 { font-size: 0.9rem; font-weight: 700; color: #CBD5E1; margin-bottom: 10px; }
+
+  p { font-size: 0.88rem; color: #94A3B8; line-height: 1.7; margin-bottom: 12px; }
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: #E2E8F0; font-weight: 600; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+  .section-label {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #475569; margin-bottom: 14px;
+  }
+
+  /* COMBO CARDS */
+  .combo-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;
+  }
+  .combo-card {
+    background: #1E293B; border: 1px solid #334155; border-radius: 14px; padding: 22px;
+  }
+  .combo-card.chem { border-top: 3px solid #38BDF8; }
+  .combo-card.bio  { border-top: 3px solid #4ADE80; }
+  .combo-title {
+    font-size: 0.95rem; font-weight: 700; margin-bottom: 4px;
+  }
+  .combo-title.chem { color: #38BDF8; }
+  .combo-title.bio  { color: #4ADE80; }
+  .combo-subjects {
+    display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 16px;
+  }
+  .subject-tag {
+    font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+    background: #0F172A; border: 1px solid #334155; color: #CBD5E1;
+  }
+  .subject-tag.highlight-chem { border-color: #38BDF8; color: #38BDF8; }
+  .subject-tag.highlight-bio  { border-color: #4ADE80; color: #4ADE80; }
+  .verdict {
+    font-size: 0.78rem; color: #94A3B8; background: #0F172A;
+    border-radius: 8px; padding: 10px 12px; line-height: 1.6;
+  }
+
+  /* DOORS GRID */
+  .doors-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .doors-col { background: #1E293B; border: 1px solid #334155; border-radius: 12px; padding: 18px; }
+  .doors-col-header {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #334155;
+  }
+  .doors-col-header.open { color: #4ADE80; }
+  .doors-col-header.blocked { color: #F87171; }
+  .program-row {
+    display: flex; align-items: flex-start; gap: 8px;
+    padding: 7px 0; border-bottom: 1px solid #1E293B88; font-size: 0.83rem;
+  }
+  .program-row:last-child { border: none; padding-bottom: 0; }
+  .program-row .dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+  }
+  .dot.green  { background: #4ADE80; }
+  .dot.red    { background: #F87171; }
+  .dot.yellow { background: #FBBF24; }
+  .program-name { color: #E2E8F0; font-weight: 600; flex: 1; }
+  .program-note { font-size: 0.73rem; color: #64748B; margin-top: 1px; }
+
+  /* BLOCKED TABLE */
+  .blocked-box {
+    background: #1E293B; border: 1px solid #334155; border-left: 3px solid #F87171;
+    border-radius: 12px; padding: 20px; margin-bottom: 20px;
+  }
+  .blocked-box h3 { color: #F87171; margin-bottom: 14px; }
+  .blocked-row {
+    display: grid; grid-template-columns: 160px 1fr auto;
+    gap: 12px; align-items: start;
+    padding: 9px 0; border-bottom: 1px solid #33415533; font-size: 0.83rem;
+  }
+  .blocked-row:last-child { border: none; padding-bottom: 0; }
+  .blocked-row:first-child { padding-top: 0; }
+  .bl-program { color: #E2E8F0; font-weight: 600; }
+  .bl-why { color: #94A3B8; font-size: 0.79rem; line-height: 1.5; }
+  .bl-severity {
+    font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 10px;
+    white-space: nowrap; align-self: start;
+  }
+  .sev-full   { background: #F8717122; color: #F87171; border: 1px solid #F8717144; }
+  .sev-mostly { background: #FBBF2422; color: #FBBF24; border: 1px solid #FBBF2444; }
+  .sev-partial{ background: #60A5FA22; color: #60A5FA; border: 1px solid #60A5FA44; }
+
+  /* BIOINFORMATICS vs COMP BIO */
+  .vs-grid {
+    display: grid; grid-template-columns: 1fr 40px 1fr; gap: 0; align-items: start;
+  }
+  .vs-col {
+    background: #1E293B; border: 1px solid #334155; border-radius: 12px; padding: 20px;
+  }
+  .vs-col.bio-col { border-top: 3px solid #60A5FA; }
+  .vs-col.cb-col  { border-top: 3px solid #C084FC; }
+  .vs-divider {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: #334155; font-weight: 700; padding-top: 60px;
+  }
+  .vs-title { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+  .vs-title.bio-col { color: #60A5FA; }
+  .vs-title.cb-col  { color: #C084FC; }
+  .vs-row { font-size: 0.81rem; padding: 7px 0; border-bottom: 1px solid #33415533; color: #94A3B8; }
+  .vs-row:last-child { border: none; padding-bottom: 0; }
+  .vs-row strong { color: #CBD5E1; }
+  .vs-attr { font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.07em; color: #475569; margin-bottom: 2px; }
+
+  /* DEMAND CALLOUT */
+  .demand-callout {
+    background: linear-gradient(135deg, #1E293B 0%, #162032 100%);
+    border: 1px solid #334155; border-left: 3px solid #60A5FA;
+    border-radius: 12px; padding: 22px 24px; margin-top: 20px;
+  }
+  .demand-callout h3 { color: #60A5FA; margin-bottom: 10px; }
+  .demand-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px;
+  }
+  .demand-card {
+    background: #0F172A; border: 1px solid #334155; border-radius: 8px; padding: 12px;
+  }
+  .demand-num { font-size: 1.4rem; font-weight: 800; color: #60A5FA; }
+  .demand-label { font-size: 0.72rem; color: #64748B; margin-top: 2px; }
+
+  /* SUMMARY */
+  .summary-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+  }
+  .summary-card {
+    border-radius: 10px; padding: 16px 18px; font-size: 0.83rem;
+  }
+  .summary-card.rec {
+    background: #0C2A1A; border: 1px solid #16643A; color: #86EFAC;
+  }
+  .summary-card.alt {
+    background: #1A1A0C; border: 1px solid #3D3010; color: #FDE68A;
+  }
+  .summary-card-title { font-weight: 700; margin-bottom: 6px; font-size: 0.85rem; }
+
+  @media (max-width: 700px) {
+    .combo-grid, .doors-grid, .vs-grid, .demand-grid, .summary-row { grid-template-columns: 1fr; }
+    .vs-divider { display: none; }
+    .blocked-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>A-Level Combination Guide — Andrey</h1>
+<p class="subtitle">Comparing the two candidate combinations · STEM program access · Bioinformatics deep-dive</p>
+<div style="background:#0C1929;border:1px solid #1E4A6E;border-left:4px solid #3B82F6;border-radius:10px;padding:16px 20px;margin-bottom:4px;font-size:0.82rem;color:#93C5FD">
+  <strong style="color:#60A5FA">🌎 Scope note — three systems, three different pictures:</strong>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:12px">
+    <div style="background:#0A2218;border:1px solid #16643A;border-radius:8px;padding:12px 14px">
+      <p style="color:#86EFAC;font-weight:700;font-size:0.8rem;margin-bottom:5px">🇺🇸 United States (primary focus)</p>
+      <p style="color:#4ADE80;font-size:0.77rem;margin:0">No subject-specific prerequisites. All biology and chemistry taught from scratch within the degree. Maths+FM+Physics+Chemistry blocks <strong>nothing</strong>. Admission based on overall academic strength (GPA/SAT/A-levels). MIT, Stanford, UCSD, CMU, Harvard — all fully accessible.</p>
+    </div>
+    <div style="background:#0A1A2C;border:1px solid #1E4A6E;border-radius:8px;padding:12px 14px">
+      <p style="color:#93C5FD;font-weight:700;font-size:0.8rem;margin-bottom:5px">🇫🇷 France — same conclusion as US</p>
+      <p style="color:#60A5FA;font-size:0.77rem;margin:0">A-levels accepted as Baccalauréat equivalent. No Biology A-level required for STEM Licences (Maths/CS). <strong>Paris-Saclay (ARWU #15)</strong> Bioinformatics is a Master's — entered after a Maths or CS Licence. No prior biology needed. Main barrier: French language at UG level. See Section 7.</p>
+    </div>
+    <div style="background:#1A0F0F;border:1px solid #7F1D1D;border-radius:8px;padding:12px 14px">
+      <p style="color:#FCA5A5;font-weight:700;font-size:0.8rem;margin-bottom:5px">🇬🇧 United Kingdom — different picture</p>
+      <p style="color:#F87171;font-size:0.77rem;margin:0">Subject-specific gates: Biology A-level treated as prior knowledge. Edinburgh/Manchester/Imperial have no UG Bioinformatics at all. UCL and Cambridge both require Biology. <strong>UK is the outlier</strong> — this system does not apply to US, France, or China.</p>
+    </div>
+  </div>
+  <p style="color:#475569;font-size:0.75rem;margin-top:10px;margin-bottom:0">🇨🇳 Chinese universities: to be checked separately — expected finding similar to US/France.</p>
+</div>
+
+<!-- ══ SECTION 5: VERDICT ══ -->
+<div class="section">
+  <div class="section-label">Recommendation Summary</div>
+  <div class="summary-row">
+    <div class="summary-card rec">
+      <div class="summary-card-title">✅ Choose Maths + FM + Physics + Chemistry if targeting US universities</div>
+      <strong>From a US university perspective, this combination blocks almost nothing.</strong> Top US programs (MIT, Stanford, UCSD, CMU) teach all biology and biochemistry from scratch — no prior Biology A-level is expected or required. Maths + FM + Physics + Chemistry is an exceptionally strong profile: it signals quantitative rigour, and Chemistry is directly useful since all bioinformatics programs include General Chemistry and Biochemistry in years 1–2. Bioinformatics, Computational Biology, CS, Engineering, and Physical Sciences are all fully open. <strong>This is the recommended choice if Andrey is targeting US (or French/Chinese) top universities.</strong>
+    </div>
+    <div class="summary-card alt">
+      <div class="summary-card-title">⚠️ Biology only matters if UK universities are the primary target</div>
+      In the UK system, Biology A-level is required for UCL Computational Biology, Cambridge Biological NatSci, and most Biochemistry/Genetics degrees. But Edinburgh, Manchester, and Imperial don't even offer UG Bioinformatics — it's postgraduate only there. If Andrey is primarily targeting UK top universities for biology-adjacent programs, Biology is needed. For US, China, or France: Chemistry wins every time.
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: THE TWO COMBOS ══ -->
+<div class="section">
+  <div class="section-label">Section 1 — The Two Combinations</div>
+  <div class="combo-grid">
+    <div class="combo-card chem">
+      <div class="combo-title chem">Option A — Physics &amp; Chemistry Track</div>
+      <div class="combo-subjects">
+        <span class="subject-tag">Mathematics</span>
+        <span class="subject-tag">Further Mathematics</span>
+        <span class="subject-tag">Physics</span>
+        <span class="subject-tag highlight-chem">Chemistry</span>
+      </div>
+      <div class="verdict">
+        The hardest all-round STEM combination. All four are facilitating subjects signalling physical science and engineering aptitude. <strong>For US universities: opens every STEM program including Bioinformatics and Computational Biology</strong> — biology is taught from scratch. For UK: strong for engineering, maths, and physical sciences. Chemistry keeps medicine on the table globally (most med schools require it). <strong>Recommended for US-targeting students in any quantitative direction.</strong>
+      </div>
+    </div>
+    <div class="combo-card bio">
+      <div class="combo-title bio">Option B — Physics &amp; Biology Track</div>
+      <div class="combo-subjects">
+        <span class="subject-tag">Mathematics</span>
+        <span class="subject-tag">Further Mathematics</span>
+        <span class="subject-tag">Physics</span>
+        <span class="subject-tag highlight-bio">Biology</span>
+      </div>
+      <div class="verdict">
+        Also a strong combination, but more specialised toward life sciences. Opens UK-specific Biology-gated programs (Biochemistry, Genetics, UCL Computational Biology stream, Cambridge Biological NatSci). For US universities, however, <strong>Biology offers no meaningful advantage</strong> over Chemistry — US programs teach all biology from scratch regardless. Ironically <strong>weakens medicine applications</strong> globally because most medical schools require Chemistry, not Biology. Best only if Andrey is certain he targets UK life science programs specifically.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 2: PROGRAM ACCESS ══ -->
+<div class="section">
+  <div class="section-label">Section 2 — Which Programs Does Each Open? (US University Perspective)</div>
+  <div style="background:#0C1929;border:1px solid #1E4A6E;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:0.79rem;color:#93C5FD">
+    📌 <strong>US context:</strong> US universities do not require specific high school subjects — they teach all biology, chemistry, and physics from scratch. Below reflects what's open at top US programs (MIT, Stanford, UCSD, CMU). For UK restrictions, see Section 5.
+  </div>
+  <div class="doors-grid">
+    <div class="doors-col">
+      <div class="doors-col-header open">✓ Open with EITHER combination (US universities)</div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Mathematics / Applied Mathematics</div><div class="program-note">Maths + FM is all that's needed anywhere in the world</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Statistics &amp; Actuarial Science</div><div class="program-note">Maths-driven; no biology or chemistry required</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Computer Science</div><div class="program-note">Maths is the primary requirement at all top unis</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Data Science / AI</div><div class="program-note">Maths + FM more than sufficient</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Physics / Astrophysics</div><div class="program-note">Maths + Physics; 4th subject irrelevant</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">All Engineering branches</div><div class="program-note">Mechanical, Electrical, Aerospace, Civil, Biomedical</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Earth &amp; Environmental Sciences</div><div class="program-note">Chemistry or Physics usually sufficient</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Materials Science / Chemical Engineering</div><div class="program-note">Chemistry + Physics + Maths is the ideal combo</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Bioinformatics / Computational Biology</div><div class="program-note">MIT, Stanford, UCSD, CMU — all teach biology from scratch. No prior Biology required. See Section 6.</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Biochemistry / Molecular Biology (US)</div><div class="program-note">US universities teach all prerequisites at university — no high school biology gate</div></div></div>
+      <div class="program-row"><span class="dot green"></span><div><div class="program-name">Neuroscience (US)</div><div class="program-note">US programs have no high school Biology requirement</div></div></div>
+    </div>
+    <div class="doors-col">
+      <div class="doors-col-header blocked">⚠️ UK-only restrictions (not applicable to US universities)</div>
+      <div style="background:#1A0F0F;border:1px solid #7F1D1D;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:0.77rem;color:#FCA5A5">
+        These restrictions apply in the <strong>UK system only</strong>. From a US admissions standpoint, choosing Chemistry over Biology does not block any of these programs. Skip this column if Andrey is focused on US universities.
+      </div>
+      <div class="program-row"><span class="dot red"></span><div><div class="program-name">Biochemistry (UK top unis)</div><div class="program-note">Oxford, Cambridge, Imperial require Chemistry + Biology. UK-specific gate.</div></div></div>
+      <div class="program-row"><span class="dot red"></span><div><div class="program-name">Genetics / Molecular Biology (UK)</div><div class="program-note">Biology A-level required at virtually all UK universities</div></div></div>
+      <div class="program-row"><span class="dot red"></span><div><div class="program-name">Zoology / Ecology (UK)</div><div class="program-note">Pure biology degrees; Biology A-level essential in UK</div></div></div>
+      <div class="program-row"><span class="dot yellow"></span><div><div class="program-name">Neuroscience (UK top unis)</div><div class="program-note">UCL, Edinburgh prefer or require Biology at UK level</div></div></div>
+      <div class="program-row"><span class="dot red"></span><div><div class="program-name">Bioinformatics UG at top UK unis</div><div class="program-note">Edinburgh/Manchester/Imperial = postgraduate only. UCL, Cambridge both require Biology. See Section 5.</div></div></div>
+    </div>
+  </div>
+  <p style="margin-top:12px; font-size:0.76rem; color:#475569">
+    🟢 Green = fully open at US top universities regardless of Chemistry vs Biology choice. 🟡 Yellow = partly affected in UK. 🔴 Red = blocked in UK but NOT in US.
+  </p>
+</div>
+
+<!-- ══ SECTION 3: BLOCKED DETAIL ══ -->
+<div class="section">
+  <div class="section-label">Section 3 — Program Restrictions by University System</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+    <div style="background:#0C2A1A;border:1px solid #16643A;border-radius:10px;padding:16px 18px">
+      <p style="color:#86EFAC;font-weight:700;font-size:0.88rem;margin-bottom:10px">✅ US Universities — Nothing is blocked</p>
+      <p style="font-size:0.79rem;color:#4ADE80;margin:0 0 8px 0">At MIT, Stanford, UCSD, CMU, Harvard and all other top US universities: <strong>choosing Chemistry over Biology does not block any STEM program</strong>. US admission is based on overall academic strength, not specific subject combinations.</p>
+      <p style="font-size:0.79rem;color:#86EFAC;margin:0">Bioinformatics, Computational Biology, Biochemistry, Neuroscience, Genetics — all are fully accessible. The university teaches everything from scratch in year 1. A student with Maths+FM+Physics+Chemistry is actually ideally prepared because these programs include General Chemistry and Biochemistry in early years.</p>
+    </div>
+    <div style="background:#1A0F0F;border:1px solid #7F1D1D;border-radius:10px;padding:16px 18px">
+      <p style="color:#FCA5A5;font-weight:700;font-size:0.88rem;margin-bottom:10px">🇬🇧 UK Universities — Biology A-level is a real gate (for reference only)</p>
+      <p style="font-size:0.79rem;color:#FCA5A5;margin:0 0 8px 0">The UK operates a subject-specific admissions system. Choosing Chemistry without Biology does close certain programs at top UK universities. This section is provided for completeness — if UK is not Andrey's target, it is not relevant.</p>
+      <p style="font-size:0.79rem;color:#F87171;margin:0">See Section 5 for full UK verified data.</p>
+    </div>
+  </div>
+
+  <div class="blocked-box">
+    <h3>🇬🇧 UK-only restrictions when choosing Chemistry instead of Biology</h3>
+    <p style="font-size:0.78rem;color:#F87171;margin-bottom:16px;padding:8px 12px;background:#1A0F0F;border-radius:6px;border:1px solid #7F1D1D">⚠️ The following restrictions apply in the <strong>UK system only</strong>. They do NOT apply to US, French, or Chinese universities where programs are not gated by specific A-level choices.</p>
+    <div class="blocked-row">
+      <div class="bl-program">Biochemistry (UK)</div>
+      <div class="bl-why">Oxford, Cambridge, Imperial, UCL, Edinburgh all require <strong>both</strong> Chemistry and Biology. Chemistry alone is not sufficient in the UK — prior knowledge of cellular and molecular biology is assumed from day one.</div>
+      <span class="bl-severity sev-full">UK: Fully blocked</span>
+    </div>
+    <div class="blocked-row">
+      <div class="bl-program">Genetics (UK)</div>
+      <div class="bl-why">Biology A-level is a universal UK requirement. DNA and cellular mechanisms taught at A-level are assumed from day one at top UK institutions.</div>
+      <span class="bl-severity sev-full">UK: Fully blocked</span>
+    </div>
+    <div class="blocked-row">
+      <div class="bl-program">Computational Biology (UK)</div>
+      <div class="bl-why">UK programs expect Biology as entry knowledge for this discipline. Not applicable in the US, where CMU, Stanford, and MIT all teach biological core from scratch within the degree.</div>
+      <span class="bl-severity sev-full">UK: Fully blocked</span>
+    </div>
+    <div class="blocked-row">
+      <div class="bl-program">Neuroscience (UK top unis)</div>
+      <div class="bl-why">UCL, Edinburgh, Manchester prefer or require Biology A-level. Some UK universities (Bristol, Exeter) accept Chemistry as alternative — so not universally blocked, but top choices shrink.</div>
+      <span class="bl-severity sev-mostly">UK: Mostly blocked at top unis</span>
+    </div>
+    <div class="blocked-row">
+      <div class="bl-program">Bioinformatics UG (UK top unis)</div>
+      <div class="bl-why"><strong>Verified 2026:</strong> Edinburgh = MSc only. Manchester = MSc only. Imperial = MRes only. UCL = requires Biology at A*. Cambridge Biological NatSci = 98% take Biology. UG Bioinformatics at top UK universities is effectively closed without Biology A-level.</div>
+      <span class="bl-severity sev-full">UK: Blocked at top unis</span>
+    </div>
+  </div>
+  <p style="font-size:0.78rem; color:#475569; background:#1E293B; border:1px solid #334155; border-radius:8px; padding:12px 14px; line-height:1.6; margin-top:14px">
+    <strong style="color:#94A3B8">Bottom line:</strong> If Andrey targets <strong style="color:#4ADE80">US universities</strong>, Maths+FM+Physics+Chemistry blocks <strong style="color:#4ADE80">nothing</strong> relevant to Bioinformatics or Computational Biology. The restrictions above are specific to the UK admissions system and do not transfer to other countries.
+  </p>
+</div>
+
+
+
+<!-- ══ SECTION 6: US UNIVERSITIES (PRIMARY REFERENCE) ══ -->
+<div class="section">
+  <div class="section-label">Section 6 — ✅ Primary Reference: Bioinformatics &amp; Computational Biology at Top US Universities (ARWU)</div>
+  <div style="background:#0C2A1A;border:1px solid #16643A;border-left:4px solid #22C55E;border-radius:10px;padding:14px 18px;margin-bottom:16px">
+    <p style="color:#86EFAC;font-weight:700;font-size:0.85rem;margin-bottom:6px">US universities are the primary frame of reference for this analysis</p>
+    <p style="font-size:0.79rem;color:#4ADE80;margin:0">At top US universities, admission is based on overall academic strength (GPA, SAT/ACT, international equivalents like A-levels) — not on specific subject combinations. All prerequisite biology, chemistry, and physics is taught from scratch within the degree. Maths + FM + Physics + Chemistry is a <strong>strong profile</strong> for every program listed below.</p>
+  </div>
+  <p style="font-size:0.82rem;color:#94A3B8;margin-bottom:16px">Data verified from official university program pages, June 2026.</p>
+
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
+    <thead>
+      <tr style="border-bottom:2px solid #334155">
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em;width:130px">University</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">UG Bioinformatics / CompBio degree</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Biology prior requirement?</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Open with Maths+FM+Physics+Chem?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">MIT<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">ARWU #3</span></td>
+        <td style="padding:10px 12px;color:#94A3B8"><strong style="color:#E2E8F0">Course 6-7: Computer Science &amp; Molecular Biology</strong> — a joint BS from EECS + Biology departments. Curriculum covers biology, genetics, biochemistry, and CS algorithms for genomics. Described as "the emerging field of computational biology."</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — biology is taught from scratch within the degree. No prior Biology expected.</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Stanford<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">ARWU #2</span></td>
+        <td style="padding:10px 12px;color:#94A3B8"><strong style="color:#E2E8F0">BS Biomedical Computation</strong> — housed in the School of Engineering. Foundational courses in Math, Biology, Chemistry, Physics, and CS are all taken at university. Four tracks: Informatics, Simulation, Cellular/Molecular, Organs/Organ Systems. Mandatory supervised research.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — all foundational science (biology, chemistry, physics) is taught as part of the degree in years 1–2.</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">UC San Diego<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">ARWU #14</span></td>
+        <td style="padding:10px 12px;color:#94A3B8"><strong style="color:#E2E8F0">BS Bioinformatics (BI34)</strong> — one of the few true standalone UG Bioinformatics degrees at a top university worldwide. Also offered via CS Engineering and Bioengineering departments. Lower division includes Biology (BILD 1,3,4,5), Chemistry (6A,6B), Organic Chemistry (40A,40B), Maths, Physics, and CS — all taught at university level.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — all biology and chemistry prerequisites are first-year university courses, not high school requirements.</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Carnegie Mellon<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">ARWU ~25</span></td>
+        <td style="padding:10px 12px;color:#94A3B8"><strong style="color:#E2E8F0">BS Computational Biology</strong> — one of four majors in the School of Computer Science (alongside CS, AI, HCI). Strong CS foundation + biology taught at university (Honors Modern Biology, Genetics, Biochemistry, Cell Biology). Guaranteed undergraduate research for all students.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — all biological core (Modern Biology, Genomics, Biochemistry, Cell Biology) is taught within the degree in years 1–3.</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Harvard<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">ARWU #1</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">No standalone Bioinformatics BS. Students can pursue <strong style="color:#E2E8F0">Applied Mathematics or CS concentrations</strong> with biology/bioinformatics electives, or specialise via the Biomedical Informatics route at graduate level. Harvard's flexible concentration system allows substantial bioinformatics content without a dedicated degree.</td>
+        <td style="padding:10px 12px"><span style="color:#FBBF24;font-weight:700">Not required for relevant concentrations. Strong maths/CS background is the primary asset.</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="background:#0C2A1A;border:1px solid #16643A;border-radius:10px;padding:16px 18px">
+      <p style="color:#86EFAC;font-weight:700;font-size:0.84rem;margin-bottom:8px">✅ Key advantage of Maths+FM+Physics+Chem for US programs</p>
+      <p style="font-size:0.78rem;color:#4ADE80;margin:0">US Bioinformatics programs teach all biology from scratch. Chemistry A-level is actually directly useful — these programs include General Chemistry and Biochemistry in years 1–2. A student with strong Maths, Physics, and Chemistry is ideally prepared for the quantitative and chemical side of computational biology.</p>
+    </div>
+    <div style="background:#1A1A0C;border:1px solid #3D3010;border-radius:10px;padding:16px 18px">
+      <p style="color:#FDE68A;font-weight:700;font-size:0.84rem;margin-bottom:8px">⚠️ What US universities DO look for</p>
+      <p style="font-size:0.78rem;color:#FDE68A;margin:0">Strong GPA, SAT/ACT or international equivalent (A-levels), evidence of intellectual curiosity. For competitive programs like MIT 6-7 and Stanford BMC, extracurricular research, coding projects, or science competitions matter more than which specific science A-level was taken.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 4: BIOINFORMATICS vs COMP BIO ══ -->
+<div class="section">
+  <div class="section-label">Section 4 — Bioinformatics vs Computational Biology</div>
+  <div class="vs-grid">
+    <div class="vs-col bio-col">
+      <div class="vs-title bio-col">Bioinformatics</div>
+      <div class="vs-row"><div class="vs-attr">Core question</div><strong>How do we store, process, and extract meaning from biological data at scale?</strong></div>
+      <div class="vs-row"><div class="vs-attr">Primary tools</div>Python, R, databases, machine learning, sequence alignment algorithms</div>
+      <div class="vs-row"><div class="vs-attr">Typical work</div>Analysing genome sequences, building variant-calling pipelines, training ML models on protein data</div>
+      <div class="vs-row"><div class="vs-attr">Faculty home</div>Usually Computing, Informatics, or joint Schools</div>
+      <div class="vs-row"><div class="vs-attr">Entry profile</div>Maths/CS background; Biology taught from scratch</div>
+      <div class="vs-row"><div class="vs-attr">A-level req.</div>US: Maths + strong academics — <strong>no prior Biology needed</strong>. UK: Edinburgh/Manchester/Imperial have no UG program; UCL requires Biology.</div>
+      <div class="vs-row"><div class="vs-attr">Best for</div>Students who are data/CS-first and want to apply those skills to medicine and genomics</div>
+    </div>
+    <div class="vs-divider">vs</div>
+    <div class="vs-col cb-col">
+      <div class="vs-title cb-col">Computational Biology</div>
+      <div class="vs-row"><div class="vs-attr">Core question</div><strong>How do we build mathematical models that explain how biological systems behave?</strong></div>
+      <div class="vs-row"><div class="vs-attr">Primary tools</div>Differential equations, stochastic modelling, physics-based simulation, R/Python</div>
+      <div class="vs-row"><div class="vs-attr">Typical work</div>Modelling protein folding physics, simulating cell signalling networks, evolutionary dynamics</div>
+      <div class="vs-row"><div class="vs-attr">Faculty home</div>Usually Life Sciences, Biology, or Biosciences</div>
+      <div class="vs-row"><div class="vs-attr">Entry profile</div>Biology/chemistry background; maths taught alongside</div>
+      <div class="vs-row"><div class="vs-attr">A-level req.</div>US: No specific subject requirement — <strong>Biology taught within degree</strong>. UK: Biology expected; Chemistry alone often insufficient in the UK system.</div>
+      <div class="vs-row"><div class="vs-attr">Best for</div>Students who are biology-first and want to bring rigour and modelling into their science</div>
+    </div>
+  </div>
+
+  <div class="demand-callout">
+    <h3>📈 Bioinformatics is currently in significantly higher demand</h3>
+    <p>This is not a close call. The genomics revolution, AI drug discovery, and NHS digitalisation have all created acute demand for people who can handle biological data at scale — which is exactly the Bioinformatics skill set. Computational Biology, while intellectually deep, produces graduates aimed mainly at academic research, which is a narrower pipeline.</p>
+    <div class="demand-grid">
+      <div class="demand-card">
+        <div class="demand-num">~£35–45k</div>
+        <div class="demand-label">UK Bioinformatics graduate starting salary (vs ~£28–32k for Computational Biology)</div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">3–5×</div>
+        <div class="demand-label">More industry job postings for Bioinformatics vs Computational Biology roles</div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">$1.8T</div>
+        <div class="demand-label">Projected global genomics market by 2030 — the primary employer of Bioinformatics graduates</div>
+      </div>
+    </div>
+    <p style="margin-top:14px; font-size:0.8rem; color:#64748B">
+      Key employers actively hiring Bioinformatics graduates: Illumina · AstraZeneca · GSK · DeepMind Health · Recursion Pharmaceuticals · Wellcome Sanger Institute · NHS Genomic Medicine Service · Oxford Nanopore · dozens of VC-backed biotech startups. Computational Biology graduates mostly target academia (PhD → postdoc pathway) and the private sector options are narrower.
+    </p>
+  </div>
+</div>
+
+
+<!-- ══ SECTION 7: FRANCE — PARIS-SACLAY ══ -->
+<div class="section">
+  <div class="section-label">Section 7 — 🇫🇷 France: Paris-Saclay University (Verified)</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div style="background:#0A1A2C;border:1px solid #1E4A6E;border-left:4px solid #3B82F6;border-radius:10px;padding:16px 18px">
+      <p style="color:#93C5FD;font-weight:700;font-size:0.88rem;margin-bottom:8px">🏛️ What is Paris-Saclay?</p>
+      <p style="font-size:0.79rem;color:#60A5FA;margin:0 0 8px 0"><strong style="color:#93C5FD">ARWU #15 globally</strong> — significantly higher-ranked than most UK universities. Paris-Saclay is a university confederation that includes CentraleSupélec, ENS Paris-Saclay, AgroParisTech, Institut d'Optique, and several grandes écoles. For STEM it is world-class, particularly in mathematics, physics, and computational sciences.</p>
+      <p style="font-size:0.78rem;color:#475569;margin:0">One of only ~15 universities in the world ranked above all UK Russell Group institutions in the ARWU overall ranking.</p>
+    </div>
+    <div style="background:#0C2A1A;border:1px solid #16643A;border-left:4px solid #22C55E;border-radius:10px;padding:16px 18px">
+      <p style="color:#86EFAC;font-weight:700;font-size:0.88rem;margin-bottom:8px">✅ A-level equivalence: Chemistry combo is fine</p>
+      <p style="font-size:0.79rem;color:#4ADE80;margin:0 0 8px 0">France does not gatekeep university programs by specific high school subjects. British A-levels are accepted as equivalent to the French Baccalauréat. For STEM Licences (Maths, CS, Physics), <strong>Maths A-level is the key signal</strong> — Chemistry is a positive, Biology is not required at any stage of the UG pathway.</p>
+      <p style="font-size:0.78rem;color:#86EFAC;margin:0">The French system assesses overall academic profile, not subject-specific prerequisites. Maths+FM+Physics+Chemistry is an excellent profile.</p>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto;margin-bottom:20px">
+  <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
+    <thead>
+      <tr style="border-bottom:2px solid #334155">
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em;width:160px">Program / Route</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Structure</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Biology prior req?</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Language</th>
+        <th style="text-align:left;padding:10px 12px;color:#475569;font-size:0.7rem;text-transform:uppercase;letter-spacing:.05em">Open with Maths+FM+Physics+Chem?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Licence Informatique<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">(CS Bachelor, 3 years)</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">Undergraduate degree in Computer Science. Primary feeder into the Master Bioinformatics for CS-background students.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — Maths is the core requirement. No biology.</span></td>
+        <td style="padding:10px 12px;color:#FBBF24">French</td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Licence Mathématiques<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">(Maths Bachelor, 3 years)</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">Undergraduate degree in Mathematics. Also a strong feeder into the M1 BIBS-IA Bioinformatics track (accepts pure Maths backgrounds with remedial bridging).</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — pure mathematics track.</span></td>
+        <td style="padding:10px 12px;color:#FBBF24">French</td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Master Bioinformatics — M1 BIBS-IA<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">(after Licence, 1 year)</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">Accepts students from <strong style="color:#E2E8F0">single-discipline</strong> backgrounds: Biology alone, Maths alone, OR CS alone. Built-in remedial bridging courses make it accessible to students with no prior biology. This is the key entry point for Maths/CS-background students.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — biology is taught within the Master. Maths or CS background alone is accepted.</span></td>
+        <td style="padding:10px 12px;color:#FBBF24">French</td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">Master Bioinformatics — M1 GENIOMHE-AI<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">(after Licence, 1 year)</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">Prefers students with <strong style="color:#E2E8F0">multidisciplinary</strong> profile (Maths/CS + some biology exposure). More competitive than BIBS-IA. Leads to M2 GENIOMHE-AI which covers Genomics, AI, and Mathematical modelling.</td>
+        <td style="padding:10px 12px"><span style="color:#FBBF24;font-weight:700">Preferred but not mandatory — maths/CS profile with some biology exposure. Strong Maths still acceptable.</span></td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80">English</span></td>
+        <td style="padding:10px 12px"><span style="background:#FBBF2422;color:#FBBF24;border:1px solid #FBBF2444;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">⚠️ Partial</span></td>
+      </tr>
+      <tr style="border-bottom:1px solid #1E293B">
+        <td style="padding:10px 12px;color:#F1F5F9;font-weight:700">CentraleSupélec International Class<br><span style="font-size:0.7rem;color:#64748B;font-weight:400">(engineering entry, 1 prep year)</span></td>
+        <td style="padding:10px 12px;color:#94A3B8">Dedicated pathway for non-French students directly into Paris-Saclay's engineering track via CentraleSupélec. Designed to bridge the French grandes écoles system for international students. Strong quantitative profile required.</td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80;font-weight:700">No — engineering / maths / physics focused.</span></td>
+        <td style="padding:10px 12px"><span style="color:#4ADE80">English / French</span></td>
+        <td style="padding:10px 12px"><span style="background:#4ADE8022;color:#4ADE80;border:1px solid #4ADE8044;border-radius:6px;padding:2px 8px;font-weight:700;font-size:0.72rem">✅ Yes</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="background:#0C2A1A;border:1px solid #16643A;border-radius:10px;padding:14px 16px">
+      <p style="color:#86EFAC;font-weight:700;font-size:0.82rem;margin-bottom:6px">✅ Bottom line: same picture as US</p>
+      <p style="font-size:0.78rem;color:#4ADE80;margin:0">Maths+FM+Physics+Chemistry blocks nothing in the Paris-Saclay Bioinformatics pathway. The route is Licence (Maths or CS, 3 years) → Master Bioinformatics M1 BIBS-IA (accepts pure Maths/CS background, biology taught from scratch). The French system assesses overall academic strength — no specific A-level subject gates.</p>
+    </div>
+    <div style="background:#1A1A0C;border:1px solid #3D3010;border-radius:10px;padding:14px 16px">
+      <p style="color:#FDE68A;font-weight:700;font-size:0.82rem;margin-bottom:6px">⚠️ Practical consideration: French language</p>
+      <p style="font-size:0.78rem;color:#FDE68A;margin:0">Most UG Licences are taught in French (B2–C1 required). The GENIOMHE-AI Master's track and CentraleSupélec International Class are available in English. For Andrey: French language proficiency is the real barrier, not A-level subject choice. If French is not planned, the UG route is still viable via CentraleSupélec's international program.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;background:#0C1929;border:1px solid #1E4A6E;border-radius:8px;padding:12px 16px;font-size:0.77rem;color:#64748B">
+    🇨🇳 <strong style="color:#475569">Chinese universities (Tsinghua, Peking, Fudan, SJTU, Zhejiang)</strong> — to be verified separately. Expected finding: similar to US/France — no specific high school biology prerequisite for STEM programs; Maths+Physics+Chemistry A-level profile is well-regarded.
+  </div>
+</div>
+
+</body>
+</html>

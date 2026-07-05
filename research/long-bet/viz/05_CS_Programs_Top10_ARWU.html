@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Programs – Top 10 ARWU Universities</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0F172A; color: #E2E8F0; min-height: 100vh; }
+
+  /* HEADER */
+  .page-header { background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); border-bottom: 2px solid #334155; padding: 28px 32px 24px; }
+  .page-header h1 { font-size: 22px; font-weight: 700; color: #F1F5F9; letter-spacing: -0.3px; }
+  .page-header p { font-size: 13px; color: #94A3B8; margin-top: 6px; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 4px; padding: 16px 32px 0; background: #0F172A; border-bottom: 1px solid #1E293B; overflow-x: auto; }
+  .tab { padding: 10px 18px; border-radius: 8px 8px 0 0; font-size: 13px; font-weight: 600; color: #64748B; cursor: pointer; white-space: nowrap; border: 1px solid transparent; border-bottom: none; transition: all 0.15s; }
+  .tab:hover { color: #CBD5E1; background: #1E293B; }
+  .tab.active { color: #38BDF8; background: #1E293B; border-color: #334155; border-bottom: 2px solid #1E293B; }
+
+  /* CONTENT */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .content-wrap { padding: 28px 32px; }
+
+  /* OVERVIEW TAB */
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+  .uni-card { background: #1E293B; border: 1px solid #334155; border-radius: 12px; overflow: hidden; }
+  .uni-card-header { padding: 16px 20px 12px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 12px; }
+  .rank-badge { background: #0F172A; border: 1px solid #38BDF8; color: #38BDF8; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; min-width: 36px; text-align: center; flex-shrink: 0; }
+  .uni-name { font-size: 14px; font-weight: 700; color: #F1F5F9; line-height: 1.3; }
+  .uni-meta { font-size: 11px; color: #64748B; margin-top: 2px; }
+  .uni-card-body { padding: 14px 20px; }
+  .degree-label { font-size: 11px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .degree-value { font-size: 13px; color: #CBD5E1; margin-bottom: 12px; }
+  .strong-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .strong-tag { background: #0F4C81; border: 1px solid #1D6FA4; color: #7DD3FC; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  .strong-tag.theory { background: #3B1F6B; border-color: #6D4BB0; color: #C4B5FD; }
+  .strong-tag.systems { background: #1F3D3B; border-color: #2F6B67; color: #5EEAD4; }
+  .strong-tag.ai { background: #1F2D4A; border-color: #2B4B80; color: #93C5FD; }
+  .strong-tag.bio { background: #1A2E1A; border-color: #2E5F2E; color: #86EFAC; }
+  .source-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; padding: 2px 7px; border-radius: 4px; margin-top: 10px; }
+  .source-chip.checked { background: #14532D; color: #4ADE80; border: 1px solid #16A34A; }
+  .source-chip.estimated { background: #1C1917; color: #FCD34D; border: 1px solid #D97706; }
+
+  /* DETAIL TABS */
+  .detail-section { margin-bottom: 28px; }
+  .detail-section h3 { font-size: 13px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 12px; border-bottom: 1px solid #1E293B; padding-bottom: 8px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+  .detail-card { background: #1E293B; border: 1px solid #334155; border-radius: 10px; padding: 16px 18px; }
+  .detail-card h4 { font-size: 12px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .detail-card ul { list-style: none; }
+  .detail-card ul li { font-size: 13px; color: #CBD5E1; padding: 4px 0; padding-left: 14px; position: relative; line-height: 1.4; border-bottom: 1px solid #0F172A; }
+  .detail-card ul li:last-child { border-bottom: none; }
+  .detail-card ul li::before { content: "›"; position: absolute; left: 0; color: #38BDF8; font-weight: 700; }
+  .course-code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; color: #FBBF24; margin-right: 4px; }
+  .special-li::before { color: #A78BFA !important; }
+  .uni-header-bar { background: #1E293B; border: 1px solid #334155; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+  .uni-header-bar .rank-big { font-size: 28px; font-weight: 900; color: #38BDF8; line-height: 1; }
+  .uni-header-bar .info { flex: 1; }
+  .uni-header-bar .info h2 { font-size: 18px; font-weight: 700; color: #F1F5F9; }
+  .uni-header-bar .info p { font-size: 12px; color: #64748B; margin-top: 2px; }
+  .uni-select { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .uni-btn { padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid #334155; background: #1E293B; color: #94A3B8; transition: all 0.15s; }
+  .uni-btn:hover { background: #334155; color: #CBD5E1; }
+  .uni-btn.active { background: #0F4C81; border-color: #1D6FA4; color: #7DD3FC; }
+
+  /* COMPARISON TAB */
+  .comp-table-wrap { overflow-x: auto; }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .comp-table th { background: #1E293B; color: #94A3B8; font-weight: 700; padding: 10px 12px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 2px solid #334155; white-space: nowrap; }
+  .comp-table th.uni-th { writing-mode: vertical-rl; text-orientation: mixed; height: 120px; vertical-align: bottom; min-width: 80px; font-size: 10px; padding: 6px 4px; }
+  .comp-table td { padding: 8px 12px; border-bottom: 1px solid #1E293B; color: #CBD5E1; vertical-align: middle; }
+  .comp-table td.topic-cell { font-weight: 600; color: #E2E8F0; background: #1E293B; position: sticky; left: 0; z-index: 1; white-space: normal; width: 160px; }
+  .comp-table tr:hover td { background: #1A2540; }
+  .comp-table tr:hover td.topic-cell { background: #243056; }
+  .check-yes { color: #4ADE80; font-size: 16px; text-align: center; }
+  .check-no { color: #475569; font-size: 16px; text-align: center; }
+  .check-part { color: #FBBF24; font-size: 16px; text-align: center; }
+
+  /* SOURCES */
+  .sources-bar { padding: 12px 32px 14px; font-size: 12px; color: #64748B; line-height: 1.8; border-top: 1px solid #1E293B; background: #0F172A; margin-top: 0; }
+  .sources-bar .sources-label { font-weight: 700; color: #94A3B8; margin-right: 6px; }
+  .sources-bar a { color: #38BDF8; text-decoration: none; }
+  .sources-bar a:hover { text-decoration: underline; }
+  .sources-bar em { color: #FCD34D; font-style: normal; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Computer Science Programmes — Top 10 ARWU Universities</h1>
+  <p>Curriculum structure, core courses, and elective tracks · ARWU 2025 ranking · Generated June 2026</p>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('overview')">Overview</div>
+  <div class="tab" onclick="switchTab('detail')">Programme Detail</div>
+  <div class="tab" onclick="switchTab('comparison')">Topic Comparison</div>
+  <div class="tab" onclick="switchTab('careers')">Career Paths</div>
+</div>
+
+<!-- TAB 1: OVERVIEW -->
+<div id="tab-overview" class="tab-content active">
+  <div class="content-wrap">
+    <div class="overview-grid">
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#1</div>
+          <div>
+            <div class="uni-name">Harvard University</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">A.B. in Computer Science</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ">Economics & Computation</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#2</div>
+          <div>
+            <div class="uni-name">Stanford University</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">B.S. in Computer Science</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag ai">AI/ML</span> <span class="strong-tag ai">HCI</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag bio">Biocomputation</span></div>
+          <div><span class="source-chip estimated">~ Training knowledge</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#3</div>
+          <div>
+            <div class="uni-name">MIT</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years (+ optional MEng)</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">S.B. in Computer Science & Engineering (Course 6-3)</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag ai">AI/ML</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag ">Robotics</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#4</div>
+          <div>
+            <div class="uni-name">University of Cambridge</div>
+            <div class="uni-meta">UK &nbsp;·&nbsp; 3 years BA / 4 years MEng</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">BA (Hons) + optional MEng</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ai">AI</span> <span class="strong-tag ">Compiler Design</span> <span class="strong-tag ">Quantum Computing</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#5</div>
+          <div>
+            <div class="uni-name">UC Berkeley</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">B.S. in EECS or B.A./B.S. in CS</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag systems">Systems</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Architecture</span> <span class="strong-tag ">Security</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#6</div>
+          <div>
+            <div class="uni-name">University of Oxford</div>
+            <div class="uni-meta">UK &nbsp;·&nbsp; 3 years BA / 4 years MCompSci</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">BA (Hons) / MCompSci</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Formal Methods</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag ai">AI</span> <span class="strong-tag ">Security</span> <span class="strong-tag ">Quantum Computing</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#7</div>
+          <div>
+            <div class="uni-name">Princeton University</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">A.B. or B.S.E. in Computer Science</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ">Security</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag ai">NLP</span></div>
+          <div><span class="source-chip estimated">~ Training knowledge</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#8</div>
+          <div>
+            <div class="uni-name">Caltech</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">B.S. in Computer Science</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag theory">Algorithms</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag ">ML</span> <span class="strong-tag ">Robotics</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#9</div>
+          <div>
+            <div class="uni-name">Columbia University</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">B.S. in CS (SEAS) or B.A. in CS (CC/GS)</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag ai">ML/AI</span> <span class="strong-tag ai">NLP</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag theory">Theory</span></div>
+          <div><span class="source-chip checked">✓ Checked</span></div>
+        </div>
+      </div>
+
+      <div class="uni-card">
+        <div class="uni-card-header">
+          <div class="rank-badge">#10</div>
+          <div>
+            <div class="uni-name">University of Chicago</div>
+            <div class="uni-meta">USA &nbsp;·&nbsp; 4 years</div>
+          </div>
+        </div>
+        <div class="uni-card-body">
+          <div class="degree-label">Degree</div>
+          <div class="degree-value">B.S. in Computer Science</div>
+          <div class="degree-label">Strong Areas</div>
+          <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag theory">Algorithms</span> <span class="strong-tag ">ML</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag theory">PL</span></div>
+          <div><span class="source-chip estimated">~ Training knowledge</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: DETAIL -->
+<div id="tab-detail" class="tab-content">
+  <div class="content-wrap">
+    <div class="uni-select" id="uni-select">
+      <button class="uni-btn active" onclick="selectUni(0)" id="unibtn-0">#1 Harvard</button>
+      <button class="uni-btn" onclick="selectUni(1)" id="unibtn-1">#2 Stanford</button>
+      <button class="uni-btn" onclick="selectUni(2)" id="unibtn-2">#3 MIT</button>
+      <button class="uni-btn" onclick="selectUni(3)" id="unibtn-3">#4 University</button>
+      <button class="uni-btn" onclick="selectUni(4)" id="unibtn-4">#5 Berkeley</button>
+      <button class="uni-btn" onclick="selectUni(5)" id="unibtn-5">#6 University</button>
+      <button class="uni-btn" onclick="selectUni(6)" id="unibtn-6">#7 Princeton</button>
+      <button class="uni-btn" onclick="selectUni(7)" id="unibtn-7">#8 Caltech</button>
+      <button class="uni-btn" onclick="selectUni(8)" id="unibtn-8">#9 Columbia</button>
+      <button class="uni-btn" onclick="selectUni(9)" id="unibtn-9">#10 University</button>
+    </div>
+
+    <div id="uni-detail-0" style="display:block">
+      <div class="uni-header-bar">
+        <div class="rank-big">#1</div>
+        <div class="info">
+          <h2>Harvard University</h2>
+          <p>A.B. in Computer Science &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ">Economics & Computation</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Programming (Intro + Software Engineering)</li><li>Formal Reasoning (Discrete Math, Theory of Computation, Algorithms)</li><li>Systems</li><li>Computation & the World (AI/ethics/social impact)</li><li>Advanced CS Electives (4 courses, 1000-level+)</li><li>Mathematics: Calculus, Linear Algebra, Probability</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>CS 50 – Introduction to Computer Science</li><li><span class="course-code">&gt;</span>CS 51 – Abstraction and Design in Computation</li><li><span class="course-code">&gt;</span>CS 20 – Discrete Mathematics for CS</li><li><span class="course-code">&gt;</span>CS 121 – Introduction to Theoretical CS</li><li><span class="course-code">&gt;</span>CS 61 – Systems Programming and Machine Organization</li><li><span class="course-code">&gt;</span>Stat 110 – Probability</li><li><span class="course-code">&gt;</span>Math 21b – Linear Algebra</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Artificial Intelligence & Machine Learning</li><li>Computer Graphics & Vision</li><li>Computational Neuroscience (MBB track)</li><li>Human–Computer Interaction</li><li>Natural Language Processing</li><li>Theory of Computation</li><li>Security & Privacy</li><li>Economics & Computation</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Liberal arts A.B. degree (not engineering)</li><li class="special-li">Mind, Brain & Behavior (MBB) interdisciplinary track</li><li class="special-li">Joint concentrations with Math, Statistics, Linguistics, Economics etc.</li><li class="special-li">Senior thesis optional (required for highest honors)</li><li class="special-li">Cross-registration with MIT possible</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://csadvising.seas.harvard.edu/concentration/requirements/" target="_blank" style="color:#38BDF8">https://csadvising.seas.harvard.edu/concentration/requirements/</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-1" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#2</div>
+        <div class="info">
+          <h2>Stanford University</h2>
+          <p>B.S. in Computer Science &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip estimated" style="display:inline-flex">~ Training knowledge</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag ai">AI/ML</span> <span class="strong-tag ai">HCI</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag bio">Biocomputation</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Programming Methodology (CS 106A/B)</li><li>Computer Organization & Systems (CS 107)</li><li>Algorithms (CS 161)</li><li>Operating Systems / Principles (CS 110)</li><li>Discrete Mathematics (CS 103)</li><li>Probability for CS (CS 109)</li><li>Mathematics: Calculus + Linear Algebra (Math 51)</li><li>5 Breadth areas (one course each)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>CS 106B – Programming Abstractions (C++)</li><li><span class="course-code">&gt;</span>CS 103 – Mathematical Foundations of Computing</li><li><span class="course-code">&gt;</span>CS 107 – Computer Organization and Systems</li><li><span class="course-code">&gt;</span>CS 109 – Probability for Computer Scientists</li><li><span class="course-code">&gt;</span>CS 110 – Principles of Computer Systems</li><li><span class="course-code">&gt;</span>CS 161 – Design and Analysis of Algorithms</li><li><span class="course-code">&gt;</span>Math 51 – Linear Algebra, Multivariable Calculus</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>AI / Machine Learning (depth track)</li><li>Biocomputation</li><li>Computer Engineering</li><li>Graphics & Human–Computer Interaction</li><li>Information & Society</li><li>Systems</li><li>Theory</li><li>Unspecialized</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">5 breadth requirements covering: Math/Theory, Scientific Computing, Engineering Fundamentals, AI, Social/Ethical Issues</li><li class="special-li">One focused depth track (specialisation) required</li><li class="special-li">Senior project / capstone required</li><li class="special-li">AI & Human-Computer Interaction world-renowned</li><li class="special-li">Strong startup & industry ecosystem (Silicon Valley)</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://cs.stanford.edu/academics/undergraduate" target="_blank" style="color:#38BDF8">https://cs.stanford.edu/academics/undergraduate</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-2" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#3</div>
+        <div class="info">
+          <h2>MIT</h2>
+          <p>S.B. in Computer Science & Engineering (Course 6-3) &nbsp;·&nbsp; 4 years (+ optional MEng) &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag ai">AI/ML</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag ">Robotics</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Computation & Fundamentals (Python, algorithms)</li><li>Mathematics (Calculus 18.01/02, Linear Algebra 18.06, Probability 6.3700)</li><li>Software Engineering (6.1020)</li><li>Computer Systems (6.1800 – Networks, OS)</li><li>Theory of Computation</li><li>Breadth: choose from 6 CS areas</li><li>Unrestricted CS electives</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>6.100A – Introduction to CS Programming (Python)</li><li><span class="course-code">&gt;</span>6.1010 – Fundamentals of Programming</li><li><span class="course-code">&gt;</span>6.1020 – Software Construction</li><li><span class="course-code">&gt;</span>6.1210 – Introduction to Algorithms</li><li><span class="course-code">&gt;</span>6.1800 – Computer Systems Engineering</li><li><span class="course-code">&gt;</span>6.3700 – Introduction to Probability</li><li><span class="course-code">&gt;</span>18.06 – Linear Algebra</li><li><span class="course-code">&gt;</span>18.01/02 – Calculus</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Algorithms & Theory (6.1220, 6.5210…)</li><li>Artificial Intelligence (6.3900, 6.4100…)</li><li>Computational Science & Engineering</li><li>Computer Architecture (6.1910…)</li><li>Graphics & Vision (6.4300…)</li><li>HCI (6.4510…)</li><li>Programming Languages & Software Engineering</li><li>Security & Cryptography (6.5610…)</li><li>Systems & Networks (6.1810, 6.5830…)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Engineering degree (S.B.) – combines CS + EE foundation</li><li class="special-li">Also offers: 6-4 AI & Decision Making, 6-7 CS & Molecular Biology, 6-9 Computation & Cognition, 6-14 CS Economics & Data Science</li><li class="special-li">Integrated MEng (5-year BS + Masters) available</li><li class="special-li">UROP undergraduate research opportunities every semester</li><li class="special-li">World-leading in CS systems, AI, theory, robotics</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/" target="_blank" style="color:#38BDF8">https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-3" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#4</div>
+        <div class="info">
+          <h2>University of Cambridge</h2>
+          <p>BA (Hons) + optional MEng &nbsp;·&nbsp; 3 years BA / 4 years MEng &nbsp;·&nbsp; UK &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ai">AI</span> <span class="strong-tag ">Compiler Design</span> <span class="strong-tag ">Quantum Computing</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Year 1: Discrete + Continuous Mathematics, Functional Programming (OCaml/Haskell), OOP, OS, Hardware, ML intro</li><li>Year 2: Logic & Proof, Computation Theory, Computer Architecture, Networking, Compiler Construction, Language Design, HCI, AI + group project</li><li>Year 3: Electives from extensive list + dissertation (10–12k words)</li><li>Year 4 (MEng): Advanced topics + substantial research project</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>Discrete & Continuous Mathematics</li><li><span class="course-code">&gt;</span>Functional Programming (Haskell/OCaml)</li><li><span class="course-code">&gt;</span>Object-Oriented Programming (Java)</li><li><span class="course-code">&gt;</span>Operating Systems</li><li><span class="course-code">&gt;</span>Computer Architecture</li><li><span class="course-code">&gt;</span>Logic & Proof</li><li><span class="course-code">&gt;</span>Computation Theory</li><li><span class="course-code">&gt;</span>Compiler Construction</li><li><span class="course-code">&gt;</span>Artificial Intelligence</li><li><span class="course-code">&gt;</span>Human–Computer Interaction</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Bioinformatics & Natural Language Processing</li><li>Computer Architecture</li><li>Data Science</li><li>Robotics</li><li>Computer Vision</li><li>Security</li><li>Quantum Computing</li><li>Advanced AI</li><li>Distributed Systems</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">First CS department in the UK (est. 1937); Alan Turing heritage</li><li class="special-li">Programming taught in OCaml (functional-first approach)</li><li class="special-li">Year 3 dissertation is major individual project</li><li class="special-li">Supervision system (small-group teaching)</li><li class="special-li">Access to 1000+ tech companies in 'Silicon Fen' (Cambridge area)</li><li class="special-li">A*A*A entry requirement + TMUA test; 97% of entrants took Further Maths</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science-ba-hons-meng" target="_blank" style="color:#38BDF8">https://www.undergraduate.study.cam.ac.uk/courses/computer-science-ba-hons-meng</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-4" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#5</div>
+        <div class="info">
+          <h2>UC Berkeley</h2>
+          <p>B.S. in EECS or B.A./B.S. in CS &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag systems">Systems</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Architecture</span> <span class="strong-tag ">Security</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Data Structures (CS 61B)</li><li>Machine Structures / Architecture (CS 61C)</li><li>Discrete Mathematics (CS 70)</li><li>Algorithms (CS 170)</li><li>Operating Systems (CS 162)</li><li>Mathematics: Calculus (Math 1A/B), Linear Algebra (Math 54), Probability (CS 70 / EECS 126)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>CS 61A – Structure & Interpretation of Computer Programs (Python/Scheme)</li><li><span class="course-code">&gt;</span>CS 61B – Data Structures</li><li><span class="course-code">&gt;</span>CS 61C – Great Ideas in Computer Architecture</li><li><span class="course-code">&gt;</span>CS 70 – Discrete Mathematics and Probability Theory</li><li><span class="course-code">&gt;</span>CS 170 – Efficient Algorithms and Intractable Problems</li><li><span class="course-code">&gt;</span>CS 162 – Operating Systems</li><li><span class="course-code">&gt;</span>EECS 126 – Probability and Random Processes</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>AI / Machine Learning (CS 188, CS 189)</li><li>Computer Architecture (CS 152, CS 252)</li><li>Cryptography & Security (CS 161, CS 171)</li><li>Database Systems (CS 186)</li><li>Distributed Systems (CS 262)</li><li>Graphics (CS 184)</li><li>Natural Language Processing (CS 288)</li><li>Networking (CS 168)</li><li>Programming Languages (CS 164)</li><li>Theory (CS 172, CS 174, CS 278)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">EECS (Electrical Engineering + CS) combined programme is most prestigious; pure CS also available</li><li class="special-li">CS 61A is famously rigorous intro course (covers Python, Scheme, SQL)</li><li class="special-li">Public university with huge research output</li><li class="special-li">Strong alumni: Intel, Apple, Sun Microsystems, Netflix co-founders</li><li class="special-li">ACM ICPC teams regularly competitive</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www2.eecs.berkeley.edu/Courses/CS/" target="_blank" style="color:#38BDF8">https://www2.eecs.berkeley.edu/Courses/CS/</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-5" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#6</div>
+        <div class="info">
+          <h2>University of Oxford</h2>
+          <p>BA (Hons) / MCompSci &nbsp;·&nbsp; 3 years BA / 4 years MCompSci &nbsp;·&nbsp; UK &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Formal Methods</span> <span class="strong-tag theory">Theory</span> <span class="strong-tag ai">AI</span> <span class="strong-tag ">Security</span> <span class="strong-tag ">Quantum Computing</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Year 1 (Core 1, 100%): Functional Programming (Haskell), Algorithms & Data Structures, Imperative Programming (Java/OOP), Digital Systems (hardware), Linear Algebra, Continuous Mathematics, Discrete Mathematics, Proof Systems, Probability</li><li>Year 2 (Core 2 50% + Options 50%): Further CS theory + first optional topics + group project</li><li>Year 3 (Options 75–100% + optional project): specialist electives</li><li>Year 4 (MCompSci): Advanced options (62%) + research project (38%)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>Functional Programming (Haskell)</li><li><span class="course-code">&gt;</span>Design & Analysis of Algorithms</li><li><span class="course-code">&gt;</span>Imperative Programming (Java, OOP, Design Patterns)</li><li><span class="course-code">&gt;</span>Digital Systems (transistors → processor design)</li><li><span class="course-code">&gt;</span>Linear Algebra</li><li><span class="course-code">&gt;</span>Discrete Mathematics</li><li><span class="course-code">&gt;</span>Introduction to Proof Systems (logic, resolution)</li><li><span class="course-code">&gt;</span>Probability</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Advanced Algorithms</li><li>Artificial Intelligence</li><li>Computational Complexity</li><li>Computer Architecture</li><li>Computer Graphics</li><li>Computer Networks</li><li>Computer Security</li><li>Databases</li><li>Formal Verification</li><li>Machine Learning</li><li>Models of Computation</li><li>Quantum Computer Science</li><li>Software Engineering</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Functional-first (Haskell in Year 1) — rare among top universities</li><li class="special-li">Very strong emphasis on formal methods & mathematical proof</li><li class="special-li">Tutorial system (1-on-1 or small group teaching with experts)</li><li class="special-li">Also offers: Maths & CS, CS & Philosophy joint degrees</li><li class="special-li">Year 3 is almost entirely elective-driven</li><li class="special-li">Entry: A*A*A, Mathematics required, Further Maths highly recommended; MAT test</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www.cs.ox.ac.uk/admissions/undergraduate/courses/cs.html" target="_blank" style="color:#38BDF8">https://www.cs.ox.ac.uk/admissions/undergraduate/courses/cs.html</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-6" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#7</div>
+        <div class="info">
+          <h2>Princeton University</h2>
+          <p>A.B. or B.S.E. in Computer Science &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip estimated" style="display:inline-flex">~ Training knowledge</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag ">Security</span> <span class="strong-tag ai">AI/ML</span> <span class="strong-tag ai">NLP</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Introduction to CS (COS 126)</li><li>Data Structures & Algorithms (COS 226)</li><li>Computer Systems (COS 217)</li><li>Theory of Computation (COS 340)</li><li>Reasoning about Computation (COS 255 or similar)</li><li>Mathematics: Multivariable Calculus, Linear Algebra, Probability</li><li>Senior Independent Work (two semesters)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>COS 126 – General Computer Science</li><li><span class="course-code">&gt;</span>COS 217 – Introduction to Programming Systems (C)</li><li><span class="course-code">&gt;</span>COS 226 – Algorithms & Data Structures (Java)</li><li><span class="course-code">&gt;</span>COS 240 – Reasoning about Computation</li><li><span class="course-code">&gt;</span>COS 318 – Operating Systems</li><li><span class="course-code">&gt;</span>COS 340 – Reasoning about Computation / Theory</li><li><span class="course-code">&gt;</span>COS 423 – Theory of Algorithms</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Artificial Intelligence & Machine Learning</li><li>Computer Systems</li><li>Natural Language Processing</li><li>Robotics & Autonomous Vehicles</li><li>Security & Privacy</li><li>Theory & Algorithms</li><li>Vision & Graphics</li><li>Web Applications</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Two tracks: A.B. (liberal arts, fewer courses) and B.S.E. (engineering, more required)</li><li class="special-li">Mandatory senior thesis (Independent Work) — two full semesters</li><li class="special-li">Strong theory and systems departments</li><li class="special-li">Small cohort (~100–130 students per year)</li><li class="special-li">Research-oriented; many undergrads publish papers</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www.cs.princeton.edu/academics/ugradpgm" target="_blank" style="color:#38BDF8">https://www.cs.princeton.edu/academics/ugradpgm</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-7" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#8</div>
+        <div class="info">
+          <h2>Caltech</h2>
+          <p>B.S. in Computer Science &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag theory">Algorithms</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag ">ML</span> <span class="strong-tag ">Robotics</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Programming Principles (CS 1, CS 2)</li><li>Algorithms & Complexity (CS 38, CS 21)</li><li>Computing Systems (CS 24)</li><li>Mathematics: Ma 1 Calculus, Ma 2 Differential Equations, Ma 3 Probability, Linear Algebra</li><li>Core CS electives (breadth)</li><li>Capstone project (independent research)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>CS 1 – Introduction to CS (Python)</li><li><span class="course-code">&gt;</span>CS 2 – Intro to Programming Methods</li><li><span class="course-code">&gt;</span>CS 21 – Decidability and Tractability</li><li><span class="course-code">&gt;</span>CS 24 – Introduction to Computing Systems</li><li><span class="course-code">&gt;</span>CS 38 – Introduction to Algorithms</li><li><span class="course-code">&gt;</span>Ma 1abc – Calculus of One and Several Variables</li><li><span class="course-code">&gt;</span>Ma 3 – Introduction to Probability</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Algorithms & Theory</li><li>Computational Biology</li><li>Distributed Systems & Networking</li><li>Graphics & Geometry</li><li>Machine Learning</li><li>Robotics & Autonomous Systems</li><li>Security</li><li>Theoretical Computer Science</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Very small cohort (~25–30 CS students per year) — high faculty-to-student ratio</li><li class="special-li">Heavy mathematics foundation (Caltech Core: Ma 1abc, Ph 1abc mandatory for all students)</li><li class="special-li">All Caltech students take a common core including Physics, Chemistry, Biology, Math in Year 1–2</li><li class="special-li">Tracks: Networking, Distributed Systems, Robotics, ML, Graphics, Databases</li><li class="special-li">Research through SURF (Summer Undergraduate Research Fellowships)</li><li class="special-li">Capstone project required — often tied to faculty research</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www.cms.caltech.edu/academics/ugrad/ugrad_cs" target="_blank" style="color:#38BDF8">https://www.cms.caltech.edu/academics/ugrad/ugrad_cs</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-8" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#9</div>
+        <div class="info">
+          <h2>Columbia University</h2>
+          <p>B.S. in CS (SEAS) or B.A. in CS (CC/GS) &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip checked" style="display:inline-flex">✓ Checked</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag ai">ML/AI</span> <span class="strong-tag ai">NLP</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag systems">Systems</span> <span class="strong-tag theory">Theory</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Intro to CS & Programming in Java (COMS 1004)</li><li>Data Structures (COMS 3134/3137)</li><li>Advanced Programming (COMS 3157)</li><li>Discrete Mathematics (COMS 3203)</li><li>Computer Systems Fundamentals (CSEE 3827)</li><li>CS Theory (COMS 3261)</li><li>Linear Algebra or Probability/Statistics</li><li>CS electives (3000/4000 level)</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>COMS 1004 – Intro to Computer Science & Programming in Java</li><li><span class="course-code">&gt;</span>COMS 3134 – Data Structures in Java</li><li><span class="course-code">&gt;</span>COMS 3157 – Advanced Programming (C, Unix)</li><li><span class="course-code">&gt;</span>COMS 3203 – Discrete Mathematics</li><li><span class="course-code">&gt;</span>COMS 3261 – Computer Science Theory</li><li><span class="course-code">&gt;</span>CSEE 3827 – Fundamentals of Computer Systems</li><li><span class="course-code">&gt;</span>COMS 4701 – Artificial Intelligence</li><li><span class="course-code">&gt;</span>COMS 4731 – Computer Vision</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Artificial Intelligence</li><li>Computational Biology</li><li>Computer Graphics & UI</li><li>Database Systems</li><li>Machine Learning</li><li>Natural Language Processing & Speech</li><li>Networking</li><li>Security & Privacy</li><li>Software Systems</li><li>Theory</li><li>Vision & Robotics</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Two degree streams: BS (SEAS — engineering focused) and BA (Columbia College — liberal arts)</li><li class="special-li">Also offers: BS Computer Engineering, BA Data Science, BA Information Science, BA CS & Mathematics, BA Computational Biology</li><li class="special-li">Located in New York City — strong industry connections</li><li class="special-li">Research areas include Computational Biology as a standalone major</li><li class="special-li">Dual MS in Journalism + CS available</li><li class="special-li">AI minor available</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://www.cs.columbia.edu/education/undergraduate/" target="_blank" style="color:#38BDF8">https://www.cs.columbia.edu/education/undergraduate/</a>
+      </div>
+    </div>
+
+    <div id="uni-detail-9" style="display:none">
+      <div class="uni-header-bar">
+        <div class="rank-big">#10</div>
+        <div class="info">
+          <h2>University of Chicago</h2>
+          <p>B.S. in Computer Science &nbsp;·&nbsp; 4 years &nbsp;·&nbsp; USA &nbsp;·&nbsp; <span class="source-chip estimated" style="display:inline-flex">~ Training knowledge</span></p>
+        </div>
+        <div class="strong-tags"><span class="strong-tag theory">Theory</span> <span class="strong-tag theory">Algorithms</span> <span class="strong-tag ">ML</span> <span class="strong-tag bio">Computational Biology</span> <span class="strong-tag theory">PL</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="detail-card">
+          <h4>Core Curriculum Areas</h4>
+          <ul><li>Introduction to CS (CMSC 15100 or 16100)</li><li>Data Structures (CMSC 15200 or 16200)</li><li>Discrete Mathematics (CMSC 27000)</li><li>Theory of Algorithms (CMSC 27100/27200)</li><li>Computer Systems (CMSC 23000)</li><li>Theory of Computation (CMSC 28100)</li><li>Mathematics: Calculus, Linear Algebra, Probability</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Key / Representative Courses</h4>
+          <ul><li><span class="course-code">&gt;</span>CMSC 15100/16100 – Introduction to Computer Science</li><li><span class="course-code">&gt;</span>CMSC 15200/16200 – Introduction to Computer Science 2</li><li><span class="course-code">&gt;</span>CMSC 23000 – Operating Systems</li><li><span class="course-code">&gt;</span>CMSC 27000 – Theory of Algorithms</li><li><span class="course-code">&gt;</span>CMSC 27100 – Theory of Algorithms</li><li><span class="course-code">&gt;</span>CMSC 28100 – Introduction to Complexity Theory</li><li><span class="course-code">&gt;</span>CMSC 25020 – Introduction to Machine Learning</li><li><span class="course-code">&gt;</span>CMSC 23300 – Networks and Distributed Systems</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:20px">
+        <div class="detail-card">
+          <h4>Elective / Specialisation Tracks</h4>
+          <ul><li>Algorithms & Theory</li><li>Artificial Intelligence</li><li>Computational Biology (joint with Molecular Engineering)</li><li>Computer Architecture</li><li>Distributed Systems</li><li>Machine Learning</li><li>Programming Languages</li><li>Robotics</li><li>Scientific Computing</li></ul>
+        </div>
+        <div class="detail-card">
+          <h4>Special Features</h4>
+          <ul><li class="special-li">Renowned for theoretical depth — strongest theory program among top US universities</li><li class="special-li">Core curriculum: all UChicago students take broad liberal arts requirements</li><li class="special-li">BS, BA, and combined BS in CS & Math all available</li><li class="special-li">Joint degree with Statistics possible</li><li class="special-li">Booth School of Business CS + Business opportunities</li><li class="special-li">Strong connections to Argonne National Lab & Marine Biological Laboratory</li></ul>
+        </div>
+      </div>
+      <div style="margin-top:14px; font-size:12px; color:#64748B;">
+        Source: <a href="https://cs.uchicago.edu/undergraduate/" target="_blank" style="color:#38BDF8">https://cs.uchicago.edu/undergraduate/</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TAB 3: COMPARISON -->
+<div id="tab-comparison" class="tab-content">
+  <div class="content-wrap">
+    <p style="font-size:13px; color:#94A3B8; margin-bottom:20px;">
+      ✅ = explicitly covered as core or major elective &nbsp; ◑ = partially covered or available as minor elective &nbsp; — = not typically featured
+    </p>
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Topic / Area</th>
+            <th class="uni-th">#1 Harvard</th>
+            <th class="uni-th">#2 Stanford</th>
+            <th class="uni-th">#3 MIT</th>
+            <th class="uni-th">#4 Cambridge</th>
+            <th class="uni-th">#5 UC Berkeley</th>
+            <th class="uni-th">#6 Oxford</th>
+            <th class="uni-th">#7 Princeton</th>
+            <th class="uni-th">#8 Caltech</th>
+            <th class="uni-th">#9 Columbia</th>
+            <th class="uni-th">#10 Chicago</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="topic-cell">Discrete Mathematics</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Algorithms & Data Structures</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Theory of Computation / Complexity</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Mathematical Proof & Logic</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Probability & Statistics</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Linear Algebra</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Functional Programming</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Object-Oriented Programming</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Systems Programming (C/Unix)</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Compilers / Language Design</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Operating Systems</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Computer Architecture</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Networking / Distributed Systems</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Databases</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Artificial Intelligence</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Machine Learning</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Natural Language Processing</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Computer Vision</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Robotics</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Security & Cryptography</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Computer Graphics</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Human–Computer Interaction</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Quantum Computing</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Computational Biology / Bioinformatics</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Software Engineering Methods</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-part">◑</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Senior Thesis / Capstone Project</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Research / UROP opportunities</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+          <tr>
+            <td class="topic-cell">Interdisciplinary / Joint degrees</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+            <td class="check-no">—</td>
+            <td class="check-yes">✅</td>
+            <td class="check-yes">✅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4: CAREERS -->
+<div id="tab-careers" class="tab-content">
+  <div class="content-wrap">
+
+    <div style="margin-bottom:28px">
+      <p style="font-size:14px; color:#CBD5E1; line-height:1.7; max-width:800px;">
+        A CS degree from a top university is one of the most versatile qualifications available — the skills transfer across almost every industry.
+        Below are the main paths graduates take, from the most direct to the more unexpected.
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:20px; margin-bottom:32px;">
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#0F4C81; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">💻</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Software Engineering</div>
+            <div style="font-size:11px; color:#7DD3FC; margin-top:2px;">Most direct path · Very high demand</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Building apps, websites, backend systems, mobile software, databases. Companies like Google, Meta, Amazon, and Microsoft hire directly into engineering roles.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">TYPICAL ROLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Software Engineer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Full-Stack Developer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Backend Engineer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">DevOps / Platform</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#4ADE80;">💰 Starting salary at top firms: $130–200k+ (US)</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#3B1F6B; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🤖</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">AI & Machine Learning</div>
+            <div style="font-size:11px; color:#C4B5FD; margin-top:2px;">Fastest growing · Every industry hiring</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Designing and training models, recommendation systems, computer vision, NLP, autonomous vehicles. Almost every industry is actively hiring for this.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">TYPICAL ROLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">ML Engineer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Data Scientist</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">AI Research Scientist</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">NLP Engineer</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#A78BFA;">🎓 PhD often preferred for research roles; not required for engineering</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#1F3D3B; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🔒</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Cybersecurity</div>
+            <div style="font-size:11px; color:#5EEAD4; margin-top:2px;">Critical talent shortage globally</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Protecting systems, finding vulnerabilities, building secure infrastructure, cryptography. Demand consistently exceeds supply — graduates are sought by governments, banks, and tech companies.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">TYPICAL ROLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Security Engineer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Penetration Tester</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Cryptographer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Security Analyst</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#5EEAD4;">🌍 Government agencies (GCHQ, NSA, NCSC) actively recruit from top universities</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#1C3555; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">📈</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Finance & Quantitative Trading</div>
+            <div style="font-size:11px; color:#93C5FD; margin-top:2px;">Highest-paying path for many graduates</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Banks and hedge funds (Goldman Sachs, Jane Street, Two Sigma, Citadel) recruit CS graduates to build trading systems, risk models, and financial algorithms.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">TYPICAL ROLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Quantitative Developer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Algorithmic Trader</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Quant Researcher</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Financial Engineer</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#FBBF24;">💰 Total comp at top hedge funds can reach $300–500k+ for strong candidates</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#1A2E1A; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🧬</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Healthcare & Biotech</div>
+            <div style="font-size:11px; color:#86EFAC; margin-top:2px;">Rapidly expanding · Strong at Cambridge, Caltech, Columbia</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Building medical software, genomics analysis, diagnostic AI, computational drug discovery, bioinformatics pipelines. Especially strong for graduates from Cambridge, Caltech, Columbia, and MIT.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">TYPICAL ROLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Bioinformatics Engineer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Health AI Developer</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Computational Biologist</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Drug Discovery Scientist</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#86EFAC;">🎓 MIT offers dedicated 6-7 CS & Molecular Biology degree for this path</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#2D1F0E; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🚀</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Startups & Entrepreneurship</div>
+            <div style="font-size:11px; color:#FCD34D; margin-top:2px;">Especially strong from Stanford, MIT, Cambridge</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Many CS graduates found companies. Technical ability combined with problem-solving and analytical thinking makes it a natural fit. Stanford and MIT have produced hundreds of billion-dollar companies.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">FAMOUS EXAMPLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Google (Stanford)</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Facebook (Harvard)</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Dropbox (MIT)</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">ARM (Cambridge)</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#FCD34D;">🌟 Silicon Fen (Cambridge) and Silicon Valley (Stanford/Berkeley) are world startup hubs</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#1F2D4A; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🔬</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Research & Academia</div>
+            <div style="font-size:11px; color:#93C5FD; margin-top:2px;">Advancing the field itself</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">Going on to a PhD and publishing new work in algorithms, cryptography, quantum computing, AI safety, programming languages. The top-10 ARWU universities are the primary pipelines into CS research careers.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">RESEARCH AREAS</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Theory & Algorithms</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">AI Safety</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Quantum Computing</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Systems Research</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#93C5FD;">🎓 PhD typically 4–6 years; often fully funded with stipend at top universities</div>
+        </div>
+      </div>
+
+      <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; overflow:hidden;">
+        <div style="background:#2A1A2E; padding:14px 18px; display:flex; align-items:center; gap:10px;">
+          <span style="font-size:20px;">🌐</span>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#F1F5F9;">Beyond Pure Tech</div>
+            <div style="font-size:11px; color:#E879F9; margin-top:2px;">CS skills transfer broadly</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <p style="font-size:13px; color:#CBD5E1; line-height:1.6; margin-bottom:10px;">The analytical and logical reasoning skills from a CS degree open doors well outside technology itself — in policy, law, journalism, consulting, and management.</p>
+          <div style="font-size:11px; color:#94A3B8; font-weight:700; margin-bottom:6px;">EXAMPLES</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Product Manager</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Tech Policy / Regulation</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Technical Consultant</span>
+            <span style="background:#0F172A; border:1px solid #334155; color:#CBD5E1; font-size:11px; padding:2px 8px; border-radius:4px;">Science Journalist</span>
+          </div>
+          <div style="margin-top:10px; padding:8px 10px; background:#0F172A; border-radius:6px; font-size:12px; color:#E879F9;">📋 Harvard CS + HBS MBA is a very common combination for future tech executives</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Summary callout -->
+    <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; padding:20px 24px;">
+      <div style="font-size:13px; font-weight:700; color:#38BDF8; margin-bottom:10px;">The bottom line</div>
+      <p style="font-size:13px; color:#CBD5E1; line-height:1.7;">
+        A CS degree from a top ARWU university is essentially a <strong style="color:#F1F5F9;">universal passport</strong> — one of the few qualifications where the skills apply directly across almost every industry, and where demand consistently outpaces supply.
+        What stays constant everywhere: strong <strong style="color:#F1F5F9;">algorithms, systems, and mathematics</strong> knowledge opens every door.
+        The specialisation (AI, security, biotech, finance) determines which door you walk through first.
+      </p>
+    </div>
+
+    <!-- Discussion note -->
+    <div style="background:#1E293B; border:1px solid #334155; border-radius:12px; padding:20px 24px; margin-top:20px;">
+      <div style="font-size:13px; font-weight:700; color:#A78BFA; margin-bottom:14px;">💬 Is CS becoming general literacy — and does that mean you need an extra specialisation on top?</div>
+
+      <div style="background:#0F172A; border-left:3px solid #A78BFA; border-radius:0 6px 6px 0; padding:12px 16px; margin-bottom:16px;">
+        <div style="font-size:11px; font-weight:700; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Question</div>
+        <p style="font-size:13px; color:#CBD5E1; line-height:1.7;">
+          CS is "needed almost everywhere" — doesn't that make it general literacy for elite engineers rather than a specialisation in itself? And if so, won't people need an extra specialisation on top of it to stand out?
+        </p>
+      </div>
+
+      <div style="background:#0F172A; border-left:3px solid #38BDF8; border-radius:0 6px 6px 0; padding:12px 16px;">
+        <div style="font-size:11px; font-weight:700; color:#64748B; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Answer</div>
+        <p style="font-size:13px; color:#CBD5E1; line-height:1.7; margin-bottom:10px;">
+          Yes — and it's already happening. <strong style="color:#F1F5F9;">CS is following the same path as mathematics.</strong> A century ago, knowing calculus and statistics made you exceptional. Now it's a baseline assumption in any technical field. CS is on the same trajectory: modelling problems computationally, writing code, understanding algorithms are becoming expected skills for any serious engineer, scientist, or analyst — not a specialisation in themselves.
+        </p>
+        <p style="font-size:13px; color:#CBD5E1; line-height:1.7; margin-bottom:10px;">
+          The top universities are already signalling this. MIT offers <em style="color:#FBBF24;">CS & Molecular Biology</em> and <em style="color:#FBBF24;">CS, Economics & Data Science</em>. Columbia has <em style="color:#FBBF24;">Computational Biology</em> as a standalone degree. Harvard combines CS with neuroscience in its MBB track. CS is treated as a foundation layer, not a destination.
+        </p>
+        <p style="font-size:13px; color:#CBD5E1; line-height:1.7; margin-bottom:14px;">
+          This makes specialisation cut in two directions:
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px;">
+          <div style="background:#1E293B; border:1px solid #334155; border-radius:8px; padding:12px 14px;">
+            <div style="font-size:11px; font-weight:700; color:#38BDF8; margin-bottom:6px;">DEPTH WITHIN CS</div>
+            <p style="font-size:12px; color:#CBD5E1; line-height:1.5;">AI safety, formal verification, quantum algorithms, systems security. These require serious mathematical maturity on top of general CS and won't be replaced by broad literacy.</p>
+          </div>
+          <div style="background:#1E293B; border:1px solid #334155; border-radius:8px; padding:12px 14px;">
+            <div style="font-size:11px; font-weight:700; color:#86EFAC; margin-bottom:6px;">CS + A DOMAIN</div>
+            <p style="font-size:12px; color:#CBD5E1; line-height:1.5;">Computational biology, algorithmic trading, climate modelling, legal tech. The person who wins here isn't the best programmer or the best biologist — it's the person who speaks both languages fluently.</p>
+          </div>
+        </div>
+        <div style="background:#2D1515; border:1px solid #7F1D1D; border-radius:8px; padding:12px 14px; margin-bottom:10px;">
+          <div style="font-size:11px; font-weight:700; color:#FCA5A5; margin-bottom:4px;">⚠️ The risk in the middle</div>
+          <p style="font-size:12px; color:#CBD5E1; line-height:1.5;">A general CS degree with no deep specialisation is under genuine pressure — LLMs can produce reasonable code on demand. The generic "software engineer who writes standard apps" role is more vulnerable than "person who deeply understands distributed systems" or "person who can model protein folding."</p>
+        </div>
+        <p style="font-size:13px; color:#CBD5E1; line-height:1.7;">
+          <strong style="color:#F1F5F9;">The most durable profile: CS as infrastructure, plus something genuinely hard on top of it.</strong> The key question for planning is not whether to specialise, but <em style="color:#FBBF24;">which domain to specialise in</em>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="sources-bar">
+  <span class="sources-label">📌 Data sources</span>
+  Curriculum data live-fetched from official university pages:
+  <a href="https://csadvising.seas.harvard.edu/concentration/requirements/" target="_blank">Harvard CS</a> ·
+  <a href="https://catalog.mit.edu/degree-charts/computer-science-engineering-course-6-3/" target="_blank">MIT Course 6-3 Catalog</a> ·
+  <a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science-ba-hons-meng" target="_blank">Cambridge CS</a> ·
+  <a href="https://www2.eecs.berkeley.edu/Courses/CS/" target="_blank">Berkeley CS Courses</a> ·
+  <a href="https://www.cs.ox.ac.uk/admissions/undergraduate/courses/cs.html" target="_blank">Oxford CS</a> ·
+  <a href="https://www.cs.columbia.edu/education/undergraduate/" target="_blank">Columbia CS</a> ·
+  <a href="https://www.cms.caltech.edu/academics/ugrad/ugrad_cs" target="_blank">Caltech CMS</a>
+  &nbsp;·&nbsp; Stanford, Princeton, and UChicago course pages are JavaScript-rendered — data for these three is drawn from training knowledge and marked <em>~ Training knowledge</em>.
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function selectUni(idx) {
+  document.querySelectorAll('[id^="uni-detail-"]').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.uni-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('uni-detail-' + idx).style.display = 'block';
+  document.getElementById('unibtn-' + idx).classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEM Programs Analysis Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: #f5f5f7;
+    color: #1a1a1a;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    margin-bottom: 32px;
+  }
+  .page-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: #666;
+  }
+  .page-header .meta {
+    margin-top: 10px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .meta-tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #e4e4e7;
+    color: #444;
+    font-weight: 500;
+  }
+
+  /* ── Flow indicator ── */
+  .flow-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 28px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .flow-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .flow-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .flow-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #555;
+  }
+  .flow-arrow {
+    font-size: 13px;
+    color: #bbb;
+    margin: 0 8px;
+  }
+
+  /* ── Phases ── */
+  .phases {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .phase {
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .phase:hover {
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  }
+  .phase.open {
+    border-color: #d0d0d0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    cursor: pointer;
+    user-select: none;
+    background: #fafafa;
+    transition: background 0.1s;
+  }
+  .phase-header:hover { background: #f3f3f3; }
+  .phase.open .phase-header { background: #f0f0f0; }
+
+  .phase-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    flex-shrink: 0;
+    color: #fff;
+  }
+
+  .phase-title-group { flex: 1; }
+  .phase-title {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #111;
+    margin-bottom: 2px;
+  }
+  .phase-subtitle {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .phase-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    background: #e8e8e8;
+    color: #555;
+  }
+
+  .phase-toggle {
+    font-size: 12px;
+    color: #aaa;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .phase.open .phase-toggle { transform: rotate(90deg); }
+
+  /* ── Phase body ── */
+  .phase-body {
+    display: none;
+    padding: 20px 20px 20px 64px;
+    border-top: 1px solid #ececec;
+  }
+  .phase.open .phase-body { display: block; }
+
+  .tasks {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .task {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .task-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    width: 24px;
+    text-align: center;
+  }
+
+  .task-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #111;
+    margin-bottom: 3px;
+  }
+  .task-desc {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.55;
+  }
+
+  /* ── Output pills ── */
+  .output-box {
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #f4f4f6;
+    border: 1px solid #e8e8e8;
+  }
+  .output-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #888;
+    margin-bottom: 7px;
+  }
+  .output-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pill {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: #e2e2e8;
+    color: #333;
+    font-weight: 500;
+  }
+
+  /* ── Colours ── */
+  .c1 { background: #4f7ef7; }
+  .c2 { background: #22b07d; }
+  .c3 { background: #e07b39; }
+  .c4 { background: #9b59b6; }
+  .c5 { background: #2980b9; }
+
+  .c1-light { color: #4f7ef7; }
+  .c2-light { color: #22b07d; }
+  .c3-light { color: #e07b39; }
+  .c4-light { color: #9b59b6; }
+  .c5-light { color: #2980b9; }
+
+  /* ── Legend ── */
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #666;
+  }
+  .legend-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    margin-top: 32px;
+    font-size: 11.5px;
+    color: #aaa;
+    text-align: center;
+  }
+
+  /* ── Expand all button ── */
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+  }
+  .btn-expand {
+    font-size: 12px;
+    padding: 5px 14px;
+    border: 1.5px solid #d0d0d0;
+    border-radius: 6px;
+    background: #fff;
+    color: #555;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.1s;
+  }
+  .btn-expand:hover { background: #f3f3f3; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>STEM Programs — Analysis Plan</h1>
+    <p>How to turn the raw program data (ranks 1–100) into an actionable university shortlist for Andrey.</p>
+    <div class="meta">
+      <span class="meta-tag">5 phases</span>
+      <span class="meta-tag">3 deliverable files</span>
+      <span class="meta-tag">Prepared June 2026</span>
+      <span class="meta-tag">Source: ARWU 2025 top 100</span>
+    </div>
+  </div>
+
+  <!-- Flow bar -->
+  <div class="flow-bar">
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#4f7ef7"></div>
+      <span class="flow-label c1-light">Normalise</span>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#22b07d"></div>
+      <span class="flow-label c2-light">Coverage Matrix</span>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#e07b39"></div>
+      <span class="flow-label c3-light">Uniqueness &amp; Gaps</span>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#9b59b6"></div>
+      <span class="flow-label c4-light">Subject Rankings</span>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">
+      <div class="flow-dot" style="background:#2980b9"></div>
+      <span class="flow-label c5-light">Personal Shortlist</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-expand" onclick="toggleAll()">Expand all</button>
+  </div>
+
+  <div class="phases" id="phases">
+
+    <!-- Phase 1 -->
+    <div class="phase" id="p1">
+      <div class="phase-header" onclick="toggle('p1')">
+        <div class="phase-num c1">1</div>
+        <div class="phase-title-group">
+          <div class="phase-title">Normalise &amp; Categorise</div>
+          <div class="phase-subtitle">Clean the raw data before any analysis</div>
+        </div>
+        <div class="phase-tag">Data prep</div>
+        <span class="phase-toggle">▶</span>
+      </div>
+      <div class="phase-body">
+        <ul class="tasks">
+          <li class="task">
+            <span class="task-icon">🏷️</span>
+            <div>
+              <div class="task-title">Unify program names</div>
+              <div class="task-desc">Map synonyms to canonical labels: "Computing" = "Computer Science" = "Informatics"; "Aeronautics" = "Aerospace Engineering"; "Statistics" = "Statistical Science". Build a synonym table so the same discipline is never double-counted.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">📦</span>
+            <div>
+              <div class="task-title">Assign subject clusters</div>
+              <div class="task-desc">Group all programs into ~10 clusters: CS &amp; AI · Mathematics &amp; Statistics · Physics &amp; Astronomy · Chemistry · Engineering (Civil / Mech / Elec / Aero / Chem) · Bioengineering &amp; Bioinformatics · Data Science · Materials Science · Earth &amp; Environmental · Interdisciplinary.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">🎓</span>
+            <div>
+              <div class="task-title">Tag degree levels</div>
+              <div class="task-desc">Flag each entry as UG only / PG only / UG+PG. Note integrated master's (MEng, MSci, MPhys, MMath) vs. separate postgraduate programmes. This matters for application planning.</div>
+            </div>
+          </li>
+        </ul>
+        <div class="output-box">
+          <div class="output-label">Deliverables</div>
+          <div class="output-pills">
+            <span class="pill">Cleaned programme spreadsheet (.xlsx)</span>
+            <span class="pill">Synonym / normalisation table</span>
+            <span class="pill">Subject cluster taxonomy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase" id="p2">
+      <div class="phase-header" onclick="toggle('p2')">
+        <div class="phase-num c2">2</div>
+        <div class="phase-title-group">
+          <div class="phase-title">Coverage Matrix</div>
+          <div class="phase-subtitle">See what's offered where, at a glance</div>
+        </div>
+        <div class="phase-tag">Quantitative</div>
+        <span class="phase-toggle">▶</span>
+      </div>
+      <div class="phase-body">
+        <ul class="tasks">
+          <li class="task">
+            <span class="task-icon">📊</span>
+            <div>
+              <div class="task-title">University × Subject grid</div>
+              <div class="task-desc">Build a 100-row × ~30-column matrix. Each cell = ✓ UG, ✓✓ UG+PG, PG, or — (not offered). Immediately shows which programs are universal (CS, Maths) and which are rare (Molecular Engineering, Computational Neuroscience UG).</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">📈</span>
+            <div>
+              <div class="task-title">Frequency ranking</div>
+              <div class="task-desc">Count how many of the 100 universities offer each subject. Rank from most common (Computer Science: ~99) to rarest (e.g. Engineering Mathematics: ~8). A frequency chart makes this immediately readable.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">🗺️</span>
+            <div>
+              <div class="task-title">Geographic distribution</div>
+              <div class="task-desc">Which subjects are strongest in which regions? Financial Mathematics dominates UK &amp; Switzerland; Nuclear Engineering is strong in USA, China, France; Interdisciplinary Sciences are a Swiss/UK speciality. A country heatmap reveals these patterns.</div>
+            </div>
+          </li>
+        </ul>
+        <div class="output-box">
+          <div class="output-label">Deliverables</div>
+          <div class="output-pills">
+            <span class="pill">Coverage matrix (Excel / interactive)</span>
+            <span class="pill">Frequency ranking chart</span>
+            <span class="pill">Country distribution heatmap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase" id="p3">
+      <div class="phase-header" onclick="toggle('p3')">
+        <div class="phase-num c3">3</div>
+        <div class="phase-title-group">
+          <div class="phase-title">Uniqueness &amp; Gaps</div>
+          <div class="phase-subtitle">Find what's rare, distinctive, or missing</div>
+        </div>
+        <div class="phase-tag">Comparative</div>
+        <span class="phase-toggle">▶</span>
+      </div>
+      <div class="phase-body">
+        <ul class="tasks">
+          <li class="task">
+            <span class="task-icon">💎</span>
+            <div>
+              <div class="task-title">Rare programs (offered by &lt;10 universities)</div>
+              <div class="task-desc">Identify niche offerings: Engineering Mathematics (Bristol, Bath), Molecular Engineering (UChicago, Caltech, MIT), Mathematical Engineering &amp; Information Physics (Tokyo), Interdisciplinary Sciences (ETH Zurich), Computational Neuroscience UG (UCL, Bristol). These signal a university's distinctive identity and can be strong differentiators in applications.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">🔀</span>
+            <div>
+              <div class="task-title">Interdisciplinary programs</div>
+              <div class="task-desc">Flag programs that intentionally cross clusters: Natural Sciences (Cambridge, UCL), Computational Science &amp; Engineering, Cognitive Science, Data Science as standalone UG, Bioinformatics at UG level. Map which universities offer these at undergraduate entry — they're rarer than they appear.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">❌</span>
+            <div>
+              <div class="task-title">Coverage gaps by country</div>
+              <div class="task-desc">Most Chinese universities don't offer standalone AI or Data Science UG (it's embedded in CS). Most UK universities have no Operations Research UG. Most European universities have no Financial Engineering UG. Gaps are as informative as presences when choosing where to apply.</div>
+            </div>
+          </li>
+        </ul>
+        <div class="output-box">
+          <div class="output-label">Deliverables</div>
+          <div class="output-pills">
+            <span class="pill">Rare programs shortlist</span>
+            <span class="pill">Interdisciplinary program map</span>
+            <span class="pill">Gap analysis by country</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase" id="p4">
+      <div class="phase-header" onclick="toggle('p4')">
+        <div class="phase-num c4">4</div>
+        <div class="phase-title-group">
+          <div class="phase-title">Subject-Level Rankings</div>
+          <div class="phase-subtitle">Best universities per subject, filtered by region</div>
+        </div>
+        <div class="phase-tag">Decision support</div>
+        <span class="phase-toggle">▶</span>
+      </div>
+      <div class="phase-body">
+        <ul class="tasks">
+          <li class="task">
+            <span class="task-icon">🏆</span>
+            <div>
+              <div class="task-title">Best universities per subject cluster</div>
+              <div class="task-desc">Cross-reference ARWU rank with program availability to produce ranked lists like "Top 15 universities offering Applied Mathematics at UG level" or "Top 10 for standalone AI BSc". Note: ARWU rank ≠ subject-specific rank — it is a useful but imperfect proxy.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">🌍</span>
+            <div>
+              <div class="task-title">Best-by-country per subject</div>
+              <div class="task-desc">For each subject cluster, identify the top 2–3 universities in each major country or region. Useful when geography, language, tuition cost, or visa requirements constrain the choice set.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">🔗</span>
+            <div>
+              <div class="task-title">Career &amp; postgraduate pathway mapping</div>
+              <div class="task-desc">From each cluster, map common career pathways: CS → software engineering, ML research, quant finance; Applied Maths → actuarial science, research, data science; Bioinformatics → genomics, drug discovery, biotech. Helps evaluate degree "fit" beyond just the subject name.</div>
+            </div>
+          </li>
+        </ul>
+        <div class="output-box">
+          <div class="output-label">Deliverables</div>
+          <div class="output-pills">
+            <span class="pill">Top-N tables per subject</span>
+            <span class="pill">Country-filtered shortlists</span>
+            <span class="pill">Career pathway diagram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase" id="p5">
+      <div class="phase-header" onclick="toggle('p5')">
+        <div class="phase-num c5">5</div>
+        <div class="phase-title-group">
+          <div class="phase-title">Personal Shortlist</div>
+          <div class="phase-subtitle">Filters applied → 10–20 target universities</div>
+        </div>
+        <div class="phase-tag">Action</div>
+        <span class="phase-toggle">▶</span>
+      </div>
+      <div class="phase-body">
+        <ul class="tasks">
+          <li class="task">
+            <span class="task-icon">🎯</span>
+            <div>
+              <div class="task-title">Filter by Andrey's priorities</div>
+              <div class="task-desc">Once subject preferences are confirmed (e.g., "CS + Maths, open to Data Science, prefer Europe or UK"), apply filters to the coverage matrix. The result is a personalised list of 10–20 universities across reach, target, and safe tiers.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">📋</span>
+            <div>
+              <div class="task-title">Entry requirements check</div>
+              <div class="task-desc">For each shortlisted program, research required A-levels or equivalent qualifications. Cross-reference with the Edexcel A-level files already in the folder (Mathematics, Further Mathematics, Physics, Chemistry, Biology). Flag any admissions tests required: MAT, PAT, ESAT, TMUA, SAT/ACT.</div>
+            </div>
+          </li>
+          <li class="task">
+            <span class="task-icon">📄</span>
+            <div>
+              <div class="task-title">Final report</div>
+              <div class="task-desc">Produce a single Word or PDF document summarising: subject cluster analysis, shortlisted universities with rationale, entry requirements per program, and next steps (open days, application deadlines, entrance exam preparation).</div>
+            </div>
+          </li>
+        </ul>
+        <div class="output-box">
+          <div class="output-label">Deliverables</div>
+          <div class="output-pills">
+            <span class="pill">Personal shortlist (10–20 universities)</span>
+            <span class="pill">Entry requirements table</span>
+            <span class="pill">Final report (.docx / .pdf)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /phases -->
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#4f7ef7"></div> Data preparation</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#22b07d"></div> Quantitative analysis</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e07b39"></div> Comparative analysis</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9b59b6"></div> Decision support</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2980b9"></div> Action / output</div>
+  </div>
+
+  <div class="page-footer">
+    Prepared June 2026 · Based on ARWU 2025 top 100 universities · Education research folder for Andrey
+  </div>
+
+</div><!-- /container -->
+
+<script>
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+  }
+
+  let allOpen = false;
+  function toggleAll() {
+    const phases = document.querySelectorAll('.phase');
+    allOpen = !allOpen;
+    phases.forEach(p => {
+      if (allOpen) p.classList.add('open');
+      else p.classList.remove('open');
+    });
+    document.querySelector('.btn-expand').textContent = allOpen ? 'Collapse all' : 'Expand all';
+  }
+</script>
+
+</body>
+</html>
