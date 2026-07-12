@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#050505"/>
+  <!-- faceted stealth arrowhead -->
+  <polygon points="32,9 11,50 26,43" fill="#4b4b4b"/>
+  <polygon points="32,9 26,43 32,39" fill="#616161"/>
+  <polygon points="32,9 32,39 38,43" fill="#8f8f8f"/>
+  <polygon points="32,9 38,43 53,50" fill="#707070"/>
+  <polygon points="11,50 26,43 22,47" fill="#3a3a3a"/>
+  <polygon points="53,50 38,43 42,47" fill="#5a5a5a"/>
+</svg>
