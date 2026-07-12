@@ -12,16 +12,16 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="The standing policies that keep Meta CPMs in check – CAPI and matching quality, pixel hygiene, and when a new app earns its own pixel.">
+  <meta name="description" content="The standing policies that keep Meta CPMs in check – a technical control checklist and a weekly manual creative-freshness review built on a concept-level ad naming convention.">
   <link rel="canonical" href="https://mariascales.com/cases/stealth/cpm-playbook/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="CPM Optimisation Playbook · Maria Atamanova">
-  <meta property="og:description" content="The standing policies that keep Meta CPMs in check – CAPI and matching quality, pixel hygiene, and when a new app earns its own pixel.">
+  <meta property="og:description" content="The standing policies that keep Meta CPMs in check – a technical control checklist and a weekly manual creative-freshness review built on a concept-level ad naming convention.">
   <meta property="og:url" content="https://mariascales.com/cases/stealth/cpm-playbook/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CPM Optimisation Playbook · Maria Atamanova">
-  <meta name="twitter:description" content="The standing policies that keep Meta CPMs in check – CAPI and matching quality, pixel hygiene, and when a new app earns its own pixel.">
+  <meta name="twitter:description" content="The standing policies that keep Meta CPMs in check – a technical control checklist and a weekly manual creative-freshness review built on a concept-level ad naming convention.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -105,67 +105,24 @@
   <div class="container">
 
     <h2>Current Processes &amp; Policies</h2>
-    <p>These are the actions and configurations we maintain to keep CPMs in check.</p>
+    <p>These are the areas we maintain to keep CPMs in check.</p>
 
-    <h3>Infrastructure</h3>
-      <table>
-        <tr><th>Tool</th><th>Policy</th><th>How it's monitored</th></tr>
-        <tr>
-          <td>Conversions API (CAPI)</td>
-          <td>Server-side API that sends event data (purchases, page views, etc.) to Meta &amp; Google, bypassing browser limitations.</td>
-          <td>If not implemented: the events disappear.</td>
-        </tr>
-        <tr>
-          <td>Advanced matching</td>
-          <td>Enriches CAPI events with hashed user identifiers (email, phone, FBC, FBP, external_id, IP, user agent) to improve match rates.</td>
-          <td>Checked by Ops weekly. If any score is lower than 8, we act.</td>
-        </tr>
-        <tr>
-          <td>Email before purchase</td>
-          <td>Required step in the W2W funnel. Open question: should the same apply to A2A?</td>
-          <td>Pre funnel-launch check by Ops</td>
-        </tr>
-        <tr>
-          <td>Domain verification</td>
-          <td>Domain verified with Meta for all properties.</td>
-          <td>Pre campaign-launch check by Ops</td>
-        </tr>
-        <tr>
-          <td>Event deduplication</td>
-          <td>Enabled in Meta to prevent double-counting.</td>
-          <td>Pre campaign-launch check by Ops</td>
-        </tr>
-        <tr>
-          <td>Aggregated Event Measurement</td>
-          <td>Meta standard events (not custom) used across all apps – best for campaign optimisation post-iOS 14/SKAN.</td>
-          <td>Pre campaign-launch check by Ops</td>
-        </tr>
-        <tr>
-          <td>Page speed</td>
-          <td>All landing pages of web funnels must score 80+.</td>
-          <td>Pre funnel-launch check by Ops</td>
-        </tr>
-      </table>
+    <h3>Technical</h3>
+    <p>On the technical side, we control the following – each item is checked by Ops pre-launch or on a weekly cadence (details intentionally omitted):</p>
+    <ul>
+      <li>Conversions API</li>
+      <li>Advanced matching quality</li>
+      <li>Required funnel events before purchase</li>
+      <li>Domain verification</li>
+      <li>Event deduplication</li>
+      <li>Aggregated Event Measurement – standard events only</li>
+      <li>Landing page speed</li>
+    </ul>
 
-    <h3>Channels</h3>
-      <table>
-        <tr><th>Trigger</th><th>Policy</th><th>How it's monitored</th></tr>
-        <tr>
-          <td>New app</td>
-          <td>Dedicated FB page · dedicated ad account · dedicated pixel · added to the primary Business Manager (US-only campaigns).</td>
-          <td>Pre-launch responsibility of Ops</td>
-        </tr>
-        <tr>
-          <td>Always-on</td>
-          <td>Creative variety on each pixel/account must be sufficient so that overfitting does not occur. Creative–funnel–product positioning alignment – all three elements must match to a reasonable extent.</td>
-          <td>Creative &amp; Ops monitor creatives on each pixel/account; frequency metric reviewed weekly; alignment reviewed by Ops.</td>
-        </tr>
-        <tr>
-          <td>New angle or age group</td>
-          <td>When the new intended audience is adjacent – use existing assets. When it is distinct: dedicated FB page · dedicated ad account · dedicated pixel.</td>
-          <td>Case-by-case. Easy to hypothesize pre-launch, hard to detect if audiences diverge on one pixel. Idea: funnel-answer segmentation by creative.</td>
-        </tr>
-      </table>
+    <h3>Creative freshness – weekly manual review</h3>
+    <p>Meta doesn't give us a creative-freshness tool, so we run the check ourselves, by hand, once a week. Two things make it possible:</p>
+    <p><strong>1. Ad naming convention.</strong> Every ad name and creative file name encodes the <strong>creative concept</strong> and its <strong>subtype</strong> – not just the name or number of the individual creative. Without this, spend can't be aggregated at the concept level at all.</p>
+    <p><strong>2. Weekly spend-by-concept review.</strong> Once a week we export ad-level spend, aggregate it by concept, and look at two numbers: the share of budget each concept takes, and the CPA it delivers. If spend starts concentrating on a single creative concept, that's an early sign of overfitting – the signal to rotate fresh concepts in before CPMs react.</p>
 
   </div>
 </div>
