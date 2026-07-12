@@ -126,7 +126,8 @@
   table.mix td:first-child,th:first-child { text-align:left; }
   table.mix input { width:78px; text-align:right; padding:4px 6px; border:1px solid var(--line); border-radius:5px; }
     .tabs { display:flex; justify-content:space-between; gap:4px; margin:18px 0 6px; border-bottom:2px solid var(--line); }
-  .tabs button { flex:0 1 auto; white-space:nowrap; border:none; background:none; font:inherit; font-size:.9375rem; font-weight:600; padding:9px 10px; cursor:pointer; color:var(--sub); border-bottom:2px solid transparent; margin-bottom:-2px; }
+  .tabs { flex-wrap:wrap; }
+  .tabs button { flex:0 1 auto; white-space:nowrap; border:none; background:none; font:inherit; font-size:.875rem; font-weight:600; padding:9px 6px; cursor:pointer; color:var(--sub); border-bottom:2px solid transparent; margin-bottom:-2px; }
   .tabs button:first-child { padding-left:0; }
   .tabs button:last-child { padding-right:0; }
   @media (max-width:760px){ .tabs { flex-wrap:wrap; justify-content:flex-start; gap:0 14px; } .tabs button { font-size:.8125rem; padding:8px 0; } }
@@ -155,10 +156,10 @@
   @keyframes pulseglow { 0%,100% { box-shadow:0 0 0 0 rgba(30,64,175,.40); } 50% { box-shadow:0 0 0 9px rgba(30,64,175,0); } }
   .stalenote { display:none; font-size:.8125rem; color:var(--warn); margin:0 0 10px; }
   table.vat { width:100%; font-size:.875rem; border-collapse:collapse; max-width:640px; }
-  table.vat td, table.vat th { padding:6px 8px; border-bottom:1px solid var(--line); text-align:left; }
+  table.vat td, table.vat th { padding:8px 12px; border-bottom:1px solid var(--line); text-align:left; }
   table.vat td:last-child, table.vat th:last-child { text-align:right; }
   table.methods { width:100%; font-size:.875rem; border-collapse:collapse; }
-  table.methods td, table.methods th { padding:10px 12px 10px 0; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  table.methods td, table.methods th { padding:10px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
   table.methods td:first-child, table.methods th:first-child { width:180px; font-weight:600; }
   table.methods .formula { display:inline-block; margin:0 0 6px; }
   select:disabled { opacity:.45; cursor:not-allowed; }
