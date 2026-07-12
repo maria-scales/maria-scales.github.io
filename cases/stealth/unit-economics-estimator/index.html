@@ -152,8 +152,6 @@
     transition: transform .08s ease, box-shadow .18s ease, background .18s ease; }
   .calcbtn:hover { box-shadow:0 4px 14px rgba(30,64,175,.35); transform:translateY(-1px); }
   .calcbtn:active { transform:translateY(1px) scale(.98); box-shadow:none; }
-  .calcbtn.pulse { animation:pulseglow 1.6s ease-in-out infinite; }
-  @keyframes pulseglow { 0%,100% { box-shadow:0 0 0 0 rgba(30,64,175,.40); } 50% { box-shadow:0 0 0 9px rgba(30,64,175,0); } }
   .stalenote { display:none; font-size:.8125rem; color:var(--warn); margin:0 0 10px; }
   table.vat { width:100%; font-size:.875rem; border-collapse:collapse; max-width:640px; }
   table.vat td, table.vat th { padding:8px 12px; border-bottom:1px solid var(--line); text-align:left; }
@@ -734,7 +732,6 @@ function markStale(){
   uiState();
   const r = el("results"); if (r) r.classList.add("dim");
   const n = el("stalenote"); if (n) n.style.display = "block";
-  const b = el("calcbtn"); if (b) b.classList.add("pulse");
 }
 function gather(){
   return {
@@ -1198,7 +1195,6 @@ el("calcbtn").addEventListener("click", () => {
   el("results").classList.remove("dim");
   el("stalenote").style.display = "none";
   const b = el("calcbtn");
-  b.classList.remove("pulse");
   b.textContent = "Calculated ✓";
   setTimeout(() => { b.textContent = "Calculate"; }, 900);
 });
