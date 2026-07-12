@@ -110,6 +110,7 @@
   .tB { background:#dcfce7; color:#166534; } .tE { background:#fef3c7; color:#92400e; } .tA { background:#fee2e2; color:#991b1b; }
   .my { font-size:.625rem; color:var(--link); cursor:pointer; white-space:nowrap; }
   .manual { outline:2px solid #93c5fd; }
+  .errinput { border-color:#b91c1c !important; background:#fef2f2 !important; }
   .out { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
   .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
   .kpi .v { font-size:1.35rem; font-weight:700; }
@@ -697,7 +698,18 @@ function weeklyScheduleFit(price, w1, w2, refund){
 function fitImplied(r1, r2, m){ const b = -Math.log(Math.max(r2,1e-4))/Math.LN2; return Math.min(1, r1*Math.pow(m,-b)); }
 function sum(a){ return a.reduce((x,y)=>x+y,0); }
 // ---------- main calc ----------
+function flagBadInputs(){
+  [["wk_on","wk_p"],["mo_on","mo_p"],["yr_on","yr_p"]].forEach(([on,pr]) => {
+    const bad = el(on).checked && !(parseFloat(el(pr).value) > 0);
+    el(pr).classList.toggle("errinput", bad);
+  });
+  let sum = 0;
+  [["wk_on","wk_s"],["mo_on","mo_s"],["yr_on","yr_s"]].forEach(([on,sh]) => { if (el(on).checked) sum += parseFloat(el(sh).value) || 0; });
+  const mixBad = Math.abs(sum - 100) > 0.5;
+  ["wk_s","mo_s","yr_s"].forEach(id => el(id).classList.toggle("errinput", mixBad));
+}
 function uiState(){
+  flagBadInputs();
   const w2w = el("funnel").value === "w2w";
   const wt0 = el("pwtrial").value === "yes" && !w2w;
   el("card_pwtrial").style.display = w2w ? "none" : "";
@@ -1174,9 +1186,12 @@ function applyState(o){
     STATE_SELECTS.forEach(id => { if (o.sel && o.sel[id] !== undefined) el(id).value = o.sel[id]; });
     if (o.troas) el("troas").value = o.troas;
     if (o.plans){
-      el("wk_on").checked = !!o.plans.won; el("mo_on").checked = !!o.plans.mon; el("yr_on").checked = !!o.plans.yon;
-      el("wk_p").value = o.plans.wp; el("mo_p").value = o.plans.mp; el("yr_p").value = o.plans.yp;
-      el("wk_s").value = o.plans.ws; el("mo_s").value = o.plans.ms; el("yr_s").value = o.plans.ys;
+      const P = o.plans;
+      if ("won" in P) el("wk_on").checked = !!P.won;
+      if ("mon" in P) el("mo_on").checked = !!P.mon;
+      if ("yon" in P) el("yr_on").checked = !!P.yon;
+      [["wp","wk_p"],["mp","mo_p"],["yp","yr_p"],["ws","wk_s"],["ms","mo_s"],["ys","yr_s"]]
+        .forEach(([k,id]) => { if (k in P) el(id).value = P[k]; });
     }
     if (o.man){ manualStore.a2a = o.man.a2a || {}; manualStore.w2w = o.man.w2w || {}; }
     manual = manualStore[el("funnel").value];
@@ -1186,8 +1201,26 @@ function applyState(o){
     return true;
   } catch(e){ return false; }
 }
+let DEFAULT_STATE = null; // pristine state snapshot – share links carry only the diff from it
+function slimState(){
+  const full = stateObj(), d = DEFAULT_STATE || { sel:{}, plans:{} };
+  const out = {};
+  const sel = {}; for (const k in full.sel) if (d.sel[k] !== full.sel[k]) sel[k] = full.sel[k];
+  if (Object.keys(sel).length) out.sel = sel;
+  if (String(full.troas) !== String(d.troas)) out.troas = full.troas;
+  const plans = {}; for (const k in full.plans) if (String(d.plans[k]) !== String(full.plans[k])) plans[k] = full.plans[k];
+  if (Object.keys(plans).length) out.plans = plans;
+  const man = {};
+  if (Object.keys(full.man.a2a).length) man.a2a = full.man.a2a;
+  if (Object.keys(full.man.w2w).length) man.w2w = full.man.w2w;
+  if (Object.keys(man).length) out.man = man;
+  return out;
+}
 function writeHash(){
-  try { history.replaceState(null, "", "#" + encodeURIComponent(JSON.stringify(stateObj()))); } catch(e){}
+  try {
+    const s = slimState();
+    history.replaceState(null, "", Object.keys(s).length ? "#" + encodeURIComponent(JSON.stringify(s)) : location.pathname);
+  } catch(e){}
 }
 el("calcbtn").addEventListener("click", () => {
   calc();
@@ -1306,6 +1339,7 @@ Object.entries(GEO).forEach(([k,v]) => el("geo").add(new Option(v.name, k)));
 ["vertical","geo","scenario","optevent","target","pwtrial","triallen","platform","season","ai","fee","troas","retmode","wk_on","mo_on","yr_on","wk_p","mo_p","yr_p","wk_s","mo_s","yr_s"]
   .forEach(id => el(id).addEventListener("input", () => { stageList().forEach(refreshField); LTV_FIELDS.forEach(refreshField); markStale(); }));
 setOptOptions("a2a"); rebuildFields(); markStale();
+DEFAULT_STATE = stateObj();
 if (location.hash.length > 1){
   try {
     const o = JSON.parse(decodeURIComponent(location.hash.slice(1)));
