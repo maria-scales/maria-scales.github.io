@@ -1391,8 +1391,11 @@ function showSelfTests(){
   div.style.cssText = "margin:14px 0;border-color:" + (passn === T.length ? "#a7f3d0" : "#fecaca");
   div.innerHTML = `<div style="font-weight:700;margin-bottom:8px">Self-test: ${passn}/${T.length} passed</div>` +
     T.map(t => `<div style="font-size:.8125rem;padding:2px 0"><span style="color:${t.pass ? "#047857" : "#b91c1c"};font-weight:700">${t.pass ? "✓" : "✗"}</span> ${t.name}${t.detail ? ` <span style="color:var(--sub)">– ${t.detail}</span>` : ""}</div>`).join("");
-  const anchor = el("tab-calc");
-  anchor.parentNode.insertBefore(div, anchor);
+  // render at the bottom, right under the self-test badge – not on top of the calculator
+  const badge = Array.from(document.querySelectorAll(".selftest-link")).pop();
+  if (badge && badge.parentElement) badge.parentElement.after(div);
+  else el("tab-calc").parentNode.appendChild(div);
+  setTimeout(() => { if (div.scrollIntoView) div.scrollIntoView({ behavior: "smooth", block: "center" }); }, 60);
 }
 DEFAULT_STATE = stateObj();
 if (new URLSearchParams(location.search).has("test")) showSelfTests();
