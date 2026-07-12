@@ -111,8 +111,9 @@
   .my { font-size:.625rem; color:var(--link); cursor:pointer; white-space:nowrap; }
   .manual { outline:2px solid #93c5fd; }
   .errinput { border-color:#b91c1c !important; background:#fef2f2 !important; }
-  .selftest-link { display:inline-block; border:1.5px solid var(--link); color:var(--link) !important; border-radius:7px; padding:4px 12px; font-weight:600; font-size:.8125rem; text-decoration:none; transition:background .15s, color .15s; }
-  .selftest-link:hover { background:var(--link); color:#fff !important; }
+  .selftest-link { display:inline-block; margin-top:10px; border:1.5px solid #72C09B; color:#16355C !important; border-radius:7px; padding:4px 12px; font-weight:600; font-size:.8125rem; text-decoration:none; transition:background .15s; }
+  .selftest-link .tick { color:#4FA47F; }
+  .selftest-link:hover { background:#72C09B; color:#16355C !important; }
   .out { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
   .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
   .kpi .v { font-size:1.35rem; font-weight:700; }
@@ -373,7 +374,7 @@
       <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
     </ul>
     <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
-    <p class="note">Trust check: <a href="?test=1" class="selftest-link">✓ Run the built-in self-test</a> – 15 assertions (anchor hits, monotonicity, internal consistency, hand-recalculated snapshots, guards) executed live in your browser, on exactly the code that computes your numbers.</p>
+    <p class="note">Trust check: <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a> – 15 assertions (anchor hits, monotonicity, internal consistency, hand-recalculated snapshots, guards) executed live in your browser, on exactly the code that computes your numbers.</p>
     <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
@@ -453,7 +454,7 @@
     <a href="https://mobiledevmemo.com/mai-vs-aeo-vs-vo-campaigns-building-a-mobile-traffic-strategy-on-facebook/" target="_blank">Mobile Dev Memo (MAI/AEO)</a> ·
     <a href="https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods" target="_blank">Stripe payments data</a> ·
     <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank">Stripe vs Paddle fees</a>.
-    Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. &nbsp; <a href="?test=1" class="selftest-link">✓ Run the built-in self-test</a>
+    Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. &nbsp; <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a>
   </div>
 </div>
 <div class="back-link"><div class="container"><a href="/cases/stealth/">← Back to the case study</a></div></div>
