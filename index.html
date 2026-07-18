@@ -515,17 +515,17 @@
         <p>The reset test made it visible. Across 50+ entirely new concepts, a fresh concept should reset the picture – normal opening CPM, frequency building as usual, performance recovering – because in Meta's increasingly creative-led delivery (Andromeda) a new concept should find a new pocket. None did: every concept launched straight into high frequency and the same extreme CPM, because the pixel delivered it into an already-exhausted audience rather than a fresh one. Rising frequency didn't distinguish the cases – it doubled either way; the <strong>absence of a reset across 50+ concepts</strong> did. The new concepts weren't failing on merit – they never got a fair test. What looked like the floor of a scalable audience was its ceiling.</p>
         <p><em>Pixel overfit, defined: campaigns optimizing to a shallow or narrow pixel event that correlates with short-term conversion but not with the true addressable, revenue-generating audience – so reported performance looks strong precisely because the model has fit itself to a pocket too small to scale.</em></p>
         <p><strong>3. Prove it on a clean pixel.</strong> The overfit pixel couldn't test its own blind spot – it would keep routing anything new into the same exhausted audience. A new campaign or ad set wouldn't have escaped it either: Meta's learning is layered, and ad-set history is only the second layer – the deepest one is the conversion history accumulated on the pixel itself, with the ad account carrying its own priors on top. Anything launched against the same pixel inherits the same overfit prior. So I migrated to a new pixel and re-tested the creative slate from scratch: the only way to get an unbiased read on how much genuinely scalable audience actually existed.</p>
-        <p><strong>4. Rebuild the unit economics on true numbers.</strong> In parallel, the model had to run on backend revenue, not pixel-reported conversions. I ran the reconciliation – pixel-reported vs backend revenue by cohort – and quantified how far the reported numbers had been inflated. The model rebuild itself was owned by a teammate, who reworked the unit economics on those corrected inputs (and carried the uncertainty explicitly, given the thin data). The rebuilt model was unambiguous: at the target CPA, the genuinely reachable audience was far smaller than the plan had assumed – too small for the economics to work at $30k/day.</p>
+        <p><strong>4. Rebuild the unit economics on true numbers.</strong> In parallel, the model had to run on backend revenue, not pixel-reported conversions. I ran the reconciliation – pixel-reported vs backend revenue by cohort – and quantified how far the reported numbers had been inflated. The model rebuild itself was owned by a teammate, who reworked the unit economics on those corrected inputs (and carried the uncertainty explicitly, given the thin data).</p>
 
         <h3>Result</h3>
         <ul>
-          <li><strong>Root cause: severe pixel overfit, confirmed.</strong> The December-funded pocket had trained the pixel to route every new creative back into one narrow audience – and reported numbers looked far healthier than backend revenue ever was.</li>
+          <li><strong>Root cause: severe pixel overfit, confirmed.</strong> The December-funded pocket had trained the pixel to route every new creative back into one narrow audience – and reported numbers looked far healthier for a small audience subset with a specific small creatives pack, until this particular audience was totally exhausted.</li>
           <li><strong>The real breadth was tiny.</strong> Re-run on the clean pixel, the same 50+ concepts finally got a fair test – and only <strong>2</strong> worked, where "worked" meant positive economics inside a small pocket, not a volume engine. Against a $30k/day target, the addressable market at target economics was a fraction of the plan.</li>
           <li><strong>The ceiling was the market, not the channel.</strong> The clean-pixel retest and reach estimates pointed to an addressable-audience limit, not a Meta-delivery quirk. Other channels tested multiples worse – and in my experience across consumer subscription products, Meta is the ceiling test: if it can't make the economics work, the other channels won't either.</li>
           <li><strong>The decision.</strong> With the economics below break-even at any meaningful volume, there was no viable scale to retreat to – the profitable niche was too small to sustain the company, let alone the raise it was chasing. Leadership wound the product down on decision-grade data, instead of pouring ~$900k/month into an audience that could never repay it.</li>
           <li>Codified the diagnosis into two reusable tools:
             <ul>
-              <li><strong><a href="/cases/stealth/cpm-playbook/">CPM Health Checklist</a></strong> – a pixel-overfit tripwire plus pre-flight checks (the Prevention Framework below, packaged as a working checklist)</li>
+              <li><strong><a href="/cases/stealth/prevention-framework/">Prevention Framework</a></strong> – a pixel-overfit tripwire, pre-flight checks, and the processes that keep CPMs in check</li>
               <li><strong><a href="/cases/stealth/unit-economics-estimator/">Unit Economics Estimator</a></strong> – an interactive tool answering: <em>does this growth math ever close?</em></li>
             </ul>
           </li>
@@ -535,16 +535,9 @@
           <p>A model that correctly says "stop" is a model doing its job. The diagnosis didn't save the project – it stopped the project from lying to itself.</p>
         </blockquote>
 
-        <h3>Prevention Framework</h3>
-        <p>The part that generalizes beyond this one case:</p>
-        <ul>
-          <li><strong>Validate a "winning segment" for breadth before building plans on it</strong> – reach estimates plus reconciliation against backend LTV, not just early CPA.</li>
-          <li><strong>Scale in increments with a pixel-overfit tripwire.</strong> The reset test: a fresh concept that opens at a normal CPM with frequency building normally = fatigue; no reset = the pool the pixel will serve is exhausted, most often <strong>pixel overfit</strong>. Treat a failed reset as stop-and-diagnose – and confirm on a clean pixel before writing off the creative.</li>
-          <li><strong>Don't let one early pocket train the pixel.</strong> Concentrated early spend on a single high-intent audience teaches the optimizer to keep returning to it, starving new creative of impressions outside it. Spread early learning budget across concepts, and periodically validate breadth on a clean pixel or via reach estimates.</li>
-          <li><strong>Never set unit-economics benchmarks from a single segment's early performance.</strong> Early winners are the most likely to be overfit pockets.</li>
-          <li><strong>Run a pixel-vs-backend reconciliation cadence,</strong> and check event–LTV correlation before choosing an optimization event – so the model optimizes toward revenue, not toward a shallow proxy.</li>
-        </ul>
-        <p><strong>Deliverables:</strong> <a href="/cases/stealth/cpm-playbook/">CPM Health Checklist</a> · <a href="/cases/stealth/unit-economics-estimator/">Unit Economics Estimator</a></p>
+        <h3>Deliverables</h3>
+        <p><strong><a href="/cases/stealth/prevention-framework/">Prevention Framework</a></strong> – a pixel-overfit tripwire, pre-flight checks, and the processes that keep CPMs in check.</p>
+        <p><strong><a href="/cases/stealth/unit-economics-estimator/">Unit Economics Estimator</a></strong> – an interactive tool answering: <em>does this growth math ever close?</em></p>
       </div>
     </div>
 
