@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 332" width="800" height="332" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Liberation Sans', 'DejaVu Sans', sans-serif" role="img" aria-label="“Remote” means “remote, if you already live here”">
+<rect width="800" height="332" fill="#ffffff"/>
+<text x="32" y="38" font-size="19" font-weight="600" fill="#111827">“Remote” means “remote, if you already live here”</text>
+<text x="32" y="60" font-size="13" fill="#6b7280">Postings labelled remote, by country, split by who may actually apply</text>
+<rect x="32" y="76" width="12" height="12" rx="2" fill="#2563eb"/>
+<text x="50" y="86" font-size="12" fill="#374151">Residents of this country only</text>
+<rect x="273.6" y="76" width="12" height="12" rx="2" fill="url(#hatch-cbd5e1)"/>
+<text x="291.6" y="86" font-size="12" fill="#374151">Scope not yet resolved</text>
+<defs><pattern id="hatch-cbd5e1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#ffffff"/><line x1="0" y1="0" x2="0" y2="6" stroke="#cbd5e1" stroke-width="2.2"/></pattern></defs>
+<text x="188" y="121.0" font-size="13" text-anchor="end" fill="#111827">United States</text>
+<rect x="200" y="106" width="315.79253288078064" height="22" fill="#2563eb"/>
+<rect x="517.7925328807806" y="106" width="122.20746711921934" height="22" fill="url(#hatch-cbd5e1)"/>
+<text x="208" y="121.0" font-size="12" font-weight="600" fill="#ffffff">1,697</text>
+<text x="524.7925328807806" y="121.0" font-size="12" fill="#374151">660</text>
+<text x="650" y="121.0" font-size="12" font-weight="600" fill="#111827">0 open</text>
+<text x="700" y="121.0" font-size="11" fill="#6b7280">of 2,357</text>
+<text x="188" y="159.0" font-size="13" text-anchor="end" fill="#111827">United Kingdom</text>
+<rect x="200" y="144" width="230.40740740740742" height="22" fill="#2563eb"/>
+<rect x="432.4074074074074" y="144" width="207.59259259259258" height="22" fill="url(#hatch-cbd5e1)"/>
+<text x="208" y="159.0" font-size="12" font-weight="600" fill="#ffffff">71</text>
+<text x="439.4074074074074" y="159.0" font-size="12" fill="#374151">64</text>
+<text x="650" y="159.0" font-size="12" font-weight="600" fill="#111827">0 open</text>
+<text x="700" y="159.0" font-size="11" fill="#6b7280">of 135</text>
+<text x="188" y="197.0" font-size="13" text-anchor="end" fill="#111827">Canada</text>
+<rect x="200" y="182" width="327.0" height="22" fill="#2563eb"/>
+<rect x="529.0" y="182" width="111.0" height="22" fill="url(#hatch-cbd5e1)"/>
+<text x="208" y="197.0" font-size="12" font-weight="600" fill="#ffffff">82</text>
+<text x="536.0" y="197.0" font-size="12" fill="#374151">28</text>
+<text x="650" y="197.0" font-size="12" font-weight="600" fill="#111827">0 open</text>
+<text x="700" y="197.0" font-size="11" fill="#6b7280">of 110</text>
+<text x="188" y="235.0" font-size="13" text-anchor="end" fill="#111827">Germany</text>
+<rect x="200" y="220" width="288.3150684931507" height="22" fill="#2563eb"/>
+<rect x="490.3150684931507" y="220" width="149.68493150684932" height="22" fill="url(#hatch-cbd5e1)"/>
+<text x="208" y="235.0" font-size="12" font-weight="600" fill="#ffffff">48</text>
+<text x="497.3150684931507" y="235.0" font-size="12" fill="#374151">25</text>
+<text x="650" y="235.0" font-size="12" font-weight="600" fill="#111827">0 open</text>
+<text x="700" y="235.0" font-size="11" fill="#6b7280">of 73</text>
+<text x="32" y="270" font-size="12" fill="#6b7280">Across the whole dataset: 4,462 remote postings; 2,977 resolved → 2,474 residents-only (83%), 169 region-</text>
+<text x="32" y="286" font-size="12" fill="#6b7280">locked, 66 worldwide (2%). Unresolved rows are not yet read, not open.</text>
+<text x="32" y="316" font-size="11" fill="#6b7280">Source: author&#x27;s job-search database, 18,436 open postings at 590 companies, 6 Jul – 26 Aug 2026. mariascales.com</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 462" width="800" height="462" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Liberation Sans', 'DejaVu Sans', sans-serif" role="img" aria-label="Every neighbouring profession is the same width">
+<rect width="800" height="462" fill="#ffffff"/>
+<text x="32" y="38" font-size="19" font-weight="600" fill="#111827">Every neighbouring profession is the same width</text>
+<text x="32" y="60" font-size="13" fill="#6b7280">Open postings per company that has at least one, by profession</text>
+<text x="188" y="115.0" font-size="13" text-anchor="end" fill="#111827">Security</text>
+<g fill="#cbd5e1"><path d="M200,100 h356.0 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-356.0 z"/></g>
+<text x="568.0" y="115.0" font-size="13" font-weight="600" fill="#111827">3.4</text>
+<text x="601.116" y="115.0" font-size="12" fill="#6b7280">323 at 96 companies</text>
+<text x="188" y="151.0" font-size="13" text-anchor="end" fill="#111827">Machine learning</text>
+<g fill="#cbd5e1"><path d="M200,136 h345.4117647058824 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-345.4117647058824 z"/></g>
+<text x="557.4117647058824" y="151.0" font-size="13" font-weight="600" fill="#111827">3.3</text>
+<text x="590.5277647058824" y="151.0" font-size="12" fill="#6b7280">255 at 77</text>
+<text x="188" y="187.0" font-size="13" text-anchor="end" fill="#111827">AI</text>
+<g fill="#cbd5e1"><path d="M200,172 h292.47058823529414 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-292.47058823529414 z"/></g>
+<text x="504.47058823529414" y="187.0" font-size="13" font-weight="600" fill="#111827">2.8</text>
+<text x="537.5865882352941" y="187.0" font-size="12" fill="#6b7280">383 at 139</text>
+<text x="188" y="223.0" font-size="13" text-anchor="end" fill="#111827">Product management</text>
+<g fill="#cbd5e1"><path d="M200,208 h292.47058823529414 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-292.47058823529414 z"/></g>
+<text x="504.47058823529414" y="223.0" font-size="13" font-weight="600" fill="#111827">2.8</text>
+<text x="537.5865882352941" y="223.0" font-size="12" fill="#6b7280">727 at 259</text>
+<text x="188" y="259.0" font-size="13" text-anchor="end" fill="#111827">My disciplines</text>
+<g fill="#2563eb"><path d="M200,244 h292.47058823529414 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-292.47058823529414 z"/></g>
+<text x="504.47058823529414" y="259.0" font-size="13" font-weight="600" fill="#111827">2.8</text>
+<text x="537.5865882352941" y="259.0" font-size="12" fill="#6b7280">627 at 226</text>
+<text x="188" y="295.0" font-size="13" text-anchor="end" fill="#111827">Analytics</text>
+<g fill="#cbd5e1"><path d="M200,280 h281.8823529411765 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-281.8823529411765 z"/></g>
+<text x="493.8823529411765" y="295.0" font-size="13" font-weight="600" fill="#111827">2.7</text>
+<text x="526.9983529411766" y="295.0" font-size="12" fill="#6b7280">416 at 153</text>
+<text x="188" y="331.0" font-size="13" text-anchor="end" fill="#111827">Data engineering</text>
+<g fill="#cbd5e1"><path d="M200,316 h250.11764705882354 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-250.11764705882354 z"/></g>
+<text x="462.11764705882354" y="331.0" font-size="13" font-weight="600" fill="#111827">2.4</text>
+<text x="495.2336470588235" y="331.0" font-size="12" fill="#6b7280">322 at 137</text>
+<text x="188" y="367.0" font-size="13" text-anchor="end" fill="#111827">Design</text>
+<g fill="#cbd5e1"><path d="M200,352 h218.3529411764706 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-218.3529411764706 z"/></g>
+<text x="430.3529411764706" y="367.0" font-size="13" font-weight="600" fill="#111827">2.1</text>
+<text x="463.4689411764706" y="367.0" font-size="12" fill="#6b7280">193 at 93</text>
+<line x1="200" y1="94" x2="200" y2="380" stroke="#e5e7eb" stroke-width="1"/>
+<text x="32" y="398" font-size="12" fill="#6b7280">Openings per hiring company — the one comparison this sample supports. Off the chart: engineering at 12.3</text>
+<text x="32" y="414" font-size="12" fill="#6b7280">(about 9 once city clones are collapsed).</text>
+<text x="32" y="446" font-size="11" fill="#6b7280">Source: author&#x27;s job-search database, 18,436 open postings at 590 companies, 6 Jul – 26 Aug 2026. mariascales.com</text>
+</svg>
