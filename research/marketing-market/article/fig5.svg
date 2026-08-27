@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Liberation Sans', 'DejaVu Sans', sans-serif" role="img" aria-label="AI hiring is not spread across the company. It is one column.">
+<rect width="800" height="390" fill="#ffffff"/>
+<text x="32" y="38" font-size="19" font-weight="600" fill="#111827">AI hiring is not spread across the company. It is one column.</text>
+<text x="32" y="60" font-size="13" fill="#6b7280">Share of open postings whose title mentions AI, by broad type</text>
+<text x="138" y="115.0" font-size="13" text-anchor="end" fill="#111827">Data</text>
+<g fill="#2563eb"><path d="M150,100 h446.0 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-446.0 z"/></g>
+<text x="608.0" y="115.0" font-size="13" font-weight="600" fill="#111827">49%</text>
+<text x="641.116" y="115.0" font-size="12" fill="#6b7280">627 of 1,283</text>
+<text x="138" y="151.0" font-size="13" text-anchor="end" fill="#111827">Business</text>
+<g fill="#cbd5e1"><path d="M150,136 h42.012269938650306 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-42.012269938650306 z"/></g>
+<text x="204.01226993865032" y="151.0" font-size="13" font-weight="600" fill="#111827">5.0%</text>
+<text x="245.50026993865032" y="151.0" font-size="12" fill="#6b7280">17 of 340</text>
+<text x="138" y="187.0" font-size="13" text-anchor="end" fill="#111827">Engineering</text>
+<g fill="#cbd5e1"><path d="M150,172 h33.73006134969325 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-33.73006134969325 z"/></g>
+<text x="195.73006134969324" y="187.0" font-size="13" font-weight="600" fill="#111827">4.1%</text>
+<text x="237.21806134969324" y="187.0" font-size="12" fill="#6b7280">202 of 4,880</text>
+<text x="138" y="223.0" font-size="13" text-anchor="end" fill="#111827">Marketing</text>
+<g fill="#cbd5e1"><path d="M150,208 h15.325153374233128 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-15.325153374233128 z"/></g>
+<text x="177.32515337423314" y="223.0" font-size="13" font-weight="600" fill="#111827">2.1%</text>
+<text x="218.81315337423314" y="223.0" font-size="12" fill="#6b7280">126 of 6,084</text>
+<text x="138" y="259.0" font-size="13" text-anchor="end" fill="#111827">Analytics</text>
+<g fill="#cbd5e1"><path d="M150,244 h14.404907975460123 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-14.404907975460123 z"/></g>
+<text x="176.40490797546013" y="259.0" font-size="13" font-weight="600" fill="#111827">2.0%</text>
+<text x="217.89290797546013" y="259.0" font-size="12" fill="#6b7280">10 of 496</text>
+<text x="138" y="295.0" font-size="13" text-anchor="end" fill="#111827">Product</text>
+<g fill="#cbd5e1"><path d="M150,280 h7.042944785276074 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-7.042944785276074 z"/></g>
+<text x="169.04294478527606" y="295.0" font-size="13" font-weight="600" fill="#111827">1.2%</text>
+<text x="210.53094478527606" y="295.0" font-size="12" fill="#6b7280">9 of 727</text>
+<line x1="150" y1="94" x2="150" y2="308" stroke="#e5e7eb" stroke-width="1"/>
+<text x="32" y="326" font-size="12" fill="#6b7280">Title search only: ai, artificial intelligence, machine learning, ML, GenAI, generative, agentic, LLM,</text>
+<text x="32" y="342" font-size="12" fill="#6b7280">copilot. 995 titles in all.</text>
+<text x="32" y="374" font-size="11" fill="#6b7280">Source: author&#x27;s job-search database, 18,436 open postings at 590 companies, 6 Jul – 26 Aug 2026. mariascales.com</text>
+</svg>

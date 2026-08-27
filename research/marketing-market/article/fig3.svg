@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 425" width="800" height="425" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Liberation Sans', 'DejaVu Sans', sans-serif" role="img" aria-label="The bigger the board, the more certain the answer">
+<rect width="800" height="425" fill="#ffffff"/>
+<text x="32" y="38" font-size="19" font-weight="600" fill="#111827">The bigger the board, the more certain the answer</text>
+<text x="32" y="60" font-size="13" fill="#6b7280">Share of companies with no such opening, by minimum board size (companies with at least one real open posting)</text>
+<rect x="32" y="76" width="12" height="12" rx="2" fill="#2563eb"/>
+<text x="50" y="86" font-size="12" fill="#374151">No performance / growth / UA role</text>
+<rect x="293.76" y="76" width="12" height="12" rx="2" fill="#93c5fd"/>
+<text x="311.76" y="86" font-size="12" fill="#374151">No marketing role at all</text>
+<line x1="90" y1="340.0" x2="700" y2="340.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="344.0" font-size="12" text-anchor="end" fill="#6b7280">0%</text>
+<line x1="90" y1="274.2857142857143" x2="700" y2="274.2857142857143" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="278.2857142857143" font-size="12" text-anchor="end" fill="#6b7280">20%</text>
+<line x1="90" y1="208.57142857142858" x2="700" y2="208.57142857142858" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="212.57142857142858" font-size="12" text-anchor="end" fill="#6b7280">40%</text>
+<line x1="90" y1="142.85714285714286" x2="700" y2="142.85714285714286" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="146.85714285714286" font-size="12" text-anchor="end" fill="#6b7280">60%</text>
+<text x="90.0" y="362" font-size="12" text-anchor="middle" fill="#374151">any board</text>
+<text x="90.0" y="378" font-size="11" text-anchor="middle" fill="#6b7280">n = 590</text>
+<text x="242.5" y="362" font-size="12" text-anchor="middle" fill="#374151">5+ openings</text>
+<text x="242.5" y="378" font-size="11" text-anchor="middle" fill="#6b7280">n = 418</text>
+<text x="395.0" y="362" font-size="12" text-anchor="middle" fill="#374151">10+</text>
+<text x="395.0" y="378" font-size="11" text-anchor="middle" fill="#6b7280">n = 306</text>
+<text x="547.5" y="362" font-size="12" text-anchor="middle" fill="#374151">25+</text>
+<text x="547.5" y="378" font-size="11" text-anchor="middle" fill="#6b7280">n = 164</text>
+<text x="700.0" y="362" font-size="12" text-anchor="middle" fill="#374151">50+</text>
+<text x="700.0" y="378" font-size="11" text-anchor="middle" fill="#6b7280">n = 85</text>
+<polyline points="90.0,136.28571428571428 242.5,172.42857142857142 395.0,188.85714285714286 547.5,221.71428571428572 700.0,257.8571428571429" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="90.0" cy="136.28571428571428" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<circle cx="242.5" cy="172.42857142857142" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<circle cx="395.0" cy="188.85714285714286" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<circle cx="547.5" cy="221.71428571428572" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<circle cx="700.0" cy="257.8571428571429" r="5" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+<text x="88.0" y="124.28571428571428" font-size="13" font-weight="600" fill="#111827">62%</text>
+<text x="712.0" y="261.8571428571429" font-size="13" font-weight="600" fill="#111827">25%</text>
+<polyline points="90.0,267.7142857142857 242.5,313.7142857142857 395.0,320.2857142857143 547.5,333.42857142857144 700.0,336.7142857142857" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="90.0" cy="267.7142857142857" r="5" fill="#93c5fd" stroke="#ffffff" stroke-width="2"/>
+<circle cx="242.5" cy="313.7142857142857" r="5" fill="#93c5fd" stroke="#ffffff" stroke-width="2"/>
+<circle cx="395.0" cy="320.2857142857143" r="5" fill="#93c5fd" stroke="#ffffff" stroke-width="2"/>
+<circle cx="547.5" cy="333.42857142857144" r="5" fill="#93c5fd" stroke="#ffffff" stroke-width="2"/>
+<circle cx="700.0" cy="336.7142857142857" r="5" fill="#93c5fd" stroke="#ffffff" stroke-width="2"/>
+<text x="88.0" y="255.71428571428572" font-size="13" font-weight="600" fill="#111827">22%</text>
+<text x="712.0" y="340.7142857142857" font-size="13" font-weight="600" fill="#111827">1%</text>
+<text x="32" y="409" font-size="11" fill="#6b7280">Source: author&#x27;s job-search database, 18,436 open postings at 590 companies, 6 Jul – 26 Aug 2026. mariascales.com</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 490" width="800" height="490" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Liberation Sans', 'DejaVu Sans', sans-serif" role="img" aria-label="A B2C company means marketing. A B2B company means sales.">
+<rect width="800" height="490" fill="#ffffff"/>
+<text x="32" y="38" font-size="19" font-weight="600" fill="#111827">A B2C company means marketing. A B2B company means sales.</text>
+<text x="32" y="60" font-size="13" fill="#6b7280">Share of each company type&#x27;s marketing postings, by discipline group</text>
+<rect x="32" y="76" width="12" height="12" rx="2" fill="#93c5fd"/>
+<text x="50" y="86" font-size="12" fill="#374151">Sales &amp; adjacent</text>
+<rect x="179.52" y="76" width="12" height="12" rx="2" fill="#cbd5e1"/>
+<text x="197.52" y="86" font-size="12" fill="#374151">Other marketing</text>
+<rect x="320.32000000000005" y="76" width="12" height="12" rx="2" fill="#e2e8f0"/>
+<text x="338.32000000000005" y="86" font-size="12" fill="#374151">Product marketing + brand</text>
+<rect x="528.32" y="76" width="12" height="12" rx="2" fill="#2563eb"/>
+<text x="546.32" y="86" font-size="12" fill="#374151">Performance / Growth / UA</text>
+<rect x="230" y="111" width="130" height="168.87391081496668" fill="#93c5fd"/>
+<text x="295.0" y="200.43695540748334" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">68%</text>
+<rect x="230" y="281.8739108149667" width="130" height="44.514607893388" fill="#cbd5e1"/>
+<text x="295.0" y="309.13121476166066" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">19%</text>
+<rect x="230" y="328.3885187083547" width="130" height="6.393131727319323" fill="#e2e8f0"/>
+<text x="368" y="335.58508457201435" font-size="12" fill="#374151">3%</text>
+<rect x="230" y="336.781650435674" width="130" height="22.218349564325987" fill="#2563eb"/>
+<text x="295.0" y="352.890825217837" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">10%</text>
+<text x="295.0" y="382" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">B2B companies</text>
+<text x="295.0" y="400" font-size="12" text-anchor="middle" fill="#6b7280">3,902 marketing postings</text>
+<rect x="470" y="111" width="130" height="70.81931464174455" fill="#93c5fd"/>
+<text x="535.0" y="151.40965732087227" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">29%</text>
+<rect x="470" y="183.81931464174454" width="130" height="122.22118380062305" fill="#cbd5e1"/>
+<text x="535.0" y="249.92990654205607" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">50%</text>
+<rect x="470" y="308.0404984423676" width="130" height="14.74454828660436" fill="#e2e8f0"/>
+<text x="608" y="319.4127725856698" font-size="12" fill="#374151">7%</text>
+<rect x="470" y="324.78504672897196" width="130" height="34.21495327102804" fill="#2563eb"/>
+<text x="535.0" y="346.892523364486" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">14%</text>
+<text x="535.0" y="382" font-size="13" font-weight="600" text-anchor="middle" fill="#111827">B2C companies</text>
+<text x="535.0" y="400" font-size="12" text-anchor="middle" fill="#6b7280">642 marketing postings</text>
+<text x="32" y="430" font-size="12" fill="#6b7280">Mixed-audience companies (1,540 postings) behave like B2B: 63% commercial. Audience is a property of the</text>
+<text x="32" y="446" font-size="12" fill="#6b7280">company, not of the posting.</text>
+<text x="32" y="474" font-size="11" fill="#6b7280">Source: author&#x27;s job-search database, 18,436 open postings at 590 companies, 6 Jul – 26 Aug 2026. mariascales.com</text>
+</svg>
