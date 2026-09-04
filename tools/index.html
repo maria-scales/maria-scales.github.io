@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demand Forecasting for Massive Request Seasonality – Toloka · Maria Atamanova</title>
+  <title>Tools – Maria Atamanova</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
   <script>
@@ -13,18 +13,18 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="How I reduced Toloka's acquisition budget by 22% while maintaining 100% fulfillment on all key client requests by building a demand forecasting and planning process.">
-  <link rel="canonical" href="https://mariascales.com/cases/toloka-forecasting/">
+  <meta name="description" content="Interactive growth tools by Maria Atamanova: a unit-economics estimator for subscription apps – every input sourced, tagged and overridable, with live self-tests.">
+  <link rel="canonical" href="https://mariascales.com/tools/">
   <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Demand Forecasting for Massive Request Seasonality – Toloka · Maria Atamanova">
-  <meta property="og:description" content="How I reduced Toloka's acquisition budget by 22% while maintaining 100% fulfillment on all key client requests by building a demand forecasting and planning process.">
-  <meta property="og:url" content="https://mariascales.com/cases/toloka-forecasting/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tools – Maria Atamanova">
+  <meta property="og:description" content="Interactive growth tools by Maria Atamanova: a unit-economics estimator for subscription apps – every input sourced, tagged and overridable, with live self-tests.">
+  <meta property="og:url" content="https://mariascales.com/tools/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Demand Forecasting for Massive Request Seasonality – Toloka · Maria Atamanova">
-  <meta name="twitter:description" content="How I reduced Toloka's acquisition budget by 22% while maintaining 100% fulfillment on all key client requests by building a demand forecasting and planning process.">
+  <meta name="twitter:title" content="Tools – Maria Atamanova">
+  <meta name="twitter:description" content="Interactive growth tools by Maria Atamanova: a unit-economics estimator for subscription apps – every input sourced, tagged and overridable, with live self-tests.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -353,97 +353,38 @@
 </header>
 <nav class="site-nav">
   <div class="container">
-    <a href="/cases/" class="nav-link active">Case Studies</a>
+    <a href="/cases/" class="nav-link">Case Studies</a>
     <a href="/articles/" class="nav-link">Writing</a>
     <a href="/research/" class="nav-link">Research</a>
-    <a href="/tools/" class="nav-link">Tools</a><a href="#contact" class="nav-link">Contact</a>
+    <a href="/tools/" class="nav-link active">Tools</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </div>
 </nav>
 <div class="breadcrumb">
-  <div class="container"><a href="/">Home</a><span>›</span><a href="/cases/">Cases</a><span>›</span><strong>Demand Forecasting for Massive Request Seasonality</strong></div>
+  <div class="container"><a href="/">Home</a><span>›</span><strong>Tools</strong></div>
 </div>
 <div class="page-header">
   <div class="container">
-    <div class="case-logo-header">
-      <img src="/logos/toloka.svg" alt="Toloka (Yandex)">
-      <div>
-        <div class="page-title">Demand Forecasting for Massive Request Seasonality</div>
-        <div class="page-meta"><a href="https://toloka.ai" target="_blank">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex) · AI/ML crowdsourcing · Demand forecasting</div>
-      </div>
-    </div>
-    <div class="page-outcome">100% fulfillment rate maintained · 22% budget cut</div>
+    <div class="page-title">Tools</div>
+    <div class="page-meta">Interactive models – every input sourced, tagged and overridable, checked by live self-tests</div>
   </div>
 </div>
 
-<section class="case-content">
+<section style="padding: 40px 0;">
   <div class="container">
-    
-        <h2>Situation</h2>
-        <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
-        <p>Toloka's revenue is connected with client requests' fulfillment, which workers perform. The number of completed tasks per day and the number of days the worker stays active on the platform are critical variables for business margins.</p>
-        <p>As Senior Marketing Manager, B2C, I was responsible for acquiring, engaging, and retaining these workers.</p>
-
-        <h2>Task</h2>
-        <p>For the Toloka Business Development team, it is critical to fulfill key clients' requests (big tech) entirely and on time, regardless of internal processes and optimization issues. These requests usually have a significant volume and obvious seasonality (meaning that their requests don't come gradually within a period of one year). As a result, a massive burst in the number of workers is needed immediately, significantly affecting the business margins and net margins of these requests.</p>
-        <p>Tasks like these happen in different types of businesses that deal with substantial seasonal sales during holidays or other events. The common feature of this particular ask is that these sales have strict time limits and KPIs.</p>
-        <p>The task was in handling big requests, handling standardization, and connected costs minimization, which are related to:</p>
-        <ul>
-          <li>excessively rapid ad campaigns' scale;</li>
-          <li>acquiring too many workers in case of a gap between requests.</li>
-        </ul>
-
-        <h2>Action</h2>
-        <p>To meet the challenges, I've decided to focus on the following areas:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>find the metrics to evaluate worker's efficiency and calculate workers' unit economy;</li>
-          <li>increase workers' retention to key projects;</li>
-          <li>forecasting and planning upcoming requests fulfillment.</li>
-        </ol>
-        <p>Here, we will dwell more on actions and results in area 3. We'll review areas 1 and 2 in separate cases.</p>
-        <p>During the research phase, it became apparent that it's crucial to build the processes of key requests' forecasting and workers' acquisition optimization via:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>understanding of the request volume distribution among different languages, since the requests' repetition and relatively stable annual demand are driven by clients' business nature (in other words, we can, indeed, predict with considerable accuracy the request volume distribution among the languages);</li>
-          <li>understanding of the request types and other clients' business requirements;</li>
-          <li>regular communication and planning, as well as building the reporting system between Marketing and BizDev teams.</li>
-        </ol>
-
-        <h2>Result</h2>
-        <ul>
-          <li><strong>The user acquisition budget for major language segments decreased by 22%</strong>, while Toloka's revenue remained unchanged.</li>
-          <li><strong>Maintained the key requests' fulfillment success rate of 100%</strong>.</li>
-          <li>Built a transparent collaboration process between Marketing and BizDev teams, in particular:
-            <ul>
-              <li>built communication and planning processes regarding terms of order fulfillment and required business margins between Marketing and BizDev teams;</li>
-              <li>built the reporting system, which indicated the planned as well as actual schedule of the clients' requests fulfillment, which let us adapt the plan and understand what we should adjust to meet the schedule and business margins;</li>
-              <li>understanding the business margins by language and request types, which lets the BizDev team prioritize and make more margin deals.</li>
-            </ul>
-          </li>
-        </ul>
-        
-    
-        <blockquote>
-          <p>"Maria achieved great results in the acquisition, retention, and engagement of ML data makers thanks to her strategic thinking, data analysis skills, project management skills, understanding of marketing tools and technologies, strong work ethic and attention to detail, and continuous improvement mindset."</p>
-          <cite>– <a href="https://www.linkedin.com/in/stepa/" target="_blank"><strong>Dmitry Stepanov</strong></a>, Founder & GP at AAL VC · Forbes 30 Under 30 · Senior to Maria at Toloka</cite>
-        </blockquote>
-  
-        <h2>More cases</h2>
-        <ul class="card-list">
-          <li>
-            <div class="card-title" style="margin-bottom:4px;"><a href="/cases/toloka-pmf/">How Marketing Can Help Find Product-Market Fit – Toloka</a></div>
-            <div class="card-meta">65% retention increase · 26% budget cut · revenue unchanged</div>
-          </li>
-          <li>
-            <div class="card-title" style="margin-bottom:4px;"><a href="/cases/toloka-unit-economy/">How to Build a Unit Economy Model to Improve Media Buying Strategy – Toloka</a></div>
-            <div class="card-meta">44% acquisition budget cut · revenue unchanged</div>
-          </li>
-        </ul>
-</div>
+    <ul class="card-list">
+    <li>
+      <div class="card-title"><a href="/tools/unit-economics-estimator/">Unit Economics Estimator – will this subscription app's growth math ever close?</a></div>
+      <div class="card-meta">Sep 2026 · v1.1 · Subscription apps · app→app and web→web quiz funnels · iOS vs Android · 24 benchmark inputs (9 [B] · 12 [E] · 3 [A]), 34 self-tests</div>
+      <div class="card-outcome">LTV M13, cost per subscriber, payback and peak cash from public benchmarks (RevenueCat, Adapty, Lebesgue, Interact…) – or your own numbers; sensitivity shows which funnel stage holds the gap</div>
+      <p style="margin-top:8px; font-size:0.875rem; color:#6b7280;">Built for the <a href="/cases/stealth/">Growth That Doesn't Lie to Itself</a> case – the reasoning behind every constant is in the tool's captions and its Design Decisions log.</p>
+    </li>
+    </ul>
+  </div>
 </section>
 
 <div class="back-link">
-  <div class="container">
-    <a href="/">← Back to all cases</a>
-  </div>
+  <div class="container"><a href="/">← Back to home</a></div>
 </div>
 
 <footer id="contact">
