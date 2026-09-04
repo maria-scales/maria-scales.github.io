@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Economics Estimator · Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="Does this growth math ever close? An interactive unit-economics calculator for subscription apps – a2a and w2w funnels, iOS vs Android, benchmark-anchored with sensitivity, payback and budget views.">
+  <link rel="canonical" href="https://mariascales.com/tools/unit-economics-estimator/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Unit Economics Estimator · Maria Atamanova">
+  <meta property="og:description" content="Does this growth math ever close? An interactive unit-economics calculator for subscription apps – benchmark-anchored, with sensitivity, payback and budget views.">
+  <meta property="og:url" content="https://mariascales.com/tools/unit-economics-estimator/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit Economics Estimator · Maria Atamanova">
+  <meta name="twitter:description" content="Does this growth math ever close? An interactive unit-economics calculator for subscription apps.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.25; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 24px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content em { color: #374151; }
+    .article-content a { color: #1e40af; }
+    blockquote { border-left: 3px solid #e5e7eb; padding: 14px 18px; margin: 20px 0; background: #f9fafb; border-radius: 0 6px 6px 0; }
+    blockquote p { color: #4b5563 !important; font-style: italic; }
+    .constraint-list { margin: 20px 0; }
+    .constraint { border-left: 3px solid #e5e7eb; padding: 12px 16px; margin-bottom: 10px; background: #f9fafb; border-radius: 0 6px 6px 0; }
+    .constraint strong { color: #111827; display: block; margin-bottom: 4px; }
+    .constraint span { font-size: 0.9375rem; color: #374151; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    .series-nav { margin-top: 48px; padding-top: 28px; border-top: 1px solid #e5e7eb; }
+    .series-nav-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+    .series-nav-item { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+    .series-nav-item:last-child { border-bottom: none; }
+    .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+    .series-nav-item a:hover { color: #1e40af; }
+    .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } }
+    table { width:100%; border-collapse:collapse; font-size:0.875rem; margin:16px 0 28px; }
+    th, td { border:1px solid #e5e7eb; padding:10px 12px; text-align:left; vertical-align:top; line-height:1.5; }
+    th { background:#f9fafb; font-weight:600; }
+  
+  </style>
+  <style>
+
+  :root { --ink:#111827; --sub:#6b7280; --line:#e5e7eb; --bg:#f9fafb; --link:#1e40af; --good:#047857; --bad:#b91c1c; --warn:#b45309; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); margin:0; background:#fff; line-height:1.5; }
+  .est-wrap { max-width:800px; margin:0 auto; padding:0 24px; }
+  h1 { font-size:1.6rem; margin:28px 0 4px; }
+  .meta { color:var(--sub); font-size:.875rem; margin-bottom:20px; }
+  h2 { font-size:1.05rem; margin:30px 0 10px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .card { background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  label { display:block; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); margin-bottom:4px; }
+  select,input[type=number] { width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:6px; font-size:.9375rem; background:#fff; }
+  .fieldrow { display:flex; align-items:center; gap:8px; padding:7px 4px; border-bottom:1px dashed var(--line); }
+  .fieldrow:last-child { border-bottom:none; }
+  .fname { flex:1.6; font-size:.875rem; }
+  .fsrc { font-size:.6875rem; color:var(--sub); display:block; }
+  .fval { width:110px; }
+  .fval input { text-align:right; }
+  .tag { font-size:.625rem; font-weight:700; border-radius:4px; padding:1px 5px; }
+  .tB { background:#dcfce7; color:#166534; } .tE { background:#fef3c7; color:#92400e; } .tA { background:#fee2e2; color:#991b1b; }
+  .my { font-size:.625rem; color:var(--link); cursor:pointer; white-space:nowrap; }
+  .manual { outline:2px solid #93c5fd; }
+  .errinput { border-color:#b91c1c !important; background:#fef2f2 !important; }
+  .selftest-link { display:inline-block; margin-top:10px; border:1.5px solid #72C09B; color:#16355C !important; border-radius:7px; padding:4px 12px; font-weight:600; font-size:.8125rem; text-decoration:none; transition:background .15s; }
+  .selftest-link .tick { color:#4FA47F; }
+  .selftest-link:hover { background:#72C09B; color:#16355C !important; }
+  .out { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
+  .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
+  .kpi .v { font-size:1.35rem; font-weight:700; }
+  .kpi .l { font-size:.6875rem; color:var(--sub); text-transform:uppercase; letter-spacing:.05em; }
+  .verdict { border-radius:8px; padding:14px 16px; font-weight:600; margin:6px 0 20px; }
+  .v-good { background:#ecfdf5; color:var(--good); border:1px solid #a7f3d0; }
+  .v-bad { background:#fef2f2; color:var(--bad); border:1px solid #fecaca; }
+  .note { font-size:.8125rem; color:var(--sub); }
+  .warnbox { background:#fffbeb; border:1px solid #fde68a; color:var(--warn); font-size:.8125rem; border-radius:8px; padding:8px 12px; margin:8px 0; display:none; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media (max-width:760px){ .cols { grid-template-columns:1fr; } }
+  table.mix { width:100%; font-size:.875rem; border-collapse:collapse; }
+  table.mix td,th { padding:5px 6px; border-bottom:1px solid var(--line); text-align:right; }
+  table.mix td:first-child,th:first-child { text-align:left; }
+  table.mix input { width:78px; text-align:right; padding:4px 6px; border:1px solid var(--line); border-radius:5px; }
+  .mixwrap { overflow-x:auto; }
+  @media (max-width:480px){ table.mix input { width:64px; } table.mix td,th { padding:5px 4px; } }
+  .tabs { display:flex; justify-content:space-between; gap:4px; margin:18px 0 6px; border-bottom:2px solid var(--line); }
+  .tabs { flex-wrap:wrap; }
+  .tabs button { flex:0 1 auto; white-space:nowrap; border:none; background:none; font:inherit; font-size:.875rem; font-weight:600; padding:9px 6px; cursor:pointer; color:var(--sub); border-bottom:2px solid transparent; margin-bottom:-2px; }
+  .tabs button:first-child { padding-left:0; }
+  .tabs button:last-child { padding-right:0; }
+  @media (max-width:760px){ .tabs { flex-wrap:wrap; justify-content:flex-start; gap:0 14px; } .tabs button { font-size:.8125rem; padding:8px 0; } }
+  .tabs button.active { color:var(--ink); border-bottom-color:var(--link); }
+  .frow { display:grid; grid-template-columns:220px 1fr 1fr; gap:10px; align-items:center; padding:8px 4px; border-bottom:1px dashed var(--line); font-size:.875rem; }
+  .frow.head { font-weight:700; border-bottom:1px solid var(--line); }
+  .fbarwrap { position:relative; }
+  .fbar { height:22px; border-radius:4px; display:flex; align-items:center; padding-left:8px; font-size:.75rem; color:#fff; white-space:nowrap; min-width:52px; }
+  #funnelviz .fbar.ios { background:#3D7AB8; } #funnelviz .fbar.android { background:#EE7C58; }
+  #funnelviz2 .fbar.ios { background:#7FB9E4; color:#16355C; } #funnelviz2 .fbar.android { background:#72C09B; color:#16355C; }
+  .fstage b { display:block; } .fstage span { font-size:.6875rem; color:var(--sub); }
+  .fcost { font-size:.8125rem; }
+  .econgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0 4px; }
+  @media (max-width:680px){ .econgrid { grid-template-columns:1fr; } }
+  .econrow { display:flex; justify-content:space-between; gap:10px; font-size:.8125rem; padding:3px 0; border-bottom:1px dashed var(--line); }
+  .econrow:last-child { border-bottom:none; }
+  .econhead { font-weight:700; font-size:.875rem; margin-bottom:6px; display:flex; align-items:center; gap:7px; }
+  .econdot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .formula { background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:5px 12px; margin:6px 0 2px; font-size:.95rem; font-family:Georgia,"Times New Roman",serif; font-style:italic; display:inline-block; color:var(--ink); }
+  .dim { opacity:.45; }
+  .calcbtn { background:var(--link); color:#fff; border:none; border-radius:8px; padding:10px 26px; font:inherit; font-weight:600; cursor:pointer; margin:2px 0 12px;
+    transition: transform .08s ease, box-shadow .18s ease, background .18s ease; }
+  .calcbtn:hover { box-shadow:0 4px 14px rgba(30,64,175,.35); transform:translateY(-1px); }
+  .calcbtn:active { transform:translateY(1px) scale(.98); box-shadow:none; }
+  .stalenote { display:none; font-size:.8125rem; color:var(--warn); margin:0 0 10px; }
+  #explain p { margin:0 0 7px; }
+  table.vat { width:100%; font-size:.875rem; border-collapse:collapse; max-width:640px; }
+  table.vat td, table.vat th { padding:8px 12px; border-bottom:1px solid var(--line); text-align:left; }
+  table.vat td:last-child, table.vat th:last-child { text-align:right; }
+  table.methods { width:100%; font-size:.875rem; border-collapse:collapse; }
+  table.methods td, table.methods th { padding:10px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  table.methods td:first-child, table.methods th:first-child { width:180px; font-weight:600; }
+  table.methods .formula { display:inline-block; margin:0 0 6px; }
+  select:disabled { opacity:.45; cursor:not-allowed; }
+  .kpi .v { letter-spacing:-.01em; }
+  @media (max-width:680px){
+    .frow { grid-template-columns:1fr; gap:6px; }
+    .frow.head { display:none; }
+    .fbar { height:20px; font-size:.6875rem; }
+    .fbar.ios::after { content:" · iOS"; opacity:.75; }
+    .fbar.android::after { content:" · Android"; opacity:.75; }
+    .fieldrow { flex-wrap:wrap; }
+    .fname { flex:1 1 100%; }
+    .fval { width:120px; }
+  .est-wrap { max-width:800px; margin:0 auto; padding:0 24px; }
+    h1 { font-size:1.35rem; }
+  }
+
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link">Research</a><a href="/tools/" class="nav-link active">Tools</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/tools/">Tools</a><span>›</span><strong>Unit Economics Estimator</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">Unit Economics Estimator</div>
+    <div class="page-meta">Sep 2026 · v1.1 · Systems · Interactive · built for the <a href="/cases/stealth/">Growth That Doesn't Lie to Itself</a> case</div>
+  </div>
+</div>
+<div class="est-wrap">
+  <div class="meta"><strong>Subscription apps only</strong> – ad-monetized (IAA), hybrid and commerce economics are separate models and out of scope. Estimation covers the app→app funnel (and web→web quiz funnel), Meta acquisition, hard paywall only. Does this growth math ever close? Set your plans and prices; every other field starts from a public benchmark – override anything you actually know. Manual values are treated as <em>effective</em>: season, optimization-event, platform and paid-traffic auto-factors are not applied on top of them. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
+
+  <div class="tabs">
+    <button id="tabbtn-calc" class="active">Calculator a2a</button>
+    <button id="tabbtn-calcw">Calculator w2w</button>
+    <button id="tabbtn-funnel">Funnel diagnostics</button>
+    <button id="tabbtn-ret">Retention curves</button>
+    <button id="tabbtn-ltv">LTV methodology</button>
+    <button id="tabbtn-vat">VAT by country</button>
+  </div>
+
+  <div id="tab-calc">
+  <div class="card" style="margin:10px 0 4px;background:#fff;border-color:#dbe4f0">
+    <div style="font-size:.875rem;color:var(--link);font-weight:600;margin-bottom:6px">How to use – 30 seconds</div>
+    <div class="note" style="max-width:760px">
+      1. Pick your <strong>vertical</strong> and <strong>geo</strong> – every benchmark field fills itself from public data (RevenueCat, Adapty, Lebesgue, Interact…). The install→trial benchmark defaults to <strong>hard-paywall apps</strong> (this tool's scope); switch the base to "All apps" for the raw RC panel median.<br>
+      2. Enter <strong>your plans and prices</strong> – the only thing the tool can't know.<br>
+      3. The default case is already computed – press <strong>Calculate</strong> after every change. Override any field where you have real data (it turns blue = "my data"), and use the scenario preset to swing all remaining benchmarks between P25 and P75 – conversion and retention fields go up with the scenario, the cost field (CPM) goes the opposite way, so Pessimistic = every stage against you, Aspirational = every stage for you. Note that a preset moves <em>every</em> stage at once: ten stages at P25 compound into a far worse outcome than "a P25 app".<br>
+      Early stage? Switch retention to <em>Fit from my first 2 renewals</em>. Want a colleague to see exactly your setup – <em>Copy share link</em>.
+    </div>
+  </div>
+  <h2>Setup</h2>
+  <div class="grid">
+    <div class="card"><label>Platform / device</label><select id="platform"><option value="blend" selected>Blended</option><option value="ios">iOS</option><option value="android">Android</option></select></div>
+    <div class="card" style="display:none"><label>Funnel</label><select id="funnel"><option value="a2a">App → App (a2a)</option><option value="w2w">Web → Web (w2w)</option></select></div>
+    <div class="card"><label>Vertical</label><select id="vertical"></select></div>
+    <div class="card" id="card_bbase"><label>Benchmark base (install → trial)</label><select id="bbase"><option value="hard" selected>Hard-paywall apps (this tool's scope)</option><option value="all">All apps – RC panel median</option></select></div>
+    <div class="card"><label>Geo (where you acquire users)</label><select id="geo"></select></div>
+    <div class="card"><label>Scenario preset</label><select id="scenario"><option value="p25">Pessimistic (conversions P25 · costs P75)</option><option value="p40">Conservative</option><option value="med" selected>Reasonable (median)</option><option value="p75">Aspirational (conversions P75 · costs P25)</option></select></div>
+    <div class="card"><label>Optimization event</label><select id="optevent"><option value="aeo_trial" selected>Trial start (AEO) – standard</option><option value="mai">Install (MAI)</option><option value="aeo_purchase">Purchase (AEO/VO)</option></select></div>
+    <div class="card" id="card_pwtrial"><label>Paywall trial</label><select id="pwtrial"><option value="yes" selected>With trial</option><option value="no">No trial (direct purchase)</option></select></div>
+    <div class="card" id="card_triallen"><label>Trial length</label><select id="triallen"><option value="d3">3 days (×0.68 trial→paid)</option><option value="d7" selected>7 days</option></select></div>
+    <div class="card"><label>Seasonality (month)</label><select id="season"><option value="1">Annual average</option><option value="0.80">Jan–Feb ×0.80 (cheapest window)</option><option value="0.96">Mar–Jun ×0.96</option><option value="0.88">Jul–Aug ×0.88</option><option value="1.08">Sep–Oct ×1.08</option><option value="1.33">Nov ×1.33 (BFCM peak)</option><option value="1.40">Dec ×1.40 (holiday peak)</option></select></div>
+    <div class="card"><label>AI product</label><select id="ai"><option value="0">No</option><option value="1">Yes (Adapty modifiers)</option></select></div>
+    <div class="card"><label>Store commission</label><select id="fee"><option value="0.30">Store 30%</option><option value="0.15" selected>Store 15% (SBP)</option><option value="0.05">Web PSP ~5%</option></select></div>
+  </div>
+
+  <h2>Plans &amp; prices <span class="note">(your data – required; mix must sum to 100%)</span></h2>
+  <div class="mixwrap"><table class="mix">
+    <tr><th>Plan</th><th>On</th><th>Price, $</th><th>1st-period price, $ <span class="note">(intro offer – optional)</span></th><th>Share of subscriptions, %</th></tr>
+    <tr><td>Weekly</td><td><input type="checkbox" id="wk_on"></td><td><input type="number" id="wk_p" value="5.99" step="0.01"></td><td><input type="number" id="wk_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="wk_s" value="0"></td></tr>
+    <tr><td>Monthly</td><td><input type="checkbox" id="mo_on" checked></td><td><input type="number" id="mo_p" value="19.99" step="0.01"></td><td><input type="number" id="mo_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="mo_s" value="48"></td></tr>
+    <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><input type="number" id="yr_p" value="59.99" step="0.01"></td><td><input type="number" id="yr_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="yr_s" value="52"></td></tr>
+  </table></div>
+  <div class="note">1st-period price: what the first payment is charged at (e.g. $8.99 for the first week/month, $59.99 for the first year); every renewal is charged at the plan price. Leave blank when there is no intro offer.</div>
+  <div class="warnbox" id="mixwarn"></div>
+  <div class="note" id="mixhint"></div>
+  <div class="note" id="pricewarn" style="display:none;color:var(--warn)"></div>
+
+  <div class="cols">
+    <div>
+      <h2 id="cpaHead">Acquisition funnel</h2>
+      <div id="fields"></div>
+      <div class="warnbox" id="xcheck"></div>
+    </div>
+    <div>
+      <h2 id="ltvhead">LTV inputs (M13 horizon)</h2>
+      <div class="card" style="margin-bottom:10px"><label>Retention input</label>
+        <select id="retmode">
+          <option value="bench" selected>Benchmark curve (RC data × scenario preset)</option>
+          <option value="fit">Fit from my first 2 renewals (early-stage mode)</option>
+        </select>
+      </div>
+      <div id="lfields"></div>
+    </div>
+  </div>
+
+  <h2>Results</h2>
+  <button id="calcbtn" class="calcbtn">Calculate</button>
+  <button id="sharebtn" class="calcbtn" style="background:#fff;color:var(--link);border:1px solid var(--link);margin-left:8px">Copy share link</button>
+  <div class="stalenote" id="stalenote">Press Calculate to compute the results with the current inputs.</div>
+  <div id="results" class="dim">
+  <div class="out">
+        <div class="kpi"><div class="v" id="o_ltv">–</div><div class="l">Blended net LTV M13</div></div>
+        <div class="kpi"><div class="v" id="o_cpa">–</div><div class="l" id="o_cpa_l">Modeled CPA</div></div>
+        <div class="kpi"><div class="v" id="o_roas">–</div><div class="l">LTV / CPA</div></div>
+        <div class="kpi"><div class="v" id="o_payback">–</div><div class="l">Payback month (net)</div></div>
+        <div class="kpi"><div class="v" id="o_cpi">–</div><div class="l">Modeled CPI / CPC</div></div>
+        <div class="kpi"><div class="v" id="o_tcpa">–</div><div class="l">Target CPA (at ROAS goal)</div></div>
+    <div class="kpi"><div class="v" id="o_tcpt">–</div><div class="l">Target CPT / CPI</div></div>
+    <div class="kpi" style="padding:8px 12px"><label style="margin-bottom:6px">Target ROAS (net LTV ÷ CPA)</label><input type="number" id="troas" value="1.3" step="0.1" min="0.1" style="max-width:120px;margin:0 auto;display:block;text-align:center"></div>
+  </div>
+  <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:0 0 12px">
+    <div style="min-width:170px;max-width:200px"><label>Monthly ad budget, $</label><input type="number" id="budget" value="10000" step="500" min="0"></div>
+    <div class="note" id="budgetout" style="flex:1;min-width:260px;font-size:.875rem"></div>
+  </div>
+  <div class="verdict" id="verdict">…</div>
+  <div id="sensbox" style="margin:4px 0 14px"></div>
+  <div class="note" id="explain"></div>
+  </div><!-- /results -->
+  </div><!-- /tab-calc -->
+
+  <div id="tab-funnel" style="display:none">
+    <h2>a2a funnel per 100,000 impressions – iOS vs Android</h2>
+    <p class="note">Both funnels, each with your current Setup and manual overrides (a2a and w2w keep separate overrides). Healthy bands = P25–P75 for your geo × vertical; ✓/⚠ marks where your value sits. For w2w, iOS/Android means the targeted device (split provisional [A]). Stages without a published OS split use the same value for both columns.<br>
+    <strong>Economics rows use each funnel's own money mechanics</strong>: a2a – the store fee you selected (15% SBP by default), no cohort penalty; w2w – the PSP fee (~5%) <em>plus</em> the web-cohort ×0.89 retention penalty [B, Adapty] on benchmark retention (not on renewals you typed – those already are the web cohort). That's why the two ROAS figures are directly comparable – same prices, different money plumbing. <strong>Net LTV per column</strong> starts from the calculator's headline number: your prices are read as the selected platform's, and the ARPU factor (iOS ×1.0 · Android ×0.8 · Blended ×0.9 [A – no public revenue split by store; Play billing-error churn is the documented mechanism]) re-bases them per store – each card shows the derivation. Store CVR is per store in each column (App Store vs Play data), whatever the Setup selector says. Colors: a2a = blue/coral, w2w = sky/green (iOS / Android).</p>
+    <div id="funnelviz"></div>
+    <h2>w2w funnel per 100,000 impressions – iOS vs Android devices</h2>
+    <div id="funnelviz2"></div>
+    <h2>Assumptions behind the numbers</h2>
+    <p class="note">Every number below is what the code uses today (constants in <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code>, <code>MAI</code>); the reasoning behind each choice lives in the Design Decisions log; every source was re-checked against its live page on 4 Sep 2026. Scenario presets move conversion and retention fields P25 → P75 and the CPM the opposite way.</p>
+    <ul class="note" style="line-height:1.7">
+      <li><span class="tag tE">E</span> <strong>CTR 1.2 / 1.6 / 2.0%</strong> – our band for video/UGC app-install creatives; the public panels bracket it without a creative-type split (Superads industry average 0.90–1.10%, Triple Whale e-commerce median 2.39%) – no OS split.</li>
+      <li><span class="tag tA">A</span> <strong>Click → store page 85 / 90 / 95%</strong> – in-app browser → deeplink losses; no public data.</li>
+      <li><span class="tag tB">B</span>/<span class="tag tE">E</span> <strong>Store CVR per store, per category</strong> – App Store: SplitMetrics category medians, page view → install with dropped visits removed (H&F 18.52%, Social 11.36%, Entertainment 8.6%, Education 6.75% [B]; via AppScreenshotStudio 2026; AppTweak's panel runs ~1.5× higher – H&F 30.8% in H1 2024 – and can exceed 100% because installs also come straight from search results); Google Play: AppTweak H1 2024 category figures as cited by Adjust (H&F 23.2%) and Adapty (Education 30.4%) [B] – AppTweak's own page now carries 2025 store averages only; Productivity / Photo & Video / Utilities and Music/M&E on both stores interpolated [E]. Blended = the average of the two. Denominators differ between stores, so no cross-store "bonus" is applied.</li>
+      <li><span class="tag tA">A</span> <strong>Paid-traffic factor ×0.7 / 0.8 / 0.9 on store CVR</strong> – paid converts below the blended store benchmarks; no public split.</li>
+      <li><span class="tag tE">E</span> <strong>Organic uplift 10 / 25 / 40%</strong> extra organic installs per paid install – practitioner range; TUNE's 2017 figure (1.5 organic per paid, dataset not described) is far higher and not representative of hard-paywall subscription apps. Applied to CPI (labelled "blended w/ organic"); set 0 for strict paid-only ROAS; not on web.</li>
+      <li><span class="tag tB">B</span> <strong>Install → paywall view 45 / 56 / 85%</strong> – Superwall (Nov 2022): platform average of 56% of users ever seeing a paywall; 85% is its recommended install→paywall view target – a hard paywall in onboarding should sit near the top of the band. The first-open / onboarding / registration rows above are display sub-stages of this composite (iOS first open ×0.87 [E], Android ×0.775 [E, UXCam citing Adjust – 20–25% of Android installs never open]; onboarding ×0.95 [A]; registration ×0.80 [E]) and do not enter the math.</li>
+      <li><span class="tag tB">B</span>/<span class="tag tE">E</span> <strong>Benchmark base for install → trial: hard-paywall apps (default)</strong>. RC's category medians mix every access model and most panel apps are freemium, where a minority of installs ever sees a paywall; RC 2026 reports hard-paywall apps converting 10.7% of downloads to paid (top quartile above 20%) vs 2.1% for freemium [B] – above the all-apps top quartile of the best categories (H&F 6.2%). This tool models hard paywalls only, so its default shifts the RC install→trial band one quartile up (H&F: 5.0 / 6.9 / 16% → 6.9 / 16 / 37%); the size of the shift is [E]. "All apps" in Setup gives the raw panel band.</li>
+      <li><span class="tag tE">E</span> <strong>Paywall view → trial start – derived</strong>: RC install→trial band (per the benchmark base above) for your vertical × geo factor (WE ×0.70, LatAm/TR ×0.50, Gulf ×0.70, IN/SEA ×0.45) ÷ the install→paywall benchmark of the same scenario. So the stage product reproduces the RC composite by construction; the cross-check only fires on your overrides.</li>
+      <li><span class="tag tB">B</span> <strong>Trial → paid by vertical × geo × trial length</strong> (RC: H&F 30 / 37.7 / 51.4%; geo factor WE ×0.87, TR ×0.65, IN/SEA ×0.44 …; 3-day trial ×0.68 – RC's ≤4-day bucket 25.5% vs 37.4% for 5–9 days) – store parity [B, RC 32.6% iOS vs 32.5% Play].</li>
+      <li><span class="tag tA">A</span> <strong>Trial share of new subscriptions 85 / 90 / 95%</strong> – no public benchmark.</li>
+      <li><span class="tag tE">E</span> <strong>No-trial paywall: direct purchases ×0.4 of the trial-start rate</strong> – Adapty 2026 onboarding paywalls: 0.82% without a trial vs 1.35% with one (conversion per paywall show; denominator not defined) = ×0.6, a ceiling since apps running no-trial paywalls are self-selected; A/B practice lands at 0.3–0.5. Consequence: a trial pays for itself when trial→paid ≥ ~36% (×0.4 × trial share), and the calculator says so explicitly.</li>
+      <li><span class="tag tA">A</span>/<span class="tag tB">B</span> <strong>Platform factors (a2a):</strong> CPM iOS ×1.1 / Android ×0.95 / Blended ×1.0 [A – most of the "cheap Android" is geo mix, modeled by the Geo selector]; paywall stage iOS ×1.30 / Android ×0.45 / Blended ×1.0 [B, RC SOSA 2026 store split: download→paid at day 35 is 2.6% on iOS vs 0.9% on Android with trial→paid at parity (32.6% vs 32.5%), so the gap sits at the funnel entrance; the global median of the same metric, 2.0%, implies a ≈65/35 iOS/Android blend and the factors are the ratios to it – medians do not mix linearly and the cross-category gap is applied to every vertical alike [E]]; trial→paid ×1.0 (store parity) [B, RC]; ARPU per subscriber Android ×0.8 / Blended ×0.9 [A – RC publishes no revenue-per-install split by store; the mechanism is documented: 32.3% of Play cancellations are involuntary billing failures vs 15.2% on the App Store] – ARPU is used on this tab only, the calculator takes your prices as entered.</li>
+      <li><span class="tag tA">A</span> <strong>No OS split</strong> on install→paywall, retention, renewal, refunds, plan mix – none is published; the store deltas on the first renewal shown on the Retention tab are the only split RC gives.</li>
+      <li><span class="tag tE">E</span> <strong>Optimization event – the benchmarks are AEO/organic-basis</strong>: the CPM panels come from conversion-optimized campaigns and RC's install→trial is measured on the traffic real apps get (AEO on trial start + organic), so AEO on trial start (default, the subscription-app standard) applies ×1.0 to price and intent. MAI: impressions ×0.4 the price, installs ×0.4 the paywall conversion [E, practitioner consensus "AEO beats MAI ×2.5–4 on install→trial"; the MAI/AEO/VO framing is Mobile Dev Memo's] – mirrored, so MAI ≡ AEO on cost per subscriber: the model claims no winner it cannot source and the pair does not move with the scenario preset. Purchase optimization with a trial: AEO price for MAI-quality installs (the event fires days after the click).</li>
+      <li><span class="tag tE">E</span> <strong>Seasonality</strong>: Jan–Feb ×0.80 · Mar–Jun ×0.96 · Jul–Aug ×0.88 · Sep–Oct ×1.08 · Nov ×1.33 · Dec ×1.40 – January–February (−20%) and the holiday peak (+40%) are the two figures Bïrch states in words (US campaigns, 2021–2023); the other months are read off its chart. Multiplies benchmark CPM, never a manual one.</li>
+      <li><span class="tag tB">B</span>/<span class="tag tA">A</span> <strong>w2w:</strong> quiz stages LP→start 30 / 38 / 40% [A, no public benchmark], start→finish 50 / 60 / 65% [B, Interact], finish→email 60 / 65 / 75% [B, derived from Interact's start→lead 37.6–44.9% ÷ start→finish – an earlier version used the start→lead figure itself as finish→email, understating the funnel ×1.5]; paywall→checkout 5 / 10 / 15% [A, Adapty's web paywalls convert ×0.69 of in-app: 1.10% vs 1.60%]; checkout completion 25 / 40 / 60% [E, practitioner band; Stripe publishes a +22.3% conversion lift from offering Apple Pay, not absolute completion rates]; web cohort LTV ×0.89 <span class="tag tB">B</span> [Adapty: $35.80 vs $40.10 one-year LTV; whether those are gross or net of store fees is not stated – applied to gross here, fees deducted separately] – per plan, and only while that plan's retention is a benchmark: typed anchors or fitted renewals already contain the web cohort's behaviour, so no ×0.89 on top; optimization events purchase ×1.0 / initiate checkout CPM ×0.85 & intent ×0.9 / lead CPM ×0.6 & intent ×0.8 [A].</li>
+      <li><span class="tag tA">A</span> <strong>w2w device split:</strong> CPM iOS ×1.15 / Android ×0.85 (device-targeting price), checkout completion iOS ×1.05 / Android ×0.95 (Apple Pay effect), ARPU iOS ×1.0 / Android ×0.9 / Blended ×0.95 – placeholders, no public data.</li>
+      <li><span class="tag tB">B</span>/<span class="tag tE">E</span> <strong>Retention:</strong> monthly anchors M1 50 / 61 / 68% [E, our band; RC category medians of the 1st monthly renewal span 42–61%], M6 14 / 20 / 26% and M12 6 / 10 / 14% [B, RC SOSA 2026 report], log-log between anchors; weekly renewals 35/46/58 [B, RC: 1st weekly renewal 35–58%] → 67/71/75 [E, report chart] → 74/80/85% [B, RC: 3rd renewal converges to 74–91%], then a two-phase tail through RC anchors M6 ≈ 10% and Y1 ≈ 1.5% [B, report], scaled by your first three renewals [E] – the week-26 anchor is an editable field (the least certain number in weekly LTV; a real weekly cohort with 80%+ early renewals kept ~10%/week churn instead of RC's slowdown), and the weekly early-stage fit is a geometric tail at your 2nd renewal's churn, not a power law; intro offers: the first payment at the 1st-period price, renewals at the plan price; yearly renewal 22 / 30 / 40% [B, RC: 1st annual renewal 23–40% across categories; Y1 27–28%] × a price ramp ×1.0 at $50 → ×0.8 at $70 [E, report price-tier chart: high-price 1st-renewal churn 37% vs 24%]; refund 2.5–4.7% by vertical on the first payment only [B, RC report]; AI apps: install→trial ×0.487 [B, Adapty 5.31% vs 10.92%] and monthly M6/M12 anchors ×0.7 [E – RC: AI apps churn ~30% faster / retain 36% worse over 12 months].</li>
+    </ul>
+  </div><!-- /tab-funnel -->
+
+  <div id="tab-ret" style="display:none">
+    <h2>Retention curves – share of subscribers still active, months 0–12</h2>
+    <p class="note" style="max-width:820px">Built from RevenueCat SOSA 2026: first three renewal rates by category <span class="tag tB">B</span>, M6 and M12 anchors <span class="tag tB">B</span>, store deltas <span class="tag tB">B</span> (Google Play +3.5pp on 1st monthly renewal, iOS +4.4pp on 1st weekly; stores converge by the 3rd renewal – so the curves meet at M6; the store deltas come from the report's store-split charts, not from the public web page). The line <em>between</em> anchor points is log-log interpolation <span class="tag tE">E</span>; Business/Social & Lifestyle series are reconstructed from the extremes RC quotes for weekly and monthly plans (Business 61% vs Social & Lifestyle 42% on the 1st monthly renewal; for annual plans the extremes are Travel/Business vs Photo & Video) <span class="tag tE">E</span>. Under each chart – a power-law fit per curve (least squares on log-log, months 1–12).<br>
+    <strong>S(m)</strong> – share of subscribers still active in month m · <strong>m</strong> – months since the first payment (M0 = everyone) · <strong>R²</strong> – goodness of fit, 1.0 = the curve follows the formula exactly. The monthly power law is what the Calculator's <em>Fit from my first 2 renewals</em> mode extrapolates from your first two renewals (for weekly plans the fit is a geometric tail at your 2nd renewal's churn – see LTV methodology). The median weekly curve here is the exact curve the calculator monetizes: renewals #1–#3, then a two-phase tail through the RC anchors M6 ≈ 10% and Y1 ≈ 1.5% – with the anchors scaled by your first three renewals relative to the median (or replaced by the week-26 survival you type), so the tail's level follows your early data while its shape stays RC.</p>
+    <div class="tabs" style="border-bottom:none;margin:6px 0">
+      <button id="ret-blend" class="active">Blended</button>
+      <button id="ret-ios">App Store</button>
+      <button id="ret-play">Google Play</button>
+    </div>
+    <div class="cols">
+      <div><h3 style="font-size:.95rem;margin:8px 0 4px">Monthly plans</h3><div id="retchart-m"></div><div class="note" id="reteq-m" style="font-size:.75rem;line-height:1.8"></div></div>
+      <div><h3 style="font-size:.95rem;margin:8px 0 4px">Weekly plans</h3><div id="retchart-w"></div><div class="note" id="reteq-w" style="font-size:.75rem;line-height:1.8"></div></div>
+    </div>
+    <p class="note" style="margin-top:10px">Why weekly LTV lives or dies in the first month: by M3 the median weekly cohort is already below 26%, by M12 – 1–2%. Monthly survives 6–14% to M12; Business is the outlier in both. Store choice barely matters after the first renewal – early funnel quality dominates. One structural exception: <strong>32.3% of Google Play cancellations are involuntary billing failures</strong> vs 15.2% on the App Store [B, RC blog; the report card rounds them to 31% / 14% <a href="https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/" target="_blank" style="color:var(--link);text-decoration:none">↗</a>] – grace periods and payment retries recover a chunk of it for free.</p>
+  </div><!-- /tab-ret -->
+
+  <div id="tab-ltv" style="display:none">
+    <h2>How this calculator computes LTV – and what the alternatives are</h2>
+
+    <h3 style="font-size:.95rem;margin:16px 0 6px">Our method: a discrete payment schedule built from the retention curve</h3>
+    <p class="note" >Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, we build a month-by-month payment schedule per subscriber: the first payment (minus refunds), then each renewal weighted by the probability of surviving to it (the retention curve from the <em>Retention curves</em> tab – RC anchors, or a fit from your first two renewals: a power law for monthly, a geometric tail for weekly). An intro offer changes only the first payment: the 1st-period price replaces P in the first term. LTV M13 = the sum of that schedule; net LTV = ÷(1+VAT) ×(1−store/PSP fee). The same schedule gives the payback month and the peak-cash figure in the Budget view – one model, three answers.</p>
+    <div class="formula">LTV<sub>M13</sub> = P·(1−refund) + Σ<sub>m=1…12</sub> P·S(m) &nbsp;&nbsp;+ P<sub>yearly</sub>·renewal<sub>M13</sub></div><br>
+    <div class="formula">net LTV = LTV × (1+upsell) ÷ (1+VAT) × (1−fee)</div><br>
+    <div class="formula">early-stage fit – monthly: S(m) = S₁·m<sup>−b</sup>, &nbsp;b = −log₂(r₂) &nbsp;·&nbsp; weekly: S(w) = r₁·r₂<sup>w−1</sup> (churn stays at your 2nd renewal's level)</div>
+    <p class="note" style="margin-top:8px"><strong>Where:</strong>
+      <strong>P</strong> – plan price (P<sub>yearly</sub> – the yearly plan's price) ·
+      <strong>m</strong> – months since the first payment ·
+      <strong>S(m)</strong> – survival: the share of subscribers still active at renewal m ·
+      <strong>refund</strong> – refund rate, hits the first payment only ·
+      <strong>renewal<sub>M13</sub></strong> – probability the yearly plan renews at month 13 (× a price ramp: ×1.0 up to $50, ×0.8 from $70) ·
+      <strong>VAT</strong> – sales tax inside the sticker price ·
+      <strong>upsell</strong> – ARPU uplift from welcome offers, plan upgrades and one-time purchases (0 if you have none) · <strong>fee</strong> – store commission (15/30%) or PSP fee (~5%) ·
+      <strong>S₁</strong> – survival after the 1st renewal (= your 1st renewal rate) ·
+      <strong>r₂</strong> – your 2nd renewal rate ·
+      <strong>b</strong> – decay exponent: how fast the cohort melts.</p>
+    <p class="note" >Two honest simplifications: we cut off at M13 instead of discounting an infinite tail, and the horizon is fixed rather than fitted per cohort. A WACC-discounted sum is the academically correct move – and it starts to <em>matter</em> when the volumes are large and the payback is long: at $100k+/month spend with a 12+ month payback, the time value of money quietly eats several percent of the modeled margin, and finance will (rightly) ask for the discounted version. At typical early-stage volumes and sub-year paybacks, the cutoff is both simpler and easier to defend.</p>
+
+    <h3 style="font-size:.95rem;margin:16px 0 6px">The family of LTV methods (ordered by accuracy)</h3>
+    <table class="methods">
+      <tr><th>Method</th><th>How it works · when to use</th></tr>
+      <tr><td><strong>Post-factum</strong></td><td><div class="formula">LTV = Revenue<sub>cohort</sub> ÷ Size<sub>cohort</sub></div><br>Wait until a cohort fully dies, divide its total revenue by its size. The only method that measures rather than models – and useless in practice, because you can't wait years. Everything below is a forecast.</td></tr>
+      <tr><td><strong>Divide everything</strong></td><td><div class="formula">LTV = Total Revenue ÷ Total Users</div><br>All revenue ÷ all users, one arithmetic action. Fast and crude: mixes app life stages, counts users who haven't had time to pay, can't segment. A sanity check, not a model.</td></tr>
+      <tr><td><strong>Lifetime × ARPDAU</strong></td><td><div class="formula">LTV = Lifetime × ARPDAU, &nbsp;ARPDAU = Revenue ÷ DAU</div><br>Average lifetime (days until an inactivity window) × average revenue per daily active user. Simple, segmentable – but multiplies two averages from non-overlapping user sets and assumes ARPDAU never changes.</td></tr>
+      <tr><td><strong>Retention-curve integral (Bottoms Up)</strong></td><td><div class="formula">R(t) = A·e<sup>−Bt</sup> + C, &nbsp;Lifetime = ∫₀<sup>T</sup> R(t)dt, &nbsp;LTV = ARPDAU × Lifetime</div><br>Fit the curve through known retention points (D1/D7/D28…), lifetime = the area under it. Accurate, gives a retention forecast as a bonus. <strong>Our method is its subscription-specific cousin</strong>: with discrete billing the integral collapses into a sum over renewal events – fewer assumptions, same idea.</td></tr>
+      <tr><td><strong>Cumulative ARPU fit (Top Down)</strong></td><td><div class="formula">cumARPU(t) ≈ A·ln(t) + B, &nbsp;LTV = cumARPU(t*) &nbsp;or&nbsp; PV = Σ CF<sub>i</sub> ÷ (1+WACC)<sup>i</sup></div><br>Track cumulative ARPU of a cohort at D7/D14/D28…, fit the curve, read LTV at the horizon – or add discounting and take the asymptote. Skips retention entirely; great when monetization is many small purchases.</td></tr>
+    </table>
+
+    <p class="note" ><strong>Symbols in the table:</strong>
+      <strong>R(t)</strong> – retention on day t; <strong>A, B, C</strong> – fitted curve coefficients (least squares) ·
+      <strong>Lifetime</strong> – average days a user stays = area under R(t) ·
+      <strong>ARPDAU</strong> – average revenue per daily active user ·
+      <strong>DAU</strong> – daily active users ·
+      <strong>cumARPU(t)</strong> – cumulative revenue per cohort user by day t ·
+      <strong>t*</strong> – the horizon you read LTV at ·
+      <strong>CF<sub>i</sub></strong> – cash flow of period i ·
+      <strong>WACC</strong> – discount rate (ask your finance people); discounting makes the infinite tail summable.</p>
+
+    <h3 style="font-size:.95rem;margin:16px 0 6px">Why the business model dictates the method</h3>
+    <ul class="note" style="line-height:1.7">
+      <li><strong>Subscription app (this calculator):</strong> revenue = few large discrete payments → model the <em>payment schedule</em> from renewal/retention curves. ARPDAU-style methods waste the structure the billing system gives you for free.</li>
+      <li><strong>F2P game:</strong> revenue = a stream of micro-purchases spread over daily sessions → retention-curve integral × ARPDAU, or the cumulative-ARPU fit. There is no renewal event to anchor on – daily activity IS the monetization clock.</li>
+      <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
+    </ul>
+    <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
+    <p class="note">Consistency checks: <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a> – 34 assertions (anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards) executed live in your browser, on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right – for that, every field carries its source and confidence tag.</p>
+    <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
+  </div><!-- /tab-ltv -->
+
+  <div id="tab-vat" style="display:none">
+    <h2>How VAT works for subscription apps</h2>
+    <p class="note" >Two different worlds depending on who the merchant of record is – the store or you.</p>
+
+    <h3 style="font-size:.95rem;margin:18px 0 6px">a2a – Apple / Google are the merchant of record</h3>
+    <p class="note" >In most countries the sticker price <strong>includes VAT</strong>. At every transaction the store first strips the VAT out, remits it to the tax authority itself (you never touch it), and only then takes its 15/30% commission from what's left. Your monthly payout is already net of both.</p>
+    <div class="card" style="max-width:760px;margin:10px 0;font-size:.875rem">
+      <strong>Worked example – $59.99 yearly plan:</strong><br>
+      Turkey (VAT 20%): $59.99 ÷ 1.20 = $49.99 → × 0.85 (SBP) = <strong>$42.49 to you</strong> – 71% of the sticker.<br>
+      US (no VAT in price): $59.99 → × 0.85 = <strong>$50.99 to you</strong> – 85% of the sticker. Sales tax, where applicable, is added on top at checkout and also handled by the store.<br>
+      <span class="note">Both users saw the same $59.99 on the paywall and paid the same – but your proceeds differ by 17% purely because of where the transaction is taxed.</span>
+    </div>
+    <p class="note" ><strong>When:</strong> deducted per transaction, automatically. Refunded transactions return the VAT too. You do not register, file or remit anything for store sales – but you also can't optimize it away.</p>
+
+    <h3 style="font-size:.95rem;margin:18px 0 6px">w2w – you are the merchant (or you buy that service)</h3>
+    <p class="note" >On web billing the stores are out of the picture and the tax obligation lands on the merchant. Two routes:</p>
+    <ul class="note" style="line-height:1.7">
+      <li><strong>Stripe (processor):</strong> you are the merchant of record – you must register where you cross thresholds, collect at the buyer's local rate (Stripe Tax automates it for +0.5%/txn) and remit. In the EU, consumer prices must be displayed VAT-inclusive, so the tax comes out of your sticker just like in the stores.</li>
+      <li><strong>Paddle (merchant of record):</strong> Paddle plays the Apple role – collects and remits everywhere, absorbs the compliance, charges a higher base fee (~5–6% effective).</li>
+    </ul>
+    <p class="note" >Net-proceeds shape is the same in all cases: <code>proceeds = price ÷ (1 + VAT) × (1 − fee)</code>. Only the fee differs: 15/30% store vs ~4.4–6% web.</p>
+
+    <h3 style="font-size:.95rem;margin:18px 0 6px">Which country's VAT applies? The storefront, not the ad targeting</h3>
+    <p class="note" >VAT is set by the <strong>payer's storefront country</strong> – where the Apple ID / Google payment profile is registered – not by where your ads run. But Meta targets people by physical location, and a person's storefront almost always matches where they live. So with tightly geo-targeted campaigns the two coincide 90%+ of the time: <strong>buy US → US storefront → ~0% · buy Germany → DE storefront → 19%</strong>. That's why the calculator defaults the VAT field to the acquisition-geo rate [E].</p>
+    <p class="note" ><strong>Where the match breaks – set a blended rate manually:</strong></p>
+    <ul class="note" style="line-height:1.7">
+      <li><strong>Expats:</strong> buying Gulf traffic yields a visible share of IN/PH-storefront accounts – their VAT (and prices) follow their home storefront.</li>
+      <li><strong>Storefront arbitrage:</strong> the Turkish storefront is popular with non-residents chasing cheap local prices – TR-storefront payers aren't necessarily people you bought in Turkey.</li>
+      <li><strong>Advantage+ / multi-geo campaigns without country limits:</strong> Meta spreads budget across countries, and the payer mix becomes genuinely unpredictable.</li>
+    </ul>
+    <p class="note" >Blended example: 60% US payers + 25% Western Europe (~20%) + 15% Turkey (20%) → 0.25×20 + 0.15×20 ≈ <strong>8% blended</strong> – enter that in the VAT field on the Calculator tab.</p>
+
+    <h2>VAT / GST rates deducted from the sticker price, key countries</h2>
+    <p class="note">Rates [E] – verify against Apple's Exhibit B / Google Play tax documentation before relying on them; they change.</p>
+    <table class="vat">
+      <tr><th>Country</th><th>Rate deducted from price</th></tr>
+      <tr><td>United States</td><td>0% (sales tax added on top)</td></tr>
+      <tr><td>Canada</td><td>0–5% (GST added on top in most provinces)</td></tr>
+      <tr><td>United Kingdom</td><td>20%</td></tr>
+      <tr><td>Germany</td><td>19%</td></tr>
+      <tr><td>France</td><td>20%</td></tr>
+      <tr><td>Netherlands</td><td>21%</td></tr>
+      <tr><td>Spain</td><td>21%</td></tr>
+      <tr><td>Italy</td><td>22%</td></tr>
+      <tr><td>Sweden / Denmark / Norway</td><td>25%</td></tr>
+      <tr><td>Poland</td><td>23%</td></tr>
+      <tr><td>Turkey</td><td>20%</td></tr>
+      <tr><td>Brazil</td><td>~9.25% (CIDE/PIS/COFINS mix, store-dependent)</td></tr>
+      <tr><td>Mexico</td><td>16%</td></tr>
+      <tr><td>Saudi Arabia</td><td>15%</td></tr>
+      <tr><td>United Arab Emirates</td><td>5%</td></tr>
+      <tr><td>India</td><td>18% GST</td></tr>
+      <tr><td>Indonesia</td><td>11%</td></tr>
+      <tr><td>Philippines</td><td>12%</td></tr>
+      <tr><td>Japan</td><td>10%</td></tr>
+      <tr><td>South Korea</td><td>10%</td></tr>
+      <tr><td>Australia</td><td>10% GST</td></tr>
+    </table>
+  </div><!-- /tab-vat -->
+
+  <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
+    <strong>Sources</strong> · collected July 2026, re-verified against the live pages 4 Sep 2026; the data itself is of mixed vintage (RC/Adapty/Lebesgue/Triple Whale/RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the captions; verify before big bets:
+    <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank">RevenueCat SOSA 2026</a> ·
+    <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
+    <a href="https://adapty.io/blog/high-performing-paywall-2026/" target="_blank">Adapty paywall data</a> ·
+    <a href="https://lebesgue.io/facebook-ads/facebook-cpm-by-country" target="_blank">Lebesgue CPM by country</a> ·
+    <a href="https://adcostly.com/facebook-ads-cost-in-turkey" target="_blank">ADCostly (TR)</a> ·
+    <a href="https://bir.ch/blog/meta-ad-costs-analysis" target="_blank">Bïrch seasonality</a> ·
+    <a href="https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate" target="_blank">Superads CTR</a> ·
+    <a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank">Triple Whale</a> ·
+    <a href="https://www.apptweak.com/en/aso-blog/average-app-conversion-rate-per-category" target="_blank">AppTweak store CVR (2025 store averages)</a> · <a href="https://www.adjust.com/blog/what-is-a-good-conversion-rate/" target="_blank">Adjust – AppTweak H1 2024 category CVRs</a> · <a href="https://adapty.io/blog/app-store-conversion-rate/" target="_blank">Adapty – App Store conversion by category</a> ·
+    <a href="https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026" target="_blank">SplitMetrics category CVR (via AppScreenshotStudio)</a> ·
+    <a href="https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category" target="_blank">RC renewal rates by category</a> ·
+    <a href="https://www.revenuecat.com/blog/engineering/android-paywall-gap" target="_blank">RC – the Android paywall gap</a> ·
+    <a href="https://www.tryinteract.com/blog/quiz-conversion-rate-report/" target="_blank">Interact quiz report</a> ·
+    <a href="https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking" target="_blank">Superwall</a> ·
+    <a href="https://mobiledevmemo.com/mai-vs-aeo-vs-vo-campaigns-building-a-mobile-traffic-strategy-on-facebook/" target="_blank">Mobile Dev Memo (MAI/AEO)</a> ·
+    <a href="https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods" target="_blank">Stripe – Apple Pay conversion lift</a> ·
+    <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank">Stripe vs Paddle fees</a> ·
+    <a href="https://www.rocketshiphq.com/meta-cost-benchmarks-mobile-app-installs/" target="_blank">RocketShip HQ – Meta app-install CPI/CPM 2026</a> ·
+    <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank">Meta location fees (Jul 2026)</a>.
+    Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. &nbsp; <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a>
+  </div>
+</div>
+<div class="back-link"><div class="container"><a href="/tools/">← Back to Tools</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+<script>
+// ---------- benchmark data (Calculator_Defaults.md v1) ----------
+// ALL tunable constants live here or in the GEO/VERT/PLAT/AEO objects below.
+// Research rounds update these numbers – the formulas never hardcode them.
+const CONFIG = {
+  DIRECT_F: 0.4,              // no-trial paywall: direct purchases ≈ trial-start rate ×0.4 [E]. Adapty's cross-app per-impression
+                              // ratio (0.82% purchases vs 1.35% trial starts) gives ×0.6 – a CEILING: apps running no-trial paywalls
+                              // are self-selected for products where direct purchase works. Applied literally it made no-trial beat
+                              // the trial by +43% on subscribers in every vertical (on the all-apps band: 7.4% of paywall viewers buying on the spot),
+                              // contradicting Adapty's own trial-vs-direct LTV findings. ×0.4 puts the trial/no-trial break-even at
+                              // trial→paid ≈ 36% (= 0.4 × trial share 90%) – the well-measured [B] quantity decides, not the toggle.
+  WEB_COHORT: 0.89,           // w2w cohort LTV penalty [B, Adapty $35.80 vs $40.10]
+  ECON_FEE: { a2a: 0.15, w2w: 0.05 },  // default fees used by the funnel-tab Economics cards
+  DISPLAY: { onboarding: 0.95, registration: 0.80 }, // display-only sub-stages of the i2pw composite [A/E]
+  WEEKLY_M6: 0.10,            // weekly cohort survival after 26 renewals (≈ M6) ≈ 10% [B, RC] – tail anchor #1
+  WEEKLY_Y1: 0.015,           // weekly survival at week 52 ≈ 1.5% [B, RC] – tail anchor #2. Both anchors are for the MEDIAN
+                              // first-three-renewals chain; the calculator scales them by (your s3 ÷ median s3), so the tail
+                              // keeps the RC shape and its level follows your early renewals (a 10% first renewal no longer
+                              // "recovers" to 1.5% at week 52).
+  HIGH_PRICE: { rampFrom: 50, rampTo: 70, renewalPenalty: 0.8 }, // yearly plans: 1st renewal ×0.8 for high-price plans [B, RC churn 37% vs 24%];
+                              // RC gives the two groups, not the boundary – we only know it to about ±$10 around $60, so the penalty
+                              // ramps linearly from ×1.0 at $50 to ×0.8 at $70 (= the expected penalty under that uncertainty) instead
+                              // of a cliff at $60.01 that the default $59.99 plan sat two cents away from.
+  AI: { i2t: 0.487, retention: 0.7 },  // AI apps: install→trial ×0.487 [B, Adapty 5.31% vs 10.92%]; monthly M6/M12 anchors ×0.7 [E, RC: AI apps churn ~30% faster]
+  BUDGET: { cohorts: 12, horizon: 24 } // budget view: 12 monthly cohorts, cash tracked over 24 months
+};
+const SRC = {
+  tune:"https://www.tune.com/blog/paid-organic-measurably-better-together-organic-uplift/",
+  adaptyPrice:"https://adapty.io/blog/subscription-app-success-2026/",
+  rcPlayBilling:"https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/",
+  lebesgue:"https://lebesgue.io/facebook-ads/facebook-cpm-by-country",
+  superads:"https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate",
+  apptweak:"https://www.apptweak.com/en/aso-blog/average-app-conversion-rate-per-category",
+  adjustCvr:"https://www.adjust.com/blog/what-is-a-good-conversion-rate/",
+  adaptyCvr:"https://adapty.io/blog/app-store-conversion-rate/",
+  adjust:"https://uxcam.com/blog/product-funnel/",
+  superwall:"https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking",
+  rc:"https://www.revenuecat.com/state-of-subscription-apps/",
+  interact:"https://www.tryinteract.com/blog/quiz-conversion-rate-report/",
+  adapty:"https://adapty.io/blog/high-performing-paywall-2026/",
+  tw:"https://www.triplewhale.com/blog/facebook-ads-benchmarks",
+  stripe:"https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods",
+  splitmetrics:"https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026",
+  rcRenewals:"https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category",
+  rcAndroidGap:"https://www.revenuecat.com/blog/engineering/android-paywall-gap"
+};
+const P = { p25:0, p40:0.3, med:0.5, p75:1 }; // interpolation position between p25→med→p75
+function pick(t, s){ // t = {p25, med, p75}
+  const x = P[s];
+  return x <= 0.5 ? t.p25 + (t.med - t.p25) * (x/0.5) : t.med + (t.p75 - t.med) * ((x-0.5)/0.5);
+}
+// Cost-type benchmarks (CPM; the AEO CPM premium is scenario-independent since 04.09) run the OTHER way: a pessimistic scenario is an EXPENSIVE auction.
+// Pessimistic → P75 of the cost distribution, Aspirational → P25, Conservative mirrored above the median.
+const COST_SCEN = { p25:"p75", p40:"p60", med:"med", p75:"p25" };
+P.p60 = 0.7;
+function pickCost(t, s){ return pick(t, COST_SCEN[s] || s); }
+const GEO = {
+  na:{priceIdx:1.0, cpiBench:{ios:6.8, android:3.9}, vat:0.0, name:"North America / T1 EN", cpm:{p25:12,med:16,p75:23}, cpmW:{p25:11,med:15.06,p75:18}, i2tF:1.0, t2pF:1.0},
+  we:{priceIdx:1.3, cpiBench:{ios:5.4, android:2.8}, vat:0.21, name:"Western Europe", cpm:{p25:7,med:9,p75:12}, cpmW:{p25:8,med:9.5,p75:11}, i2tF:0.70, t2pF:0.87},
+  latam:{priceIdx:0.6, vat:0.17, name:"LatAm", cpm:{p25:2,med:3,p75:5.5}, cpmW:{p25:2,med:3.2,p75:4.5}, i2tF:0.50, t2pF:0.62},
+  tr:{priceIdx:0.29, vat:0.20, name:"Turkey", cpm:{p25:0.9,med:1.2,p75:2}, cpmW:{p25:0.89,med:2,p75:3.41}, i2tF:0.50, t2pF:0.65},
+  gulf:{priceIdx:1.35, vat:0.10, name:"Gulf (SA/AE/QA)", cpm:{p25:10,med:12,p75:12.7}, cpmW:{p25:10,med:12,p75:12.7}, i2tF:0.70, t2pF:0.65},
+  insea:{priceIdx:0.6, vat:0.12, name:"IN / SEA", cpm:{p25:1.4,med:2,p75:3.4}, cpmW:{p25:1.4,med:2,p75:3.4}, i2tF:0.45, t2pF:0.44}
+};
+const VERT = {
+  hf:{scvrA:{p25:0.17,med:0.232,p75:0.29}, scvrATag:"B", cpiBench:{ios:7.8, android:4.9, src:"RocketShip HQ 2026, subscription H&F on Meta"}, name:"Health & Fitness", scvr:{p25:0.13,med:0.185,p75:0.24}, scvrTag:"B", i2t:{p25:0.05,med:0.069,p75:0.16}, t2p:{p25:0.30,med:0.377,p75:0.514}, t2pTag:"B", refund:0.035, mix:{w:15,m:24,y:61}, trialHelps:true},
+  prod:{scvrA:{p25:0.09,med:0.125,p75:0.17}, scvrATag:"E", name:"Productivity", scvr:{p25:0.07,med:0.10,p75:0.14}, scvrTag:"E", i2t:{p25:0.04,med:0.055,p75:0.10}, t2p:{p25:0.22,med:0.30,p75:0.42}, t2pTag:"E", refund:0.047, mix:{w:35,m:25,y:40}, trialHelps:false},
+  edu:{scvrA:{p25:0.23,med:0.304,p75:0.38}, scvrATag:"B", name:"Education", scvr:{p25:0.045,med:0.0675,p75:0.10}, scvrTag:"B", i2t:{p25:0.045,med:0.065,p75:0.12}, t2p:{p25:0.25,med:0.33,p75:0.45}, t2pTag:"E", refund:0.04, mix:{w:30,m:25,y:45}, trialHelps:true},
+  pv:{scvrA:{p25:0.08,med:0.11,p75:0.16}, scvrATag:"E", name:"Photo & Video", scvr:{p25:0.06,med:0.09,p75:0.13}, scvrTag:"E", i2t:{p25:0.04,med:0.055,p75:0.10}, t2p:{p25:0.15,med:0.222,p75:0.331}, t2pTag:"B", refund:0.045, mix:{w:40,m:25,y:35}, trialHelps:true},
+  util:{scvrA:{p25:0.09,med:0.125,p75:0.17}, scvrATag:"E", name:"Utilities", scvr:{p25:0.07,med:0.10,p75:0.14}, scvrTag:"E", i2t:{p25:0.045,med:0.065,p75:0.12}, t2p:{p25:0.22,med:0.30,p75:0.42}, t2pTag:"E", refund:0.03, mix:{w:50,m:25,y:25}, trialHelps:true},
+  me:{scvrA:{p25:0.14,med:0.189,p75:0.288}, scvrATag:"E", name:"Media & Entertainment", scvr:{p25:0.06,med:0.086,p75:0.12}, scvrTag:"B", i2t:{p25:0.03,med:0.04,p75:0.08}, t2p:{p25:0.115,med:0.191,p75:0.438}, t2pTag:"E", refund:0.035, mix:{w:40,m:30,y:30}, trialHelps:true}
+};
+const TRIALLEN = { d3:0.68, d7:1.0 }; // ×t2p [B, RC 2026 buckets]: ≤4-day trials convert 25.5% vs 37.4% for 5–9 days → ×0.68; category medians (H&F 37.7%) sit on the 7-day bucket, so 7 days = ×1.0
+// Platform factors — TEMPORARY, pending Research Round 4 (most benchmarks are not OS-split)
+const PLAT = {
+  // Store split of the install→trial composite [B, RC SOSA 2026 via "the Android paywall gap"]: download→paid at D35 is 2.6% on iOS
+  // vs 0.9% on Android with trial→paid at parity (32.6% vs 32.5%), so the whole gap sits at the funnel entrance. The RC composite is
+  // store-blended; its global median of the same metric is 2.0%, which implies an iOS share of ≈65% (2.6·w + 0.9·(1−w) = 2.0) and
+  // gives the paywall-stage factors as ratios to that blend: iOS 2.6/2.0 = ×1.30, Android 0.9/2.0 = ×0.45, Blended ×1.0 by
+  // construction. Two caveats [E]: medians do not mix linearly, and the cross-category gap is applied to every vertical alike.
+  // (An earlier version cited "2.9% vs 2.6%" for this factor – those were RC's Health & Fitness and Business category medians.)
+  // cpmF [A]; scvrF ×1.0 – per-store CVR data now lives in VERT; t2pF ×1.0 [B, parity].
+  // arpuF = revenue per subscriber [A]: RC publishes no revenue-per-install split by store; the mechanism is documented (Play
+  // involuntary billing churn 32.3% of cancellations vs 15.2% on the App Store; lower price acceptance on Android). Since the
+  // conversion gap now carries the store difference, arpuF is a mild ×0.8. If you enter platform-specific prices, treat it as ×1.
+  blend:{name:"Blended", cpmF:1.0, scvrF:1.0, t2pF:1.0, pwF:1.0, arpuF:0.9, openF:0.82},
+  ios:{name:"iOS", cpmF:1.1, scvrF:1.0, t2pF:1.0, pwF:1.30, arpuF:1.0, openF:0.87}, // openF [E] – cliff milder on iOS
+  android:{name:"Android", cpmF:0.95, scvrF:1.0, t2pF:1.0, pwF:0.45, arpuF:0.8, openF:0.775} // openF [E, UXCam citing Adjust]: 20–25% of Android installs never open // cpmF 0.95: most of the "cheap Android" is geo mix (handled by the Geo selector), not in-geo price
+};
+const MAI = { cpmF: 0.4, intentF: 0.4 };
+// Benchmark base for the install→trial composite. RC's category medians mix every access model, and most apps in the panel are
+// freemium – where a minority of installs ever sees a paywall. RC 2026 reports hard-paywall apps converting 10.7% of downloads to
+// paid (top quartile above 20%) vs 2.1% for freemium – above even the all-apps top quartile of the best categories (H&F 6.2%).
+// This tool models hard paywalls only, so its default base shifts the RC install→trial band one quartile up: P25 := panel median,
+// median := panel P75, P75 := P75 × (P75 ÷ median). The shift is [E]; the fact behind it is [B]. "All apps" = the raw panel band.
+const BASE = { hard:{name:"hard-paywall apps"}, all:{name:"all apps (RC panel median)"} };
+function i2tBand(vert){
+  const b = vert.i2t;
+  if (el("bbase") && el("bbase").value === "all") return b;
+  return { p25: b.med, med: b.p75, p75: b.p75 * (b.p75 / b.med) };
+}
+function i2tComposite(vert, geo, s, aiOn){ return pick(i2tBand(vert), s) * geo.i2tF * (aiOn ? CONFIG.AI.i2t : 1); } // the RC-derived install→trial the cross-check compares against
+// w2w optimization events – web pixel events; benchmark CPM panel is purchase-optimized, so purchase = ×1.0 base.
+// lead/checkout: cheaper reach, weaker checkout intent [A]
+const W2W_OPT = {
+  purchase:{name:"Purchase (standard)", cpmF:1.0, convF:1.0},
+  checkout:{name:"Initiate checkout", cpmF:0.85, convF:0.9},
+  lead:{name:"Lead (email submit)", cpmF:0.6, convF:0.8}
+};
+// w2w device split – provisional [A]: device-targeting CPM difference + Apple Pay effect on checkout
+const PLATW = {
+  blend:{name:"Blended", cpmF:1.0, ccF:1.0, arpuF:0.95},
+  ios:{name:"iOS devices", cpmF:1.15, ccF:1.05, arpuF:1.0},
+  android:{name:"Android devices", cpmF:0.85, ccF:0.95, arpuF:0.9}
+};
+// funnel stage defs: key, name, tag, source, benchvals (fractions or raw), kind
+const A2A_STAGES = [
+  {k:"cpm", n:"CPM – base, $ / 1000 impressions", tag:"E", src:"Lebesgue publishes ONE value per country (e-commerce advertisers, 2026: US $16.08, DE $9.05, BR $2.63, SA $12.01, QA $12.67, IN $1.36 …) and ADCostly one for Turkey ($0.89 average); the P25 / P75 band per region is our reconstruction from neighbouring countries and MAI-market ranges [E] – the sources publish no percentiles. Second reference: RocketShip HQ's app-install panel (Meta, 2026) puts blended CPM at $10.20 for subscription Health & Fitness (all placements, incl. cheap Audience Network) – the resulting CPI, not the CPM, is what the tool cross-checks. Platform ×1.1 / ×0.95, seasonality and the MAI discount apply on top", url:SRC.lebesgue, v:null, pct:false},
+  {k:"ctr", n:"CTR – impression → click", tag:"E", src:"our band for video/UGC app-install creatives; the panels bracket it without a creative-type split: Superads industry average 0.90–1.10%, Triple Whale e-commerce median 2.39%", url:SRC.superads, v:{p25:0.012,med:0.016,p75:0.020}, pct:true},
+  {k:"c2s", n:"Click → store page", tag:"A", src:"in-app browser → deeplink losses; no public data", v:{p25:0.85,med:0.90,p75:0.95}, pct:true},
+  {k:"scvr", n:"Store CVR (page → install)", tag:"B", src:"App Store: SplitMetrics category medians, page view→install with dropped visits removed (H&F 18.52%, Social 11.36%, Entertainment 8.6%, Education 6.75%; via AppScreenshotStudio 2026) – AppTweak's panel runs ~1.5× higher (H&F 30.8%, H1 2024) and can exceed 100% because installs also come straight from search results, so treat the stage as an approximation · Google Play: AppTweak H1 2024 as cited by Adjust (H&F 23.2%) and Adapty (Education 30.4%) – AppTweak's own page now shows 2025 store averages only (App Store 8.56%, Play 16.15%), so the category figures live on the citing pages; Music/M&E and Productivity/PV/Utilities on both stores are interpolated [E] – methodologies differ, do not compare across stores", url:SRC.splitmetrics, v:null, pct:true},
+  {k:"paidf", n:"× paid-traffic factor", tag:"A", src:"paid traffic converts below the blended store benchmarks; no public split", v:{p25:0.70,med:0.80,p75:0.90}, pct:true},
+  {k:"i2pw", n:"Install → paywall view (composite: open + onboarding + registration)", tag:"B", src:"Superwall (Nov 2022): platform average – only 56% of users ever see a paywall; recommended target for install→paywall view ≥ 85% (note the two denominators: users vs installs); a hard paywall in onboarding should sit near the top of the band", url:SRC.superwall, v:{p25:0.45,med:0.56,p75:0.85}, pct:true},
+  {k:"pw2t", n:"Paywall view → trial start", tag:"E", src:"derived per vertical × geo: RC install→trial composite ÷ install→paywall benchmark (H&F × NA median: 16.0% ÷ 56% = 28.6% on the hard-paywall base, 6.9% ÷ 56% = 12.3% on the all-apps band) – so the stage product matches RC by construction; the cross-check below fires only on your overrides", url:SRC.rc, v:null, pct:true},
+  {k:"org", n:"Organic uplift – extra organic installs per paid install", tag:"E", src:"TUNE (2017, dataset not described) reports 1.5 organic installs per paid install; hard-paywall subscription apps in practice see far less – 10–40% is practitioner experience, not a panel; set 0 for strict paid-only ROAS; not applied on web", url:SRC.tune, v:{p25:0.10,med:0.25,p75:0.40}, pct:true},
+  {k:"tshare", n:"Trial share of new subscriptions (rest buy directly at the paywall)", tag:"A", src:"no public benchmark", v:{p25:0.85,med:0.90,p75:0.95}, pct:true},
+  {k:"directf", n:"No-trial paywall: direct purchases as a share of the trial-start rate", tag:"E", src:"Adapty 2026, onboarding paywalls: without trial 0.82% vs with trial 1.35% (conversion per paywall show; denominator not defined by Adapty) = ×0.6 – a ceiling, since apps running no-trial paywalls are self-selected; A/B practice 0.3–0.5 → ×0.4. Used only in no-trial mode; break-even trial→paid = this × trial share", url:SRC.adapty, v:null, pct:true}
+];
+const W2W_STAGES = [
+  {k:"cpm", n:"CPM – base (web campaigns), $ / 1000 impressions", tag:"E", src:"Triple Whale (40,000+ brands, Aug 2025 – Jul 2026): median CPM $15.06 across all industries, no geo split – our NA band sits around it; other geos scaled from the a2a country values [A]; seasonality applied on top. Purchase-optimized campaigns on narrow US audiences (45+, health topics) commonly run $40–100+ [E] – far above this band: CPM is the one number you always know, type it", url:SRC.tw, v:null, pct:false},
+  {k:"ctr", n:"CTR – impression → click (web)", tag:"A", src:"assumption for purchase-optimized web campaigns; no panel publishes a quiz-funnel CTR (Superads industry average 0.9–1.1%, Triple Whale e-commerce median 2.39%)", v:{p25:0.009,med:0.013,p75:0.018}, pct:true},
+  {k:"c2lp", n:"Click → LP view", tag:"A", src:"link click → landing-page view; losses to slow pages and mid-load exits, no public benchmark. Meta's landing page views count sessions while outbound clicks are unique, so the ratio can exceed 100% in Ads Manager – enter 100% then", v:{p25:0.90,med:0.93,p75:0.95}, pct:true},
+  {k:"lp2q", n:"LP → quiz start", tag:"A", src:"no public benchmark – Interact measures from the quiz start; web2app practice 30–40% of LP visitors click Start", v:{p25:0.30,med:0.38,p75:0.40}, pct:true},
+  {k:"qfin", n:"Quiz start → finish", tag:"B", src:"Interact 2026: start→finish 47–65% (e-com 55.5%, coaching 59.1%, overall 65%)", url:SRC.interact, v:{p25:0.50,med:0.60,p75:0.65}, pct:true},
+  {k:"email", n:"Finish → email submit", tag:"B", src:"derived from Interact 2026 by matched pairs: start→lead ÷ start→finish = overall 40.1 ÷ 65 = 62%, e-commerce 37.6 ÷ 55.5 = 68%, coaching 44.9 ÷ 59.1 = 76%, service providers 42.2 ÷ 47.3 = 89% – we take the conservative part of the 62–89% range; Interact does not state that every lead finished the quiz. No email step in your funnel? Enter 100%", url:SRC.interact, v:{p25:0.60,med:0.65,p75:0.75}, pct:true},
+  {k:"pw2c", n:"Paywall → initiated checkout", tag:"A", src:"web paywall ≈ ×0.69 of in-app (Adapty 2026: 1.10% vs 1.60% conversion; denominator not defined). No public per-unique-view benchmark for web paywalls exists; intro-offer quiz funnels are known to convert well above this band – 10–15% of paywall views straight to purchase, i.e. above the P75 of paywall→checkout × completion [E] – type yours", url:SRC.adapty, v:{p25:0.05,med:0.10,p75:0.15}, pct:true},
+  {k:"cc", n:"Checkout completion (initiated → paid)", tag:"E", src:"practitioner band (agency rule of thumb: ~30% cold = excellent, 60–70% warm); Stripe reports a +22.3% conversion lift from offering Apple Pay – absolute completion rates by payment method are not published, wallet-first design pushes you to the top of the band", url:SRC.stripe, v:{p25:0.25,med:0.40,p75:0.60}, pct:true}
+];
+const LTV_FIELDS = [
+  {k:"m1", n:"Monthly retention M1 (share still paying at the 1st renewal)", tag:"E", src:"our band; RC 2026 category medians of the 1st monthly renewal span 42–61% (Social & Lifestyle → Business); overwrite with your cohort data", v:{p25:0.50,med:0.61,p75:0.68}, pct:true},
+  {k:"m6", n:"Monthly retention M6 (anchor)", tag:"B", src:"RC SOSA 14–26%; overwrite with your M6 if you have 6-month cohorts (AI modifier is not applied on top of your value)", url:SRC.rc, v:{p25:0.14,med:0.20,p75:0.26}, pct:true},
+  {k:"m12", n:"Monthly retention M12 (anchor)", tag:"B", src:"RC SOSA 6–14%; overwrite with your M12 if you have it", url:SRC.rc, v:{p25:0.06,med:0.10,p75:0.14}, pct:true},
+  {k:"r1m", n:"My 1st monthly renewal", tag:"E", src:"placeholder: RC 2026 category medians span 42–61% (Social & Lifestyle → Business), our band 53 / 57 / 61 for a typical subscription app – replace with YOUR number", url:SRC.rcRenewals, v:{p25:0.53,med:0.57,p75:0.61}, pct:true},
+  {k:"r2m", n:"My 2nd monthly renewal", tag:"E", src:"placeholder from RC SOSA 2026's renewal-by-cycle chart (report PDF; not on the public web pages) – replace with YOUR number", url:SRC.rc, v:{p25:0.65,med:0.71,p75:0.77}, pct:true},
+  {k:"yren", n:"Yearly renewal at M13", tag:"B", src:"RC 2026: category medians of the 1st annual renewal span 23–40%; Y1 retention of annual plans 27% (hard paywall) / 28% (freemium); price ramp ×1.0 at $50 → ×0.8 at $70 [E, from the report's price-tier chart: high-price 1st-renewal churn 37% vs 24%] applied to the benchmark, not to your value", url:SRC.rc, v:{p25:0.22,med:0.30,p75:0.40}, pct:true},
+  {k:"w1", n:"Weekly renewal #1 (= my 1st in fit mode)", tag:"B", src:"RC 2026: category medians of the 1st weekly renewal span 35–58%", url:SRC.rcRenewals, v:{p25:0.35,med:0.46,p75:0.58}, pct:true},
+  {k:"w2", n:"Weekly renewal #2 (= my 2nd in fit mode)", tag:"E", src:"RC SOSA 2026 renewal-by-cycle chart (report PDF); the public page only says median rates jump ~25–30 pp between the 1st and 2nd renewal", url:SRC.rcRenewals, v:{p25:0.67,med:0.71,p75:0.75}, pct:true},
+  {k:"w3", n:"Weekly renewal #3+ base", tag:"B", src:"RC 2026: by the 3rd weekly renewal categories converge to 74–91%; our P75 of 85% is deliberately below the source ceiling", url:SRC.rcRenewals, v:{p25:0.74,med:0.80,p75:0.85}, pct:true},
+  {k:"wm6", n:"Weekly survival at week 26 (≈ M6) – tail anchor", tag:"E", src:"RC 2026 report: ≈10% of weekly subscribers still paying after 26 renewals for the median first-three-renewals chain (46 → 71 → 80%); here scaled by your first three renewals (s3 ÷ median s3) [E]; week-52 survival follows at the RC ratio (1.5% ÷ 10%). The least certain number in weekly LTV – two thirds of it sit in this tail, and a real weekly cohort with 80%+ early renewals held ~10%/week churn instead of RC's slowdown. Know your week-26 survival? Type it", url:SRC.rc, v:null, pct:true},
+  {k:"t2p", n:"Trial → paid", tag:"B", src:"RC 2026 by vertical (H&F 37.7% / top quartile 51.4%, Photo & Video 22.2% / 33.1% [B]; Education, Productivity, Utilities interpolated [E]; M&E from RC's 11.5–69.5% spread and Adapty [E]) × geo factor (NA 34.2%, WE 29.7%, IN/SEA 15.2% [B]; LatAm, Turkey, Gulf interpolated [E]) × trial length (3-day ×0.68 [B])", url:SRC.rc, v:null, pct:true},
+  {k:"refund", n:"Refund rate (applied to first payment only)", tag:"B", src:"RC SOSA 2026 refund chart (report PDF): 2.5–4.7% of first payments by category; renewals are rarely refunded", url:SRC.rc, v:null, pct:true},
+  {k:"upsell", n:"Upsells & offers – ARPU uplift on top of base subscriptions", tag:"E", src:"default 0 (most apps have none); post-paywall welcome offers typically add +10–15% ARPU (Adapty), plan upgrades and one-time purchases on top", url:SRC.adapty, v:null, pct:true},
+  {k:"vat", n:"VAT/GST included in price (deducted before store split)", tag:"E", src:"default = acquisition geo, US-style for NA (0% – sales tax is added on top and handled by the store; Canada – tax added on top like the US; UK 20%, Australia 10% if you buy there); WE ≈ 21% and LatAm ≈ 17% are blends [A]; Gulf = SA 15% / AE 5% ≈ 10%; IN/SEA 12% is a SEA-weighted blend (ID 11–12, PH 12, VN 10, SG 9, TH 7, MY 8) – India alone is 18% GST; set your blended rate, see VAT tab", v:null, pct:true}
+];
+// ---------- state ----------
+// Manual overrides are stored PER FUNNEL: what you enter in the a2a calculator never leaks into w2w
+// and vice versa; switching back restores your numbers.
+const manualStore = { a2a: {}, w2w: {} };
+let manual = manualStore.a2a; // k -> raw value (fraction), points at the current funnel's store
+function el(id){ return document.getElementById(id); }
+function fmt$(x){
+  if (!isFinite(x)) return "–";
+  const d = x >= 100 ? 0 : 2;
+  return "$" + x.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+}
+function stageList(){ return el("funnel").value === "a2a" ? A2A_STAGES : W2W_STAGES; }
+function benchVal(f, sOverride){
+  const s = sOverride || el("scenario").value, vert = VERT[el("vertical").value], geo = GEO[el("geo").value];
+  if (f.k === "cpm"){
+    const a2a = el("funnel").value === "a2a";
+    return a2a ? pickCost(geo.cpm, s) * PLAT[el("platform").value].cpmF
+               : pickCost(geo.cpmW, s) * PLATW[el("platform").value].cpmF;
+  }
+  if (f.k === "upsell") return 0; // honest default: no upsell machinery until you build it
+  if (f.k === "directf") return CONFIG.DIRECT_F; // scenario-independent: the trial→paid benchmark (which IS scenario-driven) decides trial vs no-trial
+  if (f.k === "vat") return geo.vat; // storefront ≈ acquisition geo for tightly geo-targeted campaigns; see VAT tab
+  if (f.k === "scvr"){
+    const pf = el("platform").value;
+    if (pf === "android") return pick(vert.scvrA, s); // Google Play visitors→acquisition [B/E, Adapty/Adjust]
+    if (pf === "blend") return (pick(vert.scvr, s) + pick(vert.scvrA, s)) / 2;
+    return pick(vert.scvr, s); // App Store page view→install [B, SplitMetrics]
+  }
+  if (f.k === "pw2t"){
+    // paywall→trial has no per-unique-view public benchmark; derive it so that install→paywall × paywall→trial
+    // reproduces the RC install→trial composite for the CURRENT vertical × geo × scenario (the composite the
+    // cross-check compares against). Before this, the stage was a fixed H&F × NA number and the cross-check
+    // fired on untouched defaults for 25 of 36 vertical × geo combinations.
+    return pick(i2tBand(vert), s) * geo.i2tF / pick(getF(A2A_STAGES, "i2pw").v, s);
+  }
+  if (f.k === "t2p") return pick(vert.t2p, s) * geo.t2pF * TRIALLEN[el("triallen").value];
+  if (f.k === "refund") return vert.refund;
+  if (f.k === "wm6"){
+    const wv = k => sOverride ? pick(getF(LTV_FIELDS,k).v, s) : val(getF(LTV_FIELDS,k));   // effective first three renewals (typed or benchmark)
+    return weeklyAnchorDefault(wv("w1"), wv("w2"), wv("w3"));
+  }
+  return pick(f.v, s);
+}
+// confidence tag of a field – for store CVR and trial→paid it depends on the vertical (and store): the data exists for
+// some categories [B] and is interpolated for others [E]; a fixed [B] on the field would overstate what we know
+function tagFor(f){
+  if (f.k === "scvr"){
+    const v = VERT[el("vertical").value], pf = el("platform").value;
+    if (pf === "ios") return v.scvrTag;
+    if (pf === "android") return v.scvrATag;
+    return (v.scvrTag === "B" && v.scvrATag === "B") ? "B" : "E";
+  }
+  if (f.k === "t2p") return VERT[el("vertical").value].t2pTag;
+  return f.tag;
+}
+function fieldRow(f, host){
+  const d = document.createElement("div"); d.className = "fieldrow"; d.id = "row_" + f.k;
+  const srcHtml = f.url ? `${f.src} <a href="${f.url}" target="_blank" title="source" style="color:var(--link);text-decoration:none">↗</a>` : f.src;
+  d.innerHTML = `<div class="fname">${f.n}<span class="fsrc">${srcHtml}</span></div>
+    <span class="tag t${tagFor(f)}" id="tag_${f.k}">${tagFor(f)}</span>
+    <div class="fval"><input type="number" step="0.01" min="0" id="f_${f.k}"></div>
+    <span class="my" id="rst_${f.k}" title="reset to benchmark">↺</span>`;
+  host.appendChild(d);
+  const inp = el("f_" + f.k);
+  inp.addEventListener("input", () => {
+    const v = parseFloat(inp.value);
+    if (isNaN(v)){ delete manual[f.k]; inp.classList.remove("manual"); }
+    else { manual[f.k] = Math.max(0, v) / (f.pct ? 100 : 1); inp.classList.add("manual"); }
+    markStale();
+  });
+  el("rst_" + f.k).addEventListener("click", () => { delete manual[f.k]; inp.classList.remove("manual"); refreshField(f); markStale(); });
+}
+function refreshField(f){
+  const inp = el("f_" + f.k); if (!inp) return;
+  const tg = el("tag_" + f.k); if (tg){ const t = tagFor(f); tg.textContent = t; tg.className = "tag t" + t; }
+  if (manual[f.k] === undefined){
+    const v = benchVal(f); inp.value = f.pct ? +(v*100).toFixed(2) : +v.toFixed(2); inp.classList.remove("manual");
+  } else {
+    inp.value = f.pct ? +(manual[f.k]*100).toFixed(2) : +manual[f.k].toFixed(2); inp.classList.add("manual");
+  }
+}
+function val(f){ return manual[f.k] !== undefined ? manual[f.k] : benchVal(f); }
+function getF(list, k){ return list.find(x => x.k === k); }
+// ---------- LTV math ----------
+function monthlyCurve(r1, r6, r12){
+  const pts = [[1,r1],[6,r6],[12,r12]].map(p => [Math.log(p[0]), Math.log(Math.max(p[1],1e-4))]);
+  return function(m){
+    const x = Math.log(m);
+    let a, b;
+    if (x <= pts[1][0]) { a = pts[0]; b = pts[1]; } else { a = pts[1]; b = pts[2]; }
+    const y = a[1] + (b[1]-a[1]) * (x-a[0]) / (b[0]-a[0]);
+    return Math.min(1, Math.exp(y));
+  };
+}
+// monthly payment schedule per subscriber, months 0..12; refund hits first payment only
+function monthlySchedule(price, r1, r6, r12, refund, first){
+  first = first > 0 ? first : price;   // intro offer: the first payment at the 1st-period price, renewals at the plan price
+  const r = monthlyCurve(r1, r6, r12), a = [first * (1 - refund)];
+  for (let m = 1; m <= 12; m++) a.push(price * r(m));
+  return a;
+}
+// Weekly survival after each renewal, index = week 0..52. Renewals #1–#3 from the fields, then a TWO-PHASE geometric tail
+// through the two RC anchors: survival at week 26 (≈ M6) and at week 52 (Y1). Shared by the calculator and the Retention
+// curves tab, so both draw the same curve by construction.
+function weeklySurv(w1, w2, w3, a26, y1){
+  const s3 = w1*w2*w3;
+  const p1 = Math.min(0.995, Math.pow(Math.max(a26,1e-5)/Math.max(s3,1e-5), 1/23));
+  const p2 = Math.min(0.995, Math.pow(Math.max(y1,1e-5)/Math.max(a26,1e-5), 1/26));
+  const surv = [1]; let sv = 1;
+  for (let w = 1; w <= 52; w++){ const r = w===1 ? w1 : w===2 ? w2 : w===3 ? w3 : (w<=26 ? p1 : p2); sv *= r; surv.push(sv); }
+  return surv;
+}
+function weeklyRef(){ return getF(LTV_FIELDS,"w1").v.med * getF(LTV_FIELDS,"w2").v.med * getF(LTV_FIELDS,"w3").v.med; } // median s3 the anchors belong to
+// a26 = survival at week 26 (≈ M6): the RC anchor scaled by your first three renewals by default, or the value you typed
+// into the "Weekly survival at week 26" field; week-52 survival follows at the RC ratio (1.5% ÷ 10%).
+function weeklySchedule(price, w1, w2, w3, refund, a26, first){
+  first = first > 0 ? first : price;   // intro offer: the first payment at the 1st-period price, renewals at the plan price
+  if (!(a26 > 0)) a26 = CONFIG.WEEKLY_M6 * (w1*w2*w3) / weeklyRef();   // tail LEVEL follows your first three renewals, tail SHAPE stays RC-median
+  const surv = weeklySurv(w1, w2, w3, a26, a26 * CONFIG.WEEKLY_Y1 / CONFIG.WEEKLY_M6);
+  const byMonth = new Array(13).fill(0);
+  byMonth[0] += first * (1 - refund);
+  for (let w = 1; w <= 52; w++) byMonth[Math.min(12, Math.floor(w / (52/12)))] += price * surv[w]; // 53 payments, weeks 0–52 = M0…M12 like the monthly plan
+  return byMonth;
+}
+function weeklyAnchorDefault(w1, w2, w3){ return CONFIG.WEEKLY_M6 * (w1*w2*w3) / weeklyRef(); }
+// early-stage mode: power-law S(m) = S1 · m^(−b) fitted through the first two renewals only.
+// b = −ln(r2)/ln(2). Honest caveat: 2-point extrapolation is OPTIMISTIC vs full RC curves
+// (median 12-month exponent is steeper than the first-two-renewals one) – implied M6/M12 are shown and checked vs RC bands.
+function monthlyScheduleFit(price, r1, r2, refund, first){
+  first = first > 0 ? first : price;
+  const b = -Math.log(Math.max(r2,1e-4)) / Math.LN2;
+  const a = [first * (1 - refund)];
+  for (let m = 1; m <= 12; m++) a.push(price * Math.min(1, r1 * Math.pow(m, -b)));
+  return a;
+}
+// weekly early-stage fit: GEOMETRIC tail at your 2nd renewal's churn – S(w) = r1 · r2^(w−1) [E]. A power law through two
+// weekly points overshoots badly (a real w2w weekly cohort with 80/84% first renewals: ×2.5 on LTV); RC's panel does improve
+// after the 3rd renewal, but that upside is not credited here – type your week-26 survival in benchmark mode when you know it.
+function weeklyScheduleFit(price, w1, w2, refund, first){
+  first = first > 0 ? first : price;
+  const byMonth = new Array(13).fill(0);
+  byMonth[0] += first * (1 - refund);
+  for (let w = 1; w <= 52; w++){
+    const s = fitImpliedW(w1, w2, w);
+    byMonth[Math.min(12, Math.floor(w / (52/12)))] += price * s;
+  }
+  return byMonth;
+}
+function fitImpliedW(w1, w2, w){ return Math.min(1, w1 * Math.pow(Math.max(w2, 1e-4), w - 1)); }
+// yearly 1st-renewal factor vs price: ×1.0 up to rampFrom, linear to ×renewalPenalty at rampTo, flat after
+function highPriceF(price){
+  const H = CONFIG.HIGH_PRICE, x = Math.min(1, Math.max(0, (price - H.rampFrom) / (H.rampTo - H.rampFrom)));
+  return 1 - (1 - H.renewalPenalty) * x;
+}
+function fitImplied(r1, r2, m){ const b = -Math.log(Math.max(r2,1e-4))/Math.LN2; return Math.min(1, r1*Math.pow(m,-b)); }
+function sum(a){ return a.reduce((x,y)=>x+y,0); }
+// ---------- main calc ----------
+function flagBadInputs(){
+  [["wk_on","wk_p"],["mo_on","mo_p"],["yr_on","yr_p"]].forEach(([on,pr]) => {
+    const bad = el(on).checked && !(parseFloat(el(pr).value) > 0);
+    el(pr).classList.toggle("errinput", bad);
+  });
+  let sum = 0;
+  [["wk_on","wk_s"],["mo_on","mo_s"],["yr_on","yr_s"]].forEach(([on,sh]) => { if (el(on).checked) sum += parseFloat(el(sh).value) || 0; });
+  const mixBad = Math.abs(sum - 100) > 0.5;
+  ["wk_s","mo_s","yr_s"].forEach(id => el(id).classList.toggle("errinput", mixBad));
+}
+function uiState(){
+  flagBadInputs();
+  const w2w = el("funnel").value === "w2w";
+  const wt0 = el("pwtrial").value === "yes" && !w2w;
+  el("card_pwtrial").style.display = w2w ? "none" : "";
+  el("card_bbase").style.display = w2w ? "none" : "";
+  el("card_triallen").style.display = w2w ? "none" : "";
+  el("triallen").disabled = !wt0;
+  const rT = el("row_tshare"); if (rT) rT.classList.toggle("dim", !wt0);
+  const rD = el("row_directf"); if (rD){ rD.style.display = w2w ? "none" : ""; rD.classList.toggle("dim", wt0); }
+  const rP = el("row_t2p"); if (rP){ rP.style.display = w2w ? "none" : ""; rP.classList.toggle("dim", !wt0 && !w2w); }
+  const lh = el("ltvhead"); if (lh) lh.textContent = w2w ? "Retention & net revenue (LTV, M13 horizon)" : "Trial → paid, retention & net revenue (LTV, M13 horizon)";
+  const mh = el("mixhint");
+  if (mh){ const v = VERT[el("vertical").value]; mh.innerHTML = `Typical plan mix for ${v.name} – weekly ${v.mix.w}% · monthly ${v.mix.m}% · yearly ${v.mix.y}% [${el("vertical").value === "hf" ? "B/E – Adapty SOIS 2026: annual plans are 60.6% of H&F revenue [B]; the weekly/monthly split of the rest is ours [E]" : "E, our estimate from panel medians"}] – a hint only: Adapty reports revenue shares, this table wants subscription shares, so enter your own.`; }
+  const pw = el("pricewarn");
+  if (pw){
+    const gk = el("geo").value, gi = GEO[gk].priceIdx;
+    pw.style.display = gk === "na" ? "none" : "";
+    if (gk !== "na") pw.innerHTML = `⚠ Non-US geo: willingness-to-pay index for ${GEO[gk].name} ≈ <strong>×${gi}</strong> of US prices [E – Adapty states publicly only that European apps charge 29–39% more than North American ones and that prices vary ~4× between countries; the other multipliers are our estimates <a href="${SRC.adaptyPrice}" target="_blank" style="color:var(--link);text-decoration:none">↗</a>] – enter your LOCAL prices (e.g. US $12.99 monthly → ~$${(12.99*gi).toFixed(2)} here), or LTV will be overstated. Price-localization tests win 62.3% of the time – the best-performing A/B type in the industry.`;
+  }
+  const fit = el("retmode").value === "fit";
+  // benchmark mode: the RC anchors are editable – a team with real cohorts types its M6/M12 (or weekly renewals) straight in;
+  // fit mode: only the first two renewals are asked for, the anchors are hidden (the tail is extrapolated instead).
+  [["row_m1",fit],["row_m6",fit],["row_m12",fit],["row_w3",fit],["row_wm6",fit],
+   ["row_r1m",!fit],["row_r2m",!fit],["row_w1",false],["row_w2",false]]
+    .forEach(([id,hide]) => { const r = el(id); if (r) r.style.display = hide ? "none" : ""; });
+  // dim the rows of plans that are switched off
+  const mon = el("mo_on").checked, won = el("wk_on").checked;
+  [["row_m1",mon],["row_m6",mon],["row_m12",mon],["row_r1m",mon],["row_r2m",mon],["row_w1",won],["row_w2",won],["row_w3",won],["row_wm6",won]]
+    .forEach(([id,on]) => { const r = el(id); if (r) r.classList.toggle("dim", !on); });
+}
+function resetResults(){
+  ["o_ltv","o_cpa","o_roas","o_payback","o_cpi","o_tcpa","o_tcpt"].forEach(id => el(id).textContent = "–");
+  el("o_cpa_l").textContent = "Modeled CPA";
+  const v = el("verdict"); v.className = "verdict"; v.textContent = "…";
+  el("sensbox").innerHTML = ""; el("budgetout").textContent = ""; el("explain").innerHTML = "";
+  el("xcheck").style.display = "none"; el("mixwarn").style.display = "none";
+  window._m = null;
+}
+function markStale(){
+  uiState();
+  const r = el("results"); if (r) r.classList.add("dim");
+  const n = el("stalenote"); if (n) n.style.display = "block";
+}
+function gather(){
+  return {
+    s: el("scenario").value,
+    funnel: el("funnel").value,
+    vert: VERT[el("vertical").value],
+    geo: GEO[el("geo").value],
+    plat: PLAT[el("platform").value],
+    platW: PLATW[el("platform").value],
+    stages: stageList(),
+    opt: el("optevent").value,
+    withTrialSel: el("pwtrial").value === "yes",
+    aiOn: el("ai").value === "1",
+    fitMode: el("retmode").value === "fit",
+    season: parseFloat(el("season").value),
+    fee: parseFloat(el("fee").value),
+    troas: parseFloat(el("troas").value) || 1,
+    plans: {
+      won: el("wk_on").checked, mon: el("mo_on").checked, yon: el("yr_on").checked,
+      wp: parseFloat(el("wk_p").value) || 0, mp: parseFloat(el("mo_p").value) || 0, yp: parseFloat(el("yr_p").value) || 0,
+      wi: parseFloat(el("wk_i").value) || 0, mi: parseFloat(el("mo_i").value) || 0, yi: parseFloat(el("yr_i").value) || 0, // intro (1st-period) prices; 0 = none
+      ws: parseFloat(el("wk_s").value) || 0, ms: parseFloat(el("mo_s").value) || 0, ys: parseFloat(el("yr_s").value) || 0
+    }
+  };
+}
+// The whole model as a pure-ish function. S = sensitivity multiplier map (e.g. {cpm:0.8}) applied ON TOP
+// of whatever the user configured (benchmarks or manual values alike) – used by the tornado.
+function computeModel(S){
+  const M = k => (S && S[k] !== undefined) ? S[k] : 1;
+  const retP75 = !!(S && S.retP75);                    // sensitivity: every retention/renewal field at its P75 benchmark
+  const V = f => retP75 ? benchVal(f, "p75") : val(f); // (used for the LTV-side fields only)
+  const c = gather();
+  const {s, funnel, vert, geo, plat, stages} = c;
+  let cpmMod = 1, convUp = 1, badPurchaseOpt = false;
+  if (funnel === "a2a"){
+    const aeoOn = c.opt !== "mai";
+    badPurchaseOpt = c.opt === "aeo_purchase" && c.withTrialSel;
+    cpmMod = aeoOn ? 1 : MAI.cpmF;                                   // benchmark CPM is AEO-basis; MAI buys cheaper impressions
+    convUp = (aeoOn && !badPurchaseOpt) ? 1 : MAI.intentF;             // … and lower-intent installs (also the purchase-with-trial mistake)
+  } else {
+    const o = W2W_OPT[c.opt] || W2W_OPT.purchase;
+    cpmMod = o.cpmF; convUp = o.convF;
+  }
+  const cpm = (manual["cpm"] !== undefined ? manual["cpm"] : val(getF(stages,"cpm")) * c.season * cpmMod) * M("cpm");
+  const ctr = Math.min(1, val(getF(stages,"ctr")) * M("ctr"));
+  const cpc = cpm / 1000 / ctr;
+  const withTrial = funnel === "a2a" && c.withTrialSel;
+  const t2p = (manual["t2p"] !== undefined ? manual["t2p"] : benchVal(getF(LTV_FIELDS,"t2p")) * (funnel === "a2a" ? plat.t2pF : 1)) * M("t2p");
+  const tshare = funnel === "a2a" ? val(getF(stages,"tshare")) : 1;
+  let cpi, cpt = null, cpsub, i2t = null, eff;
+  if (funnel === "a2a"){
+    const c2s = Math.min(1, val(getF(stages,"c2s")) * M("c2s"));
+    const scvr = Math.min(0.95, (manual["scvr"] !== undefined ? manual["scvr"] : benchVal(getF(stages,"scvr")) * val(getF(stages,"paidf")) * plat.scvrF) * M("scvr"));
+    const i2pw = Math.min(1, val(getF(stages,"i2pw")) * M("i2pw"));
+    const pw2t = Math.min(1, (manual["pw2t"] !== undefined ? manual["pw2t"] : benchVal(getF(stages,"pw2t")) * convUp * plat.pwF) * M("pw2t"));
+    const org = val(getF(stages,"org")) * M("org");
+    eff = { cpm, ctr, c2s, scvr, i2pw, pw2t, org, t2p };
+    cpi = (cpc / (c2s * scvr)) / (1 + org);
+    const aiF = c.aiOn ? CONFIG.AI.i2t : 1;
+    if (withTrial){
+      i2t = i2pw * pw2t * aiF;
+      cpt = cpi / i2t;
+      cpsub = cpi / (i2t * t2p / tshare);
+    } else {
+      i2t = i2pw * pw2t * val(getF(stages,"directf")) * aiF;
+      cpsub = cpi / i2t;
+    }
+  } else {
+    const c2lp = Math.min(1, val(getF(stages,"c2lp")) * M("c2lp")), lp2q = Math.min(1, val(getF(stages,"lp2q")) * M("lp2q")),
+          qf = Math.min(1, val(getF(stages,"qfin")) * M("qfin")),
+          em = Math.min(1, val(getF(stages,"email")) * M("email")),
+          pw2c = Math.min(1, (manual["pw2c"] !== undefined ? manual["pw2c"] : benchVal(getF(stages,"pw2c")) * convUp) * M("pw2c")),
+          cc = Math.min(1, (manual["cc"] !== undefined ? manual["cc"] : benchVal(getF(stages,"cc")) * c.platW.ccF) * M("cc"));
+    eff = { cpm, ctr, c2lp, lp2q, qfin: qf, email: em, pw2c, cc };
+    cpi = cpc / (c2lp * lp2q);            // cost per QUIZ START (was ÷ quiz completion too – mislabeled as "per quiz start")
+    cpsub = cpc / (c2lp * lp2q * qf * em * pw2c * cc);
+  }
+  // ---- LTV ----
+  const r1 = V(getF(LTV_FIELDS,"m1")), r6raw = V(getF(LTV_FIELDS,"m6")), r12raw = V(getF(LTV_FIELDS,"m12"));
+  const aiFr = c.aiOn ? CONFIG.AI.retention : 1;
+  const yren0 = V(getF(LTV_FIELDS,"yren"));
+  const wkP = c.plans.wp * M("price"), moP = c.plans.mp * M("price"), yrP = c.plans.yp * M("price");
+  const wkI = c.plans.wi * M("price"), moI = c.plans.mi * M("price"), yrI = c.plans.yi * M("price");   // intro (1st-period) prices, 0 = none
+  const a26 = V(getF(LTV_FIELDS,"wm6"));   // weekly week-26 survival anchor: RC × your first three renewals, or typed
+  const yren = manual["yren"] !== undefined ? yren0 : yren0 * highPriceF(yrP);   // your observed renewal is effective – no price ramp on top
+  const refund = val(getF(LTV_FIELDS,"refund"));
+  const Z = () => new Array(13).fill(0);
+  const w1v = V(getF(LTV_FIELDS,"w1")), w2v = V(getF(LTV_FIELDS,"w2"));
+  const r1mv = V(getF(LTV_FIELDS,"r1m")), r2mv = V(getF(LTV_FIELDS,"r2m"));
+  const schedW = c.plans.won
+    ? (c.fitMode ? weeklyScheduleFit(wkP, w1v, w2v, refund, wkI) : weeklySchedule(wkP, w1v, w2v, V(getF(LTV_FIELDS,"w3")), refund, a26, wkI))
+    : Z();
+  const schedM = c.plans.mon
+    ? (c.fitMode ? monthlyScheduleFit(moP, r1mv, r2mv, refund, moI) : monthlySchedule(moP, r1, r6raw*(manual["m6"] !== undefined ? 1 : aiFr), r12raw*(manual["m12"] !== undefined ? 1 : aiFr), refund, moI))
+    : Z();
+  const schedY = Z(); if (c.plans.yon){ schedY[0] = (yrI > 0 ? yrI : yrP) * (1 - refund); schedY[12] = yrP * yren; }   // first year at the intro price if any, renewal at the plan price
+  let sw = c.plans.won ? c.plans.ws : 0,
+      sm = c.plans.mon ? c.plans.ms : 0,
+      sy = c.plans.yon ? c.plans.ys : 0;
+  const mixSum = sw + sm + sy;
+  if (mixSum <= 0) return { ok:false, mixSum };
+  const vat = val(getF(LTV_FIELDS,"vat"));
+  // w2w cohort penalty ×0.89 [B, Adapty]: applied per plan and ONLY when that plan's retention is a benchmark. Typed anchors or
+  // fitted renewals already contain the real w2w cohort's behaviour – stacking ×0.89 on them counted the penalty twice (found on a
+  // real w2w data run, 04.09.2026).
+  const isW2W = funnel === "w2w";
+  const benchW = c.fitMode ? (manual["w1"] === undefined && manual["w2"] === undefined) : (manual["w1"] === undefined && manual["w2"] === undefined && manual["w3"] === undefined);
+  const benchM = c.fitMode ? (manual["r1m"] === undefined && manual["r2m"] === undefined) : (manual["m1"] === undefined && manual["m6"] === undefined && manual["m12"] === undefined);
+  const webF_w = (isW2W && benchW) ? CONFIG.WEB_COHORT : 1;
+  const webF_m = (isW2W && benchM) ? CONFIG.WEB_COHORT : 1;
+  const webF_y = (isW2W && manual["yren"] === undefined) ? CONFIG.WEB_COHORT : 1;
+  const netF = (1 / (1 + vat)) * (1 - c.fee);
+  const upl = 1 + val(getF(LTV_FIELDS,"upsell")); // upsells & offers scale every cohort payment
+  const schedRaw = schedW.map((_,i) => (schedW[i]*sw + schedM[i]*sm + schedY[i]*sy) / mixSum * upl);            // before the cohort factor
+  const sched = schedW.map((_,i) => (schedW[i]*sw*webF_w + schedM[i]*sm*webF_m + schedY[i]*sy*webF_y) / mixSum * upl);
+  const gross = sum(schedRaw), webF = gross > 0 ? sum(sched) / gross : 1;                                          // effective blended cohort factor
+  const net = sum(sched) * netF;
+  if (!isFinite(cpsub) || cpsub <= 0 || !isFinite(net)) return { ok:false, mixSum, err:"Some field is 0 or empty – every conversion step and CTR must be above zero." };
+  return Object.assign({ ok:true, cpmMod, convUp, badPurchaseOpt, cpm, cpc, cpi, cpt, cpsub, i2t, t2p, tshare, withTrial, mixSum, net, sched, schedRaw, gross, webF, netF, vat, eff, yren, a26 }, c);
+}
+function calc(){
+  uiState();
+  const m = computeModel(null);
+  el("mixwarn").style.display = (!m.ok || Math.abs(m.mixSum - 100) > 0.5) ? "block" : "none";
+  el("mixwarn").textContent = m.err ? m.err : `Plan shares sum to ${m.mixSum}% – must be 100%.`;
+  if (!m.ok) return;
+  renderOut(m);
+}
+function sensitivity(m){
+  // Levers = "close the gap to the top quartile" on each benchmarked stage: the P75 benchmark (P25 for costs) for the current
+  // vertical × geo × platform, against your current EFFECTIVE value (benchmark or your own). In a multiplicative chain every
+  // stage has the same elasticity, so equal ±20% nudges would all score identically – the distance to top-quartile is what differs.
+  const isA = m.funnel === "a2a", st = m.stages, F = k => getF(st, k);
+  const B75 = k => benchVal(F(k), "p75");
+  const pf = v => (v*100).toFixed(v < 0.1 ? 1 : 0) + "%";
+  const levers = isA ? [
+      ["cpm",  "CPM → P25 (cheapest quartile)", B75("cpm") * m.season * m.cpmMod, fmt$],
+      ["ctr",  "CTR → P75", B75("ctr"), pf],
+      ["c2s",  "Click → store → P75", B75("c2s"), pf],
+      ["scvr", "Store CVR × paid factor → P75", B75("scvr") * (manual["paidf"] !== undefined ? manual["paidf"] : B75("paidf")) * m.plat.scvrF, pf],
+      ["i2pw", "Install → paywall → P75", B75("i2pw"), pf],
+      ["pw2t", m.withTrial ? "Paywall → trial → P75" : "Paywall → trial (× direct factor) → P75", B75("pw2t") * m.convUp * m.plat.pwF, pf],
+      ["org",  "Organic uplift → P75", B75("org"), pf]
+    ].concat(m.withTrial ? [["t2p", "Trial → paid → P75", benchVal(getF(LTV_FIELDS,"t2p"), "p75") * m.plat.t2pF, pf]] : [])
+    : [
+      ["cpm",  "CPM → P25 (cheapest quartile)", B75("cpm") * m.season * m.cpmMod, fmt$],
+      ["ctr",  "CTR → P75", B75("ctr"), pf],
+      ["c2lp", "Click → LP → P75", B75("c2lp"), pf],
+      ["lp2q", "LP → quiz start → P75", B75("lp2q"), pf],
+      ["qfin", "Quiz completion → P75", B75("qfin"), pf],
+      ["email","Email capture → P75", B75("email"), pf],
+      ["pw2c", "Paywall → checkout → P75", B75("pw2c") * m.convUp, pf],
+      ["cc",   "Checkout completion → P75", B75("cc") * m.platW.ccF, pf]
+    ];
+  const base = m.net / m.cpsub;
+  const out = [];
+  levers.forEach(([k, name, target, fmtv]) => {
+    const cur = m.eff[k]; if (!(cur > 0) || !isFinite(target)) return;
+    const mult = target / cur;
+    const better = k === "cpm" ? mult < 1 : mult > 1;   // cheaper CPM or higher conversion
+    if (!better){ out.push({ name, d: 0, from: fmtv(cur), to: fmtv(target), done: true }); return; }
+    const m2 = computeModel({ [k]: mult });
+    if (m2.ok) out.push({ name, d: (m2.net / m2.cpsub / base - 1) * 100, from: fmtv(cur), to: fmtv(target) });
+  });
+  const mR = computeModel({ retP75: true });
+  if (mR.ok){
+    const d = (mR.net / mR.cpsub / base - 1) * 100;
+    out.push({ name: "Retention & renewals → P75", d: Math.max(0, d), from: fmt$(m.net) + " LTV", to: fmt$(mR.net) + " LTV", done: d <= 0.05 });
+  }
+  out.sort((a,b) => b.d - a.d);
+  const mx = Math.max(...out.map(o => o.d), 1);
+  return `<div class="note" style="margin:2px 0 6px"><strong>Sensitivity – where the headroom is.</strong> Each bar: ROAS change if that one stage moved from its current value to the top-quartile benchmark for your vertical × geo (P75; for CPM the cheapest quartile), everything else held. In a multiplicative funnel every stage has the same elasticity, so the size of the gap is the whole story – not the stage's name.</div>` +
+    out.map(o => `<div style="display:flex;align-items:center;gap:8px;margin:3px 0;font-size:.8125rem">
+      <div style="width:230px">${o.name}<div style="font-size:.7rem;color:var(--sub)">${o.from} → ${o.to}</div></div>
+      <div style="flex:1;background:#f3f4f6;border-radius:4px;height:14px">
+        <div style="width:${(o.d/mx*100).toFixed(1)}%;height:14px;border-radius:4px;background:#3D7AB8"></div>
+      </div>
+      <div style="width:120px;text-align:right;font-weight:600;color:#16355C">${o.done ? '<span style="color:#047857;font-weight:600">✓ at/above P75</span>' : "+" + o.d.toFixed(0) + "%"}</div></div>`).join("") +
+    `<div class="note" style="margin-top:6px;font-size:.75rem">Prices are yours, not benchmarked, so they are not a bar: every +10% on prices is ≈ +10% on LTV, less the yearly-renewal ramp (×1.0 at $50 → ×0.8 at $70 [B/E, RC high-price churn]); your yearly plan currently sits at ×${highPriceF(m.plans.yp).toFixed(2)}.</div>`;
+}
+function renderBudget(m){
+  const B = parseFloat(el("budget").value) || 0;
+  if (B > 0 && isFinite(m.cpsub)){
+    const subsMo = B / m.cpsub, unitsMo = B / m.cpi;
+    let peak = 0;
+    for (let tm = 0; tm <= CONFIG.BUDGET.horizon; tm++){
+      let ret = 0;
+      for (let cch = 0; cch <= Math.min(tm, CONFIG.BUDGET.cohorts - 1); cch++)
+        for (let i = 0; i <= tm - cch && i <= 12; i++) ret += m.sched[i] * m.netF;
+      const cash = ret * subsMo - B * Math.min(tm + 1, CONFIG.BUDGET.cohorts);
+      if (cash < peak) peak = cash;
+    }
+    el("budgetout").innerHTML = `At ${fmt$(B)}/month: ~${Math.round(unitsMo).toLocaleString("en-US")} ${m.funnel === "a2a" ? "installs" : "quiz starts"} → <strong>~${Math.round(subsMo)} new subscribers/month</strong>. One monthly cohort returns ${fmt$(subsMo * m.net)} net by M13. Funding ${CONFIG.BUDGET.cohorts} months of spend at this rate requires peak cash of ≈ <strong>${fmt$(-peak)}</strong> before cohorts repay.`;
+  } else el("budgetout").textContent = "";
+}
+function renderOut(m){
+  const funnel = m.funnel;
+  const cpa = m.cpsub;
+  const tcpa = m.net / m.troas;
+  const tcpt = m.withTrial ? tcpa * m.t2p / m.tshare : null;
+  const tcpi = m.i2t ? tcpa * (m.withTrial ? m.i2t * m.t2p / m.tshare : m.i2t) : null;
+  const roas = m.net / m.cpsub;
+  let payback = null, cum = 0;
+  for (let i = 0; i <= 12; i++){ cum += m.sched[i] * m.netF; if (cum >= m.cpsub){ payback = i; break; } }
+  el("o_payback").textContent = payback === null ? ">M13" : "M" + payback;
+  el("o_ltv").textContent = fmt$(m.net);
+  el("o_cpa").textContent = cpa === null ? "n/a (no trial)" : fmt$(cpa);
+  el("o_cpa_l").textContent = "Modeled CPA (subscription)";
+  el("o_roas").textContent = isFinite(roas) ? roas.toFixed(2) : "–";
+  el("o_cpi").textContent = fmt$(m.cpi) + (funnel === "a2a" ? " CPI (blended w/ organic)" : " per quiz start");
+  el("o_tcpa").textContent = fmt$(tcpa);
+  el("o_tcpt").textContent = m.withTrial ? (fmt$(tcpt) + (tcpi ? " / " + fmt$(tcpi) : "")) : (tcpi ? fmt$(tcpi) + " CPI" : "–");
+  const close = m.net > m.cpsub * m.troas;
+  const v = el("verdict");
+  v.className = "verdict " + (close ? "v-good" : "v-bad");
+  v.textContent = close
+    ? `Closes: net LTV ${fmt$(m.net)} ≥ ${m.troas}× modeled CPA ${fmt$(m.cpsub)}. Headroom ${(m.net/m.cpsub/m.troas*100-100).toFixed(0)}%.`
+    : `Does not close: net LTV ${fmt$(m.net)} < ${m.troas}× modeled CPA ${fmt$(m.cpsub)}. CPM must fall ${(100 - m.net/m.cpsub/m.troas*100).toFixed(0)}% – or fix the funnel.`;
+  el("sensbox").innerHTML = sensitivity(m);
+  window._m = m;
+  renderBudget(m);
+  // cross-check vs RC composite (a2a, trial mode only)
+  const x = el("xcheck");
+  if (m.i2t && m.withTrial){
+    const comp = i2tComposite(m.vert, m.geo, m.s, m.aiOn) * m.plat.pwF;   // platform-adjusted: the store split is part of the benchmark
+    const i2tOrg = m.i2t / m.convUp;   // organic-equivalent: the RC composite is not AEO-uplifted
+    const ratio = i2tOrg / comp;
+    if (ratio > 1.5 || ratio < 1/1.5){
+      x.style.display = "block";
+      x.textContent = `Cross-check: your stage product gives install→trial ${(m.i2t*100).toFixed(1)}%${m.convUp !== 1 ? ` (${(i2tOrg*100).toFixed(1)}% before the AEO uplift ×${m.convUp.toFixed(1)})` : ""}, but RC composite for ${m.vert.name} × ${m.geo.name} is ${(comp*100).toFixed(1)}% (×${ratio.toFixed(1)} apart). One of the stages is off.`;
+    } else x.style.display = "none";
+  } else x.style.display = "none";
+  drawFunnel();
+  // explain
+  const bits = [`How the cost side unfolds: effective CPM ${fmt$(m.cpm)}` +
+    (manual["cpm"] === undefined && (m.season !== 1 || m.cpmMod !== 1)
+      ? ` (base${m.season !== 1 ? " × seasonality ×" + m.season : ""}${m.cpmMod !== 1 ? " × opt-event ×" + m.cpmMod.toFixed(2) : ""})`
+      : (manual["cpm"] !== undefined ? " (your value, used as-is)" : "")) +
+    ` → cost per click ${fmt$(m.cpc)} → ${funnel === "a2a" ? "cost per install" : "cost per quiz start"} ${fmt$(m.cpi)}${funnel === "a2a" && m.withTrial ? ` → cost per trial ${fmt$(m.cpt)}` : ""} → cost per subscriber ${fmt$(m.cpsub)}.`];
+  if (m.opt === "aeo_trial" && m.withTrialSel) bits.push(`AEO on trial start – the subscription-app standard, and the basis of the benchmarks: the CPM panels come from conversion-optimized campaigns and RC's install→trial composite is measured on the traffic real apps get (AEO + organic), so no premium and no uplift are applied. MAI would buy impressions at ×${MAI.cpmF} the price and installs at ×${MAI.intentF} the paywall conversion [E, practitioner consensus "AEO beats MAI ×2.5–4 on install→trial"] – mirrored on purpose, so MAI ≡ AEO on cost per subscriber: the model does not claim a winner it cannot source. AEO's real edge – cohort quality (trial→paid, retention) – is not credited; enter your own AEO cohort numbers to see it.`);
+  if (funnel === "a2a"){
+    const hb = el("bbase").value === "hard", b = m.vert.i2t, hbnd = i2tBand(m.vert);
+    bits.push(hb
+      ? `Benchmark base: hard-paywall apps – the RC install→trial band for ${m.vert.name} is shifted one quartile up (${(b.p25*100).toFixed(1)} / ${(b.med*100).toFixed(1)} / ${(b.p75*100).toFixed(1)}% → ${(hbnd.p25*100).toFixed(1)} / ${(hbnd.med*100).toFixed(1)} / ${(hbnd.p75*100).toFixed(1)}%) because RC's hard-paywall apps convert 10.7% of downloads to paid vs 2.1% for freemium [B] – above the all-apps top quartile of the best categories; the size of the shift is [E]. Switch to "All apps" for the raw panel band.`
+      : `Benchmark base: all apps – the raw RC install→trial band for ${m.vert.name} (${(b.p25*100).toFixed(1)} / ${(b.med*100).toFixed(1)} / ${(b.p75*100).toFixed(1)}%), most of which are freemium apps where a minority of installs ever sees a paywall; RC's hard-paywall apps convert ~5× more downloads to paid [B]. For a hard paywall in onboarding, switch the base or enter your own install→paywall / paywall→trial.`);
+  }
+  if (m.opt === "mai") bits.push(`MAI (install optimization): impressions at ×${MAI.cpmF} the AEO-basis CPM, installs at ×${MAI.intentF} the benchmark paywall conversion [E – mirrored, so cost per subscriber equals AEO by construction; no public panel separates the two]. Cheaper installs are not cheaper subscribers.`);
+  if (m.badPurchaseOpt) bits.push(`⚠ Purchase optimization with a trial: the purchase fires days after the click – rare, late signal, campaigns barely learn on it. You pay the AEO-level CPM for MAI-quality installs (paywall conversion ×${MAI.intentF} [E]) – cost per subscriber ×${(1/MAI.intentF).toFixed(1)}. Optimize on trial start instead.`);
+  if (m.opt === "aeo_purchase" && !m.withTrialSel && funnel === "a2a") bits.push(`Purchase optimization without a trial: day-0 payment event – a valid signal, benchmark-basis price and intent (×1.0).`);
+  if (m.opt === "aeo_trial" && !m.withTrialSel && funnel === "a2a") bits.push(`⚠ "Trial start" optimization with a no-trial paywall: there is no trial event to optimize on – treated as purchase optimization (day-0 event, benchmark-basis price and intent). Pick Purchase (AEO/VO) to be explicit.`);
+  if (funnel === "w2w" && m.opt !== "purchase" && W2W_OPT[m.opt]) bits.push(`Web optimization on ${W2W_OPT[m.opt].name}: CPM ×${W2W_OPT[m.opt].cpmF}, checkout intent ×${W2W_OPT[m.opt].convF} [A] – purchase optimization is the web standard (day-0 pixel event, no attribution-window problem).`);
+  if (funnel === "a2a" && (m.geo.cpiBench || (m.vert.cpiBench && el("geo").value === "na")) && el("platform").value !== "blend" && m.opt !== "mai"){
+    const useVert = m.vert.cpiBench && el("geo").value === "na";
+    const bench = (useVert ? m.vert.cpiBench : m.geo.cpiBench)[el("platform").value];
+    const paidCpi = m.cpi * (1 + m.eff.org);   // industry CPI medians are paid-only; the KPI above is blended with organic
+    const ratio = paidCpi / bench;
+    bits.push(`CPI cross-check: modeled paid CPI ${fmt$(paidCpi)} (blended with organic: ${fmt$(m.cpi)}) vs industry median ~$${bench} for ${PLAT[el("platform").value].name} ${useVert ? m.vert.name + " (" + m.vert.cpiBench.src + ") [B]" : "non-gaming (" + m.geo.name + ") [E]"}${ratio > 1.5 || ratio < 1/1.5 ? " ⚠ ×" + ratio.toFixed(1) + " apart – check CPM/CTR/store CVR inputs" : " ✓"}.`);
+  }
+  if (funnel === "a2a" && el("platform").value === "ios" && ["aeo_trial","aeo_purchase"].includes(m.opt)) bits.push(`iOS signal loss: 30–60% of conversions can be invisible to Meta (SKAN/AAK thresholds & delays) [E] – AEO learns slower; CAPI/AEM hygiene and a day-0 event are critical.`);
+  if (el("platform").value === "android" && funnel === "a2a") bits.push(`⚠ Android: your prices are used as entered – but Android subscribers typically pay back less (ARPU factor ~×0.8 [A], see the funnel tab: Play billing-error churn 32.3% vs 15.2%, lower price acceptance). If these are your US/iOS prices, the LTV here is optimistic.`);
+  if (el("platform").value !== "ios" && funnel === "a2a") bits.push(`Note: store CVR benchmark for ${PLAT[el("platform").value].name} = ${el("platform").value === "android" ? "Google Play data (AppTweak H1 2024, as cited by Adjust and Adapty)" : "the average of App Store (SplitMetrics category medians) and Google Play (AppTweak H1 2024, as cited by Adjust and Adapty) data"} [${el("platform").value === "android" ? m.vert.scvrATag : m.vert.scvrTag + "/" + m.vert.scvrATag}] – denominators differ between stores, so no cross-store bonus; paywall stage ×${PLAT[el("platform").value].pwF} [B, RC store split: download→paid D35 iOS 2.6% vs Android 0.9%, global median 2.0%]; trial→paid at store parity [B, RC 32.6/32.5].`);
+  if (funnel === "w2w" && el("platform").value !== "blend") bits.push(`Device targeting: ${PLATW[el("platform").value].name} – CPM ×${PLATW[el("platform").value].cpmF}, checkout completion ×${PLATW[el("platform").value].ccF} [A, provisional].`);
+  if (el("geo").value === "tr") bits.push(`Turkey: Meta's 5% "location fee" is added ON TOP of the budget (applied from May 2026, full billing from 1 Jul 2026; invoiced separately) [B] – not included in CPM here, add it to your target ROAS margin.`);
+  if (el("geo").value === "we") bits.push(`Western Europe: Meta's "location fees" are added ON TOP of the budget for ads delivered to the UK (2%), France / Italy / Spain (3%) and Austria (5%) – applied from May 2026, full billing from 1 Jul 2026 [B] – not included in CPM here, add them to your target ROAS margin for those countries.`);
+  if (funnel === "w2w") bits.push(`w2w: trial is not customary on web funnels – the checkout charges immediately; trial length / trial→paid / trial share are not applied. Web-cohort penalty ×0.89 [B, Adapty]: ${m.webF >= 0.995 ? "not applied – every active plan runs on your own renewals, which already are the web cohort" : m.webF > CONFIG.WEB_COHORT + 0.005 ? `blended ×${m.webF.toFixed(2)} – applied to plans on benchmark retention only, not to plans where you typed or fitted renewals` : "applied to the benchmark retention curve (type your own renewals and it drops off)"}.`);
+  else {
+    const df = val(getF(A2A_STAGES,"directf")), tsh = val(getF(A2A_STAGES,"tshare")), t2pB = m.t2p, be = df * tsh;
+    const trialWins = t2pB > be;
+    const beTxt = `Trial vs no-trial break-even: a trial earns its keep when trial→paid ≥ ${(be*100).toFixed(0)}% (= direct-purchase factor ×${df.toFixed(2)} × trial share ${(tsh*100).toFixed(0)}%); yours is ${(t2pB*100).toFixed(1)}% → ${trialWins ? "the trial wins" : "a no-trial paywall would win"} by ×${(Math.max(t2pB,be)/Math.max(Math.min(t2pB,be),1e-6)).toFixed(2)} on subscribers per install [E].`;
+    if (!m.withTrial) bits.push(`No-trial mode: direct purchases = trial-start rate ×${df.toFixed(2)} [E] (${(val(getF(A2A_STAGES,"pw2t"))*m.convUp*(manual["pw2t"]!==undefined?1:m.plat.pwF)*df*100).toFixed(1)}% of paywall viewers buy on the spot); trial length, trial→paid and trial share are not applied. ${beTxt}`);
+    else bits.push(`Subscribers = trial converters ÷ trial share ${(m.tshare*100).toFixed(0)}% – direct buyers at the same paywall add the remaining ${(100-m.tshare*100).toFixed(0)}% on top, from the same paid installs. ${beTxt}`);
+  }
+  if (el("retmode").value === "bench"){
+    bits.push(`Retention: RC benchmark curve for the current scenario – monthly M1 ${(val(getF(LTV_FIELDS,"m1"))*100).toFixed(0)}% / M6 ${(val(getF(LTV_FIELDS,"m6"))*100).toFixed(0)}% / M12 ${(val(getF(LTV_FIELDS,"m12"))*100).toFixed(0)}%${el("wk_on").checked ? `, weekly renewals ${(val(getF(LTV_FIELDS,"w1"))*100).toFixed(0)}/${(val(getF(LTV_FIELDS,"w2"))*100).toFixed(0)}/${(val(getF(LTV_FIELDS,"w3"))*100).toFixed(0)}%, then a two-phase tail through week-26 survival ${(m.a26*100).toFixed(1)}% ${manual["wm6"] !== undefined ? (m.a26 >= val(getF(LTV_FIELDS,"w1"))*val(getF(LTV_FIELDS,"w2"))*val(getF(LTV_FIELDS,"w3")) ? "(yours – ⚠ at or above survival after the 3rd renewal, so the tail is flat-capped; check the number)" : "(yours)") : "(RC 10% × your first three renewals ÷ RC median [E] – the least certain number in weekly LTV; type your own if you have 6-month weekly cohorts)"}` : ""}. Know your own anchors? Type them into the M1/M6/M12 (or weekly renewal) fields above. Only have the first two renewals? Switch to the early-stage fit mode.`);
+  } else {
+    const im6 = fitImplied(val(getF(LTV_FIELDS,"r1m")), val(getF(LTV_FIELDS,"r2m")), 6);
+    const im12 = fitImplied(val(getF(LTV_FIELDS,"r1m")), val(getF(LTV_FIELDS,"r2m")), 12);
+    const w1x = val(getF(LTV_FIELDS,"w1")), w2x = val(getF(LTV_FIELDS,"w2"));
+    const iw26 = fitImpliedW(w1x, w2x, 26), iw52 = fitImpliedW(w1x, w2x, 52);
+    let msg = `Early-stage fit S(m)=S1·m<sup>−b</sup> from your first two renewals. Implied monthly M6 ${(im6*100).toFixed(0)}% / M12 ${(im12*100).toFixed(0)}% (RC bands 14–26% / 6–14%)`;
+    if (im12 > 0.14 || im6 > 0.26) msg += ` ⚠ above the RC band – 2-point extrapolation is optimistic, consider trimming`;
+    if (el("wk_on").checked){
+      msg += `; weekly: geometric tail at your 2nd renewal's churn (${((1-w2x)*100).toFixed(0)}%/week, S(w) = r₁·r₂<sup>w−1</sup>) [E] – implied week-26 survival ${(iw26*100).toFixed(1)}% / week-52 ${(iw52*100).toFixed(1)}% (RC 5–15% / 1–2%)`;
+      if (iw26 < 0.05) msg += ` – below the RC band: RC's panel improves after the 3rd renewal and that upside is not credited here; switch to the benchmark curve and type your week-26 survival when you have it`;
+      if (iw26 > 0.15) msg += ` ⚠ above the RC band – check the 2nd renewal you typed`;
+    }
+    bits.push(msg + ".");
+  }
+  { const I = [];
+    if (m.plans.won && m.plans.wi > 0) I.push(`weekly first payment ${fmt$(m.plans.wi)} then ${fmt$(m.plans.wp)}`);
+    if (m.plans.mon && m.plans.mi > 0) I.push(`monthly first payment ${fmt$(m.plans.mi)} then ${fmt$(m.plans.mp)}`);
+    if (m.plans.yon && m.plans.yi > 0) I.push(`first year ${fmt$(m.plans.yi)}, renewal at ${fmt$(m.plans.yp)}${manual["yren"] === undefined ? ` (price ramp on the renewal price: ×${highPriceF(m.plans.yp).toFixed(2)})` : ""}`);
+    if (I.length) bits.push(`Intro offers: ${I.join("; ")} – the first payment (net of refunds) is charged at the 1st-period price, every renewal at the plan price.`); }
+  const uplV = val(getF(LTV_FIELDS,"upsell"));
+  if (uplV > 0) bits.push(`Upsells & offers: LTV scaled ×${(1+uplV).toFixed(2)} [E] – make sure this matches revenue you actually collect, not plans for it.`);
+  if (!m.vert.trialHelps) bits.push(`⚠ In ${m.vert.name} direct purchase beats trial on LTV (Adapty) – consider a no-trial paywall.`);
+  el("explain").innerHTML = bits.map(b => `<p>${b}</p>`).join("");
+}
+// ---------- funnel tab ----------
+const lk = u => ` <a href="${u}" target="_blank" title="source" style="color:var(--link);text-decoration:none">↗</a>`;
+// shared funnel-tab helpers (used by both drawA2A and drawW2W)
+const pctR = (lo, hi) => (lo*100).toFixed(1).replace(/\.0$/,"") + "–" + (hi*100).toFixed(1).replace(/\.0$/,"") + "%";
+function mkBand(stages, g){
+  return (k) => {
+    const lo = benchVal(getF(stages, k), "p25"), hi = benchVal(getF(stages, k), "p75"), cur = g(k);
+    return { txt: pctR(lo, hi), flag: cur < lo*0.999 ? " ⚠ below band" : (cur > hi*1.001 ? " ✦ above band" : " ✓") };
+  };
+}
+function funnelRowsHTML(rows, N, colHead){
+  const fN = x => x >= 1000 ? Math.round(x).toLocaleString("en-US") : x.toFixed(x < 10 ? 1 : 0);
+  let h = `<div class="frow head"><div>Stage</div><div>${colHead[0]}</div><div>${colHead[1]}</div></div>`;
+  rows.forEach(r => {
+    const wI = Math.max(8, 100 * Math.sqrt(r[2] / N)), wA = Math.max(8, 100 * Math.sqrt(r[3] / N));
+    h += `<div class="frow"><div class="fstage"><b>${r[0]}</b><span>${r[1]}</span></div>
+      <div class="fbarwrap"><div class="fbar ios" style="width:${wI}%">${fN(r[2])}</div></div>
+      <div class="fbarwrap"><div class="fbar android" style="width:${wA}%">${fN(r[3])}</div></div></div>`;
+  });
+  return h;
+}
+function econBlock(rowsI, rowsA, roasI, roasA, colors, names){
+  const tro = parseFloat(el("troas").value) || 1.3;
+  const card = (name, color, rows, roas) => {
+    const lines = rows.map(r => `<div class="econrow"><span>${r[0]}</span><strong>${r[1]}</strong></div>`).join("");
+    const ok = roas >= tro;
+    return `<div class="card"><div class="econhead"><span class="econdot" style="background:${color}"></span>${name}</div>${lines}
+      <div class="econrow"><span>ROAS = LTV ÷ cost per subscriber</span>
+      <strong style="color:${ok ? "#047857" : "#b91c1c"}">${roas.toFixed(2)} ${ok ? "✓ above" : "✗ below"} your ${tro} target</strong></div></div>`;
+  };
+  const better = roasI >= roasA;
+  const hi = Math.max(roasI, roasA), lo = Math.min(roasI, roasA);
+  const takeaway = `<div class="note" style="margin:8px 0 0"><strong>Takeaway:</strong> ${better ? names[0] : names[1]} returns ×${(hi/Math.max(lo,0.001)).toFixed(1)} more per ad dollar – a cheaper subscriber is not the same as a better one.</div>`;
+  return `<div class="note" style="margin-top:12px"><strong>Money check, per 100,000 impressions:</strong> what you pay (top lines) vs what one subscriber pays back (net LTV) – and whether the ratio clears your ROAS target.</div>
+    <div class="econgrid">${card(names[0], colors[0], rowsI, roasI)}${card(names[1], colors[1], rowsA, roasA)}</div>${takeaway}`;
+}
+function drawFunnel(){
+  const h1 = el("funnelviz"), h2 = el("funnelviz2");
+  if (h1) drawA2A(h1);
+  if (h2) drawW2W(h2);
+}
+function drawA2A(host){
+  const s = el("scenario").value, vert = VERT[el("vertical").value], geo = GEO[el("geo").value];
+  const withTrial = el("pwtrial").value === "yes", aiF = el("ai").value === "1" ? CONFIG.AI.i2t : 1;
+  const man = manualStore.a2a;
+  const g = k => { const f = getF(A2A_STAGES, k); return man[k] !== undefined ? man[k] : benchVal(f); };
+  const N = 100000, season = parseFloat(el("season").value);
+  const opt2 = el("optevent").value, aeo = ["aeo_trial","aeo_purchase"].includes(opt2);
+  const badPO = opt2 === "aeo_purchase" && withTrial;
+  const cpmBase = pickCost(geo.cpm, s) * season * (aeo ? 1 : MAI.cpmF);
+  const convUp = (aeo && !badPO) ? 1 : MAI.intentF;
+  // each column uses ITS store's CVR data (App Store: AppTweak page view→install; Play: visitors→acquisition),
+  // whatever platform the Setup selector says – the selector only decides what the headline calculator blends.
+  const scvrStore = (storeKey, s2) => pick(storeKey === "android" ? vert.scvrA : vert.scvr, s2 || s);
+  function chain(plat, storeKey){
+    // manual values are effective – platform/AEO/paid factors skipped (both platform columns then show your number)
+    const cpm = man["cpm"] !== undefined ? man["cpm"] : cpmBase * plat.cpmF;
+    const clicks = N * g("ctr");
+    const store = clicks * g("c2s");
+    const scvrEff = man["scvr"] !== undefined ? Math.min(0.95, man["scvr"]) : Math.min(0.95, scvrStore(storeKey) * g("paidf") * plat.scvrF);
+    const installs = store * scvrEff * (1 + g("org"));
+    // display sub-stages of the i2pw composite – Maria: "first open, onboarding start, registration, paywall view – это честно"
+    const pw = installs * g("i2pw");
+    const opens = Math.max(installs * plat.openF, pw);           // Android cliff [E, UXCam citing Adjust]: 20–25% never open
+    const obStart = Math.max(opens * CONFIG.DISPLAY.onboarding, pw);                  // open → onboarding start [A]
+    const regs = Math.max(obStart * CONFIG.DISPLAY.registration, pw);                   // onboarding → registration done [E]; fintech verification loses 30–50%
+    const pw2tEff = man["pw2t"] !== undefined ? Math.min(1, man["pw2t"]) : Math.min(1, g("pw2t") * convUp * plat.pwF);
+    const trials = pw * pw2tEff * aiF * (withTrial ? 1 : g("directf"));
+    const t2p = man["t2p"] !== undefined ? man["t2p"] : benchVal(getF(LTV_FIELDS,"t2p")) * plat.t2pF;
+    const subs = withTrial ? trials * t2p / g("tshare") : trials;
+    const spend = N / 1000 * cpm;
+    return {cpm, clicks, store, installs, opens, obStart, regs, pw, trials, subs, spend, scvrEff};
+  }
+  const I = chain(PLAT.ios, "ios"), A = chain(PLAT.android, "android");
+  // healthy bands = P25–P75 of the benchmark for the CURRENT geo × vertical (region-dependent by construction)
+  const band = mkBand(A2A_STAGES, g);
+  const B = (k, s2) => benchVal(getF(A2A_STAGES, k), s2);
+  const t2pLo = benchVal(getF(LTV_FIELDS,"t2p"),"p25"), t2pHi = benchVal(getF(LTV_FIELDS,"t2p"),"p75");
+  const t2pCur = man["t2p"] !== undefined ? man["t2p"] : benchVal(getF(LTV_FIELDS,"t2p"));
+  const geoName = GEO[el("geo").value].name;
+  const cpmR = (pl) => fmt$(pick(geo.cpm,"p25")*pl.cpmF) + "–" + fmt$(pick(geo.cpm,"p75")*pl.cpmF);
+  // healthy store-CVR band per store = that store's P25–P75 × paid factor; ✓/⚠ per column against its own band
+  const scvrBand = (storeKey, R) => {
+    const lo = scvrStore(storeKey,"p25")*B("paidf","p25"), hi = scvrStore(storeKey,"p75")*B("paidf","p75");
+    return pctR(lo, hi) + (R.scvrEff < lo*0.999 ? " ⚠ below band" : (R.scvrEff > hi*1.001 ? " ✦ above band" : " ✓"));
+  };
+  const bCtr = band("ctr"), bC2s = band("c2s"), bPw = band("i2pw"), bP2t = band("pw2t");
+  const rows = [
+    ["Impressions", `CPM base (AEO/organic basis; MAI ×${MAI.cpmF}), healthy for ${geoName}: iOS ${cpmR(PLAT.ios)} · Android ${cpmR(PLAT.android)} [A/E]${lk(SRC.lebesgue)}`, N, N],
+    ["Clicks", `CTR – no OS split [E] · healthy: ${bCtr.txt}${bCtr.flag}${lk(SRC.superads)}`, I.clicks, A.clicks],
+    ["Store page views", `click→store [A] · healthy: ${bC2s.txt}${bC2s.flag}`, I.store, A.store],
+    ["Installs (incl. organic)", `store CVR × paid factor [A] · healthy: App Store ${scvrBand("ios", I)} [${vert.scvrTag}, SplitMetrics] · Play ${scvrBand("android", A)} [${vert.scvrATag}, AppTweak H1 2024 via Adjust]${man["scvr"] !== undefined ? " · your store CVR used for both" : ""}${lk(SRC.splitmetrics)}${lk(SRC.adjustCvr)}`, I.installs, A.installs],
+    ["First opens", `install→first open: iOS ×0.87 [E] · Android ×0.775 [E, UXCam citing Adjust – the "Android cliff": 20–25% of installs never open]${lk(SRC.adjust)}`, I.opens, A.opens],
+    ["Onboarding starts", `open→onboarding [A] ~95% – display stage inside the composite`, I.obStart, A.obStart],
+    ["Registrations", `onboarding→registration [E] ~80% – display stage inside the composite`, I.regs, A.regs],
+    ["Paywall views", `install→paywall composite [B, Superwall]: platform average 56% of users, recommended target 85% · healthy: ${bPw.txt}${bPw.flag}${lk(SRC.superwall)}`, I.pw, A.pw],
+    [withTrial ? "Trial starts" : "Direct purchases",
+      (withTrial ? "paywall→trial [E]" : `paywall→purchase = trial-start rate ×${g("directf").toFixed(2)} [E]`) + ` · healthy: ${bP2t.txt}${bP2t.flag}${lk(SRC.adapty)}`, I.trials, A.trials],
+  ];
+  if (withTrial) rows.push(["Paid subscribers",
+    `trial→paid [B] ÷ trial share [A] · healthy trial→paid for ${geoName}: ${pctR(t2pLo,t2pHi)}${t2pCur < t2pLo*0.999 ? " ⚠ below band" : " ✓"}${lk(SRC.rc)}`, I.subs, A.subs]);
+  let h = funnelRowsHTML(rows, N, ["iOS", "Android"]);
+  const mB = computeModel(null);
+  if (mB.ok){
+    // a2a money mechanics: the store fee you selected when this calculator is active (else the 15% SBP default), no web-cohort factor.
+    // With the a2a calculator active and platform = iOS, the iOS card's LTV IS the headline number.
+    const feeA = el("funnel").value === "a2a" ? mB.fee : CONFIG.ECON_FEE.a2a;
+    const netA2A = mB.gross * ((1 / (1 + mB.vat)) * (1 - feeA));   // gross schedule: no web-cohort factor in the a2a column
+    const selP = PLAT[el("platform").value];
+    const netBase = netA2A / selP.arpuF; // your prices are read as the selected platform's; ARPU factor re-bases them per store [E]
+    const mk = (R, pl) => {
+      const netP = netBase * pl.arpuF;
+      const deriv = pl.arpuF === selP.arpuF ? `= headline net LTV, store fee ${(feeA*100).toFixed(0)}%` : `= ${fmt$(netA2A)} ÷ ${selP.arpuF} (${selP.name} prices) × ${pl.arpuF} ${pl.name} ARPU [A], store fee ${(feeA*100).toFixed(0)}%`;
+      return { rows: [
+        ["Ad spend", fmt$(R.spend)],
+        ["Cost per install", fmt$(R.spend / R.installs)],
+        ["Cost per trial", fmt$(R.spend / R.trials)],
+        ["Cost per subscriber", fmt$(R.spend / R.subs)],
+        [`Net LTV per subscriber <span style="font-weight:400;color:var(--sub)">${deriv}</span>`, fmt$(netP)]
+      ], roas: netP / (R.spend / R.subs) };
+    };
+    const cI = mk(I, PLAT.ios), cA = mk(A, PLAT.android);
+    h += econBlock(cI.rows, cA.rows, cI.roas, cA.roas, ["#3D7AB8", "#EE7C58"], ["iOS", "Android"]);
+  }
+  host.innerHTML = h;
+}
+function drawW2W(host){
+  const s = el("scenario").value, vert = VERT[el("vertical").value], geo = GEO[el("geo").value];
+  const man = manualStore.w2w;
+  const g = k => { const f = getF(W2W_STAGES, k); return man[k] !== undefined ? man[k] : benchVal(f); };
+  const band = mkBand(W2W_STAGES, g);
+  const N = 100000, season = parseFloat(el("season").value);
+  const o = W2W_OPT[el("optevent").value] || W2W_OPT.purchase;
+  const convUp = o.convF;
+  const cpmBase = pickCost(geo.cpmW, s) * season * o.cpmF;
+  function chain(pl){
+    const cpm = man["cpm"] !== undefined ? man["cpm"] : cpmBase * pl.cpmF;
+    const clicks = N * g("ctr");
+    const lp = clicks * g("c2lp");
+    const qs = lp * g("lp2q");
+    const qf = qs * g("qfin");
+    const em = qf * g("email");
+    const pw2cEff = man["pw2c"] !== undefined ? Math.min(1, man["pw2c"]) : Math.min(1, g("pw2c") * convUp);
+    const initiated = em * pw2cEff;
+    const ccEff = man["cc"] !== undefined ? Math.min(1, man["cc"]) : Math.min(1, g("cc") * pl.ccF);
+    const checkouts = initiated * ccEff; // = paid subscriptions: no trial on web funnels
+    const spend = N / 1000 * cpm;
+    return {cpm, clicks, lp, qs, qf, em, initiated, checkouts, spend};
+  }
+  const I = chain(PLATW.ios), A = chain(PLATW.android);
+  const geoName = GEO[el("geo").value].name;
+  const cpmR = (pl) => fmt$(pick(geo.cpmW,"p25")*pl.cpmF) + "–" + fmt$(pick(geo.cpmW,"p75")*pl.cpmF);
+  const bCtr = band("ctr"), bLp = band("c2lp"), bQ = band("lp2q"), bQf = band("qfin"), bEm = band("email"), bPc = band("pw2c"), bCc = band("cc");
+  const rows = [
+    ["Impressions", `CPM web, healthy for ${geoName}: iOS ${cpmR(PLATW.ios)} · Android ${cpmR(PLATW.android)} [A/E] – device split provisional${lk(SRC.tw)}`, N, N],
+    ["Clicks", `CTR web – no device split [E] · healthy: ${bCtr.txt}${bCtr.flag}${lk(SRC.superads)}`, I.clicks, A.clicks],
+    ["LP views", `click→LP [A] · healthy: ${bLp.txt}${bLp.flag}`, I.lp, A.lp],
+    ["Quiz starts", `LP→quiz [A] · healthy: ${bQ.txt}${bQ.flag}${lk(SRC.interact)}`, I.qs, A.qs],
+    ["Emails captured", `quiz completion ${bQf.txt}${bQf.flag} × finish→email [B] · healthy: ${bEm.txt}${bEm.flag}${lk(SRC.interact)}`, I.em, A.em],
+    ["Initiated checkout", `paywall→checkout [A] · healthy: ${bPc.txt}${bPc.flag}${lk(SRC.adapty)}`, I.initiated, A.initiated],
+    ["Subscription", `checkout completion [E] × device (iOS ×1.05 / Android ×0.95 [A], Apple Pay effect) · healthy: ${bCc.txt}${bCc.flag} · no trial on web funnels${lk(SRC.stripe)}`, I.checkouts, A.checkouts],
+  ];
+  let h = funnelRowsHTML(rows, N, ["iOS devices", "Android devices"]);
+  const mB = computeModel(null);
+  if (mB.ok){
+    // w2w money mechanics: the PSP fee you selected when this calculator is active (else ~5% default) + web-cohort ×0.89 [B] on
+    // benchmark retention only (with the w2w calculator active, the model's own per-plan factor is used – typed anchors carry no penalty)
+    const feeW = el("funnel").value === "w2w" ? mB.fee : CONFIG.ECON_FEE.w2w;
+    const webFW = el("funnel").value === "w2w" ? mB.webF : CONFIG.WEB_COHORT;
+    const netW2W = mB.gross * ((1 / (1 + mB.vat)) * (1 - feeW) * webFW);
+    const selP = PLATW[el("platform").value];
+    const netBase = netW2W / selP.arpuF;
+    const mk = (R, pl) => {
+      const netP = netBase * pl.arpuF;
+      const deriv = pl.arpuF === selP.arpuF ? `= headline net LTV, PSP fee ${(feeW*100).toFixed(0)}%, web cohort ×${webFW.toFixed(2)}${webFW < 0.995 && webFW > CONFIG.WEB_COHORT + 0.005 ? " (blend: ×0.89 on benchmark plans, ×1 on plans with your own renewals)" : webFW >= 0.995 ? " (your own renewals – no penalty on top)" : ""}` : `= ${fmt$(netW2W)} ÷ ${selP.arpuF} (${selP.name}) × ${pl.arpuF} ${pl.name} [A], PSP fee ${(feeW*100).toFixed(0)}%, web cohort ×${CONFIG.WEB_COHORT}`;
+      return { rows: [
+        ["Ad spend", fmt$(R.spend)],
+        ["Cost per quiz start", fmt$(R.spend / R.qs)],
+        ["Cost per subscription", fmt$(R.spend / R.checkouts)],
+        [`Net LTV per subscriber <span style="font-weight:400;color:var(--sub)">${deriv}</span>`, fmt$(netP)]
+      ], roas: netP / (R.spend / R.checkouts) };
+    };
+    const cI = mk(I, PLATW.ios), cA = mk(A, PLATW.android);
+    h += econBlock(cI.rows, cA.rows, cI.roas, cA.roas, ["#7FB9E4", "#72C09B"], ["iOS devices", "Android devices"]);
+  }
+  host.innerHTML = h;
+}
+function setOptOptions(f){
+  const sel = el("optevent"), cur = sel.value;
+  const opts = f === "a2a"
+    ? [["aeo_trial","Trial start (AEO) – standard"],["mai","Install (MAI)"],["aeo_purchase","Purchase (AEO/VO)"]]
+    : [["purchase","Purchase (standard)"],["checkout","Initiate checkout"],["lead","Lead (email submit)"]];
+  sel.innerHTML = "";
+  opts.forEach(([v,n]) => sel.add(new Option(n, v)));
+  sel.value = opts.some(x => x[0] === cur) ? cur : opts[0][0];
+}
+const TABMAP = { calc:"tab-calc", calcw:"tab-calc", funnel:"tab-funnel", ret:"tab-ret", ltv:"tab-ltv", vat:"tab-vat" };
+const feeStore = { a2a: "0.15", w2w: "0.05" }; // store commission per funnel – switching calculators no longer resets your choice
+function showTab(name){
+  Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).classList.toggle("active", n === name));
+  ["tab-calc","tab-funnel","tab-ret","tab-ltv","tab-vat"].forEach(id => el(id).style.display = "none");
+  el(TABMAP[name]).style.display = "";
+  if (name === "calc" || name === "calcw"){
+    const want = name === "calc" ? "a2a" : "w2w";
+    if (el("funnel").value !== want){
+      feeStore[el("funnel").value] = el("fee").value;   // remember the fee you chose for the funnel you are leaving
+      el("funnel").value = want;
+      el("fee").value = feeStore[want] || (want === "a2a" ? "0.15" : "0.05");
+      el("funnel").dispatchEvent(new window.Event("change"));
+    }
+    setOptOptions(want);
+  }
+  if (name === "funnel") drawFunnel();
+  if (name === "ret") drawRetention();
+}
+Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).addEventListener("click", () => showTab(n)));
+const STATE_SELECTS = ["platform","funnel","vertical","bbase","geo","scenario","optevent","pwtrial","triallen","season","ai","fee","retmode"];
+function stateObj(){
+  return {
+    sel: Object.fromEntries(STATE_SELECTS.map(id => [id, el(id).value])),
+    troas: el("troas").value,
+    plans: { won:el("wk_on").checked, mon:el("mo_on").checked, yon:el("yr_on").checked,
+             wp:el("wk_p").value, mp:el("mo_p").value, yp:el("yr_p").value,
+             wi:el("wk_i").value, mi:el("mo_i").value, yi:el("yr_i").value,
+             ws:el("wk_s").value, ms:el("mo_s").value, ys:el("yr_s").value },
+    man: manualStore
+  };
+}
+function applyState(o){
+  try {
+    STATE_SELECTS.forEach(id => { if (o.sel && o.sel[id] !== undefined) el(id).value = o.sel[id]; });
+    if (o.troas) el("troas").value = o.troas;
+    if (o.plans){
+      const P = o.plans;
+      if ("won" in P) el("wk_on").checked = !!P.won;
+      if ("mon" in P) el("mo_on").checked = !!P.mon;
+      if ("yon" in P) el("yr_on").checked = !!P.yon;
+      [["wp","wk_p"],["mp","mo_p"],["yp","yr_p"],["wi","wk_i"],["mi","mo_i"],["yi","yr_i"],["ws","wk_s"],["ms","mo_s"],["ys","yr_s"]]
+        .forEach(([k,id]) => { if (k in P) el(id).value = P[k]; });
+    }
+    if (o.man){ manualStore.a2a = o.man.a2a || {}; manualStore.w2w = o.man.w2w || {}; }
+    manual = manualStore[el("funnel").value];
+    setOptOptions(el("funnel").value);
+    if (o.sel && o.sel.optevent) el("optevent").value = o.sel.optevent;
+    rebuildFields();
+    return true;
+  } catch(e){ return false; }
+}
+let DEFAULT_STATE = null; // pristine state snapshot – share links carry only the diff from it
+function slimState(){
+  const full = stateObj(), d = DEFAULT_STATE || { sel:{}, plans:{} };
+  const out = {};
+  const sel = {}; for (const k in full.sel) if (d.sel[k] !== full.sel[k]) sel[k] = full.sel[k];
+  if (Object.keys(sel).length) out.sel = sel;
+  if (String(full.troas) !== String(d.troas)) out.troas = full.troas;
+  const plans = {}; for (const k in full.plans) if (String(d.plans[k]) !== String(full.plans[k])) plans[k] = full.plans[k];
+  if (Object.keys(plans).length) out.plans = plans;
+  const man = {};
+  if (Object.keys(full.man.a2a).length) man.a2a = full.man.a2a;
+  if (Object.keys(full.man.w2w).length) man.w2w = full.man.w2w;
+  if (Object.keys(man).length) out.man = man;
+  return out;
+}
+function writeHash(){
+  try {
+    const s = slimState();
+    history.replaceState(null, "", Object.keys(s).length ? "#" + encodeURIComponent(JSON.stringify(s)) : location.pathname);
+  } catch(e){}
+}
+el("calcbtn").addEventListener("click", () => {
+  calc();
+  writeHash();
+  el("results").classList.remove("dim");
+  el("stalenote").style.display = "none";
+  const b = el("calcbtn");
+  b.textContent = "Calculated ✓";
+  setTimeout(() => { b.textContent = "Calculate"; }, 900);
+});
+el("budget").addEventListener("input", () => { if (window._m) renderBudget(window._m); });
+el("sharebtn").addEventListener("click", () => {
+  writeHash();
+  const url = location.href;
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url);
+  el("sharebtn").textContent = "Link copied ✓";
+  setTimeout(() => { el("sharebtn").textContent = "Copy share link"; }, 1500);
+});
+// ---------- retention curves tab ----------
+const RET = {
+  monthly: [
+    {name:"Category median [B]", r:[0.57,0.71,0.78], a6:0.20, a12:0.10, color:"#3D7AB8"},
+    {name:"Business – top [E]", r:[0.61,0.80,0.85], a6:0.40, a12:0.25, color:"#72C09B"},
+    {name:"Social & Lifestyle – low [E]", r:[0.42,0.65,0.73], a6:0.14, a12:0.06, color:"#EE7C58"}
+  ],
+  weekly: [
+    {name:"Category median [B]", r:[getF(LTV_FIELDS,"w1").v.med, getF(LTV_FIELDS,"w2").v.med, getF(LTV_FIELDS,"w3").v.med], a26:CONFIG.WEEKLY_M6, y1:CONFIG.WEEKLY_Y1, color:"#3D7AB8"}, // same numbers the calculator uses
+    {name:"Business – top [E]", r:[0.55,0.75,0.85], a26:0.26, y1:0.02, color:"#72C09B"},
+    {name:"Social & Lifestyle – low [E]", r:[0.35,0.67,0.78], a26:0.11, y1:0.012, color:"#EE7C58"}
+  ]
+};
+// RC store deltas on 1st renewal (converge by 3rd): Play +3.5pp monthly, iOS +4.4pp weekly
+const RET_STORE = { blend:{m1:0, w1:0}, ios:{m1:-0.0175, w1:+0.022}, play:{m1:+0.0175, w1:-0.022} };
+let retStore = "blend";
+function llInterp(x, x1, y1, x2, y2){ // log-log
+  const lx=Math.log(x), a=[Math.log(x1),Math.log(Math.max(y1,1e-5))], b=[Math.log(x2),Math.log(Math.max(y2,1e-5))];
+  return Math.exp(a[1] + (b[1]-a[1])*(lx-a[0])/(b[0]-a[0]));
+}
+function monthlyPts(sr, d){
+  const r1=Math.min(1,sr.r[0]+d.m1), r2=Math.min(1,sr.r[1]+d.m1/2), r3=sr.r[2];
+  const s1=r1, s2=s1*r2, s3=s2*r3;
+  const pts=[1, s1, s2, s3];
+  for(let m=4;m<=12;m++) pts.push(m<=6 ? llInterp(m,3,s3,6,sr.a6) : llInterp(m,6,sr.a6,12,sr.a12));
+  return pts;
+}
+function weeklyPts(sr, d){
+  const w1=Math.min(1,sr.r[0]+d.w1), w2=Math.min(1,sr.r[1]+d.w1/2), w3=sr.r[2];
+  const surv = weeklySurv(w1, w2, w3, sr.a26, sr.y1); // same helper as the calculator's weekly schedule
+  const pts=[]; for(let m=0;m<=12;m++) pts.push(surv[Math.min(52,Math.round(m*52/12))||0]);
+  pts[0]=1; return pts;
+}
+function retChart(seriesArr, ptsFn, d, yMax){
+  const W=430, H=260, L=38, Bm=26, T=10, R=8;
+  const px=m=>L+(W-L-R)*m/12, py=v=>T+(H-T-Bm)*(1-v/yMax);
+  let g="";
+  for(let v=0;v<=yMax+0.001;v+=0.1){ g+=`<line x1="${L}" y1="${py(v)}" x2="${W-R}" y2="${py(v)}" stroke="#eef1f5"/><text x="${L-5}" y="${py(v)+3}" font-size="9" fill="#9ca3af" text-anchor="end">${Math.round(v*100)}%</text>`; }
+  for(let m=0;m<=12;m+=3){ g+=`<text x="${px(m)}" y="${H-8}" font-size="9" fill="#9ca3af" text-anchor="middle">M${m}</text>`; }
+  let paths="", dots="", leg="";
+  seriesArr.forEach((sr,si)=>{
+    const pts=ptsFn(sr,d);
+    const dpath=pts.map((v,m)=>(m?"L":"M")+px(m).toFixed(1)+","+py(Math.min(v,yMax)).toFixed(1)).join(" ");
+    paths+=`<path d="${dpath}" fill="none" stroke="${sr.color}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    for(let m=1;m<=12;m++){
+      dots+=`<circle cx="${px(m)}" cy="${py(Math.min(pts[m],yMax))}" r="2.6" fill="${sr.color}"/>`;
+      if([1,3,6,9,12].includes(m)) dots+=`<text x="${px(m)}" y="${py(Math.min(pts[m],yMax))-6}" font-size="8.5" fill="${sr.color}" text-anchor="middle">${(pts[m]*100).toFixed(0)}%</text>`;
+    }
+    const lx = W - R - 168;
+    leg+=`<circle cx="${lx}" cy="${T+10+si*14}" r="4" fill="${sr.color}"/><text x="${lx+8}" y="${T+13+si*14}" font-size="9.5" fill="#374151">${sr.name}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:${W}px">${g}${paths}${dots}${leg}</svg>`;
+}
+function fitPower(pts){ // s(m) ≈ a·m^(−b), fit on m=1..12 in log-log; returns {a,b,r2}
+  const xs=[], ys=[];
+  for(let m=1;m<=12;m++){ xs.push(Math.log(m)); ys.push(Math.log(Math.max(pts[m],1e-5))); }
+  const n=xs.length, mx=xs.reduce((a,c)=>a+c,0)/n, my=ys.reduce((a,c)=>a+c,0)/n;
+  let sxy=0, sxx=0, syy=0;
+  for(let i=0;i<n;i++){ sxy+=(xs[i]-mx)*(ys[i]-my); sxx+=(xs[i]-mx)**2; syy+=(ys[i]-my)**2; }
+  const slope=sxy/sxx, icept=my-slope*mx, r2=syy? (sxy*sxy)/(sxx*syy) : 1;
+  return { a:Math.exp(icept), b:-slope, r2 };
+}
+function eqHTML(seriesArr, ptsFn, d){
+  return seriesArr.map(sr=>{
+    const f=fitPower(ptsFn(sr,d));
+    return `<span style="color:${sr.color};font-weight:600">●</span>&nbsp; S(m) ≈ ${(f.a*100).toFixed(0)}% · m<sup> −${f.b.toFixed(2)}</sup>, &nbsp; <span style="color:var(--sub)">R² = ${f.r2.toFixed(3)}</span>`;
+  }).join("<br>");
+}
+function drawRetention(){
+  const hm=el("retchart-m"), hw=el("retchart-w"); if(!hm) return;
+  const d=RET_STORE[retStore];
+  hm.innerHTML = retChart(RET.monthly, monthlyPts, d, 0.7);
+  hw.innerHTML = retChart(RET.weekly, weeklyPts, d, 0.6);
+  el("reteq-m").innerHTML = eqHTML(RET.monthly, monthlyPts, d);
+  el("reteq-w").innerHTML = eqHTML(RET.weekly, weeklyPts, d);
+}
+["blend","ios","play"].forEach(sk=>{
+  el("ret-"+sk).addEventListener("click", ()=>{
+    retStore=sk;
+    ["blend","ios","play"].forEach(k=>el("ret-"+k).classList.toggle("active",k===sk));
+    drawRetention();
+  });
+});
+// ---------- init ----------
+function rebuildFields(){
+  el("fields").innerHTML = ""; el("lfields").innerHTML = "";
+  stageList().forEach(f => { fieldRow(f, el("fields")); refreshField(f); });
+  LTV_FIELDS.forEach(f => { fieldRow(f, el("lfields")); refreshField(f); });
+  el("cpaHead").textContent = "Acquisition funnel – " + (el("funnel").value === "a2a" ? "App → App" : "Web → Web (quiz)");
+}
+Object.entries(VERT).forEach(([k,v]) => el("vertical").add(new Option(v.name, k)));
+Object.entries(GEO).forEach(([k,v]) => el("geo").add(new Option(v.name, k)));
+["funnel"].forEach(id => el(id).addEventListener("change", () => { manual = manualStore[el("funnel").value]; setOptOptions(el("funnel").value); rebuildFields(); resetResults(); markStale(); }));
+["vertical","bbase","geo","scenario","optevent","pwtrial","triallen","platform","season","ai","fee","troas","retmode","wk_on","mo_on","yr_on","wk_p","mo_p","yr_p","wk_i","mo_i","yr_i","wk_s","mo_s","yr_s"]
+  .forEach(id => el(id).addEventListener("input", () => { stageList().forEach(refreshField); LTV_FIELDS.forEach(refreshField); markStale(); }));
+setOptOptions("a2a"); rebuildFields(); markStale();
+
+// ---------- built-in self-test (?test=1) ----------
+function approxEq(a, b, tol){ return Math.abs(a - b) <= tol * Math.abs(b); }
+function runSelfTests(){
+  const T = [];
+  const ok = (name, cond, detail) => T.push({ name, pass: !!cond, detail: detail || "" });
+  // pure math
+  ok("pick(): percentile interpolation", pick({p25:0,med:1,p75:2},"p25")===0 && pick({p25:0,med:1,p75:2},"med")===1 && pick({p25:0,med:1,p75:2},"p75")===2);
+  const mc = monthlyCurve(0.61, 0.20, 0.10);
+  ok("retention curve passes exactly through its anchors (M1/M6/M12)", approxEq(mc(1),0.61,1e-3) && approxEq(mc(6),0.20,1e-3) && approxEq(mc(12),0.10,1e-3));
+  ok("early-stage fit reproduces the two input renewals", approxEq(fitImplied(0.57,0.71,1),0.57,1e-3) && approxEq(fitImplied(0.57,0.71,2),0.57*0.71,1e-3));
+  const ws = weeklySchedule(10, 0.46, 0.71, 0.80, 0);
+  ok("weekly schedule: 13 monthly buckets, non-negative, decaying", ws.length===13 && ws.every(x=>x>=0) && ws[12] < ws[0]);
+  {
+    const f1 = getF(LTV_FIELDS,"w1").v, f2 = getF(LTV_FIELDS,"w2").v, f3 = getF(LTV_FIELDS,"w3").v;
+    const sm = weeklySurv(f1.med, f2.med, f3.med, CONFIG.WEEKLY_M6, CONFIG.WEEKLY_Y1);
+    const scale = (f1.p25*f2.p25*f3.p25) / weeklyRef();
+    const sp = weeklySurv(f1.p25, f2.p25, f3.p25, CONFIG.WEEKLY_M6*scale, CONFIG.WEEKLY_Y1*scale);
+    ok("weekly curve hits the RC anchors (M6 ≈ 10%, Y1 ≈ 1.5%) at median renewals and scales with early survival at P25",
+       approxEq(sm[26], CONFIG.WEEKLY_M6, 1e-6) && approxEq(sm[52], CONFIG.WEEKLY_Y1, 1e-6) && approxEq(sp[52], CONFIG.WEEKLY_Y1*scale, 1e-6) && sp[52] < sm[52],
+       `median Y1 ${(sm[52]*100).toFixed(2)}%, P25 Y1 ${(sp[52]*100).toFixed(2)}%`);
+    // the Retention-curves tab must draw the very same median weekly curve the calculator monetizes
+    const tabPts = weeklyPts(RET.weekly[0], RET_STORE.blend);
+    ok("retention tab weekly median = calculator weekly curve (M6 point identical)", approxEq(tabPts[6], sm[26], 1e-9));
+    // the editable week-26 anchor: default = RC 10% × (your s3 ÷ median s3); a typed value is used as-is and moves the tail
+    const savedMan = manual, sc0 = el("scenario").value, won0 = el("wk_on").checked, ws0 = el("wk_s").value, ms0 = el("mo_s").value, ys0 = el("yr_s").value;
+    el("scenario").value = "med"; el("wk_on").checked = true; el("wk_s").value = "100"; el("mo_s").value = "0"; el("yr_s").value = "0";
+    manual = {}; const dflt = benchVal(getF(LTV_FIELDS,"wm6")), mD = computeModel(null);
+    manual = { wm6: 0.05 }; const mLo = computeModel(null);
+    manual = { wm6: 0.20 }; const mHi = computeModel(null);
+    manual = savedMan; el("scenario").value = sc0; el("wk_on").checked = won0; el("wk_s").value = ws0; el("mo_s").value = ms0; el("yr_s").value = ys0;
+    ok("weekly week-26 anchor: default = RC 10% at median renewals; typed 5% / 20% moves the weekly tail down / up",
+       approxEq(dflt, CONFIG.WEEKLY_M6, 1e-9) && mD.ok && mLo.ok && mHi.ok && approxEq(mD.a26, CONFIG.WEEKLY_M6, 1e-9) && mLo.gross < mD.gross && mD.gross < mHi.gross,
+       (mD.ok && mLo.ok && mHi.ok) ? `gross ${fmt$(mLo.gross)} < ${fmt$(mD.gross)} < ${fmt$(mHi.gross)}` : "");
+    ok("weekly early-stage fit is geometric at the 2nd renewal's churn: S(1)=r1, S(2)=r1·r2, S(3)=r1·r2²",
+       approxEq(fitImpliedW(0.8,0.835,1),0.8,1e-9) && approxEq(fitImpliedW(0.8,0.835,2),0.8*0.835,1e-9) && approxEq(fitImpliedW(0.8,0.835,3),0.8*0.835*0.835,1e-9));
+  }
+  // model invariants at current settings
+  const base = computeModel(null);
+  ok("model returns finite positive LTV and CPA", base.ok && isFinite(base.net) && base.net > 0 && isFinite(base.cpsub) && base.cpsub > 0);
+  ok("internal consistency: Σschedule × netF = net LTV", approxEq(sum(base.sched) * base.netF, base.net, 1e-9));
+  ok("monotonicity: better CTR → cheaper subscriber", computeModel({ctr:1.2}).cpsub < base.cpsub);
+  ok("monotonicity: cheaper CPM → cheaper subscriber", computeModel({cpm:0.8}).cpsub < base.cpsub);
+  ok("monotonicity: higher prices → higher LTV", computeModel({price:1.2}).net > base.net);
+  ok("high-price ramp is continuous (×1.0 at $50, ×0.9 at $60, ×0.8 at $70, no cliff)", approxEq(highPriceF(50),1,1e-9) && approxEq(highPriceF(60),0.9,1e-9) && approxEq(highPriceF(70),0.8,1e-9) && Math.abs(highPriceF(60.01)-highPriceF(59.99)) < 1e-3);
+  ok("sensitivity: every top-quartile lever is ≥ 0 and retention→P75 raises LTV", (() => {
+    const html = sensitivity(base); const mR = computeModel({retP75:true});
+    return !/-\d+%/.test(html) && mR.ok && mR.net > base.net;
+  })());
+  if (base.i2t){
+    const comp = i2tComposite(base.vert, base.geo, base.s, base.aiOn) * base.plat.pwF;
+    const ratio = (base.i2t / base.convUp) / comp;
+    ok("cross-check: stage product within ×1.5 of RC install→trial composite", ratio < 1.5 && ratio > 1/1.5, "×" + ratio.toFixed(2));
+  }
+  // the cross-check must stay silent on untouched benchmarks for EVERY vertical × geo × scenario (a2a, trial mode)
+  {
+    const saved = ["vertical","geo","scenario","bbase","platform"].map(id => [id, el(id).value]);
+    const savedMan = manual; manual = {};
+    let worst = 1, worstAt = "", n = 0;
+    if (el("funnel").value === "a2a" && el("pwtrial").value === "yes")
+      for (const pf of ["blend","ios","android"]) for (const bb of ["hard","all"]) for (const v in VERT) for (const g in GEO) for (const s of ["p25","med","p75"]){
+        el("platform").value = pf; el("bbase").value = bb; el("vertical").value = v; el("geo").value = g; el("scenario").value = s;
+        const m = computeModel(null); if (!m.ok || !m.i2t) continue;
+        const r = (m.i2t / m.convUp) / (i2tComposite(m.vert, m.geo, s, m.aiOn) * m.plat.pwF);
+        const dev = Math.max(r, 1/r); n++;
+        if (dev > worst){ worst = dev; worstAt = `${pf}:${bb}:${v}×${g}×${s}`; }
+      }
+    saved.forEach(([id, v]) => el(id).value = v); manual = savedMan;
+    ok(`cross-check silent on defaults for all ${n} platform × base × vertical × geo × scenario combos (worst ×${worst.toFixed(2)} at ${worstAt || "–"})`, n === 0 || worst < 1.5);
+    // the store split must reproduce RC: Android/iOS = 0.9/2.6 at the paywall stage, and the ≈65/35 blend equals the composite
+    ok("store split reproduces RC: Android ÷ iOS paywall factor = 0.9 ÷ 2.6 and 0.65·iOS + 0.35·Android ≈ 1.0 (blended composite)",
+       approxEq(PLAT.android.pwF / PLAT.ios.pwF, 0.9/2.6, 0.02) && approxEq(0.65*PLAT.ios.pwF + 0.35*PLAT.android.pwF, 1, 0.01) && PLAT.blend.pwF === 1,
+       `${(PLAT.android.pwF/PLAT.ios.pwF).toFixed(3)} vs ${(0.9/2.6).toFixed(3)}; blend ${(0.65*PLAT.ios.pwF + 0.35*PLAT.android.pwF).toFixed(3)}`);
+  }
+  // funnel tab must agree with the calculator: with platform = iOS, the iOS column's cost per subscriber and net LTV are the headline numbers
+  if (el("funnel").value === "a2a"){
+    const pv = el("platform").value, savedMan = manual; manual = {};
+    el("platform").value = "ios";
+    const m = computeModel(null);
+    const host = document.createElement("div"); drawA2A(host);
+    const txt = host.innerText || host.textContent;
+    el("platform").value = pv; manual = savedMan;
+    const iCPA = (txt.match(/Cost per subscriber\s*\n?\s*(\$[\d,\.]+)/) || [])[1];
+    const iLTV = (txt.match(/Net LTV per subscriber[^\n]*\n?\s*(\$[\d,\.]+)/) || [])[1];
+    ok("funnel tab iOS column = calculator at platform iOS (cost per subscriber and net LTV)", m.ok && iCPA === fmt$(m.cpsub) && iLTV === fmt$(m.net), `tab ${iCPA} / ${iLTV} vs calc ${fmt$(m.cpsub)} / ${fmt$(m.net)}`);
+  }
+  // w2w: the "cost per quiz start" KPI must be exactly CPC ÷ (click→LP × LP→quiz start) – no quiz-completion term
+  {
+    const fv = el("funnel").value, savedMan = manual; manual = {};
+    el("funnel").value = "w2w"; const mw = computeModel(null);
+    const c2lp = val(getF(W2W_STAGES,"c2lp")), lp2q = val(getF(W2W_STAGES,"lp2q"));
+    el("funnel").value = fv; manual = savedMan;
+    ok("w2w: cost per quiz start = CPC ÷ (click→LP × LP→quiz)", mw.ok && approxEq(mw.cpi, mw.cpc / (c2lp * lp2q), 1e-9), mw.ok ? fmt$(mw.cpi) : "");
+  }
+  // w2w: the web-cohort ×0.89 applies to benchmark retention only – typed anchors already ARE the web cohort (no double penalty)
+  {
+    const fv = el("funnel").value, savedMan = manual;
+    el("funnel").value = "w2w";
+    manual = {}; const mBench = computeModel(null);
+    manual = { m1: 0.61, m6: 0.20, m12: 0.10, w1: 0.46, w2: 0.71, w3: 0.80, yren: 0.30 }; const mMine = computeModel(null);   // = the benchmark medians, typed
+    el("funnel").value = fv; manual = savedMan;
+    ok("w2w: web-cohort ×0.89 on benchmark retention, ×1 on typed renewals (same curve typed → net LTV ÷ 0.89)",
+       mBench.ok && mMine.ok && approxEq(mBench.webF, CONFIG.WEB_COHORT, 1e-9) && approxEq(mMine.webF, 1, 1e-9) && approxEq(mMine.net, mBench.net / CONFIG.WEB_COHORT, 0.02),
+       (mBench.ok && mMine.ok) ? `${fmt$(mBench.net)} → ${fmt$(mMine.net)}` : "");
+  }
+  // confidence tags follow the vertical: Productivity store CVR / trial→paid are interpolated [E], H&F are [B]
+  {
+    const sv = el("vertical").value, sp = el("platform").value;
+    el("vertical").value = "prod"; el("platform").value = "ios";
+    const tP = tagFor(getF(A2A_STAGES,"scvr")) + tagFor(getF(LTV_FIELDS,"t2p"));
+    el("vertical").value = "hf";
+    const tH = tagFor(getF(A2A_STAGES,"scvr")) + tagFor(getF(LTV_FIELDS,"t2p"));
+    el("vertical").value = sv; el("platform").value = sp;
+    ok("confidence tags come from the vertical (Productivity store CVR/t2p = E·E, H&F = B·B)", tP === "EE" && tH === "BB", `${tP} / ${tH}`);
+  }
+  // intro offer: the first payment at the 1st-period price, renewals at the plan price – gross LTV moves by exactly (P − intro)×(1−refund)×share
+  {
+    const mi0 = el("mo_i").value, mon0 = el("mo_on").checked, won0 = el("wk_on").checked, yon0 = el("yr_on").checked, ms0 = el("mo_s").value;
+    el("mo_on").checked = true; el("wk_on").checked = false; el("yr_on").checked = false; el("mo_s").value = "100";
+    el("mo_i").value = ""; const m0 = computeModel(null);
+    el("mo_i").value = String((parseFloat(el("mo_p").value) / 2).toFixed(2)); const mI = computeModel(null);
+    const dP = parseFloat(el("mo_p").value) - parseFloat(el("mo_i").value), rf = val(getF(LTV_FIELDS,"refund"));
+    el("mo_i").value = mi0; el("mo_on").checked = mon0; el("wk_on").checked = won0; el("yr_on").checked = yon0; el("mo_s").value = ms0;
+    ok("intro offer: first payment at the 1st-period price, renewals at the plan price (gross LTV Δ = (P − intro) × (1 − refund))",
+       m0.ok && mI.ok && approxEq(m0.gross - mI.gross, dP * (1 - rf) * (1 + val(getF(LTV_FIELDS,"upsell"))), 1e-6),
+       (m0.ok && mI.ok) ? `${fmt$(m0.gross)} → ${fmt$(mI.gross)}` : "");
+  }
+  // a manual yearly renewal is effective: the price ramp must not be applied on top of it
+  {
+    const savedMan = manual, yp = el("yr_p").value;
+    el("yr_p").value = "99"; manual = { yren: 0.30 }; const mM = computeModel(null);
+    el("yr_p").value = yp; manual = savedMan;
+    ok("manual yearly renewal is used as-is (no high-price ramp on top of your data)", !mM.ok || approxEq(mM.yren, 0.30, 1e-9), mM.ok ? (mM.yren*100).toFixed(1) + "%" : "");
+  }
+  // a manual retention anchor is effective: the AI modifier must not be applied on top of it
+  {
+    const ai = el("ai").value, savedMan = manual;
+    el("ai").value = "1"; manual = { m6: 0.20, m12: 0.10 }; const mA = computeModel(null);
+    el("ai").value = "0"; manual = { m6: 0.20, m12: 0.10 }; const m0 = computeModel(null);
+    el("ai").value = ai; manual = savedMan;
+    ok("manual M6/M12 anchors are used as-is under the AI toggle (no ×0.7 on top of your data)", mA.ok && m0.ok && approxEq(mA.net, m0.net, 1e-9) || !(mA.ok && m0.ok));
+  }
+  // AEO on trial start ≡ MAI on CPA at the median – by construction (uplift mirrors the premium); the model claims no winner
+  {
+    const ov = el("optevent").value, sv = el("scenario").value, pv = el("pwtrial").value, savedMan = manual; manual = {};
+    el("scenario").value = "med"; el("pwtrial").value = "yes";
+    el("optevent").value = "mai"; const mM = computeModel(null);
+    el("optevent").value = "aeo_trial"; const mA = computeModel(null);
+    el("optevent").value = ov; el("scenario").value = sv; el("pwtrial").value = pv; manual = savedMan;
+    ok("MAI = AEO (trial start) on cost per subscriber (mirrored ×0.4 price / ×0.4 intent – calibrated parity, no unsourced winner)", el("funnel").value !== "a2a" || (mM.ok && mA.ok && approxEq(mA.cpsub, mM.cpsub, 1e-6)), mM.ok && mA.ok ? `${fmt$(mA.cpsub)} vs ${fmt$(mM.cpsub)}` : "");
+  }
+  // benchmark base: the hard-paywall base must give a cheaper subscriber than the all-apps base (band shifted up), a2a only
+  if (el("funnel").value === "a2a"){
+    const bv = el("bbase").value, savedMan = manual; manual = {};
+    el("bbase").value = "hard"; const mH = computeModel(null);
+    el("bbase").value = "all";  const mAll = computeModel(null);
+    el("bbase").value = bv; manual = savedMan;
+    ok("benchmark base: hard-paywall apps → cheaper subscriber than the all-apps panel median (band shifted one quartile up)", mH.ok && mAll.ok && mH.cpsub < mAll.cpsub, mH.ok && mAll.ok ? `${fmt$(mH.cpsub)} vs ${fmt$(mAll.cpsub)}` : "");
+  }
+  // trial vs no-trial must follow the documented break-even rule: trial wins ⇔ trial→paid > directF × trial share
+  {
+    const pv = el("pwtrial").value, savedMan = manual; manual = {};
+    el("pwtrial").value = "yes"; const mT = computeModel(null);
+    el("pwtrial").value = "no";  const mN = computeModel(null);
+    el("pwtrial").value = pv; manual = savedMan;
+    const be = CONFIG.DIRECT_F * pick(getF(A2A_STAGES,"tshare").v, el("scenario").value);
+    const ruleSaysTrial = mT.ok && mT.t2p > be, modelSaysTrial = mT.ok && mN.ok && mT.cpsub < mN.cpsub;
+    ok("trial vs no-trial follows the break-even rule (trial wins ⇔ trial→paid > directF × trial share)", el("funnel").value !== "a2a" || (mT.ok && mN.ok && ruleSaysTrial === modelSaysTrial),
+       mT.ok && mN.ok ? `CPA with trial ${fmt$(mT.cpsub)} vs without ${fmt$(mN.cpsub)}, break-even t2p ${(be*100).toFixed(0)}%` : "");
+  }
+  // scenario presets must be monotonic end to end: Pessimistic pays the most per subscriber and returns the least
+  {
+    const sv = el("scenario").value, savedMan = manual; manual = {};
+    const R = {}; for (const sc of ["p25","p40","med","p75"]){ el("scenario").value = sc; const m = computeModel(null); R[sc] = m.ok ? { roas: m.net/m.cpsub, cpm: m.cpm, cpsub: m.cpsub, net: m.net } : null; }
+    el("scenario").value = sv; manual = savedMan;
+    const okOrder = R.p25 && R.p40 && R.med && R.p75 && R.p25.roas < R.p40.roas && R.p40.roas < R.med.roas && R.med.roas < R.p75.roas
+      && R.p25.cpm >= R.p40.cpm && R.p40.cpm >= R.med.cpm && R.med.cpm >= R.p75.cpm && R.p25.net <= R.med.net && R.med.net <= R.p75.net;
+    ok("scenarios ordered: Pessimistic < Conservative < Reasonable < Aspirational on ROAS, and CPM runs the opposite way", okOrder,
+       R.p25 && R.p75 ? `CPM ${fmt$(R.p25.cpm)} → ${fmt$(R.p75.cpm)}, ROAS ${R.p25.roas.toFixed(2)} → ${R.p75.roas.toFixed(2)}` : "");
+  }
+  // snapshots — update these two numbers when benchmarks are recalibrated
+  ok("snapshot: default net LTV ≈ $63.29 (hand-recalculated 04.09.2026: $59.99 yearly sits at ×0.90 on the renewal ramp)", approxEq(base.net, 63.29, 0.005), fmt$(base.net));
+  ok("snapshot: default CPA(sub) ≈ $79.51 (hand-recalculated 04.09.2026: hard-paywall base, AEO basis, Blended store factor ×1.0 – CPI $5.33 ÷ install→trial 16.0% × trial share 90% ÷ trial→paid 37.7%)", approxEq(base.cpsub, 79.51, 0.005), fmt$(base.cpsub));
+  // VAT math via a temporary override
+  const savedVat = manual["vat"];
+  manual["vat"] = 0;   const m0 = computeModel(null);
+  manual["vat"] = 0.2; const m1 = computeModel(null);
+  if (savedVat === undefined) delete manual["vat"]; else manual["vat"] = savedVat;
+  ok("VAT 20% divides net by exactly 1.2", approxEq(m1.net / m0.net, 1/1.2, 1e-6));
+  // guards
+  manual["ctr"] = 0; const mg = computeModel(null); delete manual["ctr"];
+  ok("guard: zero CTR is rejected, not Infinity", !mg.ok);
+  ok("share link: pristine state = clean URL (delta encoding)", Object.keys(slimState()).length === 0);
+  return T;
+}
+function showSelfTests(){
+  const T = runSelfTests();
+  const passn = T.filter(t => t.pass).length;
+  const div = document.createElement("div");
+  div.className = "card";
+  div.style.cssText = "margin:14px 0;border-color:" + (passn === T.length ? "#a7f3d0" : "#fecaca");
+  div.innerHTML = `<div style="font-weight:700;margin-bottom:8px">Self-test: ${passn}/${T.length} passed</div>` +
+    T.map(t => `<div style="font-size:.8125rem;padding:2px 0"><span style="color:${t.pass ? "#047857" : "#b91c1c"};font-weight:700">${t.pass ? "✓" : "✗"}</span> ${t.name}${t.detail ? ` <span style="color:var(--sub)">– ${t.detail}</span>` : ""}</div>`).join("");
+  // render at the bottom, right under the self-test badge – not on top of the calculator
+  const badge = Array.from(document.querySelectorAll(".selftest-link")).pop();
+  if (badge && badge.parentElement) badge.parentElement.after(div);
+  else el("tab-calc").parentNode.appendChild(div);
+  setTimeout(() => { if (div.scrollIntoView) div.scrollIntoView({ behavior: "smooth", block: "center" }); }, 60);
+}
+DEFAULT_STATE = stateObj();
+if (new URLSearchParams(location.search).has("test")) showSelfTests();
+let _restored = false;
+if (location.hash.length > 1){
+  try {
+    const o = JSON.parse(decodeURIComponent(location.hash.slice(1)));
+    if (applyState(o)){
+      showTab(el("funnel").value === "a2a" ? "calc" : "calcw");
+      calc();
+      el("results").classList.remove("dim");
+      el("stalenote").style.display = "none";
+      _restored = true;
+    }
+  } catch(e){}
+}
+// first paint: show the default case straight away (the Calculate button re-runs after edits)
+if (!_restored){ calc(); el("results").classList.remove("dim"); el("stalenote").style.display = "none"; }
+</script>
+</body>
+</html>
