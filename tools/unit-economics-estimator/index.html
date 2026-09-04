@@ -1053,7 +1053,7 @@ function renderBudget(m){
       const cash = ret * subsMo - B * Math.min(tm + 1, CONFIG.BUDGET.cohorts);
       if (cash < peak) peak = cash;
     }
-    el("budgetout").innerHTML = `At ${fmt$(B)}/month: ~${Math.round(unitsMo).toLocaleString("en-US")} ${m.funnel === "a2a" ? "installs" : "quiz starts"} → <strong>~${Math.round(subsMo)} new subscribers/month</strong>. One monthly cohort returns ${fmt$(subsMo * m.net)} net by M13. Funding ${CONFIG.BUDGET.cohorts} months of spend at this rate requires peak cash of ≈ <strong>${fmt$(-peak)}</strong> before cohorts repay.`;
+    el("budgetout").innerHTML = `At ${fmt$(B)}/month: ~${Math.round(unitsMo).toLocaleString("en-US")} ${m.funnel === "a2a" ? "installs" : "quiz starts"} → <strong>~${Math.round(subsMo)} new subscribers/month</strong>. One monthly cohort returns ${fmt$(subsMo * m.net)} net by M13. Funding ${CONFIG.BUDGET.cohorts} months of spend at this rate requires peak cash of ≈ <strong>${fmt$(peak < 0 ? -peak : 0)}</strong> before cohorts repay.`;
   } else el("budgetout").textContent = "";
 }
 function renderOut(m){
