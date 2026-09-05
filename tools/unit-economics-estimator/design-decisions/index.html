@@ -561,6 +561,11 @@ column net LTV = LTV_headline ÷ arpuF(selected platform) × arpuF(column) × [t
 <td>Reference › Data sources: a fourth sub-tab with the checklist of where each of the calculator's 35 inputs comes from in a company's own systems – Ads Manager, MMP, App Store Connect / Play Console, RevenueCat / Adapty, product analytics, Stripe, the warehouse – with the definition the model uses, the report to read, the cut and history that make the number trustworthy, and the trap per field (App Store Connect's "Conversion Rate" is impression-based while the model wants page view → download; a typed CPM is used as is – no seasonality or optimization premium on top); step 3 of the how-to links to it. Model untouched, 34/34.</td>
 <td><a href="#s0">§0</a>, <a href="#s14">§14</a></td>
 </tr>
+<tr>
+<td>5 Sep 2026</td>
+<td>LTV Calculator released as a separate page (<a href="https://mariascales.com/tools/ltv-calculator/">/tools/ltv-calculator/</a>, short link /ltv-calc/): the estimator's LTV engine without the acquisition funnel – Setup reduced to the selectors that move LTV (vertical, geo, scenario, billing in-app / web, fee, AI), the same plans table and retention fields, results as net and gross LTV M13, the deduction chain, a per-plan table (one subscriber on each plan, its contribution to the blend), a cumulative net-revenue curve M0–M12+ and a "your CPA" block (ROAS, payback month, target and break-even CPA, peak cash) that re-renders live. Not a mode of the estimator but a second page, so the engine is <em>mirrored</em>: the page is assembled from the estimator by <code>build_ltv_calculator.py</code> (engine blocks copied, never retyped), <code>check_ltv_mirror.py</code> fails the commit when any of the 13 engine blocks differ, and both tools' self-tests assert the same default net LTV ($63.29). 22 self-tests; Reference carries the LTV part of the Data sources checklist plus a "Your CPA" row. Deferred to a mirrored follow-up: a mode that takes a cohort's own retention curve.</td>
+<td><a href="#s8">§8</a>, <a href="#s9">§9</a>, <a href="#s14">§14</a></td>
+</tr>
 </tbody>
 </table></div>
   </div>
