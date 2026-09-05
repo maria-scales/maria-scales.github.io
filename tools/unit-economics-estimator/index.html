@@ -147,6 +147,15 @@
   .tabs button:last-child { padding-right:0; }
   @media (max-width:760px){ .tabs { flex-wrap:wrap; justify-content:flex-start; gap:0 14px; } .tabs button { font-size:.8125rem; padding:8px 0; } }
   .tabs button.active { color:var(--ink); border-bottom-color:var(--link); }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; margin:12px 0 2px; }
+  .seg button { border:none; background:#fff; padding:7px 16px; font:inherit; font-size:.875rem; font-weight:600; color:var(--sub); cursor:pointer; text-align:left; line-height:1.25; }
+  .seg button + button { border-left:1px solid var(--line); }
+  .seg button small { display:block; font-weight:400; font-size:.6875rem; color:var(--sub); }
+  .seg button.on { background:var(--link); color:#fff; } .seg button.on small { color:#dbe4f0; }
+  .seg button:not(.on):hover { background:var(--bg); color:var(--ink); }
+  .ddtoc { columns:2; column-gap:28px; padding-left:0; list-style:none; margin:8px 0 0; font-size:.8125rem; line-height:1.75; }
+  .ddtoc li { break-inside:avoid; } .ddtoc a { color:var(--link); text-decoration:none; } .ddtoc a:hover { text-decoration:underline; }
+  @media (max-width:600px){ .ddtoc { columns:1; } .seg button { padding:6px 10px; } }
   .frow { display:grid; grid-template-columns:220px 1fr 1fr; gap:10px; align-items:center; padding:8px 4px; border-bottom:1px dashed var(--line); font-size:.875rem; }
   .frow.head { font-weight:700; border-bottom:1px solid var(--line); }
   .fbarwrap { position:relative; }
@@ -229,15 +238,17 @@
   <div class="meta"><strong>Subscription apps only</strong> – ad-monetized (IAA), hybrid and commerce economics are separate models and out of scope. Estimation covers the app→app funnel (and web→web quiz funnel), Meta acquisition, hard paywall only. Does this growth math ever close? Set your plans and prices; every other field starts from a public benchmark – override anything you actually know. Manual values are treated as <em>effective</em>: season, optimization-event, platform and paid-traffic auto-factors are not applied on top of them. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
 
   <div class="tabs">
-    <button id="tabbtn-calc" class="active">Calculator a2a</button>
-    <button id="tabbtn-calcw">Calculator w2w</button>
+    <button id="tabbtn-calc" class="active">Calculator</button>
     <button id="tabbtn-funnel">Funnel diagnostics</button>
     <button id="tabbtn-ret">Retention curves</button>
-    <button id="tabbtn-ltv">LTV methodology</button>
-    <button id="tabbtn-vat">VAT by country</button>
+    <button id="tabbtn-ref">Reference</button>
   </div>
 
   <div id="tab-calc">
+  <div class="seg" id="funnelseg" title="Which funnel this calculator models – your overrides are kept separately for each">
+    <button data-f="a2a" class="on">App → App<small>store install funnel (a2a)</small></button>
+    <button data-f="w2w">Web → Web<small>quiz funnel, web checkout (w2w)</small></button>
+  </div>
   <div class="card" style="margin:10px 0 4px;background:#fff;border-color:#dbe4f0">
     <div style="font-size:.875rem;color:var(--link);font-weight:600;margin-bottom:6px">How to use – 30 seconds</div>
     <div class="note" style="max-width:760px">
@@ -366,7 +377,13 @@
     <p class="note" style="margin-top:10px">Why weekly LTV lives or dies in the first month: by M3 the median weekly cohort is already below 26%, by M12 – 1–2%. Monthly survives 6–14% to M12; Business is the outlier in both. Store choice barely matters after the first renewal – early funnel quality dominates. One structural exception: <strong>32.3% of Google Play cancellations are involuntary billing failures</strong> vs 15.2% on the App Store [B, RC blog; the report card rounds them to 31% / 14% <a href="https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/" target="_blank" style="color:var(--link);text-decoration:none">↗</a>] – grace periods and payment retries recover a chunk of it for free.</p>
   </div><!-- /tab-ret -->
 
-  <div id="tab-ltv" style="display:none">
+  <div id="tab-ref" style="display:none">
+    <div class="tabs" style="border-bottom:none;margin:6px 0">
+      <button id="ref-ltv" class="active">LTV methodology</button>
+      <button id="ref-vat">VAT by country</button>
+      <button id="ref-dd">Design decisions</button>
+    </div>
+  <div id="tab-ltv">
     <h2>How this calculator computes LTV – and what the alternatives are</h2>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">Our method: a discrete payment schedule built from the retention curve</h3>
@@ -477,6 +494,12 @@
       <tr><td>Australia</td><td>10% GST</td></tr>
     </table>
   </div><!-- /tab-vat -->
+  <div id="tab-dd" style="display:none">
+    <h2>Design decisions – the calculations, and why this way and not another</h2>
+    <p class="note" style="max-width:820px">The companion document to this calculator: for every block – what is computed → formula → why → what was rejected → status. Every number in it is the one in this tool's code, and the dated decision log is at the end. The method notes under the results link straight into its sections. <a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/" target="_blank" style="color:var(--link);font-weight:600;white-space:nowrap">Open the full document →</a></p>
+    <ul class="ddtoc"><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s0" target="_blank">0. Architecture: two modes for every field</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s1" target="_blank">1. Scenarios = benchmark percentiles</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s2" target="_blank">2. CPM</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s3" target="_blank">3. From impression to install (a2a)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s4" target="_blank">4. From install to trial</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s5" target="_blank">5. From trial to subscriber</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s6" target="_blank">6. Optimization event: AEO is the base, MAI is a discount</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s7" target="_blank">7. w2w (quiz funnel, hard paywall at the end of the quiz)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s8" target="_blank">8. LTV M13 – the payment schedule</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s9" target="_blank">9. Net: what is deducted and in which order</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s10" target="_blank">10. Verdict and targets</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s11" target="_blank">11. Sensitivity – "where the headroom is"</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s12" target="_blank">12. The Funnel diagnostics tab – iOS vs Android</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s13" target="_blank">13. Cross-checks</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s14" target="_blank">14. Minor decisions</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s15" target="_blank">15. Deliberately not modeled (v1)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s16" target="_blank">16. Source check – what changed after an independent verification</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s17" target="_blank">17. Decision log</a></li></ul>
+  </div><!-- /tab-dd -->
+  </div><!-- /tab-ref -->
 
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
     <strong>Sources</strong> · collected July 2026, re-verified against the live pages 4 Sep 2026; the data itself is of mixed vintage (RC/Adapty/Lebesgue/Triple Whale/RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the captions; verify before big bets:
@@ -675,7 +698,7 @@ const LTV_FIELDS = [
   {k:"t2p", n:"Trial → paid", s:"RC 2026 by vertical × geo factor × trial length", tag:"B", src:["RC 2026 by vertical: H&F 37.7% / top quartile 51.4%, Photo & Video 22.2% / 33.1% [B]; Education, Productivity, Utilities interpolated [E]; M&E from RC's 11.5–69.5% spread and Adapty [E]", "× geo factor: NA 34.2%, WE 29.7%, IN/SEA 15.2% [B]; LatAm, Turkey, Gulf interpolated [E]", "× trial length: 3-day ×0.68 [B]"], url:SRC.rc, v:null, pct:true},
   {k:"refund", n:"Refund rate (applied to first payment only)", s:"RC SOSA 2026: 2.5–4.7% of first payments", tag:"B", src:"RC SOSA 2026 refund chart (report PDF): 2.5–4.7% of first payments by category; renewals are rarely refunded", url:SRC.rc, v:null, pct:true},
   {k:"upsell", n:"Upsells & offers – ARPU uplift on top of base subscriptions", s:"Default 0 · welcome offers add +10–15% ARPU (Adapty)", tag:"E", src:"default 0 (most apps have none); post-paywall welcome offers typically add +10–15% ARPU (Adapty), plan upgrades and one-time purchases on top", url:SRC.adapty, v:null, pct:true},
-  {k:"vat", n:"VAT/GST included in price (deducted before store split)", s:"Default = acquisition geo · see VAT tab", tag:"E", src:["Default = acquisition geo", "NA: US-style 0% – sales tax is added on top and handled by the store; Canada – tax added on top like the US; UK 20%, Australia 10% if you buy there", "WE ≈ 21% and LatAm ≈ 17% are blends [A]; Gulf = SA 15% / AE 5% ≈ 10%", "IN/SEA 12% is a SEA-weighted blend (ID 11–12, PH 12, VN 10, SG 9, TH 7, MY 8) – India alone is 18% GST", "Set your blended rate – see the VAT tab"], v:null, pct:true}
+  {k:"vat", n:"VAT/GST included in price (deducted before store split)", s:"Default = acquisition geo · see Reference › VAT by country", tag:"E", src:["Default = acquisition geo", "NA: US-style 0% – sales tax is added on top and handled by the store; Canada – tax added on top like the US; UK 20%, Australia 10% if you buy there", "WE ≈ 21% and LatAm ≈ 17% are blends [A]; Gulf = SA 15% / AE 5% ≈ 10%", "IN/SEA 12% is a SEA-weighted blend (ID 11–12, PH 12, VN 10, SG 9, TH 7, MY 8) – India alone is 18% GST", "Set your blended rate – see Reference › VAT by country"], v:null, pct:true}
 ];
 // ---------- state ----------
 // Manual overrides are stored PER FUNNEL: what you enter in the a2a calculator never leaks into w2w
@@ -1404,26 +1427,36 @@ function setOptOptions(f){
   opts.forEach(([v,n]) => sel.add(new Option(n, v)));
   sel.value = opts.some(x => x[0] === cur) ? cur : opts[0][0];
 }
-const TABMAP = { calc:"tab-calc", calcw:"tab-calc", funnel:"tab-funnel", ret:"tab-ret", ltv:"tab-ltv", vat:"tab-vat" };
-const feeStore = { a2a: "0.15", w2w: "0.05" }; // store commission per funnel – switching calculators no longer resets your choice
-function showTab(name){
-  Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).classList.toggle("active", n === name));
-  ["tab-calc","tab-funnel","tab-ret","tab-ltv","tab-vat"].forEach(id => el(id).style.display = "none");
-  el(TABMAP[name]).style.display = "";
-  if (name === "calc" || name === "calcw"){
-    const want = name === "calc" ? "a2a" : "w2w";
-    if (el("funnel").value !== want){
-      feeStore[el("funnel").value] = el("fee").value;   // remember the fee you chose for the funnel you are leaving
-      el("funnel").value = want;
-      el("fee").value = feeStore[want] || (want === "a2a" ? "0.15" : "0.05");
-      el("funnel").dispatchEvent(new window.Event("change"));
-    }
-    setOptOptions(want);
+const TABMAP = { calc:"tab-calc", funnel:"tab-funnel", ret:"tab-ret", ref:"tab-ref" };
+const REFMAP = { ltv:"tab-ltv", vat:"tab-vat", dd:"tab-dd" };
+const feeStore = { a2a: "0.15", w2w: "0.05" }; // store commission per funnel – switching funnels does not reset your choice
+// the funnel is a setting inside the one Calculator tab (two tabs "Calculator a2a" / "Calculator w2w" until v1.1);
+// overrides, fee and optimization-event options stay per funnel exactly as before
+function setFunnel(want){
+  if (el("funnel").value !== want){
+    feeStore[el("funnel").value] = el("fee").value;   // remember the fee you chose for the funnel you are leaving
+    el("funnel").value = want;
+    el("fee").value = feeStore[want] || (want === "a2a" ? "0.15" : "0.05");
+    el("funnel").dispatchEvent(new window.Event("change"));
   }
+  setOptOptions(want);
+  el("funnelseg").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.f === want));
+}
+function showTab(name){
+  if (name === "calcw"){ setFunnel("w2w"); name = "calc"; }        // old share links / tests still say "calcw"
+  else if (name === "calc") setFunnel(el("funnel").value);
+  Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).classList.toggle("active", n === name));
+  Object.values(TABMAP).forEach(id => el(id).style.display = "none");
+  el(TABMAP[name]).style.display = "";
   if (name === "funnel") drawFunnel();
   if (name === "ret") drawRetention();
 }
+function showRef(k){
+  Object.entries(REFMAP).forEach(([n, id]) => { el("ref-" + n).classList.toggle("active", n === k); el(id).style.display = n === k ? "" : "none"; });
+}
 Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).addEventListener("click", () => showTab(n)));
+Object.keys(REFMAP).forEach(n => el("ref-" + n).addEventListener("click", () => showRef(n)));
+el("funnelseg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => setFunnel(b.dataset.f)));
 const STATE_SELECTS = ["platform","funnel","vertical","bbase","geo","scenario","optevent","pwtrial","triallen","season","ai","fee","retmode"];
 function stateObj(){
   return {
