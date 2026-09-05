@@ -128,7 +128,7 @@
   .uin input.hasunit { padding-right:20px; }
   .uin input.hasunit.pre { padding-right:6px; padding-left:17px; }
   table.mix .uin input { width:92px; }
-  @media (max-width:480px){ table.mix .uin .unit { display:none; } table.mix .uin input.hasunit { width:72px; padding-left:6px; padding-right:6px; -moz-appearance:textfield; } table.mix .uin input::-webkit-outer-spin-button, table.mix .uin input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; } }
+  @media (max-width:480px){ table.mix .uin .unit { display:none; } table.mix .uin input.hasunit { width:62px; padding-left:6px; padding-right:6px; -moz-appearance:textfield; } table.mix .uin input::-webkit-outer-spin-button, table.mix .uin input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; } }
   .tag { font-size:.625rem; font-weight:700; border-radius:4px; padding:1px 5px; }
   .fieldrow .tag { cursor:pointer; user-select:none; } .fieldrow .tag:hover { filter:brightness(.92); }
   .tB { background:#dcfce7; color:#166534; } .tE { background:#fef3c7; color:#92400e; } .tA { background:#fee2e2; color:#991b1b; }
@@ -163,6 +163,7 @@
   table.mix td,th { padding:5px 6px; border-bottom:1px solid var(--line); text-align:right; }
   table.mix td:first-child,th:first-child { text-align:left; }
   table.mix input { width:78px; text-align:right; padding:4px 6px; border:1px solid var(--line); border-radius:5px; }
+  table.mix input[type=checkbox] { width:auto; } /* the width rule above sized the On checkboxes too – an invisible 78px box made that column wide */
   .mixwrap { overflow-x:auto; }
   @media (max-width:480px){ table.mix input { width:64px; } table.mix td,th { padding:5px 4px; } }
   .tabs { display:flex; justify-content:space-between; gap:4px; margin:18px 0 6px; border-bottom:2px solid var(--line); }
