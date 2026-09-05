@@ -122,6 +122,13 @@
   .fval .unit.pre { right:auto; left:9px; }
   .fval input.hasunit { padding-right:22px; }
   .fval input.hasunit.pre { padding-right:8px; padding-left:20px; }
+  .uin { position:relative; display:inline-block; }
+  .uin .unit { position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:.6875rem; font-style:normal; color:var(--sub); pointer-events:none; }
+  .uin .unit.pre { right:auto; left:7px; }
+  .uin input.hasunit { padding-right:20px; }
+  .uin input.hasunit.pre { padding-right:6px; padding-left:17px; }
+  table.mix .uin input { width:92px; }
+  @media (max-width:480px){ table.mix .uin .unit { display:none; } table.mix .uin input.hasunit { width:72px; padding-left:6px; padding-right:6px; -moz-appearance:textfield; } table.mix .uin input::-webkit-outer-spin-button, table.mix .uin input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; } }
   .tag { font-size:.625rem; font-weight:700; border-radius:4px; padding:1px 5px; }
   .fieldrow .tag { cursor:pointer; user-select:none; } .fieldrow .tag:hover { filter:brightness(.92); }
   .tB { background:#dcfce7; color:#166534; } .tE { background:#fef3c7; color:#92400e; } .tA { background:#fee2e2; color:#991b1b; }
@@ -378,9 +385,9 @@
   <h2>Plans &amp; prices <span class="note">(your data – required; mix must sum to 100%)</span></h2>
   <div class="mixwrap"><table class="mix">
     <tr><th>Plan</th><th>On</th><th>Price, $</th><th><span class="th-long">1st-period price, $ <span class="note">(intro offer – optional)</span></span><span class="th-short">1st price, $</span></th><th><span class="th-long">Share of subscriptions, %</span><span class="th-short">Share, %</span></th></tr>
-    <tr><td>Weekly</td><td><input type="checkbox" id="wk_on"></td><td><input type="number" id="wk_p" value="5.99" step="0.01"></td><td><input type="number" id="wk_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="wk_s" value="0"></td></tr>
-    <tr><td>Monthly</td><td><input type="checkbox" id="mo_on" checked></td><td><input type="number" id="mo_p" value="19.99" step="0.01"></td><td><input type="number" id="mo_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="mo_s" value="48"></td></tr>
-    <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><input type="number" id="yr_p" value="59.99" step="0.01"></td><td><input type="number" id="yr_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="yr_s" value="52"></td></tr>
+    <tr><td>Weekly</td><td><input type="checkbox" id="wk_on"></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="wk_p" value="5.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="wk_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="wk_s" value="0" class="hasunit"><i class="unit">%</i></span></td></tr>
+    <tr><td>Monthly</td><td><input type="checkbox" id="mo_on" checked></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="mo_p" value="19.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="mo_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="mo_s" value="48" class="hasunit"><i class="unit">%</i></span></td></tr>
+    <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_p" value="59.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="yr_s" value="52" class="hasunit"><i class="unit">%</i></span></td></tr>
   </table></div>
   <div class="note">1st-period price: what the first payment is charged at (e.g. $8.99 for the first week/month, $59.99 for the first year); every renewal is charged at the plan price. Leave blank when there is no intro offer.</div>
   <div class="warnbox" id="mixwarn"></div>
@@ -423,7 +430,7 @@
     <div class="kpi" style="padding:8px 12px"><label style="margin-bottom:6px">Target ROAS (net LTV ÷ CPA)</label><input type="number" id="troas" value="1.3" step="0.1" min="0.1" style="max-width:120px;margin:0 auto;display:block;text-align:center"></div>
   </div>
   <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:0 0 12px">
-    <div style="min-width:170px;max-width:200px"><label>Monthly ad budget, $</label><input type="number" id="budget" value="10000" step="500" min="0"></div>
+    <div style="min-width:170px;max-width:200px"><label>Monthly ad budget, $</label><span class="uin" style="display:block"><i class="unit pre">$</i><input type="number" id="budget" value="10000" step="500" min="0" class="hasunit pre"></span></div>
     <div class="note" id="budgetout" style="flex:1;min-width:260px;font-size:.875rem"></div>
   </div>
   <div id="sensbox" style="margin:4px 0 14px"></div>
