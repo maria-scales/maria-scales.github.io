@@ -127,7 +127,11 @@
   @media (max-width:760px){ .out { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:480px){ .grid { grid-template-columns:repeat(2,1fr); gap:8px; } .card { padding:8px 10px; } .kpi .v { font-size:1.15rem; } }
   .th-short { display:none; } @media (max-width:480px){ .th-long { display:none; } .th-short { display:inline; } }
-  .howto { margin:0; padding-left:20px; line-height:1.5; } .howto li { margin:0 0 5px; }
+  .howto { margin:6px 0 0; padding-left:20px; line-height:1.5; } .howto li { margin:0 0 5px; }
+  .howcard { margin:10px 0 4px; background:#fff; border-color:#dbe4f0; }
+  .howcard summary { cursor:pointer; font-size:.875rem; color:var(--link); font-weight:600; list-style:none; } .howcard summary::-webkit-details-marker { display:none; }
+  .howcard summary::before { content:"▸ "; } .howcard[open] summary::before { content:"▾ "; }
+  summary:focus { outline:none; } summary:focus-visible { outline:2px solid #93c5fd; outline-offset:2px; border-radius:4px; }
   .site-nav .container { overflow-x:auto; scrollbar-width:none; } .site-nav .container::-webkit-scrollbar { display:none; }
   .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
   .kpi .v { font-size:1.35rem; font-weight:700; }
@@ -264,15 +268,15 @@
     <button data-f="a2a" class="on">App → App<small>store install funnel (a2a)</small></button>
     <button data-f="w2w">Web → Web<small>quiz funnel, web checkout (w2w)</small></button>
   </div>
-  <div class="card" style="margin:10px 0 4px;background:#fff;border-color:#dbe4f0">
-    <div style="font-size:.875rem;color:var(--link);font-weight:600;margin-bottom:6px">How to use – 30 seconds</div>
+  <details class="card howcard" open>
+    <summary>How to use – 30 seconds</summary>
     <ol class="note howto">
       <li>Pick your <strong>vertical</strong> and <strong>geo</strong> – every benchmark fills itself from public data (RevenueCat, Adapty, Lebesgue, Interact…). The install→trial benchmark defaults to <strong>hard-paywall apps</strong>; switch the base to "All apps" for the raw RC panel median.</li>
       <li>Enter <strong>your plans and prices</strong> – the only thing the tool can't know.</li>
       <li>Press <strong>Calculate</strong> after every change (the default case is already computed). Override any field you have real data for – it turns blue = "my data" and is used as-is: season, optimization-event, platform and paid-traffic factors are not applied on top.</li>
       <li>The <strong>scenario preset</strong> swings every remaining benchmark at once – conversions and retention to P25 / P75, CPM the opposite way, so Pessimistic = every stage against you. Ten stages at P25 compound into far worse than "a P25 app". Early stage? Switch retention to <em>Fit from my first 2 renewals</em>. Show a colleague your exact setup – <em>Copy share link</em>.</li>
     </ol>
-  </div>
+  </details>
   <h2>Setup</h2>
   <div class="grid">
     <div class="card"><label>Platform / device</label><select id="platform"><option value="blend" selected>Blended</option><option value="ios">iOS</option><option value="android">Android</option></select></div>
@@ -350,11 +354,13 @@
       <button data-f="a2a" class="on">App → App<small>store install funnel (a2a)</small></button>
       <button data-f="w2w">Web → Web<small>quiz funnel, web checkout (w2w)</small></button>
     </div>
-    <ul class="note fdhow">
+    <details class="mnotes" style="margin:8px 0 4px"><summary>How to read this tab</summary>
+    <ul class="note fdhow" style="margin-top:6px">
       <li>Per 100,000 impressions, iOS vs Android, on your current Setup and overrides (a2a and w2w keep separate ones). Healthy band = P25–P75 for your geo × vertical; ✓ / ⚠ marks where your value sits.</li>
       <li>Money check uses each funnel's own plumbing: a2a – the store fee you selected, no cohort penalty; w2w – the PSP fee (~5%) plus the web-cohort ×0.89 on benchmark retention [B, Adapty]. Same prices, so the two ROAS figures are directly comparable.</li>
       <li>Net LTV per column = the calculator's headline re-based by the ARPU factor (iOS ×1.0 · Android ×0.8 · Blended ×0.9 [A]); store CVR is per store in each column whatever the Setup selector says. For w2w, iOS/Android means the targeted device (split provisional [A]); stages without a published OS split show the same value in both columns.</li>
     </ul>
+    </details>
     <div id="fd-a2a">
       <h2>a2a funnel per 100,000 impressions – iOS vs Android</h2>
       <div id="funnelviz"></div>
@@ -1178,14 +1184,18 @@ function sensitivity(m){
   }
   out.sort((a,b) => b.d - a.d);
   const mx = Math.max(...out.map(o => o.d), 1);
-  return `<div class="note" style="margin:2px 0 6px"><strong>Sensitivity – where the headroom is.</strong> Each bar: ROAS change if that one stage moved from its current value to the top-quartile benchmark for your vertical × geo (P75; for CPM the cheapest quartile), everything else held. In a multiplicative funnel every stage has the same elasticity, so the size of the gap is the whole story – not the stage's name.</div>` +
+  return `<div class="note" style="margin:2px 0 6px"><strong>Sensitivity – where the headroom is.</strong> Each bar = ROAS gain if that one stage reached the top-quartile benchmark for your vertical × geo, everything else held.</div>` +
     out.map(o => `<div style="display:flex;align-items:center;gap:8px;margin:3px 0;font-size:.8125rem">
       <div style="width:230px">${o.name}<div style="font-size:.7rem;color:var(--sub)">${o.from} → ${o.to}</div></div>
       <div style="flex:1;background:#f3f4f6;border-radius:4px;height:14px">
         <div style="width:${(o.d/mx*100).toFixed(1)}%;height:14px;border-radius:4px;background:#3D7AB8"></div>
       </div>
       <div style="width:120px;text-align:right;font-weight:600;color:#16355C">${o.done ? '<span style="color:#047857;font-weight:600">✓ at/above P75</span>' : "+" + o.d.toFixed(0) + "%"}</div></div>`).join("") +
-    `<div class="note" style="margin-top:6px;font-size:.75rem">Prices are yours, not benchmarked, so they are not a bar: every +10% on prices is ≈ +10% on LTV, less the yearly-renewal ramp (×1.0 at $50 → ×0.8 at $70 [B/E, RC high-price churn]); your yearly plan currently sits at ×${highPriceF(m.plans.yp).toFixed(2)}.</div>`;
+    `<details class="mnotes" style="margin-top:6px"><summary>How to read the bars</summary><ul style="margin:4px 0 0;padding-left:18px">
+      <li>A bar is the distance to P75 (for CPM – to the cheapest quartile, P25), not a fixed ±20%: in a multiplicative funnel every stage has the same elasticity, so the size of the gap is the whole story – not the stage's name. Under each bar: from → to.</li>
+      <li>A typed value above P75 shows "at / above P75"; a typed value below P25 gets the longest bar – as it should.</li>
+      <li>Prices are yours, not benchmarked, so they are not a bar: every +10% on prices is ≈ +10% on LTV, less the yearly-renewal ramp (×1.0 at $50 → ×0.8 at $70 [B/E, RC high-price churn]); your yearly plan currently sits at ×${highPriceF(m.plans.yp).toFixed(2)}.</li>
+    </ul></details>`;
 }
 function renderBudget(m){
   const B = parseFloat(el("budget").value) || 0;
