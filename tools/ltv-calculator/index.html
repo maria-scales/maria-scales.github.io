@@ -509,7 +509,7 @@
     <h2>How this calculator computes LTV – and what the alternatives are</h2>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">Our method: a discrete payment schedule built from the retention curve</h3>
-    <p class="note">Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, the calculator builds a month-by-month payment schedule per subscriber and sums it to M13. One model, three answers: LTV, payback month and the peak-cash figure in the Budget view.</p>
+    <p class="note">Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, the calculator builds a month-by-month payment schedule per subscriber and sums it to M13. One model, three answers: LTV, payback month and the peak cash it takes to fund 12 months of spend (the budget line under the results).</p>
     <ul class="note fdhow">
       <li>First payment (minus refunds; at the 1st-period price when there is an intro offer), then each renewal weighted by the probability of surviving to it – the retention curve from the <em>Retention curves</em> tab: RC anchors, or a fit from your first two renewals.</li>
       <li>Net LTV = the schedule ÷ (1 + VAT) × (1 − store or PSP fee), × (1 + upsell).</li>
@@ -559,8 +559,8 @@
       <li><strong>F2P game:</strong> revenue = a stream of micro-purchases spread over daily sessions → retention-curve integral × ARPDAU, or the cumulative-ARPU fit. There is no renewal event to anchor on – daily activity IS the monetization clock.</li>
       <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
     </ul>
-    <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
-    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 23 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
+    <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × plan).</p>
+    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 24 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
     <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank" rel="noopener">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
@@ -714,7 +714,7 @@
 <tr><td>Price weekly / monthly / yearly</td><td><div><b class="dsl">Source</b> App Store Connect → Subscriptions → price tier by storefront; Play Console; Stripe products</div><div><b class="dsl">Trap</b> the price of the storefront you buy in, not the US default; enter the gross (sticker) price – the model removes VAT and the commission itself</div></td></tr>
 <tr><td>1st-period price (intro offer)</td><td><div><b class="dsl">Source</b> intro offer settings in the stores; Stripe coupons / trial price</div><div><b class="dsl">Trap</b> quiz funnels almost always have one – without it the LTV of the first payment is overstated</div></td></tr>
 <tr><td>Share of subscriptions</td><td><div><b class="dsl">Source</b> subscription tool: new subscriptions by product over 3 months (counts, not revenue)</div><div><b class="dsl">Trap</b> the dashboards show revenue shares; the table wants subscription shares – annual plans always look bigger in revenue</div></td></tr>
-<tr><td>Your CPA</td><td><div><b class="dsl">Definition</b> cost per new paying subscriber (not per trial, not per install)</div><div><b class="dsl">Source</b> Ads Manager: spend ÷ subscriptions (purchase / start-trial→paid events) for the campaigns that carry the geo × platform you model; MMP cohort report spend → paid subscribers; or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div><div><b class="dsl">Cut · history</b> same geo × platform as the retention you typed; 8+ weeks so the trials have converted</div><div><b class="dsl">Trap</b> cost per trial ÷ trial→paid is the CPA, cost per trial is not; SKAN / attribution windows under-report iOS conversions – take the MMP or the subscription tool's cohort, not the ad platform's own count</div></td></tr>
+<tr><td>Your CPA</td><td><div><b class="dsl">Definition</b> cost per new paying subscriber (not per trial, not per install)</div><div><b class="dsl">Source</b> Ads Manager: spend ÷ subscriptions (purchase / start-trial→paid events) for the campaigns that carry the geo you selected and the platform whose cohorts you typed; MMP cohort report spend → paid subscribers; or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div><div><b class="dsl">Cut · history</b> same geo × platform as the retention you typed; 8+ weeks so the trials have converted</div><div><b class="dsl">Trap</b> cost per trial ÷ trial→paid is the CPA, cost per trial is not; SKAN / attribution windows under-report iOS conversions – take the MMP or the subscription tool's cohort, not the ad platform's own count</div></td></tr>
 <tr><td>Monthly ad budget</td><td><div><b class="dsl">Source</b> the media plan</div></td></tr>
 <tr><td>Target ROAS</td><td><div><b class="dsl">Source</b> the company's financial model: how much net LTV per $1 of CPA the margin and the payback need</div><div><b class="dsl">Trap</b> 1.3 is the tool's default; a company usually has its own number – or none, which is the first question to ask</div></td></tr>
 </table>
@@ -724,7 +724,7 @@
 
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
     <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only (RevenueCat SOSA 2026 and RC's renewal-rate and billing-churn posts, Adapty 2026), re-verified against the live pages on 4 Sep 2026 – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. Where each input lives in your own systems – Reference › Data sources.</p>
-    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">23 assertions, live in your browser</span></p>
+    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">24 assertions, live in your browser</span></p>
     <details class="mnotes"><summary>All sources – 8 links</summary><p style="margin:6px 0 0;line-height:1.7">
     <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank" rel="noopener">RevenueCat SOSA 2026</a> ·
     <a href="https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category" target="_blank" rel="noopener">RC renewal rates by category</a> ·
@@ -1085,6 +1085,8 @@ function computeModel(S){
       sy = c.plans.yon ? c.plans.ys : 0;
   const mixSum = sw + sm + sy;
   if (mixSum <= 0) return { ok:false, mixSum };
+  const zeroPlan = [c.plans.won && !(wkP > 0) && "weekly", c.plans.mon && !(moP > 0) && "monthly", c.plans.yon && !(yrP > 0) && "yearly"].filter(Boolean);   // a plan that is on needs a price – otherwise it silently contributed $0
+  if (zeroPlan.length) return { ok:false, mixSum, err:`The ${zeroPlan.join(" and ")} plan is on but its price is 0 or empty – enter the price or switch the plan off.` };
   const vat = val(getF(LTV_FIELDS,"vat"));
   // w2w cohort penalty ×0.89 [B, Adapty]: applied per plan and ONLY when that plan's retention is a benchmark. Typed anchors or
   // fitted renewals already contain the real w2w cohort's behaviour – stacking ×0.89 on them would count the penalty twice.
@@ -1594,6 +1596,10 @@ function runSelfTests(){
   manual["vat"] = 0.2; const m1 = computeModel(null);
   if (savedVat === undefined) delete manual["vat"]; else manual["vat"] = savedVat;
   ok("VAT 20% divides net by exactly 1.2", approxEq(m1.net / m0.net, 1/1.2, 1e-6));
+  { const won0 = el("wk_on").checked, wp0 = el("wk_p").value;
+    el("wk_on").checked = true; el("wk_p").value = "0"; const mz = computeModel(null);
+    el("wk_on").checked = won0; el("wk_p").value = wp0;
+    ok("guard: a plan that is on with price 0 stops the calculation and names the plan (was computed silently with that plan at $0)", !mz.ok && /weekly/.test(mz.err || ""), mz.err || ""); }
   // a share link with web billing restored, then Billing switched back to in-app: the fee must return to the store default
   // (v1.0 kept the 5% PSP fee – the change handler filed it under the mode it thought it was leaving)
   {

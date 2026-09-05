@@ -535,7 +535,7 @@
     <h2>How this calculator computes LTV – and what the alternatives are</h2>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">Our method: a discrete payment schedule built from the retention curve</h3>
-    <p class="note">Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, the calculator builds a month-by-month payment schedule per subscriber and sums it to M13. One model, three answers: LTV, payback month and the peak-cash figure in the Budget view.</p>
+    <p class="note">Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, the calculator builds a month-by-month payment schedule per subscriber and sums it to M13. One model, three answers: LTV, payback month and the peak cash it takes to fund 12 months of spend (the budget line under the results).</p>
     <ul class="note fdhow">
       <li>First payment (minus refunds; at the 1st-period price when there is an intro offer), then each renewal weighted by the probability of surviving to it – the retention curve from the <em>Retention curves</em> tab: RC anchors, or a fit from your first two renewals.</li>
       <li>Net LTV = the schedule ÷ (1 + VAT) × (1 − store or PSP fee), × (1 + upsell).</li>
@@ -586,7 +586,7 @@
       <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
     </ul>
     <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
-    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 34 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
+    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 35 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
     <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank" rel="noopener">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
@@ -782,7 +782,7 @@
 
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
     <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only, collected July 2026 and re-verified against the live pages on 4 Sep 2026; the data itself is of mixed vintage (RC / Adapty / Lebesgue / Triple Whale / RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool.</p>
-    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">34 assertions, live in your browser</span></p>
+    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">35 assertions, live in your browser</span></p>
     <details class="mnotes"><summary>All sources – 24 links</summary><p style="margin:6px 0 0;line-height:1.7">
     <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank" rel="noopener">RevenueCat SOSA 2026</a> ·
     <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank" rel="noopener">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
@@ -1301,6 +1301,8 @@ function computeModel(S){
       sy = c.plans.yon ? c.plans.ys : 0;
   const mixSum = sw + sm + sy;
   if (mixSum <= 0) return { ok:false, mixSum };
+  const zeroPlan = [c.plans.won && !(wkP > 0) && "weekly", c.plans.mon && !(moP > 0) && "monthly", c.plans.yon && !(yrP > 0) && "yearly"].filter(Boolean);   // a plan that is on needs a price – otherwise it silently contributed $0
+  if (zeroPlan.length) return { ok:false, mixSum, err:`The ${zeroPlan.join(" and ")} plan is on but its price is 0 or empty – enter the price or switch the plan off.` };
   const vat = val(getF(LTV_FIELDS,"vat"));
   // w2w cohort penalty ×0.89 [B, Adapty]: applied per plan and ONLY when that plan's retention is a benchmark. Typed anchors or
   // fitted renewals already contain the real w2w cohort's behavior – stacking ×0.89 on them counted the penalty twice (found on a
@@ -2160,6 +2162,10 @@ function runSelfTests(){
   // guards
   manual["ctr"] = 0; const mg = computeModel(null); delete manual["ctr"];
   ok("guard: zero CTR is rejected, not Infinity", !mg.ok);
+  { const won0 = el("wk_on").checked, wp0 = el("wk_p").value;
+    el("wk_on").checked = true; el("wk_p").value = "0"; const mz = computeModel(null);
+    el("wk_on").checked = won0; el("wk_p").value = wp0;
+    ok("guard: a plan that is on with price 0 stops the calculation and names the plan (was computed silently with that plan at $0)", !mz.ok && /weekly/.test(mz.err || ""), mz.err || ""); }
   ok("share link: pristine state = clean URL (delta encoding)", Object.keys(slimState()).length === 0);
   return T;
 }
