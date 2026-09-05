@@ -319,7 +319,11 @@
       align-items: center;
       padding-top: 0;
       padding-bottom: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
+    .site-nav .container::-webkit-scrollbar { display: none; }
+    @media (max-width: 480px) { .site-nav .nav-link { margin-right: 14px; font-size: 0.8125rem; } .site-nav .nav-home { display: none; } }
 
     .nav-link {
       font-size: 0.875rem;
