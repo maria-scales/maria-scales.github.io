@@ -133,6 +133,7 @@
   .howcard summary::before { content:"▸ "; } .howcard[open] summary::before { content:"▾ "; }
   summary:focus { outline:none; } summary:focus-visible { outline:2px solid #93c5fd; outline-offset:2px; border-radius:4px; }
   .site-nav .container { overflow-x:auto; scrollbar-width:none; } .site-nav .container::-webkit-scrollbar { display:none; }
+  @media (max-width:480px){ .site-nav .nav-link { margin-right:14px; font-size:.8125rem; } }
   .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
   .kpi .v { font-size:1.35rem; font-weight:700; }
   .kpi .l { font-size:.6875rem; color:var(--sub); text-transform:uppercase; letter-spacing:.05em; }
