@@ -81,6 +81,17 @@
     .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout strong { color: #111827; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
   <script type="application/ld+json">
 {
@@ -114,6 +125,53 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Job Search Problem: A Framework for Partial Automation (Building a Reverse ATS)",
+  "description": "~65% of job search time goes to repetitive sourcing tasks. Here's the framework for automating them.",
+  "url": "https://mariascales.com/research/job-search-automation/article/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/research/job-search-automation/article/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-09-05",
+  "keywords": [
+    "job search automation",
+    "reverse ATS",
+    "LinkedIn sourcing",
+    "career page monitoring",
+    "applicant tracking system",
+    "job search framework"
+  ],
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Job Search Problem: A Framework for Partial Automation (Building a Reverse ATS)",
+    "url": "https://mariascales.com/research/job-search-automation/"
+  }
+}
+  </script>
 </head>
 <body>
 <header>
@@ -132,6 +190,14 @@
 </div>
 <div class="article-content">
   <div class="container">
+    <div class="callout"><div class="callout-label">TL;DR</div>
+    <ul>
+    <li><strong>Reverse ATS</strong> is a candidate-side system that applies ATS-style deterministic filtering to job postings instead of to CVs: maintained lists of criteria, a weekly sourcing cycle, and a shortlist that only precise matches survive.</li>
+    <li>LinkedIn sourcing breaks down into <strong>five structural problems</strong>: discovering new target companies, monitoring their openings, no company-level exclusion, no filter for personal hard stops, and timing – applying within the first 24–48 hours raises response rates.</li>
+    <li>Two filters reward precision over volume: ATS screening before a human reads the CV, then a <strong>~7-second</strong> recruiter scan. Sourcing quality, not application quantity, is the lever.</li>
+    <li>About <strong>65%</strong> of active job-search time goes to these repetitive, rule-based tasks before a single CV is tailored.</li>
+    <li>The weekly cycle has five steps; the four sourcing and filtering steps are automatable, CV tailoring stays manual by design. At least <strong>74%</strong> of active LinkedIn employers have their own careers page, so career-page monitoring replaces LinkedIn search as the primary source.</li>
+    </ul></div>
 
     <h2>Main Logic</h2>
     <p>LinkedIn is the biggest database of open job positions. There are several ways to find a position to apply to: pick target companies and monitor openings, search manually by location and role, follow LinkedIn recommendations, or read posts in the feed.</p>
@@ -202,6 +268,14 @@
   </div>
 </div>
 
+<div class="author-box-wrap"><div class="container">
+<div class="author-box">
+  <div class="author-box-label">About the author</div>
+  <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager, applied mathematician. 12+ years scaling subscription and mobile products (Praktika, Toloka, Scentbird, Buddy AI) on unit economics, cohort analysis and growth modeling. Performance marketing for AI-era growth – backed by models, not gut feeling.</p>
+  <p>This series is the working system behind my own search – the same database produced <a href="/research/marketing-market/article/">the marketing job market study</a> (18,436 postings, 590 career pages).</p>
+  <p>Open to a long-term senior in-house Growth / Performance Marketing role – <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a> · <a href="/cases/">Case studies</a> · <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></p>
+</div>
+</div></div>
 <div class="back-link"><div class="container"><a href="/research/job-search-automation/">← Back to The Job Search Problem</a></div></div>
 <footer id="contact">
   <div class="container">

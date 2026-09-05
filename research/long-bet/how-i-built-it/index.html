@@ -118,6 +118,17 @@
     .series-nav-item a:hover { color: #1e40af; }
     .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
     @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .data-pill { min-width: 80px; } }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout strong { color: #111827; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
   <script type="application/ld+json">
 {
@@ -151,6 +162,52 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How I Built It",
+  "description": "Most university comparisons compare labels, not substance. How we avoided that mistake – and what it took to build a dataset that actually holds up.",
+  "url": "https://mariascales.com/research/long-bet/how-i-built-it/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/research/long-bet/how-i-built-it/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-07-03",
+  "dateModified": "2026-09-05",
+  "keywords": [
+    "ARWU Shanghai Ranking",
+    "university ranking methodology",
+    "programme normalisation",
+    "coverage matrix",
+    "STEM programmes dataset"
+  ],
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Long Bet: A Global Analysis of STEM Education in the Age of AI",
+    "url": "https://mariascales.com/research/long-bet/"
+  }
+}
+  </script>
 </head>
 <body>
 <header>
@@ -171,6 +228,13 @@
 </div>
 <div class="article-content">
   <div class="container">
+    <div class="callout"><div class="callout-label">TL;DR</div>
+    <ul>
+    <li>ARWU (the Shanghai Ranking) over QS and THE: no reputation surveys, only verifiable research output – Nobel Prizes and Fields Medals, highly cited researchers, Nature and Science papers; published annually since 2003.</li>
+    <li>The top <strong>100</strong> as the cut: fewer misses rare programmes (Bristol #98, Bonn #68 offer relevant degrees); more adds volume without frontier research.</li>
+    <li><strong>1,200+</strong> university–programme pairs were normalised to <strong>31 canonical labels</strong> before any analysis: “Computing”, “Informatics”, “Informatik” resolve to Computer Science; Bioinformatics, Computational Biology, Systems Biology and Mathematical Biology stay separate.</li>
+    <li>Three layers of analysis on top of that table: a 100 × 31 coverage matrix, a frequency ranking (Computer Science at 95 of 100 universities, standalone AI at 12), and a uniqueness-and-gaps view by country.</li>
+    </ul></div>
 
     <p>"Computer Science" at MIT, "Computing" at Imperial, "Informatics" at Edinburgh, "Informatik" at TU Munich. Four labels. One discipline. If you count them as different programmes your coverage matrix is wrong before the analysis starts – and every conclusion built on top of it inherits that error.</p>
     <p>This is the problem nobody talks about in university research. The interesting question isn't which ranking to use. It's what you do with the raw data once you have it. Resolving that problem took longer than the analysis itself.</p>
@@ -280,6 +344,14 @@
   </div>
 </div>
 
+<div class="author-box-wrap"><div class="container">
+<div class="author-box">
+  <div class="author-box-label">About the author</div>
+  <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager, applied mathematician. 12+ years scaling subscription and mobile products (Praktika, Toloka, Scentbird, Buddy AI) on unit economics, cohort analysis and growth modeling. Performance marketing for AI-era growth – backed by models, not gut feeling.</p>
+  <p>The method here – define the criteria, build the dataset, test every obvious answer against it – is the same one I use for growth strategy; see the <a href="/cases/">case studies</a>.</p>
+  <p>Open to a long-term senior in-house Growth / Performance Marketing role – <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a> · <a href="/cases/">Case studies</a> · <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></p>
+</div>
+</div></div>
 <div class="back-link"><div class="container"><a href="/research/long-bet/">← Back to The Long Bet</a></div></div>
 <footer id="contact">
   <div class="container">
