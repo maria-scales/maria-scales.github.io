@@ -170,6 +170,8 @@
   .gloss dt { font-weight:600; color:var(--ink); } .gloss dd { margin:0; }
   .vatgrid { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; align-items:start; margin:8px 0 4px; }
   .vatgrid table.vat { max-width:none; width:100%; margin:0 0 16px; }
+  .vok { color:var(--good); font-weight:700; font-size:.75rem; }
+  .vatgrid table.vat td:first-child { white-space:nowrap; } .vatgrid table.vat td:last-child { font-size:.8125rem; }
   table.vat tr.sub td { font-size:.6875rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); padding:10px 8px 3px; border-bottom:none; } .vatgrid th:first-child { font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); }
   @media (max-width:680px){ .vatgrid { grid-template-columns:1fr; } .gloss { grid-template-columns:1fr; gap:0; } .gloss dd { margin:0 0 6px; } }
   .ddtoc { columns:2; column-gap:28px; padding-left:0; list-style:none; margin:8px 0 0; font-size:.8125rem; line-height:1.75; }
@@ -524,7 +526,7 @@
     <p class="note" >Blended example: 60% US payers + 25% Western Europe (~20%) + 15% Turkey (20%) → 0.25×20 + 0.15×20 ≈ <strong>8% blended</strong> – enter that in the VAT/GST field of the Calculator.</p>
 
     <h2>VAT / GST rates deducted from the sticker price, key countries</h2>
-    <p class="note">Rates [E] – standard VAT / GST on digital services as the stores apply it; verify against Apple's Exhibit B / Google Play tax documentation before relying on them, they change. Grouped the way the Geo selector is; one country per row.</p>
+    <p class="note">Standard VAT / GST on digital services as the stores deduct it from the sticker price. <span class="vok">✓</span> = the rate appears in Apple's or Google Play's own tax notices (checked Sep 2026); the rest are the countries' standard rates [E] – they change, so verify against Apple's Exhibit B / Google Play tax documentation before relying on them. Grouped the way the Geo selector is; one country per row.</p>
     <div class="vatgrid">
       <div>
       <table class="vat"><tr><th>Americas</th><th>Rate</th></tr>
@@ -532,32 +534,32 @@
         <tr><td>United States</td><td>0% (sales tax added on top)</td></tr>
         <tr><td>Canada</td><td>0–5% (GST added on top in most provinces)</td></tr>
         <tr class="sub"><td colspan="2">LatAm – Spanish-speaking</td></tr>
-        <tr><td>Mexico</td><td>16%</td></tr>
-        <tr><td>Argentina</td><td>21% (plus provincial and perception taxes that vary)</td></tr>
-        <tr><td>Colombia</td><td>19%</td></tr>
-        <tr><td>Chile</td><td>19%</td></tr>
-        <tr><td>Peru</td><td>18%</td></tr>
+        <tr><td>Mexico</td><td>16% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Argentina</td><td>not deducted by the stores <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> – 21% VAT plus perception taxes are added on top by the card issuer</td></tr>
+        <tr><td>Colombia</td><td>19% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Chile</td><td>19% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Peru</td><td>18% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> (since Feb 2025)</td></tr>
         <tr class="sub"><td colspan="2">Brazil</td></tr>
-        <tr><td>Brazil</td><td>~9.25% (CIDE/PIS/COFINS mix, store-dependent)</td></tr>
+        <tr><td>Brazil</td><td>~9.25% withholding mix (CIDE/PIS/COFINS, store-dependent) + IOF 3.5% on Apple since Aug 2025 <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
       </table>
       <table class="vat"><tr><th>Turkey · Gulf</th><th>Rate</th></tr>
         <tr><td>Turkey</td><td>20%</td></tr>
-        <tr><td>Saudi Arabia</td><td>15%</td></tr>
-        <tr><td>United Arab Emirates</td><td>5%</td></tr>
-        <tr><td>Qatar</td><td>0% (no VAT)</td></tr>
+        <tr><td>Saudi Arabia</td><td>15% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>United Arab Emirates</td><td>5% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Qatar</td><td>0% – no VAT; not a store-collected country</td></tr>
       </table>
       <table class="vat"><tr><th>India · SEA · APAC</th><th>Rate</th></tr>
         <tr><td>India</td><td>18% GST</td></tr>
-        <tr><td>Pakistan</td><td>13–16% (provincial sales tax on services)</td></tr>
-        <tr><td>Indonesia</td><td>11%</td></tr>
-        <tr><td>Philippines</td><td>12%</td></tr>
-        <tr><td>Vietnam</td><td>10%</td></tr>
-        <tr><td>Thailand</td><td>7%</td></tr>
-        <tr><td>Malaysia</td><td>8% (service tax on digital services)</td></tr>
-        <tr><td>Singapore</td><td>9% GST</td></tr>
-        <tr><td>Japan</td><td>10%</td></tr>
-        <tr><td>South Korea</td><td>10%</td></tr>
-        <tr><td>Australia</td><td>10% GST</td></tr>
+        <tr><td>Pakistan</td><td>not deducted by the stores <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span>; selling direct (w2w): provincial sales tax on services 13–16% [E]</td></tr>
+        <tr><td>Indonesia</td><td>11% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Philippines</td><td>12% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> (since Aug 2025)</td></tr>
+        <tr><td>Vietnam</td><td>10% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> (since Aug 2025)</td></tr>
+        <tr><td>Thailand</td><td>7% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Malaysia</td><td>8% service tax <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Singapore</td><td>9% GST <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Japan</td><td>10% JCT <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> (platform-collected since Apr 2025)</td></tr>
+        <tr><td>South Korea</td><td>10% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
+        <tr><td>Australia</td><td>10% GST <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
         <tr><td>New Zealand</td><td>15% GST</td></tr>
       </table>
       </div>
@@ -567,7 +569,7 @@
         <tr><td>Ireland</td><td>23%</td></tr>
         <tr><td>Germany</td><td>19%</td></tr>
         <tr><td>Austria</td><td>20%</td></tr>
-        <tr><td>Switzerland</td><td>8.1%</td></tr>
+        <tr><td>Switzerland</td><td>8.1% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span></td></tr>
         <tr><td>France</td><td>20%</td></tr>
         <tr><td>Belgium</td><td>21%</td></tr>
         <tr><td>Netherlands</td><td>21%</td></tr>
@@ -576,7 +578,7 @@
         <tr><td>Italy</td><td>22%</td></tr>
         <tr><td>Poland</td><td>23%</td></tr>
         <tr><td>Czechia</td><td>21%</td></tr>
-        <tr><td>Romania</td><td>21%</td></tr>
+        <tr><td>Romania</td><td>21% <span class="vok" title="confirmed in Apple's or Google Play's own tax notices, Sep 2026">✓</span> (since Aug 2025)</td></tr>
         <tr><td>Greece</td><td>24%</td></tr>
         <tr><td>Sweden</td><td>25%</td></tr>
         <tr><td>Denmark</td><td>25%</td></tr>
@@ -596,7 +598,7 @@
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
     <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only, collected July 2026 and re-verified against the live pages on 4 Sep 2026; the data itself is of mixed vintage (RC / Adapty / Lebesgue / Triple Whale / RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool.</p>
     <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">34 assertions, live in your browser</span></p>
-    <details class="mnotes"><summary>All sources – 22 links</summary><p style="margin:6px 0 0;line-height:1.7">
+    <details class="mnotes"><summary>All sources – 24 links</summary><p style="margin:6px 0 0;line-height:1.7">
     <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank">RevenueCat SOSA 2026</a> ·
     <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
     <a href="https://adapty.io/blog/high-performing-paywall-2026/" target="_blank">Adapty paywall data</a> ·
@@ -615,7 +617,7 @@
     <a href="https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods" target="_blank">Stripe – Apple Pay conversion lift</a> ·
     <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank">Stripe vs Paddle fees</a> ·
     <a href="https://www.rocketshiphq.com/meta-cost-benchmarks-mobile-app-installs/" target="_blank">RocketShip HQ – Meta app-install CPI/CPM 2026</a> ·
-    <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank">Meta location fees (Jul 2026)</a>.
+    <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank">Meta location fees (Jul 2026)</a> · <a href="https://support.google.com/googleplay/android-developer/answer/138000" target="_blank">Google Play – tax rates &amp; VAT by country</a> · <a href="https://developer.apple.com/news/?id=0l93cjfe" target="_blank">Apple – price and tax updates</a>.
     </p></details>
   </div>
 </div>
