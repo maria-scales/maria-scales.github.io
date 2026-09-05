@@ -89,6 +89,17 @@
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
     .nav-note { font-size: 0.8125rem; color: #9ca3af; font-style: italic; margin-top: 12px; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout strong { color: #111827; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
   <script type="application/ld+json">
 {
@@ -122,6 +133,52 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Sourcing and Filtering Account for ~65% of Job Search Time",
+  "description": "The structural floor and friction multipliers behind the 65% job search sourcing estimate.",
+  "url": "https://mariascales.com/research/job-search-automation/65-percent/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/research/job-search-automation/65-percent/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-09-05",
+  "keywords": [
+    "job search time",
+    "sourcing overhead",
+    "ghost jobs",
+    "context switching",
+    "job search productivity"
+  ],
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Job Search Problem: A Framework for Partial Automation (Building a Reverse ATS)",
+    "url": "https://mariascales.com/research/job-search-automation/"
+  }
+}
+  </script>
 </head>
 <body>
 <header>
@@ -139,6 +196,14 @@
 </div>
 <div class="article-content">
   <div class="container">
+    <div class="callout"><div class="callout-label">TL;DR</div>
+    <ul>
+    <li>Sourcing and filtering take about <strong>65%</strong> of job-search time because of two compounding layers: a structural floor and a friction multiplier.</li>
+    <li>The structural floor is <strong>40–45%</strong> even with perfect search results: identifying companies, reading the posting, checking hard stops, verifying the role is still open.</li>
+    <li>Three frictions inflate it: ghost jobs (<strong>40%</strong> of companies posted one in the prior year – ResumeBuilder 2023, 1,641 hiring managers), LinkedIn's engagement-optimised false positives, and context switching (~<strong>23 minutes</strong> to refocus after an interruption – Gloria Mark, UC Irvine, CHI 2008).</li>
+    <li>Personal tracking: of a 25-hour weekly search cycle, <strong>16.75 hours (67%)</strong> went to sourcing and filtering, 8.25 hours to tailoring and submission – consistent across weeks.</li>
+    <li>65% is a floor, not a target; for senior specialist roles with precise fit requirements it is slightly conservative.</li>
+    </ul></div>
     <p>The 65% figure isn't a gut estimate – it's the result of two compounding forces: a structural floor that exists even under ideal conditions, and a friction multiplier that reflects how job search actually works in practice.</p>
 
     <h2>Layer 1: The Structural Floor (~40–45%)</h2>
@@ -176,6 +241,14 @@
     </div>
   </div>
 </div>
+<div class="author-box-wrap"><div class="container">
+<div class="author-box">
+  <div class="author-box-label">About the author</div>
+  <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager, applied mathematician. 12+ years scaling subscription and mobile products (Praktika, Toloka, Scentbird, Buddy AI) on unit economics, cohort analysis and growth modeling. Performance marketing for AI-era growth – backed by models, not gut feeling.</p>
+  <p>This series is the working system behind my own search – the same database produced <a href="/research/marketing-market/article/">the marketing job market study</a> (18,436 postings, 590 career pages).</p>
+  <p>Open to a long-term senior in-house Growth / Performance Marketing role – <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a> · <a href="/cases/">Case studies</a> · <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></p>
+</div>
+</div></div>
 <div class="back-link"><div class="container"><a href="/research/job-search-automation/">← Back to The Job Search Problem</a></div></div>
 <footer id="contact">
   <div class="container">

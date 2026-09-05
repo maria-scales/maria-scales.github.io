@@ -110,6 +110,18 @@
     @media (max-width: 600px) {
       .era-detail-inner { grid-template-columns: 1fr; }
     }
+    .tldr { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 10px; padding: 16px 20px; margin-bottom: 36px; }
+    .tldr-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a6080; font-weight: 700; margin-bottom: 10px; }
+    .tldr ul { padding-left: 20px; margin: 0; }
+    .tldr li { font-size: 15px; line-height: 1.65; color: #333; margin-bottom: 8px; }
+    .tldr li:last-child { margin-bottom: 0; }
+    .tldr strong { color: #1e293b; }
+    .author-box { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 10px; padding: 18px 20px; margin-top: 40px; }
+    .author-box-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a6080; font-weight: 700; margin-bottom: 10px; }
+    .author-box p { font-size: 14px; line-height: 1.7; color: #4a6080; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #1e293b; }
+    .author-box a { color: #1e40af; font-weight: 600; }
   </style>
   <script type="application/ld+json">
 {
@@ -161,6 +173,52 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Scarcity Ladder",
+  "description": "Seven eras of data and computing scarcity, era by era – what was abundant, what was scarce, and who was elite. A companion timeline to The Floor Keeps Rising.",
+  "url": "https://mariascales.com/research/long-bet/the-floor-keeps-rising/the-scarcity-ladder-timeline/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/research/long-bet/the-floor-keeps-rising/the-scarcity-ladder-timeline/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-07-05",
+  "dateModified": "2026-09-05",
+  "keywords": [
+    "history of data science",
+    "scarce skills timeline",
+    "data and computing eras",
+    "LLM era skills",
+    "statistics foundation"
+  ],
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Long Bet: A Global Analysis of STEM Education in the Age of AI",
+    "url": "https://mariascales.com/research/long-bet/"
+  }
+}
+  </script>
 </head>
 <body>
 
@@ -184,6 +242,14 @@
 
   <div class="meta">The Long Bet · Companion timeline to Article 5</div>
   <h1>The Scarcity Ladder</h1>
+  <div class="tldr"><div class="tldr-label">TL;DR</div>
+    <ul>
+      <li>Seven eras of data and computing scarcity plus a speculative eighth: Statistical (1880s–1940s), Computing (1950s–70s), Database (1980s–90s), Big Data (2000–2012), Data Science (2012–2020), Deep Learning (2016–2022), LLM (2022–now), and “What comes next” (2025→?).</li>
+      <li>Every era has the same three-part structure – what got democratised, what became scarce, who was elite. The Database era democratised tabular analysis (VisiCalc 1979, Excel 1985) and made SQL and data modelling scarce.</li>
+      <li>In the LLM era coding itself is democratised; scarce now: domain judgment, problem framing, AI system design, evaluating model outputs, uncertainty reasoning.</li>
+      <li>The eighth era is a hypothesis, not a finding: ethical accountability, institutional trust, deep domain mastery – whether domain judgment compresses is not yet knowable.</li>
+      <li>Across 150 years the one skill never automated is rigorous reasoning about uncertainty – the case for a Statistics or Mathematics foundation as the longest-duration bet.</li>
+    </ul></div>
   <p class="standfirst">As each layer of data work gets democratised, the bottleneck shifts upward. What was once elite expertise becomes baseline literacy – and a new scarce skill emerges above it.</p>
 
   <div class="companion-note">This page walks through each of the seven scarcity eras in detail – what was abundant, what was scarce, and who was elite – plus a speculative eighth era. It expands on the compression argument made in <a href="/research/long-bet/the-floor-keeps-rising/">"The Floor Keeps Rising"</a> (Article 5). See also: <a href="/research/long-bet/the-floor-keeps-rising/the-rising-floor/">The Rising Floor</a> – a stacked chart of how each era builds on the last.</div>
@@ -545,6 +611,12 @@
     </div>
   </div>
 
+  <div class="author-box">
+    <div class="author-box-label">About the author</div>
+    <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager, applied mathematician. 12+ years scaling subscription and mobile products (Praktika, Toloka, Scentbird, Buddy AI) on unit economics, cohort analysis and growth modeling. Performance marketing for AI-era growth – backed by models, not gut feeling.</p>
+    <p>The method here – define the criteria, build the dataset, test every obvious answer against it – is the same one I use for growth strategy; see the <a href="/cases/">case studies</a>.</p>
+    <p>Open to a long-term senior in-house Growth / Performance Marketing role – <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a> · <a href="/cases/">Case studies</a> · <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></p>
+  </div>
 </article>
 
 <footer class="site-footer" id="contact">
