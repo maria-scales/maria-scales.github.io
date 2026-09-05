@@ -14,6 +14,18 @@
   <link rel="icon" href="/favicon.svg">
   <meta name="description" content="~80% of ATS platforms expose structured job data via public API. Here's the implementation map.">
   <link rel="canonical" href="https://mariascales.com/research/ats-scraping/article/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Technical Solution: Reading Career Pages Without a Browser – Maria Atamanova">
+  <meta property="og:description" content="~80% of ATS platforms expose structured job data via public API. Here's the implementation map.">
+  <meta property="og:url" content="https://mariascales.com/research/ats-scraping/article/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta property="og:site_name" content="Maria Atamanova">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Technical Solution: Reading Career Pages Without a Browser – Maria Atamanova">
+  <meta name="twitter:description" content="~80% of ATS platforms expose structured job data via public API. Here's the implementation map.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 50px; }
@@ -73,6 +85,38 @@
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mariascales.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research",
+      "item": "https://mariascales.com/research/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Job Search Problem",
+      "item": "https://mariascales.com/research/job-search-automation/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Full article",
+      "item": "https://mariascales.com/research/ats-scraping/article/"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <header>
@@ -85,7 +129,7 @@
 <div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/job-search-automation/">The Job Search Problem</a><span>›</span><strong>Full article</strong></div></div>
 <div class="page-header">
   <div class="container">
-    <div class="page-title">Technical Solution: Reading Career Pages Without a Browser</div>
+    <h1 class="page-title">Technical Solution: Reading Career Pages Without a Browser</h1>
     <div class="page-meta">Jun 2026 · Original research</div>
   </div>
 </div>
@@ -108,19 +152,19 @@
     <p>Used by a large share of tech and growth-stage companies.</p>
     <pre><code>GET https://boards-api.greenhouse.io/v1/boards/{token}/jobs?content=true</code></pre>
     <p>Returns JSON with full job listings including title, location, and description. The <code>{token}</code> is the company's board token, visible in the URL of their Greenhouse careers page.</p>
-    <p><a href="https://developers.greenhouse.io/job-board.html" target="_blank">Docs: developers.greenhouse.io/job-board</a></p>
+    <p><a href="https://developers.greenhouse.io/job-board.html" target="_blank" rel="noopener">Docs: developers.greenhouse.io/job-board</a></p>
 
     <h3>Lever</h3>
     <p>Common among mid-size tech companies.</p>
     <pre><code>GET https://api.lever.co/v0/postings/{company}</code></pre>
     <p>Returns JSON by default. Add <code>?mode=xml</code> for XML. The <code>{company}</code> slug is visible in the careers page URL.</p>
-    <p><a href="https://hire.lever.co/developer/documentation" target="_blank">Docs: hire.lever.co/developer/documentation</a></p>
+    <p><a href="https://hire.lever.co/developer/documentation" target="_blank" rel="noopener">Docs: hire.lever.co/developer/documentation</a></p>
 
     <h3>Ashby</h3>
     <p>Fast-growing among startups and scale-ups.</p>
     <pre><code>GET https://api.ashbyhq.com/posting-api/job-board/{clientname}?includeCompensation=true</code></pre>
     <p>The <code>{clientname}</code> is visible in their careers page URL (<code>jobs.ashbyhq.com/{clientname}</code>).</p>
-    <p><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank">Docs: developers.ashbyhq.com</a></p>
+    <p><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank" rel="noopener">Docs: developers.ashbyhq.com</a></p>
 
     <h3>BambooHR</h3>
     <pre><code>GET https://{company}.bamboohr.com/jobs/embed2/json</code></pre>
@@ -136,7 +180,7 @@
     <pre><code>POST https://{company}.wd{n}.myworkdayjobs.com/wday/cxs/{company}/{site}/jobs</code></pre>
     <p>Where <code>{n}</code> is typically 1, 2, 3, or 5. The full URL structure is visible in browser DevTools (Network tab → XHR requests) on any Workday careers page. Returns the same structured JSON the browser uses to render the page.</p>
     <p>Alternatively: use Playwright to intercept the network request rather than scraping the DOM. Since the data is public and the browser can always see it, a headless browser captures it reliably without parsing HTML.</p>
-    <p><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank">Reference: jobspipe.dev/blog/workday-api-guide</a></p>
+    <p><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank" rel="noopener">Reference: jobspipe.dev/blog/workday-api-guide</a></p>
 
     <h2>Detection Logic</h2>
     <p>ATS detection can be automated by checking the career page URL or HTTP response headers:</p>
@@ -186,11 +230,11 @@
     <div class="sources">
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://developers.greenhouse.io/job-board.html" target="_blank">Greenhouse Job Board API</a></li>
-        <li><a href="https://hire.lever.co/developer/documentation" target="_blank">Lever Developer Documentation</a></li>
-        <li><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank">Ashby Public Job Posting API</a></li>
-        <li><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank">Workday API Guide (jobspipe.dev)</a></li>
-        <li><a href="https://cavuno.com/blog/ats-platforms-public-job-posting-apis" target="_blank">6 ATS Platforms with Public Job Posting APIs (Cavuno)</a></li>
+        <li><a href="https://developers.greenhouse.io/job-board.html" target="_blank" rel="noopener">Greenhouse Job Board API</a></li>
+        <li><a href="https://hire.lever.co/developer/documentation" target="_blank" rel="noopener">Lever Developer Documentation</a></li>
+        <li><a href="https://developers.ashbyhq.com/docs/public-job-posting-api" target="_blank" rel="noopener">Ashby Public Job Posting API</a></li>
+        <li><a href="https://jobspipe.dev/blog/workday-api-guide" target="_blank" rel="noopener">Workday API Guide (jobspipe.dev)</a></li>
+        <li><a href="https://cavuno.com/blog/ats-platforms-public-job-posting-apis" target="_blank" rel="noopener">6 ATS Platforms with Public Job Posting APIs (Cavuno)</a></li>
       </ul>
     </div>
 
@@ -203,9 +247,9 @@
     <div class="section-label">Contact</div>
     <div class="contact-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
-      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
-      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
-      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
