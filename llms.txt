@@ -1,0 +1,32 @@
+# Maria Atamanova – mariascales.com
+
+> Performance marketing for AI-era growth – backed by models, not gut feeling. Case studies, original research and interactive unit-economics tools by Maria Atamanova, Senior Growth & Performance Marketing Manager and applied mathematician (12+ years: Praktika, Toloka, Scentbird, Buddy AI). Contact: hello@mariascales.com.
+
+All pages are static HTML with a TL;DR block at the top, en-dash typography, and Article / SoftwareApplication / BreadcrumbList JSON-LD. Numbers on research pages come from the author's own datasets; sources and limitations are stated on each page.
+
+## Tools
+
+- [Unit Economics Estimator](https://mariascales.com/tools/unit-economics-estimator/): interactive subscription-app model – install-to-paid funnel, LTV M13, CPA, payback, target CPA; benchmarks from RevenueCat, Adapty, AppTweak and others, each input tagged B (benchmarked) / E (estimated) / A (assumption); 35 built-in self-tests
+- [LTV Calculator](https://mariascales.com/tools/ltv-calculator/): the estimator's LTV engine alone – net LTV M13 by plan from a retention curve, VAT and store fee deductions, ROAS and payback against your own CPA
+- [Design decisions](https://mariascales.com/tools/unit-economics-estimator/design-decisions/): why the model is built the way it is – discrete payment schedule vs the other LTV methods, retention power law, VAT handling
+
+## Research
+
+- [Job boards are full of marketing. Most of it isn't.](https://mariascales.com/research/marketing-market/article/): 18,436 open postings from 590 company career pages (Jul–Aug 2026) – two thirds of "marketing" roles are sales; B2B 68% vs B2C 29% commercial; 83% of "remote" roles are single-country
+- [The Job Search Problem – Building a Reverse ATS](https://mariascales.com/research/job-search-automation/): series on partially automating a job search – ~65% sourcing overhead, the 7-second resume screen sources, 74% career-page probability, ATS public APIs (Greenhouse, Lever, Ashby, Workday), an eight-table SQLite schema, 13 pitfalls
+- [The Long Bet: STEM Education in the Age of AI](https://mariascales.com/research/long-bet/): 100 ARWU universities, 19 countries, 31 STEM programmes – CS at 95, standalone AI at 12; the four load-bearing A-levels (Mathematics, Further Mathematics, Physics, Chemistry); seven scarcity cycles in data and computing since the 1880s
+
+## Case studies
+
+- [All case studies](https://mariascales.com/cases/): Praktika ($30M Series A, 5x revenue), Toloka (acquisition budget cut 66% cumulatively at flat revenue; 65% retention lift), Scentbird (27% CAC cut while doubling Meta spend; 5% forecast accuracy), Buddy AI (32% LTV growth), a stealth subscription app (pixel overfit diagnosis)
+- [Pixel-overfit prevention framework](https://mariascales.com/cases/stealth/prevention-framework/): rules for validating audience breadth before scaling Meta spend
+
+## Writing
+
+- [Articles on HackerNoon](https://mariascales.com/articles/): influencer marketing measurement, DV360 creative strategy, media-buying automation
+
+## Optional
+
+- [Sitemap](https://mariascales.com/sitemap.xml)
+- [LinkedIn](https://linkedin.com/in/atamanova-m)
+- [GitHub](https://github.com/maria-scales)
