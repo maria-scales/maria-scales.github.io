@@ -157,6 +157,11 @@
   .fdhow { margin:10px 0 4px; padding-left:18px; line-height:1.5; } .fdhow li { margin:0 0 4px; }
   .fdcompare { margin:18px 0 6px; } .fdcompare > summary { font-size:.875rem; } .fdcompare[open] > summary { margin-bottom:4px; }
   .fdassume { margin-top:22px; } .fdassume > summary { font-size:.875rem; } .fdassume ul { margin:4px 0 0; }
+  .gloss { display:grid; grid-template-columns:max-content 1fr; gap:3px 14px; margin:8px 0 4px; font-size:.8125rem; color:var(--sub); }
+  .gloss dt { font-weight:600; color:var(--ink); } .gloss dd { margin:0; }
+  .vatgrid { display:grid; grid-template-columns:1fr 1fr; gap:6px 28px; align-items:start; margin:8px 0 4px; }
+  .vatgrid table.vat { max-width:none; margin:0 0 10px; } .vatgrid th:first-child { font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sub); }
+  @media (max-width:680px){ .vatgrid { grid-template-columns:1fr; } .gloss { grid-template-columns:1fr; gap:0; } .gloss dd { margin:0 0 6px; } }
   .ddtoc { columns:2; column-gap:28px; padding-left:0; list-style:none; margin:8px 0 0; font-size:.8125rem; line-height:1.75; }
   .ddtoc li { break-inside:avoid; } .ddtoc a { color:var(--link); text-decoration:none; } .ddtoc a:hover { text-decoration:underline; }
   @media (max-width:600px){ .ddtoc { columns:1; } .seg button { padding:6px 10px; } }
@@ -417,22 +422,31 @@
     <h2>How this calculator computes LTV – and what the alternatives are</h2>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">Our method: a discrete payment schedule built from the retention curve</h3>
-    <p class="note" >Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, we build a month-by-month payment schedule per subscriber: the first payment (minus refunds), then each renewal weighted by the probability of surviving to it (the retention curve from the <em>Retention curves</em> tab – RC anchors, or a fit from your first two renewals: a power law for monthly, a geometric tail for weekly). An intro offer changes only the first payment: the 1st-period price replaces P in the first term. LTV M13 = the sum of that schedule; net LTV = ÷(1+VAT) ×(1−store/PSP fee). The same schedule gives the payback month and the peak-cash figure in the Budget view – one model, three answers.</p>
+    <p class="note">Subscriptions monetize at <strong>billing events</strong>, not continuously – so instead of integrating a daily activity curve, the calculator builds a month-by-month payment schedule per subscriber and sums it to M13. One model, three answers: LTV, payback month and the peak-cash figure in the Budget view.</p>
+    <ul class="note fdhow">
+      <li>First payment (minus refunds; at the 1st-period price when there is an intro offer), then each renewal weighted by the probability of surviving to it – the retention curve from the <em>Retention curves</em> tab: RC anchors, or a fit from your first two renewals.</li>
+      <li>Net LTV = the schedule ÷ (1 + VAT) × (1 − store or PSP fee), × (1 + upsell).</li>
+    </ul>
     <div class="formula">LTV<sub>M13</sub> = P·(1−refund) + Σ<sub>m=1…12</sub> P·S(m) &nbsp;&nbsp;+ P<sub>yearly</sub>·renewal<sub>M13</sub></div><br>
     <div class="formula">net LTV = LTV × (1+upsell) ÷ (1+VAT) × (1−fee)</div><br>
     <div class="formula">early-stage fit – monthly: S(m) = S₁·m<sup>−b</sup>, &nbsp;b = −log₂(r₂) &nbsp;·&nbsp; weekly: S(w) = r₁·r₂<sup>w−1</sup> (churn stays at your 2nd renewal's level)</div>
-    <p class="note" style="margin-top:8px"><strong>Where:</strong>
-      <strong>P</strong> – plan price (P<sub>yearly</sub> – the yearly plan's price) ·
-      <strong>m</strong> – months since the first payment ·
-      <strong>S(m)</strong> – survival: the share of subscribers still active at renewal m ·
-      <strong>refund</strong> – refund rate, hits the first payment only ·
-      <strong>renewal<sub>M13</sub></strong> – probability the yearly plan renews at month 13 (× a price ramp: ×1.0 up to $50, ×0.8 from $70) ·
-      <strong>VAT</strong> – sales tax inside the sticker price ·
-      <strong>upsell</strong> – ARPU uplift from welcome offers, plan upgrades and one-time purchases (0 if you have none) · <strong>fee</strong> – store commission (15/30%) or PSP fee (~5%) ·
-      <strong>S₁</strong> – survival after the 1st renewal (= your 1st renewal rate) ·
-      <strong>r₂</strong> – your 2nd renewal rate ·
-      <strong>b</strong> – decay exponent: how fast the cohort melts.</p>
-    <p class="note" >Two honest simplifications: we cut off at M13 instead of discounting an infinite tail, and the horizon is fixed rather than fitted per cohort. A WACC-discounted sum is the academically correct move – and it starts to <em>matter</em> when the volumes are large and the payback is long: at $100k+/month spend with a 12+ month payback, the time value of money quietly eats several percent of the modeled margin, and finance will (rightly) ask for the discounted version. At typical early-stage volumes and sub-year paybacks, the cutoff is both simpler and easier to defend.</p>
+    <dl class="gloss">
+      <dt>P</dt><dd>plan price (P<sub>yearly</sub> – the yearly plan's price)</dd>
+      <dt>m</dt><dd>months since the first payment</dd>
+      <dt>S(m)</dt><dd>survival – the share of subscribers still active at renewal m</dd>
+      <dt>refund</dt><dd>refund rate, hits the first payment only</dd>
+      <dt>renewal<sub>M13</sub></dt><dd>probability the yearly plan renews at month 13 (× a price ramp: ×1.0 up to $50, ×0.8 from $70)</dd>
+      <dt>VAT</dt><dd>sales tax inside the sticker price</dd>
+      <dt>fee</dt><dd>store commission (15 / 30%) or PSP fee (~5%)</dd>
+      <dt>upsell</dt><dd>ARPU uplift from welcome offers, plan upgrades, one-time purchases (0 if none)</dd>
+      <dt>S₁, r₂</dt><dd>survival after the 1st renewal (= your 1st renewal rate); your 2nd renewal rate</dd>
+      <dt>b</dt><dd>decay exponent – how fast the cohort melts</dd>
+    </dl>
+    <p class="note" style="margin:10px 0 2px"><strong>Two honest simplifications</strong></p>
+    <ul class="note fdhow" style="margin-top:0">
+      <li><strong>Cut-off at M13</strong> instead of discounting an infinite tail – 12 months of payments plus the first annual renewal; beyond that is extrapolation.</li>
+      <li><strong>Fixed horizon</strong> rather than one fitted per cohort. A WACC-discounted sum is the academically correct move, and it starts to <em>matter</em> at $100k+/month spend with a 12+ month payback – there the time value of money quietly eats several percent of the margin and finance will (rightly) ask for the discounted version. At typical early-stage volumes and sub-year paybacks the cut-off is simpler and easier to defend.</li>
+    </ul>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">The family of LTV methods (ordered by accuracy)</h3>
     <table class="methods">
@@ -444,15 +458,13 @@
       <tr><td><strong>Cumulative ARPU fit (Top Down)</strong></td><td><div class="formula">cumARPU(t) ≈ A·ln(t) + B, &nbsp;LTV = cumARPU(t*) &nbsp;or&nbsp; PV = Σ CF<sub>i</sub> ÷ (1+WACC)<sup>i</sup></div><br>Track cumulative ARPU of a cohort at D7/D14/D28…, fit the curve, read LTV at the horizon – or add discounting and take the asymptote. Skips retention entirely; great when monetization is many small purchases.</td></tr>
     </table>
 
-    <p class="note" ><strong>Symbols in the table:</strong>
-      <strong>R(t)</strong> – retention on day t; <strong>A, B, C</strong> – fitted curve coefficients (least squares) ·
-      <strong>Lifetime</strong> – average days a user stays = area under R(t) ·
-      <strong>ARPDAU</strong> – average revenue per daily active user ·
-      <strong>DAU</strong> – daily active users ·
-      <strong>cumARPU(t)</strong> – cumulative revenue per cohort user by day t ·
-      <strong>t*</strong> – the horizon you read LTV at ·
-      <strong>CF<sub>i</sub></strong> – cash flow of period i ·
-      <strong>WACC</strong> – discount rate (ask your finance people); discounting makes the infinite tail summable.</p>
+    <dl class="gloss">
+      <dt>R(t)</dt><dd>retention on day t; <strong>A, B, C</strong> – fitted curve coefficients (least squares)</dd>
+      <dt>Lifetime</dt><dd>average days a user stays = area under R(t)</dd>
+      <dt>ARPDAU, DAU</dt><dd>average revenue per daily active user; daily active users</dd>
+      <dt>cumARPU(t)</dt><dd>cumulative revenue per cohort user by day t; <strong>t*</strong> – the horizon you read LTV at</dd>
+      <dt>CF<sub>i</sub>, WACC</dt><dd>cash flow of period i; discount rate (ask your finance people) – discounting makes the infinite tail summable</dd>
+    </dl>
 
     <h3 style="font-size:.95rem;margin:16px 0 6px">Why the business model dictates the method</h3>
     <ul class="note" style="line-height:1.7">
@@ -461,13 +473,15 @@
       <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
     </ul>
     <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
-    <p class="note">Consistency checks: <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a> – 34 assertions (anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards) executed live in your browser, on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right – for that, every field carries its source and confidence tag.</p>
+    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 34 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
     <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
   <div id="tab-vat" style="display:none">
     <h2>How VAT works for subscription apps</h2>
-    <p class="note" >Two different worlds depending on who the merchant of record is – the store or you.</p>
+    <p class="note" style="margin:6px 0 4px"><strong>What the calculator deducts by default</strong> – the rate of the acquisition geo, blended where a region mixes countries <span class="tag tE">E</span>; override it in the VAT/GST field whenever your payer mix differs.</p>
+    <div class="chain" id="vatdefaults"></div>
+    <p class="note">Two different worlds depending on who the merchant of record is – the store or you.</p>
 
     <h3 style="font-size:.95rem;margin:18px 0 6px">a2a – Apple / Google are the merchant of record</h3>
     <p class="note" >In most countries the sticker price <strong>includes VAT</strong>. At every transaction the store first strips the VAT out, remits it to the tax authority itself (you never touch it), and only then takes its 15/30% commission from what's left. Your monthly payout is already net of both.</p>
@@ -498,31 +512,36 @@
     <p class="note" >Blended example: 60% US payers + 25% Western Europe (~20%) + 15% Turkey (20%) → 0.25×20 + 0.15×20 ≈ <strong>8% blended</strong> – enter that in the VAT field on the Calculator tab.</p>
 
     <h2>VAT / GST rates deducted from the sticker price, key countries</h2>
-    <p class="note">Rates [E] – verify against Apple's Exhibit B / Google Play tax documentation before relying on them; they change.</p>
-    <table class="vat">
-      <tr><th>Country</th><th>Rate deducted from price</th></tr>
-      <tr><td>United States</td><td>0% (sales tax added on top)</td></tr>
-      <tr><td>Canada</td><td>0–5% (GST added on top in most provinces)</td></tr>
-      <tr><td>United Kingdom</td><td>20%</td></tr>
-      <tr><td>Germany</td><td>19%</td></tr>
-      <tr><td>France</td><td>20%</td></tr>
-      <tr><td>Netherlands</td><td>21%</td></tr>
-      <tr><td>Spain</td><td>21%</td></tr>
-      <tr><td>Italy</td><td>22%</td></tr>
-      <tr><td>Sweden / Denmark / Norway</td><td>25%</td></tr>
-      <tr><td>Poland</td><td>23%</td></tr>
-      <tr><td>Turkey</td><td>20%</td></tr>
-      <tr><td>Brazil</td><td>~9.25% (CIDE/PIS/COFINS mix, store-dependent)</td></tr>
-      <tr><td>Mexico</td><td>16%</td></tr>
-      <tr><td>Saudi Arabia</td><td>15%</td></tr>
-      <tr><td>United Arab Emirates</td><td>5%</td></tr>
-      <tr><td>India</td><td>18% GST</td></tr>
-      <tr><td>Indonesia</td><td>11%</td></tr>
-      <tr><td>Philippines</td><td>12%</td></tr>
-      <tr><td>Japan</td><td>10%</td></tr>
-      <tr><td>South Korea</td><td>10%</td></tr>
-      <tr><td>Australia</td><td>10% GST</td></tr>
-    </table>
+    <p class="note">Rates [E] – verify against Apple's Exhibit B / Google Play tax documentation before relying on them; they change. Grouped the way the Geo selector is.</p>
+    <div class="vatgrid">
+      <table class="vat"><tr><th>North America · LatAm</th><th>Rate</th></tr>
+        <tr><td>United States</td><td>0% (sales tax added on top)</td></tr>
+        <tr><td>Canada</td><td>0–5% (GST added on top in most provinces)</td></tr>
+        <tr><td>Brazil</td><td>~9.25% (CIDE/PIS/COFINS mix, store-dependent)</td></tr>
+        <tr><td>Mexico</td><td>16%</td></tr>
+      </table>
+      <table class="vat"><tr><th>Western Europe · Turkey</th><th>Rate</th></tr>
+        <tr><td>United Kingdom</td><td>20%</td></tr>
+        <tr><td>Germany</td><td>19%</td></tr>
+        <tr><td>France</td><td>20%</td></tr>
+        <tr><td>Netherlands · Spain</td><td>21%</td></tr>
+        <tr><td>Italy</td><td>22%</td></tr>
+        <tr><td>Poland</td><td>23%</td></tr>
+        <tr><td>Sweden · Denmark · Norway</td><td>25%</td></tr>
+        <tr><td>Turkey</td><td>20%</td></tr>
+      </table>
+      <table class="vat"><tr><th>Gulf</th><th>Rate</th></tr>
+        <tr><td>Saudi Arabia</td><td>15%</td></tr>
+        <tr><td>United Arab Emirates</td><td>5%</td></tr>
+      </table>
+      <table class="vat"><tr><th>India · SEA · APAC</th><th>Rate</th></tr>
+        <tr><td>India</td><td>18% GST</td></tr>
+        <tr><td>Indonesia</td><td>11%</td></tr>
+        <tr><td>Philippines</td><td>12%</td></tr>
+        <tr><td>Japan · South Korea</td><td>10%</td></tr>
+        <tr><td>Australia</td><td>10% GST</td></tr>
+      </table>
+    </div>
   </div><!-- /tab-vat -->
   <div id="tab-dd" style="display:none">
     <h2>Design decisions – the calculations, and why this way and not another</h2>
@@ -1683,6 +1702,7 @@ el("allsrc").addEventListener("click", () => {
 });
 Object.entries(VERT).forEach(([k,v]) => el("vertical").add(new Option(v.name, k)));
 Object.entries(GEO).forEach(([k,v]) => el("geo").add(new Option(v.name, k)));
+if (el("vatdefaults")) el("vatdefaults").innerHTML = Object.values(GEO).map(g => `<span class="chstep"><small>${g.name}</small>${(g.vat*100).toFixed(0)}%</span>`).join("");
 ["funnel"].forEach(id => el(id).addEventListener("change", () => { manual = manualStore[el("funnel").value]; setOptOptions(el("funnel").value); rebuildFields(); resetResults(); markStale(); }));
 ["vertical","bbase","geo","scenario","optevent","pwtrial","triallen","platform","season","ai","fee","troas","retmode","wk_on","mo_on","yr_on","wk_p","mo_p","yr_p","wk_i","mo_i","yr_i","wk_s","mo_s","yr_s"]
   .forEach(id => el(id).addEventListener("input", () => { stageList().forEach(refreshField); LTV_FIELDS.forEach(refreshField); markStale(); }));
