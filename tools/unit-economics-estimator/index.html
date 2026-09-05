@@ -398,7 +398,7 @@
     <tr><th>Plan</th><th>On</th><th>Price, $</th><th><span class="th-long">1st-period price, $ <span class="note">(intro offer – optional)</span></span><span class="th-short">1st price, $</span></th><th><span class="th-long">Share of subscriptions, %</span><span class="th-short">Share, %</span></th></tr>
     <tr><td>Weekly</td><td><input type="checkbox" id="wk_on"></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="wk_p" value="5.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="wk_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="wk_s" value="0" class="hasunit"><i class="unit">%</i></span></td></tr>
     <tr><td>Monthly</td><td><input type="checkbox" id="mo_on" checked></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="mo_p" value="19.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="mo_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="mo_s" value="48" class="hasunit"><i class="unit">%</i></span></td></tr>
-    <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_p" value="59.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="yr_s" value="52" class="hasunit"><i class="unit">%</i></span></td></tr>
+    <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_p" value="49.99" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><i class="unit pre">$</i><input type="number" id="yr_i" value="" placeholder="= price" step="0.01" class="hasunit pre"></span></td><td><span class="uin"><input type="number" id="yr_s" value="52" class="hasunit"><i class="unit">%</i></span></td></tr>
   </table></div>
   <div class="note">1st-period price: what the first payment is charged at (e.g. $8.99 for the first week/month, $59.99 for the first year); every renewal is charged at the plan price. Leave blank when there is no intro offer.</div>
   <div class="warnbox" id="mixwarn"></div>
@@ -849,7 +849,7 @@ const CONFIG = {
   HIGH_PRICE: { rampFrom: 50, rampTo: 70, renewalPenalty: 0.8 }, // yearly plans: 1st renewal ×0.8 for high-price plans [B, RC churn 37% vs 24%];
                               // RC gives the two groups, not the boundary – we only know it to about ±$10 around $60, so the penalty
                               // ramps linearly from ×1.0 at $50 to ×0.8 at $70 (= the expected penalty under that uncertainty) instead
-                              // of a cliff at $60.01 that the default $59.99 plan sat two cents away from.
+                              // of a cliff at $60.01 that the $59.99 yearly plan (the default until 5 Sep 2026; $49.99 since, so the untouched default shows no ramp) sat two cents away from.
   AI: { i2t: 0.487, retention: 0.7 },  // AI apps: install→trial ×0.487 [B, Adapty 5.31% vs 10.92%]; monthly M6/M12 anchors ×0.7 [E, RC: AI apps churn ~30% faster]
   BUDGET: { cohorts: 12, horizon: 24 } // budget view: 12 monthly cohorts, cash tracked over 24 months
 };
@@ -2151,7 +2151,7 @@ function runSelfTests(){
        R.p25 && R.p75 ? `CPM ${fmt$(R.p25.cpm)} → ${fmt$(R.p75.cpm)}, ROAS ${R.p25.roas.toFixed(2)} → ${R.p75.roas.toFixed(2)}` : "");
   }
   // snapshots — update these two numbers when benchmarks are recalibrated
-  ok("snapshot: default net LTV ≈ $63.29 (hand-recalculated 4 Sep 2026: $59.99 yearly sits at ×0.90 on the renewal ramp)", approxEq(base.net, 63.29, 0.005), fmt$(base.net));
+  ok("snapshot: default net LTV ≈ $58.49 (hand-recalculated 5 Sep 2026: $49.99 yearly sits at ×1.0 on the renewal ramp – yearly gross 49.99 × (1 − 3.5%) + 49.99 × 30% = $63.24; the $59.99 case, $63.29, stays as the LTV calculator's cross-tool snapshot)", approxEq(base.net, 58.49, 0.005), fmt$(base.net));
   ok("snapshot: default CPA ≈ $79.51 (hand-recalculated 4 Sep 2026: hard-paywall base, AEO basis, Blended store factor ×1.0 – CPI $5.33 ÷ install→trial 16.0% × trial share 90% ÷ trial→paid 37.7%)", approxEq(base.cpsub, 79.51, 0.005), fmt$(base.cpsub));
   // VAT math via a temporary override
   const savedVat = manual["vat"];
