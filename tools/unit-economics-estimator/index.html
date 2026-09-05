@@ -140,7 +140,7 @@
   .selftest-link:hover { background:#72C09B; color:#16355C !important; }
   .out { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0; }
   @media (max-width:760px){ .out { grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:480px){ .grid { grid-template-columns:repeat(2,1fr); gap:8px; } .card { padding:8px 10px; } .kpi .v { font-size:1.15rem; } }
+  @media (max-width:480px){ .grid { grid-template-columns:1fr; gap:8px; } .card { padding:8px 10px; } .kpi .v { font-size:1.15rem; } }
   .th-short { display:none; } @media (max-width:480px){ .th-long { display:none; } .th-short { display:inline; } }
   .howto { margin:6px 0 0; padding-left:20px; line-height:1.5; } .howto li { margin:0 0 5px; }
   .howcard { margin:10px 0 4px; background:#fff; border-color:#dbe4f0; }
@@ -371,13 +371,13 @@
     <div class="card"><label>Platform / device</label><select id="platform"><option value="blend" selected>Blended</option><option value="ios">iOS</option><option value="android">Android</option></select></div>
     <div class="card" style="display:none"><label>Funnel</label><select id="funnel"><option value="a2a">App → App (a2a)</option><option value="w2w">Web → Web (w2w)</option></select></div>
     <div class="card"><label>Vertical</label><select id="vertical"></select></div>
-    <div class="card" id="card_bbase"><label>Benchmark base (install → trial)</label><select id="bbase"><option value="hard" selected>Hard-paywall apps (this tool's scope)</option><option value="all">All apps – RC panel median</option></select></div>
+    <div class="card" id="card_bbase"><label>Benchmark base (install → trial)</label><select id="bbase"><option value="hard" selected>Hard-paywall apps</option><option value="all">All apps (RC median)</option></select></div>
     <div class="card"><label>Geo (where you acquire users)</label><select id="geo"></select></div>
-    <div class="card"><label>Scenario preset</label><select id="scenario"><option value="p25">Pessimistic (conversions P25 · costs P75)</option><option value="p40">Conservative</option><option value="med" selected>Reasonable (median)</option><option value="p75">Aspirational (conversions P75 · costs P25)</option></select></div>
-    <div class="card"><label>Optimization event</label><select id="optevent"><option value="aeo_trial" selected>Trial start (AEO) – standard</option><option value="mai">Install (MAI)</option><option value="aeo_purchase">Purchase (AEO/VO)</option></select></div>
+    <div class="card"><label>Scenario preset</label><select id="scenario"><option value="p25">Pessimistic (P25)</option><option value="p40">Conservative (P40)</option><option value="med" selected>Reasonable (median)</option><option value="p75">Aspirational (P75)</option></select></div>
+    <div class="card"><label>Optimization event</label><select id="optevent"><option value="aeo_trial" selected>Trial start (AEO)</option><option value="mai">Install (MAI)</option><option value="aeo_purchase">Purchase (AEO/VO)</option></select></div>
     <div class="card" id="card_pwtrial"><label>Paywall trial</label><select id="pwtrial"><option value="yes" selected>With trial</option><option value="no">No trial (direct purchase)</option></select></div>
     <div class="card" id="card_triallen"><label>Trial length</label><select id="triallen"><option value="d3">3 days (×0.68 trial→paid)</option><option value="d7" selected>7 days</option></select></div>
-    <div class="card"><label>Seasonality (month)</label><select id="season"><option value="1">Annual average</option><option value="0.80">Jan–Feb ×0.80 (cheapest window)</option><option value="0.96">Mar–Jun ×0.96</option><option value="0.88">Jul–Aug ×0.88</option><option value="1.08">Sep–Oct ×1.08</option><option value="1.33">Nov ×1.33 (BFCM peak)</option><option value="1.40">Dec ×1.40 (holiday peak)</option></select></div>
+    <div class="card"><label>Seasonality (month)</label><select id="season"><option value="1">Annual average</option><option value="0.80">Jan–Feb ×0.80 (cheapest)</option><option value="0.96">Mar–Jun ×0.96</option><option value="0.88">Jul–Aug ×0.88</option><option value="1.08">Sep–Oct ×1.08</option><option value="1.33">Nov ×1.33 (BFCM peak)</option><option value="1.40">Dec ×1.40 (holiday peak)</option></select></div>
     <div class="card"><label>AI product</label><select id="ai"><option value="0">No</option><option value="1">Yes (Adapty modifiers)</option></select></div>
     <div class="card"><label>Store commission</label><select id="fee"><option value="0.30">Store 30%</option><option value="0.15" selected>Store 15% (SBP)</option><option value="0.05">Web PSP ~5%</option></select></div>
   </div>
@@ -405,8 +405,8 @@
       <h2 id="ltvhead">LTV inputs (M13 horizon)</h2>
       <div class="card" style="margin-bottom:10px"><label>Retention input</label>
         <select id="retmode">
-          <option value="bench" selected>Benchmark curve (RC data × scenario preset)</option>
-          <option value="fit">Fit from my first 2 renewals (early-stage mode)</option>
+          <option value="bench" selected>Benchmark curve (RC × preset)</option>
+          <option value="fit">Fit from my first 2 renewals</option>
         </select>
       </div>
       <div id="lfields"></div>
@@ -1629,7 +1629,7 @@ function drawW2W(host){
 function setOptOptions(f){
   const sel = el("optevent"), cur = sel.value;
   const opts = f === "a2a"
-    ? [["aeo_trial","Trial start (AEO) – standard"],["mai","Install (MAI)"],["aeo_purchase","Purchase (AEO/VO)"]]
+    ? [["aeo_trial","Trial start (AEO)"],["mai","Install (MAI)"],["aeo_purchase","Purchase (AEO/VO)"]]
     : [["purchase","Purchase (standard)"],["checkout","Initiate checkout"],["lead","Lead (email submit)"]];
   sel.innerHTML = "";
   opts.forEach(([v,n]) => sel.add(new Option(n, v)));
