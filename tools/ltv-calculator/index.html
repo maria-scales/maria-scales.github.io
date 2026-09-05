@@ -266,75 +266,6 @@
 
 
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Unit Economics Estimator",
-      "alternateName": "Unit economics calculator for subscription apps",
-      "url": "https://mariascales.com/tools/unit-economics-estimator/",
-      "description": "Does this growth math ever close? An interactive unit-economics calculator for subscription apps – benchmarks, sensitivity, payback and budget views.",
-      "applicationCategory": "BusinessApplication",
-      "applicationSubCategory": "Unit economics calculator",
-      "operatingSystem": "Any (web browser)",
-      "browserRequirements": "Requires JavaScript",
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "softwareVersion": "1.1",
-      "datePublished": "2026-07-12",
-      "dateModified": "2026-09-05",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Person",
-        "name": "Maria Atamanova",
-        "url": "https://mariascales.com/"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Maria Atamanova",
-        "url": "https://mariascales.com/"
-      },
-      "image": "https://mariascales.com/og-image.png",
-      "about": [
-        "Subscription app unit economics",
-        "LTV",
-        "CPA",
-        "Payback",
-        "User acquisition"
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://mariascales.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tools",
-          "item": "https://mariascales.com/tools/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Unit Economics Estimator",
-          "item": "https://mariascales.com/tools/unit-economics-estimator/"
-        }
-      ]
-    }
-  ]
-}
-  </script>
   <style>
   .v-neut { background:var(--bg); color:var(--ink); border:1px solid var(--line); font-weight:500; }
   .v-neut strong { font-weight:700; }
@@ -628,7 +559,7 @@
       <li><strong>E-commerce:</strong> LTV = average order value × purchase frequency × margin over the repurchase window – a third clock again (orders), a third method.</li>
     </ul>
     <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
-    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 22 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
+    <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 23 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
     <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank" rel="noopener">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
@@ -792,7 +723,7 @@
 
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
     <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only (RevenueCat SOSA 2026 and RC's renewal-rate and billing-churn posts, Adapty 2026), re-verified against the live pages on 4 Sep 2026 – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. Where each input lives in your own systems – Reference › Data sources.</p>
-    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">22 assertions, live in your browser</span></p>
+    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">23 assertions, live in your browser</span></p>
     <details class="mnotes"><summary>All sources – 8 links</summary><p style="margin:6px 0 0;line-height:1.7">
     <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank" rel="noopener">RevenueCat SOSA 2026</a> ·
     <a href="https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category" target="_blank" rel="noopener">RC renewal rates by category</a> ·
@@ -1381,6 +1312,7 @@ function applyState(o){
     if (o.man){ manualStore.a2a = o.man.a2a || {}; manualStore.w2w = o.man.w2w || {}; }
     manual = manualStore[el("funnel").value];
     feeStore[el("funnel").value] = el("fee").value;
+    _lastFunnel = el("funnel").value;   // the Billing change handler files the fee under the mode it LEAVES – with a stale "a2a" here a restored web link kept 5% after switching back to in-app
     rebuildFields();
     return true;
   } catch(e){ return false; }
@@ -1661,6 +1593,17 @@ function runSelfTests(){
   manual["vat"] = 0.2; const m1 = computeModel(null);
   if (savedVat === undefined) delete manual["vat"]; else manual["vat"] = savedVat;
   ok("VAT 20% divides net by exactly 1.2", approxEq(m1.net / m0.net, 1/1.2, 1e-6));
+  // a share link with web billing restored, then Billing switched back to in-app: the fee must return to the store default
+  // (v1.0 kept the 5% PSP fee – the change handler filed it under the mode it thought it was leaving)
+  {
+    const f0 = el("funnel").value, fee0 = el("fee").value, fs0 = Object.assign({}, feeStore), lf0 = _lastFunnel;
+    applyState({ sel: { funnel: "w2w", fee: "0.05" } });
+    const lfRestored = _lastFunnel;
+    el("funnel").value = "a2a"; el("funnel").dispatchEvent(new Event("change"));
+    const feeBack = el("fee").value, storeW2W = feeStore.w2w;
+    el("funnel").value = f0; el("fee").value = fee0; Object.assign(feeStore, fs0); _lastFunnel = lf0; manual = manualStore[f0]; rebuildFields();
+    ok("share link with web billing, then Billing switched back to in-app: fee returns to Store 15% and the 5% stays filed under web", lfRestored === "w2w" && feeBack === "0.15" && storeW2W === "0.05", `fee after the switch ${feeBack}`);
+  }
   ok("share link: pristine state = clean URL (delta encoding)", Object.keys(slimState()).length === 0);
   return T;
 }
