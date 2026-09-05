@@ -195,7 +195,7 @@
     transition: transform .08s ease, box-shadow .18s ease, background .18s ease; }
   .calcbtn:hover { box-shadow:0 4px 14px rgba(30,64,175,.35); transform:translateY(-1px); }
   .calcbtn:active { transform:translateY(1px) scale(.98); box-shadow:none; }
-  .stalenote { display:none; font-size:.8125rem; color:var(--warn); margin:0 0 10px; }
+  .stalenote { display:none; font-size:.8125rem; color:var(--warn); margin:0 0 10px; } .stalenote.err { color:var(--bad); font-weight:600; }
   #explain p { margin:0 0 7px; }
   .chain { display:flex; flex-wrap:wrap; align-items:center; gap:4px 6px; margin:4px 0 10px; font-size:.875rem; }
   .chstep { display:inline-flex; flex-direction:column; background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:4px 10px; color:var(--ink); font-weight:600; line-height:1.25; }
@@ -385,7 +385,7 @@
       <li><span class="tag tA">A</span> <strong>Trial share of new subscriptions 85 / 90 / 95%</strong> – no public benchmark.</li>
       <li><span class="tag tE">E</span> <strong>No-trial paywall: direct purchases ×0.4 of the trial-start rate</strong> – Adapty 2026 onboarding paywalls: 0.82% without a trial vs 1.35% with one (conversion per paywall show; denominator not defined) = ×0.6, a ceiling since apps running no-trial paywalls are self-selected; A/B practice lands at 0.3–0.5. Consequence: a trial pays for itself when trial→paid ≥ ~36% (×0.4 × trial share), and the calculator says so explicitly.</li>
       <li><span class="tag tA">A</span>/<span class="tag tB">B</span> <strong>Platform factors (a2a):</strong> CPM iOS ×1.1 / Android ×0.95 / Blended ×1.0 [A – most of the "cheap Android" is geo mix, modeled by the Geo selector]; paywall stage iOS ×1.30 / Android ×0.45 / Blended ×1.0 [B, RC SOSA 2026 store split: download→paid at day 35 is 2.6% on iOS vs 0.9% on Android with trial→paid at parity (32.6% vs 32.5%), so the gap sits at the funnel entrance; the global median of the same metric, 2.0%, implies a ≈65/35 iOS/Android blend and the factors are the ratios to it – medians do not mix linearly and the cross-category gap is applied to every vertical alike [E]]; trial→paid ×1.0 (store parity) [B, RC]; ARPU per subscriber Android ×0.8 / Blended ×0.9 [A – RC publishes no revenue-per-install split by store; the mechanism is documented: 32.3% of Play cancellations are involuntary billing failures vs 15.2% on the App Store] – ARPU is used on this tab only, the calculator takes your prices as entered.</li>
-      <li><span class="tag tA">A</span> <strong>No OS split</strong> on install→paywall, retention, renewal, refunds, plan mix – none is published; the store deltas on the first renewal shown on the Retention tab are the only split RC gives.</li>
+      <li><span class="tag tA">A</span> <strong>No OS split</strong> on install→paywall, retention, renewal, refunds, plan mix – none is published; the store deltas on the first renewal shown on the Retention curves tab are the only split RC gives.</li>
       <li><span class="tag tE">E</span> <strong>Optimization event – the benchmarks are AEO/organic-basis</strong>: the CPM panels come from conversion-optimized campaigns and RC's install→trial is measured on the traffic real apps get (AEO on trial start + organic), so AEO on trial start (default, the subscription-app standard) applies ×1.0 to price and intent. MAI: impressions ×0.4 the price, installs ×0.4 the paywall conversion [E, practitioner consensus "AEO beats MAI ×2.5–4 on install→trial"; the MAI/AEO/VO framing is Mobile Dev Memo's] – mirrored, so MAI ≡ AEO on cost per subscriber: the model claims no winner it cannot source and the pair does not move with the scenario preset. Purchase optimization with a trial: AEO price for MAI-quality installs (the event fires days after the click).</li>
       <li><span class="tag tE">E</span> <strong>Seasonality</strong>: Jan–Feb ×0.80 · Mar–Jun ×0.96 · Jul–Aug ×0.88 · Sep–Oct ×1.08 · Nov ×1.33 · Dec ×1.40 – January–February (−20%) and the holiday peak (+40%) are the two figures Bïrch states in words (US campaigns, 2021–2023); the other months are read off its chart. Multiplies benchmark CPM, never a manual one.</li>
       <li><span class="tag tB">B</span>/<span class="tag tA">A</span> <strong>w2w:</strong> quiz stages LP→start 30 / 38 / 40% [A, no public benchmark], start→finish 50 / 60 / 65% [B, Interact], finish→email 60 / 65 / 75% [B, derived from Interact's start→lead 37.6–44.9% ÷ start→finish – an earlier version used the start→lead figure itself as finish→email, understating the funnel ×1.5]; paywall→checkout 5 / 10 / 15% [A, Adapty's web paywalls convert ×0.69 of in-app: 1.10% vs 1.60%]; checkout completion 25 / 40 / 60% [E, practitioner band; Stripe publishes a +22.3% conversion lift from offering Apple Pay, not absolute completion rates]; web cohort LTV ×0.89 <span class="tag tB">B</span> [Adapty: $35.80 vs $40.10 one-year LTV; whether those are gross or net of store fees is not stated – applied to gross here, fees deducted separately] – per plan, and only while that plan's retention is a benchmark: typed anchors or fitted renewals already contain the web cohort's behaviour, so no ×0.89 on top; optimization events purchase ×1.0 / initiate checkout CPM ×0.85 & intent ×0.9 / lead CPM ×0.6 & intent ×0.8 [A].</li>
@@ -521,7 +521,7 @@
       <li><strong>Storefront arbitrage:</strong> the Turkish storefront is popular with non-residents chasing cheap local prices – TR-storefront payers aren't necessarily people you bought in Turkey.</li>
       <li><strong>Advantage+ / multi-geo campaigns without country limits:</strong> Meta spreads budget across countries, and the payer mix becomes genuinely unpredictable.</li>
     </ul>
-    <p class="note" >Blended example: 60% US payers + 25% Western Europe (~20%) + 15% Turkey (20%) → 0.25×20 + 0.15×20 ≈ <strong>8% blended</strong> – enter that in the VAT field on the Calculator tab.</p>
+    <p class="note" >Blended example: 60% US payers + 25% Western Europe (~20%) + 15% Turkey (20%) → 0.25×20 + 0.15×20 ≈ <strong>8% blended</strong> – enter that in the VAT/GST field of the Calculator.</p>
 
     <h2>VAT / GST rates deducted from the sticker price, key countries</h2>
     <p class="note">Rates [E] – standard VAT / GST on digital services as the stores apply it; verify against Apple's Exhibit B / Google Play tax documentation before relying on them, they change. Grouped the way the Geo selector is; one country per row.</p>
@@ -1012,7 +1012,7 @@ function resetResults(){
 function markStale(){
   uiState();
   const r = el("results"); if (r) r.classList.add("dim");
-  const n = el("stalenote"); if (n) n.style.display = "block";
+  const n = el("stalenote"); if (n){ n.style.display = "block"; n.classList.remove("err"); n.textContent = "Press Calculate to compute the results with the current inputs."; }
 }
 function gather(){
   return {
@@ -1138,8 +1138,19 @@ function calc(){
   const m = computeModel(null);
   el("mixwarn").style.display = (!m.ok || Math.abs(m.mixSum - 100) > 0.5) ? "block" : "none";
   el("mixwarn").textContent = m.err ? m.err : `Plan shares sum to ${m.mixSum}% – must be 100%.`;
-  if (!m.ok) return;
+  // a zero in any conversion stage is the usual cause – mark it red, next to where the reader is looking
+  const zeroKeys = stageList().filter(f => f.k !== "org" && f.k !== "directf" && val(f) <= 0).map(f => f.k);
+  stageList().forEach(f => { const inp = el("f_" + f.k); if (inp) inp.classList.toggle("errinput", zeroKeys.includes(f.k)); });
+  if (!m.ok){
+    // keep stale numbers from posing as a result: dim them and say why, right under the Calculate button
+    el("results").classList.add("dim");
+    const sn = el("stalenote"); sn.style.display = "block"; sn.classList.add("err");
+    sn.textContent = m.err ? m.err + (zeroKeys.length ? ` Zero in: ${zeroKeys.map(k => getF(stageList(), k).n.split(" – ")[0].split(" (")[0]).join(", ")}.` : "") : `Plan shares sum to ${m.mixSum}% – must be 100%. Fix the mix in Plans & prices above.`;
+    return false;
+  }
+  el("stalenote").style.display = "none"; el("stalenote").classList.remove("err");
   renderOut(m);
+  return true;
 }
 function sensitivity(m){
   // Levers = "close the gap to the top quartile" on each benchmarked stage: the P75 benchmark (P25 for costs) for the current
@@ -1620,12 +1631,14 @@ function writeHash(){
   } catch(e){}
 }
 el("calcbtn").addEventListener("click", () => {
-  calc();
+  const ok = calc();
   writeHash();
-  el("results").classList.remove("dim");
-  el("stalenote").style.display = "none";
   const b = el("calcbtn");
-  b.textContent = "Calculated ✓";
+  if (ok){
+    el("results").classList.remove("dim");
+    el("stalenote").style.display = "none";
+    b.textContent = "Calculated ✓";
+  } else b.textContent = "Fix the input ↑";
   setTimeout(() => { b.textContent = "Calculate"; }, 900);
 });
 el("budget").addEventListener("input", () => { if (window._m) renderBudget(window._m); });
