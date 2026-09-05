@@ -15,6 +15,7 @@ All pages are static HTML with a TL;DR block at the top, en-dash typography, and
 - [Job boards are full of marketing. Most of it isn't.](https://mariascales.com/research/marketing-market/article/): 18,436 open postings from 590 company career pages (Jul–Aug 2026) – two thirds of "marketing" roles are sales; B2B 68% vs B2C 29% commercial; 83% of "remote" roles are single-country
 - [The Job Search Problem – Building a Reverse ATS](https://mariascales.com/research/job-search-automation/): series on partially automating a job search – ~65% sourcing overhead, the 7-second resume screen sources, 74% career-page probability, ATS public APIs (Greenhouse, Lever, Ashby, Workday), an eight-table SQLite schema, 13 pitfalls
 - [The Long Bet: STEM Education in the Age of AI](https://mariascales.com/research/long-bet/): 100 ARWU universities, 19 countries, 31 STEM programmes – CS at 95, standalone AI at 12; the four load-bearing A-levels (Mathematics, Further Mathematics, Physics, Chemistry); seven scarcity cycles in data and computing since the 1880s
+- [ARWU Top 100 by Country, 2003–2025 – dataset](https://mariascales.com/research/long-bet/data/): every university in ranks 1–100 of the Shanghai Ranking, 23 editions, one CSV (2,303 rows) and one table – US 52 → 37 seats, China 0 → 13 all since 2016, UK 8 → 11 → 8, Germany 4 → 4
 
 ## Case studies
 
