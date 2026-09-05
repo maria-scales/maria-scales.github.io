@@ -12,16 +12,19 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="Five lists, one SQLite schema. How I translated a job search framework into a relational database that tracks companies, postings, CVs, and applications through a single pipeline.">
+  <meta name="description" content="Five lists, one SQLite schema: how a job search framework became a relational database tracking companies, postings, CVs and applications in one pipeline.">
   <link rel="canonical" href="https://mariascales.com/research/job-search-database/article/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="The Job Search Database: Engineering the Funnel (Building a Reverse ATS) – Maria Atamanova">
-  <meta property="og:description" content="Five lists, one SQLite schema. How I translated a job search framework into a relational database that tracks companies, postings, CVs, and applications through a single pipeline.">
+  <meta property="og:description" content="Five lists, one SQLite schema: how a job search framework became a relational database tracking companies, postings, CVs and applications in one pipeline.">
   <meta property="og:url" content="https://mariascales.com/research/job-search-database/article/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta property="og:site_name" content="Maria Atamanova">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Job Search Database: Engineering the Funnel (Building a Reverse ATS) – Maria Atamanova">
-  <meta name="twitter:description" content="Five lists, one SQLite schema. How I translated a job search framework into a relational database that tracks companies, postings, CVs, and applications through a single pipeline.">
+  <meta name="twitter:description" content="Five lists, one SQLite schema: how a job search framework became a relational database tracking companies, postings, CVs and applications in one pipeline.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,6 +85,38 @@
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mariascales.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research",
+      "item": "https://mariascales.com/research/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Job Search Problem",
+      "item": "https://mariascales.com/research/job-search-automation/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Full article",
+      "item": "https://mariascales.com/research/job-search-database/article/"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 <header>
@@ -94,7 +129,7 @@
 <div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/job-search-automation/">The Job Search Problem</a><span>›</span><strong>Full article</strong></div></div>
 <div class="page-header">
   <div class="container">
-    <div class="page-title">The Job Search Database: Engineering the Funnel (Building a Reverse ATS)</div>
+    <h1 class="page-title">The Job Search Database: Engineering the Funnel (Building a Reverse ATS)</h1>
     <div class="page-meta">Jun 2026 · Original research</div>
   </div>
 </div>
@@ -164,7 +199,7 @@
       <p><strong>Query power.</strong> With SQLite I can ask: "show me all English-language remote roles at companies over 200 people that appeared in the last 7 days and I haven't reviewed yet" – in a single statement. In Google Sheets that requires multiple filter columns, manual sorting, and breaks as the dataset grows. CSV has no query capability at all.</p>
       <p><strong>Pipeline integrity.</strong> The <code>applications</code> table has foreign keys to <code>job_postings</code>, <code>companies</code>, <code>cv_versions</code>, and <code>cover_letters</code>. A posting can't be linked to a company that doesn't exist. An application can't reference a CV that was never tracked. Sheets and CSV have no referential integrity – a typo in a company name silently creates a duplicate.</p>
       <p><strong>Automation.</strong> The scraper writes to <code>job_postings</code> using an upsert: <code>ON CONFLICT(company_id, ats_job_id) DO UPDATE SET last_seen_at = CURRENT_TIMESTAMP</code>. Every run deduplicates automatically. Doing this reliably in Google Sheets requires Apps Script, race conditions, and ongoing maintenance. CSV requires reading the whole file, deduplicating in memory, and rewriting it on every run.</p>
-      <p><strong>Why not Postgres?</strong> Because this is a single-user local tool. SQLite is a single file. No server, no credentials, no infrastructure. It handles millions of rows comfortably – far more than this pipeline will generate. The file lives next to the scripts, opens in <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for SQLite</a> for visual inspection, and backs up with a file copy. A server database would add real complexity for zero practical benefit at this scale.</p>
+      <p><strong>Why not Postgres?</strong> Because this is a single-user local tool. SQLite is a single file. No server, no credentials, no infrastructure. It handles millions of rows comfortably – far more than this pipeline will generate. The file lives next to the scripts, opens in <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener">DB Browser for SQLite</a> for visual inspection, and backs up with a file copy. A server database would add real complexity for zero practical benefit at this scale.</p>
     </div>
 
     <h2>Visualisation</h2>
@@ -183,7 +218,7 @@
 
     <p>The thing I find most useful in retrospect is the <code>application_status_history</code> table. It turns the job search – which normally feels like a black box where things happen to you – into a measurable funnel where you can see exactly where things break down. That shift from passive to analytical changes how the whole process feels.</p>
 
-    <p>If you're running a serious job search and tracking it in a spreadsheet, I'd genuinely recommend investing a weekend in a setup like this. If you've built something similar – or have a better approach to any of the pieces – I'd be curious to hear about it <a href="https://www.linkedin.com/in/atamanova-m/" target="_blank">on LinkedIn</a>.</p>
+    <p>If you're running a serious job search and tracking it in a spreadsheet, I'd genuinely recommend investing a weekend in a setup like this. If you've built something similar – or have a better approach to any of the pieces – I'd be curious to hear about it <a href="https://www.linkedin.com/in/atamanova-m/" target="_blank" rel="noopener">on LinkedIn</a>.</p>
 
   </div>
 </div>
@@ -194,9 +229,9 @@
     <div class="section-label">Contact</div>
     <div class="contact-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
-      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
-      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
-      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>

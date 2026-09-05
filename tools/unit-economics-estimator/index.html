@@ -492,7 +492,7 @@
     <ul class="note fdhow" style="margin-top:14px">
       <li><strong>Weekly LTV lives or dies in the first month</strong>: by M3 the median weekly cohort is already below 26%, by M12 – 1–2%. Monthly survives 6–14% to M12; Business is the outlier in both.</li>
       <li><strong>Store choice barely matters after the first renewal</strong> – early funnel quality dominates.</li>
-      <li><strong>One structural exception</strong>: 32.3% of Google Play cancellations are involuntary billing failures vs 15.2% on the App Store [B, RC blog; the report card rounds them to 31% / 14% <a href="https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/" target="_blank" style="color:var(--link);text-decoration:none">↗</a>] – grace periods and payment retries recover a chunk of it for free.</li>
+      <li><strong>One structural exception</strong>: 32.3% of Google Play cancellations are involuntary billing failures vs 15.2% on the App Store [B, RC blog; the report card rounds them to 31% / 14% <a href="https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/" target="_blank" style="color:var(--link);text-decoration:none" rel="noopener">↗</a>] – grace periods and payment retries recover a chunk of it for free.</li>
     </ul>
     <details class="mnotes fdassume"><summary>How these curves are built – sources, interpolation, what the equations mean</summary>
     <ul style="margin:6px 0 0">
@@ -568,7 +568,7 @@
     </ul>
     <p class="note" ><strong>The golden rule regardless of method: segment.</strong> One blended LTV hides more than it shows – compute per plan, per platform, per geo, per acquisition channel (this whole calculator is that rule applied: vertical × geo × platform × plan).</p>
     <p class="note"><strong>Consistency checks:</strong> the built-in self-test (button in the footer, or <a href="?test=1">?test=1</a>) runs 34 assertions live in your browser – anchor hits, monotonicity, tab-to-tab consistency, hand-recalculated snapshots, guards – on exactly the code that computes your numbers. They prove the model is internally consistent, not that the benchmarks are right; for that, every field carries its source and confidence tag.</p>
-    <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
+    <p class="note">The Bottoms Up / Top Down framing and spreadsheet mechanics: <a href="https://www.slideshare.net/EricSeufert/ltv-spreadsheet-models-eric-seufert" target="_blank" rel="noopener">Eric Seufert (Wooga) – LTV spreadsheet models</a>.</p>
   </div><!-- /tab-ltv -->
 
   <div id="tab-vat" style="display:none">
@@ -679,25 +679,25 @@
     <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only, collected July 2026 and re-verified against the live pages on 4 Sep 2026; the data itself is of mixed vintage (RC / Adapty / Lebesgue / Triple Whale / RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool.</p>
     <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">34 assertions, live in your browser</span></p>
     <details class="mnotes"><summary>All sources – 24 links</summary><p style="margin:6px 0 0;line-height:1.7">
-    <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank">RevenueCat SOSA 2026</a> ·
-    <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
-    <a href="https://adapty.io/blog/high-performing-paywall-2026/" target="_blank">Adapty paywall data</a> ·
-    <a href="https://lebesgue.io/facebook-ads/facebook-cpm-by-country" target="_blank">Lebesgue CPM by country</a> ·
-    <a href="https://adcostly.com/facebook-ads-cost-in-turkey" target="_blank">ADCostly (TR)</a> ·
-    <a href="https://bir.ch/blog/meta-ad-costs-analysis" target="_blank">Bïrch seasonality</a> ·
-    <a href="https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate" target="_blank">Superads CTR</a> ·
-    <a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank">Triple Whale</a> ·
-    <a href="https://www.apptweak.com/en/aso-blog/average-app-conversion-rate-per-category" target="_blank">AppTweak store CVR (2025 store averages)</a> · <a href="https://www.adjust.com/blog/what-is-a-good-conversion-rate/" target="_blank">Adjust – AppTweak H1 2024 category CVRs</a> · <a href="https://adapty.io/blog/app-store-conversion-rate/" target="_blank">Adapty – App Store conversion by category</a> ·
-    <a href="https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026" target="_blank">SplitMetrics category CVR (via AppScreenshotStudio)</a> ·
-    <a href="https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category" target="_blank">RC renewal rates by category</a> ·
-    <a href="https://www.revenuecat.com/blog/engineering/android-paywall-gap" target="_blank">RC – the Android paywall gap</a> ·
-    <a href="https://www.tryinteract.com/blog/quiz-conversion-rate-report/" target="_blank">Interact quiz report</a> ·
-    <a href="https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking" target="_blank">Superwall</a> ·
-    <a href="https://mobiledevmemo.com/mai-vs-aeo-vs-vo-campaigns-building-a-mobile-traffic-strategy-on-facebook/" target="_blank">Mobile Dev Memo (MAI/AEO)</a> ·
-    <a href="https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods" target="_blank">Stripe – Apple Pay conversion lift</a> ·
-    <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank">Stripe vs Paddle fees</a> ·
-    <a href="https://www.rocketshiphq.com/meta-cost-benchmarks-mobile-app-installs/" target="_blank">RocketShip HQ – Meta app-install CPI/CPM 2026</a> ·
-    <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank">Meta location fees (Jul 2026)</a> · <a href="https://support.google.com/googleplay/android-developer/answer/138000" target="_blank">Google Play – tax rates &amp; VAT by country</a> · <a href="https://developer.apple.com/news/?id=0l93cjfe" target="_blank">Apple – price and tax updates</a>.
+    <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank" rel="noopener">RevenueCat SOSA 2026</a> ·
+    <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank" rel="noopener">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
+    <a href="https://adapty.io/blog/high-performing-paywall-2026/" target="_blank" rel="noopener">Adapty paywall data</a> ·
+    <a href="https://lebesgue.io/facebook-ads/facebook-cpm-by-country" target="_blank" rel="noopener">Lebesgue CPM by country</a> ·
+    <a href="https://adcostly.com/facebook-ads-cost-in-turkey" target="_blank" rel="noopener">ADCostly (TR)</a> ·
+    <a href="https://bir.ch/blog/meta-ad-costs-analysis" target="_blank" rel="noopener">Bïrch seasonality</a> ·
+    <a href="https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate" target="_blank" rel="noopener">Superads CTR</a> ·
+    <a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank" rel="noopener">Triple Whale</a> ·
+    <a href="https://www.apptweak.com/en/aso-blog/average-app-conversion-rate-per-category" target="_blank" rel="noopener">AppTweak store CVR (2025 store averages)</a> · <a href="https://www.adjust.com/blog/what-is-a-good-conversion-rate/" target="_blank" rel="noopener">Adjust – AppTweak H1 2024 category CVRs</a> · <a href="https://adapty.io/blog/app-store-conversion-rate/" target="_blank" rel="noopener">Adapty – App Store conversion by category</a> ·
+    <a href="https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026" target="_blank" rel="noopener">SplitMetrics category CVR (via AppScreenshotStudio)</a> ·
+    <a href="https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category" target="_blank" rel="noopener">RC renewal rates by category</a> ·
+    <a href="https://www.revenuecat.com/blog/engineering/android-paywall-gap" target="_blank" rel="noopener">RC – the Android paywall gap</a> ·
+    <a href="https://www.tryinteract.com/blog/quiz-conversion-rate-report/" target="_blank" rel="noopener">Interact quiz report</a> ·
+    <a href="https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking" target="_blank" rel="noopener">Superwall</a> ·
+    <a href="https://mobiledevmemo.com/mai-vs-aeo-vs-vo-campaigns-building-a-mobile-traffic-strategy-on-facebook/" target="_blank" rel="noopener">Mobile Dev Memo (MAI/AEO)</a> ·
+    <a href="https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods" target="_blank" rel="noopener">Stripe – Apple Pay conversion lift</a> ·
+    <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank" rel="noopener">Stripe vs Paddle fees</a> ·
+    <a href="https://www.rocketshiphq.com/meta-cost-benchmarks-mobile-app-installs/" target="_blank" rel="noopener">RocketShip HQ – Meta app-install CPI/CPM 2026</a> ·
+    <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank" rel="noopener">Meta location fees (Jul 2026)</a> · <a href="https://support.google.com/googleplay/android-developer/answer/138000" target="_blank" rel="noopener">Google Play – tax rates &amp; VAT by country</a> · <a href="https://developer.apple.com/news/?id=0l93cjfe" target="_blank" rel="noopener">Apple – price and tax updates</a>.
     </p></details>
   </div>
 </div>
@@ -707,9 +707,9 @@
     <div class="section-label">Contact</div>
     <div class="contact-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
-      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
-      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
-      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
