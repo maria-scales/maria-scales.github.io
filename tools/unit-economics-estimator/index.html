@@ -123,11 +123,16 @@
   .selftest-link { display:inline-block; margin-top:10px; border:1.5px solid #72C09B; color:#16355C !important; border-radius:7px; padding:4px 12px; font-weight:600; font-size:.8125rem; text-decoration:none; transition:background .15s; }
   .selftest-link .tick { color:#4FA47F; }
   .selftest-link:hover { background:#72C09B; color:#16355C !important; }
-  .out { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0; }
+  .out { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:14px 0; }
+  @media (max-width:760px){ .out { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px){ .grid { grid-template-columns:repeat(2,1fr); gap:8px; } .card { padding:8px 10px; } .kpi .v { font-size:1.15rem; } }
+  .th-short { display:none; } @media (max-width:480px){ .th-long { display:none; } .th-short { display:inline; } }
+  .howto { margin:0; padding-left:20px; line-height:1.5; } .howto li { margin:0 0 5px; }
+  .site-nav .container { overflow-x:auto; scrollbar-width:none; } .site-nav .container::-webkit-scrollbar { display:none; }
   .kpi { border:1px solid var(--line); border-radius:8px; padding:12px; text-align:center; }
   .kpi .v { font-size:1.35rem; font-weight:700; }
   .kpi .l { font-size:.6875rem; color:var(--sub); text-transform:uppercase; letter-spacing:.05em; }
-  .verdict { border-radius:8px; padding:14px 16px; font-weight:600; margin:6px 0 20px; }
+  .verdict { border-radius:8px; padding:14px 16px; font-weight:600; margin:6px 0 4px; font-size:1.0625rem; }
   .v-good { background:#ecfdf5; color:var(--good); border:1px solid #a7f3d0; }
   .v-bad { background:#fef2f2; color:var(--bad); border:1px solid #fecaca; }
   .note { font-size:.8125rem; color:var(--sub); }
@@ -244,7 +249,7 @@
   </div>
 </div>
 <div class="est-wrap">
-  <div class="meta"><strong>Subscription apps only</strong> – ad-monetized (IAA), hybrid and commerce economics are separate models and out of scope. Estimation covers the app→app funnel (and web→web quiz funnel), Meta acquisition, hard paywall only. Does this growth math ever close? Set your plans and prices; every other field starts from a public benchmark – override anything you actually know. Manual values are treated as <em>effective</em>: season, optimization-event, platform and paid-traffic auto-factors are not applied on top of them. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
+  <div class="meta"><strong>Subscription apps only</strong> – ad-monetized (IAA), hybrid and commerce economics are out of scope. App→app and web→web quiz funnels, Meta acquisition, hard paywall. Does this growth math ever close? Set your plans and prices; every other field starts from a public benchmark – override anything you actually know. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
 
   <div class="tabs">
     <button id="tabbtn-calc" class="active">Calculator</button>
@@ -260,12 +265,12 @@
   </div>
   <div class="card" style="margin:10px 0 4px;background:#fff;border-color:#dbe4f0">
     <div style="font-size:.875rem;color:var(--link);font-weight:600;margin-bottom:6px">How to use – 30 seconds</div>
-    <div class="note" style="max-width:760px">
-      1. Pick your <strong>vertical</strong> and <strong>geo</strong> – every benchmark field fills itself from public data (RevenueCat, Adapty, Lebesgue, Interact…). The install→trial benchmark defaults to <strong>hard-paywall apps</strong> (this tool's scope); switch the base to "All apps" for the raw RC panel median.<br>
-      2. Enter <strong>your plans and prices</strong> – the only thing the tool can't know.<br>
-      3. The default case is already computed – press <strong>Calculate</strong> after every change. Override any field where you have real data (it turns blue = "my data"), and use the scenario preset to swing all remaining benchmarks between P25 and P75 – conversion and retention fields go up with the scenario, the cost field (CPM) goes the opposite way, so Pessimistic = every stage against you, Aspirational = every stage for you. Note that a preset moves <em>every</em> stage at once: ten stages at P25 compound into a far worse outcome than "a P25 app".<br>
-      Early stage? Switch retention to <em>Fit from my first 2 renewals</em>. Want a colleague to see exactly your setup – <em>Copy share link</em>.
-    </div>
+    <ol class="note howto">
+      <li>Pick your <strong>vertical</strong> and <strong>geo</strong> – every benchmark fills itself from public data (RevenueCat, Adapty, Lebesgue, Interact…). The install→trial benchmark defaults to <strong>hard-paywall apps</strong>; switch the base to "All apps" for the raw RC panel median.</li>
+      <li>Enter <strong>your plans and prices</strong> – the only thing the tool can't know.</li>
+      <li>Press <strong>Calculate</strong> after every change (the default case is already computed). Override any field you have real data for – it turns blue = "my data" and is used as-is: season, optimization-event, platform and paid-traffic factors are not applied on top.</li>
+      <li>The <strong>scenario preset</strong> swings every remaining benchmark at once – conversions and retention to P25 / P75, CPM the opposite way, so Pessimistic = every stage against you. Ten stages at P25 compound into far worse than "a P25 app". Early stage? Switch retention to <em>Fit from my first 2 renewals</em>. Show a colleague your exact setup – <em>Copy share link</em>.</li>
+    </ol>
   </div>
   <h2>Setup</h2>
   <div class="grid">
@@ -285,7 +290,7 @@
 
   <h2>Plans &amp; prices <span class="note">(your data – required; mix must sum to 100%)</span></h2>
   <div class="mixwrap"><table class="mix">
-    <tr><th>Plan</th><th>On</th><th>Price, $</th><th>1st-period price, $ <span class="note">(intro offer – optional)</span></th><th>Share of subscriptions, %</th></tr>
+    <tr><th>Plan</th><th>On</th><th>Price, $</th><th><span class="th-long">1st-period price, $ <span class="note">(intro offer – optional)</span></span><span class="th-short">1st price, $</span></th><th><span class="th-long">Share of subscriptions, %</span><span class="th-short">Share, %</span></th></tr>
     <tr><td>Weekly</td><td><input type="checkbox" id="wk_on"></td><td><input type="number" id="wk_p" value="5.99" step="0.01"></td><td><input type="number" id="wk_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="wk_s" value="0"></td></tr>
     <tr><td>Monthly</td><td><input type="checkbox" id="mo_on" checked></td><td><input type="number" id="mo_p" value="19.99" step="0.01"></td><td><input type="number" id="mo_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="mo_s" value="48"></td></tr>
     <tr><td>Yearly</td><td><input type="checkbox" id="yr_on" checked></td><td><input type="number" id="yr_p" value="59.99" step="0.01"></td><td><input type="number" id="yr_i" value="" placeholder="= price" step="0.01"></td><td><input type="number" id="yr_s" value="52"></td></tr>
@@ -319,12 +324,13 @@
   <button id="sharebtn" class="calcbtn" style="background:#fff;color:var(--link);border:1px solid var(--link);margin-left:8px">Copy share link</button>
   <div class="stalenote" id="stalenote">Press Calculate to compute the results with the current inputs.</div>
   <div id="results" class="dim">
+  <div class="verdict" id="verdict">…</div>
   <div class="out">
         <div class="kpi"><div class="v" id="o_ltv">–</div><div class="l">Blended net LTV M13</div></div>
         <div class="kpi"><div class="v" id="o_cpa">–</div><div class="l" id="o_cpa_l">Modeled CPA</div></div>
         <div class="kpi"><div class="v" id="o_roas">–</div><div class="l">LTV / CPA</div></div>
         <div class="kpi"><div class="v" id="o_payback">–</div><div class="l">Payback month (net)</div></div>
-        <div class="kpi"><div class="v" id="o_cpi">–</div><div class="l">Modeled CPI / CPC</div></div>
+        <div class="kpi"><div class="v" id="o_cpi">–</div><div class="l" id="o_cpi_l">Modeled CPI (blended w/ organic)</div></div>
         <div class="kpi"><div class="v" id="o_tcpa">–</div><div class="l">Target CPA (at ROAS goal)</div></div>
     <div class="kpi"><div class="v" id="o_tcpt">–</div><div class="l">Target CPT / CPI</div></div>
     <div class="kpi" style="padding:8px 12px"><label style="margin-bottom:6px">Target ROAS (net LTV ÷ CPA)</label><input type="number" id="troas" value="1.3" step="0.1" min="0.1" style="max-width:120px;margin:0 auto;display:block;text-align:center"></div>
@@ -333,7 +339,6 @@
     <div style="min-width:170px;max-width:200px"><label>Monthly ad budget, $</label><input type="number" id="budget" value="10000" step="500" min="0"></div>
     <div class="note" id="budgetout" style="flex:1;min-width:260px;font-size:.875rem"></div>
   </div>
-  <div class="verdict" id="verdict">…</div>
   <div id="sensbox" style="margin:4px 0 14px"></div>
   <div class="note" id="explain"></div>
   </div><!-- /results -->
@@ -359,7 +364,7 @@
     </div>
     <details class="mnotes fdcompare" id="fd-compare"><summary id="fd-compare-sum">Compare with the other funnel on the same Setup</summary><div id="fd-other"></div></details>
     <details class="mnotes fdassume"><summary>Assumptions behind the numbers – every constant as in the code</summary>
-    <p class="note" style="margin:6px 0 4px">Every number below is what the code uses today (constants in <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code>, <code>MAI</code>); the reasoning behind each choice lives in the Design Decisions log; every source was re-checked against its live page on 4 Sep 2026. Scenario presets move conversion and retention fields P25 → P75 and the CPM the opposite way.</p>
+    <p class="note" style="margin:6px 0 4px">Every number below is what the code uses today (constants in <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code>, <code>MAI</code>); the reasoning behind each choice lives in <a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/" target="_blank" style="color:var(--link)">Design decisions</a>; every source was re-checked against its live page on 4 Sep 2026. Scenario presets move conversion and retention fields P25 → P75 and the CPM the opposite way.</p>
     <ul class="note" style="line-height:1.7">
       <li><span class="tag tE">E</span> <strong>CTR 1.2 / 1.6 / 2.0%</strong> – our band for video/UGC app-install creatives; the public panels bracket it without a creative-type split (Superads industry average 0.90–1.10%, Triple Whale e-commerce median 2.39%) – no OS split.</li>
       <li><span class="tag tA">A</span> <strong>Click → store page 85 / 90 / 95%</strong> – in-app browser → deeplink losses; no public data.</li>
@@ -551,7 +556,9 @@
   </div><!-- /tab-ref -->
 
   <div class="note" style="border-top:1px solid var(--line); margin-top:36px; padding:16px 0 8px">
-    <strong>Sources</strong> · collected July 2026, re-verified against the live pages 4 Sep 2026; the data itself is of mixed vintage (RC/Adapty/Lebesgue/Triple Whale/RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the captions; verify before big bets:
+    <p style="margin:0 0 8px"><strong>Sources</strong> · public benchmarks only, collected July 2026 and re-verified against the live pages on 4 Sep 2026; the data itself is of mixed vintage (RC / Adapty / Lebesgue / Triple Whale / RocketShip 2026, AppTweak H1 2024, Bïrch 2021–23, Superwall 2022, TUNE 2017) – see the <em>why?</em> on each field and verify before big bets. Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool.</p>
+    <p style="margin:0 0 10px"><a href="?test=1" class="selftest-link" style="margin-top:0"><span class="tick">✓</span> Run the built-in self-test</a> <span style="margin-left:8px">34 assertions, live in your browser</span></p>
+    <details class="mnotes"><summary>All sources – 22 links</summary><p style="margin:6px 0 0;line-height:1.7">
     <a href="https://www.revenuecat.com/state-of-subscription-apps/" target="_blank">RevenueCat SOSA 2026</a> ·
     <a href="https://adapty.io/state-of-in-app-subscriptions/" target="_blank">Adapty SOIS 2026</a> (paywall, trial, web and AI figures are from Adapty's paywall blog post below) ·
     <a href="https://adapty.io/blog/high-performing-paywall-2026/" target="_blank">Adapty paywall data</a> ·
@@ -571,7 +578,7 @@
     <a href="https://designrevision.com/blog/stripe-vs-paddle" target="_blank">Stripe vs Paddle fees</a> ·
     <a href="https://www.rocketshiphq.com/meta-cost-benchmarks-mobile-app-installs/" target="_blank">RocketShip HQ – Meta app-install CPI/CPM 2026</a> ·
     <a href="https://almcorp.com/blog/meta-location-fees-2026-ad-price-increase-six-countries/" target="_blank">Meta location fees (Jul 2026)</a>.
-    Fields tagged <span class="tag tA">A</span> are documented assumptions pending research. No client data anywhere in this tool. &nbsp; <a href="?test=1" class="selftest-link"><span class="tick">✓</span> Run the built-in self-test</a>
+    </p></details>
   </div>
 </div>
 <div class="back-link"><div class="container"><a href="/tools/">← Back to Tools</a></div></div>
@@ -1177,7 +1184,8 @@ function renderOut(m){
   el("o_cpa").textContent = cpa === null ? "n/a (no trial)" : fmt$(cpa);
   el("o_cpa_l").textContent = "Modeled CPA (subscription)";
   el("o_roas").textContent = isFinite(roas) ? roas.toFixed(2) : "–";
-  el("o_cpi").textContent = fmt$(m.cpi) + (funnel === "a2a" ? " CPI (blended w/ organic)" : " per quiz start");
+  el("o_cpi").textContent = fmt$(m.cpi);
+  el("o_cpi_l").textContent = funnel === "a2a" ? "Modeled CPI (blended w/ organic)" : "Modeled cost per quiz start";
   el("o_tcpa").textContent = fmt$(tcpa);
   el("o_tcpt").textContent = m.withTrial ? (fmt$(tcpt) + (tcpi ? " / " + fmt$(tcpi) : "")) : (tcpi ? fmt$(tcpi) + " CPI" : "–");
   const close = m.net > m.cpsub * m.troas;
@@ -1233,7 +1241,7 @@ function renderOut(m){
     bits.push(`CPI cross-check: modeled paid CPI ${fmt$(paidCpi)} (blended with organic: ${fmt$(m.cpi)}) vs industry median ~$${bench} for ${PLAT[el("platform").value].name} ${useVert ? m.vert.name + " (" + m.vert.cpiBench.src + ") [B]" : "non-gaming (" + m.geo.name + ") [E]"}${ratio > 1.5 || ratio < 1/1.5 ? " ⚠ ×" + ratio.toFixed(1) + " apart – check CPM/CTR/store CVR inputs" : " ✓"}.`);
   }
   if (funnel === "a2a" && el("platform").value === "ios" && ["aeo_trial","aeo_purchase"].includes(m.opt)) bits.push(`iOS signal loss: 30–60% of conversions can be invisible to Meta (SKAN/AAK thresholds & delays) [E] – AEO learns slower; CAPI/AEM hygiene and a day-0 event are critical.`);
-  if (el("platform").value === "android" && funnel === "a2a") bits.push(`⚠ Android: your prices are used as entered – but Android subscribers typically pay back less (ARPU factor ~×0.8 [A], see the funnel tab: Play billing-error churn 32.3% vs 15.2%, lower price acceptance). If these are your US/iOS prices, the LTV here is optimistic.`);
+  if (el("platform").value === "android" && funnel === "a2a") bits.push(`⚠ Android: your prices are used as entered – but Android subscribers typically pay back less (ARPU factor ~×0.8 [A], see Funnel diagnostics: Play billing-error churn 32.3% vs 15.2%, lower price acceptance). If these are your US/iOS prices, the LTV here is optimistic.`);
   if (el("platform").value !== "ios" && funnel === "a2a") bits.push(`Store CVR for ${PLAT[el("platform").value].name}: ${el("platform").value === "android" ? "Google Play data (AppTweak H1 2024 via Adjust / Adapty)" : "the average of App Store (SplitMetrics) and Google Play (AppTweak H1 2024 via Adjust / Adapty) data"} [${el("platform").value === "android" ? m.vert.scvrATag : m.vert.scvrTag + "/" + m.vert.scvrATag}]; paywall stage ×${PLAT[el("platform").value].pwF} [B, RC store split], trial→paid at store parity [B]${dd("3", "why: §3, §12")}.`);
   if (funnel === "w2w" && el("platform").value !== "blend") bits.push(`Device targeting: ${PLATW[el("platform").value].name} – CPM ×${PLATW[el("platform").value].cpmF}, checkout completion ×${PLATW[el("platform").value].ccF} [A, provisional].`);
   if (el("geo").value === "tr") bits.push(`⚠ Turkey: Meta's 5% "location fee" is added ON TOP of the budget (applied from May 2026, full billing from 1 Jul 2026; invoiced separately) [B] – not included in CPM here, add it to your target ROAS margin.`);
