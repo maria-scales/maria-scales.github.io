@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Economics Estimator – design decisions – Maria Atamanova</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="Why the Unit Economics Estimator computes what it computes: every formula, benchmark and rejected alternative behind the calculator – scenarios as percentiles, AEO as the cost basis, the hard-paywall benchmark base, LTV as a payment schedule – with the dated decision log.">
+  <link rel="canonical" href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Unit Economics Estimator – design decisions – Maria Atamanova">
+  <meta property="og:description" content="Why the Unit Economics Estimator computes what it computes: every formula, benchmark and rejected alternative behind the calculator – scenarios as percentiles, AEO as the cost basis, the hard-paywall benchmark base, LTV as a payment schedule – with the dated decision log.">
+  <meta property="og:url" content="https://mariascales.com/tools/unit-economics-estimator/design-decisions/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Unit Economics Estimator – design decisions – Maria Atamanova">
+  <meta name="twitter:description" content="Why the Unit Economics Estimator computes what it computes: every formula, benchmark and rejected alternative behind the calculator – scenarios as percentiles, AEO as the cost basis, the hard-paywall benchmark base, LTV as a payment schedule – with the dated decision log.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.3; }
+    .page-subtitle { font-size: 1rem; color: #6b7280; margin-bottom: 8px; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 40px 0 14px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 28px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 14px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content a { color: #1e40af; }
+    .article-content code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #f3f4f6; padding: 1px 5px; border-radius: 3px; color: #111827; }
+    hr { border: none; border-top: 1px solid #f3f4f6; margin: 36px 0; }
+    .figure { margin: 24px 0 28px; }
+    .figure img { width: 100%; display: block; }
+    .article-content table { border-collapse: collapse; width: 100%; margin: 20px 0 24px; font-size: 0.9375rem; }
+    .article-content th, .article-content td { padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-align: left; color: #374151; }
+    .article-content th { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #9ca3af; border-bottom: 1px solid #d1d5db; }
+    .article-content td:not(:first-child), .article-content th:not(:first-child) { text-align: right; }
+    .article-content h2 { font-size: 1.0625rem; font-weight: 700; text-transform: none; letter-spacing: -0.01em; color: #111827; margin: 40px 0 12px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .data-note { font-size: 0.875rem; color: #6b7280; }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .callout code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #e9eaec; padding: 1px 5px; border-radius: 3px; color: #111827; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+    .article-content pre { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 14px; margin: 10px 0 16px; font-size: 0.8125rem; line-height: 1.55; overflow-x: auto; }
+    .article-content pre code { background: none; padding: 0; font-size: inherit; }
+    .article-content h3 { margin-top: 24px; }
+    .tablewrap { overflow-x: auto; margin: 20px 0 24px; }
+    .article-content table.dlog { margin: 0; font-size: 0.8125rem; min-width: 640px; }
+    .article-content table.dlog td, .article-content table.dlog th { text-align: left; vertical-align: top; }
+    .article-content table.dlog td:first-child { white-space: nowrap; color: #6b7280; }
+    .article-content table.dlog td:last-child { white-space: nowrap; }
+    .toc { columns: 2; column-gap: 28px; padding-left: 0; margin: 0; list-style: none; }
+    .toc li { font-size: 0.875rem; margin-bottom: 4px; break-inside: avoid; }
+    @media (max-width: 600px) { .toc { columns: 1; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link">Research</a><a href="/tools/" class="nav-link active">Tools</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/tools/">Tools</a><span>›</span><a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a><span>›</span><strong>Design decisions</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">Unit Economics Estimator – design decisions</div>
+    <div class="page-subtitle">The calculations, and why this way and not another: what is computed → formula → why → what was rejected → status. The <a href="/tools/unit-economics-estimator/">calculator</a> links here from its results block.</div>
+    <div class="page-meta">Sep 2026 · v1.1 · Systems · companion to the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+    <p class="data-note"><em>Supporting document for the Unit Economics Estimator (v1.1, September 2026). Each entry: <strong>what is computed → formula → why → what was rejected → status</strong>. Every number is the one in the calculator's code (constants <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code> / <code>PLATW</code>, <code>MAI</code>, <code>TRIALLEN</code>, <code>BASE</code>, <code>COST_SCEN</code>, stage tables <code>A2A_STAGES</code> / <code>W2W_STAGES</code>, <code>LTV_FIELDS</code>); the source of each benchmark is captioned on the field inside the tool. The dated decision log is at the end.</em></p>
+    <p class="data-note"><em>Notation: [B] benchmark · [E] estimate · [A] assumption · "decision DD.MM" – the date the choice was fixed.</em></p>
+    <div class="callout"><div class="callout-label">Contents</div>
+    <ul class="toc"><li><a href="#s0">0. Architecture: two modes for every field</a></li><li><a href="#s1">1. Scenarios = benchmark percentiles</a></li><li><a href="#s2">2. CPM</a></li><li><a href="#s3">3. From impression to install (a2a)</a></li><li><a href="#s4">4. From install to trial</a></li><li><a href="#s5">5. From trial to subscriber</a></li><li><a href="#s6">6. Optimization event: AEO is the base, MAI is a discount</a></li><li><a href="#s7">7. w2w (quiz funnel, hard paywall at the end of the quiz)</a></li><li><a href="#s8">8. LTV M13 – the payment schedule</a></li><li><a href="#s9">9. Net: what is deducted and in which order</a></li><li><a href="#s10">10. Verdict and targets</a></li><li><a href="#s11">11. Sensitivity – "where the headroom is"</a></li><li><a href="#s12">12. The Funnel diagnostics tab – iOS vs Android</a></li><li><a href="#s13">13. Cross-checks</a></li><li><a href="#s14">14. Minor decisions</a></li><li><a href="#s15">15. Deliberately not modeled (v1)</a></li><li><a href="#s16">16. Source check – what changed after an independent verification</a></li><li><a href="#s17">17. Decision log</a></li></ul>
+    </div>
+<h2 id="s0">0. Architecture: two modes for every field</h2>
+<p><strong>What.</strong> Every numeric field lives either as a benchmark (picked by vertical × geo × scenario) or as my data (typed in, shown in blue).</p>
+<p><strong>The effective-value rule.</strong> A typed value is used as is: seasonality and the optimization-event discount are not applied to a typed CPM; the paid-traffic factor and the platform factor are not applied to a typed store CVR; the intent factor of the optimization event and the platform factor are not applied to a typed paywall→trial; geo and trial length are not applied to a typed trial→paid; the AI factor and the price ramp are not applied to typed retention anchors.</p>
+<p><strong>Why.</strong> An observed number already contains the user's reality: their season, their optimization event, their platform. Applying a modifier on top counts it twice.</p>
+<p><strong>Rejected.</strong> "Typed value = base, modifiers on top." Convenient for what-ifs ("and with AEO?"), but it breaks on the main use case – the user types their actual CPM from Ads Manager, and that CPM is already an AEO price.</p>
+<p><strong>Consequence.</strong> On the Funnel tab a typed value makes the iOS and Android columns identical at that stage – correct, not a bug.</p>
+<hr>
+<h2 id="s1">1. Scenarios = benchmark percentiles</h2>
+<p><strong>Formula.</strong> The scenario's position on the P25 → median → P75 scale: Pessimistic 0, Conservative 0.3, Reasonable 0.5, Aspirational 1; linear interpolation between nodes.</p>
+<pre><code>pick(t, s):  x ≤ 0.5 → P25 + (med − P25)·x/0.5;   x &gt; 0.5 → med + (P75 − med)·(x − 0.5)/0.5
+</code></pre>
+<p><strong>Cost fields run the other way (decision 04.09).</strong> CPM (geo table, web table) takes the mirrored position: Pessimistic → P75 (an expensive auction), Conservative → between the median and P75, Aspirational → P25.</p>
+<pre><code>pickCost(t, s) = pick(t, mirror(s)),   mirror: p25→p75, p40→p60 (0.7), med→med, p75→p25
+</code></pre>
+<p><strong>Why.</strong> The word "pessimistic" promises the user "everything against you". A P25 cost is cheap, i.e. in your favour. Before the fix Pessimistic took CPM $12 against a median of $16, and Aspirational took $23: the preset partly cancelled itself, and a reader who knows that a P25 CPM is good caught the model contradicting itself.</p>
+<p><strong>Rejected.</strong> (b) Keep CPM at the median in every scenario and move only conversions and retention – the argument being "the market price is not luck, it is typed in". Rejected: seasonality and the optimization event already move CPM through their own selectors, and a scenario must be one movement – "every benchmark to the worse/better side" – or it needs a paragraph of caveats.</p>
+<p><strong>The scenario step – P25 / P75 of every stage – is a decision, not an oversight (04.09).</strong> The preset moves <em>each</em> of the ~10 multiplied stages to its quartile. The product of ten P25s is not "a P25 app": if the stages were independent the result would sit somewhere at P1–P5 of the distribution of outcomes; in practice the stages are positively correlated (a good team is good everywhere) and the result is less extreme – but still more extreme than a quartile. Numbers on the default H&amp;F × NA (hard-paywall base, AEO): cost per subscriber $802 / $182 / $79.51 / $9.42 (Pessimistic / Conservative / Reasonable / Aspirational), net LTV $55 / $60 / $63 / $71. The spread lives almost entirely on the CPA side – eight multipliers there; the LTV side moves ±13%.</p>
+<p>How to read it: <strong>Pessimistic = the lower quartile at every funnel stage, Aspirational = the upper quartile</strong>; not "a bad year" and "a good year" but "a weak team end-to-end" and "a strong team end-to-end". That is exactly how the selector and the how-to caption it.</p>
+<p>Rejected, and why:
+- <em>Narrow the stage step to P35/P65 so that the result is closer to the quartiles.</em> Rejected: then no number in the fields would match the public reports (RC, Adapty, Interact publish the median and the quartiles) – and matching the report is the first thing a reader checks, the main pillar of trust. Besides, P35/P65 is our invention; it has no source.
+- <em>Compute scenarios as percentiles of the outcome (Monte Carlo over correlations).</em> Rejected for v1: it needs correlations between stages that no report publishes; it would be [A] stacked on [A].
+- <em>Let the scenario move unsourced pairs (the MAI price/intent discount).</em> Rejected 04.09: the pair ×0.4/×0.4 [E] is fixed; otherwise a pure assumption would be added to the spread in both directions.</p>
+<p>What the user does with the spread: the preset is a starting point, not a forecast. A typed value takes that stage out of the preset; after three or four numbers of your own (CPM, CTR, install→trial, trial→paid) the spread collapses to the LTV side. Sensitivity shows which of the remaining stages holds the spread.</p>
+<hr>
+<h2 id="s2">2. CPM</h2>
+<pre><code>CPM_eff = pickCost(geo base, scenario) × platform × seasonality × optimization-event premium
+</code></pre>
+<ul>
+<li>Geo base [E]: NA 12/16/23, WE 7/9/12, LatAm 2/3/5.5, TR 0.9/1.2/2, Gulf 10/12/12.7, IN-SEA 1.4/2/3.4. Lebesgue publishes one value per country (e-commerce, 2026), ADCostly a Turkey average ($0.89); the P25/P75 band inside a region is our reconstruction from neighbouring countries and MAI ranges – the sources publish no percentiles (source check 04.09). w2w has its own table (<code>cpmW</code>): NA 11/15.06/18 – the Triple Whale median across all industries (40,000+ brands, Aug 2025 – Jul 2026; TW has no geo split), other geos scaled from a2a [A].</li>
+<li>Platform [A]: iOS ×1.1, Android ×0.95, Blended ×1.0. Why Android ×0.95 and not the ×0.85 of earlier notes: "cheap Android" is mostly geo mix, which the Geo selector already models; inside one geo the price difference is small.</li>
+<li>Seasonality [E, after Bïrch]: Jan–Feb ×0.80 · Mar–Jun ×0.96 · Jul–Aug ×0.88 · Sep–Oct ×1.08 · Nov ×1.33 · Dec ×1.40; "Annual average" ×1.0. Bïrch (US, 2021–2023) states only two numbers in words – −20% in January–February and +40% at the holiday peak (those are the ones used); the other months are read off the chart (source check 04.09; before it the values were 0.83 and 1.25 with a [B] tag).</li>
+<li>Optimization event (a2a): <strong>the CPM base is AEO/organic-basis</strong> (the Lebesgue/Triple Whale panels are conversion-optimized e-commerce campaigns, not install campaigns), so AEO on trial start is ×1.0; MAI ×0.4 [E] – see <a href="#s6">§6</a>.</li>
+<li>Optimization event (w2w) [A]: purchase ×1.0 (the Triple Whale panel is purchase campaigns anyway); initiate checkout – CPM ×0.85, checkout intent ×0.9; lead – CPM ×0.6, intent ×0.8.</li>
+</ul>
+<p><strong>Why the CPM base counts as AEO-basis, not MAI-basis (decision 04.09).</strong> The Lebesgue panel is purchase-optimized e-commerce campaigns – a "deep event", like AEO. The previous version treated $16 as the MAI price and stacked an AEO premium of ×4 on top → $64 per thousand impressions in the US, above any published app panel (RocketShip HQ: blended CPM by category $5.40–17.50). The final check: the modeled paid CPI for H&amp;F at medians ($8.26 iOS) lands on an independent app-install benchmark (RocketShip $7.80) – with AEO-basis, not with ×4.</p>
+<p><strong>Why CPM and not CPC/CPI as the input.</strong> We pay for impressions; everything below is conversions, each with its own benchmark and its own owner on the team. With CPI as the input you cannot show which stage is broken.</p>
+<p><strong>Rejected.</strong> A separate "my CPI/CPT" input (a practitioner has exactly those). Open for v2: an "I know my CPI" input with CPM back-solved. For now: typed CPM + typed stages.</p>
+<hr>
+<h2 id="s3">3. From impression to install (a2a)</h2>
+<pre><code>CPC  = CPM / 1000 / CTR
+CPI_paid = CPC / (click→store × storeCVR_eff)
+storeCVR_eff = storeCVR(category, store) × paid-factor          – unless typed
+CPI  = CPI_paid / (1 + organic uplift)                          – blended CPI
+</code></pre>
+<ul>
+<li>CTR [E]: 1.2/1.6/2.0% – our band for video/UGC app-install creatives; the panels bracket it without a split by creative type (Superads: industry average 0.90–1.10%; Triple Whale: e-commerce median 2.39%). Tagged [B] until 04.09 – removed.</li>
+<li>Click→store [A]: 0.85/0.90/0.95 – losses in-app browser → deeplink; no public data.</li>
+<li>Store CVR [B/E]: App Store – <strong>SplitMetrics</strong> category medians, page view→install with dropped visits removed (H&amp;F 18.52%, Social 11.36%, Entertainment 8.6%, Education 6.75%; published in the AppScreenshotStudio 2026 review) – until 04.09 wrongly attributed to AppTweak, whose panel runs ~×1.5 higher (H&amp;F 30.8%, H1 2024) and can exceed 100%; Google Play – AppTweak H1 2024 as cited by Adjust (H&amp;F 23.2%) and Adapty (Edu 30.4%) – by September 2026 AppTweak's own page shows only 2025 store averages (App Store 8.56%, Play 16.15%), so the links point to the citing pages; Music/M&amp;E and Prod/PV/Util on both stores – interpolation [E]. Blended = the average of the two. The stores' methodologies differ, so there is no cross-store bonus.</li>
+<li>Paid-factor [A]: ×0.7/0.8/0.9 – paid traffic converts below the blended store benchmarks (AppTweak's panel is blended).</li>
+<li>Organic uplift <strong>[E]</strong>: 10/25/40% extra organic installs per paid install – hard-paywall subscription practice. TUNE (linked on the field) publishes 1.5 organic per paid – all app types, pre-ATT; citing that as the source of "10–40%" was a mistake, the tag was lowered from [B]. Applied to CPI (the KPI is labeled "blended w/ organic"; 0 – strict paid ROAS). Not applied in w2w.</li>
+</ul>
+<p><strong>Why organic sits inside CPI rather than on its own line.</strong> That is how UA reports count it ("CPI including organic"), and it is the honest way for payback: every install the paid traffic brought returns money. Assumption: organic installs convert to trial like paid ones – the difference is not modeled.</p>
+<hr>
+<h2 id="s4">4. From install to trial</h2>
+<pre><code>install→trial = install→paywall × paywall→trial_eff × AI factor
+paywall→trial_eff = paywall→trial × AEO uplift × platform        – unless typed
+CPT = CPI / install→trial
+</code></pre>
+<ul>
+<li>Install→paywall [B, Superwall]: 45/56/85% – the composite "opened + finished onboarding + saw the paywall". The platform average is 56%; "≥85%" is a recommended target, not a median. On the Funnel tab this composite is broken into display sub-stages (first open ×0.87 iOS [E] / ×0.775 Android [E, UXCam citing Adjust: 20–25% of Android installs never open], onboarding ×0.95 [A], registration ×0.80 [E]) – they are for the picture only and do not enter the math.</li>
+<li>Paywall→trial [E] – <strong>derived (decision 04.09)</strong>: <code>RC install→trial (vertical) × geo factor ÷ install→paywall (the benchmark of the same scenario)</code>. H&amp;F × NA median on the hard-paywall base: 16% ÷ 56% = 28.6% (on the "All apps" band: 6.9% ÷ 56% = 12.3%).</li>
+</ul>
+<p><strong>Why derived rather than benchmarked.</strong> There is no per-unique-view paywall benchmark in public data: Adapty's 1.35% is per impression, with repeats – unusable. What does exist is RC's reliable download-to-trial composite by vertical and geo. Before, a fixed H&amp;F × NA figure 8/12.3/18% stood for every vertical and geo; as a result the model's own cross-check ("product of stages vs the RC composite") fired on untouched defaults in 25 of 36 combinations, and the CPA for TR/LatAm/IN-SEA was understated by half.</p>
+<p><strong>Rejected.</strong> Applying the geo factor and the vertical to install→paywall instead of paywall→trial. Superwall's 56% median has no geo split, RC's composite does; therefore the whole vertical-and-geo difference sits, by construction, in the paywall.</p>
+<p><strong>Benchmark base for install→trial: hard-paywall apps (decision 04.09, selector in Setup).</strong> RC's category medians mix all access models, and most apps in the panel are freemium, where a minority of installs ever see the paywall. RC 2026: hard-paywall apps convert <strong>10.7% of downloads to paying</strong> (top quartile above 20%), freemium – 2.1% [B]; that is above even the top quartile of the best categories across all apps (H&amp;F 6.2%). The tool models hard paywalls only, so the default base shifts RC's install→trial band one quartile up: P25 := panel median, median := panel P75, P75 := P75 × (P75 ÷ median). H&amp;F: 5.0 / 6.9 / 16% → 6.9 / 16 / 37%. The fact is [B], the size of the shift is [E]. The "All apps" selector returns the raw panel band.</p>
+<p>Why "one quartile" and not "×5 per RC": 10.7% against the global 2.0% download→paid would put ×5.35 on the composite and H&amp;F download→paid at 15.5% – above the category's P90; RC's hard-paywall group is skewed by category (utilities, AI-photo apps with a day-0 purchase). "The panel's P75 as the hard-paywall median" is a conservative lower estimate that RC's 10.7% clears with room to spare. Reality check: the median CPT for H&amp;F × NA becomes $33 (on the panel band – $77), cost per subscriber $79.51, ROAS 0.80 – inside the corridor UA practitioners recognise; "All apps" returns the panel band: $184 / 0.34.</p>
+<p>Rejected: (a) keep the panel median and explain it – the "ROAS 0.33" headline stays a target for anyone who has read RC; (b) apply ×5 literally – over-optimistic and contradicts the category quartiles; (c) introduce a separate access-model cut per vertical – RC has no such data.</p>
+<p><strong>Cross-check (the safety catch).</strong> The product of stages (÷ the intent factor of the optimization event, i.e. the organic equivalent) is compared with <code>RC install→trial (selected base) × geo factor × platform paywall factor [× AI]</code>; a gap &gt;×1.5 raises a yellow warning. On untouched defaults the ratio is exactly 1.0 for every platform, both bases, all verticals × geos × scenarios (self-test); the warning reacts only to typed values. Earlier versions fired on defaults (fixed paywall→trial; then the AEO uplift; then the platform factor) – each time the comparison was fixed, not the warning silenced.</p>
+<ul>
+<li>Platform at the paywall stage (<strong>decision 04.09</strong>): iOS ×1.30 / Android ×0.45 / Blended ×1.0. Source – RC SOSA 2026 via the post "the Android paywall gap" [B]: download→paid D35 iOS 2.6% vs Android 0.9% with trial→paid at parity (32.6 vs 32.5) – the whole gap is at funnel entry. The mix weights are not invented but derived from RC's third number – the global median of the same metric, 2.0%: 2.6·w + 0.9·(1−w) = 2.0 → w ≈ 0.65; the multipliers are the ratios to the mix (2.6/2.0, 0.9/2.0). Two [E] caveats: medians do not mix linearly; a cross-category gap is applied to every vertical alike. <strong>Error before 04.09:</strong> "2.9% vs 2.6%" was cited as the store split – those are the H&amp;F and Business categories; the Android factor stood at ×0.9 and made an Android subscriber cheaper than iOS, contrary to RC. The cross-check compares against the platform-adjusted composite (self-test over every platform × base × vertical × geo × scenario, plus a dedicated self-test "Android/iOS = 0.9/2.6, mix 0.65/0.35 = 1.0").</li>
+<li>AI product [B, Adapty]: install→trial ×0.487 (5.31% vs 10.9%).</li>
+</ul>
+<hr>
+<h2 id="s5">5. From trial to subscriber</h2>
+<pre><code>with trial:  CPA(sub) = CPT × trial share / trial→paid
+no trial:    CPA(sub) = CPI / (install→paywall × paywall→trial_eff × 0.4)
+</code></pre>
+<ul>
+<li>Trial→paid [B, RC]: vertical (H&amp;F 30/37.7/51.4%) × geo factor (WE 0.87, TR 0.65, IN-SEA 0.44 …) × trial length: <strong>3 days ×0.68</strong> (RC buckets: ≤4 days 25.5% against 37.4% for 5–9 days; vertical medians such as H&amp;F 37.7% sit on the 7-day bucket, so 7 days = ×1.0; before, ×0.8 from the overall median 32.6% – both conventions are defensible, the one where the vertical median = 7 days was chosen). Platform ×1.0 – store parity [B, RC 32.6% iOS vs 32.5% Play]; the iOS advantage sits earlier, at the paywall.</li>
+<li>Trial share [A]: 85/90/95% – the share of new subscriptions that come through the trial; the rest buy directly at the same paywall. Subscribers = trial converters ÷ trial share. No direct benchmark.</li>
+<li>No-trial [E] (<strong>decision 04.09</strong>): direct purchases = trial-start rate × <strong>0.4</strong>. The <code>directf</code> field is visible in the funnel (dimmed while the trial is on) and can be overridden.</li>
+</ul>
+<pre><code>no trial:  subscribers / paywall view = paywall→trial_eff × 0.4
+with trial:                            = paywall→trial_eff × trial→paid / trial share
+break-even: the trial pays off ⇔ trial→paid &gt; 0.4 × trial share  (≈ 36% at a 90% share)
+</code></pre>
+<p><strong>Why 0.4 and not Adapty's 0.6.</strong> The only public source is Adapty's cross-panel per-impression comparison: a paywall without a trial gets 0.82% purchases against 1.35% trial starts on a paywall with one – ratio 0.6. That is not a counterfactual "same app, trial removed" but a comparison of different apps: those living without a trial are self-selected – direct purchase works for them (low price, instant value). So 0.6 is a ceiling. Applied literally, it made no-trial beat the trial by 43% on subscribers in every vertical (independent of the benchmark base: the comparison is on the same paywall) – including H&amp;F, where Adapty finds the opposite on LTV. A/B practice for trial vs no-trial lands at 0.3–0.5; the midpoint is used.</p>
+<p><strong>Why a multiplier on trial starts, not on payers.</strong> What practitioners observe most stably is exactly the ratio of "direct purchases to trial starts on the same paywall" – people say yes to "free" several times more readily. Then the "trial or not" verdict is decided by trial→paid – a [B] quantity by vertical and geo – not by the toggle itself: H&amp;F median 37.7% → the trial wins by 5%; Productivity 30% → no-trial wins by 20% (consistent with Adapty's "direct beats trial" for Productivity); H&amp;F P75 51% → trial ×1.35. The calculator prints the break-even and the verdict in the explain line in both modes.</p>
+<p><strong>Rejected.</strong> (a) 0.6 on the <em>paying</em> share (3.1% direct purchases) – no-trial always loses, contradicting Productivity/Lifestyle. (b) Parity on payers (k = 1) – an honest "we don't know", but the toggle becomes useless, and "do I need a trial" is one of the most frequent questions. (c) Keep 0.6 with a warning – a warning does not fix the verdict.</p>
+<p><strong>Not modeled.</strong> The LTV difference between trial and direct cohorts (Adapty: Productivity direct +16%; in H&amp;F trial cohorts are worth more): in v1 both cohorts sit on one curve, with a hint left for Productivity/Lifestyle. A self-test checks that the model's verdict matches the break-even rule.</p>
+<hr>
+<h2 id="s6">6. Optimization event: AEO is the base, MAI is a discount (decision 04.09)</h2>
+<ul>
+<li><strong>The benchmarks are AEO/organic-basis by construction.</strong> The CPM panels are conversion-optimized campaigns (e-commerce purchase), and RC's install→trial is measured on the traffic apps actually receive – for paid UA that is AEO on trial start plus organic. Therefore <strong>AEO on trial start is the default and ×1.0</strong> on both price and intent.</li>
+<li><strong>MAI</strong> (install optimization): impressions at ×0.4 the price and installs at ×0.4 the paywall conversion [E, practitioner consensus "AEO beats MAI ×2.5–4 on install→trial"; Mobile Dev Memo is the source of the MAI/AEO/VO framework, not of the multipliers]. The two factors mirror each other, so <strong>MAI ≡ AEO on cost per subscriber by construction</strong> (self-test): the model does not declare a winner it cannot source. AEO's real advantage – cohort quality (trial→paid, retention) – is not credited; it shows only through your own numbers.</li>
+<li><strong>AEO/VO on purchase with a trial</strong> – a documented mistake: AEO price for MAI-quality installs (intent ×0.4), cost per subscriber ×2.5, red warning. The payment happens 3–7 days after the click; the signal is rare and late, the campaign does not learn.</li>
+<li><strong>AEO on purchase without a trial</strong> – valid (a day-0 event), ×1.0.</li>
+<li>The pair <strong>does not move with the scenario</strong> (<a href="#s1">§1</a>).</li>
+<li>The install→trial cross-check compares the <em>organic equivalent</em> (product of stages ÷ intent factor) with the RC composite – silent on defaults in every mode and on both bases.</li>
+</ul>
+<p><strong>Why it was flipped from "MAI base, AEO ×4/×4" to "AEO base, MAI ×0.4/×0.4".</strong> Arithmetically the parity is the same, the level is not: the previous version gave an AEO CPM of $64 in the US (above any app panel) and, worse, broke on the hard-paywall base – an uplift of ×4 on a paywall converting at 29% gave 114% (the cap destroyed the parity). Tying the benchmarks to their real basis (AEO/organic) removes both, and CPI lands on RocketShip.</p>
+<p><strong>Rejected.</strong> (a) MAI as default – "nobody runs MAI for subscriptions in 2026". (b) Claiming "AEO is worse/better than MAI by X%" – no source with either sign. (c) Uplift via odds or with saturation – the parity holds only up to the cap, harder to explain, still no source.</p>
+<p><strong>Why the intent factor sits on the paywall and not on trial→paid.</strong> Conservative and checkable: the optimization event changes <em>who</em> reaches the paywall; an effect on trial-to-paid conversion is not confirmed by anything public.</p>
+<hr>
+<h2 id="s7">7. w2w (quiz funnel, hard paywall at the end of the quiz)</h2>
+<pre><code>CPA(sub) = CPC / (click→LP × LP→quiz start × quiz finish × email × paywall→checkout_eff × checkout completion_eff)
+</code></pre>
+<ul>
+<li>Quiz stages: LP→start 30/38/40% <strong>[A]</strong> – Interact has no such stage (its funnel begins at quiz start), this is web2app practice; start→finish 50/60/65% [B, Interact: 47–65%]; finish→email <strong>60/65/75% [B, derived]</strong> = Interact start→lead (37.6–44.9%) ÷ start→finish (55.5–65%). <strong>Error before 04.09:</strong> the 37.6–40.1% figure (start→lead) stood as LP→start and 40–45% as finish→email, i.e. one metric was used twice and in the wrong places; the w2w CPA at medians was overstated by ×1.55 ($307 → $198).</li>
+<li>Paywall→checkout [A]: 5/10/15% (the web paywall ≈ ×0.69 of in-app per Adapty – a relative modifier); checkout completion <strong>[E]</strong>: 25/40/60% – our band; Stripe publishes only the Apple Pay effect (+22.3% conversion from enabling it); the "82% vs 58%" pair is not on Stripe's page and was removed from the caption (source check 04.09).</li>
+<li>No trial: the checkout charges immediately; trial length / trial→paid / trial share are switched off.</li>
+<li>Device split [A]: CPM iOS ×1.15 / Android ×0.85; checkout completion iOS ×1.05 / Android ×0.95.</li>
+</ul>
+<p><strong>Cost per quiz start (decision 04.09).</strong> The "Modeled CPI / CPC" KPI in w2w = <code>CPC ÷ (click→LP × LP→quiz start)</code> – the cost of a quiz <em>start</em>, as captioned. Before, the formula also divided by quiz completion (giving the cost per quiz <em>completion</em>, $5.15 instead of $3.09 on the default), and the budget line understated the number of quizzes by 40%. Why quiz start and not completion: the start is the first event visible in the pixel and the one lead/checkout campaigns are optimized against; completion is already mixed with quiz length. A self-test holds the formula.</p>
+<hr>
+<h2 id="s8">8. LTV M13 – the payment schedule</h2>
+<p><strong>What.</strong> For each plan – a monthly schedule of one subscriber's payments, months 0–12; blended by plan shares; net after VAT and the fee.</p>
+<pre><code>Blended[m] = Σ share_i × schedule_i[m] / Σ shares × (1 + upsell)
+schedule_i[0] = intro_i × (1 − refund) when plan i has a 1st-period price; every renewal at the plan price
+Net LTV    = Σ_m Blended[m] × netF,   netF = 1/(1+VAT) × (1 − fee);   in w2w, schedule_i × 0.89 when plan i's retention is a benchmark
+</code></pre>
+<p><strong>Why a sum over billing events and not a retention integral.</strong> A subscription pays discretely; retention between billings brings no money. The sum over renewals is the exact analogue of the integral for this business, with fewer assumptions. The alternatives (ARPDAU × lifetime, cumARPU fit, WACC discounting) are described on the LTV methodology tab.</p>
+<p><strong>Why M13.</strong> An honest cutoff: 12 months of payments plus the first annual renewal. Beyond that is extrapolation, and discounting starts to matter only at $100k+/month with a 12+ month payback.</p>
+<p><strong>Intro price (decision 04.09, after the run on a real w2w funnel).</strong> Each plan has an optional "1st-period price": the first payment (net of refunds) is charged at it, every renewal at the plan price; for yearly the first year is at the intro price, the renewal at the full price, and the high-price ramp is evaluated on the renewal price. Blank = no intro offer. Why: quiz funnels almost always have one ($8.99 → $39.99, $59.99 → $119.99); without the field the w2w mode described none of them, and a yearly plan that doubles at renewal had to be emulated with a doubled renewal rate. On the real funnel the field closed the gap to the product team's model to −1…−2% on monthly and yearly. Downsell plans (failed / cancel offers) are not modeled – captioned.</p>
+<h3 id="s8-1">8.1 Monthly</h3>
+<pre><code>schedule = [P·(1 − refund), P·S(1), …, P·S(12)],  S – log-log interpolation through the anchors M1, M6, M12
+</code></pre>
+<p>Anchors: M1 50/61/68% [E, our band; RC's category medians of the 1st monthly renewal span 42–61%], M6 14/20/26% [B, RC], M12 6/10/14% [B, RC]. The curve passes exactly through the anchors and agrees with RC's renewal chain 57→71→78% (M2 39.6% vs 40.5%, M3 30.8% vs 31.6%). Checked against a hand-built model of one real app (under NDA, four retention scenarios): the calculator reproduces the hand-drawn curve within 2%.</p>
+<p>AI product: benchmark anchors M6/M12 ×0.7 [E, RC: AI apps churn ~30% faster / "retain 36% worse" over 12 months]; not applied to typed anchors nor in fit mode (self-test).</p>
+<p><strong>Why three anchors and not 12 points.</strong> RC publishes M6 and M12; everything in between is shape, and log-log (power-law decay) is the standard shape for subscription churn. Storing 12 points = 12 [A] instead of one.</p>
+<p><strong>The anchors are editable (decision 04.09).</strong> In benchmark mode the M1/M6/M12 fields and weekly renewals 1–3 are visible and can be overridden (dimmed if the plan is off); in fit mode they are hidden – there only the first two renewals are asked for. Before, the rows were always hidden "because nobody knows their M6" – but whoever has six-month cohorts does know it, and the promise "override anything you actually know" was not kept for retention. A typed anchor is an effective value: the AI modifier ×0.7 is not applied on top (self-test).</p>
+<h3 id="s8-2">8.2 Yearly</h3>
+<pre><code>schedule[0] = P·(1 − refund),  schedule[12] = P·renewal × highPriceF(P)
+highPriceF(P) = 1 − 0.2 × clamp((P − 50) / 20, 0, 1)      – ×1.0 up to $50, linear down to ×0.8 at $70, flat after
+</code></pre>
+<p>Renewal [B, RC]: 22/30/40%. High-price penalty ×0.8 [B, RC: 1st-renewal churn 37% vs 24% for expensive vs cheap annual plans].</p>
+<p><strong>Why a ramp and not a threshold (decision 04.09).</strong> RC gives two groups but not the boundary between them; we know it roughly as "$60 ± $10". Under a uniform uncertainty of the boundary on [$50, $70] the expected penalty is exactly a linear ramp, not a step. The step at $60.01 also sat two cents from the default price $59.99 and caught "Prices +20%" in sensitivity. Consequence: $59.99 now sits at ×0.90, the default net LTV is $63.29 instead of $64.08 (−1.2%); the self-test snapshot was updated. RC's 30% median is read as the renewal of the <em>cheap</em> plan (conservative: the median already contains the expensive ones).</p>
+<h3 id="s8-3">8.3 Weekly (decision 04.09)</h3>
+<pre><code>renewal chain w1 (35/46/58%) → w2 (67/71/75%) → w3 (74/80/85%) [B, RC]
+→ two-phase geometric tail through two RC anchors: S(26) ≈ M6 = 10% and S(52) = Y1 = 1.5% [B]
+anchors scale: M6_eff = 10% × (s3 / s3_median), Y1_eff = 1.5% × (s3 / s3_median), s3 = w1·w2·w3
+53 payments (weeks 0–52 = M0…M12, as for monthly), bucketed by month at 52/12 weeks
+</code></pre>
+<p><strong>Why a two-phase tail.</strong> The Retention curves tab always drew weekly through the RC anchor M6 = 10% (two-phase), while the calculator counted money on a one-phase tail from the 3rd renewal straight to 1.5% at week 52 – M6 came out at 6.8%, weekly LTV 13% below the curve the tool itself displayed. Now both use one function <code>weeklySurv</code> – agreement by construction (self-test).</p>
+<p><strong>Why the anchors scale with the early renewals.</strong> The tail gives 2/3 of weekly LTV. Pinned to a fixed 10%/1.5% it "rescued" any cohort: with a 10% first renewal the model still held 1.5% at week 52 and 1.57 → 6+ payments. Scaling the anchor level by s3/s3_median means: the decay shape after the 3rd renewal is RC's median (p1 = 0.959/week to week 26, p2 = 0.930 after), and the level is set by your first three renewals. Side effect – the scenarios reproduce RC's Y1 corridor of 1–2% on their own: P25 → 1.0%, P75 → 2.1%.</p>
+<p><strong>Rejected.</strong> Scenario P25/P75 for the M6/Y1 anchors themselves – RC publishes only the Y1 range "1–2%", no quartiles for M6; scaling gives the same range without new [A]. Keeping the one-phase tail and bending the tab to it – the tab is closer to the data (it has the M6 anchor).</p>
+<p><strong>The W26 anchor is an editable field (decision 04.09, after the run on a real w2w funnel).</strong> For one weekly plan with renewals of 80 / 83.5 / 86%, churn after the 3rd renewal did <em>not</em> slow down (~9–10%/week through W18, S(26) ≈ 6% against RC's median 10% and the scaled 22%): the calculator came out +67% on the product team's weekly LTV, and fit mode (a power law through two points) ×2.5. "Weekly survival at week 26 (≈ M6)" is now a field in the retention block, symmetric to M6/M12 for monthly: default RC 10% × s3/s3_ref [E], Y1 follows at the RC ratio (1.5 ÷ 10), a typed value is used as is; the caption and the explain line say "the least certain number in weekly LTV – two thirds of it sit in the tail". With the typed W26 the gap on the same funnel is +6%. Rejected: capping the anchor scaling from above (e.g. ×1.5) – a new [A] from one app; changing RC's shape for everyone – one app is no basis. Weekly in fit mode – <a href="#s8-4">§8.4</a>.</p>
+<p><strong>Result on the default</strong> ($5.99 weekly, median): 6.92 payments, gross $41.4 (was 6.13 / $36.5, +13%); P25 4.98, P75 9.29 payments.</p>
+<h3 id="s8-4">8.4 Fit mode (early stage)</h3>
+<pre><code>monthly:  S(m) = S₁ · m^(−b),  b = −log₂(r₂);  S(1) = r₁, S(2) = r₁·r₂
+weekly:   S(w) = r₁ · r₂^(w−1)   – a geometric tail, churn stays at the 2nd renewal's level (decision 04.09)
+</code></pre>
+<p>The user types only the 1st and 2nd renewal – what a dashboard shows after two months. The monthly tail is extrapolated with a power curve; the implied M6/M12 are shown and checked against RC's corridors (above them – the warning "2-point extrapolation is optimistic"). On RC medians the fit gives $66.9 against $63.3 for the benchmark curve (+6%) – the bias is documented and printed. The AI factor is not applied in this mode: your own data already contains the product.</p>
+<p><strong>Why weekly is geometric, not a power law.</strong> A power law through two weekly points at renewals of 80 / 83.5% gives b = 0.26 and 20 payments – ×2.5 on a real cohort; a geometric tail at the 2nd renewal's churn gives 5.8 payments against 8.25 actual (−29%) – conservative and explainable in one sentence: "churn stays where you saw it at the 2nd renewal; the tail improvement present in RC's panel is not credited". The implied W26/Y1 are printed with the RC corridor (5–15% / 1–2%) and a hint to switch to the benchmark curve and type your W26 once you have it. Rejected: scaling RC's shape from r₂ – ×2.7 on the same cohort at W18.</p>
+<hr>
+<h2 id="s9">9. Net: what is deducted and in which order</h2>
+<pre><code>proceeds = price ÷ (1 + VAT) × (1 − fee)
+</code></pre>
+<ul>
+<li>Refund [B, RC 2.5–4.7% by vertical] – on the first payment only: RC's benchmark is defined as the share of refunds of the first billing; renewals are almost never refunded. An early version took the refund off the whole LTV – fixed.</li>
+<li>VAT/GST – out of the sticker price before the store split (Apple/Google act as merchant of record). Default = the rate of the buying geo [E]: the payer's storefront matches the targeting country in 90%+ of cases. Rates: NA 0% – that is the US (tax is added on top and withheld by the store; Canada GST/HST 5–15%, UK 20%, AU 10% – type your own mix), WE 21% and LatAm 17% – blended estimates [A], TR 20%, Gulf 10% (SA 15 / AE 5), IN/SEA 12% – SEA-weighted (ID 11–12, PH 12, VN 10, SG 9, TH 7, MY 8; India alone is 18%; until 04.09 the value was 18%). Breaks on expats (Gulf), store arbitrage (TR), Advantage+ multi-geo – then type a blended rate. Rates – the VAT by country tab.</li>
+<li>Fee: Store 30% / 15% (SBP) / Web PSP ~5%; Meta location fees (TR 5%, some WE countries 2–5%) are not modeled – noted in the CPM caption.</li>
+<li>w2w cohort ×0.89 [B, Adapty $35.80 vs $40.10] – retention degrades after M1 for those who bought before meeting the product. <strong>Per plan, and only on benchmark retention (decision 04.09, after a run on a real w2w funnel):</strong> the benchmark curve is RC's panel of app subscriptions, and the penalty converts it into a web cohort; anchors you typed, or a fit on your own two renewals, already are the web cohort – ×0.89 on top was double counting (−11% LTV). The factor is evaluated for each plan (weekly by w1/w2/w3, or w1/w2 in fit mode; monthly by M1/M6/M12, or r1/r2; yearly by the renewal), the explain line prints what it was applied to, and the Funnel tab uses the same factor. Self-test: the same curve typed by hand gives net LTV ÷ 0.89.</li>
+<li>Upsell [E]: default 0; scales the whole schedule.</li>
+</ul>
+<p><strong>Why plan prices are shared across platforms.</strong> An iOS premium on prices is not modeled; in the explain text for Android there is a warning that LTV at US prices is overstated (the ARPU factor ×0.8 [A] is applied on the Funnel tab only – see <a href="#s12">§12</a>).</p>
+<p><strong>Why the geo price index is a warning and not a multiplier.</strong> The willingness-to-pay index [B, Adapty: WE ×1.3, TR ×0.29, IN-SEA ×0.6, Gulf ×1.35] is about which prices to <em>set</em>, not about how much people pay at a given price. The user must type local prices; the model hints which.</p>
+<hr>
+<h2 id="s10">10. Verdict and targets</h2>
+<pre><code>Target CPA = Net LTV / target ROAS                      (default ROAS 1.3)
+Target CPT = Target CPA × trial→paid / trial share
+Target CPI = Target CPA × install→sub
+Closes ⇔ Net LTV ≥ target ROAS × modeled CPA(sub)
+</code></pre>
+<p>A two-sided check: targets "from the top" out of LTV against modeled figures "from the bottom" out of CPM. If they do not meet – "CPM must fall by X%": CPA is linear in CPM, so X = 1 − Net LTV / (ROAS × CPA).</p>
+<ul>
+<li>Payback month – the first month where cumulative net payments ≥ CPA(sub); otherwise "&gt;M13". Computed on blended CPA (with organic).</li>
+<li>Budget view: 12 monthly cohorts at B/month, each returning its own schedule; peak cash = the minimum of cumulative cash over 24 months.</li>
+</ul>
+<hr>
+<h2 id="s11">11. Sensitivity – "where the headroom is" (decision 04.09)</h2>
+<pre><code>for each benchmark stage k:  target_k = P75 benchmark (for CPM – P25) × the same factors (season, AEO, platform)
+                             mult_k  = target_k / current effective value_k
+                             bar_k   = ROAS(computeModel({k: mult_k})) / ROAS − 1
+retention lever: every retention/renewal field to P75 at once (flag retP75)
+</code></pre>
+<ul>
+<li>A lever is not "±20%" but "bring this stage to the top quartile for your vertical × geo". The current value is the effective one (benchmark or yours), so a typed value above P75 shows "✓ at/above P75", and a typed value below P25 gives the longest bar – as it should.</li>
+<li>Under each bar the "from → to" is printed (56% → 85%).</li>
+<li>Prices are not a bar: they have no quartile. A line under the chart: +10% on prices ≈ +10% on LTV, less the yearly-renewal ramp, and the current ramp multiplier for your yearly plan.</li>
+</ul>
+<p><strong>Why not ±20%.</strong> In a multiplicative chain any stage at +20% gives exactly +20% ROAS; CPM −20% showed "+25%" purely from 1/0.8, and prices +20% crossed the $60 threshold and showed +17%. The chart ranked levers by arithmetic artifacts, not by data. The distance to P75 is the only thing that differs between stages, and it is also the answer to "what to fix first".</p>
+<p><strong>What it shows on the default H&amp;F × NA (median):</strong> paywall→trial +53%, install→paywall +52%, store CVR +43%, trial→paid +36%, CPM +33%, CTR +25%, retention +13%, organic +12%, click→store +6%. So "the biggest lever in subscription UA is not CPM but reaching the paywall and its conversion" – that is Superwall/RC data, not our opinion.</p>
+<p><strong>Rejected.</strong> Keeping ±20% with a caption "all equal" – useless. WACC/cash elasticities – not for this tool.</p>
+<hr>
+<h2 id="s12">12. The Funnel diagnostics tab – iOS vs Android (decision 04.09)</h2>
+<p><strong>What.</strong> Two columns per 100,000 impressions, each its own chain, with a "money check" at the bottom: what one subscriber cost vs what one returns, and ROAS against the target.</p>
+<pre><code>column = CPM_base × platform CPM → CTR → click→store → storeCVR(ITS OWN store) × paid-factor → (1 + organic)
+       → install→paywall → paywall→trial × platform paywall factor → trial→paid ÷ trial share
+column net LTV = LTV_headline ÷ arpuF(selected platform) × arpuF(column) × [this funnel's fee]
+</code></pre>
+<ul>
+<li>Store CVR – <strong>its own store in each column</strong> (App Store: SplitMetrics page view→install; Play: AppTweak visitors→acquisition), regardless of the Platform selector; the corridors and ✓/⚠ are per store too, the [B]/[E] tags come from the vertical (<code>scvrTag</code>, <code>scvrATag</code>). Before, both columns took the CVR of the selected platform, and the iOS column on the tab disagreed with the calculator at platform iOS by ~13%. A typed store CVR is the same in both (the effective-value rule) – the caption says so.</li>
+<li>ARPU factor [A]: iOS ×1.0, Android ×0.8, Blended ×0.9 (decision 04.09; was 0.65/0.8 citing "RC D60 RPI $0.42 vs $0.23", which the report does not contain – $0.23 there is the D14 median across all categories; RC publishes no RPI split by store). The mechanism is documented – 32.3% of cancellations on Play are involuntary (billing errors) against 15.2% on the App Store, plus lower price points – but the magnitude is not; once the store gap moved into conversion (paywall ×1.30/×0.45), ARPU was left soft. Typed prices are read as the prices of the <em>selected</em> platform, so a column = headline ÷ the selected platform's factor × the column's factor; at platform iOS the iOS column equals the headline LTV exactly. Each card prints the derivation so that two different "Net LTV" numbers in one tool do not look like a contradiction.</li>
+<li>Fee: the a2a block takes the fee from the selector while the a2a calculator is active (otherwise 15% SBP by default); the w2w block takes its own (5% by default) plus the web-cohort ×0.89. Before, the a2a block always computed at 15%, even with 30% selected.</li>
+</ul>
+<p><strong>Why the ARPU factor is not applied in the calculator itself.</strong> There the prices are "as typed": if the user typed Android prices, multiplying by 0.8 counts twice. The tab exists precisely to compare platforms at equal prices, and there the factor belongs. The calculator's explain line warns under platform Android that LTV at US/iOS prices is overstated.</p>
+<p><strong>Rejected.</strong> Dropping the ARPU factor entirely (equal LTV in both columns): then Android wins on ROAS purely on cheap CPM and high Play CVR – contradicting practice (66–75% of apps earn &gt;80% on iOS). Applying the factor in the calculator – double counting with platform prices.</p>
+<p>Self-test: the iOS column on the tab = the calculator at platform iOS on cost per subscriber and net LTV.</p>
+<hr>
+<h2 id="s13">13. Cross-checks</h2>
+<ul>
+<li>Install→trial: the product of stages (÷ the intent factor of the optimization event) vs the RC composite of the selected base (<a href="#s4">§4</a>, <a href="#s6">§6</a>).</li>
+<li>CPI (MAI, iOS/Android): modeled <strong>paid</strong> CPI (blended ÷ (1 + organic)) vs industry medians: for H&amp;F × NA – RocketShip HQ 2026, Meta app-install, subscription H&amp;F iOS $7.80 / Android $4.90 [B]; for the rest – geo medians [E, weak sources] NA $6.8 / $3.9, WE $5.4 / $2.8. A gap &gt;×1.5 is flagged. At medians the modeled paid CPI for iOS, $8.26, lands on the benchmark – the main argument against "your CPM is from e-commerce".</li>
+<li>Fit mode: implied M6/M12 vs RC corridors.</li>
+<li>Plan mix: shares that do not sum to 100% – a warning; the calculation normalises.</li>
+</ul>
+<hr>
+<h2 id="s14">14. Minor decisions (04.09)</h2>
+<ul>
+<li><strong>Confidence tags come from the vertical.</strong> For Store CVR and Trial→paid the field's tag is taken from <code>VERT</code> (<code>scvrTag</code>/<code>scvrATag</code>/<code>t2pTag</code>): Productivity, Utilities, Photo &amp; Video – [E] (interpolation), H&amp;F/Edu/M&amp;E – [B]; for Blended – [B] only if both sides are [B]. A fixed [B] on the field overstated confidence for half the verticals.</li>
+<li><strong><code>VERT.mix</code> is a hint, not a default.</strong> Under the plan table the vertical's typical mix is printed with its tag; it is not written into the fields, because Adapty gives revenue shares and the table asks for subscription shares. For H&amp;F only the annual share is public – 60.6% of revenue (Adapty SOIS 2026) [B]; the weekly/monthly split of the rest is ours [E] (link check 04.09).</li>
+<li><strong>No-trial + optimization on "Trial start".</strong> The combination is allowed, but the explain warns: the event does not exist, it is computed as purchase optimization (same day-0, premium and uplift).</li>
+<li><strong>Gulf VAT 10%</strong> [E] – blended SA 15% / AE 5% (was 15% – SA only).</li>
+<li><strong>The "CPA target event" selector was removed (04.09).</strong> It only relabelled one KPI (CPA ↔ CPT); cost per trial is now printed in the explain chain "CPM → CPC → CPI → CPT → cost per subscriber". Ten Setup selectors instead of eleven.</li>
+<li><strong>The default case is computed on load</strong>; the Calculate button re-runs after edits. The explain text is split into paragraphs by topic.</li>
+<li><strong>The fee is remembered per funnel.</strong> Switching a2a ↔ w2w restores the fee chosen for that funnel instead of resetting to 15%/5%.</li>
+<li><strong>CPI cross-check on paid CPI.</strong> Industry CPI medians are paid; comparing the blended-with-organic CPI against them understated by (1 + organic). The explain prints both.</li>
+<li>Left alone: LTV fields (VAT, refund, retention) are stored separately for a2a and w2w – by design ("separate overrides"), although VAT typed in a2a does not carry over to w2w.</li>
+</ul>
+<hr>
+<h2 id="s15">15. Deliberately not modeled (v1)</h2>
+<p>Frequency / creative fatigue (the CPM Health Checklist's territory) · w2a (v2: quiz front + store back, one new field quiz end → store click) · platform-specific prices · downsell plans (failed / cancel offers – 13% of customers with a 4× lower LTV on a real w2w funnel) · the retention difference between direct and trial cohorts (a warning for Productivity/Lifestyle only) · the LTV bonus of annual AI plans · discounting · the conversion difference between organic and paid · client data (public benchmarks only).</p>
+<hr>
+<h2 id="s16">16. Source check (04.09) – what changed after an independent verification</h2>
+<p>An independent check went through 42 claims made by the tool against the live pages of their sources. The accepted corrections are captions and tags only: App Store CVR → SplitMetrics (not AppTweak); CTR a2a → [E]; web CPM → Triple Whale $15.06, no geo split; the email stage → Interact's consistent pairs 62–89%; checkout completion → [E] (Stripe publishes +22.3% from Apple Pay, not 82/58); 1st monthly renewal → RC 42–61% by category; r2m/w2/refund/M6/M12/weekly anchors/price ramp → "RC report chart (PDF), not a public page"; seasonality → [E, read off the Bïrch chart]; pricing index → [E]; ARPU Android → [A]; the Android paywall factor: the cited "2.9% vs 2.6%" are the H&amp;F and Business categories, while RC's real store split is download→paid D35 iOS 2.6% vs Android 0.9% with trial→paid at parity – the numbers were recomputed (<a href="#s4">§4</a>: iOS ×1.30 / Android ×0.45). Tags of the a2a calculator after the corrections: 9 [B] / 11 [E] / 3 [A] (after adding the W26 anchor [E] – 9 / 12 / 3 of 24 fields).</p>
+<p>What the check does not close: the chapters of RC's State of Subscription Apps 2026 report (M6/M12, weekly anchors, refund, the annual price ramp) are a PDF, not public pages; those [B] are supported by the report's charts, not by a link.</p>
+<hr>
+<h2 id="s17">17. Decision log</h2>
+<div class="tablewrap"><table class="dlog">
+<thead>
+<tr>
+<th>Date</th>
+<th>Decision</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04.09.2026</td>
+<td>Paywall→trial derived from RC install→trial × geo ÷ install→paywall; self-test over all 36 × 3 combinations</td>
+<td><a href="#s4">§4</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Cost fields (CPM, the AEO premium) follow the scenario mirrored: Pessimistic = P75 cost; self-test on scenario monotonicity</td>
+<td><a href="#s1">§1</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>No-trial: direct purchases = trial-start rate × 0.4 [E] (Adapty's 0.6 is a ceiling), <code>directf</code> field, trial→paid break-even in the explain; self-test that the verdict agrees with the rule</td>
+<td><a href="#s5">§5</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Funnel tab: store CVR per store in each column, column LTV derived from the headline with the derivation printed, fee from the selector; self-test "iOS column = calculator at iOS"</td>
+<td><a href="#s12">§12</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>w2w: cost per quiz start = CPC ÷ (click→LP × LP→quiz) without dividing by completion; budget line fixed; self-test</td>
+<td><a href="#s7">§7</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Weekly: two-phase tail through RC anchors M6/Y1, one function shared with the Retention tab, anchors scaled by the first three renewals; 53 payments M0…M12; self-tests on anchors and tab agreement</td>
+<td><a href="#s8-3">§8.3</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Sensitivity: levers = distance to P75 (CPM – to P25) with "from → to" printed, retention lever, prices as a line; high-price penalty – ramp $50→$70 instead of a $60 threshold; default snapshot $63.29 / $194.1</td>
+<td><a href="#s11">§11</a>, <a href="#s8-2">§8.2</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Texts synchronised with the code: the assumptions list on the Funnel tab (every constant as in the code), the store-CVR explain, the internal logic notes and defaults notes rewritten</td>
+<td>–</td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Tags from the vertical; retention anchors editable (AI not applied to typed ones); mix hint; no-trial + AEO-trial warning; Gulf VAT 10%; fee per funnel; CPI cross-check on paid CPI; self-tests 26/26</td>
+<td><a href="#s8-1">§8.1</a>, <a href="#s14">§14</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Second audit against primary sources: typed yearly renewal without the ramp (self-test); the retention lever keeps the AI factor; 3-day trial ×0.68; Interact stages for w2w (LP→start [A], finish→email 60/65/75 [B]); organic → [E]; AEO attribution; Superwall "average"; H&amp;F CPI cross-check on RocketShip [B]; Meta location fees TR 5% / WE 2–5%</td>
+<td><a href="#s3">§3</a>, <a href="#s4">§4</a>, <a href="#s7">§7</a>, <a href="#s13">§13</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>AEO on trial start is the default; the pair ×4/×4 [E], parity with MAI by construction (self-test), the pair does not move with the scenario; the cross-check compares the organic equivalent</td>
+<td><a href="#s6">§6</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>The P25/P75 scenario step fixed as a decision: why not P35/P65, how to read the spread, what the user does with it</td>
+<td><a href="#s1">§1</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Benchmark base for install→trial – a selector, default hard-paywall apps (the RC band one quartile up; RC's 10.7% vs 2.1% is [B], the shift [E]); AEO/organic as the basis of the benchmarks (×1.0), MAI ×0.4/×0.4 [E] with parity by construction; cross-check on both bases; default snapshot $63.29 / $83.70 (ROAS 0.76); 29/29 self-tests</td>
+<td><a href="#s2">§2</a>, <a href="#s4">§4</a>, <a href="#s6">§6</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Independent check of 42 claims against sources: captions and tags corrected (SplitMetrics instead of AppTweak, CTR [E], TW $15.06, Interact pairs, Stripe +22.3%, RC 42–61%, "report PDF" for the retention chapters, seasonality [E], pricing index [E], ARPU [A]); "Trust check" → "Consistency checks"</td>
+<td><a href="#s16">§16</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Numbers after the check: paywall factor iOS ×1.30 / Android ×0.45 / Blended ×1.0 (RC 2.6% vs 0.9%, mix 0.65 from the global median 2.0%); ARPU Android ×0.8 / Blended ×0.9 [A]; web CPM NA median $15.06; seasonality Jan–Feb ×0.80, Dec ×1.40; VAT IN/SEA 12%; cross-check against the platform-adjusted composite; default snapshot $63.29 / $79.51 (ROAS 0.80); 30/30 self-tests</td>
+<td><a href="#s4">§4</a>, <a href="#s2">§2</a>, <a href="#s9">§9</a>, <a href="#s12">§12</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Fresh-eyes pass: tool texts without internal audit codes or client names; the assumptions list on the Funnel tab rewritten after the source check; the Android first-open tag [E] aligned between the tab and the list; this document checked against the code (every constant, default figures $63.29 / $79.51 / 0.80, scenarios $802 / $182 / $79.51 / $9.42)</td>
+<td>all</td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Run on a real w2w funnel (Stripe, ~six months of data): the ROAS definition, refund and monthly retention reproduced within 2%; the web-cohort ×0.89 double count on typed/fitted renewals found and fixed (per plan, self-test, 31/31); weekly tail and intro prices logged as open questions</td>
+<td><a href="#s9">§9</a>, <a href="#s8-3">§8.3</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>After the run: a "1st-period price" column on the plans (intro offers; yearly renews at the full price); a "Weekly survival at week 26" field defaulting to RC × s3/s3_ref; the weekly fit is a geometric tail instead of a power law; downsell plans added to "not modeled"; 34/34 self-tests, defaults unchanged</td>
+<td><a href="#s8">§8</a>, <a href="#s8-3">§8.3</a>, <a href="#s8-4">§8.4</a>, <a href="#s15">§15</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Fresh-eyes pass #2 (correctness · logic · consistency · usability · simplicity): the paywall→trial caption shows both bases; Funnel-tab tags aligned with the fields (CTR [E], SplitMetrics/AppTweak per store, LP→quiz [A], checkout completion [E], Superwall "average"); Retention-tab text on fit mode; Canada VAT aligned with the tab; the W26 anchor tagged [E] (9/12/3 of 24); explain in paragraphs; the default case computed on load; the "CPA target event" selector removed, CPT in the explain chain; the LTV block header names its content; click→LP and email captions (no email step → 100%); warning when W26 ≥ s3; the plan table no longer overflows on mobile; an independent Python replica matches to the cent; 34/34</td>
+<td>all</td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Live link check before publishing: RC (store split, renewals, the SOSA page with 10.7% vs 2.1% and 37.7%, Play billing), SplitMetrics/AppScreenshotStudio, Triple Whale $15.06, Superwall 56%/85%, RocketShip $7.80/$4.90 and CPM $5.40–17.50, TUNE 2017, Lebesgue, Adapty paywall (all six figures), Interact, Mobile Dev Memo, ADCostly, Meta location fees, Stripe vs Paddle – confirmed; <strong>AppTweak's page has been updated</strong> and no longer shows the H1 2024 category CVRs – the Play figures now link to the citing pages, Adjust (H&amp;F 23.2%) and Adapty (Edu 30.4%), added to the footer; H&amp;F mix: only "annual 60.6%" is [B], the rest [E]; RocketShip's blended CPM $10.20 added to the CPM caption as a second reference</td>
+<td><a href="#s3">§3</a>, <a href="#s2">§2</a>, <a href="#s14">§14</a></td>
+</tr>
+<tr>
+<td>04.09.2026</td>
+<td>Published: the tool moved to mariascales.com/tools/unit-economics-estimator/ (a Tools section with the /tools/ hub, a Tools item in the nav on every page, the old case URL redirects with query/hash preserved; the Stealth case links to the tool). The live file is byte-identical to the reviewed one (sha256), self-test 34/34 on the live site. Regression set for the manual run: Test_Run_Checklist.md + Test_Scenarios.md (30 states with expected numbers and share links, every link re-opened in a headless browser). Cosmetic: the Aspirational preset printed peak cash "$-0.00" (payback M0) → "$0.00"; no model number touched.</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+  </div>
+</div>
+
+<div class="back-link"><div class="container"><a href="/tools/unit-economics-estimator/">← Back to the Unit Economics Estimator</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
