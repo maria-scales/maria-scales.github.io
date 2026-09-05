@@ -153,6 +153,9 @@
   .seg button small { display:block; font-weight:400; font-size:.6875rem; color:var(--sub); }
   .seg button.on { background:var(--link); color:#fff; } .seg button.on small { color:#dbe4f0; }
   .seg button:not(.on):hover { background:var(--bg); color:var(--ink); }
+  .fdhow { margin:10px 0 4px; padding-left:18px; line-height:1.5; } .fdhow li { margin:0 0 4px; }
+  .fdcompare { margin:18px 0 6px; } .fdcompare > summary { font-size:.875rem; } .fdcompare[open] > summary { margin-bottom:4px; }
+  .fdassume { margin-top:22px; } .fdassume > summary { font-size:.875rem; } .fdassume ul { margin:4px 0 0; }
   .ddtoc { columns:2; column-gap:28px; padding-left:0; list-style:none; margin:8px 0 0; font-size:.8125rem; line-height:1.75; }
   .ddtoc li { break-inside:avoid; } .ddtoc a { color:var(--link); text-decoration:none; } .ddtoc a:hover { text-decoration:underline; }
   @media (max-width:600px){ .ddtoc { columns:1; } .seg button { padding:6px 10px; } }
@@ -331,14 +334,26 @@
   </div><!-- /tab-calc -->
 
   <div id="tab-funnel" style="display:none">
-    <h2>a2a funnel per 100,000 impressions – iOS vs Android</h2>
-    <p class="note">Both funnels, each with your current Setup and manual overrides (a2a and w2w keep separate overrides). Healthy bands = P25–P75 for your geo × vertical; ✓/⚠ marks where your value sits. For w2w, iOS/Android means the targeted device (split provisional [A]). Stages without a published OS split use the same value for both columns.<br>
-    <strong>Economics rows use each funnel's own money mechanics</strong>: a2a – the store fee you selected (15% SBP by default), no cohort penalty; w2w – the PSP fee (~5%) <em>plus</em> the web-cohort ×0.89 retention penalty [B, Adapty] on benchmark retention (not on renewals you typed – those already are the web cohort). That's why the two ROAS figures are directly comparable – same prices, different money plumbing. <strong>Net LTV per column</strong> starts from the calculator's headline number: your prices are read as the selected platform's, and the ARPU factor (iOS ×1.0 · Android ×0.8 · Blended ×0.9 [A – no public revenue split by store; Play billing-error churn is the documented mechanism]) re-bases them per store – each card shows the derivation. Store CVR is per store in each column (App Store vs Play data), whatever the Setup selector says. Colors: a2a = blue/coral, w2w = sky/green (iOS / Android).</p>
-    <div id="funnelviz"></div>
-    <h2>w2w funnel per 100,000 impressions – iOS vs Android devices</h2>
-    <div id="funnelviz2"></div>
-    <h2>Assumptions behind the numbers</h2>
-    <p class="note">Every number below is what the code uses today (constants in <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code>, <code>MAI</code>); the reasoning behind each choice lives in the Design Decisions log; every source was re-checked against its live page on 4 Sep 2026. Scenario presets move conversion and retention fields P25 → P75 and the CPM the opposite way.</p>
+    <div class="seg" id="funnelseg2" title="Same switch as in the calculator – one funnel setting for the whole tool">
+      <button data-f="a2a" class="on">App → App<small>store install funnel (a2a)</small></button>
+      <button data-f="w2w">Web → Web<small>quiz funnel, web checkout (w2w)</small></button>
+    </div>
+    <ul class="note fdhow">
+      <li>Per 100,000 impressions, iOS vs Android, on your current Setup and overrides (a2a and w2w keep separate ones). Healthy band = P25–P75 for your geo × vertical; ✓ / ⚠ marks where your value sits.</li>
+      <li>Money check uses each funnel's own plumbing: a2a – the store fee you selected, no cohort penalty; w2w – the PSP fee (~5%) plus the web-cohort ×0.89 on benchmark retention [B, Adapty]. Same prices, so the two ROAS figures are directly comparable.</li>
+      <li>Net LTV per column = the calculator's headline re-based by the ARPU factor (iOS ×1.0 · Android ×0.8 · Blended ×0.9 [A]); store CVR is per store in each column whatever the Setup selector says. For w2w, iOS/Android means the targeted device (split provisional [A]); stages without a published OS split show the same value in both columns.</li>
+    </ul>
+    <div id="fd-a2a">
+      <h2>a2a funnel per 100,000 impressions – iOS vs Android</h2>
+      <div id="funnelviz"></div>
+    </div>
+    <div id="fd-w2w">
+      <h2>w2w funnel per 100,000 impressions – iOS vs Android devices</h2>
+      <div id="funnelviz2"></div>
+    </div>
+    <details class="mnotes fdcompare" id="fd-compare"><summary id="fd-compare-sum">Compare with the other funnel on the same Setup</summary><div id="fd-other"></div></details>
+    <details class="mnotes fdassume"><summary>Assumptions behind the numbers – every constant as in the code</summary>
+    <p class="note" style="margin:6px 0 4px">Every number below is what the code uses today (constants in <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code>, <code>MAI</code>); the reasoning behind each choice lives in the Design Decisions log; every source was re-checked against its live page on 4 Sep 2026. Scenario presets move conversion and retention fields P25 → P75 and the CPM the opposite way.</p>
     <ul class="note" style="line-height:1.7">
       <li><span class="tag tE">E</span> <strong>CTR 1.2 / 1.6 / 2.0%</strong> – our band for video/UGC app-install creatives; the public panels bracket it without a creative-type split (Superads industry average 0.90–1.10%, Triple Whale e-commerce median 2.39%) – no OS split.</li>
       <li><span class="tag tA">A</span> <strong>Click → store page 85 / 90 / 95%</strong> – in-app browser → deeplink losses; no public data.</li>
@@ -359,6 +374,7 @@
       <li><span class="tag tA">A</span> <strong>w2w device split:</strong> CPM iOS ×1.15 / Android ×0.85 (device-targeting price), checkout completion iOS ×1.05 / Android ×0.95 (Apple Pay effect), ARPU iOS ×1.0 / Android ×0.9 / Blended ×0.95 – placeholders, no public data.</li>
       <li><span class="tag tB">B</span>/<span class="tag tE">E</span> <strong>Retention:</strong> monthly anchors M1 50 / 61 / 68% [E, our band; RC category medians of the 1st monthly renewal span 42–61%], M6 14 / 20 / 26% and M12 6 / 10 / 14% [B, RC SOSA 2026 report], log-log between anchors; weekly renewals 35/46/58 [B, RC: 1st weekly renewal 35–58%] → 67/71/75 [E, report chart] → 74/80/85% [B, RC: 3rd renewal converges to 74–91%], then a two-phase tail through RC anchors M6 ≈ 10% and Y1 ≈ 1.5% [B, report], scaled by your first three renewals [E] – the week-26 anchor is an editable field (the least certain number in weekly LTV; a real weekly cohort with 80%+ early renewals kept ~10%/week churn instead of RC's slowdown), and the weekly early-stage fit is a geometric tail at your 2nd renewal's churn, not a power law; intro offers: the first payment at the 1st-period price, renewals at the plan price; yearly renewal 22 / 30 / 40% [B, RC: 1st annual renewal 23–40% across categories; Y1 27–28%] × a price ramp ×1.0 at $50 → ×0.8 at $70 [E, report price-tier chart: high-price 1st-renewal churn 37% vs 24%]; refund 2.5–4.7% by vertical on the first payment only [B, RC report]; AI apps: install→trial ×0.487 [B, Adapty 5.31% vs 10.92%] and monthly M6/M12 anchors ×0.7 [E – RC: AI apps churn ~30% faster / retain 36% worse over 12 months].</li>
     </ul>
+    </details>
   </div><!-- /tab-funnel -->
 
   <div id="tab-ret" style="display:none">
@@ -1440,7 +1456,16 @@ function setFunnel(want){
     el("funnel").dispatchEvent(new window.Event("change"));
   }
   setOptOptions(want);
-  el("funnelseg").querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.f === want));
+  document.querySelectorAll("#funnelseg button, #funnelseg2 button").forEach(b => b.classList.toggle("on", b.dataset.f === want));
+  layoutFunnelTab(want);
+}
+// Funnel diagnostics shows the selected funnel first; the other one sits behind "Compare…" – same DOM nodes, just re-parented
+function layoutFunnelTab(f){
+  const mine = el(f === "a2a" ? "fd-a2a" : "fd-w2w"), other = el(f === "a2a" ? "fd-w2w" : "fd-a2a"), cmp = el("fd-compare");
+  if (!mine || !cmp) return;
+  cmp.parentNode.insertBefore(mine, cmp);
+  el("fd-other").appendChild(other);
+  el("fd-compare-sum").textContent = `Compare with the ${f === "a2a" ? "Web → Web (quiz)" : "App → App (store)"} funnel on the same Setup`;
 }
 function showTab(name){
   if (name === "calcw"){ setFunnel("w2w"); name = "calc"; }        // old share links / tests still say "calcw"
@@ -1456,7 +1481,8 @@ function showRef(k){
 }
 Object.keys(TABMAP).forEach(n => el("tabbtn-" + n).addEventListener("click", () => showTab(n)));
 Object.keys(REFMAP).forEach(n => el("ref-" + n).addEventListener("click", () => showRef(n)));
-el("funnelseg").querySelectorAll("button").forEach(b => b.addEventListener("click", () => setFunnel(b.dataset.f)));
+document.querySelectorAll("#funnelseg button, #funnelseg2 button").forEach(b => b.addEventListener("click", () => setFunnel(b.dataset.f)));
+layoutFunnelTab(el("funnel").value);
 const STATE_SELECTS = ["platform","funnel","vertical","bbase","geo","scenario","optevent","pwtrial","triallen","season","ai","fee","retmode"];
 function stateObj(){
   return {
