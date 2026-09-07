@@ -289,7 +289,7 @@
       },
       "softwareVersion": "1.1",
       "datePublished": "2026-07-12",
-      "dateModified": "2026-09-05",
+      "dateModified": "2026-09-07",
       "inLanguage": "en",
       "author": {
         "@type": "Person",
@@ -332,6 +332,97 @@
           "item": "https://mariascales.com/tools/unit-economics-estimator/"
         }
       ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to use the Unit Economics Estimator",
+      "description": "Four steps from a blank calculator to a unit-economics answer for a subscription app.",
+      "totalTime": "PT30S",
+      "url": "https://mariascales.com/tools/unit-economics-estimator/#tab-calc",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick your vertical and geo",
+          "text": "Pick your vertical and geo – every benchmark fills itself from public data (RevenueCat, Adapty, Lebesgue, Interact). The install to trial benchmark defaults to hard-paywall apps; switch the base to All apps for the raw RC panel median.",
+          "url": "https://mariascales.com/tools/unit-economics-estimator/#tab-calc"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Enter your plans and prices",
+          "text": "Enter your plans and prices – the only thing the tool cannot know.",
+          "url": "https://mariascales.com/tools/unit-economics-estimator/#tab-calc"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Press Calculate, and override what you know",
+          "text": "Press Calculate after every change (the default case is already computed). Override any field you have real data for – it turns blue, my data, and is used as-is: season, optimization-event, platform and paid-traffic factors are not applied on top. Where each number lives in your own systems – Reference, Data sources.",
+          "url": "https://mariascales.com/tools/unit-economics-estimator/#tab-calc"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Swing the scenario to see the range",
+          "text": "The scenario preset swings every remaining benchmark at once – conversions and retention to P25 or P75, CPM the opposite way, so Pessimistic means every stage against you. Ten stages at P25 compound into far worse than a P25 app. Early stage? Switch retention to Fit from my first 2 renewals. Show a colleague your exact setup with Copy share link.",
+          "url": "https://mariascales.com/tools/unit-economics-estimator/#tab-calc"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "url": "https://mariascales.com/tools/unit-economics-estimator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which apps is this for, and which is it not for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subscription apps only, in two funnels: app to app (store install) and web to web (quiz funnel, web checkout), acquired on Meta, behind a hard paywall. Ad-monetized apps (in-app advertising), hybrid models and commerce economics are out of scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does M13 mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The horizon the calculator works to: 12 months of payments plus the first annual renewal, which falls in month 13. LTV, the payback month and the peak cash line are all computed to that point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do the numbers come from if I enter nothing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything except your plans and prices starts from a public benchmark – 24 inputs, for any of 6 verticals and 6 geos, from named sources such as RevenueCat, Adapty, Lebesgue, Apptweak, Adjust and Interact, each linked where it is used. The median of the panel is the default; the scenario preset moves every remaining benchmark to P25 or P75 at once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when I put in my own number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The field turns blue – my data – and is used as it is: the season, optimization-event, platform and paid-traffic factors are not applied on top of it. Where each of these numbers lives in your own systems is listed under Reference, Data sources."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from the LTV Calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The LTV Calculator is this tool's LTV engine without the acquisition funnel: it answers what one subscriber is worth and you bring your own CPA. This tool starts from impressions and CPM and computes the funnel down to CPA itself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are VAT and the store commission taken out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Net LTV is the payment schedule divided by (1 + VAT), times (1 – the store or PSP fee), times (1 + upsell). On store billing Apple or Google strip the VAT out first and take their 15 or 30% from what is left; on web billing you are the merchant and the PSP fee applies instead. The VAT rate defaults to the geo you acquire in and can be overridden."
+          }
+        }
+      ]
     }
   ]
 }
@@ -353,7 +444,7 @@
   </div>
 </div>
 <div class="est-wrap">
-  <div class="meta"><strong>Does this subscription app's growth math ever close?</strong> Set your plans and prices; every other field starts from a public benchmark – override anything you actually know. Scope: subscription apps only – app→app and web→web quiz funnels, Meta acquisition, hard paywall; ad-monetized (in-app advertising), hybrid and commerce economics are out of scope. Only need what a subscriber is worth? The <a href="/tools/ltv-calculator/">LTV Calculator</a> is this tool's LTV engine without the funnel – bring your own CPA. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.
+  <div class="meta"><strong>Does this subscription app's growth math ever close?</strong> Set your plans and prices; each of the other <strong>24 benchmark inputs</strong> starts from public data, for any of <strong>6 verticals</strong> and <strong>6 geos</strong> – override anything you actually know. The horizon is <strong>M13</strong>: 12 months of payments plus the first annual renewal, with VAT and the store or PSP fee deducted before LTV. <strong>35 self-tests</strong> ship with the page and run in your browser at <a href="?test=1">?test=1</a>. Scope: subscription apps only – app→app and web→web quiz funnels, Meta acquisition, hard paywall; ad-monetized (in-app advertising), hybrid and commerce economics are out of scope. Only need what a subscriber is worth? The <a href="/tools/ltv-calculator/">LTV Calculator</a> is this tool's LTV engine without the funnel – bring your own CPA. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.
   <details class="mnotes" style="margin-top:6px"><summary>Jargon on this page</summary><p style="margin:4px 0 0"><strong>AEO</strong> – app event optimization: Meta bids for an in-app event, here the trial start · <strong>MAI</strong> – mobile app install optimization · <strong>VO</strong> – value optimization, bids for purchase value · <strong>SBP</strong> – Apple's Small Business Program, 15% commission instead of 30% · <strong>M13</strong> – the horizon: 12 months of payments plus the first annual renewal in month 13 · <strong>P25 / P75</strong> – the 25th / 75th percentile of the benchmark panel; the median (P50) is the default · <strong>CPT</strong> – cost per trial start · <strong>CPA</strong> – cost per subscriber.</p></details></div>
 
   <div class="tabs">
@@ -376,6 +467,17 @@
       <li>Press <strong>Calculate</strong> after every change (the default case is already computed). Override any field you have real data for – it turns blue = "my data" and is used as-is: season, optimization-event, platform and paid-traffic factors are not applied on top. Where each number lives in your own systems – <a href="#" id="dslink" style="color:var(--link)">Reference › Data sources</a>.</li>
       <li>The <strong>scenario preset</strong> swings every remaining benchmark at once – conversions and retention to P25 / P75, CPM the opposite way, so Pessimistic = every stage against you. Ten stages at P25 compound into far worse than "a P25 app". Early stage? Switch retention to <em>Fit from my first 2 renewals</em>. Show a colleague your exact setup – <em>Copy share link</em>.</li>
     </ol>
+  </details>
+  <details class="card howcard" id="faq">
+    <summary>Questions this tool gets asked</summary>
+    <div class="note">
+    <p style="margin:0 0 10px"><strong>Which apps is this for, and which is it not for?</strong><br>Subscription apps only, in two funnels: app to app (store install) and web to web (quiz funnel, web checkout), acquired on Meta, behind a hard paywall. Ad-monetized apps (in-app advertising), hybrid models and commerce economics are out of scope.</p>
+    <p style="margin:0 0 10px"><strong>What does M13 mean?</strong><br>The horizon the calculator works to: 12 months of payments plus the first annual renewal, which falls in month 13. LTV, the payback month and the peak cash line are all computed to that point.</p>
+    <p style="margin:0 0 10px"><strong>Where do the numbers come from if I enter nothing?</strong><br>Everything except your plans and prices starts from a public benchmark – 24 inputs, for any of 6 verticals and 6 geos, from named sources such as RevenueCat, Adapty, Lebesgue, Apptweak, Adjust and Interact, each linked where it is used. The median of the panel is the default; the scenario preset moves every remaining benchmark to P25 or P75 at once.</p>
+    <p style="margin:0 0 10px"><strong>What happens when I put in my own number?</strong><br>The field turns blue – my data – and is used as it is: the season, optimization-event, platform and paid-traffic factors are not applied on top of it. Where each of these numbers lives in your own systems is listed under Reference, Data sources.</p>
+    <p style="margin:0 0 10px"><strong>How is this different from the LTV Calculator?</strong><br>The LTV Calculator is this tool's LTV engine without the acquisition funnel: it answers what one subscriber is worth and you bring your own CPA. This tool starts from impressions and CPM and computes the funnel down to CPA itself.</p>
+    <p style="margin:0 0 10px"><strong>Are VAT and the store commission taken out?</strong><br>Yes. Net LTV is the payment schedule divided by (1 + VAT), times (1 – the store or PSP fee), times (1 + upsell). On store billing Apple or Google strip the VAT out first and take their 15 or 30% from what is left; on web billing you are the merchant and the PSP fee applies instead. The VAT rate defaults to the geo you acquire in and can be overridden.</p>
+    </div>
   </details>
   <h2>Setup</h2>
   <div class="grid">
