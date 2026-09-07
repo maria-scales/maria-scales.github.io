@@ -157,6 +157,20 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #1e293b; }
     .author-box a { color: #1e40af; font-weight: 600; }
+
+    details.datawrap { margin: -8px 0 28px; }
+    details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
+    details.datawrap > summary::-webkit-details-marker { display: none; }
+    details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
+    details.datawrap[open] > summary::before { content: "▾ "; }
+    details.datawrap > summary:hover { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data th.l, table.data td.l { text-align: left; white-space: normal; }
+    table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
+    p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
   </style>
   <script type="application/ld+json">
 {
@@ -355,6 +369,22 @@
     </div>
     <canvas id="stackChart" height="160"></canvas>
     <div class="chart-note">Further Mathematics: "recommended" at A*A*A entry level is functionally required. Economics, Psychology, Business: 0 requirements across all 31 programmes.</div>
+  <details class="datawrap" data-geo-pass="longbet-tables-070926">
+  <summary>Show the data – 4 subjects across 31 programmes</summary>
+  <p class="tcaption">Table 1. Same numbers as the chart above, counted over the 31 programmes: how many require the subject, how many recommend it, how many ask for neither.</p>
+  <div class="tablewrap">
+  <table class="data">
+  <thead><tr><th class="l">Subject</th><th>Required</th><th>Recommended</th><th>Neither</th></tr></thead>
+  <tbody>
+  <tr><td class="c">Mathematics</td><td>30</td><td>0</td><td>1</td></tr>
+  <tr><td class="c">Further Maths</td><td>2</td><td>25</td><td>4</td></tr>
+  <tr><td class="c">Physics</td><td>12</td><td>15</td><td>4</td></tr>
+  <tr><td class="c">Chemistry</td><td>4</td><td>15</td><td>12</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
   </div>
 
   <div class="zero-row">

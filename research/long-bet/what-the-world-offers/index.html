@@ -138,6 +138,20 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #1e293b; }
     .author-box a { color: #1e40af; font-weight: 600; }
+
+    details.datawrap { margin: -8px 0 28px; }
+    details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
+    details.datawrap > summary::-webkit-details-marker { display: none; }
+    details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
+    details.datawrap[open] > summary::before { content: "▾ "; }
+    details.datawrap > summary:hover { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data th.l, table.data td.l { text-align: left; white-space: normal; }
+    table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
+    p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
   </style>
   <script type="application/ld+json">
 {
@@ -268,6 +282,49 @@
     <div class="chart-title">Programme coverage – universities offering each (out of 100)</div>
     <canvas id="freqChart" height="420"></canvas>
     <div class="chart-note">Colour = subject cluster · Hover for exact figures · 31 canonical programmes across 100 ARWU 2025 universities</div>
+  <details class="datawrap" data-geo-pass="longbet-tables-070926">
+  <summary>Show the data – 31 programmes</summary>
+  <p class="tcaption">Table 1. The same numbers as the chart above: how many of the 100 ARWU 2025 universities offer each of the 31 canonical programmes.</p>
+  <div class="tablewrap">
+  <table class="data">
+  <thead><tr><th class="l">Programme</th><th class="l">Cluster</th><th>Universities offering (of 100)</th></tr></thead>
+  <tbody>
+  <tr><td class="c">Computer Science</td><td>CS & AI</td><td>95</td></tr>
+  <tr><td class="c">Physics</td><td>Physics & Astronomy</td><td>94</td></tr>
+  <tr><td class="c">Chemistry</td><td>Chemistry</td><td>92</td></tr>
+  <tr><td class="c">Mathematics</td><td>Mathematics</td><td>91</td></tr>
+  <tr><td class="c">Statistics</td><td>Mathematics</td><td>81</td></tr>
+  <tr><td class="c">Data Science</td><td>CS & AI</td><td>73</td></tr>
+  <tr><td class="c">Electrical Engineering</td><td>Engineering – Elec</td><td>72</td></tr>
+  <tr><td class="c">Mechanical Engineering</td><td>Engineering – Mech</td><td>65</td></tr>
+  <tr><td class="c">Chemical Engineering</td><td>Engineering – Chem</td><td>60</td></tr>
+  <tr><td class="c">Civil Engineering</td><td>Engineering – Civil</td><td>58</td></tr>
+  <tr><td class="c">Biomedical Engineering</td><td>Engineering – Biomed</td><td>56</td></tr>
+  <tr><td class="c">Bioinformatics</td><td>CompBio</td><td>54</td></tr>
+  <tr><td class="c">Materials Science</td><td>Engineering – Chem</td><td>51</td></tr>
+  <tr><td class="c">Computational Biology</td><td>CompBio</td><td>45</td></tr>
+  <tr><td class="c">Earth Sciences</td><td>Earth & Env</td><td>36</td></tr>
+  <tr><td class="c">Neuroscience</td><td>CompBio</td><td>35</td></tr>
+  <tr><td class="c">Aerospace Engineering</td><td>Engineering – Mech</td><td>27</td></tr>
+  <tr><td class="c">Astrophysics</td><td>Physics & Astronomy</td><td>24</td></tr>
+  <tr><td class="c">Applied Mathematics</td><td>Mathematics</td><td>24</td></tr>
+  <tr><td class="c">Biochemistry</td><td>Chemistry</td><td>17</td></tr>
+  <tr><td class="c">Industrial Engineering</td><td>Engineering – Other</td><td>15</td></tr>
+  <tr><td class="c">Environmental Eng.</td><td>Engineering – Civil</td><td>14</td></tr>
+  <tr><td class="c">Systems Engineering</td><td>Engineering – Other</td><td>12</td></tr>
+  <tr><td class="c">Engineering (General)</td><td>Engineering – Other</td><td>12</td></tr>
+  <tr><td class="c">Artificial Intelligence</td><td>CS & AI</td><td>12</td></tr>
+  <tr><td class="c">Computational Science</td><td>CS & AI</td><td>11</td></tr>
+  <tr><td class="c">Interdisciplinary Sci.</td><td>Interdisciplinary</td><td>8</td></tr>
+  <tr><td class="c">Nuclear Engineering</td><td>Engineering – Other</td><td>8</td></tr>
+  <tr><td class="c">Operations Research</td><td>Mathematics</td><td>7</td></tr>
+  <tr><td class="c">Actuarial Science</td><td>Mathematics</td><td>6</td></tr>
+  <tr><td class="c">CS & AI (combined)</td><td>CS & AI</td><td>3</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
   </div>
 
   <p>Computational Biology sits at 45 universities. Bioinformatics at 54. Real numbers, not vanishingly rare. But not what someone scanning degree titles would assume. The degree title you search for is often not the degree that exists.</p>
@@ -372,6 +429,22 @@
     <div class="chart-title">Key programme coverage by country – AI, Computational Biology, Bioinformatics, Applied Mathematics (% of country's top-100 universities offering each)</div>
     <canvas id="countryChart" height="260"></canvas>
     <div class="chart-note">Global avg shown as reference line per programme</div>
+  <details class="datawrap" data-geo-pass="longbet-tables-070926">
+  <summary>Show the data – 4 programmes across 6 countries</summary>
+  <p class="tcaption">Table 2. Share of each country's top-100 universities offering the programme, with the global average for reference. Same numbers as the chart above.</p>
+  <div class="tablewrap">
+  <table class="data">
+  <thead><tr><th class="l">Programme</th><th>Global avg, %</th><th>US, %</th><th>UK, %</th><th>France, %</th><th>China, %</th><th>Germany, %</th><th>Switzerland, %</th></tr></thead>
+  <tbody>
+  <tr><td class="c">AI</td><td>12</td><td>0</td><td>87.5</td><td>0</td><td>23.1</td><td>25</td><td>0</td></tr>
+  <tr><td class="c">CompBio</td><td>45</td><td>78.4</td><td>37.5</td><td>0</td><td>7.7</td><td>0</td><td>20</td></tr>
+  <tr><td class="c">BioInfo</td><td>54</td><td>40.5</td><td>62.5</td><td>75</td><td>53.8</td><td>100</td><td>60</td></tr>
+  <tr><td class="c">AppMath</td><td>24</td><td>45.9</td><td>25</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
   </div>
 
   <p>Switzerland adds depth: ETH Zurich (#22) and EPFL (#44), strong in systems engineering and environmental engineering, at low fees relative to their ranking. Not cheap by Swiss standards, but well below UK or US equivalents.</p>

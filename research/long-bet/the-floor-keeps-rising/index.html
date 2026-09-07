@@ -178,6 +178,20 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #1e293b; }
     .author-box a { color: #1e40af; font-weight: 600; }
+
+    details.datawrap { margin: -8px 0 28px; }
+    details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
+    details.datawrap > summary::-webkit-details-marker { display: none; }
+    details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
+    details.datawrap[open] > summary::before { content: "▾ "; }
+    details.datawrap > summary:hover { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data th.l, table.data td.l { text-align: left; white-space: normal; }
+    table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
+    p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
   </style>
   <script type="application/ld+json">
 {
@@ -315,6 +329,25 @@
     <div class="chart-desc">Before the next tool arrived and democratised it</div>
     <div class="cbar-rows" id="cbars"></div>
     <div class="chart-note">*Boundaries between eras are approximate – Hinton's foundational work on neural networks predates the Deep Learning era by decades. The exact dates matter less than the direction. The coding cycle is not yet complete – 4 years is the current duration, not the final one.</div>
+  <details class="datawrap" data-geo-pass="longbet-tables-070926">
+  <summary>Show the data – 7 cycles</summary>
+  <p class="tcaption">Table 1. Same numbers as the chart above: how long each skill stayed scarce, and that duration as a share of the longest cycle.</p>
+  <div class="tablewrap">
+  <table class="data">
+  <thead><tr><th class="l">Skill</th><th>Years scarce</th><th>Share of the span, %</th><th class="l">Status</th></tr></thead>
+  <tbody>
+  <tr><td class="c">Statistical intuition</td><td>60</td><td>100</td><td></td></tr>
+  <tr><td class="c">Programming</td><td>25</td><td>41.7</td><td></td></tr>
+  <tr><td class="c">SQL & databases</td><td>15</td><td>25</td><td></td></tr>
+  <tr><td class="c">Distributed systems</td><td>12</td><td>20</td><td></td></tr>
+  <tr><td class="c">ML & data science</td><td>8</td><td>13.3</td><td></td></tr>
+  <tr><td class="c">Deep learning</td><td>5</td><td>8.3</td><td></td></tr>
+  <tr><td class="c">Coding (LLMs)</td><td>4</td><td>6.7</td><td>current</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
   </div>
 
 
