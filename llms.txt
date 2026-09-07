@@ -9,6 +9,7 @@ All pages are static HTML with a TL;DR block at the top, en-dash typography, and
 - [Unit Economics Estimator](https://mariascales.com/tools/unit-economics-estimator/): interactive subscription-app model – install-to-paid funnel, LTV M13, CPA, payback, target CPA; benchmarks from RevenueCat, Adapty, AppTweak and others, each input tagged B (benchmarked) / E (estimated) / A (assumption); 35 built-in self-tests
 - [LTV Calculator](https://mariascales.com/tools/ltv-calculator/): the estimator's LTV engine alone – net LTV M13 by plan from a retention curve, VAT and store fee deductions, ROAS and payback against your own CPA
 - [Design decisions](https://mariascales.com/tools/unit-economics-estimator/design-decisions/): why the model is built the way it is – discrete payment schedule vs the other LTV methods, retention power law, VAT handling
+- [Benchmark snapshots](https://mariascales.com/tools/unit-economics-estimator/benchmarks/): every benchmark the estimator ships with, dated and sourced – 32 inputs (11 B / 14 E / 7 A), 6 verticals, 6 geos, 18 public sources, downloadable as CSV; generated from the calculator's own constants
 
 ## Research
 

@@ -1,0 +1,127 @@
+snapshot_date,tool_version,group,key,dimension,name,tag,p25,median,p75,unit,source_url,note
+2026-09-07,v1.1,funnel_a2a,cpm,,"CPM – base, $ / 1000 impressions",E,,,,usd_per_1000_impressions,https://lebesgue.io/facebook-ads/facebook-cpm-by-country,per geo – Table 5
+2026-09-07,v1.1,funnel_a2a,ctr,,CTR – impression → click,E,0.012,0.016,0.02,share,https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate,"our band for video/UGC app-install creatives; the panels bracket it without a creative-type split: Superads industry average 0.90–1.10%, Triple…"
+2026-09-07,v1.1,funnel_a2a,c2s,,Click → store page,A,0.85,0.9,0.95,share,,in-app browser → deeplink losses; no public data
+2026-09-07,v1.1,funnel_a2a,scvr,,Store CVR (page → install),B,,,,share,https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026,per vertical and store – Table 4
+2026-09-07,v1.1,funnel_a2a,paidf,,Paid-traffic factor – % of the store CVR that paid traffic achieves,A,0.7,0.8,0.9,share,,paid traffic converts below the blended store benchmarks; no public split
+2026-09-07,v1.1,funnel_a2a,i2pw,,Install → paywall view (composite: open + onboarding + registration),B,0.45,0.56,0.85,share,https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking,Superwall (Nov 2022): platform average – only 56% of users ever see a paywall
+2026-09-07,v1.1,funnel_a2a,pw2t,,Paywall view → trial start,E,,,,share,https://www.revenuecat.com/state-of-subscription-apps/,derived: install→trial ÷ install→paywall
+2026-09-07,v1.1,funnel_a2a,org,,"Organic uplift – extra organic installs, % of paid installs",E,0.1,0.25,0.4,share,https://www.tune.com/blog/paid-organic-measurably-better-together-organic-uplift/,"TUNE (2017, dataset not described) reports 1.5 organic installs per paid install"
+2026-09-07,v1.1,funnel_a2a,tshare,,Trial share of new subscriptions (rest buy directly at the paywall),A,0.85,0.9,0.95,share,,no public benchmark
+2026-09-07,v1.1,funnel_a2a,directf,,No-trial paywall: direct purchases as a share of the trial-start rate,E,,,,share,https://adapty.io/blog/high-performing-paywall-2026/,×0.4 of the trial-start rate
+2026-09-07,v1.1,funnel_w2w,cpm,,"CPM – base (web campaigns), $ / 1000 impressions",E,,,,usd_per_1000_impressions,https://www.triplewhale.com/blog/facebook-ads-benchmarks,per geo – Table 5
+2026-09-07,v1.1,funnel_w2w,ctr,,CTR – impression → click (web),A,0.009,0.013,0.018,share,,"assumption for purchase-optimized web campaigns; no panel publishes a quiz-funnel CTR (Superads industry average 0.9–1.1%, Triple Whale e-commerce…"
+2026-09-07,v1.1,funnel_w2w,c2lp,,Click → LP view,A,0.9,0.93,0.95,share,,"Link click → landing-page view; losses to slow pages and mid-load exits, no public benchmark"
+2026-09-07,v1.1,funnel_w2w,lp2q,,LP → quiz start,A,0.3,0.38,0.4,share,,no public benchmark – Interact measures from the quiz start; web2app practice 30–40% of LP visitors click Start
+2026-09-07,v1.1,funnel_w2w,qfin,,Quiz start → finish,B,0.5,0.6,0.65,share,https://www.tryinteract.com/blog/quiz-conversion-rate-report/,"Interact 2026: start→finish 47–65% (e-com 55.5%, coaching 59.1%, overall 65%)"
+2026-09-07,v1.1,funnel_w2w,email,,Finish → email submit,B,0.6,0.65,0.75,share,https://www.tryinteract.com/blog/quiz-conversion-rate-report/,Derived from Interact 2026 by matched pairs: start→lead ÷ start→finish
+2026-09-07,v1.1,funnel_w2w,pw2c,,Paywall → initiated checkout,A,0.05,0.1,0.15,share,https://adapty.io/blog/high-performing-paywall-2026/,Web paywall ≈ ×0.69 of in-app (Adapty 2026: 1.10% vs 1.60% conversion; denominator not defined)
+2026-09-07,v1.1,funnel_w2w,cc,,Checkout completion (initiated → paid),E,0.25,0.4,0.6,share,https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods,"Practitioner band (agency rule of thumb: ~30% cold = excellent, 60–70% warm)"
+2026-09-07,v1.1,ltv,m1,,Monthly retention M1 (share still paying at the 1st renewal),E,0.5,0.61,0.68,share,,our band; RC 2026 category medians of the 1st monthly renewal span 42–61% (Social & Lifestyle → Business); overwrite with your cohort data
+2026-09-07,v1.1,ltv,m6,,Monthly retention M6 (anchor),B,0.14,0.2,0.26,share,https://www.revenuecat.com/state-of-subscription-apps/,RC SOSA 14–26%; overwrite with your M6 if you have 6-month cohorts (AI modifier is not applied on top of your value)
+2026-09-07,v1.1,ltv,m12,,Monthly retention M12 (anchor),B,0.06,0.1,0.14,share,https://www.revenuecat.com/state-of-subscription-apps/,RC SOSA 6–14%; overwrite with your M12 if you have it
+2026-09-07,v1.1,ltv,r1m,,My 1st monthly renewal,E,0.53,0.57,0.61,share,https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category,"placeholder: RC 2026 category medians span 42–61% (Social & Lifestyle → Business), our band 53 / 57 / 61 for a typical subscription app – replace…"
+2026-09-07,v1.1,ltv,r2m,,My 2nd monthly renewal,E,0.65,0.71,0.77,share,https://www.revenuecat.com/state-of-subscription-apps/,placeholder from RC SOSA 2026's renewal-by-cycle chart (report PDF; not on the public web pages) – replace with YOUR number
+2026-09-07,v1.1,ltv,yren,,Yearly renewal at M13,B,0.22,0.3,0.4,share,https://www.revenuecat.com/state-of-subscription-apps/,RC 2026: category medians of the 1st annual renewal span 23–40%
+2026-09-07,v1.1,ltv,w1,,Weekly renewal #1 (= my 1st in fit mode),B,0.35,0.46,0.58,share,https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category,RC 2026: category medians of the 1st weekly renewal span 35–58%
+2026-09-07,v1.1,ltv,w2,,Weekly renewal #2 (= my 2nd in fit mode),E,0.67,0.71,0.75,share,https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category,RC SOSA 2026 renewal-by-cycle chart (report PDF); the public page only says median rates jump ~25–30 pp between the 1st and 2nd renewal
+2026-09-07,v1.1,ltv,w3,,Weekly renewal #3+ base,B,0.74,0.8,0.85,share,https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category,RC 2026: by the 3rd weekly renewal categories converge to 74–91%; our P75 of 85% is deliberately below the source ceiling
+2026-09-07,v1.1,ltv,wm6,,Weekly survival at week 26 (≈ M6) – tail anchor,E,,,,share,https://www.revenuecat.com/state-of-subscription-apps/,"10% at week 26, scaled by your first three renewals"
+2026-09-07,v1.1,ltv,t2p,,Trial → paid,B,,,,share,https://www.revenuecat.com/state-of-subscription-apps/,per vertical × geo – Tables 4 and 5
+2026-09-07,v1.1,ltv,refund,,Refund rate (applied to first payment only),B,,,,share,https://www.revenuecat.com/state-of-subscription-apps/,per vertical – Table 4
+2026-09-07,v1.1,ltv,upsell,,Upsells & offers – ARPU uplift on top of base subscriptions,E,,,,share,https://adapty.io/blog/high-performing-paywall-2026/,0 by default
+2026-09-07,v1.1,ltv,vat,,VAT/GST included in price (deducted before store split),E,,,,share,,per geo – Table 5
+2026-09-07,v1.1,vertical,store_cvr_app_store,hf,Health & Fitness,B,0.13,0.185,0.24,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,hf,Health & Fitness,B,0.17,0.232,0.29,share,,
+2026-09-07,v1.1,vertical,install_to_trial,hf,Health & Fitness,,0.05,0.069,0.16,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,hf,Health & Fitness,B,0.3,0.377,0.514,share,,
+2026-09-07,v1.1,vertical,refund_rate,hf,Health & Fitness,,,0.035,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,hf,Health & Fitness,,,15/24/61,,percent,,
+2026-09-07,v1.1,vertical,store_cvr_app_store,prod,Productivity,E,0.07,0.1,0.14,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,prod,Productivity,E,0.09,0.125,0.17,share,,
+2026-09-07,v1.1,vertical,install_to_trial,prod,Productivity,,0.04,0.055,0.1,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,prod,Productivity,E,0.22,0.3,0.42,share,,
+2026-09-07,v1.1,vertical,refund_rate,prod,Productivity,,,0.047,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,prod,Productivity,,,35/25/40,,percent,,
+2026-09-07,v1.1,vertical,store_cvr_app_store,edu,Education,B,0.045,0.0675,0.1,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,edu,Education,B,0.23,0.304,0.38,share,,
+2026-09-07,v1.1,vertical,install_to_trial,edu,Education,,0.045,0.065,0.12,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,edu,Education,E,0.25,0.33,0.45,share,,
+2026-09-07,v1.1,vertical,refund_rate,edu,Education,,,0.04,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,edu,Education,,,30/25/45,,percent,,
+2026-09-07,v1.1,vertical,store_cvr_app_store,pv,Photo & Video,E,0.06,0.09,0.13,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,pv,Photo & Video,E,0.08,0.11,0.16,share,,
+2026-09-07,v1.1,vertical,install_to_trial,pv,Photo & Video,,0.04,0.055,0.1,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,pv,Photo & Video,B,0.15,0.222,0.331,share,,
+2026-09-07,v1.1,vertical,refund_rate,pv,Photo & Video,,,0.045,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,pv,Photo & Video,,,40/25/35,,percent,,
+2026-09-07,v1.1,vertical,store_cvr_app_store,util,Utilities,E,0.07,0.1,0.14,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,util,Utilities,E,0.09,0.125,0.17,share,,
+2026-09-07,v1.1,vertical,install_to_trial,util,Utilities,,0.045,0.065,0.12,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,util,Utilities,E,0.22,0.3,0.42,share,,
+2026-09-07,v1.1,vertical,refund_rate,util,Utilities,,,0.03,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,util,Utilities,,,50/25/25,,percent,,
+2026-09-07,v1.1,vertical,store_cvr_app_store,me,Media & Entertainment,B,0.06,0.086,0.12,share,,
+2026-09-07,v1.1,vertical,store_cvr_play,me,Media & Entertainment,E,0.14,0.189,0.288,share,,
+2026-09-07,v1.1,vertical,install_to_trial,me,Media & Entertainment,,0.03,0.04,0.08,share,,
+2026-09-07,v1.1,vertical,trial_to_paid,me,Media & Entertainment,E,0.115,0.191,0.438,share,,
+2026-09-07,v1.1,vertical,refund_rate,me,Media & Entertainment,,,0.035,,share,,
+2026-09-07,v1.1,vertical,plan_mix_w_m_y,me,Media & Entertainment,,,40/30/30,,percent,,
+2026-09-07,v1.1,geo,cpm_a2a,na,North America / T1 EN,,12,16,23,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,na,North America / T1 EN,,11,15.06,18,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpi_benchmark_ios,na,North America / T1 EN,,,6.8,,usd,,
+2026-09-07,v1.1,geo,cpi_benchmark_android,na,North America / T1 EN,,,3.9,,usd,,
+2026-09-07,v1.1,geo,price_index,na,North America / T1 EN,,,1.0,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,na,North America / T1 EN,,,0.0,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,na,North America / T1 EN,,,1.0,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,na,North America / T1 EN,,,1.0,,multiplier,,
+2026-09-07,v1.1,geo,cpm_a2a,we,Western Europe,,7,9,12,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,we,Western Europe,,8,9.5,11,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpi_benchmark_ios,we,Western Europe,,,5.4,,usd,,
+2026-09-07,v1.1,geo,cpi_benchmark_android,we,Western Europe,,,2.8,,usd,,
+2026-09-07,v1.1,geo,price_index,we,Western Europe,,,1.3,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,we,Western Europe,,,0.21,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,we,Western Europe,,,0.7,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,we,Western Europe,,,0.87,,multiplier,,
+2026-09-07,v1.1,geo,cpm_a2a,latam,LatAm,,2,3,5.5,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,latam,LatAm,,2,3.2,4.5,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,price_index,latam,LatAm,,,0.6,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,latam,LatAm,,,0.13,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,latam,LatAm,,,0.5,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,latam,LatAm,,,0.62,,multiplier,,
+2026-09-07,v1.1,geo,cpm_a2a,tr,Turkey,,0.9,1.2,2,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,tr,Turkey,,0.89,2,3.41,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,price_index,tr,Turkey,,,0.29,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,tr,Turkey,,,0.2,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,tr,Turkey,,,0.5,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,tr,Turkey,,,0.65,,multiplier,,
+2026-09-07,v1.1,geo,cpm_a2a,gulf,Gulf (SA/AE/QA),,10,12,12.7,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,gulf,Gulf (SA/AE/QA),,10,12,12.7,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,price_index,gulf,Gulf (SA/AE/QA),,,1.35,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,gulf,Gulf (SA/AE/QA),,,0.1,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,gulf,Gulf (SA/AE/QA),,,0.7,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,gulf,Gulf (SA/AE/QA),,,0.65,,multiplier,,
+2026-09-07,v1.1,geo,cpm_a2a,insea,IN / SEA,,1.4,2,3.4,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,cpm_w2w,insea,IN / SEA,,1.4,2,3.4,usd_per_1000_impressions,,
+2026-09-07,v1.1,geo,price_index,insea,IN / SEA,,,0.6,,multiplier,,
+2026-09-07,v1.1,geo,vat_rate,insea,IN / SEA,,,0.12,,share,,
+2026-09-07,v1.1,geo,install_to_trial_factor,insea,IN / SEA,,,0.45,,multiplier,,
+2026-09-07,v1.1,geo,trial_to_paid_factor,insea,IN / SEA,,,0.44,,multiplier,,
+2026-09-07,v1.1,source,adapty,,,,,,,,https://adapty.io/blog/high-performing-paywall-2026/,
+2026-09-07,v1.1,source,adaptyCvr,,,,,,,,https://adapty.io/blog/app-store-conversion-rate/,
+2026-09-07,v1.1,source,adaptyPrice,,,,,,,,https://adapty.io/blog/subscription-app-success-2026/,
+2026-09-07,v1.1,source,adjust,,,,,,,,https://uxcam.com/blog/product-funnel/,
+2026-09-07,v1.1,source,adjustCvr,,,,,,,,https://www.adjust.com/blog/what-is-a-good-conversion-rate/,
+2026-09-07,v1.1,source,apptweak,,,,,,,,https://www.apptweak.com/en/aso-blog/average-app-conversion-rate-per-category,
+2026-09-07,v1.1,source,interact,,,,,,,,https://www.tryinteract.com/blog/quiz-conversion-rate-report/,
+2026-09-07,v1.1,source,lebesgue,,,,,,,,https://lebesgue.io/facebook-ads/facebook-cpm-by-country,
+2026-09-07,v1.1,source,rc,,,,,,,,https://www.revenuecat.com/state-of-subscription-apps/,
+2026-09-07,v1.1,source,rcAndroidGap,,,,,,,,https://www.revenuecat.com/blog/engineering/android-paywall-gap,
+2026-09-07,v1.1,source,rcPlayBilling,,,,,,,,https://www.revenuecat.com/blog/growth/google-play-billing-error-churn-how-to-fix/,
+2026-09-07,v1.1,source,rcRenewals,,,,,,,,https://www.revenuecat.com/blog/growth/average-subscription-renewal-rates-by-app-category,
+2026-09-07,v1.1,source,splitmetrics,,,,,,,,https://appscreenshotstudio.com/blog/good-app-store-conversion-rate-benchmarks-2026,
+2026-09-07,v1.1,source,stripe,,,,,,,,https://stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods,
+2026-09-07,v1.1,source,superads,,,,,,,,https://www.superads.ai/facebook-ads-costs/ctr-click-through-rate,
+2026-09-07,v1.1,source,superwall,,,,,,,,https://superwall.com/blog/app-monetization-two-important-metrics-you-probably-arent-tracking,
+2026-09-07,v1.1,source,tune,,,,,,,,https://www.tune.com/blog/paid-organic-measurably-better-together-organic-uplift/,
+2026-09-07,v1.1,source,tw,,,,,,,,https://www.triplewhale.com/blog/facebook-ads-benchmarks,
