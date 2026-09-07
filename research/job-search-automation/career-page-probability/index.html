@@ -101,6 +101,8 @@
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
     .callout.lead, .tldr.lead { margin-top: -44px; }
+    .tablewrap { overflow-x: auto; margin: 16px 0 20px; }
+    .tablewrap > table { margin: 0; }
   </style>
   <script type="application/ld+json">
 {
@@ -223,6 +225,7 @@
 
     <h2>Weighted Probability Calculation</h2>
     <p>The calculation uses the distribution of companies <em>actively investing in job postings</em> on LinkedIn – skewed toward more mature businesses, since micro-companies hire less frequently and in smaller volumes.</p>
+    <div class="tablewrap">
     <table>
       <thead>
         <tr>
@@ -239,6 +242,7 @@
         <tr><td><strong>Total</strong></td><td><strong>100%</strong></td><td></td><td><strong>~74.2%</strong></td></tr>
       </tbody>
     </table>
+    </div>
 
     <h2>Conclusion</h2>
     <p>If you take a random company currently running an active job posting on LinkedIn, the probability that it has its own website with a careers section is approximately <strong>74%</strong>.</p>
