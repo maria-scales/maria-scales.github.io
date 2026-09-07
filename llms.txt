@@ -19,7 +19,7 @@ All pages are static HTML with a TL;DR block at the top, en-dash typography, and
 
 ## Case studies
 
-- [All case studies](https://mariascales.com/cases/): Praktika ($30M Series A, 5x revenue), Toloka (acquisition budget cut 66% cumulatively at flat revenue; 65% retention lift), Scentbird (27% CAC cut while doubling Meta spend; 5% forecast accuracy), Buddy AI (32% LTV growth), a stealth subscription app (pixel overfit diagnosis)
+- [All case studies](https://mariascales.com/cases/): Praktika ($30M Series A, 5x revenue), Toloka (acquisition budget cut 66% vs the original baseline at flat revenue – 44%, then a further 22%; a separate 26% cut in major language segments; 65% retention lift), Scentbird (27% CAC cut while doubling Meta spend; 5% forecast accuracy), Buddy AI (32% LTV growth), a stealth subscription app (pixel overfit diagnosis)
 - [Growth That Doesn't Lie to Itself: a ceiling mistaken for a floor](https://mariascales.com/cases/stealth/): stealth consumer subscription app, Meta - a ~$900k/month ramp stopped; 50+ concepts failed to reset delivery, only 2 worked on a clean pixel; pixel overfit diagnosed and proved
 - [Praktika: marketing-led path to a $30M Series A](https://mariascales.com/cases/praktika/): revenue x5 while exceeding the profit KPI, $30M Series A closed in under 3 months, 50+ influencer collaborations; unit economy model per platform and geo
 - [Toloka: unit economy model for media buying](https://mariascales.com/cases/toloka-unit-economy/): worker acquisition budget -44% at flat revenue (hypothesis was 30%), share of high-quality workers +21%; cohorts ranked by money-per-hour
