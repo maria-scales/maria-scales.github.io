@@ -32,7 +32,7 @@ All pages are static HTML with a TL;DR block at the top, en-dash typography, and
 
 ## Writing
 
-- [Articles on HackerNoon](https://mariascales.com/articles/): influencer marketing measurement, DV360 creative strategy, media-buying automation
+- [Articles on HackerNoon](https://mariascales.com/articles/): paid acquisition measurement - baseline first, then the threshold a result has to clear: influencer spike of (baseline + volatility) x 2, LTV/CAC of 4 and 2 hours of daily routine before automating, 5% of budget before a creative counts as picked up
 
 ## Optional
 
