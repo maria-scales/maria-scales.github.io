@@ -97,6 +97,16 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
+
+    details.datawrap { margin: -18px 0 26px; }
+    details.datawrap > summary { cursor: pointer; font-size: 0.8125rem; color: #4b5563; padding: 6px 0; list-style: none; }
+    details.datawrap > summary::-webkit-details-marker { display: none; }
+    details.datawrap > summary::before { content: "\25B8 "; color: #9ca3af; }
+    details.datawrap[open] > summary::before { content: "\25BE "; }
+    details.datawrap > summary:hover { color: #1e40af; }
+    details.datawrap .tablewrap { overflow-x: auto; margin: 6px 0 0; }
+    details.datawrap table { margin-top: 0; min-width: 460px; }
+    .article-content details.datawrap p.data-note { font-size: 0.8125rem; color: #6b7280; margin: 0; }
   </style>
   <script type="application/ld+json">
 {
@@ -220,7 +230,24 @@
     <p>Accounts: 1,238 openings at 196 companies. Sales: 1,212 at 212. Partnerships: 379. Field marketing: 354. Customer success: 317. Go-to-market: 293. Demand generation: 25.</p>
     <p>Together, the commercial cluster is <strong>3,818 positions – 63% of everything filed under marketing</strong>. Marketing operations – another 583 – I count separately: it is a marketing function even when most of what it operates is a sales pipeline.</p>
     <p>The two debatable lines in that cluster are go-to-market and customer success – in product-led companies both can sit closer to product than to sales. Move them out entirely and the cluster is still 3,208 postings, 53%: a majority under the most conservative reading of my own rules.</p>
-    <div class="figure"><img src="fig1.svg" alt="Two thirds of “marketing” hiring is commercial roles" loading="lazy"></div>
+    <div class="figure"><img src="fig1.svg" alt="Bar chart: of 6,084 marketing postings, 3,818 (63%) are sales and adjacent roles, 1,397 (23%) other marketing, 627 (10%) performance, growth and UA, 160 (3%) product marketing, 82 (1%) brand." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 5 discipline groups</summary>
+  <p class="data-note">Figure 1 as data. 6,084 open postings whose broad type is Marketing. Performance / Growth / UA is the author's own discipline group. Marketing operations (583) sits in Other marketing.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Discipline group</th><th>Postings</th><th>Share</th></tr></thead>
+  <tbody>
+  <tr><td>Sales & adjacent</td><td>3,818</td><td>63%</td></tr>
+  <tr><td>Other marketing</td><td>1,397</td><td>23%</td></tr>
+  <tr><td>Performance / Growth / UA</td><td>627</td><td>10%</td></tr>
+  <tr><td>Product marketing</td><td>160</td><td>3%</td></tr>
+  <tr><td>Brand</td><td>82</td><td>1%</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p>The remaining third is real marketing, and it is not what the profession&rsquo;s public conversation suggests either. Creative production: 160. Product marketing: 160. Lifecycle: 128. Content: 133. Community: 90. Brand: 82. SEO: 32.</p>
     <p>Paid acquisition – the discipline that spends the money – is a thin layer on top of all of it.</p>
     <p>A sceptic&rsquo;s objection lands here, and it is the right one: <em>you classified those sales roles as marketing yourself</em>. True, and that is the point. The classifier mirrors what a marketer sees when they search. An &ldquo;Enterprise Account Executive&rdquo; surfaces in a marketing search because the company filed it that way, the title carries marketing vocabulary, or the board&rsquo;s own category says Marketing. The 63% is not a claim about how companies organise their departments. It is a measurement of <strong>what a marketer&rsquo;s job search actually returns.</strong></p>
@@ -228,7 +255,24 @@
     <h2>Finding 2: B2B and B2C do not mean the same thing by &ldquo;marketing&rdquo;</h2>
     <p>Split the same column by what the company sells, and the structure changes shape.</p>
     <p>At companies selling to businesses, 68% of marketing hiring is the commercial cluster. At companies selling to consumers, that share is <strong>29%</strong>.</p>
-    <div class="figure"><img src="fig2.svg" alt="A B2C company means marketing. A B2B company means sales." loading="lazy"></div>
+    <div class="figure"><img src="fig2.svg" alt="Stacked bars: at B2B companies the commercial cluster is 68% of 3,902 marketing postings; at B2C companies the same cluster is 29% of 642." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 4 groups, 2 company types</summary>
+  <p class="data-note">Figure 2 as data. Mixed-audience companies (1,540 postings) behave like B2B, at 63% commercial, and are not shown here.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Discipline group</th><th>B2B</th><th>B2B share</th><th>B2C</th><th>B2C share</th></tr></thead>
+  <tbody>
+  <tr><td>Sales & adjacent</td><td>2,667</td><td>68%</td><td>187</td><td>29%</td></tr>
+  <tr><td>Other marketing</td><td>726</td><td>19%</td><td>319</td><td>50%</td></tr>
+  <tr><td>Product marketing + brand</td><td>131</td><td>3%</td><td>43</td><td>7%</td></tr>
+  <tr><td>Performance / Growth / UA</td><td>378</td><td>10%</td><td>93</td><td>14%</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>3,902</strong></td><td>100%</td><td><strong>642</strong></td><td>100%</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p>What the chart does not show is the size behind those percentages. B2C is 642 openings against 3,902 in B2B; a further 1,540 sit at companies that sell to both, and they behave like B2B (63% commercial). So a consumer company is far more likely to mean marketing when it says marketing – and there are a sixth as many of them. In absolute terms B2B still hires more people of my kind: 378 against 93.</p>
     <p>For anyone reading a &ldquo;state of marketing hiring&rdquo; report, this is the finding that should travel: the same word describes two different labour markets, and any number that merges them describes neither.</p>
     <h2>Finding 3: every company has marketing. Three quarters are hiring for mine.</h2>
@@ -277,7 +321,7 @@
     </tr>
     </tbody>
     </table>
-    <div class="figure"><img src="fig3.svg" alt="The bigger the board, the more certain the answer" loading="lazy"></div>
+    <div class="figure"><img src="fig3.svg" alt="Line chart: the larger the job board, the smaller the share of companies with no marketing role at all (22% at any size, 1% at 50+ openings) and with no performance, growth or UA role (62% down to 25%)." loading="lazy"></div>
     <p>Read the gradient, not the first row. A company hiring three people may simply not need a marketer this month. A company hiring fifty is showing you its whole shape – and among those, exactly <strong>one company out of 85 has no marketing role open at all.</strong> Companies without marketing essentially do not exist. The 22% was small boards, not missing departments.</p>
     <p>The second column does not fall the same way. A quarter of the companies hiring fifty people at once – 21 of 85 – have no performance, growth or UA role open. Twenty of the 21 are hiring marketers: three quarters of that hiring is the commercial cluster, a tenth is marketing operations, and at two of them the marketing column is sales and nothing else.</p>
     <p>That is the finding I did not expect: marketing is universal, and my discipline is optional.</p>
@@ -292,13 +336,47 @@
     <p>Sorted by country, it is not a spectrum. Of 2,357 US postings marked remote, <strong>1,697 are US-residents-only, 660 are still unresolved, and none – not one – is confirmed open to applicants outside the country.</strong> The UK, Germany and Canada read the same way: every resolved posting is residents-only, and the only thing that differs between countries is how many I have resolved.</p>
     <p>Genuinely borderless remote – a role that will hire from anywhere – is <strong>66 postings out of 2,977 resolved. Two percent.</strong> Another 169 are region-locked: EMEA, Americas, APAC.</p>
     <p>So the honest translation of the word, in 2026 hiring data, is not &ldquo;work from anywhere&rdquo; and not even &ldquo;work from your time zone.&rdquo; It is <strong>&ldquo;work from your home, in our country.&rdquo;</strong> Residency, not geography, and certainly not flexibility.</p>
-    <div class="figure"><img src="fig4.svg" alt="“Remote” means “remote, if you already live here”" loading="lazy"></div>
+    <div class="figure"><img src="fig4.svg" alt="Bars by country: of 2,357 postings labelled remote in the United States, 1,697 are open only to residents; United Kingdom 71 of 135, Canada 82 of 110, Germany 48 of 73. None of the four is open worldwide." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 4 countries</summary>
+  <p class="data-note">Figure 4 as data. Across the whole dataset: 4,462 remote postings, 2,977 resolved, of which 2,474 residents-only (83%), 169 region-locked and 66 worldwide (2%). Unresolved rows have not been read yet; they are not open.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Country</th><th>Remote postings</th><th>Residents only</th><th>Scope not resolved</th><th>Open worldwide</th></tr></thead>
+  <tbody>
+  <tr><td>United States</td><td>2,357</td><td>1,697</td><td>660</td><td>0</td></tr>
+  <tr><td>United Kingdom</td><td>135</td><td>71</td><td>64</td><td>0</td></tr>
+  <tr><td>Canada</td><td>110</td><td>82</td><td>28</td><td>0</td></tr>
+  <tr><td>Germany</td><td>73</td><td>48</td><td>25</td><td>0</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p>The pattern is identical to the marketing one: a label that a search engine can filter on, wrapped around a set of things that are not the same. And in both cases the person paying for the ambiguity is the one reading the board, not the one writing it.</p>
     <h2>The same trick, live: what &ldquo;AI&rdquo; means in a marketing job posting</h2>
     <p>The container mechanism is not a historical artefact. You can watch it happen right now, on the most discussed word in hiring.</p>
     <p>Across all 18,436 postings, 995 titles mention AI in some form – artificial intelligence, machine learning, GenAI, LLM, agentic, copilot. That is 5% of the market, at 202 companies. Real, and smaller than the conversation about it.</p>
     <p>Where those roles sit is the finding. <strong>In the Data column, 627 of 1,283 open positions – 49% – are AI roles.</strong> In engineering it is 4.1%. In marketing, 2.1%.</p>
-    <div class="figure"><img src="fig5.svg" alt="AI hiring is not spread across the company. It is one column." loading="lazy"></div>
+    <div class="figure"><img src="fig5.svg" alt="Bars: 48.9% of Data postings name AI in the title (627 of 1,283), against 5.0% in Business, 4.1% in Engineering, 2.1% in Marketing, 2.0% in Analytics, 1.2% in Product." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 6 broad types</summary>
+  <p class="data-note">Figure 5 as data. Title search only: ai, artificial intelligence, machine learning, ML, GenAI, generative, agentic, LLM, copilot. 995 titles in all.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Broad type</th><th>Titles naming AI</th><th>Count</th></tr></thead>
+  <tbody>
+  <tr><td>Data</td><td>49%</td><td>627 of 1,283</td></tr>
+  <tr><td>Business</td><td>5.0%</td><td>17 of 340</td></tr>
+  <tr><td>Engineering</td><td>4.1%</td><td>202 of 4,880</td></tr>
+  <tr><td>Marketing</td><td>2.1%</td><td>126 of 6,084</td></tr>
+  <tr><td>Analytics</td><td>2.0%</td><td>10 of 496</td></tr>
+  <tr><td>Product</td><td>1.2%</td><td>9 of 727</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p>And inside marketing&rsquo;s 126 AI titles, the split repeats the pattern from the first finding. <strong>69 of them – more than half – are selling AI</strong> – &ldquo;Founding US Account Executive, Agentic AI&rdquo;, &ldquo;AI Customer Success Manager&rdquo;, &ldquo;Head of GTM, AI Inference&rdquo;. Another 22 are engineers who landed in the marketing column by keyword: MLOps and infrastructure roles filed under marketing operations, machine-learning engineers working on search ranking filed under paid search because the title contains the word Search.</p>
     <p>Roles where a marketer applies AI to marketing: around fifteen, and most of them are in creative and content – &ldquo;Creative Director, AI Photography &amp; Video&rdquo;, &ldquo;Content Strategist &amp; Producer (AI-Native)&rdquo;, &ldquo;AI Video Lead&rdquo;. In growth and performance: &ldquo;SaaS Growth Strategist (AI-Native)&rdquo;, &ldquo;AI Marketing Technologist Lead&rdquo;, and that is about it.</p>
     <p>So the sentence &ldquo;AI is transforming marketing&rdquo; is, in hiring data, mostly a sentence about <strong>selling AI to marketers</strong>, not about marketers doing anything new. One caveat, stated plainly: this is a title search. A role can use AI daily and never say so in its name. What 2.1% measures is not how the work is done – it is what the market calls the work.</p>
@@ -307,7 +385,27 @@
     <p><strong>Product management: a tie.</strong> 727 openings at 259 companies, 2.8 per company. My ten buckets: 627 at 226 companies, 2.8 per company. Identical demand density, minus a decade of experience.</p>
     <p><strong>Product marketing and brand: no better.</strong> Product marketing is 1.5 openings per company (160 at 106), brand 1.4 (82 at 60), content 1.6 (133 at 82). Against my performance 1.9, paid search 2.3, growth 1.5. My ten buckets sit in the middle by density, and together they are four times the volume of product marketing.</p>
     <p><strong>Data: the number lies.</strong> The broad Data type shows 4.9 openings per company – nearly double everything else, and the only genuinely attractive figure in the table. It is an artefact of the label. Split it and there are four separate professions underneath: AI 383 openings at 2.8 per company, security 323 at 3.4, machine learning 255 at 3.3, data engineering 322 at 2.4. Each one is an ordinary market. Data looks dense because it is the sum of four markets sharing a word – exactly the same aggregation trick that makes &ldquo;marketing&rdquo; look enormous.</p>
-    <div class="figure"><img src="fig6.svg" alt="Every neighbouring profession is the same width" loading="lazy"></div>
+    <div class="figure"><img src="fig6.svg" alt="Bars: open postings per hiring company are 3.4 in security, 3.3 in machine learning, 2.8 in AI, in product management and in my disciplines, 2.7 in analytics, 2.4 in data engineering, 2.1 in design." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 8 professions</summary>
+  <p class="data-note">Figure 6 as data. Openings per company that has at least one. Off the chart: engineering at 12.3, about 9 once city clones are collapsed.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Profession</th><th>Openings per company</th><th>Postings and companies</th></tr></thead>
+  <tbody>
+  <tr><td>Security</td><td>3.4</td><td>323 at 96 companies</td></tr>
+  <tr><td>Machine learning</td><td>3.3</td><td>255 at 77</td></tr>
+  <tr><td>AI</td><td>2.8</td><td>383 at 139</td></tr>
+  <tr><td>Product management</td><td>2.8</td><td>727 at 259</td></tr>
+  <tr><td>My disciplines</td><td>2.8</td><td>627 at 226</td></tr>
+  <tr><td>Analytics</td><td>2.7</td><td>416 at 153</td></tr>
+  <tr><td>Data engineering</td><td>2.4</td><td>322 at 137</td></tr>
+  <tr><td>Design</td><td>2.1</td><td>193 at 93</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p><strong>Analytics: exactly the same width.</strong> 416 openings at 153 companies, 2.7 per company. And the label is doing work here too: alongside product analysts sit Revenue Analyst, Tax Analyst, Compliance Analyst, Workday Integrations Analyst. Product analytics is the minority of that number, and most of it requires working SQL and Python.</p>
     <p>The one profession that is genuinely denser is engineering – 12.3 openings per company against my 2.8, or about nine once one company&rsquo;s habit of posting the same five titles in 240 cities is collapsed (more on that below). That is not an adjacent field. That is a different career.</p>
     <p>So the exits are closed. There is no neighbouring door that opens onto a wider market. Not for me, and – since the mechanism is the label, not my CV – not for anyone else in a narrow discipline either.</p>
@@ -315,7 +413,24 @@
     <p>There is one more explanation to rule out, and everyone asks about it: the common belief that entry-level marketing is impossible right now. The data says something more specific, and slightly more useful.</p>
     <p>Among postings that state a level at all, entry roles – intern, junior, associate, assistant, working student, trainee – are <strong>17% of marketing</strong> and <strong>20% of my disciplines</strong>. For every entry-level marketing role there are roughly five at senior level or above.</p>
     <p>Then the comparison flips the conclusion. In engineering, entry roles are <strong>4%</strong> of level-stating postings, at 23 senior-or-above roles per entry one. Product: 4.6%, ratio 21 to 1. Data: 4.8%, ratio 20 to 1.</p>
-    <div class="figure"><img src="fig7.svg" alt="Marketing is the most open door of the four – which is not the same as open" loading="lazy"></div>
+    <div class="figure"><img src="fig7.svg" alt="Bars: the entry-level share of postings that state a level is 20% in my disciplines and 17% in marketing, against 4.8% in data, 4.6% in product and 4.1% in engineering." loading="lazy"></div>
+  <details class="datawrap" data-geo-pass="mm-tables-070926">
+  <summary>Show the data – 5 groups</summary>
+  <p class="data-note">Figure 7 as data. Entry = intern, junior, associate, assistant, working student, trainee. Roughly 40 to 60% of postings name no level and are excluded.</p>
+  <div class="tablewrap">
+  <table>
+  <thead><tr><th>Group</th><th>Entry-level share</th><th>Senior-or-above per entry role</th></tr></thead>
+  <tbody>
+  <tr><td>My disciplines</td><td>20%</td><td>1 entry per 4 senior+</td></tr>
+  <tr><td>Marketing</td><td>17%</td><td>1 per 5</td></tr>
+  <tr><td>Data</td><td>4.8%</td><td>1 per 20</td></tr>
+  <tr><td>Product</td><td>4.6%</td><td>1 per 21</td></tr>
+  <tr><td>Engineering</td><td>4.1%</td><td>1 per 23</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
     <p>So yes, getting in is hard. But it is four to five times harder to get into engineering, product or data by this measure, and the story that marketing specifically has closed to beginners is not what these boards show. If anything, marketing is where the remaining entry doors are.</p>
     <p>The caveat is doing real work here: roughly 40–60% of postings name no level, and an unmarked &ldquo;Marketing Manager&rdquo; is usually the middle of the ladder, not the bottom. This table does not measure how much work exists for a beginner. It measures <strong>who employers are willing to call a beginner</strong> – and they do it rarely, everywhere.</p>
     <h2>Where the evidence comes from</h2>
