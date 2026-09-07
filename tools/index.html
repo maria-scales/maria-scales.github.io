@@ -102,7 +102,50 @@
     .contact-links a:hover { color: #1e40af; text-decoration: none; }
     .nav-note { font-size: 0.8125rem; color: #9ca3af; font-style: italic; margin-top: 12px; }
     @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 0 0 28px; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 8px; }
+    .callout li:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .callout code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #e9eaec; padding: 1px 5px; border-radius: 3px; color: #111827; }
   </style>
+  <script type="application/ld+json" data-geo-pass="hubs-070926">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Tools",
+  "description": "Interactive models by Maria Atamanova – every input sourced, tagged and overridable, checked by live self-tests.",
+  "url": "https://mariascales.com/tools/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "dateModified": "2026-09-07",
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "Unit Economics Estimator",
+      "url": "https://mariascales.com/tools/unit-economics-estimator/"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "LTV Calculator",
+      "url": "https://mariascales.com/tools/ltv-calculator/"
+    }
+  ]
+}
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,6 +178,15 @@
 <section style="padding: 40px 0;">
   <div class="container">
     <h1 class="section-label" style="margin-bottom: 20px;">Tools</h1>
+        <div class="callout"><div class="callout-label">What is in here</div>
+      <ul>
+        <li><strong>Two interactive models</strong>, both running in the page itself: the Unit Economics Estimator and the LTV Calculator.</li>
+        <li>The estimator answers one question – <strong>does this subscription app's growth math ever close?</strong> It computes LTV M13, cost per subscriber, payback and the CPA you would have to hit.</li>
+        <li><strong>24 benchmark inputs</strong>, each tagged B (benchmarked), E (estimated) or A (assumption), and each replaceable with your own number.</li>
+        <li><strong>35 self-tests in the estimator and 24 in the LTV calculator</strong> run inside the page – append <code>?test=1</code> to any tool URL to watch them pass.</li>
+        <li>Both grew out of the <a href="/cases/stealth/">stealth subscription case</a>: the model was built to settle a real scale-or-stop decision, not as a demo.</li>
+      </ul>
+    </div>
     <div class="research-card">
       <div class="research-card-title"><a href="/tools/unit-economics-estimator/">Unit Economics Estimator – will this subscription app's growth math ever close?</a></div>
       <div style="font-size: 0.875rem; color: #6b7280; margin: 4px 0 10px;">LTV M13, cost per subscriber and payback from sourced benchmarks – or your own numbers.</div>
