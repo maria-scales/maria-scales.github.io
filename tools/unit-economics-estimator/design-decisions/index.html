@@ -102,6 +102,7 @@
     .toc { columns: 2; column-gap: 28px; padding-left: 0; margin: 0; list-style: none; }
     .toc li { font-size: 0.875rem; margin-bottom: 4px; break-inside: avoid; }
     @media (max-width: 600px) { .toc { columns: 1; } }
+    .callout.lead, .tldr.lead { margin-top: 28px; }
   </style>
   <script type="application/ld+json">
 {
@@ -185,7 +186,7 @@
   <div class="container">
     <p class="data-note"><em>Supporting document for the Unit Economics Estimator (v1.1, September 2026). Each entry: <strong>what is computed → formula → why → what was rejected → status</strong>. Every number is the one in the calculator's code (constants <code>CONFIG</code>, <code>GEO</code>, <code>VERT</code>, <code>PLAT</code> / <code>PLATW</code>, <code>MAI</code>, <code>TRIALLEN</code>, <code>BASE</code>, <code>COST_SCEN</code>, stage tables <code>A2A_STAGES</code> / <code>W2W_STAGES</code>, <code>LTV_FIELDS</code>); the source of each benchmark is captioned on the field inside the tool. The dated decision log is at the end.</em></p>
     <p class="data-note"><em>Notation: [B] benchmark · [E] estimate · [A] assumption · "decision DD.MM" – the date the choice was fixed.</em></p>
-    <div class="callout"><div class="callout-label">Contents</div>
+    <div class="callout lead"><div class="callout-label">Contents</div>
     <ul class="toc"><li><a href="#s0">0. Architecture: two modes for every field</a></li><li><a href="#s1">1. Scenarios = benchmark percentiles</a></li><li><a href="#s2">2. CPM</a></li><li><a href="#s3">3. From impression to install (a2a)</a></li><li><a href="#s4">4. From install to trial</a></li><li><a href="#s5">5. From trial to subscriber</a></li><li><a href="#s6">6. Optimization event: AEO is the base, MAI is a discount</a></li><li><a href="#s7">7. w2w (quiz funnel, hard paywall at the end of the quiz)</a></li><li><a href="#s8">8. LTV M13 – the payment schedule</a></li><li><a href="#s9">9. Net: what is deducted and in which order</a></li><li><a href="#s10">10. Verdict and targets</a></li><li><a href="#s11">11. Sensitivity – "where the headroom is"</a></li><li><a href="#s12">12. The Funnel diagnostics tab – iOS vs Android</a></li><li><a href="#s13">13. Cross-checks</a></li><li><a href="#s14">14. Minor decisions</a></li><li><a href="#s15">15. Deliberately not modeled (v1)</a></li><li><a href="#s16">16. Source check – what changed after an independent verification</a></li><li><a href="#s17">17. Decision log</a></li></ul>
     </div>
 <h2 id="s0">0. Architecture: two modes for every field</h2>

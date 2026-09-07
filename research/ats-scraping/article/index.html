@@ -95,6 +95,7 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
+    .callout.lead, .tldr.lead { margin-top: -44px; }
   </style>
   <script type="application/ld+json">
 {
@@ -193,7 +194,7 @@
 </div>
 <div class="article-content">
   <div class="container">
-    <div class="callout"><div class="callout-label">TL;DR</div>
+    <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
     <li>Most career pages look JS-rendered, but the data behind them is public JSON fetched from an ATS API. Call the API directly and no browser automation is needed.</li>
     <li>Three tiers: documented public APIs with no authentication (<strong>Greenhouse, Lever, Ashby, BambooHR, SmartRecruiters</strong>), predictable internal endpoints (Workday's CXS JSON endpoint), and a headless browser (Playwright) only for fully custom pages.</li>

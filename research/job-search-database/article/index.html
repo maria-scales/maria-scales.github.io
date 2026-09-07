@@ -92,6 +92,7 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
+    .callout.lead, .tldr.lead { margin-top: -44px; }
   </style>
   <script type="application/ld+json">
 {
@@ -189,7 +190,7 @@
 </div>
 <div class="article-content">
   <div class="container">
-    <div class="callout"><div class="callout-label">TL;DR</div>
+    <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
     <li>Five conceptual lists became <strong>eight SQLite tables</strong> in two groups: operational (companies, job_postings, cv_versions, cover_letters, applications, application_status_history) and config (hard_stop_criteria, position_criteria).</li>
     <li>The watch and skip lists merge into one companies table with a watch_status field; the criteria lists become rows of data, not code – <strong>6 hard-stop rules and 18 position criteria</strong> drive the scraper on every run.</li>
