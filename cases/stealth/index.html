@@ -349,7 +349,78 @@
       color: #111827;
       border-bottom-color: #111827;
     }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout li:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 0 0 12px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 7px 9px; border-bottom: 1px solid #eef2f7; text-align: left; color: #333; vertical-align: top; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data td.c { font-weight: 600; color: #1e293b; }
+    table.data.kv { min-width: 560px; }
+    .caption { font-size: 13px; color: #7a8fa6; margin: 0 0 32px; line-height: 1.6; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
+  <script type="application/ld+json" data-geo-pass="cases-070926">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Growth That Doesn't Lie to Itself: A Ceiling Mistaken for a Floor",
+  "description": "How I diagnosed pixel overfit behind a ~$900k/month Meta scaling plan – a 50-concept reset test, a clean-pixel retest, unit economics on backend revenue.",
+  "url": "https://mariascales.com/cases/stealth/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/cases/stealth/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-07-12",
+  "dateModified": "2026-09-07",
+  "keywords": [
+    "pixel overfit",
+    "Meta scaling",
+    "attribution quality",
+    "creative reset test",
+    "unit economics",
+    "consumer subscription growth"
+  ],
+  "about": {
+    "@type": "Organization",
+    "name": "Stealth consumer subscription app"
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "Case studies",
+    "url": "https://mariascales.com/cases/"
+  }
+}
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -410,6 +481,15 @@
 
 <section class="case-content">
   <div class="container">
+    <div class="callout"><div class="callout-label">TL;DR</div>
+      <ul>
+        <li>The expensive CPM was real, not a tracking artifact. The audit ruled out measurement first – Business Manager architecture, event taxonomy, pixel against server – which is what turned a scaling mandate into a diagnosis instead of a ramp.</li>
+        <li>Across <strong>50+ new concepts</strong> not one reset delivery: every launch went straight into high frequency at the same extreme CPM. The absence of a reset, not rising frequency, is what identifies <strong>pixel overfit</strong> – a pixel trained by concentrated spend to route everything back into one small audience.</li>
+        <li>Retested on a <strong>clean pixel</strong>, only <strong>2</strong> of the same 50+ concepts worked, and only inside a pocket too small to scale.</li>
+        <li>That is why <strong>~$900,000/month</strong> of planned spend was never released: with the economics below break-even at any meaningful volume, there was no viable scale to retreat to.</li>
+      </ul>
+    </div>
+
         <h2>Situation</h2>
         <p>A stealth consumer subscription app, with Meta as the primary acquisition channel and an aggressive scaling mandate ahead of a raise. I joined at the end of the December push – inheriting an account already trained on that spend, with roughly one month of observed CAC and an LTV estimated by feel, the normal starting point for an early-stage startup that can't yet wait for cohorts to mature. The plan was a staged ramp: first lock in stable performance at <strong>~$5,000/day</strong> in Meta, then scale to <strong>~$30,000/day</strong>.</p>
         <p>The mandate was to scale – but the initial audit surfaced several red flags that stopped me from treating the ramp as routine:</p>
@@ -441,6 +521,23 @@
         <p><strong><a href="/cases/stealth/prevention-framework/">Prevention Framework</a></strong> – a pixel-overfit tripwire, pre-flight checks, and the processes that keep CPMs in check.</p>
         <p><strong><a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></strong> – an interactive tool answering: <em>does this growth math ever close?</em></p>
           <p><em>This case is about knowing when to stop. The scaling side is here – <a href="/cases/praktika/">Praktika</a> (a marketing-led path to a $30M Series A) and <a href="/cases/scentbird-ua/">Scentbird</a> (Meta spend ×2 in 5 months at a 27% lower CAC).</em></p>
+
+                <h2>Results in numbers</h2>
+        <div class="tablewrap">
+          <table class="data kv">
+            <thead><tr><th>Metric</th><th>Target</th><th>Result</th><th>How measured</th></tr></thead>
+            <tbody>
+              <tr><td class="c">Meta daily spend</td><td>~$30,000/day (~$900,000/month)</td><td>Ramp stopped before release</td><td>Staged plan from ~$5,000/day; held on the audit findings</td></tr>
+              <tr><td class="c">Concepts that reset delivery</td><td>A fresh concept resets CPM and frequency</td><td>0 of 50+ on the overfit pixel</td><td>Opening CPM and frequency build, per concept</td></tr>
+              <tr><td class="c">Concepts with positive economics</td><td>–</td><td>2 of 50+</td><td>Same creative slate retested from scratch on a new pixel</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">Table 1. The scale-or-hold decision in numbers. Targets are the plan as it stood when the audit began; results are as stated in this case.</p>
+
+                <div class="author-box">
+          <p>Written by <strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager and applied mathematician, 12+ years scaling subscription and mobile products on unit economics, cohort analysis and growth modeling. This case is about knowing when to stop. What came out of it is public: the <a href="/cases/stealth/prevention-framework/">Prevention Framework</a> and the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a>.</p>
+        </div>
 
         <h2>More cases</h2>
         <ul class="card-list">
