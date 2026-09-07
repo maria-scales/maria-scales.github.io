@@ -349,7 +349,79 @@
       color: #111827;
       border-bottom-color: #111827;
     }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout li:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 0 0 12px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 7px 9px; border-bottom: 1px solid #eef2f7; text-align: left; color: #333; vertical-align: top; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data td.c { font-weight: 600; color: #1e293b; }
+    table.data.kv { min-width: 560px; }
+    .caption { font-size: 13px; color: #7a8fa6; margin: 0 0 32px; line-height: 1.6; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
+  <script type="application/ld+json" data-geo-pass="cases-070926">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Demand Forecasting for Massive Request Seasonality",
+  "description": "How I cut Toloka's acquisition budget by 22% with 100% fulfillment on every key client request – a demand forecasting and planning process.",
+  "url": "https://mariascales.com/cases/toloka-forecasting/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/cases/toloka-forecasting/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-09-07",
+  "keywords": [
+    "demand forecasting",
+    "seasonality",
+    "capacity planning",
+    "crowdsourcing platform",
+    "acquisition budget",
+    "marketing and business development"
+  ],
+  "about": {
+    "@type": "Organization",
+    "name": "Toloka",
+    "url": "https://toloka.ai"
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "Case studies",
+    "url": "https://mariascales.com/cases/"
+  }
+}
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -410,6 +482,14 @@
 
 <section class="case-content">
   <div class="container">
+    <div class="callout"><div class="callout-label">TL;DR</div>
+      <ul>
+        <li>Big-tech demand repeats on the client’s own business cycle, so <strong>request volume by language is predictable a year out</strong> – which is what removes the need for emergency scaling when a seasonal burst lands.</li>
+        <li>The deliverable was a process, not a campaign: reporting between Marketing and BizDev with the planned schedule against the actual one, and business margin known by language and request type.</li>
+        <li><strong>Fulfillment on key client requests held at 100%</strong> and the acquisition budget for major language segments <strong>fell 22%</strong> with revenue unchanged.</li>
+      </ul>
+    </div>
+
     
         <h2>Situation</h2>
         <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
@@ -454,11 +534,28 @@
         </ul>
         
     
+        <h2>Results in numbers</h2>
+        <div class="tablewrap">
+          <table class="data kv">
+            <thead><tr><th>Metric</th><th>Target</th><th>Result</th><th>How measured</th></tr></thead>
+            <tbody>
+              <tr><td class="c">Key-request fulfillment rate</td><td>–</td><td>100% maintained</td><td>Success rate on big-tech client requests with strict deadlines</td></tr>
+              <tr><td class="c">Acquisition budget, major language segments</td><td>–</td><td>−22%</td><td>Budget against revenue; revenue held flat</td></tr>
+              <tr><td class="c">Marketing and BizDev planning</td><td>–</td><td>Reporting system, plan against actual schedule</td><td>Planned and actual fulfillment schedule, business margin by language and request type</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption">Table 5. Outcomes as stated in this case. No numeric hypothesis was set before this work – the deliverable was a process, and the constraint was a hard fulfillment KPI.</p>
+
         <blockquote>
           <p>"Maria achieved great results in the acquisition, retention, and engagement of ML data makers thanks to her strategic thinking, data analysis skills, project management skills, understanding of marketing tools and technologies, strong work ethic and attention to detail, and continuous improvement mindset."</p>
           <cite>– <a href="https://www.linkedin.com/in/stepa/" target="_blank" rel="noopener"><strong>Dmitry Stepanov</strong></a>, Founder & GP at AAL VC · Forbes 30 Under 30 · Senior to Maria at Toloka</cite>
         </blockquote>
   
+                <div class="author-box">
+          <p>Written by <strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager and applied mathematician, 12+ years scaling subscription and mobile products on unit economics, cohort analysis and growth modeling. This is the planning half of the Toloka work; the efficiency metric behind the budget cuts is in the <a href="/cases/toloka-unit-economy/">unit economy case</a>.</p>
+        </div>
+
         <h2>More cases</h2>
         <ul class="card-list">
           <li>

@@ -20,6 +20,14 @@ All pages are static HTML with a TL;DR block at the top, en-dash typography, and
 ## Case studies
 
 - [All case studies](https://mariascales.com/cases/): Praktika ($30M Series A, 5x revenue), Toloka (acquisition budget cut 66% cumulatively at flat revenue; 65% retention lift), Scentbird (27% CAC cut while doubling Meta spend; 5% forecast accuracy), Buddy AI (32% LTV growth), a stealth subscription app (pixel overfit diagnosis)
+- [Growth That Doesn't Lie to Itself: a ceiling mistaken for a floor](https://mariascales.com/cases/stealth/): stealth consumer subscription app, Meta - a ~$900k/month ramp stopped; 50+ concepts failed to reset delivery, only 2 worked on a clean pixel; pixel overfit diagnosed and proved
+- [Praktika: marketing-led path to a $30M Series A](https://mariascales.com/cases/praktika/): revenue x5 while exceeding the profit KPI, $30M Series A closed in under 3 months, 50+ influencer collaborations; unit economy model per platform and geo
+- [Toloka: unit economy model for media buying](https://mariascales.com/cases/toloka-unit-economy/): worker acquisition budget -44% at flat revenue (hypothesis was 30%), share of high-quality workers +21%; cohorts ranked by money-per-hour
+- [Toloka: marketing-led product-market fit](https://mariascales.com/cases/toloka-pmf/): retention +65% (hypothesis was 10%), tasks per worker +21% after bonuses, labeling time -34% after prioritization, acquisition budget -26%, operations FTE -70%
+- [Toloka: demand forecasting for request seasonality](https://mariascales.com/cases/toloka-forecasting/): 100% fulfillment on key big-tech requests, acquisition budget -22% at flat revenue; forecast from request-volume distribution by language
+- [Buddy AI: worldwide user acquisition for a new startup](https://mariascales.com/cases/buddy/): LTV +32% (retention to recurring payment +29%, conversion to subscription +17%), LatAm scaled x1.5 at target ROI, Turkey launched
+- [Scentbird: scaling user acquisition through operations](https://mariascales.com/cases/scentbird-ua/): CAC -27% and Meta spend x2 in 5 months at the ROI KPI; no-code automation alone -16% CAC, successful creatives x4 to 25%, FTE -13%
+- [Scentbird: the business growth framework](https://mariascales.com/cases/scentbird-growth/): active user base +20% within months of the March 2020 lockdown, forecast model error 5% against a 7% target; budget split solved in Excel Solver on CAC-vs-volume curves
 - [Pixel-overfit prevention framework](https://mariascales.com/cases/stealth/prevention-framework/): rules for validating audience breadth before scaling Meta spend
 
 ## Writing
