@@ -1,0 +1,89 @@
+order,match,type_1,type_2,author_discipline,discipline_group
+1,"guide to, reasons to join, reasons to, why join, how we built",Junk,Irrelevant,no,
+2,product marketing,Marketing,Product Marketing,no,Product Marketing
+3,product manager + growth,Marketing,Product Marketing,no,Product Marketing
+4,product growth,Marketing,Product Marketing,no,Product Marketing
+5,product lead,Marketing,Product Marketing,no,Product Marketing
+6,product + marketing,Marketing,Product,no,Other marketing
+7,brand*,Marketing,Brand,no,Brand
+8,seo,Marketing,SEO,no,Other marketing
+9,"aso, app store optimization",Marketing,ASO,no,Other marketing
+10,content,Marketing,Marketing Content,no,Other marketing
+11,sales,Marketing,Sales,no,Sales & adjacent
+12,"talent, people partner",HR,HR,no,
+13,partner*,Marketing,Partnership,no,Sales & adjacent
+14,affiliate*,Marketing,Affiliate,no,Other marketing
+15,"account executive, account manager, key account, account director - growth, accounts",Marketing,Accounts,no,Sales & adjacent
+16,"success, client",Marketing,Success Manager,no,Sales & adjacent
+17,lifecycle,Marketing,Lifecycle,no,Other marketing
+18,supply,Marketing,Supply,no,Other marketing
+19,crm,Marketing,Lifecycle,no,Other marketing
+20,"gtm, go-to-market, go to market",Marketing,GTM,no,Sales & adjacent
+21,operation*,Marketing,Operations,no,Other marketing
+22,demand,Marketing,DemGen,no,Sales & adjacent
+23,sem - social,Marketing,Paid Search,yes,Performance / Growth / UA
+24,paid search,Marketing,Paid Search,yes,Performance / Growth / UA
+25,"search - social, seo",Marketing,Paid Search,yes,Performance / Growth / UA
+26,art,Marketing,Creative,no,Other marketing
+27,artist*,Marketing,Creative,no,Other marketing
+28,video,Marketing,Creative,no,Other marketing
+29,email,Marketing,Lifecycle,no,Other marketing
+30,"community, social media",Marketing,Community,no,Other marketing
+31,"event, events",Marketing,Events,no,Other marketing
+32,programmatic,Marketing,Programmatic,yes,Performance / Growth / UA
+33,business,Business,Business,no,
+34,risk,Business,Business,no,
+35,sea - seo,Marketing,Paid Search,yes,Performance / Growth / UA
+36,engagement,Marketing,Lifecycle,no,Other marketing
+37,copywriter*,Marketing,Marketing Content,no,Other marketing
+38,field,Marketing,Field,no,Sales & adjacent
+39,customer,Marketing,Field,no,Sales & adjacent
+40,gaming,Marketing,Gaming,no,Other marketing
+41,"provider, procurement, retail",Marketing,Irrelevant,no,Other marketing
+42,"ecommerce, e-commerce, commerce",Marketing,Ecommerce,no,Other marketing
+43,"frontend, front-end",Engineering,Development,no,
+44,"backend, back-end",Engineering,Development,no,
+45,"full-stack, fullstack, full stack",Engineering,Development,no,
+46,developer,Engineering,Development,no,
+47,"software engineer, software engineering, ios, android, mobile engineer",Engineering,Development,no,
+48,design engineer,Engineering,Development,no,
+49,"engineering manager, manager engineering",Engineering,Development,no,
+50,security,Data,Security,no,
+51,"machine learning, ml",Data,ML,no,
+52,analytics - ai,Analytics,Analytics,no,
+53,analyst,Analytics,Analytics,no,
+54,"ai, artificial intelligence, llm - marketing, growth, performance, paid",Data,AI,no,
+55,data,Data,Data,no,
+56,support,Operations,Support,no,
+57,"finance, financial, controller, treasury, tax, audit*",Operations,Finance,no,
+58,"legal, counsel, compliance, paralegal",Operations,Legal,no,
+59,"clinical, nurse, nursing, physician, therapist",Operations,Healthcare,no,
+60,"psychiatrist, hearing, audiolog*, audioprothésiste, dentist, pharmacist, caregiver, care",Operations,Healthcare,no,
+61,product,Product,Product,no,
+62,"designer, design, ux, ui",Design,Design,no,
+63,"qa, quality assurance, tester, sdet, test engineer",Engineering,QA,no,
+64,"devops, sre, site reliability, reliability, cloud, infrastructure",Engineering,Infra,no,
+65,architect*,Engineering,Architecture,no,
+66,"engineer, engineering, technical, software, systems, tech",Engineering,Engineering,no,
+67,"technician, maintenance, installer, mechanic, electrician",Operations,Technician,no,
+68,"production, manufacturing, warehouse, assembly, assembler, switchgear, supervisor, quality, welder, grocery, store, chef, driver",Operations,Production,no,
+69,"program, project, pmo, scrum, agile",Operations,Program,no,
+70,"office, facilit*, receptionist, administrative, admin, secrétaire, secretaire",Operations,Admin,no,
+71,"solution, solutions, implementation, onboarding",Operations,Solutions,no,
+72,"territory, commercial, enterprise, agente, procacciatore, vertriebsmitarbeiter",Marketing,Sales,no,Sales & adjacent
+73,"research*, scientist, insights",Analytics,Research,no,
+74,"recruit*, hr, people, training, learning",HR,HR,no,
+75,"teacher, lehrer, dozent*, tutor, instructor",Operations,Teaching,no,
+76,"paid social, social media buying, social ads",Marketing,Paid Social,yes,Performance / Growth / UA
+77,"performance, paid media, paid, ppc, media buying, media buyer, media planning, biddable",Marketing,Performance,yes,Performance / Growth / UA
+78,"acquisition, ua, user growth",Marketing,User Acquisition,yes,Performance / Growth / UA
+79,"retention, loyalty, churn",Marketing,Lifecycle,no,Other marketing
+80,"influencer, creator, ugc",Marketing,Influencer,yes,Performance / Growth / UA
+81,"automation, martech, marketing technology",Marketing,Automation,yes,Performance / Growth / UA
+82,"conversion, cro, experimentation",Marketing,CRO,yes,Performance / Growth / UA
+83,campaign*,Marketing,Marketing,yes,Performance / Growth / UA
+84,"google ads, adwords, ads, advertising",Marketing,Performance,yes,Performance / Growth / UA
+85,"digital marketing, digital",Marketing,Marketing,yes,Performance / Growth / UA
+86,growth,Marketing,Growth,yes,Performance / Growth / UA
+87,"marketing, marketer, cmo",Marketing,Marketing,yes,Performance / Growth / UA
+88,creative*,Marketing,Creative,no,Other marketing
