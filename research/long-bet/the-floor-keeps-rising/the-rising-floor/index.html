@@ -105,6 +105,20 @@
     .author-box p:last-child { margin-bottom: 0; }
     .author-box strong { color: #1e293b; }
     .author-box a { color: #1e40af; font-weight: 600; }
+
+    details.datawrap { margin: -8px 0 28px; }
+    details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
+    details.datawrap > summary::-webkit-details-marker { display: none; }
+    details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
+    details.datawrap[open] > summary::before { content: "▾ "; }
+    details.datawrap > summary:hover { color: #1e40af; }
+    .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+    table.data th, table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
+    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+    table.data th.l, table.data td.l { text-align: left; white-space: normal; }
+    table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
+    p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
   </style>
   <script type="application/ld+json">
 {
@@ -241,6 +255,26 @@
     <div class="floor-legend-item"><div class="floor-legend-dot" style="background:#EEF2F7;border:2px solid #4F7EC7;box-shadow:0 0 4px #4F7EC744;"></div>Currently scarce</div>
     <div class="floor-legend-item"><div class="floor-legend-dot" style="background:#F0FDF4;border:2px dashed #16A34A;"></div>Hypothesis (not yet scarce)</div>
   </div>
+  <details class="datawrap" data-geo-pass="longbet-tables-070926">
+  <summary>Show the data – 8 eras, 7 layers</summary>
+  <p class="tcaption">Table 1. Same sequence as the diagram above: which skill was the bottleneck in each era, and how many layers underneath it had already become baseline.</p>
+  <div class="tablewrap">
+  <table class="data">
+  <thead><tr><th class="l">Era</th><th class="l">The scarce skill</th><th>Layers below it, already baseline</th></tr></thead>
+  <tbody>
+  <tr><td class="c">1880s–1940s</td><td>Statistical Intuition</td><td>0</td></tr>
+  <tr><td class="c">1950s–1970s</td><td>Programming & Algorithms</td><td>1</td></tr>
+  <tr><td class="c">1980s–1990s</td><td>SQL & Databases</td><td>2</td></tr>
+  <tr><td class="c">2000–2012</td><td>Distributed Systems</td><td>3</td></tr>
+  <tr><td class="c">2012–2020</td><td>ML & Data Science</td><td>4</td></tr>
+  <tr><td class="c">2016–2022</td><td>Deep Learning</td><td>5</td></tr>
+  <tr><td class="c">2022–Now</td><td>Coding (LLMs)</td><td>6</td></tr>
+  <tr><td class="c">2025→?</td><td>none – all seven are baseline</td><td>7</td></tr>
+  </tbody>
+  </table>
+  </div>
+  </details>
+
 
   <p style="margin-top:32px; font-size:15px; color:#333; line-height:1.8;">Every column is a moment in time. Every layer beneath the glowing one is a skill that used to be the bottleneck and now isn't – it got tooled, and the value moved up. The 2025 → ? column shows all seven layers as fully commoditised baseline, with a dashed, unclaimed layer on top: Domain Judgment. That layer is marked differently on purpose. It hasn't happened yet, and – unlike every layer beneath it – it might not happen the same way. The other seven columns are a record. The eighth is a question.</p>
 
