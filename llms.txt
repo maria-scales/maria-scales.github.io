@@ -1,6 +1,6 @@
 # Maria Atamanova – mariascales.com
 
-> Performance marketing for AI-era growth – backed by models, not gut feeling. Case studies, original research and interactive unit-economics tools by Maria Atamanova, Senior Growth & Performance Marketing Manager and applied mathematician (12+ years: Praktika, Toloka, Scentbird, Buddy AI). Contact: hello@mariascales.com.
+> Maria Atamanova – applied mathematician, twelve years growing businesses (apps, e-commerce, EdTech, AI data platforms): scaling growth and making it efficient on numbers, not gut feeling. Case studies, original research and interactive unit-economics tools. Senior Growth & Performance Marketing Manager (Praktika, Toloka, Scentbird, Buddy AI). Contact: hello@mariascales.com.
 
 All pages are static HTML with a TL;DR block at the top, en-dash typography, and Article / SoftwareApplication / BreadcrumbList JSON-LD. Numbers on research pages come from the author's own datasets; sources and limitations are stated on each page.
 

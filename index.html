@@ -13,7 +13,7 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="Performance marketing for AI-era growth – backed by models, not gut feeling. 12 years scaling mobile and web products across the US, EU, and global markets.">
+  <meta name="description" content="Performance marketing for AI-era growth – backed by models, not gut feeling. Applied mathematician, twelve years growing businesses on numbers.">
   <link rel="canonical" href="https://mariascales.com/">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -44,7 +44,14 @@
       "https://github.com/maria-scales",
       "https://hackernoon.com/u/mariascales"
     ],
-    "knowsAbout": ["Performance Marketing", "User Acquisition", "Unit Economics", "Growth Modeling", "Meta Ads", "Google Ads"]
+    "image": "https://mariascales.com/maria.jpg",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Senior Growth & Performance Marketing Manager",
+      "occupationalCategory": "Marketing Managers",
+      "skills": "Unit economics, LTV modeling, growth forecasting, paid acquisition (Meta, Google, TikTok), measurement and attribution"
+    },
+    "knowsAbout": ["Performance Marketing", "User Acquisition", "Unit Economics", "Growth Modeling", "LTV Modeling", "Growth Forecasting", "Subscription Apps", "Meta Ads", "Google Ads", "Job Market Research", "STEM Education Data"]
   }
   </script>
   <style>
@@ -103,6 +110,20 @@
     .intro p:last-of-type { margin-bottom: 0; }
     .intro ul { margin: 0 0 16px 20px; padding: 0; }
     .intro li { color: #374151; font-size: 1rem; margin-bottom: 8px; line-height: 1.6; }
+    .hello-row { display: flex; gap: 26px; align-items: center; margin-bottom: 20px; }
+    .hello-row p { margin: 0; font-size: 1.125rem; line-height: 1.55; color: #111827; }
+    .hello-photo { flex: 0 0 120px; }
+    .hello-photo img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; filter: grayscale(100%); }
+    .hello p:last-child { margin-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+    .section-note { color: #6b7280; font-size: 0.9375rem; margin: -6px 0 18px; }
+    @media (max-width: 600px) {
+      .hello-row { display: block; }
+      .hello-row::after { content: ""; display: block; clear: both; }
+      .hello-row p { font-size: 1.0625rem; }
+      .hello-photo { float: left; margin: 2px 16px 6px 0; }
+      .hello-photo img { width: 84px; height: 84px; }
+    }
 
     .stats {
       display: grid;
@@ -469,18 +490,14 @@
 <!-- ── Intro ── -->
 <section class="intro">
   <div class="container">
-    <p>Applied mathematician turned Performance Marketing &amp; Growth professional, with 12+ years scaling mobile and web products across the US, EU, and global markets. I bring rigor to growth – building the unit economy models and budget forecasts behind the campaigns – and I'm resourceful enough to get under the hood myself: fixing tracking, debugging attribution, running AI tools across my workflow from analysis to creative to forecasting.</p>
-    <p>I've worked across crowdsourcing (AI/ML), EdTech, and e-commerce – from early-stage startups to global AI players like <a href="https://nebius.com" target="_blank" rel="noopener">Nebius</a> (ex-Yandex).</p>
-    <p><strong>Achievements:</strong></p>
-    <ul>
-      <li>Part of the team behind <a href="https://praktika.ai" target="_blank" rel="noopener">Praktika</a>'s 5× revenue growth and <strong>$30M Series A</strong></li>
-      <li>Cut <a href="https://toloka.ai" target="_blank" rel="noopener">Toloka</a>'s acquisition budget by <strong>66%</strong> vs. the original baseline – a 44% cut, then a further 22% – with revenue unchanged – a repeatable framework, not a one-off fix</li>
-      <li>Reduced <a href="https://scentbird.com" target="_blank" rel="noopener">Scentbird</a>'s CAC by <strong>27%</strong> while doubling Meta spend</li>
-      <li>Led Buddy AI's expansion into LatAm and Turkey, growing LTV by <strong>32%</strong></li>
-    </ul>
-    <p>Hands-on with Meta Ads, Google Ads, TikTok, affiliate, and influencer channels – managed up to <strong>$2M/month</strong> in spend. Advanced stack includes Google Analytics, Amplitude, Tableau, and Looker.</p>
-    <p>Open to a long-term senior in-house Growth / Performance Marketing role – let's connect: <a href="mailto:hello@mariascales.com">hello@mariascales.com</a></p>
-
+    <div class="hello">
+      <div class="hello-row">
+        <div class="hello-photo"><img src="/maria.jpg" alt="Maria Atamanova" width="120" height="120"></div>
+        <p>Hi, I'm Maria. I'm an applied mathematician, and for twelve years I have been growing businesses: apps, <span class="nowrap">e-commerce</span>, EdTech, AI data platforms.</p>
+      </div>
+      <p>I scale growth and I make it efficient – on numbers, not gut feeling. Into new channels and markets when it is time to grow; more out of the same budget when it has to go further. Wherever the leak is – tracking, creative, the way the team works – I find it in the data first, and I put AI to work on the rest: analysis, creative, forecasting.</p>
+      <p>When the numbers don't add up, I say so early and show why – before the budget is committed, not after.</p>
+    </div>
   </div>
 </section>
 
@@ -1024,6 +1041,7 @@
 <section class="articles" id="research">
   <div class="container">
     <div class="section-label">Systems &amp; Research · <a href="/research/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All research →</a></div>
+    <p class="section-note">The same method I use for growth teams: define the criteria, build the dataset, test every obvious answer.</p>
     <ul class="article-list">
           <li>
             <a href="/research/marketing-market/article/">Job boards are full of marketing. Most of it isn't.</a>
