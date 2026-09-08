@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- data-geo-pass="mm-dataset-070926" -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job boards are full of marketing. Most of it isn&#x27;t. – Maria Atamanova</title>
@@ -108,6 +109,8 @@
     details.datawrap table { margin-top: 0; min-width: 460px; }
     .article-content details.datawrap p.data-note { font-size: 0.8125rem; color: #6b7280; margin: 0; }
     .callout.lead, .tldr.lead { margin-top: -44px; }
+    .article-content p.cite { font-size: 0.875rem; color: #4b5563; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; margin: 24px 0; }
+    .article-content p.cite strong { color: #111827; }
   </style>
   <script type="application/ld+json">
 {
@@ -186,6 +189,53 @@
     "name": "The Job Search Problem: A Framework for Partial Automation (Building a Reverse ATS)",
     "url": "https://mariascales.com/research/job-search-automation/"
   }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Marketing job postings by discipline, 590 company career pages, July to August 2026",
+  "description": "Aggregates behind the seven figures of the article, and the 88 deterministic title rules the postings were classified with. 18,436 open positions at 590 companies, read from career pages and ATS APIs.",
+  "url": "https://mariascales.com/research/marketing-market/article/",
+  "creator": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-08-27",
+  "dateModified": "2026-09-07",
+  "inLanguage": "en",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "temporalCoverage": "2026-07-06/2026-08-26",
+  "isAccessibleForFree": true,
+  "isBasedOn": "https://mariascales.com/research/job-search-database/article/",
+  "variableMeasured": [
+    "Open marketing postings by discipline group",
+    "Share of commercial roles among marketing postings, by company audience (B2B, B2C)",
+    "Companies with no marketing role, by job board size",
+    "Remote postings open only to residents, by country",
+    "Share of titles naming AI, by broad discipline",
+    "Open postings per hiring company, by profession",
+    "Entry-level share of postings that state a level"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://mariascales.com/research/marketing-market/raw/marketing_market_aggregates_2026-08.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://mariascales.com/research/marketing-market/raw/marketing_market_rules_2026-08.csv"
+    }
+  ]
 }
   </script>
 </head>
@@ -437,14 +487,14 @@
     <h2>Where the evidence comes from</h2>
     <p>What this dataset is and is not, in full.</p>
     <p>It is 18,436 currently open positions at 590 companies, collected between 6 July and 26 August 2026. Every posting was read directly from the company&rsquo;s own careers page or its applicant tracking system – Greenhouse, Lever, Ashby, Workday, Personio, SmartRecruiters, Breezy and a long tail of custom boards – not from an aggregator. That distinction matters more every year: aggregated job data is now polluted by <a href="https://hackernoon.com/ai-scrapers-stole-our-job-posting-and-started-collecting-applications-well-never-see" target="_blank" rel="noopener">scrapers that republish other people&rsquo;s postings</a>, sometimes collecting applications the employer never sees. There are no duplicates from job-board syndication here, and no listings recycled by a third party: if a role is in this dataset, it was on the company&rsquo;s own site during those seven weeks. A scraper that reads a careers page also reads the page – footers, benefit lists, blog headlines – and 2,051 such rows were marked and excluded before anything was counted. A handful of staffing agencies slipped into the company list; they hold about 1% of the rows.</p>
-    <p>Every posting is classified by title, using a table of 88 rules that assigns a broad type (Marketing, Engineering, Product, Data, Analytics, Operations, Design, HR, Business, Other) and a narrow discipline inside it. The rule table is mine, it is deterministic, and it is available on request, as are the underlying counts.</p>
+    <p>Every posting is classified by title, using a table of 88 rules that assigns a broad type (Marketing, Engineering, Product, Data, Analytics, Operations, Design, HR, Business, Other) and a narrow discipline inside it. The rule table is mine, it is deterministic, and it is <a href="#data">published below</a>, as are the underlying counts.</p>
     <p>The company list came from six sourcing waves, from a Berlin LinkedIn list to the We Work Remotely feed, Y Combinator and the Istanbul consumer-tech scene. It was assembled for one person&rsquo;s job search, which means the sample is skewed towards consumer and tech companies, and towards the US: 6,985 of the postings sit in the United States, then the UK at 689, India 641, Germany 563, Canada 441.</p>
     <p>That skew has one hard consequence, and every cross-profession comparison above obeys it: <strong>absolute volumes between professions are not comparable here.</strong> How many marketing jobs versus engineering jobs exist in this dataset says more about which companies I collected than about the labour market. What <em>is</em> comparable is density – openings per company, on boards I read in full. That number does not care how many companies of each type I happened to add. Salaries are not discussed at all: fewer than one posting in twenty mentions one.</p>
     <h2>How I might be wrong</h2>
     <p>Five things this data cannot tell you, stated plainly – and three checks it survives.</p>
     <p><strong>It is not the labour market.</strong> It is 590 companies chosen for one person&rsquo;s search. Cross-profession volumes are meaningless here; density is the only fair comparison, and I have used only that.</p>
     <p><strong>It is a snapshot, not a trend.</strong> Seven weeks of one summer. Nothing in this article says any of these numbers are rising or falling, because seven weeks cannot say that.</p>
-    <p><strong>The taxonomy is mine.</strong> 88 title rules, written by me, applied deterministically. Reasonable people would classify some of those roles differently. Whether &ldquo;Account Executive&rdquo; belongs under marketing is exactly the debate this article is about, so the rules are available on request – disagree with a specific line rather than a vibe. The same goes for my own 627: 168 of them are generic marketing-manager titles that name no discipline. Drop those and the nine named disciplines are 459 roles at 180 companies, 2.6 per company – the argument does not change.</p>
+    <p><strong>The taxonomy is mine.</strong> 88 title rules, written by me, applied deterministically. Reasonable people would classify some of those roles differently. Whether &ldquo;Account Executive&rdquo; belongs under marketing is exactly the debate this article is about, so the rules are <a href="#data">published as a CSV</a> – disagree with a specific line rather than a vibe. The same goes for my own 627: 168 of them are generic marketing-manager titles that name no discipline. Drop those and the nine named disciplines are 459 roles at 180 companies, 2.6 per company – the argument does not change.</p>
     <p><strong>Audience is a property of the company, not the posting.</strong> &ldquo;Brand · B2B&rdquo; means a brand role at a company selling to businesses. It does not mean the role itself is B2B brand work.</p>
     <p><strong>Seniority is read from the title only</strong>, which is a weak instrument – roughly 40 to 60% of postings do not state a level at all – so the section on it above reports shares of the roles that <em>do</em> state one, and nothing else.</p>
     <p>Now the checks. <strong>Scraped pages leave residue.</strong> I marked and excluded 2,051 rows of page furniture, and some certainly got through: product pages and department headers filed as roles. So I re-ran everything on the boards read through an ATS API alone, where no page is scraped at all – 13,373 postings at 346 companies. The commercial share of marketing there is 61% against 63% overall; my disciplines are 3.0 openings per company against 2.8; the B2B and B2C shares are 65% and 29% against 68% and 29%; and on boards of fifty or more, no company lacks marketing and a quarter lack my job – the same quarter.</p>
@@ -457,8 +507,36 @@
     <p><strong>If you are hiring:</strong> the word on your job posting decides who finds it. Filing an account executive role under marketing is free for you and expensive for every marketer searching that week. It is also expensive for you, in candidates who never see the role they would have been right for.</p>
     <p><strong>If you read market reports:</strong> ask what is inside the label before you quote the number. Statistical agencies maintain <a href="https://www.onetcenter.org/taxonomy.html" target="_blank" rel="noopener">occupational taxonomies</a> precisely because labels drift; the <a href="https://www.bls.gov/soc/2018/major_groups.htm" target="_blank" rel="noopener">SOC major groups</a> exist so that &ldquo;marketing&rdquo; means one thing across datasets. Hiring platforms are under no such obligation, and their categories are the ones everyone quotes. Marketing looks like the biggest profession in my dataset and mostly is not marketing. Data looks like the densest and is four professions wearing one badge. The aggregation trick is not unique to hiring data – it just happens to be very visible there.</p>
     <p>I built this database to find a job. It told me why the search felt the way it did, which turned out to be worth the seven weeks on its own.</p>
+    <h2 id="data">Data</h2>
+    <p>Everything this article counts, as two CSV files next to it. Both cover
+    6 July to 26 August 2026, the window the postings were collected in; neither is recomputed from the database,
+    so they cannot disagree with the figures above.</p>
+    <ul>
+      <li><a href="/research/marketing-market/raw/marketing_market_aggregates_2026-08.csv"><strong>marketing_market_aggregates_2026-08.csv</strong></a> &ndash;
+      109 rows, long format (figure, group, dimension, metric, value, unit, note): every number
+      behind figures 1 to 7, the same numbers as the tables under the charts.</li>
+      <li><a href="/research/marketing-market/raw/marketing_market_rules_2026-08.csv"><strong>marketing_market_rules_2026-08.csv</strong></a> &ndash;
+      the 88 title rules, in the order they are applied. Columns: order, match, type_1, type_2,
+      author_discipline, discipline_group.</li>
+    </ul>
+    <h3>How to read the rules</h3>
+    <p>The <code>match</code> column is what is looked for in the job title. A word matches
+    whole: <code>art</code> finds &ldquo;Art Director&rdquo; but not &ldquo;Artist&rdquo; or
+    &ldquo;Article&rdquo;. A trailing <code>*</code> takes the word and its forms
+    (<code>account*</code> catches Accounts and Accounting). A <code>+</code> between words
+    means all of them are present. A comma means any of the variants. A hyphen with spaces
+    around it means a word that must NOT be there: <code>search - social</code> is about search
+    but not about social. Rules are applied top to bottom and <strong>the first match
+    wins</strong>, so the order of the rows is part of the rule set; a title that matches
+    nothing is left unsorted.</p>
+    <p><code>author_discipline</code> is the column that marks a discipline as one I work in
+    &ndash; 10 of the narrow types are marked yes, and those are the ten that make up my own
+    Performance / Growth / UA group in figure 1. <code>discipline_group</code> is the group the rule feeds in that figure,
+    and it is filled only for the 52 rules whose broad type is Marketing: the five groups are
+    counted inside marketing, so they do not apply to an engineering or an operations rule.</p>
     <hr>
-    <p class="data-note"><em>Data: 18,436 open positions at 590 companies, collected 6 July – 26 August 2026, read directly from company career pages and ATS APIs. Classification: 88 deterministic title rules. Rule table and underlying counts available on request.</em></p>
+    <p class="data-note"><em>Data: 18,436 open positions at 590 companies, collected 6 July – 26 August 2026, read directly from company career pages and ATS APIs. Classification: 88 deterministic title rules. Rule table and underlying counts published above, as two CSV files.</em></p>
+    <p class="cite"><strong>Cite this</strong><br>Atamanova, M. (2026). Job boards are full of marketing. Most of it isn&rsquo;t. mariascales.com. <a href="https://mariascales.com/research/marketing-market/article/">https://mariascales.com/research/marketing-market/article/</a></p>
   </div>
 </div>
 
@@ -466,7 +544,7 @@
 <div class="author-box">
   <div class="author-box-label">About the author</div>
   <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager, applied mathematician. 12+ years scaling subscription and mobile products (Praktika, Toloka, Scentbird, Buddy AI) on unit economics, cohort analysis and growth modeling. Performance marketing for AI-era growth – backed by models, not gut feeling.</p>
-  <p>The data comes from my own job-search database (<a href="/research/job-search-automation/">how it is built</a>). The rule table and the underlying counts are available on request.</p>
+  <p>The data comes from my own job-search database (<a href="/research/job-search-automation/">how it is built</a>). The rule table and the underlying counts are <a href="/research/marketing-market/article/#data">published with the article</a>.</p>
   <p>Open to a long-term senior in-house Growth / Performance Marketing role – <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a> · <a href="/cases/">Case studies</a> · <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></p>
 </div>
 </div></div>

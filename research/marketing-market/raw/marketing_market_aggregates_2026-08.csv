@@ -1,0 +1,110 @@
+figure,group,dimension,metric,value,unit,note
+1,discipline group,Sales & adjacent,postings,3818,count,
+1,discipline group,Sales & adjacent,share_of_marketing,63,percent,
+1,discipline group,Other marketing,postings,1397,count,
+1,discipline group,Other marketing,share_of_marketing,23,percent,
+1,discipline group,Performance / Growth / UA,postings,627,count,
+1,discipline group,Performance / Growth / UA,share_of_marketing,10,percent,
+1,discipline group,Product marketing,postings,160,count,
+1,discipline group,Product marketing,share_of_marketing,3,percent,
+1,discipline group,Brand,postings,82,count,
+1,discipline group,Brand,share_of_marketing,1,percent,
+2,discipline group,Sales & adjacent,postings_b2b,2667,count,
+2,discipline group,Sales & adjacent,share_of_b2b,68,percent,
+2,discipline group,Sales & adjacent,postings_b2c,187,count,
+2,discipline group,Sales & adjacent,share_of_b2c,29,percent,
+2,discipline group,Other marketing,postings_b2b,726,count,
+2,discipline group,Other marketing,share_of_b2b,19,percent,
+2,discipline group,Other marketing,postings_b2c,319,count,
+2,discipline group,Other marketing,share_of_b2c,50,percent,
+2,discipline group,Product marketing + brand,postings_b2b,131,count,
+2,discipline group,Product marketing + brand,share_of_b2b,3,percent,
+2,discipline group,Product marketing + brand,postings_b2c,43,count,
+2,discipline group,Product marketing + brand,share_of_b2c,7,percent,
+2,discipline group,Performance / Growth / UA,postings_b2b,378,count,
+2,discipline group,Performance / Growth / UA,share_of_b2b,10,percent,
+2,discipline group,Performance / Growth / UA,postings_b2c,93,count,
+2,discipline group,Performance / Growth / UA,share_of_b2c,14,percent,
+3,board size,any,companies,590,count,
+3,board size,any,share_with_no_marketing_role,22,percent,
+3,board size,any,share_with_no_role_of_my_kind,62,percent,
+3,board size,5+ openings,companies,418,count,
+3,board size,5+ openings,share_with_no_marketing_role,8,percent,
+3,board size,5+ openings,share_with_no_role_of_my_kind,51,percent,
+3,board size,10+,companies,306,count,
+3,board size,10+,share_with_no_marketing_role,6,percent,
+3,board size,10+,share_with_no_role_of_my_kind,46,percent,
+3,board size,25+,companies,164,count,
+3,board size,25+,share_with_no_marketing_role,2,percent,
+3,board size,25+,share_with_no_role_of_my_kind,36,percent,
+3,board size,50+,companies,85,count,
+3,board size,50+,share_with_no_marketing_role,1,percent,
+3,board size,50+,share_with_no_role_of_my_kind,25,percent,
+4,country,United States,remote_postings,2357,count,
+4,country,United States,residents_only,1697,count,
+4,country,United States,scope_not_resolved,660,count,
+4,country,United States,open_worldwide,0,count,
+4,country,United Kingdom,remote_postings,135,count,
+4,country,United Kingdom,residents_only,71,count,
+4,country,United Kingdom,scope_not_resolved,64,count,
+4,country,United Kingdom,open_worldwide,0,count,
+4,country,Canada,remote_postings,110,count,
+4,country,Canada,residents_only,82,count,
+4,country,Canada,scope_not_resolved,28,count,
+4,country,Canada,open_worldwide,0,count,
+4,country,Germany,remote_postings,73,count,
+4,country,Germany,residents_only,48,count,
+4,country,Germany,scope_not_resolved,25,count,
+4,country,Germany,open_worldwide,0,count,
+5,broad type,Data,share_of_titles_naming_ai,49,percent,
+5,broad type,Data,titles_naming_ai,627,count,"627 of 1,283"
+5,broad type,Data,titles_total,1283,count,"627 of 1,283"
+5,broad type,Business,share_of_titles_naming_ai,5,percent,
+5,broad type,Business,titles_naming_ai,17,count,17 of 340
+5,broad type,Business,titles_total,340,count,17 of 340
+5,broad type,Engineering,share_of_titles_naming_ai,4.1,percent,
+5,broad type,Engineering,titles_naming_ai,202,count,"202 of 4,880"
+5,broad type,Engineering,titles_total,4880,count,"202 of 4,880"
+5,broad type,Marketing,share_of_titles_naming_ai,2.1,percent,
+5,broad type,Marketing,titles_naming_ai,126,count,"126 of 6,084"
+5,broad type,Marketing,titles_total,6084,count,"126 of 6,084"
+5,broad type,Analytics,share_of_titles_naming_ai,2,percent,
+5,broad type,Analytics,titles_naming_ai,10,count,10 of 496
+5,broad type,Analytics,titles_total,496,count,10 of 496
+5,broad type,Product,share_of_titles_naming_ai,1.2,percent,
+5,broad type,Product,titles_naming_ai,9,count,9 of 727
+5,broad type,Product,titles_total,727,count,9 of 727
+6,profession,Security,openings_per_company,3.4,ratio,3.4
+6,profession,Security,postings,323,count,323 at 96 companies
+6,profession,Security,companies,96,count,323 at 96 companies
+6,profession,Machine learning,openings_per_company,3.3,ratio,3.3
+6,profession,Machine learning,postings,255,count,255 at 77
+6,profession,Machine learning,companies,77,count,255 at 77
+6,profession,AI,openings_per_company,2.8,ratio,2.8
+6,profession,AI,postings,383,count,383 at 139
+6,profession,AI,companies,139,count,383 at 139
+6,profession,Product management,openings_per_company,2.8,ratio,2.8
+6,profession,Product management,postings,727,count,727 at 259
+6,profession,Product management,companies,259,count,727 at 259
+6,profession,My disciplines,openings_per_company,2.8,ratio,2.8
+6,profession,My disciplines,postings,627,count,627 at 226
+6,profession,My disciplines,companies,226,count,627 at 226
+6,profession,Analytics,openings_per_company,2.7,ratio,2.7
+6,profession,Analytics,postings,416,count,416 at 153
+6,profession,Analytics,companies,153,count,416 at 153
+6,profession,Data engineering,openings_per_company,2.4,ratio,2.4
+6,profession,Data engineering,postings,322,count,322 at 137
+6,profession,Data engineering,companies,137,count,322 at 137
+6,profession,Design,openings_per_company,2.1,ratio,2.1
+6,profession,Design,postings,193,count,193 at 93
+6,profession,Design,companies,93,count,193 at 93
+7,group,My disciplines,share_entry_level,20,percent,
+7,group,My disciplines,senior_or_above_per_entry_role,4,ratio,1 entry per 4 senior+
+7,group,Marketing,share_entry_level,17,percent,
+7,group,Marketing,senior_or_above_per_entry_role,5,ratio,1 per 5
+7,group,Data,share_entry_level,4.8,percent,
+7,group,Data,senior_or_above_per_entry_role,20,ratio,1 per 20
+7,group,Product,share_entry_level,4.6,percent,
+7,group,Product,senior_or_above_per_entry_role,21,ratio,1 per 21
+7,group,Engineering,share_entry_level,4.1,percent,
+7,group,Engineering,senior_or_above_per_entry_role,23,ratio,1 per 23
