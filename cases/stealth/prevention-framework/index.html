@@ -89,7 +89,64 @@
     table { width:100%; border-collapse:collapse; font-size:0.875rem; margin:16px 0 28px; }
     th, td { border:1px solid #e5e7eb; padding:10px 12px; text-align:left; vertical-align:top; line-height:1.5; }
     th { background:#f9fafb; font-weight:600; }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 0 0 28px; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .callout li:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0 0; background: #f9fafb; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Prevention Framework – rules for validating audience breadth before scaling Meta spend",
+  "description": "The prevention framework behind the pixel-overfit diagnosis – rules for validating audience breadth and the standing policies that keep Meta CPMs in check.",
+  "url": "https://mariascales.com/cases/stealth/prevention-framework/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/cases/stealth/prevention-framework/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-09-08",
+  "keywords": [
+    "pixel overfit",
+    "Meta Ads scaling",
+    "audience breadth",
+    "creative fatigue",
+    "reset test",
+    "CPM"
+  ],
+  "isPartOf": {
+    "@type": "Article",
+    "name": "Growth That Doesn't Lie to Itself",
+    "url": "https://mariascales.com/cases/stealth/"
+  }
+}
+  </script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -141,6 +198,15 @@
 <div class="article-content">
   <div class="container">
 
+    <div class="callout lead"><div class="callout-label">TL;DR</div>
+    <ul>
+      <li><strong>Validate a “winning segment” for breadth before building plans on it</strong> – reach estimates plus reconciliation against backend LTV, not just early CPA; scale in increments with a pixel-overfit tripwire.</li>
+      <li><strong>The reset test:</strong> a fresh concept that opens at a normal CPM with frequency building normally means fatigue; no reset means the pool the pixel will serve is exhausted, most often pixel overfit. A failed reset is stop-and-diagnose, confirmed on a clean pixel before the creative is written off.</li>
+      <li><strong>Pixel overfit</strong> – campaigns optimizing to a shallow or narrow pixel event that correlates with short-term conversion but not with the true addressable, revenue-generating audience, so reported performance looks strong precisely because the model has fit itself to a pocket too small to scale.</li>
+      <li><strong>Don't let one early pocket train the pixel:</strong> spread early learning budget across concepts, never set unit-economics benchmarks from a single segment, and check event–LTV correlation before choosing an optimization event.</li>
+      <li><strong>Creative freshness is checked by hand, weekly:</strong> ad names encode the concept, ad-level spend is aggregated by concept, and two numbers are read – each concept's share of budget and its CPA. Spend concentrating on one concept is the early sign of overfitting.</li>
+    </ul></div>
+
     <h2>The part that generalizes beyond this one case</h2>
     <ul>
       <li><strong>Validate a "winning segment" for breadth before building plans on it</strong> – reach estimates plus reconciliation against backend LTV, not just early CPA.</li>
@@ -169,6 +235,10 @@
     <p>Meta doesn't give us a creative-freshness tool, so we run the check ourselves, by hand, once a week. Two things make it possible:</p>
     <p><strong>1. Ad naming convention.</strong> Every ad name and creative file name encodes the <strong>creative concept</strong> and its <strong>subtype</strong> – not just the name or number of the individual creative. Without this, spend can't be aggregated at the concept level at all.</p>
     <p><strong>2. Weekly spend-by-concept review.</strong> Once a week we export ad-level spend, aggregate it by concept, and look at two numbers: the share of budget each concept takes, and the CPA it delivers. If spend starts concentrating on a single creative concept, that's an early sign of overfitting – the signal to rotate fresh concepts in before CPMs react.</p>
+
+    <div class="author-box">
+      <p>Written by <strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager and applied mathematician; twelve years growing businesses – apps, e-commerce, EdTech, AI data platforms – on numbers, not gut feeling. This framework is the part of the <a href="/cases/stealth/">stealth-case diagnosis</a> that generalizes: the rules that stop a narrow winning pocket from being mistaken for a scalable audience.</p>
+    </div>
 
   </div>
 </div>
