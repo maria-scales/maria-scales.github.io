@@ -1,0 +1,1259 @@
+rank,university,country,raw_name,canonical_name,cluster
+1,Harvard University,US,Applied Mathematics,Applied Mathematics,Mathematics
+1,Harvard University,US,Bioinformatics & Genomics,Bioinformatics,Computational Biology & Bioinformatics
+1,Harvard University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+1,Harvard University,US,Chemistry,Chemistry,Chemistry
+1,Harvard University,US,Systems Biology,Computational Biology,Computational Biology & Bioinformatics
+1,Harvard University,US,Computational Science & Engineering,Computational Science,CS & AI
+1,Harvard University,US,Computer Science,Computer Science,CS & AI
+1,Harvard University,US,Data Science,Data Science,CS & AI
+1,Harvard University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+1,Harvard University,US,Environmental Science & Engineering,Environmental Engineering,Engineering – Civil & Environmental
+1,Harvard University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+1,Harvard University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+1,Harvard University,US,Physics,Physics,Physics & Astronomy
+1,Harvard University,US,Statistics,Statistics,Mathematics
+2,Stanford University,US,Aeronautics & Astronautics,Aerospace Engineering,Engineering – Mechanical & Aerospace
+2,Stanford University,US,Computational & Mathematical Engineering,Applied Mathematics,Mathematics
+2,Stanford University,US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+2,Stanford University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+2,Stanford University,US,Chemistry & Systems Biology,Chemistry,Chemistry
+2,Stanford University,US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+2,Stanford University,US,Biomedical Informatics,Computational Biology,Computational Biology & Bioinformatics
+2,Stanford University,US,Computer Science,Computer Science,CS & AI
+2,Stanford University,US,Data Science,Data Science,CS & AI
+2,Stanford University,US,Earth & Planetary Sciences,Earth Sciences,Earth & Environmental Sciences
+2,Stanford University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+2,Stanford University,US,Energy Science & Engineering,Environmental Engineering,Engineering – Civil & Environmental
+2,Stanford University,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+2,Stanford University,US,Mathematics,Mathematics,Mathematics
+2,Stanford University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+2,Stanford University,US,Management Science & Engineering,Operations Research,Mathematics
+2,Stanford University,US,Applied Physics,Physics,Physics & Astronomy
+2,Stanford University,US,Statistics,Statistics,Mathematics
+3,Massachusetts Institute of Technology (MIT),US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+3,Massachusetts Institute of Technology (MIT),US,Biological Engineering,Biomedical Engineering,Engineering – Biomedical
+3,Massachusetts Institute of Technology (MIT),US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+3,Massachusetts Institute of Technology (MIT),US,Chemistry,Chemistry,Chemistry
+3,Massachusetts Institute of Technology (MIT),US,Biology,Computational Biology,Computational Biology & Bioinformatics
+3,Massachusetts Institute of Technology (MIT),US,Computation for Design and Optimization,Computational Science,CS & AI
+3,Massachusetts Institute of Technology (MIT),US,Computer Science & Engineering,Computer Science,CS & AI
+3,Massachusetts Institute of Technology (MIT),US,Data Science & Machine Learning,Data Science,CS & AI
+3,Massachusetts Institute of Technology (MIT),US,Urban Studies & Planning,Interdisciplinary Sciences,Interdisciplinary
+3,Massachusetts Institute of Technology (MIT),US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+3,Massachusetts Institute of Technology (MIT),US,Mathematics,Mathematics,Mathematics
+3,Massachusetts Institute of Technology (MIT),US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+3,Massachusetts Institute of Technology (MIT),US,Brain & Cognitive Sciences,Neuroscience,Computational Biology & Bioinformatics
+3,Massachusetts Institute of Technology (MIT),US,Nuclear Science & Engineering,Nuclear Engineering,Engineering – Other
+3,Massachusetts Institute of Technology (MIT),US,Operations Research,Operations Research,Mathematics
+3,Massachusetts Institute of Technology (MIT),US,Physics,Physics,Physics & Astronomy
+3,Massachusetts Institute of Technology (MIT),US,Statistics & Data Science,Statistics,Mathematics
+4,University of Cambridge,UK,Physics & Astrophysics,Astrophysics,Physics & Astronomy
+4,University of Cambridge,UK,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+4,University of Cambridge,UK,Chemical Engineering & Biotechnology,Chemical Engineering,Engineering – Chemical & Materials
+4,University of Cambridge,UK,Chemistry,Chemistry,Chemistry
+4,University of Cambridge,UK,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+4,University of Cambridge,UK,Computer Science,Computer Science,CS & AI
+4,University of Cambridge,UK,Data-Intensive Science,Data Science,CS & AI
+4,University of Cambridge,UK,Engineering,Engineering (General),Engineering – Other
+4,University of Cambridge,UK,Natural Sciences,Interdisciplinary Sciences,Interdisciplinary
+4,University of Cambridge,UK,Mathematics,Mathematics,Mathematics
+4,University of Cambridge,UK,Statistical Science,Statistics,Mathematics
+5,"University of California, Berkeley",US,Applied Mathematics,Applied Mathematics,Mathematics
+5,"University of California, Berkeley",US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+5,"University of California, Berkeley",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+5,"University of California, Berkeley",US,Chemistry,Chemistry,Chemistry
+5,"University of California, Berkeley",US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+5,"University of California, Berkeley",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+5,"University of California, Berkeley",US,Computer Science,Computer Science,CS & AI
+5,"University of California, Berkeley",US,Data Science,Data Science,CS & AI
+5,"University of California, Berkeley",US,Electrical Engineering & Computer Sciences,Electrical Engineering,Engineering – Electrical & Computer
+5,"University of California, Berkeley",US,Industrial Engineering & Operations Research,Industrial Engineering,Engineering – Other
+5,"University of California, Berkeley",US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+5,"University of California, Berkeley",US,Mathematics,Mathematics,Mathematics
+5,"University of California, Berkeley",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+5,"University of California, Berkeley",US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+5,"University of California, Berkeley",US,Nuclear Engineering,Nuclear Engineering,Engineering – Other
+5,"University of California, Berkeley",US,Physics,Physics,Physics & Astronomy
+5,"University of California, Berkeley",US,Statistics,Statistics,Mathematics
+6,University of Oxford,UK,Mathematical Modelling & Scientific Computing,Applied Mathematics,Mathematics
+6,University of Oxford,UK,Autonomous Intelligent Machines & Systems,Artificial Intelligence,CS & AI
+6,University of Oxford,UK,Biochemistry,Biochemistry,Chemistry
+6,University of Oxford,UK,Chemistry,Chemistry,Chemistry
+6,University of Oxford,UK,Biology,Computational Biology,Computational Biology & Bioinformatics
+6,University of Oxford,UK,Computer Science,Computer Science,CS & AI
+6,University of Oxford,UK,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+6,University of Oxford,UK,Engineering Science,Engineering (General),Engineering – Other
+6,University of Oxford,UK,Mathematics,Mathematics,Mathematics
+6,University of Oxford,UK,Physics,Physics,Physics & Astronomy
+6,University of Oxford,UK,Statistics,Statistics,Mathematics
+7,Princeton University,US,Applied and Computational Mathematics,Applied Mathematics,Mathematics
+7,Princeton University,US,Astrophysical Sciences,Astrophysics,Physics & Astronomy
+7,Princeton University,US,Chemical & Biological Engineering,Chemical Engineering,Engineering – Chemical & Materials
+7,Princeton University,US,Chemistry,Chemistry,Chemistry
+7,Princeton University,US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+7,Princeton University,US,Quantitative & Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+7,Princeton University,US,Computer Science,Computer Science,CS & AI
+7,Princeton University,US,Geosciences,Earth Sciences,Earth & Environmental Sciences
+7,Princeton University,US,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+7,Princeton University,US,Mathematics,Mathematics,Mathematics
+7,Princeton University,US,Mechanical & Aerospace Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+7,Princeton University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+7,Princeton University,US,Operations Research & Financial Engineering (ORFE),Operations Research,Mathematics
+7,Princeton University,US,Physics,Physics,Physics & Astronomy
+7,Princeton University,US,Statistics & Machine Learning,Statistics,Mathematics
+8,Columbia University,US,Applied Mathematics,Applied Mathematics,Mathematics
+8,Columbia University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+8,Columbia University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+8,Columbia University,US,Chemistry,Chemistry,Chemistry
+8,Columbia University,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+8,Columbia University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+8,Columbia University,US,Computer Science,Computer Science,CS & AI
+8,Columbia University,US,Data Science,Data Science,CS & AI
+8,Columbia University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+8,Columbia University,US,Earth & Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+8,Columbia University,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+8,Columbia University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+8,Columbia University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+8,Columbia University,US,Industrial Engineering & Operations Research (IEOR),Operations Research,Mathematics
+8,Columbia University,US,Applied Physics,Physics,Physics & Astronomy
+8,Columbia University,US,Statistics,Statistics,Mathematics
+9,California Institute of Technology (Caltech),US,Aerospace,Aerospace Engineering,Engineering – Mechanical & Aerospace
+9,California Institute of Technology (Caltech),US,Applied and Computational Mathematics,Applied Mathematics,Mathematics
+9,California Institute of Technology (Caltech),US,Astrophysics,Astrophysics,Physics & Astronomy
+9,California Institute of Technology (Caltech),US,Biochemistry & Molecular Biophysics,Biochemistry,Chemistry
+9,California Institute of Technology (Caltech),US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+9,California Institute of Technology (Caltech),US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+9,California Institute of Technology (Caltech),US,Chemistry,Chemistry,Chemistry
+9,California Institute of Technology (Caltech),US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+9,California Institute of Technology (Caltech),US,Biology,Computational Biology,Computational Biology & Bioinformatics
+9,California Institute of Technology (Caltech),US,Computer Science,Computer Science,CS & AI
+9,California Institute of Technology (Caltech),US,Geochemistry,Earth Sciences,Earth & Environmental Sciences
+9,California Institute of Technology (Caltech),US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+9,California Institute of Technology (Caltech),US,Environmental Science & Engineering,Environmental Engineering,Engineering – Civil & Environmental
+9,California Institute of Technology (Caltech),US,Mathematics,Mathematics,Mathematics
+9,California Institute of Technology (Caltech),US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+9,California Institute of Technology (Caltech),US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+9,California Institute of Technology (Caltech),US,Physics,Physics,Physics & Astronomy
+10,University of Chicago,US,Computational and Applied Mathematics,Applied Mathematics,Mathematics
+10,University of Chicago,US,Astrophysics,Astrophysics,Physics & Astronomy
+10,University of Chicago,US,Biological Chemistry,Biochemistry,Chemistry
+10,University of Chicago,US,Genomics & Systems Biology,Bioinformatics,Computational Biology & Bioinformatics
+10,University of Chicago,US,Molecular Engineering,Biomedical Engineering,Engineering – Biomedical
+10,University of Chicago,US,Chemistry,Chemistry,Chemistry
+10,University of Chicago,US,Computer Science,Computer Science,CS & AI
+10,University of Chicago,US,Data Science,Data Science,CS & AI
+10,University of Chicago,US,Geophysical Sciences,Earth Sciences,Earth & Environmental Sciences
+10,University of Chicago,US,Computational Social Science,Interdisciplinary Sciences,Interdisciplinary
+10,University of Chicago,US,Mathematics,Mathematics,Mathematics
+10,University of Chicago,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+10,University of Chicago,US,Physics,Physics,Physics & Astronomy
+10,University of Chicago,US,Statistics,Statistics,Mathematics
+11,Yale University,US,Applied Mathematics,Applied Mathematics,Mathematics
+11,Yale University,US,Molecular Biophysics & Biochemistry,Biochemistry,Chemistry
+11,Yale University,US,Computational Biology & Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+11,Yale University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+11,Yale University,US,Chemical & Environmental Engineering,Chemical Engineering,Engineering – Chemical & Materials
+11,Yale University,US,Chemistry,Chemistry,Chemistry
+11,Yale University,US,Ecology & Evolutionary Biology,Computational Biology,Computational Biology & Bioinformatics
+11,Yale University,US,Computer Science,Computer Science,CS & AI
+11,Yale University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+11,Yale University,US,Mathematics,Mathematics,Mathematics
+11,Yale University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+11,Yale University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+11,Yale University,US,Physics,Physics,Physics & Astronomy
+11,Yale University,US,Statistics & Data Science,Statistics,Mathematics
+12,Cornell University,US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+12,Cornell University,US,Applied Mathematics,Applied Mathematics,Mathematics
+12,Cornell University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+12,Cornell University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+12,Cornell University,US,Chemistry,Chemistry,Chemistry
+12,Cornell University,US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+12,Cornell University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+12,Cornell University,US,Computer Science,Computer Science,CS & AI
+12,Cornell University,US,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+12,Cornell University,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+12,Cornell University,US,Mathematics,Mathematics,Mathematics
+12,Cornell University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+12,Cornell University,US,Operations Research & Information Engineering,Operations Research,Mathematics
+12,Cornell University,US,Physics,Physics,Physics & Astronomy
+12,Cornell University,US,Statistics & Data Science,Statistics,Mathematics
+12,Cornell University,US,Systems Engineering,Systems Engineering,Engineering – Other
+13,Paris-Saclay University,France,Astrophysics & Space Science,Astrophysics,Physics & Astronomy
+13,Paris-Saclay University,France,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+13,Paris-Saclay University,France,Chemistry,Chemistry,Chemistry
+13,Paris-Saclay University,France,Computer Science,Computer Science,CS & AI
+13,Paris-Saclay University,France,Data Science & AI,Data Science,CS & AI
+13,Paris-Saclay University,France,Earth & Environmental Sciences,Earth Sciences,Earth & Environmental Sciences
+13,Paris-Saclay University,France,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+13,Paris-Saclay University,France,Energy Engineering,Environmental Engineering,Engineering – Civil & Environmental
+13,Paris-Saclay University,France,Materials Science,Materials Science,Engineering – Chemical & Materials
+13,Paris-Saclay University,France,Mathematics,Mathematics,Mathematics
+13,Paris-Saclay University,France,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+13,Paris-Saclay University,France,Physics,Physics,Physics & Astronomy
+13,Paris-Saclay University,France,Statistics,Statistics,Mathematics
+14,University College London (UCL),UK,Robotics & Artificial Intelligence,Artificial Intelligence,CS & AI
+14,University College London (UCL),UK,Astrophysics,Astrophysics,Physics & Astronomy
+14,University College London (UCL),UK,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+14,University College London (UCL),UK,Medical Physics & Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+14,University College London (UCL),UK,Computational Statistics & Machine Learning,CS & AI,CS & AI
+14,University College London (UCL),UK,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+14,University College London (UCL),UK,Chemistry,Chemistry,Chemistry
+14,University College London (UCL),UK,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+14,University College London (UCL),UK,Computer Science,Computer Science,CS & AI
+14,University College London (UCL),UK,Data Science,Data Science,CS & AI
+14,University College London (UCL),UK,Electrical & Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+14,University College London (UCL),UK,Natural Sciences,Interdisciplinary Sciences,Interdisciplinary
+14,University College London (UCL),UK,Mathematics,Mathematics,Mathematics
+14,University College London (UCL),UK,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+14,University College London (UCL),UK,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+14,University College London (UCL),UK,Physics & Astronomy,Physics,Physics & Astronomy
+14,University College London (UCL),UK,Statistical Science,Statistics,Mathematics
+14,University of Pennsylvania,US,Applied Mathematics & Computational Science,Applied Mathematics,Mathematics
+14,University of Pennsylvania,US,Genomics & Computational Biology,Bioinformatics,Computational Biology & Bioinformatics
+14,University of Pennsylvania,US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+14,University of Pennsylvania,US,Chemical & Biomolecular Engineering,Chemical Engineering,Engineering – Chemical & Materials
+14,University of Pennsylvania,US,Chemistry,Chemistry,Chemistry
+14,University of Pennsylvania,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+14,University of Pennsylvania,US,Computer & Information Science,Computer Science,CS & AI
+14,University of Pennsylvania,US,Data Science,Data Science,CS & AI
+14,University of Pennsylvania,US,Electrical & Systems Engineering,Electrical Engineering,Engineering – Electrical & Computer
+14,University of Pennsylvania,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+14,University of Pennsylvania,US,Mechanical Engineering & Applied Mechanics,Mechanical Engineering,Engineering – Mechanical & Aerospace
+14,University of Pennsylvania,US,Physics,Physics,Physics & Astronomy
+14,University of Pennsylvania,US,Statistics,Statistics,Mathematics
+14,University of Pennsylvania,US,Networked & Social Systems Engineering,Systems Engineering,Engineering – Other
+16,"University of California, Los Angeles (UCLA)",US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+16,"University of California, Los Angeles (UCLA)",US,Applied Mathematics,Applied Mathematics,Mathematics
+16,"University of California, Los Angeles (UCLA)",US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+16,"University of California, Los Angeles (UCLA)",US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+16,"University of California, Los Angeles (UCLA)",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+16,"University of California, Los Angeles (UCLA)",US,Chemistry,Chemistry,Chemistry
+16,"University of California, Los Angeles (UCLA)",US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+16,"University of California, Los Angeles (UCLA)",US,Computational & Systems Biology,Computational Biology,Computational Biology & Bioinformatics
+16,"University of California, Los Angeles (UCLA)",US,Computer Science,Computer Science,CS & AI
+16,"University of California, Los Angeles (UCLA)",US,Data Science,Data Science,CS & AI
+16,"University of California, Los Angeles (UCLA)",US,Atmospheric & Oceanic Sciences,Earth Sciences,Earth & Environmental Sciences
+16,"University of California, Los Angeles (UCLA)",US,Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+16,"University of California, Los Angeles (UCLA)",US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+16,"University of California, Los Angeles (UCLA)",US,Mathematics,Mathematics,Mathematics
+16,"University of California, Los Angeles (UCLA)",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+16,"University of California, Los Angeles (UCLA)",US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+16,"University of California, Los Angeles (UCLA)",US,Physics,Physics,Physics & Astronomy
+16,"University of California, Los Angeles (UCLA)",US,Statistics,Statistics,Mathematics
+17,University of Washington,US,Aeronautics & Astronautics,Aerospace Engineering,Engineering – Mechanical & Aerospace
+17,University of Washington,US,Applied Mathematics,Applied Mathematics,Mathematics
+17,University of Washington,US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+17,University of Washington,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+17,University of Washington,US,Chemistry,Chemistry,Chemistry
+17,University of Washington,US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+17,University of Washington,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+17,University of Washington,US,Computer Science & Engineering,Computer Science,CS & AI
+17,University of Washington,US,Data Science,Data Science,CS & AI
+17,University of Washington,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+17,University of Washington,US,Industrial & Systems Engineering,Industrial Engineering,Engineering – Other
+17,University of Washington,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+17,University of Washington,US,Mathematics,Mathematics,Mathematics
+17,University of Washington,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+17,University of Washington,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+17,University of Washington,US,Physics,Physics,Physics & Astronomy
+17,University of Washington,US,Statistics,Statistics,Mathematics
+18,Tsinghua University,China,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+18,Tsinghua University,China,Artificial Intelligence,Artificial Intelligence,CS & AI
+18,Tsinghua University,China,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+18,Tsinghua University,China,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+18,Tsinghua University,China,Chemistry,Chemistry,Chemistry
+18,Tsinghua University,China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+18,Tsinghua University,China,Computer Science & Technology,Computer Science,CS & AI
+18,Tsinghua University,China,Data Science,Data Science,CS & AI
+18,Tsinghua University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+18,Tsinghua University,China,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+18,Tsinghua University,China,Industrial Engineering,Industrial Engineering,Engineering – Other
+18,Tsinghua University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+18,Tsinghua University,China,Mathematics,Mathematics,Mathematics
+18,Tsinghua University,China,Physics,Physics,Physics & Astronomy
+18,Tsinghua University,China,Statistics,Statistics,Mathematics
+18,Tsinghua University,China,Automation,Systems Engineering,Engineering – Other
+19,Johns Hopkins University,US,Applied Mathematics & Statistics,Applied Mathematics,Mathematics
+19,Johns Hopkins University,US,Biophysics,Biochemistry,Chemistry
+19,Johns Hopkins University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+19,Johns Hopkins University,US,Chemical & Biomolecular Engineering,Chemical Engineering,Engineering – Chemical & Materials
+19,Johns Hopkins University,US,Chemistry,Chemistry,Chemistry
+19,Johns Hopkins University,US,Civil & Systems Engineering,Civil Engineering,Engineering – Civil & Environmental
+19,Johns Hopkins University,US,Computational Medicine,Computational Biology,Computational Biology & Bioinformatics
+19,Johns Hopkins University,US,Computer Science,Computer Science,CS & AI
+19,Johns Hopkins University,US,Data Science,Data Science,CS & AI
+19,Johns Hopkins University,US,Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+19,Johns Hopkins University,US,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+19,Johns Hopkins University,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+19,Johns Hopkins University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+19,Johns Hopkins University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+19,Johns Hopkins University,US,Physics,Physics,Physics & Astronomy
+19,Johns Hopkins University,US,Systems Engineering,Systems Engineering,Engineering – Other
+20,"University of California, San Diego",US,Applied Mathematics,Applied Mathematics,Mathematics
+20,"University of California, San Diego",US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+20,"University of California, San Diego",US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+20,"University of California, San Diego",US,Chemical & Nano Engineering,Chemical Engineering,Engineering – Chemical & Materials
+20,"University of California, San Diego",US,Chemistry,Chemistry,Chemistry
+20,"University of California, San Diego",US,Structural Engineering,Civil Engineering,Engineering – Civil & Environmental
+20,"University of California, San Diego",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+20,"University of California, San Diego",US,Computer Science & Engineering,Computer Science,CS & AI
+20,"University of California, San Diego",US,Data Science,Data Science,CS & AI
+20,"University of California, San Diego",US,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+20,"University of California, San Diego",US,Mathematics,Mathematics,Mathematics
+20,"University of California, San Diego",US,Mechanical & Aerospace Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+20,"University of California, San Diego",US,Cognitive Science,Neuroscience,Computational Biology & Bioinformatics
+20,"University of California, San Diego",US,Physics,Physics,Physics & Astronomy
+20,"University of California, San Diego",US,Statistics,Statistics,Mathematics
+21,"University of California, San Francisco (UCSF)",US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+21,"University of California, San Francisco (UCSF)",US,Chemistry & Chemical Biology,Chemistry,Chemistry
+21,"University of California, San Francisco (UCSF)",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+21,"University of California, San Francisco (UCSF)",US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+21,"University of California, San Francisco (UCSF)",US,Biostatistics,Statistics,Mathematics
+22,ETH Zurich,Switzerland,Biotechnology,Biochemistry,Chemistry
+22,ETH Zurich,Switzerland,Health Sciences & Technology,Biomedical Engineering,Engineering – Biomedical
+22,ETH Zurich,Switzerland,Chemical Engineering & Biotechnology,Chemical Engineering,Engineering – Chemical & Materials
+22,ETH Zurich,Switzerland,Chemistry,Chemistry,Chemistry
+22,ETH Zurich,Switzerland,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+22,ETH Zurich,Switzerland,Computational Science & Engineering,Computational Science,CS & AI
+22,ETH Zurich,Switzerland,Computer Science,Computer Science,CS & AI
+22,ETH Zurich,Switzerland,Data Science,Data Science,CS & AI
+22,ETH Zurich,Switzerland,Earth & Planetary Sciences,Earth Sciences,Earth & Environmental Sciences
+22,ETH Zurich,Switzerland,Electrical Engineering & Information Technology,Electrical Engineering,Engineering – Electrical & Computer
+22,ETH Zurich,Switzerland,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+22,ETH Zurich,Switzerland,Interdisciplinary Sciences,Interdisciplinary Sciences,Interdisciplinary
+22,ETH Zurich,Switzerland,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+22,ETH Zurich,Switzerland,Mathematics,Mathematics,Mathematics
+22,ETH Zurich,Switzerland,Mechanical Engineering & Process Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+22,ETH Zurich,Switzerland,Physics,Physics,Physics & Astronomy
+22,ETH Zurich,Switzerland,Statistics,Statistics,Mathematics
+22,ETH Zurich,Switzerland,"Robotics, Systems & Control",Systems Engineering,Engineering – Other
+23,Peking University,China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+23,Peking University,China,Chemistry,Chemistry,Chemistry
+23,Peking University,China,Computer Science,Computer Science,CS & AI
+23,Peking University,China,Data Science,Data Science,CS & AI
+23,Peking University,China,Atmospheric Sciences,Earth Sciences,Earth & Environmental Sciences
+23,Peking University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+23,Peking University,China,Mathematics,Mathematics,Mathematics
+23,Peking University,China,Physics,Physics,Physics & Astronomy
+23,Peking University,China,Statistics,Statistics,Mathematics
+24,Zhejiang University,China,Artificial Intelligence,Artificial Intelligence,CS & AI
+24,Zhejiang University,China,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+24,Zhejiang University,China,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+24,Zhejiang University,China,Chemistry,Chemistry,Chemistry
+24,Zhejiang University,China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+24,Zhejiang University,China,Computer Science & Technology,Computer Science,CS & AI
+24,Zhejiang University,China,Data Science,Data Science,CS & AI
+24,Zhejiang University,China,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+24,Zhejiang University,China,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+24,Zhejiang University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+24,Zhejiang University,China,Mathematics,Mathematics,Mathematics
+24,Zhejiang University,China,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+24,Zhejiang University,China,Physics,Physics,Physics & Astronomy
+24,Zhejiang University,China,Statistics,Statistics,Mathematics
+24,Zhejiang University,China,Automation,Systems Engineering,Engineering – Other
+25,University of Toronto,Canada,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+25,University of Toronto,Canada,Applied Mathematics,Applied Mathematics,Mathematics
+25,University of Toronto,Canada,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+25,University of Toronto,Canada,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+25,University of Toronto,Canada,Chemistry,Chemistry,Chemistry
+25,University of Toronto,Canada,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+25,University of Toronto,Canada,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+25,University of Toronto,Canada,Computer Science,Computer Science,CS & AI
+25,University of Toronto,Canada,Data Science,Data Science,CS & AI
+25,University of Toronto,Canada,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+25,University of Toronto,Canada,Engineering Science,Engineering (General),Engineering – Other
+25,University of Toronto,Canada,Materials Science,Materials Science,Engineering – Chemical & Materials
+25,University of Toronto,Canada,Mathematics,Mathematics,Mathematics
+25,University of Toronto,Canada,Mechanical & Industrial Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+25,University of Toronto,Canada,Physics,Physics,Physics & Astronomy
+25,University of Toronto,Canada,Statistics,Statistics,Mathematics
+26,Imperial College London,UK,Aeronautics,Aerospace Engineering,Engineering – Mechanical & Aerospace
+26,Imperial College London,UK,Artificial Intelligence,Artificial Intelligence,CS & AI
+26,Imperial College London,UK,Biochemistry & Biotechnology,Biochemistry,Chemistry
+26,Imperial College London,UK,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+26,Imperial College London,UK,Computational Statistics & Machine Learning,CS & AI,CS & AI
+26,Imperial College London,UK,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+26,Imperial College London,UK,Chemistry,Chemistry,Chemistry
+26,Imperial College London,UK,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+26,Imperial College London,UK,Computing,Computer Science,CS & AI
+26,Imperial College London,UK,Data Science,Data Science,CS & AI
+26,Imperial College London,UK,Geosciences,Earth Sciences,Earth & Environmental Sciences
+26,Imperial College London,UK,Electrical & Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+26,Imperial College London,UK,Design Engineering,Engineering (General),Engineering – Other
+26,Imperial College London,UK,Energy,Environmental Engineering,Engineering – Civil & Environmental
+26,Imperial College London,UK,Materials Science,Materials Science,Engineering – Chemical & Materials
+26,Imperial College London,UK,Mathematics & Statistics,Mathematics,Mathematics
+26,Imperial College London,UK,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+26,Imperial College London,UK,Physics,Physics,Physics & Astronomy
+26,Washington University in St. Louis,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+26,Washington University in St. Louis,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+26,Washington University in St. Louis,US,Chemistry,Chemistry,Chemistry
+26,Washington University in St. Louis,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+26,Washington University in St. Louis,US,Computational & Systems Biology,Computational Biology,Computational Biology & Bioinformatics
+26,Washington University in St. Louis,US,Computer Science,Computer Science,CS & AI
+26,Washington University in St. Louis,US,Data Science & AI,Data Science,CS & AI
+26,Washington University in St. Louis,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+26,Washington University in St. Louis,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+26,Washington University in St. Louis,US,Mathematics,Mathematics,Mathematics
+26,Washington University in St. Louis,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+26,Washington University in St. Louis,US,Physics,Physics,Physics & Astronomy
+26,Washington University in St. Louis,US,Statistics,Statistics,Mathematics
+28,New York University (NYU),US,Applied Mathematics,Applied Mathematics,Mathematics
+28,New York University (NYU),US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+28,New York University (NYU),US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+28,New York University (NYU),US,Chemistry,Chemistry,Chemistry
+28,New York University (NYU),US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+28,New York University (NYU),US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+28,New York University (NYU),US,Computer Science,Computer Science,CS & AI
+28,New York University (NYU),US,Data Science,Data Science,CS & AI
+28,New York University (NYU),US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+28,New York University (NYU),US,Mathematics,Mathematics,Mathematics
+28,New York University (NYU),US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+28,New York University (NYU),US,Neural Science,Neuroscience,Computational Biology & Bioinformatics
+28,New York University (NYU),US,Physics,Physics,Physics & Astronomy
+28,New York University (NYU),US,Statistics,Statistics,Mathematics
+29,Rockefeller University,US,Chemical Biology,Biochemistry,Chemistry
+29,Rockefeller University,US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+29,Rockefeller University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+29,Rockefeller University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+30,Shanghai Jiao Tong University,China,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+30,Shanghai Jiao Tong University,China,Artificial Intelligence,Artificial Intelligence,CS & AI
+30,Shanghai Jiao Tong University,China,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+30,Shanghai Jiao Tong University,China,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+30,Shanghai Jiao Tong University,China,Chemistry,Chemistry,Chemistry
+30,Shanghai Jiao Tong University,China,Computer Science & Engineering,Computer Science,CS & AI
+30,Shanghai Jiao Tong University,China,Data Science,Data Science,CS & AI
+30,Shanghai Jiao Tong University,China,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+30,Shanghai Jiao Tong University,China,Naval Architecture & Ocean Engineering,Engineering (General),Engineering – Other
+30,Shanghai Jiao Tong University,China,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+30,Shanghai Jiao Tong University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+30,Shanghai Jiao Tong University,China,Mathematics,Mathematics,Mathematics
+30,Shanghai Jiao Tong University,China,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+30,Shanghai Jiao Tong University,China,Physics,Physics,Physics & Astronomy
+30,Shanghai Jiao Tong University,China,Statistics,Statistics,Mathematics
+30,Shanghai Jiao Tong University,China,Automation,Systems Engineering,Engineering – Other
+31,Northwestern University,US,Applied Mathematics,Applied Mathematics,Mathematics
+31,Northwestern University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+31,Northwestern University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+31,Northwestern University,US,Chemistry,Chemistry,Chemistry
+31,Northwestern University,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+31,Northwestern University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+31,Northwestern University,US,Computer Science,Computer Science,CS & AI
+31,Northwestern University,US,Data Science,Data Science,CS & AI
+31,Northwestern University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+31,Northwestern University,US,Industrial Engineering & Management Sciences,Industrial Engineering,Engineering – Other
+31,Northwestern University,US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+31,Northwestern University,US,Mathematics,Mathematics,Mathematics
+31,Northwestern University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+31,Northwestern University,US,Operations Research,Operations Research,Mathematics
+31,Northwestern University,US,Physics & Astronomy,Physics,Physics & Astronomy
+31,Northwestern University,US,Statistics,Statistics,Mathematics
+31,The University of Tokyo,Japan,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+31,The University of Tokyo,Japan,Mathematical Engineering & Information Physics,Applied Mathematics,Mathematics
+31,The University of Tokyo,Japan,Astronomy,Astrophysics,Physics & Astronomy
+31,The University of Tokyo,Japan,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+31,The University of Tokyo,Japan,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+31,The University of Tokyo,Japan,Chemistry,Chemistry,Chemistry
+31,The University of Tokyo,Japan,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+31,The University of Tokyo,Japan,Information Science,Computer Science,CS & AI
+31,The University of Tokyo,Japan,Earth & Planetary Science,Earth Sciences,Earth & Environmental Sciences
+31,The University of Tokyo,Japan,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+31,The University of Tokyo,Japan,Materials Science,Materials Science,Engineering – Chemical & Materials
+31,The University of Tokyo,Japan,Mathematics,Mathematics,Mathematics
+31,The University of Tokyo,Japan,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+31,The University of Tokyo,Japan,Physics,Physics,Physics & Astronomy
+31,The University of Tokyo,Japan,Statistics,Statistics,Mathematics
+33,"University of Michigan, Ann Arbor",US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+33,"University of Michigan, Ann Arbor",US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+33,"University of Michigan, Ann Arbor",US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+33,"University of Michigan, Ann Arbor",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+33,"University of Michigan, Ann Arbor",US,Chemistry,Chemistry,Chemistry
+33,"University of Michigan, Ann Arbor",US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+33,"University of Michigan, Ann Arbor",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+33,"University of Michigan, Ann Arbor",US,Computer Science,Computer Science,CS & AI
+33,"University of Michigan, Ann Arbor",US,Data Science,Data Science,CS & AI
+33,"University of Michigan, Ann Arbor",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+33,"University of Michigan, Ann Arbor",US,Industrial & Operations Engineering,Industrial Engineering,Engineering – Other
+33,"University of Michigan, Ann Arbor",US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+33,"University of Michigan, Ann Arbor",US,Mathematics,Mathematics,Mathematics
+33,"University of Michigan, Ann Arbor",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+33,"University of Michigan, Ann Arbor",US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+33,"University of Michigan, Ann Arbor",US,Nuclear Engineering,Nuclear Engineering,Engineering – Other
+33,"University of Michigan, Ann Arbor",US,Physics,Physics,Physics & Astronomy
+33,"University of Michigan, Ann Arbor",US,Statistics,Statistics,Mathematics
+34,PSL University,France,Astrophysics & Space Sciences,Astrophysics,Physics & Astronomy
+34,PSL University,France,Chemistry,Chemistry,Chemistry
+34,PSL University,France,Computer Science,Computer Science,CS & AI
+34,PSL University,France,Data Science & AI,Data Science,CS & AI
+34,PSL University,France,Environmental & Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+34,PSL University,France,Economics,Interdisciplinary Sciences,Interdisciplinary
+34,PSL University,France,Materials Science,Materials Science,Engineering – Chemical & Materials
+34,PSL University,France,Mathematics,Mathematics,Mathematics
+34,PSL University,France,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+34,PSL University,France,Physics,Physics,Physics & Astronomy
+34,PSL University,France,Statistics,Statistics,Mathematics
+35,University of Copenhagen,Denmark,Actuarial Mathematics,Actuarial Science,Mathematics
+35,University of Copenhagen,Denmark,Mathematical Modelling,Applied Mathematics,Mathematics
+35,University of Copenhagen,Denmark,Astronomy,Astrophysics,Physics & Astronomy
+35,University of Copenhagen,Denmark,Biochemistry,Biochemistry,Chemistry
+35,University of Copenhagen,Denmark,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+35,University of Copenhagen,Denmark,Chemistry,Chemistry,Chemistry
+35,University of Copenhagen,Denmark,Computer Science,Computer Science,CS & AI
+35,University of Copenhagen,Denmark,Data Science,Data Science,CS & AI
+35,University of Copenhagen,Denmark,Environmental & Natural Resource Economics,Interdisciplinary Sciences,Interdisciplinary
+35,University of Copenhagen,Denmark,Nanoscience,Materials Science,Engineering – Chemical & Materials
+35,University of Copenhagen,Denmark,Mathematics,Mathematics,Mathematics
+35,University of Copenhagen,Denmark,Physics,Physics,Physics & Astronomy
+35,University of Copenhagen,Denmark,Statistics,Statistics,Mathematics
+36,"University of Wisconsin, Madison",US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+36,"University of Wisconsin, Madison",US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+36,"University of Wisconsin, Madison",US,Chemical & Biological Engineering,Chemical Engineering,Engineering – Chemical & Materials
+36,"University of Wisconsin, Madison",US,Chemistry,Chemistry,Chemistry
+36,"University of Wisconsin, Madison",US,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+36,"University of Wisconsin, Madison",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+36,"University of Wisconsin, Madison",US,Computer Sciences,Computer Science,CS & AI
+36,"University of Wisconsin, Madison",US,Data Science,Data Science,CS & AI
+36,"University of Wisconsin, Madison",US,Atmospheric & Oceanic Sciences,Earth Sciences,Earth & Environmental Sciences
+36,"University of Wisconsin, Madison",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+36,"University of Wisconsin, Madison",US,Industrial & Systems Engineering,Industrial Engineering,Engineering – Other
+36,"University of Wisconsin, Madison",US,Materials Science,Materials Science,Engineering – Chemical & Materials
+36,"University of Wisconsin, Madison",US,Mathematics,Mathematics,Mathematics
+36,"University of Wisconsin, Madison",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+36,"University of Wisconsin, Madison",US,Nuclear Engineering,Nuclear Engineering,Engineering – Other
+36,"University of Wisconsin, Madison",US,Physics,Physics,Physics & Astronomy
+36,"University of Wisconsin, Madison",US,Statistics,Statistics,Mathematics
+37,The University of Edinburgh,UK,Artificial Intelligence,Artificial Intelligence,CS & AI
+37,The University of Edinburgh,UK,Astrophysics,Astrophysics,Physics & Astronomy
+37,The University of Edinburgh,UK,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+37,The University of Edinburgh,UK,Biomedical Sciences,Biomedical Engineering,Engineering – Biomedical
+37,The University of Edinburgh,UK,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+37,The University of Edinburgh,UK,Chemistry,Chemistry,Chemistry
+37,The University of Edinburgh,UK,Civil & Environmental Engineering,Civil Engineering,Engineering – Civil & Environmental
+37,The University of Edinburgh,UK,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+37,The University of Edinburgh,UK,Computer Science,Computer Science,CS & AI
+37,The University of Edinburgh,UK,Data Science,Data Science,CS & AI
+37,The University of Edinburgh,UK,Earth Sciences & Environment,Earth Sciences,Earth & Environmental Sciences
+37,The University of Edinburgh,UK,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+37,The University of Edinburgh,UK,Mathematics,Mathematics,Mathematics
+37,The University of Edinburgh,UK,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+37,The University of Edinburgh,UK,Cognitive Science,Neuroscience,Computational Biology & Bioinformatics
+37,The University of Edinburgh,UK,Physics & Astronomy,Physics,Physics & Astronomy
+37,The University of Edinburgh,UK,Statistics,Statistics,Mathematics
+38,The University of Melbourne,Australia,Actuarial Science,Actuarial Science,Mathematics
+38,The University of Melbourne,Australia,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+38,The University of Melbourne,Australia,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+38,The University of Melbourne,Australia,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+38,The University of Melbourne,Australia,Chemistry,Chemistry,Chemistry
+38,The University of Melbourne,Australia,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+38,The University of Melbourne,Australia,Computer Science,Computer Science,CS & AI
+38,The University of Melbourne,Australia,Data Science,Data Science,CS & AI
+38,The University of Melbourne,Australia,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+38,The University of Melbourne,Australia,Mathematics & Statistics,Mathematics,Mathematics
+38,The University of Melbourne,Australia,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+38,The University of Melbourne,Australia,Physics,Physics,Physics & Astronomy
+39,"University of North Carolina, Chapel Hill",US,Bioinformatics & Computational Biology,Bioinformatics,Computational Biology & Bioinformatics
+39,"University of North Carolina, Chapel Hill",US,Chemistry,Chemistry,Chemistry
+39,"University of North Carolina, Chapel Hill",US,Computer Science,Computer Science,CS & AI
+39,"University of North Carolina, Chapel Hill",US,Environmental Sciences,Earth Sciences,Earth & Environmental Sciences
+39,"University of North Carolina, Chapel Hill",US,Applied Sciences,Engineering (General),Engineering – Other
+39,"University of North Carolina, Chapel Hill",US,Mathematics,Mathematics,Mathematics
+39,"University of North Carolina, Chapel Hill",US,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+39,"University of North Carolina, Chapel Hill",US,Physics,Physics,Physics & Astronomy
+39,"University of North Carolina, Chapel Hill",US,Statistics & Operations Research,Statistics,Mathematics
+40,University of Science and Technology of China (USTC),China,Astronomy,Astrophysics,Physics & Astronomy
+40,University of Science and Technology of China (USTC),China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+40,University of Science and Technology of China (USTC),China,Chemistry,Chemistry,Chemistry
+40,University of Science and Technology of China (USTC),China,Computer Science & Technology,Computer Science,CS & AI
+40,University of Science and Technology of China (USTC),China,Earth & Space Sciences,Earth Sciences,Earth & Environmental Sciences
+40,University of Science and Technology of China (USTC),China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+40,University of Science and Technology of China (USTC),China,Materials Science,Materials Science,Engineering – Chemical & Materials
+40,University of Science and Technology of China (USTC),China,Mathematics,Mathematics,Mathematics
+40,University of Science and Technology of China (USTC),China,Nuclear Physics,Nuclear Engineering,Engineering – Other
+40,University of Science and Technology of China (USTC),China,Physics,Physics,Physics & Astronomy
+40,University of Science and Technology of China (USTC),China,Statistics,Statistics,Mathematics
+40,University of Science and Technology of China (USTC),China,Automation,Systems Engineering,Engineering – Other
+41,Fudan University,China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+41,Fudan University,China,Chemistry,Chemistry,Chemistry
+41,Fudan University,China,Biomedicine,Computational Biology,Computational Biology & Bioinformatics
+41,Fudan University,China,Computer Science,Computer Science,CS & AI
+41,Fudan University,China,Data Science,Data Science,CS & AI
+41,Fudan University,China,Environmental Science,Earth Sciences,Earth & Environmental Sciences
+41,Fudan University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+41,Fudan University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+41,Fudan University,China,Mathematics,Mathematics,Mathematics
+41,Fudan University,China,Physics,Physics,Physics & Astronomy
+41,Fudan University,China,Statistics,Statistics,Mathematics
+42,University of Munich (LMU),Germany,Astrophysics,Astrophysics,Physics & Astronomy
+42,University of Munich (LMU),Germany,Biochemistry,Biochemistry,Chemistry
+42,University of Munich (LMU),Germany,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+42,University of Munich (LMU),Germany,Chemistry,Chemistry,Chemistry
+42,University of Munich (LMU),Germany,Computer Science,Computer Science,CS & AI
+42,University of Munich (LMU),Germany,Data Science,Data Science,CS & AI
+42,University of Munich (LMU),Germany,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+42,University of Munich (LMU),Germany,Mathematics,Mathematics,Mathematics
+42,University of Munich (LMU),Germany,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+42,University of Munich (LMU),Germany,Physics,Physics,Physics & Astronomy
+42,University of Munich (LMU),Germany,Statistics,Statistics,Mathematics
+43,Sorbonne University,France,Astrophysics,Astrophysics,Physics & Astronomy
+43,Sorbonne University,France,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+43,Sorbonne University,France,Chemistry,Chemistry,Chemistry
+43,Sorbonne University,France,Computer Science,Computer Science,CS & AI
+43,Sorbonne University,France,Data Science,Data Science,CS & AI
+43,Sorbonne University,France,Oceanography,Earth Sciences,Earth & Environmental Sciences
+43,Sorbonne University,France,Mathematics,Mathematics,Mathematics
+43,Sorbonne University,France,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+43,Sorbonne University,France,Physics,Physics,Physics & Astronomy
+43,Sorbonne University,France,Statistics,Statistics,Mathematics
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Life Sciences Engineering,Biomedical Engineering,Engineering – Biomedical
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Chemistry & Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Computer Science,Computer Science,CS & AI
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Data Science,Data Science,CS & AI
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Electrical & Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Microengineering,Engineering (General),Engineering – Other
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Environmental Sciences & Engineering,Environmental Engineering,Engineering – Civil & Environmental
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Mathematics,Mathematics,Mathematics
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Physics,Physics,Physics & Astronomy
+44,EPFL (École Polytechnique Fédérale de Lausanne),Switzerland,Robotics,Systems Engineering,Engineering – Other
+45,Technical University of Munich (TUM),Germany,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+45,Technical University of Munich (TUM),Germany,Robotics & Autonomous Systems,Artificial Intelligence,CS & AI
+45,Technical University of Munich (TUM),Germany,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+45,Technical University of Munich (TUM),Germany,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+45,Technical University of Munich (TUM),Germany,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+45,Technical University of Munich (TUM),Germany,Chemistry,Chemistry,Chemistry
+45,Technical University of Munich (TUM),Germany,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+45,Technical University of Munich (TUM),Germany,Computational Mechanics,Computational Science,CS & AI
+45,Technical University of Munich (TUM),Germany,Computer Science,Computer Science,CS & AI
+45,Technical University of Munich (TUM),Germany,Data Engineering & Analytics,Data Science,CS & AI
+45,Technical University of Munich (TUM),Germany,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+45,Technical University of Munich (TUM),Germany,Materials Science,Materials Science,Engineering – Chemical & Materials
+45,Technical University of Munich (TUM),Germany,Mathematics,Mathematics,Mathematics
+45,Technical University of Munich (TUM),Germany,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+45,Technical University of Munich (TUM),Germany,Physics,Physics,Physics & Astronomy
+45,Technical University of Munich (TUM),Germany,Statistics,Statistics,Mathematics
+46,Duke University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+46,Duke University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+46,Duke University,US,Chemistry,Chemistry,Chemistry
+46,Duke University,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+46,Duke University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+46,Duke University,US,Computer Science,Computer Science,CS & AI
+46,Duke University,US,Data Science,Data Science,CS & AI
+46,Duke University,US,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+46,Duke University,US,Environmental Engineering,Environmental Engineering,Engineering – Civil & Environmental
+46,Duke University,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+46,Duke University,US,Mathematics,Mathematics,Mathematics
+46,Duke University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+46,Duke University,US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+46,Duke University,US,Physics,Physics,Physics & Astronomy
+46,Duke University,US,Statistical Science,Statistics,Mathematics
+46,Kyoto University,Japan,Astronomy,Astrophysics,Physics & Astronomy
+46,Kyoto University,Japan,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+46,Kyoto University,Japan,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+46,Kyoto University,Japan,Chemistry,Chemistry,Chemistry
+46,Kyoto University,Japan,Computer Science,Computer Science,CS & AI
+46,Kyoto University,Japan,Earth & Planetary Sciences,Earth Sciences,Earth & Environmental Sciences
+46,Kyoto University,Japan,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+46,Kyoto University,Japan,Materials Science,Materials Science,Engineering – Chemical & Materials
+46,Kyoto University,Japan,Mathematics,Mathematics,Mathematics
+46,Kyoto University,Japan,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+46,Kyoto University,Japan,Nuclear Engineering,Nuclear Engineering,Engineering – Other
+46,Kyoto University,Japan,Physics,Physics,Physics & Astronomy
+46,The University of Manchester,UK,Actuarial Science & Mathematics,Actuarial Science,Mathematics
+46,The University of Manchester,UK,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+46,The University of Manchester,UK,Artificial Intelligence,Artificial Intelligence,CS & AI
+46,The University of Manchester,UK,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+46,The University of Manchester,UK,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+46,The University of Manchester,UK,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+46,The University of Manchester,UK,Chemistry,Chemistry,Chemistry
+46,The University of Manchester,UK,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+46,The University of Manchester,UK,Computer Science,Computer Science,CS & AI
+46,The University of Manchester,UK,Data Science,Data Science,CS & AI
+46,The University of Manchester,UK,Electrical & Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+46,The University of Manchester,UK,Materials Science,Materials Science,Engineering – Chemical & Materials
+46,The University of Manchester,UK,Mathematics,Mathematics,Mathematics
+46,The University of Manchester,UK,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+46,The University of Manchester,UK,Physics & Astronomy,Physics,Physics & Astronomy
+46,The University of Manchester,UK,Statistics,Statistics,Mathematics
+49,The University of Texas at Austin,US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+49,The University of Texas at Austin,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+49,The University of Texas at Austin,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+49,The University of Texas at Austin,US,Chemistry,Chemistry,Chemistry
+49,The University of Texas at Austin,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+49,The University of Texas at Austin,US,Computational Engineering,Computational Science,CS & AI
+49,The University of Texas at Austin,US,Computer Science,Computer Science,CS & AI
+49,The University of Texas at Austin,US,Data Science,Data Science,CS & AI
+49,The University of Texas at Austin,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+49,The University of Texas at Austin,US,Petroleum Engineering,Engineering (General),Engineering – Other
+49,The University of Texas at Austin,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+49,The University of Texas at Austin,US,Mathematics,Mathematics,Mathematics
+49,The University of Texas at Austin,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+49,The University of Texas at Austin,US,Operations Research,Operations Research,Mathematics
+49,The University of Texas at Austin,US,Physics,Physics,Physics & Astronomy
+49,The University of Texas at Austin,US,Statistics & Scientific Computation,Statistics,Mathematics
+50,Karolinska Institute,Sweden,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+50,Karolinska Institute,Sweden,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+50,Karolinska Institute,Sweden,Biostatistics,Statistics,Mathematics
+51,Heidelberg University,Germany,Biochemistry,Biochemistry,Chemistry
+51,Heidelberg University,Germany,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+51,Heidelberg University,Germany,Chemistry,Chemistry,Chemistry
+51,Heidelberg University,Germany,Computer Science,Computer Science,CS & AI
+51,Heidelberg University,Germany,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+51,Heidelberg University,Germany,Mathematics,Mathematics,Mathematics
+51,Heidelberg University,Germany,Physics,Physics,Physics & Astronomy
+51,Heidelberg University,Germany,Statistics,Statistics,Mathematics
+51,"University of Minnesota, Twin Cities",US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+51,"University of Minnesota, Twin Cities",US,Bioinformatics & Computational Biology,Bioinformatics,Computational Biology & Bioinformatics
+51,"University of Minnesota, Twin Cities",US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+51,"University of Minnesota, Twin Cities",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+51,"University of Minnesota, Twin Cities",US,Chemistry,Chemistry,Chemistry
+51,"University of Minnesota, Twin Cities",US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+51,"University of Minnesota, Twin Cities",US,Computer Science,Computer Science,CS & AI
+51,"University of Minnesota, Twin Cities",US,Data Science,Data Science,CS & AI
+51,"University of Minnesota, Twin Cities",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+51,"University of Minnesota, Twin Cities",US,Industrial Engineering,Industrial Engineering,Engineering – Other
+51,"University of Minnesota, Twin Cities",US,Materials Science,Materials Science,Engineering – Chemical & Materials
+51,"University of Minnesota, Twin Cities",US,Mathematics,Mathematics,Mathematics
+51,"University of Minnesota, Twin Cities",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+51,"University of Minnesota, Twin Cities",US,Physics,Physics,Physics & Astronomy
+51,"University of Minnesota, Twin Cities",US,Statistics,Statistics,Mathematics
+53,University of British Columbia,Canada,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+53,University of British Columbia,Canada,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+53,University of British Columbia,Canada,Chemical & Biological Engineering,Chemical Engineering,Engineering – Chemical & Materials
+53,University of British Columbia,Canada,Chemistry,Chemistry,Chemistry
+53,University of British Columbia,Canada,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+53,University of British Columbia,Canada,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+53,University of British Columbia,Canada,Computer Science,Computer Science,CS & AI
+53,University of British Columbia,Canada,Data Science,Data Science,CS & AI
+53,University of British Columbia,Canada,Electrical & Computer Engineering,Electrical Engineering,Engineering – Electrical & Computer
+53,University of British Columbia,Canada,Mining Engineering,Engineering (General),Engineering – Other
+53,University of British Columbia,Canada,Materials Engineering,Materials Science,Engineering – Chemical & Materials
+53,University of British Columbia,Canada,Mathematics,Mathematics,Mathematics
+53,University of British Columbia,Canada,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+53,University of British Columbia,Canada,Physics & Astronomy,Physics,Physics & Astronomy
+53,University of British Columbia,Canada,Statistics,Statistics,Mathematics
+53,University of Illinois Urbana-Champaign (UIUC),US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+53,University of Illinois Urbana-Champaign (UIUC),US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+53,University of Illinois Urbana-Champaign (UIUC),US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+53,University of Illinois Urbana-Champaign (UIUC),US,Chemistry,Chemistry,Chemistry
+53,University of Illinois Urbana-Champaign (UIUC),US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+53,University of Illinois Urbana-Champaign (UIUC),US,Computational Science & Engineering,Computational Science,CS & AI
+53,University of Illinois Urbana-Champaign (UIUC),US,Computer Science,Computer Science,CS & AI
+53,University of Illinois Urbana-Champaign (UIUC),US,Data Science,Data Science,CS & AI
+53,University of Illinois Urbana-Champaign (UIUC),US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+53,University of Illinois Urbana-Champaign (UIUC),US,Industrial Engineering,Industrial Engineering,Engineering – Other
+53,University of Illinois Urbana-Champaign (UIUC),US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+53,University of Illinois Urbana-Champaign (UIUC),US,Mathematics,Mathematics,Mathematics
+53,University of Illinois Urbana-Champaign (UIUC),US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+53,University of Illinois Urbana-Champaign (UIUC),US,"Nuclear, Plasma & Radiological Engineering",Nuclear Engineering,Engineering – Other
+53,University of Illinois Urbana-Champaign (UIUC),US,Physics,Physics,Physics & Astronomy
+53,University of Illinois Urbana-Champaign (UIUC),US,Statistics,Statistics,Mathematics
+55,"University of Maryland, College Park",US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+55,"University of Maryland, College Park",US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+55,"University of Maryland, College Park",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+55,"University of Maryland, College Park",US,Chemistry,Chemistry,Chemistry
+55,"University of Maryland, College Park",US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+55,"University of Maryland, College Park",US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+55,"University of Maryland, College Park",US,Computer Science,Computer Science,CS & AI
+55,"University of Maryland, College Park",US,Data Science,Data Science,CS & AI
+55,"University of Maryland, College Park",US,Atmospheric & Oceanic Science,Earth Sciences,Earth & Environmental Sciences
+55,"University of Maryland, College Park",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+55,"University of Maryland, College Park",US,Materials Science & Engineering,Materials Science,Engineering – Chemical & Materials
+55,"University of Maryland, College Park",US,Mathematics,Mathematics,Mathematics
+55,"University of Maryland, College Park",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+55,"University of Maryland, College Park",US,Physics,Physics,Physics & Astronomy
+55,"University of Maryland, College Park",US,Statistics,Statistics,Mathematics
+56,National University of Singapore (NUS),Singapore,Quantitative Finance,Applied Mathematics,Mathematics
+56,National University of Singapore (NUS),Singapore,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+56,National University of Singapore (NUS),Singapore,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+56,National University of Singapore (NUS),Singapore,Chemistry,Chemistry,Chemistry
+56,National University of Singapore (NUS),Singapore,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+56,National University of Singapore (NUS),Singapore,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+56,National University of Singapore (NUS),Singapore,Computer Science,Computer Science,CS & AI
+56,National University of Singapore (NUS),Singapore,Data Science & Analytics,Data Science,CS & AI
+56,National University of Singapore (NUS),Singapore,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+56,National University of Singapore (NUS),Singapore,Industrial & Systems Engineering,Industrial Engineering,Engineering – Other
+56,National University of Singapore (NUS),Singapore,Materials Science,Materials Science,Engineering – Chemical & Materials
+56,National University of Singapore (NUS),Singapore,Mathematics,Mathematics,Mathematics
+56,National University of Singapore (NUS),Singapore,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+56,National University of Singapore (NUS),Singapore,Physics,Physics,Physics & Astronomy
+56,National University of Singapore (NUS),Singapore,Statistics,Statistics,Mathematics
+56,Utrecht University,Netherlands,Molecular & Cellular Life Sciences,Biochemistry,Chemistry
+56,Utrecht University,Netherlands,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+56,Utrecht University,Netherlands,Chemistry,Chemistry,Chemistry
+56,Utrecht University,Netherlands,Computational Sciences,Computational Science,CS & AI
+56,Utrecht University,Netherlands,Computer Science,Computer Science,CS & AI
+56,Utrecht University,Netherlands,Geosciences,Earth Sciences,Earth & Environmental Sciences
+56,Utrecht University,Netherlands,Mathematics,Mathematics,Mathematics
+56,Utrecht University,Netherlands,Cognitive Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+56,Utrecht University,Netherlands,Physics,Physics,Physics & Astronomy
+56,Utrecht University,Netherlands,Statistics,Statistics,Mathematics
+58,UT Southwestern Medical Center,US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+58,UT Southwestern Medical Center,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+58,UT Southwestern Medical Center,US,Biostatistics,Statistics,Mathematics
+58,University of Geneva,Switzerland,Astrophysics,Astrophysics,Physics & Astronomy
+58,University of Geneva,Switzerland,Bioinformatics & Computational Biology,Bioinformatics,Computational Biology & Bioinformatics
+58,University of Geneva,Switzerland,Chemistry,Chemistry,Chemistry
+58,University of Geneva,Switzerland,Computer Science,Computer Science,CS & AI
+58,University of Geneva,Switzerland,Data Science,Data Science,CS & AI
+58,University of Geneva,Switzerland,Earth & Environmental Sciences,Earth Sciences,Earth & Environmental Sciences
+58,University of Geneva,Switzerland,Mathematics,Mathematics,Mathematics
+58,University of Geneva,Switzerland,Physics,Physics,Physics & Astronomy
+58,University of Geneva,Switzerland,Statistics,Statistics,Mathematics
+60,Université Paris Cité,France,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+60,Université Paris Cité,France,Chemistry,Chemistry,Chemistry
+60,Université Paris Cité,France,Computer Science,Computer Science,CS & AI
+60,Université Paris Cité,France,Data Science,Data Science,CS & AI
+60,Université Paris Cité,France,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+60,Université Paris Cité,France,Mathematics,Mathematics,Mathematics
+60,Université Paris Cité,France,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+60,Université Paris Cité,France,Physics,Physics,Physics & Astronomy
+60,Université Paris Cité,France,Statistics,Statistics,Mathematics
+61,King's College London,UK,Artificial Intelligence,Artificial Intelligence,CS & AI
+61,King's College London,UK,Biochemistry,Biochemistry,Chemistry
+61,King's College London,UK,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+61,King's College London,UK,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+61,King's College London,UK,Chemistry,Chemistry,Chemistry
+61,King's College London,UK,Computer Science,Computer Science,CS & AI
+61,King's College London,UK,Data Science,Data Science,CS & AI
+61,King's College London,UK,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+61,King's College London,UK,Mathematics,Mathematics,Mathematics
+61,King's College London,UK,Mechanical Engineering (via King's),Mechanical Engineering,Engineering – Mechanical & Aerospace
+61,King's College London,UK,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+61,King's College London,UK,Physics,Physics,Physics & Astronomy
+62,University of Colorado Boulder,US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+62,University of Colorado Boulder,US,Applied Mathematics,Applied Mathematics,Mathematics
+62,University of Colorado Boulder,US,Astrophysics,Astrophysics,Physics & Astronomy
+62,University of Colorado Boulder,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+62,University of Colorado Boulder,US,Chemistry,Chemistry,Chemistry
+62,University of Colorado Boulder,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+62,University of Colorado Boulder,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+62,University of Colorado Boulder,US,Computer Science,Computer Science,CS & AI
+62,University of Colorado Boulder,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+62,University of Colorado Boulder,US,Mathematics,Mathematics,Mathematics
+62,University of Colorado Boulder,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+62,University of Colorado Boulder,US,Physics,Physics,Physics & Astronomy
+62,University of Colorado Boulder,US,Statistics,Statistics,Mathematics
+62,Vanderbilt University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+62,Vanderbilt University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+62,Vanderbilt University,US,Chemistry,Chemistry,Chemistry
+62,Vanderbilt University,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+62,Vanderbilt University,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+62,Vanderbilt University,US,Computer Science,Computer Science,CS & AI
+62,Vanderbilt University,US,Data Science,Data Science,CS & AI
+62,Vanderbilt University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+62,Vanderbilt University,US,Mathematics,Mathematics,Mathematics
+62,Vanderbilt University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+62,Vanderbilt University,US,Physics,Physics,Physics & Astronomy
+64,University of Zurich,Switzerland,Astrophysics,Astrophysics,Physics & Astronomy
+64,University of Zurich,Switzerland,Biochemistry,Biochemistry,Chemistry
+64,University of Zurich,Switzerland,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+64,University of Zurich,Switzerland,Chemistry,Chemistry,Chemistry
+64,University of Zurich,Switzerland,Computer Science,Computer Science,CS & AI
+64,University of Zurich,Switzerland,Data Science,Data Science,CS & AI
+64,University of Zurich,Switzerland,Mathematics,Mathematics,Mathematics
+64,University of Zurich,Switzerland,Neuroinformatics,Neuroscience,Computational Biology & Bioinformatics
+64,University of Zurich,Switzerland,Physics,Physics,Physics & Astronomy
+64,University of Zurich,Switzerland,Statistics,Statistics,Mathematics
+65,Sun Yat-sen University,China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+65,Sun Yat-sen University,China,Chemistry,Chemistry,Chemistry
+65,Sun Yat-sen University,China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+65,Sun Yat-sen University,China,Computer Science,Computer Science,CS & AI
+65,Sun Yat-sen University,China,Data Science,Data Science,CS & AI
+65,Sun Yat-sen University,China,Environmental Science,Earth Sciences,Earth & Environmental Sciences
+65,Sun Yat-sen University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+65,Sun Yat-sen University,China,Mathematics,Mathematics,Mathematics
+65,Sun Yat-sen University,China,Physics,Physics,Physics & Astronomy
+65,Sun Yat-sen University,China,Statistics,Statistics,Mathematics
+65,The University of Queensland,Australia,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+65,The University of Queensland,Australia,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+65,The University of Queensland,Australia,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+65,The University of Queensland,Australia,Chemistry,Chemistry,Chemistry
+65,The University of Queensland,Australia,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+65,The University of Queensland,Australia,Computer Science,Computer Science,CS & AI
+65,The University of Queensland,Australia,Data Science,Data Science,CS & AI
+65,The University of Queensland,Australia,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+65,The University of Queensland,Australia,Mathematics,Mathematics,Mathematics
+65,The University of Queensland,Australia,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+65,The University of Queensland,Australia,Physics,Physics,Physics & Astronomy
+65,The University of Queensland,Australia,Statistics,Statistics,Mathematics
+67,The University of Hong Kong,Hong Kong,Quantitative Finance,Applied Mathematics,Mathematics
+67,The University of Hong Kong,Hong Kong,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+67,The University of Hong Kong,Hong Kong,Chemistry,Chemistry,Chemistry
+67,The University of Hong Kong,Hong Kong,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+67,The University of Hong Kong,Hong Kong,Computer Science,Computer Science,CS & AI
+67,The University of Hong Kong,Hong Kong,Data Science,Data Science,CS & AI
+67,The University of Hong Kong,Hong Kong,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+67,The University of Hong Kong,Hong Kong,Industrial & Manufacturing Systems Engineering,Industrial Engineering,Engineering – Other
+67,The University of Hong Kong,Hong Kong,Mathematics,Mathematics,Mathematics
+67,The University of Hong Kong,Hong Kong,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+67,The University of Hong Kong,Hong Kong,Physics,Physics,Physics & Astronomy
+67,The University of Hong Kong,Hong Kong,Statistics,Statistics,Mathematics
+68,University of Bonn,Germany,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+68,University of Bonn,Germany,Chemistry,Chemistry,Chemistry
+68,University of Bonn,Germany,Computer Science,Computer Science,CS & AI
+68,University of Bonn,Germany,Geodesy,Earth Sciences,Earth & Environmental Sciences
+68,University of Bonn,Germany,Mathematics,Mathematics,Mathematics
+68,University of Bonn,Germany,Physics & Astronomy,Physics,Physics & Astronomy
+68,University of Bonn,Germany,Statistics,Statistics,Mathematics
+68,University of Southern California (USC),US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+68,University of Southern California (USC),US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+68,University of Southern California (USC),US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+68,University of Southern California (USC),US,Chemistry,Chemistry,Chemistry
+68,University of Southern California (USC),US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+68,University of Southern California (USC),US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+68,University of Southern California (USC),US,Computer Science,Computer Science,CS & AI
+68,University of Southern California (USC),US,Data Science,Data Science,CS & AI
+68,University of Southern California (USC),US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+68,University of Southern California (USC),US,Industrial & Systems Engineering,Industrial Engineering,Engineering – Other
+68,University of Southern California (USC),US,Materials Science,Materials Science,Engineering – Chemical & Materials
+68,University of Southern California (USC),US,Mathematics,Mathematics,Mathematics
+68,University of Southern California (USC),US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+68,University of Southern California (USC),US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+68,University of Southern California (USC),US,Physics,Physics,Physics & Astronomy
+68,University of Southern California (USC),US,Statistics,Statistics,Mathematics
+70,"University of California, Santa Barbara",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+70,"University of California, Santa Barbara",US,Chemistry,Chemistry,Chemistry
+70,"University of California, Santa Barbara",US,Computational Science & Engineering,Computational Science,CS & AI
+70,"University of California, Santa Barbara",US,Computer Science,Computer Science,CS & AI
+70,"University of California, Santa Barbara",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+70,"University of California, Santa Barbara",US,Materials Science,Materials Science,Engineering – Chemical & Materials
+70,"University of California, Santa Barbara",US,Mathematics,Mathematics,Mathematics
+70,"University of California, Santa Barbara",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+70,"University of California, Santa Barbara",US,Dynamical Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+70,"University of California, Santa Barbara",US,Physics,Physics,Physics & Astronomy
+70,"University of California, Santa Barbara",US,Statistics & Applied Probability,Statistics,Mathematics
+71,Weizmann Institute of Science,Israel,Particle Physics & Astrophysics,Astrophysics,Physics & Astronomy
+71,Weizmann Institute of Science,Israel,Biochemistry,Biochemistry,Chemistry
+71,Weizmann Institute of Science,Israel,Chemistry,Chemistry,Chemistry
+71,Weizmann Institute of Science,Israel,Computational & Systems Biology,Computational Biology,Computational Biology & Bioinformatics
+71,Weizmann Institute of Science,Israel,Computer Science & Applied Mathematics,Computer Science,CS & AI
+71,Weizmann Institute of Science,Israel,Earth & Planetary Sciences,Earth Sciences,Earth & Environmental Sciences
+71,Weizmann Institute of Science,Israel,Mathematics,Mathematics,Mathematics
+71,Weizmann Institute of Science,Israel,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+71,Weizmann Institute of Science,Israel,Physics,Physics,Physics & Astronomy
+72,University of Sydney,Australia,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+72,University of Sydney,Australia,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+72,University of Sydney,Australia,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+72,University of Sydney,Australia,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+72,University of Sydney,Australia,Chemistry,Chemistry,Chemistry
+72,University of Sydney,Australia,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+72,University of Sydney,Australia,Computer Science,Computer Science,CS & AI
+72,University of Sydney,Australia,Data Science,Data Science,CS & AI
+72,University of Sydney,Australia,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+72,University of Sydney,Australia,Mathematics,Mathematics,Mathematics
+72,University of Sydney,Australia,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+72,University of Sydney,Australia,Physics,Physics,Physics & Astronomy
+72,University of Sydney,Australia,Statistics,Statistics,Mathematics
+73,Huazhong University of Science and Technology (HUST),China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+73,Huazhong University of Science and Technology (HUST),China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+73,Huazhong University of Science and Technology (HUST),China,Computer Science & Technology,Computer Science,CS & AI
+73,Huazhong University of Science and Technology (HUST),China,Data Science,Data Science,CS & AI
+73,Huazhong University of Science and Technology (HUST),China,Environmental Science,Earth Sciences,Earth & Environmental Sciences
+73,Huazhong University of Science and Technology (HUST),China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+73,Huazhong University of Science and Technology (HUST),China,Materials Science,Materials Science,Engineering – Chemical & Materials
+73,Huazhong University of Science and Technology (HUST),China,Mathematics,Mathematics,Mathematics
+73,Huazhong University of Science and Technology (HUST),China,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+73,Huazhong University of Science and Technology (HUST),China,Physics,Physics,Physics & Astronomy
+73,Huazhong University of Science and Technology (HUST),China,Automation,Systems Engineering,Engineering – Other
+73,University of Groningen,Netherlands,Artificial Intelligence,Artificial Intelligence,CS & AI
+73,University of Groningen,Netherlands,Astronomy,Astrophysics,Physics & Astronomy
+73,University of Groningen,Netherlands,Chemistry,Chemistry,Chemistry
+73,University of Groningen,Netherlands,Computer Science,Computer Science,CS & AI
+73,University of Groningen,Netherlands,Mathematics,Mathematics,Mathematics
+73,University of Groningen,Netherlands,Computational Cognitive Science,Neuroscience,Computational Biology & Bioinformatics
+73,University of Groningen,Netherlands,Physics,Physics,Physics & Astronomy
+73,University of Groningen,Netherlands,Statistics,Statistics,Mathematics
+75,Nanjing University,China,Astronomy,Astrophysics,Physics & Astronomy
+75,Nanjing University,China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+75,Nanjing University,China,Chemistry,Chemistry,Chemistry
+75,Nanjing University,China,Computer Science,Computer Science,CS & AI
+75,Nanjing University,China,Environmental Science,Earth Sciences,Earth & Environmental Sciences
+75,Nanjing University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+75,Nanjing University,China,Mathematics,Mathematics,Mathematics
+75,Nanjing University,China,Physics,Physics,Physics & Astronomy
+76,KU Leuven,Belgium,Actuarial Science,Actuarial Science,Mathematics
+76,KU Leuven,Belgium,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+76,KU Leuven,Belgium,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+76,KU Leuven,Belgium,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+76,KU Leuven,Belgium,Chemistry,Chemistry,Chemistry
+76,KU Leuven,Belgium,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+76,KU Leuven,Belgium,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+76,KU Leuven,Belgium,Computer Science,Computer Science,CS & AI
+76,KU Leuven,Belgium,Data Science,Data Science,CS & AI
+76,KU Leuven,Belgium,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+76,KU Leuven,Belgium,Materials Science,Materials Science,Engineering – Chemical & Materials
+76,KU Leuven,Belgium,Mathematics,Mathematics,Mathematics
+76,KU Leuven,Belgium,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+76,KU Leuven,Belgium,Physics,Physics,Physics & Astronomy
+76,KU Leuven,Belgium,Statistics & Data Science,Statistics,Mathematics
+76,McGill University,Canada,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+76,McGill University,Canada,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+76,McGill University,Canada,Chemistry,Chemistry,Chemistry
+76,McGill University,Canada,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+76,McGill University,Canada,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+76,McGill University,Canada,Computer Science,Computer Science,CS & AI
+76,McGill University,Canada,Data Science,Data Science,CS & AI
+76,McGill University,Canada,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+76,McGill University,Canada,Mining & Materials Engineering,Materials Science,Engineering – Chemical & Materials
+76,McGill University,Canada,Mathematics,Mathematics,Mathematics
+76,McGill University,Canada,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+76,McGill University,Canada,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+76,McGill University,Canada,Physics,Physics,Physics & Astronomy
+76,McGill University,Canada,Statistics,Statistics,Mathematics
+76,Monash University,Australia,Actuarial Science,Actuarial Science,Mathematics
+76,Monash University,Australia,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+76,Monash University,Australia,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+76,Monash University,Australia,Chemistry,Chemistry,Chemistry
+76,Monash University,Australia,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+76,Monash University,Australia,Computer Science,Computer Science,CS & AI
+76,Monash University,Australia,Data Science,Data Science,CS & AI
+76,Monash University,Australia,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+76,Monash University,Australia,Mathematics,Mathematics,Mathematics
+76,Monash University,Australia,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+76,Monash University,Australia,Physics,Physics,Physics & Astronomy
+76,Monash University,Australia,Statistics,Statistics,Mathematics
+79,"University of California, Irvine",US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+79,"University of California, Irvine",US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+79,"University of California, Irvine",US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+79,"University of California, Irvine",US,Chemistry,Chemistry,Chemistry
+79,"University of California, Irvine",US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+79,"University of California, Irvine",US,Computational & Systems Biology,Computational Biology,Computational Biology & Bioinformatics
+79,"University of California, Irvine",US,Computer Science,Computer Science,CS & AI
+79,"University of California, Irvine",US,Data Science,Data Science,CS & AI
+79,"University of California, Irvine",US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+79,"University of California, Irvine",US,Mathematics,Mathematics,Mathematics
+79,"University of California, Irvine",US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+79,"University of California, Irvine",US,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+79,"University of California, Irvine",US,Physics & Astronomy,Physics,Physics & Astronomy
+79,"University of California, Irvine",US,Statistics,Statistics,Mathematics
+80,University of New South Wales (UNSW),Australia,Actuarial Studies,Actuarial Science,Mathematics
+80,University of New South Wales (UNSW),Australia,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+80,University of New South Wales (UNSW),Australia,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+80,University of New South Wales (UNSW),Australia,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+80,University of New South Wales (UNSW),Australia,Chemistry,Chemistry,Chemistry
+80,University of New South Wales (UNSW),Australia,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+80,University of New South Wales (UNSW),Australia,Computer Science,Computer Science,CS & AI
+80,University of New South Wales (UNSW),Australia,Data Science,Data Science,CS & AI
+80,University of New South Wales (UNSW),Australia,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+80,University of New South Wales (UNSW),Australia,Mining Engineering,Engineering (General),Engineering – Other
+80,University of New South Wales (UNSW),Australia,Mathematics,Mathematics,Mathematics
+80,University of New South Wales (UNSW),Australia,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+80,University of New South Wales (UNSW),Australia,Physics,Physics,Physics & Astronomy
+80,University of New South Wales (UNSW),Australia,Statistics,Statistics,Mathematics
+81,Seoul National University,South Korea,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+81,Seoul National University,South Korea,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+81,Seoul National University,South Korea,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+81,Seoul National University,South Korea,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+81,Seoul National University,South Korea,Chemistry,Chemistry,Chemistry
+81,Seoul National University,South Korea,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+81,Seoul National University,South Korea,Computer Science & Engineering,Computer Science,CS & AI
+81,Seoul National University,South Korea,Data Science,Data Science,CS & AI
+81,Seoul National University,South Korea,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+81,Seoul National University,South Korea,Industrial Engineering,Industrial Engineering,Engineering – Other
+81,Seoul National University,South Korea,Materials Science,Materials Science,Engineering – Chemical & Materials
+81,Seoul National University,South Korea,Mathematics,Mathematics,Mathematics
+81,Seoul National University,South Korea,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+81,Seoul National University,South Korea,Nuclear Engineering,Nuclear Engineering,Engineering – Other
+81,Seoul National University,South Korea,Physics,Physics,Physics & Astronomy
+81,Seoul National University,South Korea,Statistics,Statistics,Mathematics
+81,Wuhan University,China,Chemistry,Chemistry,Chemistry
+81,Wuhan University,China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+81,Wuhan University,China,Computer Science,Computer Science,CS & AI
+81,Wuhan University,China,Data Science,Data Science,CS & AI
+81,Wuhan University,China,Environmental Science,Earth Sciences,Earth & Environmental Sciences
+81,Wuhan University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+81,Wuhan University,China,Mathematics,Mathematics,Mathematics
+81,Wuhan University,China,Physics,Physics,Physics & Astronomy
+81,Wuhan University,China,Statistics,Statistics,Mathematics
+83,Ohio State University,US,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+83,Ohio State University,US,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+83,Ohio State University,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+83,Ohio State University,US,Chemistry,Chemistry,Chemistry
+83,Ohio State University,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+83,Ohio State University,US,Computational Science,Computational Science,CS & AI
+83,Ohio State University,US,Computer Science & Engineering,Computer Science,CS & AI
+83,Ohio State University,US,Data Analytics,Data Science,CS & AI
+83,Ohio State University,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+83,Ohio State University,US,Industrial Engineering,Industrial Engineering,Engineering – Other
+83,Ohio State University,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+83,Ohio State University,US,Mathematics,Mathematics,Mathematics
+83,Ohio State University,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+83,Ohio State University,US,Physics,Physics,Physics & Astronomy
+83,Ohio State University,US,Statistics,Statistics,Mathematics
+83,University of Oslo,Norway,Astrophysics,Astrophysics,Physics & Astronomy
+83,University of Oslo,Norway,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+83,University of Oslo,Norway,Chemistry,Chemistry,Chemistry
+83,University of Oslo,Norway,Computational Life Sciences,Computational Biology,Computational Biology & Bioinformatics
+83,University of Oslo,Norway,Computer Science,Computer Science,CS & AI
+83,University of Oslo,Norway,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+83,University of Oslo,Norway,Mathematics,Mathematics,Mathematics
+83,University of Oslo,Norway,Physics,Physics,Physics & Astronomy
+83,University of Oslo,Norway,Statistics,Statistics,Mathematics
+85,Aarhus University,Denmark,Astronomy,Astrophysics,Physics & Astronomy
+85,Aarhus University,Denmark,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+85,Aarhus University,Denmark,Chemistry,Chemistry,Chemistry
+85,Aarhus University,Denmark,Computer Science,Computer Science,CS & AI
+85,Aarhus University,Denmark,Data Science,Data Science,CS & AI
+85,Aarhus University,Denmark,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+85,Aarhus University,Denmark,Mathematics,Mathematics,Mathematics
+85,Aarhus University,Denmark,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+85,Aarhus University,Denmark,Physics,Physics,Physics & Astronomy
+85,Aarhus University,Denmark,Statistics,Statistics,Mathematics
+86,UT MD Anderson Cancer Center,US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+86,UT MD Anderson Cancer Center,US,Translational Biology & Molecular Medicine,Computational Biology,Computational Biology & Bioinformatics
+86,UT MD Anderson Cancer Center,US,Biostatistics,Statistics,Mathematics
+87,Sichuan University,China,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+87,Sichuan University,China,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+87,Sichuan University,China,Chemistry,Chemistry,Chemistry
+87,Sichuan University,China,Computer Science,Computer Science,CS & AI
+87,Sichuan University,China,Data Science,Data Science,CS & AI
+87,Sichuan University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+87,Sichuan University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+87,Sichuan University,China,Mathematics,Mathematics,Mathematics
+87,Sichuan University,China,Physics,Physics,Physics & Astronomy
+88,Nanyang Technological University (NTU),Singapore,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+88,Nanyang Technological University (NTU),Singapore,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+88,Nanyang Technological University (NTU),Singapore,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+88,Nanyang Technological University (NTU),Singapore,Chemistry,Chemistry,Chemistry
+88,Nanyang Technological University (NTU),Singapore,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+88,Nanyang Technological University (NTU),Singapore,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+88,Nanyang Technological University (NTU),Singapore,Computer Science,Computer Science,CS & AI
+88,Nanyang Technological University (NTU),Singapore,Data Science & Artificial Intelligence,Data Science,CS & AI
+88,Nanyang Technological University (NTU),Singapore,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+88,Nanyang Technological University (NTU),Singapore,Materials Engineering,Materials Science,Engineering – Chemical & Materials
+88,Nanyang Technological University (NTU),Singapore,Mathematics,Mathematics,Mathematics
+88,Nanyang Technological University (NTU),Singapore,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+88,Nanyang Technological University (NTU),Singapore,Physics,Physics,Physics & Astronomy
+88,The Hebrew University of Jerusalem,Israel,Biochemistry,Biochemistry,Chemistry
+88,The Hebrew University of Jerusalem,Israel,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+88,The Hebrew University of Jerusalem,Israel,Chemistry,Chemistry,Chemistry
+88,The Hebrew University of Jerusalem,Israel,Computer Science,Computer Science,CS & AI
+88,The Hebrew University of Jerusalem,Israel,Environmental Sciences,Earth Sciences,Earth & Environmental Sciences
+88,The Hebrew University of Jerusalem,Israel,Agricultural Sciences,Interdisciplinary Sciences,Interdisciplinary
+88,The Hebrew University of Jerusalem,Israel,Mathematics,Mathematics,Mathematics
+88,The Hebrew University of Jerusalem,Israel,Computational Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+88,The Hebrew University of Jerusalem,Israel,Physics,Physics,Physics & Astronomy
+88,The Hebrew University of Jerusalem,Israel,Statistics,Statistics,Mathematics
+88,University of Pittsburgh,US,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+88,University of Pittsburgh,US,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+88,University of Pittsburgh,US,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+88,University of Pittsburgh,US,Chemistry,Chemistry,Chemistry
+88,University of Pittsburgh,US,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+88,University of Pittsburgh,US,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+88,University of Pittsburgh,US,Computer Science,Computer Science,CS & AI
+88,University of Pittsburgh,US,Data Science,Data Science,CS & AI
+88,University of Pittsburgh,US,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+88,University of Pittsburgh,US,Industrial Engineering,Industrial Engineering,Engineering – Other
+88,University of Pittsburgh,US,Materials Science,Materials Science,Engineering – Chemical & Materials
+88,University of Pittsburgh,US,Mathematics,Mathematics,Mathematics
+88,University of Pittsburgh,US,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+88,University of Pittsburgh,US,Physics,Physics,Physics & Astronomy
+88,University of Pittsburgh,US,Statistics,Statistics,Mathematics
+91,Ghent University,Belgium,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+91,Ghent University,Belgium,Bioengineering,Biomedical Engineering,Engineering – Biomedical
+91,Ghent University,Belgium,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+91,Ghent University,Belgium,Chemistry,Chemistry,Chemistry
+91,Ghent University,Belgium,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+91,Ghent University,Belgium,Computer Science,Computer Science,CS & AI
+91,Ghent University,Belgium,Data Science,Data Science,CS & AI
+91,Ghent University,Belgium,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+91,Ghent University,Belgium,Mathematics,Mathematics,Mathematics
+91,Ghent University,Belgium,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+91,Ghent University,Belgium,Physics,Physics,Physics & Astronomy
+91,Ghent University,Belgium,Statistics,Statistics,Mathematics
+92,Xi'an Jiaotong University,China,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+92,Xi'an Jiaotong University,China,Computer Science & Technology,Computer Science,CS & AI
+92,Xi'an Jiaotong University,China,Data Science,Data Science,CS & AI
+92,Xi'an Jiaotong University,China,Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+92,Xi'an Jiaotong University,China,Energy & Power Engineering,Environmental Engineering,Engineering – Civil & Environmental
+92,Xi'an Jiaotong University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+92,Xi'an Jiaotong University,China,Mathematics,Mathematics,Mathematics
+92,Xi'an Jiaotong University,China,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+92,Xi'an Jiaotong University,China,Physics,Physics,Physics & Astronomy
+92,Xi'an Jiaotong University,China,Automation,Systems Engineering,Engineering – Other
+93,Uppsala University,Sweden,Astronomy,Astrophysics,Physics & Astronomy
+93,Uppsala University,Sweden,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+93,Uppsala University,Sweden,Chemistry,Chemistry,Chemistry
+93,Uppsala University,Sweden,Computational Science,Computational Science,CS & AI
+93,Uppsala University,Sweden,Computer Science,Computer Science,CS & AI
+93,Uppsala University,Sweden,Earth Sciences,Earth Sciences,Earth & Environmental Sciences
+93,Uppsala University,Sweden,Mathematics,Mathematics,Mathematics
+93,Uppsala University,Sweden,Physics,Physics,Physics & Astronomy
+93,Uppsala University,Sweden,Statistics,Statistics,Mathematics
+94,University of Basel,Switzerland,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+94,University of Basel,Switzerland,Chemistry,Chemistry,Chemistry
+94,University of Basel,Switzerland,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+94,University of Basel,Switzerland,Computer Science,Computer Science,CS & AI
+94,University of Basel,Switzerland,Nanosciences,Materials Science,Engineering – Chemical & Materials
+94,University of Basel,Switzerland,Mathematics,Mathematics,Mathematics
+94,University of Basel,Switzerland,Physics,Physics,Physics & Astronomy
+94,University of Helsinki,Finland,Bioinformatics,Bioinformatics,Computational Biology & Bioinformatics
+94,University of Helsinki,Finland,Chemistry,Chemistry,Chemistry
+94,University of Helsinki,Finland,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+94,University of Helsinki,Finland,Computer Science,Computer Science,CS & AI
+94,University of Helsinki,Finland,Data Science,Data Science,CS & AI
+94,University of Helsinki,Finland,Geosciences,Earth Sciences,Earth & Environmental Sciences
+94,University of Helsinki,Finland,Mathematics,Mathematics,Mathematics
+94,University of Helsinki,Finland,Physics,Physics,Physics & Astronomy
+94,University of Helsinki,Finland,Statistics,Statistics,Mathematics
+96,Central South University,China,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+96,Central South University,China,Computer Science,Computer Science,CS & AI
+96,Central South University,China,Data Science,Data Science,CS & AI
+96,Central South University,China,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+96,Central South University,China,Mining Engineering,Engineering (General),Engineering – Other
+96,Central South University,China,Materials Science,Materials Science,Engineering – Chemical & Materials
+96,Central South University,China,Mathematics,Mathematics,Mathematics
+96,Central South University,China,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+96,Central South University,China,Physics,Physics,Physics & Astronomy
+96,Central South University,China,Automation,Systems Engineering,Engineering – Other
+97,Technion – Israel Institute of Technology,Israel,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+97,Technion – Israel Institute of Technology,Israel,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+97,Technion – Israel Institute of Technology,Israel,Chemical Engineering,Chemical Engineering,Engineering – Chemical & Materials
+97,Technion – Israel Institute of Technology,Israel,Chemistry,Chemistry,Chemistry
+97,Technion – Israel Institute of Technology,Israel,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+97,Technion – Israel Institute of Technology,Israel,Computational Biology,Computational Biology,Computational Biology & Bioinformatics
+97,Technion – Israel Institute of Technology,Israel,Computer Science,Computer Science,CS & AI
+97,Technion – Israel Institute of Technology,Israel,Data Science,Data Science,CS & AI
+97,Technion – Israel Institute of Technology,Israel,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+97,Technion – Israel Institute of Technology,Israel,Industrial Engineering,Industrial Engineering,Engineering – Other
+97,Technion – Israel Institute of Technology,Israel,Materials Science,Materials Science,Engineering – Chemical & Materials
+97,Technion – Israel Institute of Technology,Israel,Mathematics,Mathematics,Mathematics
+97,Technion – Israel Institute of Technology,Israel,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+97,Technion – Israel Institute of Technology,Israel,Physics,Physics,Physics & Astronomy
+97,Technion – Israel Institute of Technology,Israel,Statistics,Statistics,Mathematics
+98,University of Bristol,UK,Aerospace Engineering,Aerospace Engineering,Engineering – Mechanical & Aerospace
+98,University of Bristol,UK,Engineering Mathematics,Applied Mathematics,Mathematics
+98,University of Bristol,UK,Artificial Intelligence,Artificial Intelligence,CS & AI
+98,University of Bristol,UK,Biochemistry,Biochemistry,Chemistry
+98,University of Bristol,UK,Chemistry,Chemistry,Chemistry
+98,University of Bristol,UK,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+98,University of Bristol,UK,Computer Science,Computer Science,CS & AI
+98,University of Bristol,UK,Data Science,Data Science,CS & AI
+98,University of Bristol,UK,Electrical & Electronic Engineering,Electrical Engineering,Engineering – Electrical & Computer
+98,University of Bristol,UK,Design Engineering,Engineering (General),Engineering – Other
+98,University of Bristol,UK,Mathematics,Mathematics,Mathematics
+98,University of Bristol,UK,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+98,University of Bristol,UK,Neuroscience,Neuroscience,Computational Biology & Bioinformatics
+98,University of Bristol,UK,Physics,Physics,Physics & Astronomy
+99,City University of Hong Kong,Hong Kong,Biomedical Engineering,Biomedical Engineering,Engineering – Biomedical
+99,City University of Hong Kong,Hong Kong,Computational Intelligence,CS & AI,CS & AI
+99,City University of Hong Kong,Hong Kong,Chemistry,Chemistry,Chemistry
+99,City University of Hong Kong,Hong Kong,Civil Engineering,Civil Engineering,Engineering – Civil & Environmental
+99,City University of Hong Kong,Hong Kong,Computer Science,Computer Science,CS & AI
+99,City University of Hong Kong,Hong Kong,Data Science,Data Science,CS & AI
+99,City University of Hong Kong,Hong Kong,Electrical Engineering,Electrical Engineering,Engineering – Electrical & Computer
+99,City University of Hong Kong,Hong Kong,Materials Science,Materials Science,Engineering – Chemical & Materials
+99,City University of Hong Kong,Hong Kong,Mathematics,Mathematics,Mathematics
+99,City University of Hong Kong,Hong Kong,Mechanical Engineering,Mechanical Engineering,Engineering – Mechanical & Aerospace
+99,City University of Hong Kong,Hong Kong,Physics,Physics,Physics & Astronomy
+100,Stockholm University,Sweden,Astronomy,Astrophysics,Physics & Astronomy
+100,Stockholm University,Sweden,Chemistry,Chemistry,Chemistry
+100,Stockholm University,Sweden,Computational Science,Computational Science,CS & AI
+100,Stockholm University,Sweden,Computer Science,Computer Science,CS & AI
+100,Stockholm University,Sweden,Meteorology,Earth Sciences,Earth & Environmental Sciences
+100,Stockholm University,Sweden,Mathematics,Mathematics,Mathematics
+100,Stockholm University,Sweden,Physics,Physics,Physics & Astronomy
+100,Stockholm University,Sweden,Statistics,Statistics,Mathematics
