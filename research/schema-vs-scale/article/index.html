@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The tables survived. The rules didn't.</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBDQ97WX4K');
+  </script>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="41,441 job postings in 61 days: which schema decisions held, which I tore out, and how the line between what the machine decides and what I decide moved.">
+  <link rel="canonical" href="https://mariascales.com/research/schema-vs-scale/article/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The tables survived. The rules didn't. – Maria Atamanova">
+  <meta property="og:description" content="41,441 job postings in 61 days: which schema decisions held, which I tore out, and how the line between what the machine decides and what I decide moved.">
+  <meta property="og:url" content="https://mariascales.com/research/schema-vs-scale/article/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta property="og:site_name" content="Maria Atamanova">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The tables survived. The rules didn't. – Maria Atamanova">
+  <meta name="twitter:description" content="41,441 job postings in 61 days: which schema decisions held, which I tore out, and how the line between what the machine decides and what I decide moved.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; overflow-x: auto; scrollbar-width: none; }
+    .site-nav .container::-webkit-scrollbar { display: none; }
+    @media (max-width: 480px) { .site-nav .nav-link { margin-right: 14px; font-size: 0.8125rem; } }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px; }
+    .page-title { font-size: 1.625rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 8px; line-height: 1.3; }
+    .page-subtitle { font-size: 1rem; color: #6b7280; margin-bottom: 8px; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .article-content { padding: 40px 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 40px 0 14px; }
+    .article-content h2:first-child { margin-top: 0; }
+    .article-content h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin: 28px 0 8px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 14px; }
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 14px; }
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+    .article-content strong { color: #111827; }
+    .article-content a { color: #1e40af; }
+    .article-content code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #f3f4f6; padding: 1px 5px; border-radius: 3px; color: #111827; }
+    hr { border: none; border-top: 1px solid #f3f4f6; margin: 36px 0; }
+    .er-diagram { margin: 24px 0 8px; }
+    .er-diagram img { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .er-caption { font-size: 0.8125rem; color: #9ca3af; margin-top: 8px; margin-bottom: 24px; }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+    .callout p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .callout code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #e9eaec; padding: 1px 5px; border-radius: 3px; color: #111827; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.25rem; } header { padding: 28px 0 24px; } }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+    .author-box p:last-child { margin-bottom: 0; }
+    .author-box strong { color: #111827; }
+    .author-box a { color: #1e40af; }
+    .callout.lead, .tldr.lead { margin-top: -44px; }
+  
+    .article-content table { border-collapse: collapse; width: 100%; margin: 20px 0 8px; font-size: 0.9375rem; }
+    .article-content th, .article-content td { padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-align: left; color: #374151; }
+    .article-content th { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #9ca3af; border-bottom: 1px solid #d1d5db; }
+    .article-content td:not(:first-child), .article-content th:not(:first-child) { text-align: right; }
+    .tablewrap { overflow-x: auto; margin: 6px 0 0; }
+    .tablewrap table { min-width: 460px; }
+    .article-content p.caption { font-size: 0.8125rem; color: #6b7280; margin: 8px 0 24px; }
+    .article-content blockquote { border-left: 3px solid #e5e7eb; padding: 2px 0 2px 16px; margin: 18px 0; }
+    .article-content blockquote p { color: #6b7280; font-style: italic; margin-bottom: 0; }
+    .article-content tr.handoff td { color: #1e40af; }
+    .article-content p.series-note { font-size: 0.8125rem; color: #6b7280; margin: 28px 0 0; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mariascales.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research",
+      "item": "https://mariascales.com/research/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Job Search Problem",
+      "item": "https://mariascales.com/research/job-search-automation/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Full article",
+      "item": "https://mariascales.com/research/schema-vs-scale/article/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The tables survived. The rules didn't.",
+  "description": "41,441 job postings in 61 days: which schema decisions held, which I tore out, and how the line between what the machine decides and what I decide moved.",
+  "url": "https://mariascales.com/research/schema-vs-scale/article/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mariascales.com/research/schema-vs-scale/article/"
+  },
+  "image": "https://mariascales.com/og-image.png",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/",
+    "jobTitle": "Senior Growth & Performance Marketing Manager",
+    "sameAs": [
+      "https://linkedin.com/in/atamanova-m",
+      "https://github.com/maria-scales",
+      "https://hackernoon.com/u/mariascales"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Maria Atamanova",
+    "url": "https://mariascales.com/"
+  },
+  "datePublished": "2026-09-09",
+  "dateModified": "2026-09-09",
+  "keywords": [
+    "reverse ATS",
+    "SQLite schema migration",
+    "job posting pipeline",
+    "rules as data",
+    "automation handoff"
+  ],
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "The Job Search Problem: A Framework for Partial Automation (Building a Reverse ATS)",
+    "url": "https://mariascales.com/research/job-search-automation/"
+  }
+}
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="/tools/" class="nav-link">Tools</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/job-search-automation/">The Job Search Problem</a><span>›</span><strong>Full article</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">The tables survived. The rules didn't.</h1>
+    <div class="page-subtitle">What 41,441 job postings did to a database schema designed for 118 companies – and where the handoff line between the machine and my own hands moved.</div>
+    <div class="page-meta">Sep 2026 · Original research</div>
+  </div>
+</div>
+<div class="article-content">
+  <div class="container">
+    <div class="callout lead"><div class="callout-label">TL;DR</div>
+    <ul>
+    <li><strong>41,441 postings collected in 61 days, 20,634 of them already closed</strong> – half of everything the database has ever seen died inside two months. That is the rate at which a hand-maintained list goes stale, invisibly.</li>
+    <li><strong>“It has never cost you anything to store it” did not survive.</strong> Texts and raw payloads moved out of <code>job_postings</code> into two tables, the file is 214 MB, and descriptions are no longer fetched until a posting has passed the title gate.</li>
+    <li><strong>A count of matching criteria was replaced by a deterministic dictionary of 88 title rules.</strong> The score failed because the threshold was set in June, before there was any distribution to look at.</li>
+    <li><strong>1,802 open rows turned out not to be jobs</strong> but the career page’s own copy. Structures can be designed in advance; vocabularies cannot.</li>
+    <li><strong>The handoff line between the machine and my own hands moved four times</strong>, always in the same direction. The rule underneath it: you can only automate a decision that already has a written rule.</li>
+    </ul></div>
+
+    <p>In June I published <a href="/research/job-search-database/article/">the schema</a> behind the reverse ATS I use to run my job search: eight tables in two groups, operational and config, one SQLite file, 118 companies in the table and 54 of them watched. One sentence in that article I was sure of:</p>
+
+    <blockquote><p>It’s never cost you anything to store it, and it’s frequently cost you something not to.</p></blockquote>
+
+    <p>Sixty-one days later: sixteen tables, 1,656 companies, 41,441 postings collected, 20,634 of them already closed – and that sentence is wrong.</p>
+
+    <p>This is the repair log. Which decisions held without a migration, which ones I tore out, and how the line between what the machine decides and what I decide moved four times while I was looking at the schema.</p>
+
+    <p>All numbers are as of 5 September 2026, sixty-one days after the first fetch. One snapshot, one day: the database has moved on and the numbers have not been re-pulled.</p>
+
+    <h2>June, and sixty-one days later</h2>
+
+    <div class="er-diagram">
+      <img src="/research/job-search-database/article/er_diagram.svg" alt="June 2026 ER diagram: eight tables in two groups, operational and config, connected by foreign keys">
+    </div>
+    <div class="er-caption">June 2026, the diagram exactly as published then: eight tables, designed for 118 companies – the application side included, because in June it was.</div>
+
+    <div class="er-diagram">
+      <img src="er_diagram_2026_09_public.svg" alt="September 2026 ER diagram: eight sourcing and config tables drawn with row counts, the eight application-side tables collapsed into one grey box that is not published">
+    </div>
+    <div class="er-caption">September 2026. Sixteen tables; the eight on the application side are collapsed into one grey box and are not published – the reason is at the end of this article. The gap between the two pictures is the argument.</div>
+
+    <div class="tablewrap">
+    <table>
+    <thead><tr><th>Table drawn in the diagram</th><th>Rows</th></tr></thead>
+    <tbody>
+    <tr><td><code>companies</code></td><td>1,656</td></tr>
+    <tr><td><code>job_postings</code></td><td>41,441</td></tr>
+    <tr><td><code>posting_texts</code></td><td>14,428</td></tr>
+    <tr><td><code>posting_raw</code></td><td>24,716</td></tr>
+    <tr><td><code>posting_facets</code></td><td>3,616</td></tr>
+    <tr><td><code>hard_stop_criteria</code></td><td>11</td></tr>
+    <tr><td><code>position_criteria</code></td><td>85</td></tr>
+    <tr><td><code>company_fit_criteria</code></td><td>79</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <p class="caption">Table 1. Row counts as of 5 September 2026, for the eight tables drawn above. The three criteria tables hold the number of rules, not their contents.</p>
+
+    <h2>Three decisions that held</h2>
+
+    <p>Fourteen times more companies – 1,656 in the table today, against 1,594 on 26 August, of which 590 had a live board – and none of these needed a schema change.</p>
+
+    <p><strong><code>last_seen_at</code> instead of a webhook.</strong> Every run stamps the rows it still finds. A posting that disappears from a career page fires nothing: the timestamp stops moving, and the absence of an update is the signal. No ATS has to tell me anything.</p>
+
+    <p>This is the most valuable line in the schema, and not for the reason I wrote it. Of the 41,441 postings collected since 6 July, <strong>20,634 are already closed</strong> – half of everything the database has ever seen died inside sixty-one days. The stock hides it: 20,807 open positions today, against 20,487 on 26 August, the cut behind <a href="/research/marketing-market/article/">the article I published the next day</a> – 18,436 after stripping page furniture. New postings arrive at almost exactly the rate old ones disappear. A hand-maintained list does not go stale slowly. It goes stale at roughly 50% per two months, invisibly, while every row in it still looks fine.</p>
+
+    <p><strong>The upsert.</strong> <code>ON CONFLICT(company_id, ats_job_id) DO UPDATE SET last_seen_at = CURRENT_TIMESTAMP</code>. Deduplication that costs nothing per run and has never once needed attention.</p>
+
+    <p><strong>Rules as data, not as code.</strong> <code>hard_stop_criteria</code> and <code>position_criteria</code> are tables rather than a script, so a new disqualifier is an INSERT and takes effect on the next run. In June this looked like mild over-engineering for a personal tool. It is why everything below is a rewrite of rules and not a rewrite of the database.</p>
+
+    <h2>What storing everything cost</h2>
+
+    <p>The raw JSON of every posting went into <code>raw_payload</code>, a column on <code>job_postings</code>. The description went into <code>description</code>, next to it. Capture everything, parse later.</p>
+
+    <p>At 41,441 rows the problem is “next to it”. Every count, every dashboard refresh, every scoring pass over titles was dragging tens of thousands of multi-kilobyte blobs through memory to read a title and a timestamp. The file is 214 MB, and almost none of what makes it 214 MB is what I query.</p>
+
+    <p>On 29 August I split it: <code>posting_texts</code> and <code>posting_raw</code>, both keyed by <code>posting_id</code>, both joined only when something actually needs the text. <code>job_postings</code> went back to being a table of facts about postings rather than a container for their contents.</p>
+
+    <p>The second half of the fix was to stop downloading descriptions at all until a posting has passed the title gate. <strong>6,956 of the 20,807 open postings have their text stored</strong> – a third (<code>posting_texts</code> holds 14,428 rows in all, closed postings included). The other two thirds were filtered out on their title and their location, and their descriptions would have been bytes nobody would ever read.</p>
+
+    <p>The sentence should have been: storing it costs you nothing <em>if you also decide what not to fetch.</em> Storage was never the expensive part. Indiscriminate retrieval was.</p>
+
+    <h2>A score that scored everything</h2>
+
+    <p>The June rule: check each posting against every row in <code>position_criteria</code>, count the matches, that count is the relevance score, anything scoring 1 or more enters the database. I defended the crudeness in print – “No weights, no thresholds, no model – just a row count.”</p>
+
+    <p>At 118 companies that is a filter. At 14,454 postings past the hard stops it is a rubber stamp. Location was one of the criteria, so a Sales Development Representative in Austin matches on location alone and passes. A ranking whose entry price is a single match does not tell you where to start reading.</p>
+
+    <p>What replaced it is not smarter, it is more specific: a deterministic dictionary of 88 title rules that assigns every posting a broad type, a narrow discipline and a <code>title_tier</code> for how close the title sits to what I can do. <a href="/research/marketing-market/article/">I published that rule table with the dataset in August.</a> Still no machine learning, and nothing that guesses: the same title always gets the same verdict, and I can read the line that produced it. A rule that says <em>this exact title, this exact tier</em> instead of a rule that says <em>something matched</em>.</p>
+
+    <p>The score failed not because counting is naive but because I set the threshold before I had ever seen the distribution. In June there was no distribution. There were 118 companies and an intuition.</p>
+
+    <h2>1,574 postings that were not jobs</h2>
+
+    <p><strong>1,574 rows in the database are not job postings. They are the career page’s own copy</strong> – “View all openings”, “Life at company”, “Benefits” – and a further 228 are page furniture of other kinds. The scraper was reading text that sits where a job title sits and filing it as a vacancy, competently, thousands of times, for weeks.</p>
+
+    <p>No schema fixes this. There is a <code>junk_title</code> block reason, written after the fact, applied to 1,802 rows I had to look at first. Those are open rows carrying one of those two reasons; counting every flavour of junk – nav headers, region headers, names scraped off team pages – it is 1,872 open rows, and 5,467 across all 41,441, because page furniture disappears from a page too. The August article, counting every flavour among that day’s 20,487 open rows, stripped 2,051.</p>
+
+    <h2>The vocabulary I could not have guessed</h2>
+
+    <p>The same failure, from the other end of the pipeline. In June I wrote out the stages an application moves through, as a list: <code>manually_reviewed → applied → screening → test_task → team_interview → hm_interview → higherups_interview → offer</code>, with statuses <code>pending</code>, <code>invited</code>, <code>passed</code>, <code>failed</code>, <code>ghosted</code>, <code>accepted</code>, <code>declined</code>. By late August one of those eight stages and three of those seven statuses had never once been used, and the process had produced three names I had not thought of: <code>tech_interview</code>, <code>test_review</code>, <code>final_interview</code>.</p>
+
+    <p><strong>Structures can be designed in advance. Vocabularies cannot.</strong> A table is a guess about shape, and shape is stable. A category list is a guess about the world, made before the world had been sampled.</p>
+
+    <h2>Where the gate stands</h2>
+
+    <div class="tablewrap">
+    <table>
+    <thead><tr><th>Stage</th><th>Postings</th><th>Of what is open</th><th>Decided by</th></tr></thead>
+    <tbody>
+    <tr><td>Collected since 6 July</td><td>41,441</td><td>–</td><td>machine</td></tr>
+    <tr><td>– of which already closed</td><td>20,634</td><td>–</td><td>machine (<code>last_seen_at</code>)</td></tr>
+    <tr><td>Open today</td><td>20,807</td><td>100%</td><td></td></tr>
+    <tr><td>Past hard stops: country, language, junk, seniority</td><td>14,454</td><td>69.5%</td><td>machine, rules as data</td></tr>
+    <tr class="handoff"><td>Past the title dictionary – the shortlist</td><td><strong>1,666</strong></td><td>8.0%</td><td>machine, 88 rules</td></tr>
+    <tr class="handoff"><td>Still standing after facet review</td><td>964</td><td>4.6%</td><td>rules and hand</td></tr>
+    </tbody>
+    </table>
+    </div>
+    <p class="caption">Table 2. As of 5 September 2026. The share column is of what is open today, not of everything collected, which is why the first two rows carry a dash. The last two rows are where rules and hand meet.</p>
+
+    <p>The largest block is geographic: 1,614 open postings say “remote” and mean “remote if you already live in the United States”. Another 688 are in India, 244 in Brazil and 146 in Mexico – the same wall in a different country: the role is open, and it is open to people already living there. 222 contain the word “intern”. 91 are in German.</p>
+
+    <p>Nothing got faster. <strong>1,666 rows reach my eyes instead of 41,441</strong> – 4% of what has been collected – and the 39,775 that do not are removed by rules I can read, edit, and be wrong about in public. Of the 1,666, another 702 carry a skip on a named dimension – wrong audience, wrong discipline, wrong language, too old – which leaves 964 standing.</p>
+
+    <h2>The handoff line moved four times</h2>
+
+    <p>The design was two-part: the machine sources, the human decides. It did not hold, and it failed in one direction only. Each time, the same move: a decision I had been making by hand got written down, and then it stopped being mine.</p>
+
+    <p><strong>June.</strong> Collection. Everything after it was mine.</p>
+
+    <p><strong>Early August.</strong> The first gate stops being a score and becomes a rulebook. <code>hard_stop_criteria</code> runs before anything else – country, language, junk, seniority – and by mid-month the reason a posting was dropped is written into the row itself. That part matters more than the filtering: a gate whose verdicts I can read is a gate I can argue with.</p>
+
+    <p><strong>Late August.</strong> The second gate: 88 title rules, one type, one discipline and one tier per posting. Plus facets – tagged verdicts on individual postings for audience, discipline, language, scope, work authorisation, freshness. There are 3,616 of them now, <strong>2,612 written by rules, 1,004 by hand</strong>, and every rule in that 2,612 started as something I did manually often enough to notice I was doing it the same way each time.</p>
+
+    <p><strong>September.</strong> Reading a description end to end and judging whether the role is doable was the last thing still mine. I wrote the criteria down – gates, soft flags, what counts as a must-have, what a seniority mismatch means – and a language model (Claude) now reads the text against that rulebook and returns fit, weak fit, not fit, or insufficient data. This is the first stage in the pipeline that is not deterministic, so every verdict has to quote the line of the posting it relied on: I can audit it in seconds and overturn it. The order matters more than the model does. The rulebook was written first, by hand, on the postings the earlier gates had already narrowed down; the model came second, and it decides nothing about what counts – it reads a description against criteria that existed before it did. The first pass ran on 4 September; two verdicts I overturned the same evening.</p>
+
+    <p>Two things are still mine and will stay mine: submitting the application, and researching a company before I talk to it. Nobody automates a workflow from 0% to 100%. You automate the part you have already explained to yourself.</p>
+
+    <h2>The rule</h2>
+
+    <p><strong>You can only automate a decision that already has a written rule.</strong> Not a felt one. A written one.</p>
+
+    <p>That is why the hard stops paid off and <code>relevance_score</code> did not. The hard stops I could state in a sentence: no German-only postings, no internships, no roles that require US residency. The score was an intuition in the costume of a rule – it produced a number, the number looked principled, and it encoded nothing I could argue with. It is also why Fit-or-Not could be handed off in September and not in June: in June I could not have written down what makes a role doable, because I had not read enough of them.</p>
+
+    <p>The corollary: every stage here was manual first, and had to be. The manual pass was not a phase before the automation. It was the specification.</p>
+
+    <h2>Not published</h2>
+
+    <p>Eight tables are missing from the September diagram – everything on the application side, down to the two that hold the CVs and cover letters I send, drawn as one grey box with no columns and no counts.</p>
+
+    <p><code>application_status_history</code> is the one I mind. It has fired on every stage change since June: response rates, time to first reply, how many applications end in silence. It is the most interesting data in the file, and it is my own hiring funnel while I am still standing in it. It gets published when I am not.</p>
+
+    <p class="series-note">The sixth piece in a series on building a reverse ATS. Earlier: <a href="/research/job-search-automation/article/">the framework</a> · <a href="/research/pitfalls/article/">pitfalls</a> · <a href="/research/ats-scraping/article/">reading career pages without a browser</a> · <a href="/research/job-search-database/article/">the schema</a> · <a href="/research/marketing-market/article/">what the postings say about the market</a></p>
+
+    <p class="series-note">If you have built something similar, or torn out a design decision you had already published, I would like to hear about it – <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">on LinkedIn</a>.</p>
+
+    <div class="author-box">
+  <div class="author-box-label">About the author</div>
+  <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager and applied mathematician; twelve years growing businesses – apps, e-commerce, EdTech, AI data platforms – on numbers, not gut feeling.</p>
+  <p>This series is the working system behind my own search – the same database produced <a href="/research/marketing-market/article/">the marketing job market study</a> (18,436 postings, 590 career pages).</p>
+  <p>Hiring a senior growth or performance lead? <a href="/cases/">See the case studies</a> · <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a></p>
+</div>
+  </div>
+</div>
+<div class="back-link"><div class="container"><a href="/research/job-search-automation/">← Back to The Job Search Problem</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

@@ -93,6 +93,7 @@
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
     .callout.lead, .tldr.lead { margin-top: -44px; }
+    .article-content p.series-note { font-size: 0.8125rem; color: #6b7280; margin: 0 0 18px; }
   </style>
   <script type="application/ld+json">
 {
@@ -157,7 +158,7 @@
     "url": "https://mariascales.com/"
   },
   "datePublished": "2026-06-28",
-  "dateModified": "2026-09-08",
+  "dateModified": "2026-09-09",
   "keywords": [
     "job search database",
     "SQLite job tracker",
@@ -199,6 +200,7 @@
     <li>SQLite over Sheets or CSV for queries, foreign keys and upsert deduplication; over Postgres because it is one local file. Estimated saving: <strong>3–4 hours a week</strong> of overhead at ~54 monitored companies.</li>
     </ul></div>
 
+    <p class="series-note"><em>Sixty-one days and 41,441 postings later, three of the decisions below did not survive: <a href="/research/schema-vs-scale/article/">the repair log</a>.</em></p>
     <p>In <a href="/research/job-search-automation/article/">Part 1</a>, I described the framework I use to run a structured job search: five lists – companies to watch, companies to skip, hard stops, fit criteria, and position criteria – updated on a weekly cycle. The problem was clear: manually maintaining those lists in Markdown files and spreadsheets doesn't scale past a few dozen companies. Checking career pages by hand, copy-pasting job titles, tracking application stages in a color-coded table – all of it becomes noise that competes with the actual work of applying.</p>
 
     <p>So I decided to build a proper database. Not to over-engineer a personal project, but because the structure of the problem maps almost perfectly to a relational model – and once that model exists, automation becomes straightforward. This article shows exactly how I translated the five-list framework into a working SQLite schema, and the design decisions I made along the way.</p>
