@@ -193,7 +193,7 @@
     <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
     <li>Five conceptual lists became <strong>eight SQLite tables</strong> in two groups: operational (companies, job_postings, cv_versions, cover_letters, applications, application_status_history) and config (hard_stop_criteria, position_criteria).</li>
-    <li>The watch and skip lists merge into one companies table with a watch_status field; the criteria lists become rows of data, not code – <strong>6 hard-stop rules and 18 position criteria</strong> drive the scraper on every run.</li>
+    <li>The watch and skip lists merge into one companies table with a watch_status field; the criteria lists become rows of data, not code – <strong>6 <a href="/research/job-search-automation/article/#hard-stop">hard-stop</a> rules and 18 position criteria</strong> drive the scraper on every run.</li>
     <li><strong>relevance_score</strong> is ATS keyword matching applied in reverse: +1 per matching criterion (title, seniority, location, work mode); a score of 1 or more enters the database and review starts from the top. No weights, no model.</li>
     <li>last_seen_at replaces webhooks – a posting that stops being updated is closed; application_status_history is written by a trigger and turns the search into a measurable funnel.</li>
     <li>SQLite over Sheets or CSV for queries, foreign keys and upsert deduplication; over Postgres because it is one local file. Estimated saving: <strong>3–4 hours a week</strong> of overhead at ~54 monitored companies.</li>
