@@ -50,7 +50,7 @@
     "url": "https://mariascales.com",
     "email": "hello@mariascales.com",
     "jobTitle": "Senior Growth & Performance Marketing Manager",
-  "dateModified": "2026-09-08",
+  "dateModified": "2026-09-09",
     "description": "Performance marketing for AI-era growth – backed by models, not gut feeling.",
     "sameAs": [
       "https://linkedin.com/in/atamanova-m",
@@ -186,6 +186,8 @@
     .case-header {
       padding: 20px 24px;
       cursor: pointer;
+      text-decoration: none;
+      color: inherit;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -196,7 +198,6 @@
     }
 
     .case-header:hover { background: #f9fafb; }
-    .case-header.open { background: #f9fafb; }
 
     .case-left { flex: 1; }
 
@@ -254,55 +255,23 @@
     }
 
     .case-toggle {
-      font-size: 1.375rem;
+      font-size: 1.125rem;
       color: #9ca3af;
       line-height: 1;
       flex-shrink: 0;
-      margin-top: 1px;
-      transition: transform 0.2s ease;
+      width: 13px;
+      text-align: center;
+      margin-top: 3px;
       font-weight: 300;
     }
 
-    .case-toggle.open { transform: rotate(45deg); }
 
-    /* ── Case body ── */
-    .case-body {
-      display: none;
-      padding: 0 24px 28px;
-      border-top: 1px solid #e5e7eb;
-    }
 
-    .case-body.open { display: block; }
 
-    .case-body h4 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #9ca3af;
-      margin: 24px 0 8px;
-    }
 
-    .case-body p {
-      color: #374151;
-      font-size: 0.9375rem;
-      margin-bottom: 10px;
-    }
 
-    .case-body ul {
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
 
-    .case-body li {
-      color: #374151;
-      font-size: 0.9375rem;
-      margin-bottom: 6px;
-    }
 
-    .case-body strong { color: #111827; }
-    .case-body a { color: #1e40af; }
-    .case-body em { color: #374151; }
 
     blockquote {
       border-left: 3px solid #e5e7eb;
@@ -385,7 +354,6 @@
       .stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
       header { padding: 48px 0 36px; }
       .case-header { padding: 16px; }
-      .case-body { padding: 0 16px 20px; }
     }
   
     /* ── Site Nav ── */
@@ -521,7 +489,7 @@
 
     <!-- 1. Stealth -->
     <div class="case" id="stealth">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/stealth/">
         <img src="logos/stealth.svg" alt="Stealth startup" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Growth That Doesn't Lie to Itself</h3>
@@ -529,481 +497,115 @@
           <div class="case-role">Consumer subscription · Meta scaling · Attribution &amp; signal quality</div>
           <div class="case-outcome">~$900k/month scaling plan stopped · 50+ concepts reset-tested · 2 survived the clean pixel</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/stealth/" onclick="event.stopPropagation()">View full case study →</a></p>
-
-        <h4>Situation</h4>
-        <p>A stealth consumer subscription app, with Meta as the primary acquisition channel and an aggressive scaling mandate ahead of a raise. I joined at the end of the December push – inheriting an account already trained on that spend, with roughly one month of observed CAC and an LTV estimated by feel, the normal starting point for an early-stage startup that can't yet wait for cohorts to mature. The plan was a staged ramp: first lock in stable performance at <strong>~$5,000/day</strong> in Meta, then scale to <strong>~$30,000/day</strong>.</p>
-        <p>The mandate was to scale – but the initial audit surfaced several red flags that stopped me from treating the ramp as routine:</p>
-        <ul>
-          <li><strong>The signals didn't agree.</strong> A <strong>suspiciously high CPM</strong> and slightly-off CPA under excellent top-of-funnel signals (<strong>CTR</strong>, <strong>Hook Rate</strong>) – healthy engagement on an expensive cost base is a pattern to interrogate, not a green light.</li>
-          <li><strong>Even the Q5 creatives all missed.</strong> <em>Q5</em> – the first weeks after New Year, the best demand window of the year – produced no spike in new users and no drop in CPA across a fresh creative wave, despite the seasonal CPM decline. Failing <em>during Q5</em> is the demand peak refusing to show up where it always does.</li>
-          <li><strong>The scale target wasn't small money.</strong> <strong>$30,000/day is ~$900,000/month</strong> – committed on a gut-feel LTV, one month of CAC, an unexplained CPM and a dead Q5 wave. You don't scale into an anomaly; you explain it first.</li>
-        </ul>
-
-        <h4>Task</h4>
-        <p>Before any of the ~$900k/month was released, turn the red flags into a definitive answer: noise, or a real ceiling? Leadership needed a defensible scale-or-hold call – not another optimistic forecast. That meant explaining the anomalies rather than scaling past them, and getting the unit economics rebuilt on the most accurate numbers obtainable. The honest constraint: at an early-stage startup moving this fast, the data will always be thinner than a clean LTV read needs – so the model had to be as rigorous as the available signal allowed, and explicit about its own uncertainty.</p>
-
-        <h4>Action</h4>
-        <p><strong>1. Technical audit – explain the CPM first.</strong> Before touching creative, I audited the plumbing: Business Manager / ad-account architecture, event taxonomy, and pixel-vs-server (CAPI) consistency – to establish whether the anomalous CPM was a real auction signal or a measurement artifact. It was real: Meta was genuinely paying up to reach these users, which pointed away from "tracking is broken" and toward "the audience is the problem."</p>
-        <p><strong>2. Creative audit – the reset test, and why nothing new could fire.</strong> When scaled performance collapses there are two very different causes: the creative is worn out (fatigue – fixable with fresh concepts), or the audience itself is used up (no creative fixes that); telling them apart was the whole job. I reviewed everything that had run – not just the failed Q5 wave but the full back-catalogue – scoring each concept and isolating the ones that had genuinely produced the best results. That review exposed the real problem: the "winning" history collapsed to <strong>one</strong> concept mapped to <strong>one</strong> narrow audience – the pocket where most of the December budget – spent before I joined – had been concentrated. That concentrated spend taught the pixel exactly where "conversions" lived, so it kept routing every new creative – the Q5 wave included – straight back into that same small, "safe" audience. This is <strong>pixel overfit</strong>.</p>
-        <p>The reset test made it visible. Across 50+ entirely new concepts, a fresh concept should reset the picture – normal opening CPM, frequency building as usual, performance recovering – because in Meta's increasingly creative-led delivery (Andromeda) a new concept should find a new pocket. None did: every concept launched straight into high frequency and the same extreme CPM, because the pixel delivered it into an already-exhausted audience rather than a fresh one. Rising frequency didn't distinguish the cases – it doubled either way; the <strong>absence of a reset across 50+ concepts</strong> did. The new concepts weren't failing on merit – they never got a fair test. What looked like the floor of a scalable audience was its ceiling.</p>
-        <p><em>Pixel overfit, defined: campaigns optimizing to a shallow or narrow pixel event that correlates with short-term conversion but not with the true addressable, revenue-generating audience – so reported performance looks strong precisely because the model has fit itself to a pocket too small to scale.</em></p>
-        <p><strong>3. Prove it on a clean pixel.</strong> The overfit pixel couldn't test its own blind spot – it would keep routing anything new into the same exhausted audience. A new campaign or ad set wouldn't have escaped it either: Meta's learning is layered, and ad-set history is only the second layer – the deepest one is the conversion history accumulated on the pixel itself, with the ad account carrying its own priors on top. Anything launched against the same pixel inherits the same overfit prior. So I migrated to a new pixel and re-tested the creative slate from scratch: the only way to get an unbiased read on how much genuinely scalable audience actually existed.</p>
-        <p><strong>4. Rebuild the unit economics on true numbers.</strong> In parallel, the model had to run on backend revenue, not pixel-reported conversions. I ran the reconciliation – pixel-reported vs backend revenue by cohort – and quantified how far the reported numbers had been inflated. The model rebuild itself was owned by a teammate, who reworked the unit economics on those corrected inputs (and carried the uncertainty explicitly, given the thin data).</p>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>Root cause: severe pixel overfit, confirmed.</strong> The December-funded pocket had trained the pixel to route every new creative back into one narrow audience – and reported numbers looked far healthier for a small audience subset with a specific small creatives pack, until this particular audience was totally exhausted.</li>
-          <li><strong>The real breadth was tiny.</strong> Re-run on the clean pixel, the same 50+ concepts finally got a fair test – and only <strong>2</strong> worked, where "worked" meant positive economics inside a small pocket, not a volume engine. Against a $30k/day target, the addressable market at target economics was a fraction of the plan.</li>
-          <li><strong>The ceiling was the market, not the channel.</strong> The clean-pixel retest and reach estimates pointed to an addressable-audience limit, not a Meta-delivery quirk. Other channels tested multiples worse – and in my experience across consumer subscription products, Meta is the ceiling test: if it can't make the economics work, the other channels won't either.</li>
-          <li><strong>The decision.</strong> With the economics below break-even at any meaningful volume, there was no viable scale to retreat to – the profitable niche was too small to sustain the company, let alone the raise it was chasing. Leadership wound the product down on decision-grade data, instead of pouring ~$900k/month into an audience that could never repay it.</li>
-        </ul>
-        <h4>Deliverables</h4>
-        <p><strong><a href="/cases/stealth/prevention-framework/">Prevention Framework</a></strong> – a pixel-overfit tripwire, pre-flight checks, and the processes that keep CPMs in check.</p>
-        <p><strong><a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></strong> – an interactive tool answering: <em>does this growth math ever close?</em></p>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 2. Praktika -->
     <div class="case" id="praktika">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/praktika/">
         <img src="logos/praktika.png" alt="Praktika" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Scaling to Series A</h3>
-          <div class="case-company"><a href="https://praktika.ai" onclick="event.stopPropagation()">Praktika</a> · Senior Marketing Manager</div>
+          <div class="case-company">Praktika · Senior Marketing Manager</div>
           <div class="case-role">EdTech · AI language learning · Series A stage</div>
           <div class="case-outcome">$30M Series A · 5× revenue in &lt;3 months</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/praktika/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://praktika.ai">Praktika</a> is an EdTech startup that uses AI avatars to create a personalized language-learning experience. It focuses on speaking practice for non-native English speakers through an accessible mobile app. Praktika has already found a product-market fit as a startup and was preparing for the Series A round for scaling.</p>
-        <p>As Senior Marketing Manager at Praktika, I was responsible for the development of unit economy model benchmarks and establishing user acquisition at scale to achieve ROI-positive growth.</p>
-
-        <h4>Task</h4>
-        <p>At that startup stage, it's vital to establish new student acquisition via marketing channels while meeting ROI KPIs. This will be the base of revenue growth and lead the company to close the Series A round successfully.</p>
-        <p>Thus, the challenge was to turn overall requirements into numbers, set the benchmarks, and plan and execute the scale while maintaining the ROI KPIs.</p>
-
-        <h4>Action</h4>
-        <p>To meet these challenges, I've decided to divide the tasks into the following steps:</p>
-        <ul>
-          <li>digitalize the general, ambiguous goals of growth and revenue;</li>
-          <li>build a unit economy model for each platform (iOS and Android) and geography;</li>
-          <li>based on ROI KPIs, set benchmarks on each essential step like the cost of install, trial, and subscription for each platform and geography;</li>
-          <li>based on the data above, define where we have the room for scale and how extensive this room is;</li>
-          <li>create the forecast and plan for scaling in Meta Ads, Google Ads, and Influencer channels.</li>
-        </ul>
-        <p>Thus, based on the goal decomposition, I've formed a bottom-up plan for scaling. After justifying this plan to the founders, the team and I began to put the plan into action.</p>
-        <p>We've picked the cost per subscription trial as the proxy metric because it was fast to achieve and easy to optimize across all channels.</p>
-        <p>Starting slow, we were looking for communication approaches that would resonate with users. We began by collaborating with influencers and testing these creative ideas for performance channels. After several iterations, we found ROI-positive options that allowed us to scale.</p>
-        <p>Further, we scaled all performance channels week by week and compared the weekly actual results to our initial forecast to see:</p>
-        <ul>
-          <li>if the cost per action corresponds to the plan;</li>
-          <li>do users convert to the subscription as we planned;</li>
-          <li>how this platform and geo stand against the goal;</li>
-          <li>how price increases with the scale;</li>
-          <li>how much room for the scale is left.</li>
-        </ul>
-        <p>It is also worth noting that the ROI-positive publications with influencers supported brand awareness and users' trust, boosting the performance of the Meta and Google channels.</p>
-
-        <h4>Result</h4>
-        <ul>
-          <li>Achieved a <strong>x5 increase in revenue</strong> while exceeding Praktika's profit KPI targets.</li>
-          <li>This success was instrumental in securing a <strong>$30 million Series A funding round</strong> within less than 3 months.</li>
-          <li>Performed over <strong>50 collaborations with influencers</strong> worldwide.</li>
-        </ul>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 3. Toloka: Unit Economy -->
     <div class="case" id="toloka-unit-economy">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/toloka-unit-economy/">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Unit Economy Model for Media Buying</h3>
-          <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
+          <div class="case-company">Toloka (Yandex) · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Unit economy model</div>
           <div class="case-outcome">44% acquisition budget cut · revenue unchanged</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-unit-economy/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd of workers worldwide to complete micro-tasks such as data labeling, image recognition, and content moderation.</p>
-        <p>Toloka's revenue depends on client request fulfillment performed by workers. Two variables are critical for margins: the number of tasks completed per day, and how long a worker stays active on the platform.</p>
-        <p>As Senior Marketing Manager, B2C, I was responsible for acquiring, engaging, and retaining workers.</p>
-
-        <h4>Task</h4>
-        <p>The goal was to increase Toloka's margins by optimizing the worker acquisition budget – specifically, reducing acquisition costs without sacrificing revenue.</p>
-        <p>I focused on three areas to achieve this:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>Find metrics to evaluate worker efficiency and build a unit economy model;</li>
-          <li>Increase worker retention on key projects;</li>
-          <li>Improve forecasting and planning for upcoming request fulfillment.</li>
-        </ol>
-        <p>This case covers area 1. Areas 2 and 3 are covered in separate cases.</p>
-
-        <h4>Action</h4>
-        <p>To enable ROI-based acquisition decisions, I needed proxy metrics that could predict worker quality early – before full performance data was available.</p>
-        <p>We defined worker quality along two dimensions: <strong>relevance</strong> (acceptance rate of completed tasks) and <strong>productivity</strong> (number of tasks completed while active). The goal was to pay more for high-quality workers and less for low-quality ones, rather than applying a flat acquisition cost across all cohorts.</p>
-        <p>Working with the Analytics team, we identified <strong>money-per-hour (mph)</strong> as the best efficiency metric – the average income a worker earns per hour, factoring in time spent on tasks and access to higher-paying work. The higher the mph, the higher the ROI.</p>
-        <p>To put this into practice, I mapped average acquisition cost against average mph for each cohort, segmented by language and country. This gave us a ranking system to reallocate budget toward the most efficient segments.</p>
-        <p>To execute the project, I aligned the User Acquisition, Analytics, and Attribution teams around a shared hypothesis:</p>
-        <blockquote>
-          <p><em>If we acquire workers based on the mph proxy metric, we can pay more for high-efficiency workers and less for low-efficiency ones – reducing the acquisition budget by at least 30% while holding revenue flat.</em></p>
-        </blockquote>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>Worker acquisition budget decreased by 44%</strong> while revenue remained unchanged</li>
-          <li>Shifting from fixed to variable acquisition cost (based on efficiency) <strong>increased the share of relevant, high-quality workers by 21%</strong></li>
-          <li>Higher worker quality also improved client satisfaction scores</li>
-        </ul>
-
-        <blockquote>
-          <p>"Maria achieved great results in the acquisition, retention, and engagement of ML data makers thanks to her strategic thinking, data analysis skills, project management skills, understanding of marketing tools and technologies, strong work ethic and attention to detail, and continuous improvement mindset."</p>
-          <cite>– <a href="https://www.linkedin.com/in/stepa/" target="_blank" rel="noopener"><strong>Dmitry Stepanov</strong></a>, Founder & GP at AAL VC · Forbes 30 Under 30 · Senior to Maria at Toloka</cite>
-        </blockquote>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 4. Toloka: PMF -->
     <div class="case" id="toloka-pmf">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/toloka-pmf/">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Finding Product-Market Fit</h3>
-          <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
+          <div class="case-company">Toloka (Yandex) · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Product-market fit</div>
           <div class="case-outcome">65% retention increase · 26% budget cut · revenue unchanged</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-pmf/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
-        <p>Toloka's revenue is connected with client requests' fulfillment, which workers perform. The number of completed tasks per day and the number of days the worker stays active on the platform are critical variables for business margins.</p>
-        <p>As Senior Marketing Manager, B2C, I was responsible for the acquisition, engagement, and retention of these workers.</p>
-
-        <h4>Task</h4>
-        <p>The task was to increase Toloka's margins through new workers' acquisition budget optimization. The significant subtask was strengthening product-market fit to grow workers' engagement and retention.</p>
-
-        <h4>Action</h4>
-        <p>To meet the challenges, I've decided to focus on the following areas:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>find the metrics to evaluate worker's efficiency and calculate workers' unit economy;</li>
-          <li>increase workers' retention to key projects;</li>
-          <li>forecasting and planning upcoming requests fulfillment.</li>
-        </ol>
-        <p>Here, we will dwell more on actions and results in area 2. We'll review areas 1 and 3 in separate cases.</p>
-        <p>Area 2 included the following subtasks:</p>
-        <ul>
-          <li>discover current workers' retention (average for each cohort);</li>
-          <li>identify the users with the highest retention rate and average number of performed tasks;</li>
-          <li>conduct qualitative interviews with those users and find out their reasoning for that particular behavior;</li>
-          <li>adjust marketing and product strategy based on the findings.</li>
-        </ul>
-        <p>To accomplish the mentioned tasks and to lead the whole project, I brought together the efforts of the User Acquisition, Analytics, Attribution, Product, and Development teams.</p>
-        <p>After I figured out the average retention rate (for each cohort), I performed the following analysis:</p>
-        <ul>
-          <li>for each cohort, broke down retention by percentile;</li>
-          <li>checked the volume of performed tasks dynamics over time;</li>
-          <li>checked which share of tasks is performed by relatively new and existing users.</li>
-        </ul>
-        <p>Also, it became clear that we should consider the task complexity from the worker's perspective.</p>
-        <p>I interviewed core users to understand workers' values and motivation. The key takeaways were:</p>
-        <ul>
-          <li>core users consider Toloka as the primary or significant source of income and are willing to work more in case they receive extra bonuses;</li>
-          <li>predictability and duration of the projects are vital information for core users, with a much higher probability that they will work on a big project.</li>
-        </ul>
-        <p>After that, I formulated the following hypothesis:</p>
-        <ul>
-          <li>shifting a significant share of the budget from user acquisition to bonus payouts will increase workers' performance by at least <strong>15%</strong>, because for core users Toloka is the only significant source of income;</li>
-          <li>key project prioritization in the task list will increase the speed of order fulfillment probability by at least <strong>30%</strong>, since the average number of impressions drops significantly for each subsequent project in the list;</li>
-          <li>clear communication regarding projects' conditions and volume will increase workers' conversion and retention rate on this project by at least <strong>10%</strong>, since the worker's income would be much more predictable.</li>
-        </ul>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>Retention into the projects with clear (from the worker's perspective) conditions and volume increased by 65%</strong>:
-            <ul>
-              <li>the average number of tasks each worker performs increased by <strong>21%</strong> after we introduced the bonus system;</li>
-              <li>key projects' labeling time decreased by <strong>34%</strong> after projects' prioritization.</li>
-            </ul>
-          </li>
-          <li><strong>The user acquisition budget for major language segments decreased by 26%</strong>, while Toloka's revenue remained unchanged.</li>
-          <li><strong>Decreased FTE for operations related to user acquisition by 70%</strong>, which helped focus on the optimization of current campaigns.</li>
-          <li>As a result, I strengthened the product-market fit for Toloka's product for workers.</li>
-        </ul>
-
-        <blockquote>
-          <p>"Maria achieved great results in the acquisition, retention, and engagement of ML data makers thanks to her strategic thinking, data analysis skills, project management skills, understanding of marketing tools and technologies, strong work ethic and attention to detail, and continuous improvement mindset."</p>
-          <cite>– <a href="https://www.linkedin.com/in/stepa/" target="_blank" rel="noopener"><strong>Dmitry Stepanov</strong></a>, Founder & GP at AAL VC · Forbes 30 Under 30 · Senior to Maria at Toloka</cite>
-        </blockquote>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 5. Toloka: Seasonality -->
     <div class="case" id="toloka-forecasting">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/toloka-forecasting/">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Demand Forecasting</h3>
-          <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
+          <div class="case-company">Toloka (Yandex) · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Demand forecasting</div>
           <div class="case-outcome">100% fulfillment rate maintained · 22% budget cut</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-forecasting/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
-        <p>Toloka's revenue is connected with client requests' fulfillment, which workers perform. The number of completed tasks per day and the number of days the worker stays active on the platform are critical variables for business margins.</p>
-        <p>As Senior Marketing Manager, B2C, I was responsible for acquiring, engaging, and retaining these workers.</p>
-
-        <h4>Task</h4>
-        <p>For the Toloka Business Development team, it is critical to fulfill key clients' requests (big tech) entirely and on time, regardless of internal processes and optimization issues. These requests usually have a significant volume and obvious seasonality (meaning that their requests don't come gradually within a period of one year). As a result, a massive burst in the number of workers is needed immediately, significantly affecting the business margins and net margins of these requests.</p>
-        <p>Tasks like these happen in different types of businesses that deal with substantial seasonal sales during holidays or other events. The common feature of this particular ask is that these sales have strict time limits and KPIs.</p>
-        <p>The task was in handling big requests, handling standardization, and connected costs minimization, which are related to:</p>
-        <ul>
-          <li>excessively rapid ad campaigns' scale;</li>
-          <li>acquiring too many workers in case of a gap between requests.</li>
-        </ul>
-
-        <h4>Action</h4>
-        <p>To meet the challenges, I've decided to focus on the following areas:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>find the metrics to evaluate worker's efficiency and calculate workers' unit economy;</li>
-          <li>increase workers' retention to key projects;</li>
-          <li>forecasting and planning upcoming requests fulfillment.</li>
-        </ol>
-        <p>Here, we will dwell more on actions and results in area 3. We'll review areas 1 and 2 in separate cases.</p>
-        <p>During the research phase, it became apparent that it's crucial to build the processes of key requests' forecasting and workers' acquisition optimization via:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>understanding of the request volume distribution among different languages, since the requests' repetition and relatively stable annual demand are driven by clients' business nature (in other words, we can, indeed, predict with considerable accuracy the request volume distribution among the languages);</li>
-          <li>understanding of the request types and other clients' business requirements;</li>
-          <li>regular communication and planning, as well as building the reporting system between Marketing and BizDev teams.</li>
-        </ol>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>The user acquisition budget for major language segments decreased by 22%</strong>, while Toloka's revenue remained unchanged.</li>
-          <li><strong>Maintained the key requests' fulfillment success rate of 100%</strong>.</li>
-          <li>Built a transparent collaboration process between Marketing and BizDev teams, in particular:
-            <ul>
-              <li>built communication and planning processes regarding terms of order fulfillment and required business margins between Marketing and BizDev teams;</li>
-              <li>built the reporting system, which indicated the planned as well as actual schedule of the clients' requests fulfillment, which let us adapt the plan and understand what we should adjust to meet the schedule and business margins;</li>
-              <li>understanding the business margins by language and request types, which lets the BizDev team prioritize and make more margin deals.</li>
-            </ul>
-          </li>
-        </ul>
-
-        <blockquote>
-          <p>"Maria achieved great results in the acquisition, retention, and engagement of ML data makers thanks to her strategic thinking, data analysis skills, project management skills, understanding of marketing tools and technologies, strong work ethic and attention to detail, and continuous improvement mindset."</p>
-          <cite>– <a href="https://www.linkedin.com/in/stepa/" target="_blank" rel="noopener"><strong>Dmitry Stepanov</strong></a>, Founder & GP at AAL VC · Forbes 30 Under 30 · Senior to Maria at Toloka</cite>
-        </blockquote>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 6. Buddy AI -->
     <div class="case" id="buddy">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/buddy/">
         <img src="logos/buddy.png" alt="Buddy AI" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Global User Acquisition</h3>
-          <div class="case-company"><a href="https://buddy.ai" onclick="event.stopPropagation()">Buddy AI</a> · Senior Marketing Manager</div>
+          <div class="case-company">Buddy AI · Senior Marketing Manager</div>
           <div class="case-role">AI EdTech · Global user acquisition</div>
           <div class="case-outcome">LTV +32% · LatAm ×1.5 · Turkey launch</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/buddy/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://buddy.ai">Buddy AI</a> is a language learning app that utilizes artificial intelligence to provide personalized English language instruction to children through a game. The idea of the app is that kids can start to talk to the virtual tutor right away, from the very first session. The app utilizes a subscription monetization model, and one of the most effective ways to acquire users at that time was to promote the app as a game for kids. Summing up, users' acquisition, retention, and monetization are the critical elements of the app's revenue.</p>
-        <p>As Senior Marketing Manager at Buddy AI, I was responsible for improving those metrics to ensure sustainable business growth for successful fundraising and break-even point achievement.</p>
-
-        <h4>Task</h4>
-        <p>Upon my collaboration with Buddy AI, the app had active users from two primary geographies and one major and one minor user acquisition channel. After a closer look at the unit economy, I concluded that there is no way to scale while meeting the KPIs on ROI.</p>
-        <p>The main reasons for that were the unstable economic situation in those geographies (depreciation of the national currency against the US dollar) and the introduction of the implicit consent for IDFA tracking by Apple (which led to a decline in attribution quality).</p>
-        <p>To solve the business growth problem according to target ROI, I have focused on users' LTV improvement and the search for new geographies for user acquisition.</p>
-
-        <h4>Action</h4>
-        <p>First, I've analyzed what prevents the app growth via given acquisition channels. Based on given conditions, I've decided to do the following:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>formed hypothesis on LTV improvement from both registered and paying users' perspectives;</li>
-          <li>scale the user acquisition in new geographies according to the target ROI in case of successful LTV growth.</li>
-        </ol>
-        <p>To solve the problem above, I've built the unit economy model and figured out the following:</p>
-        <ul>
-          <li>major users' flows and product metrics;</li>
-          <li>how marketing affects those metrics;</li>
-          <li>which product adjustments may let marketing grow the business further.</li>
-        </ul>
-        <p>Users' retention rate, LTV, and ROI are the crucial metrics for subscription businesses.</p>
-        <p>While selecting the approach for solving the problem from area 2, I've decided to prioritize the larger geographies since it will shorten the payback period for the investments in creative localization. In particular, we focused on LatAm due to its size and potential interest in the product.</p>
-        <p>I've come up with the following hypothesis:</p>
-        <ul>
-          <li>LTV will increase by at least <strong>10%</strong> (due to retention growth) via regular mailing to parents showing their kids' progress in learning English because the parents are the actual decision-makers regarding subscription renewal. Thus, we'll be sure why they should pay for the next period.</li>
-          <li>LTV will increase by at least <strong>5%</strong> (due to ROI growth) via the increase in conversion to paying users since we'll put the video with product values on the paywall because parents often miss the onboarding (the kids may go through it on their own). The first thing they see is the paywall.</li>
-          <li>Growth of media buying, which meets the target ROI by at least <strong>20%</strong> via creative localization and adaptation according to other geographies' cultural contexts.</li>
-        </ul>
-        <p>Besides the major hypothesis mentioned above, I've applied several typical optimizations like onboarding simplification, the process for creatives' handling, creative rotation, etc.</p>
-        <p>I led the full-stack team to accomplish these tasks, including a data analyst, front-end developer, back-end developer, UA manager, and creative producer. Also, several teams were outsourced, like designers, video editors, localizers, and country advisers.</p>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>LTV increased by 32%</strong> due to:
-            <ul>
-              <li>retention to recurring payment growth by <strong>29%</strong> (on average by geography);</li>
-              <li>conversion to subscription growth by <strong>17%</strong> (on average by geography).</li>
-            </ul>
-          </li>
-          <li>Expanded the number of geographies available for user acquisition that met the target ROI, in particular:
-            <ul>
-              <li>scaled user acquisition in LatAm by <strong>1.5×</strong>;</li>
-              <li>successfully launched the product in Turkey.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 7. Scentbird: UA Operations -->
     <div class="case" id="scentbird-ua">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/scentbird-ua/">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Scaling UA via Operations</h3>
-          <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · Senior Marketing Specialist</div>
+          <div class="case-company">Scentbird · Senior Marketing Specialist</div>
           <div class="case-role">E-commerce subscription · UA operations</div>
           <div class="case-outcome">27% CAC reduction · Meta spend ×2 in 5 months</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/scentbird-ua/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://scentbird.com">Scentbird</a> is a subscription-based fragrance service that allows customers to discover and try new perfumes and colognes monthly in the United States.</p>
-        <p>Scentbird utilizes the subscription model, and business growth is directly connected to active user base growth. Nevertheless, it's critical for business margins to optimize customer acquisition costs and focus on selling products with higher margins.</p>
-        <p>At the beginning of 2017, Scentbird was a startup; thus, it was critical to demonstrate steady growth with all the KPIs met, primarily including ROI.</p>
-        <p>In Scentbird, I began as a media buyer and was responsible for user acquisition on Meta.</p>
-
-        <h4>Task</h4>
-        <p>Meta was the major user acquisition channel for Scentbird, which brought the most valuable users from the ROI perspective. My tasks were to:</p>
-        <ul>
-          <li>optimize customer acquisition costs;</li>
-          <li>scale the user acquisition meeting the KPI on ROI;</li>
-          <li>automate usual processes and other operations to reduce the required FTE to maintain the channel.</li>
-        </ul>
-
-        <h4>Action</h4>
-        <p>The main area of improvement here was the operation processes in both different user acquisition channels and in creative and analytics streams.</p>
-        <p>At the beginning of the journey, I stumbled upon the fact that Meta's media buying budget exceeds <strong>$5M annually</strong>. Keeping that in mind, I've concluded the following:</p>
-        <ul>
-          <li>such volume affords us to perform a decent number of A/B tests quickly and simultaneously;</li>
-          <li>not only major optimizations are significant, since we would see effects of even minor improvements over time due to such volume;</li>
-          <li>the routine procedures' automation would let us avoid mistakes and spare some FTE for analysis and further A/B tests' planning.</li>
-        </ul>
-        <p>The systematic approach would let us see the bigger picture and determine the areas for A/B testing. Thus, I did the following:</p>
-        <ul>
-          <li><strong>Implemented the audience grid:</strong> ranked the main target audiences by customer acquisition cost using the historical data; fixed (for a six-month period) the particular target audience sets; this approach let us ensure that we were not missing a segment; also, we were sure that the segments didn't overlap.</li>
-          <li><strong>Implemented the first version of no-code automation,</strong> which let us turn off ad sets immediately upon the occurrence of the predefined circumstances, and scale the ad set budget immediately upon the occurrence of the predefined circumstances; as a result, it lets us be sure that we cut losers and scaled winners at any given time rather than waiting for manual auditing.</li>
-          <li><strong>Built the day-to-day creative handling:</strong> coming up with benchmarks and hypotheses for creatives; rules of creative tests and rotation; rules for successful creatives' relaunch.</li>
-        </ul>
-        <p>I formulated the following hypothesis:</p>
-        <ul>
-          <li>audience grid would decrease FTE on Meta media buying by at least <strong>10%</strong>, since there would be no need for constant audience set-up pick and recheck;</li>
-          <li>no-code automation would decrease customer acquisition cost by at least <strong>15%</strong> due to timely budget reallocation between ad sets;</li>
-          <li>transparent creative reporting implementation would decrease customer acquisition costs by at least <strong>25%</strong>, since it would simplify the creative picking process and let us turn off the creative immediately after burnout.</li>
-        </ul>
-
-        <h4>Result</h4>
-        <ul>
-          <li>Audience grid implementation decreased FTE for Meta maintenance by <strong>13%</strong>, due to the opportunity to duplicate the audiences instead of picking from scratch and to decrease the time for results analysis.</li>
-          <li>No-code automation decreased customer acquisition cost by <strong>16%</strong> (based on statistically significant A/B test results).</li>
-          <li>Increased the share of successful creatives (which led to Meta campaigns scaling at the target ROI) by <strong>4 times (up to 25%)</strong>.</li>
-          <li>The measures mentioned above led to a customer acquisition cost decrease of <strong>27%</strong>, which led to the opportunity to double spending on Meta in the first <strong>5 months</strong> while still meeting the KPI on ROI.</li>
-          <li>The business model, way of monetization, average retention rate, and other product and business metrics remained unchanged.</li>
-        </ul>
-
-        <blockquote>
-          <p>"Maria is a great professional in the performance marketing field. She began working in my team at Scentbird as a Meta Ad Manager and grew to UA Group Head. She has successfully met her KPIs for three consecutive years with a top marketing budget under management of $2M/month. Maria has a solid mathematical and statistical background and a deep understanding of digital marketing channels and Ad Tech. She has a great ability to manage multiple projects and uses a very systematic approach to the team's benefit."</p>
-          <cite>– <a href="https://www.linkedin.com/in/oleg-popov-growth/" target="_blank" rel="noopener"><strong>Oleg Popov</strong></a>, VP of User Acquisition · Scentbird</cite>
-        </blockquote>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
     <!-- 8. Scentbird: Growth Framework -->
     <div class="case" id="scentbird-growth">
-      <div class="case-header" onclick="toggle(this)">
+      <a class="case-header" href="/cases/scentbird-growth/">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
           <h3 class="case-title">Business Growth Framework</h3>
-          <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · Senior Marketing Specialist</div>
+          <div class="case-company">Scentbird · Senior Marketing Specialist</div>
           <div class="case-role">E-commerce subscription · Growth modeling</div>
           <div class="case-outcome">20% user base growth during pandemic · 5% forecast accuracy</div>
         </div>
-        <div class="case-toggle">+</div>
-      </div>
-      <div class="case-body">
-        <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/scentbird-growth/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h4>Situation</h4>
-        <p><a href="https://scentbird.com">Scentbird</a> is a subscription-based fragrance service that allows customers to discover and try new perfumes and colognes monthly in the United States.</p>
-        <p>Scentbird utilizes the subscription model, and business growth is directly connected to active user base growth. Nevertheless, it's critical for business margins to optimize customer acquisition costs and focus on selling products with higher margins.</p>
-        <p>In Scentbird, I was responsible for the whole performance marketing stream, the primary source of the company's growth. Also, I was responsible for growth (from the marketing point of view) prediction models.</p>
-
-        <h4>Task</h4>
-        <p>For growth forecasting and planning, we needed a framework which would let us:</p>
-        <ul>
-          <li>predict the active user base growth based on the historical data;</li>
-          <li>model the revenue growth for each channel based on current LTV and ROI, keeping in mind constant marketing mix shifting;</li>
-          <li>plan the advertisement budget;</li>
-          <li>keep an eye on meeting the KPI on ROI;</li>
-          <li>help to plan and forecast the fulfillment based on user base growth.</li>
-        </ul>
-
-        <h4>Action</h4>
-        <p>The task above can be divided into the following subtasks:</p>
-        <ol style="padding-left:20px; margin-bottom:12px;">
-          <li>LTV calculation and constant updates for each channel in the marketing mix;</li>
-          <li>implementation of weekly reporting on main metrics per ad channel, including media buying costs, customer acquisition costs, and ROI, which will facilitate the plan vs. fact comparison and adjust the monthly strategy if needed;</li>
-          <li>model media buying budget allocation for the next period for each channel based on the channel's ROI;</li>
-          <li>forecast the future growth based on historical data to understand whether the current growth speed is sufficient according to the business goals;</li>
-          <li>growth trajectory communication to the fulfillment and warehouse streams to plan the supply.</li>
-        </ol>
-        <p>I was responsible for areas 2 and 3. The marketing analytics team almost fully automated areas 1, 3, and 4. Thus, they supplied the data weekly.</p>
-        <p>To accomplish the tasks above, I performed the following:</p>
-        <ul>
-          <li>built the customer acquisition cost growth depending on the volume curve for each channel;</li>
-          <li>took into consideration all the restrictions for each channel;</li>
-          <li>built a model, and calculated (using <strong>Excel Solver</strong>) the optimal budget allocation for each channel in the marketing mix (taking into consideration the nature and all the restrictions of each channel and other significant factors);</li>
-          <li>compared plan to the fact on a weekly basis to adjust the user acquisition operations.</li>
-        </ul>
-        <p>I formulated the following fundamental hypothesis: the model mentioned above would let us find the optimal balance between marketing spending (user base growth) and ROI with an accuracy of at least 7%.</p>
-
-        <h4>Result</h4>
-        <ul>
-          <li><strong>The active user base grew by 20%</strong> within a few months of the March 2020 lockdown, with the KPIs met.</li>
-          <li><strong>Actual model accuracy was 5%.</strong></li>
-          <li>Also, based on this model, I established a transparent communication process with the warehouse, which let them plan the supply.</li>
-          <li>All the 5 parts were integrated into the business planning process.</li>
-        </ul>
-
-        <blockquote>
-          <p>"Maria is a great professional in the performance marketing field. She began working in my team at Scentbird as a Meta Ad Manager and grew to UA Group Head. She has successfully met her KPIs for three consecutive years with a top marketing budget under management of $2M/month. Maria has a solid mathematical and statistical background and a deep understanding of digital marketing channels and Ad Tech. She has a great ability to manage multiple projects and uses a very systematic approach to the team's benefit."</p>
-          <cite>– <a href="https://www.linkedin.com/in/oleg-popov-growth/" target="_blank" rel="noopener"><strong>Oleg Popov</strong></a>, VP of User Acquisition · Scentbird</cite>
-        </blockquote>
-      </div>
+        <div class="case-toggle">&rarr;</div>
+      </a>
     </div>
+
 
   </div>
 </section>
@@ -1087,51 +689,10 @@
 </footer>
 
 <script>
-  function toggle(header) {
-    const caseEl = header.parentElement;
-    const body = header.nextElementSibling;
-    const icon = header.querySelector('.case-toggle');
-    const isOpen = body.classList.contains('open');
-
-    // Close all
-    document.querySelectorAll('.case-body').forEach(b => b.classList.remove('open'));
-    document.querySelectorAll('.case-header').forEach(h => h.classList.remove('open'));
-    document.querySelectorAll('.case-toggle').forEach(t => t.classList.remove('open'));
-
-    // Open clicked one if it was closed
-    if (!isOpen) {
-      body.classList.add('open');
-      header.classList.add('open');
-      icon.classList.add('open');
-      history.replaceState(null, '', '#' + caseEl.id);
-    } else {
-      history.replaceState(null, '', window.location.pathname);
-    }
-  }
 
   // Auto-open case from URL hash
-  function openFromHash() {
-    const id = window.location.hash.slice(1);
-    if (!id) return;
-    const caseEl = document.getElementById(id);
-    if (!caseEl) return;
-    if (!caseEl.classList.contains('case')) return; // don't auto-open for section anchors
-    const header = caseEl.querySelector('.case-header');
-    const body = caseEl.querySelector('.case-body');
-    const icon = caseEl.querySelector('.case-toggle');
-    if (header && body && icon) {
-      body.classList.add('open');
-      header.classList.add('open');
-      icon.classList.add('open');
-      setTimeout(() => {
-        const top = caseEl.getBoundingClientRect().top + window.scrollY - 24;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }, 100);
-    }
-  }
 
   window.addEventListener('DOMContentLoaded', () => {
-    openFromHash();
 
     let suppressObserver = false;
 
@@ -1174,7 +735,6 @@
     });
   });
 
-  window.addEventListener('hashchange', openFromHash);
 </script>
 
 <script>
