@@ -210,7 +210,7 @@
       <li><strong>Target Company Awareness Problem.</strong> You have a list of target companies, but new relevant companies appear constantly and there is no systematic way to discover them.</li>
       <li><strong>Target Position Awareness Problem.</strong> Monitoring a large list of companies for new openings requires significant, repetitive manual effort.</li>
       <li><strong>Negative Company Filtering Problem.</strong> LinkedIn lets you exclude individual job postings but not entire companies. Companies you know are not a fit must be manually skipped every session.</li>
-      <li><strong>Hard Stop Criteria Filtering Problem.</strong> Custom disqualifiers – language requirements, industry restrictions, recent layoffs – have no native filter and must be applied manually every time.</li>
+      <li id="hard-stop"><strong>Hard Stop Criteria Filtering Problem.</strong> <strong>A hard stop</strong> is a personal disqualifier that rules a posting out however well it otherwise fits – a language requirement, an industry, a recent round of layoffs. LinkedIn has no native filter for them, so they are applied by hand every time.</li>
       <li><strong>Timing Problem.</strong> For competitive roles, applying within the first 24–48 hours meaningfully increases response rates. Manual processes make this hard to sustain.</li>
     </ul>
     <p>The current application funnel compounds these problems: most companies use ATS systems that filter CVs before any human sees them (<strong>filter 1</strong>), and recruiters spend an average of ~7 seconds on initial CV review (<strong>filter 2</strong>). Both filters reward precision over volume, which makes sourcing quality – not application quantity – the real lever. Based on observed weekly job search cycles, these five problems account for approximately <strong>65% of total job search time</strong> before a single CV is tailored. <a href="/research/job-search-automation/65-percent/">See the full breakdown →</a></p>
@@ -227,8 +227,8 @@
     </ol>
     <p>The watch and skip lists are maintained in parallel deliberately. Knowing a company is not a fit is as valuable as knowing one is – it eliminates re-evaluation on future encounters and sharpens the criteria over time. All lists are live and updated continuously.</p>
 
-    <h3>The Cycle</h3>
-    <p>Once the lists are in place, a weekly sourcing cycle runs as follows:</p>
+    <h3 id="the-cycle">The Cycle</h3>
+    <p><strong>A sourcing cycle</strong> is one weekly pass through the watch list: every company's careers page checked, new postings collected and filtered against the criteria, and only precise matches kept. <strong>The watch list</strong> is the set of companies whose careers pages are checked on that pass, each kept with its career-page URL, alongside a skip list of companies deliberately excluded. Once the lists are in place, the cycle runs as follows:</p>
     <ol>
       <li>Go through <strong>Companies_to_watch_list</strong> → check each company's careers page (at least 74% of active LinkedIn employers have one – <a href="/research/job-search-automation/career-page-probability/">see the probability breakdown</a>)</li>
       <li>For any new positions: check against <strong>Position_description_list</strong>, then against <strong>Hard_stop_list</strong>. If both pass → add to shortlist for application</li>
