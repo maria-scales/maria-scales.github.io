@@ -1,11 +1,11 @@
 subject,required_by,recommended_by,total_mentions,role
-Mathematics,30,2,32,Core requirement
-Further Mathematics,2,25,27,Widely recommended
-Physics,12,15,27,Often required
-Chemistry,4,15,19,Widely recommended
-Computing,1,13,14,Sector-specific
-Biology,4,6,10,Sector-specific
-Economics,0,5,5,Sector-specific
-Geography,0,3,3,Sector-specific
-Statistics,0,3,3,Sector-specific
-Psychology,0,1,1,Sector-specific
+Mathematics,22,1,23,Core requirement
+Physics,11,6,17,Often required
+Further Mathematics,2,12,14,Widely recommended
+Chemistry,6,7,13,Often required
+Biology,4,6,10,Occasionally required
+Economics,0,4,4,Recommended only
+Design and Technology,0,2,2,Recommended only
+Geography,0,2,2,Recommended only
+Statistics,0,2,2,Recommended only
+Psychology,0,1,1,Recommended only

@@ -12,11 +12,11 @@
     gtag('config', 'G-HBDQ97WX4K');
   </script>
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="What 31 STEM degrees ask for at A-level: Mathematics required by 30 of them, 9 of the 31 checked against live university pages, as CSV.">
+  <meta name="description" content="What STEM degrees ask for at A-level: 23 programmes read off live admissions pages, Mathematics named by 22 of them, as CSV.">
   <link rel="canonical" href="https://mariascales.com/research/long-bet/data/a-levels/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="A-level requirements by STEM programme – Maria Atamanova">
-  <meta property="og:description" content="What 31 STEM degrees ask for at A-level: Mathematics required by 30 of them, 9 of the 31 checked against live university pages, as CSV.">
+  <meta property="og:description" content="What STEM degrees ask for at A-level: 23 programmes read off live admissions pages, Mathematics named by 22 of them, as CSV.">
   <meta property="og:url" content="https://mariascales.com/research/long-bet/data/a-levels/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <meta property="og:site_name" content="Maria Atamanova">
@@ -24,7 +24,7 @@
   <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A-level requirements by STEM programme – Maria Atamanova">
-  <meta name="twitter:description" content="What 31 STEM degrees ask for at A-level: Mathematics required by 30 of them, 9 of the 31 checked against live university pages, as CSV.">
+  <meta name="twitter:description" content="What STEM degrees ask for at A-level: 23 programmes read off live admissions pages, Mathematics named by 22 of them, as CSV.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -120,7 +120,7 @@
     {
       "@type": "Dataset",
       "name": "A-level requirements by STEM programme, 2025",
-      "description": "Required and recommended A-level subjects for 31 canonical STEM degree programmes, with the typical offer and whether the row was verified against a live university admissions page. Mathematics is required by 30 of the 31.",
+      "description": "Required and recommended A-level subjects for 31 canonical STEM degree programmes, each read off a live UK university admissions page and linked to it. Mathematics is named by 22 of the 23 programmes taught in the UK; the other 8 have no UK undergraduate degree.",
       "url": "https://mariascales.com/research/long-bet/data/a-levels/",
       "creator": {
         "@type": "Person",
@@ -146,6 +146,8 @@
       "isBasedOn": [
         "https://www.cam.ac.uk/",
         "https://www.ed.ac.uk/",
+        "https://www.imperial.ac.uk/",
+        "https://www.manchester.ac.uk/",
         "https://www.ox.ac.uk/",
         "https://www.ucl.ac.uk/"
       ],
@@ -183,12 +185,17 @@
         {
           "@type": "PropertyValue",
           "name": "source_status",
-          "description": "verified = read off a live admissions page; estimated = not"
+          "description": "verified = read off the linked admissions page; not offered = no undergraduate degree of this name at any UK university in the ARWU top 100"
         },
         {
           "@type": "PropertyValue",
           "name": "source_university",
-          "description": "UK universities the verified rows were read from; empty for estimated rows"
+          "description": "UK university the row was read from; empty where the degree is not offered"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "source_url",
+          "description": "The admissions page the row was read from"
         },
         {
           "@type": "PropertyValue",
@@ -269,27 +276,27 @@
 <article class="article">
   <div class="meta">The Long Bet · Dataset · Sep 2026</div>
   <h1>A-level requirements by STEM programme</h1>
-  <p class="subtitle">What 31 STEM degrees ask for at A-level: Mathematics required by 30 of them, 9 of the 31 checked against live university pages, as CSV.</p>
+  <p class="subtitle">What STEM degrees ask for at A-level: 23 programmes read off live admissions pages, Mathematics named by 22 of them, as CSV.</p>
   <div class="tldr lead"><div class="tldr-label">TL;DR</div>
     <ul>
-      <li><strong>Mathematics is required by 30 of the 31 programmes</strong> in this table.
-      It is not one option among many; it is the entry ticket to almost every STEM degree
-      at this level.</li>
-      <li>After it the field thins fast: <strong>Physics required by 12</strong>,
-      Chemistry by 4, Biology by 4, Further Mathematics by 2 &ndash; but Further
-      Mathematics is <strong>recommended by 25</strong>, the widest recommendation of any
-      subject.</li>
-      <li><strong>Ten A-level subjects appear at all</strong> across the 31 programmes.
-      Everything else a school offers is, for these degrees, neither required nor
-      recommended by any of the 31 entries.</li>
-      <li><strong>9 of the 31 rows were checked against live university admissions pages;
-      the other 22 are estimates</strong> and are marked as such in the table and in the
-      CSV. This is the weakest part of the dataset and it is not smoothed over.</li>
+      <li><strong>Mathematics is named in the entry requirements of 22 of the 23
+      programmes</strong> that exist as UK degrees, and is compulsory outright in 19 of
+      them. The one that asks for nothing in particular is Civil Engineering at UCL.</li>
+      <li>After it the field thins fast: <strong>Physics named by 11</strong>, Chemistry
+      by 6, Biology by 4, Further Mathematics by 2 &ndash; but Further Mathematics is
+      <strong>recommended by 12</strong>, the widest recommendation of any subject.</li>
+      <li><strong>Ten A-level subjects appear at all.</strong> Everything else a school
+      offers is, for these degrees, neither required nor recommended by any of them.</li>
+      <li><strong>Every one of the 23 rows was read off a live admissions page and links
+      to it.</strong> The remaining <strong>8 of the 31 programmes are not taught as
+      undergraduate degrees</strong> at any of the eight UK universities in the ARWU top
+      100, so they have no A-level requirement to state and are marked <em>not
+      offered</em> rather than estimated.</li>
     </ul></div>
   <div class="download"><div class="download-label">Download</div>
     <p><a href="/research/long-bet/raw/alevel_requirements_by_programme.csv">alevel_requirements_by_programme.csv</a> &ndash; 31 rows, UTF-8, columns
     <code>programme, cluster, required, n_required, recommended, typical_offer,
-    source_status, source_university, notes</code>.</p>
+    source_status, source_university, source_url, notes</code>.</p>
     <p><a href="/research/long-bet/raw/alevel_subject_frequency.csv">alevel_subject_frequency.csv</a> &ndash; 10 rows, columns
     <code>subject, required_by, recommended_by, total_mentions, role</code>.</p>
     <p><a href="/research/long-bet/raw/ALevel_Prerequisites.xlsx">ALevel_Prerequisites.xlsx</a>
@@ -303,79 +310,91 @@
 <div class="tablewrap"><table class="data">
 <thead><tr><th class="l">Programme</th><th class="l">Cluster</th><th class="l">Required A-levels</th><th class="l">Recommended</th><th>Typical offer</th><th>Source</th><th class="l">Checked against</th></tr></thead>
 <tbody>
-<tr><td class="l">Artificial Intelligence</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Physics, Computing</td><td>A*AA</td><td>verified</td><td class="l">Edinburgh</td></tr>
-<tr><td class="l">CS &amp; AI</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Computing, Physics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Computational Science</td><td class="l">CS &amp; AI</td><td class="l">Mathematics &middot; Physics or Computing</td><td class="l">Further Mathematics, Computing, Physics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Computer Science</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Physics, Computing</td><td>A*A*A</td><td>verified</td><td class="l">Cambridge + UCL + Oxford</td></tr>
-<tr><td class="l">Data Science</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Chemistry, Economics, Physics, Statistics</td><td>A*AA</td><td>verified</td><td class="l">UCL</td></tr>
-<tr><td class="l">Biochemistry</td><td class="l">Chemistry</td><td class="l">Biology &middot; Chemistry</td><td class="l">Mathematics, Physics, Further Mathematics</td><td>A*AA</td><td>verified</td><td class="l">Edinburgh + UCL + Oxford + Cambridge</td></tr>
-<tr><td class="l">Chemistry</td><td class="l">Chemistry</td><td class="l">Chemistry &middot; Mathematics</td><td class="l">Physics, Biology, Further Mathematics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Bioinformatics</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">Mathematics &middot; Biology</td><td class="l">Chemistry, Computing, Further Mathematics</td><td>A*A*A</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Computational Biology</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">Mathematics &middot; Biology</td><td class="l">Chemistry, Computing, Further Mathematics</td><td>A*A*A</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Neuroscience</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">Chemistry &middot; Biology or Mathematics or Physics</td><td class="l">Mathematics, Biology, Psychology</td><td>A*AA</td><td>verified</td><td class="l">Oxford + UCL</td></tr>
-<tr><td class="l">Earth Sciences</td><td class="l">Earth &amp; Environmental Sciences</td><td class="l">Mathematics</td><td class="l">Chemistry, Physics, Geography, Biology</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Biomedical Engineering</td><td class="l">Engineering – Biomedical</td><td class="l">Mathematics &middot; Physics</td><td class="l">Biology, Chemistry, Further Mathematics</td><td>A*A*A</td><td>verified</td><td class="l">Cambridge + Oxford</td></tr>
-<tr><td class="l">Chemical Engineering</td><td class="l">Engineering – Chemical &amp; Materials</td><td class="l">Mathematics &middot; Chemistry</td><td class="l">Physics, Further Mathematics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Materials Science</td><td class="l">Engineering – Chemical &amp; Materials</td><td class="l">Mathematics</td><td class="l">Physics, Chemistry, Further Mathematics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Civil Engineering</td><td class="l">Engineering – Civil &amp; Environmental</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Geography, Chemistry</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Environmental Engineering</td><td class="l">Engineering – Civil &amp; Environmental</td><td class="l">Mathematics</td><td class="l">Chemistry, Biology, Physics, Geography</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Electrical Engineering</td><td class="l">Engineering – Electrical &amp; Computer</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Computing</td><td>A*A*A</td><td>verified</td><td class="l">Cambridge + Oxford</td></tr>
-<tr><td class="l">Aerospace Engineering</td><td class="l">Engineering – Mechanical &amp; Aerospace</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Chemistry</td><td>A*A*A</td><td>verified</td><td class="l">Cambridge + Oxford</td></tr>
-<tr><td class="l">Mechanical Engineering</td><td class="l">Engineering – Mechanical &amp; Aerospace</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Chemistry</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Engineering (General)</td><td class="l">Engineering – Other</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Chemistry</td><td>A*A*A</td><td>verified</td><td class="l">Cambridge + Oxford</td></tr>
-<tr><td class="l">Industrial Engineering</td><td class="l">Engineering – Other</td><td class="l">Mathematics</td><td class="l">Physics, Further Mathematics, Economics</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Nuclear Engineering</td><td class="l">Engineering – Other</td><td class="l">Mathematics &middot; Physics</td><td class="l">Chemistry, Further Mathematics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Systems Engineering</td><td class="l">Engineering – Other</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Computing</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Interdisciplinary Sciences</td><td class="l">Interdisciplinary</td><td class="l">Mathematics</td><td class="l">Physics, Chemistry, Biology, Computing</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Actuarial Science</td><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Economics, Statistics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Applied Mathematics</td><td class="l">Mathematics</td><td class="l">Mathematics &middot; Further Mathematics</td><td class="l">Physics, Computing</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Mathematics &middot; Further Mathematics</td><td class="l">Physics, Computing, Statistics</td><td>A*A*A</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Operations Research</td><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Economics, Computing</td><td>AAA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Statistics</td><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Computing, Economics</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Astrophysics</td><td class="l">Physics &amp; Astronomy</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Chemistry</td><td>A*AA</td><td>estimated</td><td class="l">not checked</td></tr>
-<tr><td class="l">Physics</td><td class="l">Physics &amp; Astronomy</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics, Chemistry</td><td>A*A*A</td><td>estimated</td><td class="l">not checked</td></tr>
+<tr><td class="l">Artificial Intelligence</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">none</td><td>A*A*A*–AAB</td><td>verified</td><td class="l"><a href="https://study.ed.ac.uk/programmes/undergraduate/388-artificial-intelligence/entry-requirements">Edinburgh</a></td></tr>
+<tr><td class="l">CS &amp; AI</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">none</td><td>A*A*A*–AAB</td><td>verified</td><td class="l"><a href="https://study.ed.ac.uk/programmes/undergraduate/66-artificial-intelligence-and-computer-science/entry-requirements">Edinburgh</a></td></tr>
+<tr><td class="l">Computational Science</td><td class="l">CS &amp; AI</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Computer Science</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics</td><td>A*A*A</td><td>verified</td><td class="l"><a href="https://www.undergraduate.study.cam.ac.uk/courses/computer-science">Cambridge</a></td></tr>
+<tr><td class="l">Data Science</td><td class="l">CS &amp; AI</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Chemistry, Economics, Physics, Statistics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/data-science-bsc-2026">UCL</a></td></tr>
+<tr><td class="l">Biochemistry</td><td class="l">Chemistry</td><td class="l">Chemistry &middot; Biology or Physics or Mathematics</td><td class="l">Mathematics, Biology</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/biochemistry-molecular-and-cellular">Oxford</a></td></tr>
+<tr><td class="l">Chemistry</td><td class="l">Chemistry</td><td class="l">Chemistry &middot; Mathematics</td><td class="l">Further Mathematics</td><td>A*A*A</td><td>verified</td><td class="l"><a href="https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/chemistry">Oxford</a></td></tr>
+<tr><td class="l">Bioinformatics</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Computational Biology</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Neuroscience</td><td class="l">Computational Biology &amp; Bioinformatics</td><td class="l">Chemistry &middot; Biology or Mathematics or Physics</td><td class="l">none</td><td>AAA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/neuroscience-bsc-2026">UCL</a></td></tr>
+<tr><td class="l">Earth Sciences</td><td class="l">Earth &amp; Environmental Sciences</td><td class="l">Mathematics &middot; Physics or Chemistry</td><td class="l">Chemistry, Physics, Biology, Further Mathematics</td><td>A*AA/AAAA</td><td>verified</td><td class="l"><a href="https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/earth-sciences-geology">Oxford</a></td></tr>
+<tr><td class="l">Biomedical Engineering</td><td class="l">Engineering – Biomedical</td><td class="l">Mathematics &middot; Physics or Biology</td><td class="l">none</td><td>AAA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/biomedical-engineering-meng-2026">UCL</a></td></tr>
+<tr><td class="l">Chemical Engineering</td><td class="l">Engineering – Chemical &amp; Materials</td><td class="l">Mathematics &middot; Chemistry</td><td class="l">Biology, Economics, Further Mathematics, Geography, Physics, Psychology</td><td>AAA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/chemical-engineering-meng-2026">UCL</a></td></tr>
+<tr><td class="l">Materials Science</td><td class="l">Engineering – Chemical &amp; Materials</td><td class="l">Mathematics &middot; Physics</td><td class="l">Chemistry, Further Mathematics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/materials-science">Oxford</a></td></tr>
+<tr><td class="l">Civil Engineering</td><td class="l">Engineering – Civil &amp; Environmental</td><td class="l">none</td><td class="l">none</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/civil-engineering-meng-2026">UCL</a></td></tr>
+<tr><td class="l">Environmental Engineering</td><td class="l">Engineering – Civil &amp; Environmental</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Electrical Engineering</td><td class="l">Engineering – Electrical &amp; Computer</td><td class="l">Mathematics</td><td class="l">Physics, Further Mathematics, Biology, Chemistry, Design and Technology</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/electronic-and-electrical-engineering-meng-2026">UCL</a></td></tr>
+<tr><td class="l">Aerospace Engineering</td><td class="l">Engineering – Mechanical &amp; Aerospace</td><td class="l">Mathematics &middot; Physics</td><td class="l">none</td><td>A*A*A*</td><td>verified</td><td class="l"><a href="https://www.imperial.ac.uk/study/courses/undergraduate/aeronautical-engineering/">Imperial</a></td></tr>
+<tr><td class="l">Mechanical Engineering</td><td class="l">Engineering – Mechanical &amp; Aerospace</td><td class="l">Mathematics &middot; Physics</td><td class="l">Design and Technology, Economics, Geography, Chemistry, Biology</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/mechanical-engineering-meng-2026">UCL</a></td></tr>
+<tr><td class="l">Engineering (General)</td><td class="l">Engineering – Other</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics</td><td>A*A*A</td><td>verified</td><td class="l"><a href="https://www.undergraduate.study.cam.ac.uk/courses/engineering">Cambridge</a></td></tr>
+<tr><td class="l">Industrial Engineering</td><td class="l">Engineering – Other</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Nuclear Engineering</td><td class="l">Engineering – Other</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Systems Engineering</td><td class="l">Engineering – Other</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Interdisciplinary Sciences</td><td class="l">Interdisciplinary</td><td class="l">Mathematics &middot; Biology or Chemistry or Physics</td><td class="l">Biology, Chemistry, Physics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/natural-sciences-bsc-2026">UCL</a></td></tr>
+<tr><td class="l">Actuarial Science</td><td class="l">Mathematics</td><td class="l">Mathematics or Further Mathematics</td><td class="l">Further Mathematics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.manchester.ac.uk/study/undergraduate/courses/2027/07383/bsc-actuarial-science-and-mathematics/">Manchester</a></td></tr>
+<tr><td class="l">Applied Mathematics</td><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Further Mathematics</td><td>A*A*A*–A*AB</td><td>verified</td><td class="l"><a href="https://study.ed.ac.uk/programmes/undergraduate/429-applied-mathematics/entry-requirements">Edinburgh</a></td></tr>
+<tr><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Mathematics &middot; Further Mathematics</td><td class="l">none</td><td>A*A*A</td><td>verified</td><td class="l"><a href="https://www.undergraduate.study.cam.ac.uk/courses/mathematics-ba-hons-mmath">Cambridge</a></td></tr>
+<tr><td class="l">Operations Research</td><td class="l">Mathematics</td><td class="l">none</td><td class="l">none</td><td>none</td><td>not offered</td><td class="l">no UK degree</td></tr>
+<tr><td class="l">Statistics</td><td class="l">Mathematics</td><td class="l">Mathematics</td><td class="l">Further Mathematics, Chemistry, Economics, Physics, Statistics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/study/prospective-students/undergraduate/courses/statistics-bsc">UCL</a></td></tr>
+<tr><td class="l">Astrophysics</td><td class="l">Physics &amp; Astronomy</td><td class="l">Mathematics &middot; Physics</td><td class="l">none</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ucl.ac.uk/prospective-students/undergraduate/degrees/astrophysics-msci-2026">UCL</a></td></tr>
+<tr><td class="l">Physics</td><td class="l">Physics &amp; Astronomy</td><td class="l">Mathematics &middot; Physics</td><td class="l">Further Mathematics</td><td>A*AA</td><td>verified</td><td class="l"><a href="https://www.ox.ac.uk/admissions/undergraduate/courses/course-listing/physics">Oxford</a></td></tr>
 </tbody></table></div>
   <p class="caption">Table 1. 31 programmes, grouped by cluster. Source column:
-  <em>verified</em> means the row was read off a live university admissions page,
-  <em>estimated</em> means it was not.</p>
+  <em>verified</em> means the row was read off the live admissions page linked beside
+  it; <em>not offered</em> means no UK university in the ARWU top 100 teaches that
+  degree, so there is no A-level requirement to record.</p>
   <h2>How often each subject is asked for</h2>
-  <p>The same 31 rows counted by subject. A subject named as one of several alternatives
-  counts as a mention for each of them &ndash; that is how the totals below are built, and
-  it is why the columns do not add up to 31 if you count programmes instead of mentions.
-  Two programmes &ndash; Computational Science and Neuroscience &ndash; name a subject both as
-  an alternative requirement and as a recommendation, and it counts in both columns.</p>
+  <p>The 23 verified rows counted by subject; the 8 not taught in the UK are left out,
+  because a degree with no A-level requirement cannot be counted for or against one. A
+  subject named as one of several alternatives counts as a mention for each of them
+  &ndash; that is how the totals below are built, and it is why the columns do not add up
+  to 23 if you count programmes instead of mentions. Four programmes name a subject both
+  as an alternative requirement and as a recommendation, and it counts in both columns.</p>
 <div class="tablewrap"><table class="data">
 <thead><tr><th class="l">A-level subject</th><th>Required by</th><th>Recommended by</th><th>Total mentions</th><th class="l">Role</th></tr></thead>
 <tbody>
-<tr><td class="l">Mathematics</td><td>30</td><td>2</td><td>32</td><td class="l">Core requirement</td></tr>
-<tr><td class="l">Further Mathematics</td><td>2</td><td>25</td><td>27</td><td class="l">Widely recommended</td></tr>
-<tr><td class="l">Physics</td><td>12</td><td>15</td><td>27</td><td class="l">Often required</td></tr>
-<tr><td class="l">Chemistry</td><td>4</td><td>15</td><td>19</td><td class="l">Widely recommended</td></tr>
-<tr><td class="l">Computing</td><td>1</td><td>13</td><td>14</td><td class="l">Sector-specific</td></tr>
-<tr><td class="l">Biology</td><td>4</td><td>6</td><td>10</td><td class="l">Sector-specific</td></tr>
-<tr><td class="l">Economics</td><td>0</td><td>5</td><td>5</td><td class="l">Sector-specific</td></tr>
-<tr><td class="l">Geography</td><td>0</td><td>3</td><td>3</td><td class="l">Sector-specific</td></tr>
-<tr><td class="l">Statistics</td><td>0</td><td>3</td><td>3</td><td class="l">Sector-specific</td></tr>
-<tr><td class="l">Psychology</td><td>0</td><td>1</td><td>1</td><td class="l">Sector-specific</td></tr>
+<tr><td class="l">Mathematics</td><td>22</td><td>1</td><td>23</td><td class="l">Core requirement</td></tr>
+<tr><td class="l">Physics</td><td>11</td><td>6</td><td>17</td><td class="l">Often required</td></tr>
+<tr><td class="l">Further Mathematics</td><td>2</td><td>12</td><td>14</td><td class="l">Widely recommended</td></tr>
+<tr><td class="l">Chemistry</td><td>6</td><td>7</td><td>13</td><td class="l">Often required</td></tr>
+<tr><td class="l">Biology</td><td>4</td><td>6</td><td>10</td><td class="l">Occasionally required</td></tr>
+<tr><td class="l">Economics</td><td>0</td><td>4</td><td>4</td><td class="l">Recommended only</td></tr>
+<tr><td class="l">Design and Technology</td><td>0</td><td>2</td><td>2</td><td class="l">Recommended only</td></tr>
+<tr><td class="l">Geography</td><td>0</td><td>2</td><td>2</td><td class="l">Recommended only</td></tr>
+<tr><td class="l">Statistics</td><td>0</td><td>2</td><td>2</td><td class="l">Recommended only</td></tr>
+<tr><td class="l">Psychology</td><td>0</td><td>1</td><td>1</td><td class="l">Recommended only</td></tr>
 </tbody></table></div>
   <p class="caption">Table 2. Ten subjects, most mentioned first.</p>
   <h2>How it was collected</h2>
   <p>The programme list is the same 31 canonical names as the
   <a href="/research/long-bet/data/programmes/">programme coverage dataset</a>. For each,
-  entry requirements were taken from a UK university that teaches it &ndash; the one named
-  in the last column &ndash; because A-levels are a UK qualification and UK pages state
-  required subjects explicitly, which most other systems do not. Nine programmes were read
-  off the live admissions page; the remaining 22 were filled from prior knowledge of the
-  same requirements and are marked <em>estimated</em>.</p>
+  entry requirements were read off the admissions page of a UK university that teaches
+  it &ndash; the one linked in the last column &ndash; because A-levels are a UK
+  qualification and UK pages state required subjects explicitly, which most other systems
+  do not. The search covered the eight UK universities in the ARWU top 100: Cambridge,
+  Oxford, UCL, Imperial, Edinburgh, Manchester, King&rsquo;s College London and Bristol.
+  Eight of the 31 names have no undergraduate degree at any of them &ndash; some are
+  taught only at master&rsquo;s level, some name a department or a specialism rather than
+  a degree &ndash; and those rows record that instead of a requirement.</p>
   <h2>Limitations</h2>
-  <p>Three, and they matter in this order. <strong>22 of 31 rows are unverified</strong>:
-  they are consistent with how these degrees admit students, but no page was opened for
-  them. <strong>The sample is UK-only and single-university per programme</strong>: a
-  different university would give a different typical offer, and often a different
-  recommended list. <strong>The typical offer moves</strong> &ndash; it is a snapshot of
-  2025 admissions, not a rule. What the table is good for is the shape of the answer, which
-  subject is load-bearing and which is optional; what it is not good for is planning an
-  application to a named university.</p>
+  <p>Three, and they matter in this order. <strong>The sample is UK-only and
+  single-university per programme</strong>: a different university would give a different
+  typical offer, and often a different recommended list &ndash; Physics is A*AA at Oxford
+  and A*A*A elsewhere. <strong>Eight of the 31 programmes drop out</strong> for having no
+  UK undergraduate degree, so the counts are out of 23, not 31, and they are not
+  comparable with a global programme count. <strong>The rows are not all from the same
+  admission cycle</strong>: they were read in September 2026, and where a university
+  publishes one page per cycle most rows are the 2026 page while two are 2027. Cycles
+  differ &ndash; UCL Chemical Engineering lists Further Mathematics among its preferred
+  subjects for 2026 entry and drops it for 2027 &ndash; so every count and every typical
+  offer here is accurate to the page linked beside its row, and is a snapshot rather than
+  a rule that holds across years. What the table is
+  good for is the shape of the answer, which subject is load-bearing and which is
+  optional; what it is not good for is planning an application to a named
+  university.</p>
   <div class="series-nav">
     <div class="series-nav-label">Where these numbers are used</div>
     <div class="series-nav-item">
