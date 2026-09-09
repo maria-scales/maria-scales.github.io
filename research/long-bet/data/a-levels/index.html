@@ -133,18 +133,68 @@
         "url": "https://mariascales.com/"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-09-08",
+      "dateModified": "2026-09-09",
+      "isPartOf": {
+        "@type": "CreativeWorkSeries",
+        "name": "The Long Bet: A Global Analysis of STEM Education in the Age of AI",
+        "url": "https://mariascales.com/research/long-bet/"
+      },
       "inLanguage": "en",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "temporalCoverage": "2025",
       "isAccessibleForFree": true,
       "isBasedOn": [
-        "Cambridge + Oxford",
-        "Cambridge + UCL + Oxford",
-        "Edinburgh",
-        "Edinburgh + UCL + Oxford + Cambridge",
-        "Oxford + UCL",
-        "UCL"
+        "https://www.cam.ac.uk/",
+        "https://www.ed.ac.uk/",
+        "https://www.ox.ac.uk/",
+        "https://www.ucl.ac.uk/"
+      ],
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "programme",
+          "description": "One of the 31 canonical STEM programmes"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "cluster",
+          "description": "Subject cluster of the programme"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "required",
+          "description": "A-level subjects the entry requirements state as compulsory; | separates subjects, or marks alternatives"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "n_required",
+          "description": "Number of required subjects, where the source states it"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "recommended",
+          "description": "A-level subjects named as useful or preferred"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "typical_offer",
+          "description": "Typical A-level offer, 2025"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "source_status",
+          "description": "verified = read off a live admissions page; estimated = not"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "source_university",
+          "description": "UK universities the verified rows were read from; empty for estimated rows"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "notes",
+          "description": "Free-text notes from the workbook"
+        }
       ],
       "distribution": [
         {
@@ -231,7 +281,7 @@
       subject.</li>
       <li><strong>Ten A-level subjects appear at all</strong> across the 31 programmes.
       Everything else a school offers is, for these degrees, neither required nor
-      recommended by anyone.</li>
+      recommended by any of the 31 entries.</li>
       <li><strong>9 of the 31 rows were checked against live university admissions pages;
       the other 22 are estimates</strong> and are marked as such in the table and in the
       CSV. This is the weakest part of the dataset and it is not smoothed over.</li>
@@ -291,7 +341,9 @@
   <h2>How often each subject is asked for</h2>
   <p>The same 31 rows counted by subject. A subject named as one of several alternatives
   counts as a mention for each of them &ndash; that is how the totals below are built, and
-  it is why the columns do not add up to 31 if you count programmes instead of mentions.</p>
+  it is why the columns do not add up to 31 if you count programmes instead of mentions.
+  Two programmes &ndash; Computational Science and Neuroscience &ndash; name a subject both as
+  an alternative requirement and as a recommendation, and it counts in both columns.</p>
 <div class="tablewrap"><table class="data">
 <thead><tr><th class="l">A-level subject</th><th>Required by</th><th>Recommended by</th><th>Total mentions</th><th class="l">Role</th></tr></thead>
 <tbody>
