@@ -1,0 +1,150 @@
+<svg viewBox="0 0 1120 660" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" role="img">
+  <title>Job Search Database ER Diagram – as of 5 September 2026</title>
+  <desc>Entity-relationship diagram of a 16-table schema as of 5 September 2026; eight sourcing and rule tables are drawn in full, the eight tables of the application side are shown as one private group. Eight of the 16 did not exist in the June 2026 design.</desc>
+  <rect width="1120" height="660" fill="#fafafa"/>
+  <defs><marker id="arrow-fk" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#888"/></marker></defs>
+
+  <!-- companies -->
+  <rect x="30" y="60" width="230" height="284" rx="6" fill="#fff" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="30" y="60" width="230" height="28" rx="6" fill="#1a73e8"/>
+  <rect x="30" y="76" width="230" height="12" fill="#1a73e8"/>
+  <text x="145" y="79" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">companies</text>
+  <text x="44" y="98" font-size="10" fill="#555">🔑 id</text>
+  <text x="44" y="112" font-size="10" fill="#555">company_name · website</text>
+  <text x="44" y="126" font-size="10" fill="#555">linkedin_url · careers_url</text>
+  <text x="44" y="140" font-size="10" fill="#555">industry · size_range · country</text>
+  <text x="44" y="154" font-size="10" fill="#555">ats_type · ats_slug</text>
+  <text x="44" y="168" font-size="10" fill="#555">api_access · fetch_mode</text>
+  <text x="44" y="182" font-size="10" fill="#555">posting_language</text>
+  <line x1="30" y1="183" x2="260" y2="183" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="44" y="202" font-size="10" fill="#1a73e8" font-weight="600">watch_status</text>
+  <text x="44" y="216" font-size="10" fill="#555">skip_reason · skip_subcategory</text>
+  <text x="44" y="230" font-size="10" fill="#555">audience · audience_source</text>
+  <text x="44" y="244" font-size="10" fill="#555">wave · first_seen_source</text>
+  <text x="44" y="258" font-size="10" fill="#555">company_match · match_reason</text>
+  <text x="44" y="272" font-size="10" fill="#555">remote_policy · business_model</text>
+  <text x="44" y="286" font-size="10" fill="#555">last_fetch_at · last_fetch_result</text>
+  <text x="44" y="300" font-size="10" fill="#555">added_at · updated_at</text>
+  <rect x="103" y="322" width="84" height="18" rx="9" fill="#1a73e8" opacity="0.12"/>
+  <text x="145" y="334" text-anchor="middle" font-size="10" fill="#1a73e8" font-weight="600">1,656 rows</text>
+
+  <!-- job_postings -->
+  <rect x="300" y="40" width="240" height="284" rx="6" fill="#fff" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="300" y="40" width="240" height="28" rx="6" fill="#2e7d32"/>
+  <rect x="300" y="56" width="240" height="12" fill="#2e7d32"/>
+  <text x="420" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">job_postings</text>
+  <text x="314" y="78" font-size="10" fill="#555">🔑 id</text>
+  <text x="314" y="92" font-size="10" fill="#b71c1c">🔗 company_id</text>
+  <text x="314" y="106" font-size="10" fill="#555">ats_job_id · title</text>
+  <text x="314" y="120" font-size="10" fill="#555">location · location_city</text>
+  <text x="314" y="134" font-size="10" fill="#555">location_countries · remote_scope</text>
+  <text x="314" y="148" font-size="10" fill="#2e7d32" font-weight="600">work_mode</text>
+  <text x="314" y="162" font-size="10" fill="#555">job_url · posting_language</text>
+  <line x1="300" y1="163" x2="540" y2="163" stroke="#e8e8e8" stroke-width="1"/>
+  <text x="314" y="182" font-size="10" fill="#2e7d32" font-weight="600">title_tier</text>
+  <text x="314" y="196" font-size="10" fill="#555">position_type_1 · position_type_2</text>
+  <text x="314" y="210" font-size="10" fill="#555">score_title · relevance_score</text>
+  <text x="314" y="224" font-size="10" fill="#2e7d32" font-weight="600">blocked_reason</text>
+  <text x="314" y="238" font-size="10" fill="#555">first_seen_at · last_seen_at</text>
+  <text x="314" y="252" font-size="10" fill="#555">is_active · closed_at · closed_reason</text>
+  <text x="314" y="266" font-size="10" fill="#555">published_at · salary_hint</text>
+  <text x="314" y="280" font-size="10" fill="#555">description_attempts</text>
+  <rect x="378" y="302" width="84" height="18" rx="9" fill="#2e7d32" opacity="0.12"/>
+  <text x="420" y="314" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="600">41,441 rows</text>
+
+  <!-- posting_texts -->
+  <rect x="580" y="40" width="210" height="88" rx="6" fill="#fff" stroke="#00838f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="580" y="40" width="210" height="28" rx="6" fill="#00838f"/>
+  <rect x="580" y="56" width="210" height="12" fill="#00838f"/>
+  <text x="685" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">posting_texts</text>
+  <text x="594" y="78" font-size="10" fill="#b71c1c">🔗 posting_id</text>
+  <text x="594" y="92" font-size="10" fill="#555">description</text>
+  <rect x="643" y="106" width="84" height="18" rx="9" fill="#00838f" opacity="0.12"/>
+  <text x="685" y="118" text-anchor="middle" font-size="10" fill="#00838f" font-weight="600">14,428 rows</text>
+
+  <!-- posting_raw -->
+  <rect x="580" y="138" width="210" height="88" rx="6" fill="#fff" stroke="#00838f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="580" y="138" width="210" height="28" rx="6" fill="#00838f"/>
+  <rect x="580" y="154" width="210" height="12" fill="#00838f"/>
+  <text x="685" y="157" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">posting_raw</text>
+  <text x="594" y="176" font-size="10" fill="#b71c1c">🔗 posting_id</text>
+  <text x="594" y="190" font-size="10" fill="#555">raw_payload</text>
+  <rect x="643" y="204" width="84" height="18" rx="9" fill="#00838f" opacity="0.12"/>
+  <text x="685" y="216" text-anchor="middle" font-size="10" fill="#00838f" font-weight="600">24,716 rows</text>
+
+  <!-- posting_facets -->
+  <rect x="580" y="236" width="210" height="144" rx="6" fill="#fff" stroke="#00838f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="580" y="236" width="210" height="28" rx="6" fill="#00838f"/>
+  <rect x="580" y="252" width="210" height="12" fill="#00838f"/>
+  <text x="685" y="255" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">posting_facets</text>
+  <text x="594" y="274" font-size="10" fill="#b71c1c">🔗 posting_id</text>
+  <text x="594" y="288" font-size="10" fill="#00838f" font-weight="600">dimension · value</text>
+  <text x="594" y="302" font-size="10" fill="#00838f" font-weight="600">action</text>
+  <text x="594" y="316" font-size="10" fill="#555">rule · hits</text>
+  <text x="594" y="330" font-size="10" fill="#555">evidence</text>
+  <text x="594" y="344" font-size="10" fill="#555">source · updated_at</text>
+  <rect x="643" y="358" width="84" height="18" rx="9" fill="#00838f" opacity="0.12"/>
+  <text x="685" y="370" text-anchor="middle" font-size="10" fill="#00838f" font-weight="600">3,616 rows</text>
+
+  <!-- application side: eight tables, kept private -->
+  <rect x="30" y="440" width="760" height="150" rx="6" fill="#f3f3f3" stroke="#9e9e9e" stroke-width="1.5" stroke-dasharray="2 3"/>
+  <text x="410" y="470" text-anchor="middle" font-size="12" font-weight="700" fill="#616161">application side · 8 tables · not shown</text>
+  <text x="410" y="498" text-anchor="middle" font-size="10" fill="#616161">applications, application_status_history, cv_versions and cover_letters</text>
+  <text x="410" y="513" text-anchor="middle" font-size="10" fill="#616161">from the June design, plus four tables added since</text>
+  <text x="410" y="541" text-anchor="middle" font-size="10" fill="#616161">Keyed to job_postings and companies.</text>
+  <text x="410" y="556" text-anchor="middle" font-size="10" fill="#616161">This is the author's own hiring funnel and stays private.</text>
+  <text x="410" y="576" text-anchor="middle" font-size="10" fill="#9e9e9e">no columns, no row counts</text>
+
+  <!-- hard_stop_criteria -->
+  <rect x="830" y="40" width="250" height="116" rx="6" fill="#fff" stroke="#e65100" stroke-width="1.5"/>
+  <rect x="830" y="40" width="250" height="28" rx="6" fill="#e65100"/>
+  <rect x="830" y="56" width="250" height="12" fill="#e65100"/>
+  <text x="955" y="59" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">hard_stop_criteria</text>
+  <text x="844" y="78" font-size="10" fill="#555">🔑 id</text>
+  <text x="844" y="92" font-size="10" fill="#555">criteria_type · criteria_value</text>
+  <text x="844" y="106" font-size="10" fill="#555">description</text>
+  <text x="844" y="120" font-size="10" fill="#555">is_active</text>
+  <rect x="913" y="134" width="84" height="18" rx="9" fill="#e65100" opacity="0.12"/>
+  <text x="955" y="146" text-anchor="middle" font-size="10" fill="#e65100" font-weight="600">11 rows</text>
+
+  <!-- position_criteria -->
+  <rect x="830" y="170" width="250" height="116" rx="6" fill="#fff" stroke="#e65100" stroke-width="1.5"/>
+  <rect x="830" y="170" width="250" height="28" rx="6" fill="#e65100"/>
+  <rect x="830" y="186" width="250" height="12" fill="#e65100"/>
+  <text x="955" y="189" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">position_criteria</text>
+  <text x="844" y="208" font-size="10" fill="#555">🔑 id</text>
+  <text x="844" y="222" font-size="10" fill="#555">criteria_type · criteria_value</text>
+  <text x="844" y="236" font-size="10" fill="#555">is_required · weight</text>
+  <text x="844" y="250" font-size="10" fill="#555">notes</text>
+  <rect x="913" y="264" width="84" height="18" rx="9" fill="#e65100" opacity="0.12"/>
+  <text x="955" y="276" text-anchor="middle" font-size="10" fill="#e65100" font-weight="600">85 rows</text>
+
+  <!-- company_fit_criteria -->
+  <rect x="830" y="310" width="250" height="116" rx="6" fill="#fff" stroke="#e65100" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <rect x="830" y="310" width="250" height="28" rx="6" fill="#e65100"/>
+  <rect x="830" y="326" width="250" height="12" fill="#e65100"/>
+  <text x="955" y="329" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">company_fit_criteria</text>
+  <text x="844" y="348" font-size="10" fill="#555">🔑 id</text>
+  <text x="844" y="362" font-size="10" fill="#555">kind · criteria_type</text>
+  <text x="844" y="376" font-size="10" fill="#555">criteria_value · points</text>
+  <text x="844" y="390" font-size="10" fill="#555">is_active</text>
+  <rect x="913" y="404" width="84" height="18" rx="9" fill="#e65100" opacity="0.12"/>
+  <text x="955" y="416" text-anchor="middle" font-size="10" fill="#e65100" font-weight="600">79 rows</text>
+  <polyline points="260,200 296,200" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+  <polyline points="540,79 576,79" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+  <polyline points="540,177 576,177" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+  <polyline points="540,300 576,300" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+  <polyline points="420,404 420,436" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+  <polyline points="135,346 135,418 330,418 330,436" fill="none" stroke="#888" stroke-width="1.2" marker-end="url(#arrow-fk)"/>
+        
+  <!-- legend -->
+  <rect x="830" y="470" width="250" height="162" rx="6" fill="#fff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="846" y="496" font-size="11" font-weight="700" fill="#333">16 tables · 8 drawn</text>
+  <text x="846" y="518" font-size="10" fill="#555">Solid outline – designed in June 2026</text>
+  <text x="846" y="536" font-size="10" fill="#555">Dashed outline – added since</text>
+  <rect x="846" y="550" width="30" height="14" rx="3" fill="#fff" stroke="#00838f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="886" y="561" font-size="10" fill="#555">8 of the 16 are new: 4 drawn, 4 in the group</text>
+  <text x="846" y="586" font-size="10" fill="#b71c1c">🔗 foreign key</text>
+  <text x="846" y="604" font-size="10" fill="#555">Row counts as of 5 Sep 2026,</text>
+  <text x="846" y="618" font-size="10" fill="#555">sourcing and rule tables only</text>
+</svg>
