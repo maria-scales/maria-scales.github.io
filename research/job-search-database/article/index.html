@@ -210,9 +210,9 @@
     <p>Before going into detail, here is the full structure at a glance:</p>
 
     <div class="er-diagram">
-      <img src="er_diagram.svg" alt="Database ER diagram showing 8 tables: companies, job_postings, cv_versions, cover_letters, applications, application_status_history, hard_stop_criteria, position_criteria">
+      <img src="er_diagram.svg" alt="Database ER diagram showing six of the eight tables: companies, job_postings, applications, application_status_history, hard_stop_criteria, position_criteria; cv_versions and cover_letters are not drawn">
     </div>
-    <div class="er-caption">Eight tables, two groups – operational and config – connected by foreign keys. The scraper touches the left side; I touch the right side manually. The config tables sit in the background and drive both.</div>
+    <div class="er-caption">Six of the eight tables, two groups – operational and config – connected by foreign keys; cv_versions and cover_letters are in the schema but not in the picture. The scraper touches the left side; I touch the right side manually. The config tables sit in the background and drive both.</div>
 
     <h2>From Theory to Tables: Mapping the Five Lists</h2>
 
