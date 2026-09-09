@@ -206,7 +206,7 @@
     <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
     <li><strong>41,441 postings collected in 61 days, 20,634 of them already closed</strong> – half of everything the database has ever seen died inside two months. That is the rate at which a hand-maintained list goes stale, invisibly.</li>
-    <li><strong>“It has never cost you anything to store it” did not survive.</strong> Texts and raw payloads moved out of <code>job_postings</code> into two tables, the file is 214 MB, and descriptions are no longer fetched until a posting has passed the title gate.</li>
+    <li><strong>“It’s never cost you anything to store it” did not survive.</strong> Texts and raw payloads moved out of <code>job_postings</code> into two tables, the file is 214 MB, and descriptions are no longer fetched until a posting has passed the title gate.</li>
     <li><strong>A count of matching criteria was replaced by a deterministic dictionary of 88 title rules.</strong> The score failed because the threshold was set in June, before there was any distribution to look at.</li>
     <li><strong>1,802 open rows turned out not to be jobs</strong> but the career page’s own copy. Structures can be designed in advance; vocabularies cannot.</li>
     <li><strong>The handoff line between the machine and my own hands moved four times</strong>, always in the same direction. The rule underneath it: you can only automate a decision that already has a written rule.</li>
@@ -225,9 +225,9 @@
     <h2>June, and sixty-one days later</h2>
 
     <div class="er-diagram">
-      <img src="/research/job-search-database/article/er_diagram.svg" alt="June 2026 ER diagram: eight tables in two groups, operational and config, connected by foreign keys">
+      <img src="/research/job-search-database/article/er_diagram.svg" alt="June 2026 ER diagram as published: six of the eight tables, operational and config, connected by foreign keys; cv_versions and cover_letters were not drawn">
     </div>
-    <div class="er-caption">June 2026, the diagram exactly as published then: eight tables, designed for 118 companies – the application side included, because in June it was.</div>
+    <div class="er-caption">June 2026, the diagram exactly as published then: six of the eight tables drawn – cv_versions and cover_letters were left off the picture – designed for 118 companies, the application side included, because in June it was.</div>
 
     <div class="er-diagram">
       <img src="er_diagram_2026_09_public.svg" alt="September 2026 ER diagram: eight sourcing and config tables drawn with row counts, the eight application-side tables collapsed into one grey box that is not published">
@@ -293,7 +293,7 @@
 
     <h2>The vocabulary I could not have guessed</h2>
 
-    <p>The same failure, from the other end of the pipeline. In June I wrote out the stages an application moves through, as a list: <code>manually_reviewed → applied → screening → test_task → team_interview → hm_interview → higherups_interview → offer</code>, with statuses <code>pending</code>, <code>invited</code>, <code>passed</code>, <code>failed</code>, <code>ghosted</code>, <code>accepted</code>, <code>declined</code>. By late August one of those eight stages and three of those seven statuses had never once been used, and the process had produced three names I had not thought of: <code>tech_interview</code>, <code>test_review</code>, <code>final_interview</code>.</p>
+    <p>The same failure, from the other end of the pipeline. In June I wrote out the stages an application moves through, as a list: <code>manually_reviewed → applied → screening → test_task → team_interview → hm_interview → higherups_interview → offer</code>, with statuses <code>pending</code>, <code>invited</code>, <code>passed</code>, <code>failed</code>, <code>ghosted</code>, <code>accepted</code>, <code>declined</code>. By late August one of those eight stages, <code>higherups_interview</code>, had never once happened, and the process had produced three names I had not thought of: <code>tech_interview</code>, <code>test_review</code>, <code>final_interview</code>.</p>
 
     <p><strong>Structures can be designed in advance. Vocabularies cannot.</strong> A table is a guess about shape, and shape is stable. A category list is a guess about the world, made before the world had been sampled.</p>
 
