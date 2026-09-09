@@ -2,7 +2,7 @@
 
 > Maria Atamanova – applied mathematician, twelve years growing businesses (apps, e-commerce, EdTech, AI data platforms): scaling growth and making it efficient on numbers, not gut feeling. Case studies, original research and interactive unit-economics tools. Senior Growth & Performance Marketing Manager (Praktika, Toloka, Scentbird, Buddy AI). Contact: hello@mariascales.com.
 
-All pages are static HTML with en-dash typography and typed JSON-LD: Article, Dataset, SoftwareApplication, TechArticle, CollectionPage, HowTo, FAQPage, Person, BreadcrumbList. Research articles and dataset pages open with a TL;DR block carrying the main numbers; the four hub pages and the two calculators are lists and applications and have no TL;DR. Numbers on research pages come from the author's own datasets; sources and limitations are stated on each page.
+All pages are static HTML with en-dash typography and typed JSON-LD: Article, Dataset, SoftwareApplication, TechArticle, CollectionPage, HowTo, FAQPage, Person, BreadcrumbList. Research articles, case studies and dataset pages open with a TL;DR block carrying the main numbers; hub and index pages open with a “What is in here” block that does the same job under a different label; the two calculators lead with a summary paragraph and the design-decisions page with a contents list. Numbers on research pages come from the author's own datasets; sources and limitations are stated on each page.
 
 - [Home](https://mariascales.com/): eight case studies with the numbers, the research series, and the two interactive tools, on one page.
 
