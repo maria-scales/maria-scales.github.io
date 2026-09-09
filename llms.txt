@@ -53,7 +53,7 @@ All pages are static HTML with en-dash typography and typed JSON-LD: Article, Da
 
 ## Writing
 
-- [Articles on HackerNoon](https://mariascales.com/articles/): paid acquisition measurement - baseline first, then the threshold a result has to clear: influencer spike of (baseline + volatility) x 2, LTV/CAC of 4 and 2 hours of daily routine before automating, 5% of budget before a creative counts as picked up
+- [Articles on HackerNoon](https://mariascales.com/articles/): paid acquisition measurement - baseline first, then the threshold a result has to clear: influencer spike of (baseline + volatility) x 2, LTV/CAC of 4 and 2 hours of daily routine before automating, 5% of budget before a creative counts as picked up; Sep 2026 - the marketing job-market study in short form (two thirds of "marketing" postings are sales, 3,818 of 6,084), full version with CSVs on this site
 
 ## Optional
 
