@@ -31,6 +31,18 @@
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <!-- Schema.org Person -->
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "mariascales.com",
+  "alternateName": "Maria Atamanova",
+  "url": "https://mariascales.com/",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "name": "Maria Atamanova" },
+  "publisher": { "@type": "Person", "name": "Maria Atamanova" }
+}
+  </script>
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -38,6 +50,7 @@
     "url": "https://mariascales.com",
     "email": "hello@mariascales.com",
     "jobTitle": "Senior Growth & Performance Marketing Manager",
+  "dateModified": "2026-09-08",
     "description": "Performance marketing for AI-era growth – backed by models, not gut feeling.",
     "sameAs": [
       "https://linkedin.com/in/atamanova-m",
@@ -261,7 +274,7 @@
 
     .case-body.open { display: block; }
 
-    .case-body h3 {
+    .case-body h4 {
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -504,14 +517,14 @@
 <!-- ── Case Studies ── -->
 <section class="cases" id="cases">
   <div class="container">
-    <div class="section-label">Case Studies · <a href="/cases/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All cases →</a></div>
+    <h2 class="section-label">Case Studies · <a href="/cases/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All cases →</a></h2>
 
     <!-- 1. Stealth -->
     <div class="case" id="stealth">
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/stealth.svg" alt="Stealth startup" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Growth That Doesn't Lie to Itself</div>
+          <h3 class="case-title">Growth That Doesn't Lie to Itself</h3>
           <div class="case-company">Stealth consumer subscription app · Growth / Performance Marketing</div>
           <div class="case-role">Consumer subscription · Meta scaling · Attribution &amp; signal quality</div>
           <div class="case-outcome">~$900k/month scaling plan stopped · 50+ concepts reset-tested · 2 survived the clean pixel</div>
@@ -521,7 +534,7 @@
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/stealth/" onclick="event.stopPropagation()">View full case study →</a></p>
 
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p>A stealth consumer subscription app, with Meta as the primary acquisition channel and an aggressive scaling mandate ahead of a raise. I joined at the end of the December push – inheriting an account already trained on that spend, with roughly one month of observed CAC and an LTV estimated by feel, the normal starting point for an early-stage startup that can't yet wait for cohorts to mature. The plan was a staged ramp: first lock in stable performance at <strong>~$5,000/day</strong> in Meta, then scale to <strong>~$30,000/day</strong>.</p>
         <p>The mandate was to scale – but the initial audit surfaced several red flags that stopped me from treating the ramp as routine:</p>
         <ul>
@@ -530,10 +543,10 @@
           <li><strong>The scale target wasn't small money.</strong> <strong>$30,000/day is ~$900,000/month</strong> – committed on a gut-feel LTV, one month of CAC, an unexplained CPM and a dead Q5 wave. You don't scale into an anomaly; you explain it first.</li>
         </ul>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>Before any of the ~$900k/month was released, turn the red flags into a definitive answer: noise, or a real ceiling? Leadership needed a defensible scale-or-hold call – not another optimistic forecast. That meant explaining the anomalies rather than scaling past them, and getting the unit economics rebuilt on the most accurate numbers obtainable. The honest constraint: at an early-stage startup moving this fast, the data will always be thinner than a clean LTV read needs – so the model had to be as rigorous as the available signal allowed, and explicit about its own uncertainty.</p>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p><strong>1. Technical audit – explain the CPM first.</strong> Before touching creative, I audited the plumbing: Business Manager / ad-account architecture, event taxonomy, and pixel-vs-server (CAPI) consistency – to establish whether the anomalous CPM was a real auction signal or a measurement artifact. It was real: Meta was genuinely paying up to reach these users, which pointed away from "tracking is broken" and toward "the audience is the problem."</p>
         <p><strong>2. Creative audit – the reset test, and why nothing new could fire.</strong> When scaled performance collapses there are two very different causes: the creative is worn out (fatigue – fixable with fresh concepts), or the audience itself is used up (no creative fixes that); telling them apart was the whole job. I reviewed everything that had run – not just the failed Q5 wave but the full back-catalogue – scoring each concept and isolating the ones that had genuinely produced the best results. That review exposed the real problem: the "winning" history collapsed to <strong>one</strong> concept mapped to <strong>one</strong> narrow audience – the pocket where most of the December budget – spent before I joined – had been concentrated. That concentrated spend taught the pixel exactly where "conversions" lived, so it kept routing every new creative – the Q5 wave included – straight back into that same small, "safe" audience. This is <strong>pixel overfit</strong>.</p>
         <p>The reset test made it visible. Across 50+ entirely new concepts, a fresh concept should reset the picture – normal opening CPM, frequency building as usual, performance recovering – because in Meta's increasingly creative-led delivery (Andromeda) a new concept should find a new pocket. None did: every concept launched straight into high frequency and the same extreme CPM, because the pixel delivered it into an already-exhausted audience rather than a fresh one. Rising frequency didn't distinguish the cases – it doubled either way; the <strong>absence of a reset across 50+ concepts</strong> did. The new concepts weren't failing on merit – they never got a fair test. What looked like the floor of a scalable audience was its ceiling.</p>
@@ -541,14 +554,14 @@
         <p><strong>3. Prove it on a clean pixel.</strong> The overfit pixel couldn't test its own blind spot – it would keep routing anything new into the same exhausted audience. A new campaign or ad set wouldn't have escaped it either: Meta's learning is layered, and ad-set history is only the second layer – the deepest one is the conversion history accumulated on the pixel itself, with the ad account carrying its own priors on top. Anything launched against the same pixel inherits the same overfit prior. So I migrated to a new pixel and re-tested the creative slate from scratch: the only way to get an unbiased read on how much genuinely scalable audience actually existed.</p>
         <p><strong>4. Rebuild the unit economics on true numbers.</strong> In parallel, the model had to run on backend revenue, not pixel-reported conversions. I ran the reconciliation – pixel-reported vs backend revenue by cohort – and quantified how far the reported numbers had been inflated. The model rebuild itself was owned by a teammate, who reworked the unit economics on those corrected inputs (and carried the uncertainty explicitly, given the thin data).</p>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>Root cause: severe pixel overfit, confirmed.</strong> The December-funded pocket had trained the pixel to route every new creative back into one narrow audience – and reported numbers looked far healthier for a small audience subset with a specific small creatives pack, until this particular audience was totally exhausted.</li>
           <li><strong>The real breadth was tiny.</strong> Re-run on the clean pixel, the same 50+ concepts finally got a fair test – and only <strong>2</strong> worked, where "worked" meant positive economics inside a small pocket, not a volume engine. Against a $30k/day target, the addressable market at target economics was a fraction of the plan.</li>
           <li><strong>The ceiling was the market, not the channel.</strong> The clean-pixel retest and reach estimates pointed to an addressable-audience limit, not a Meta-delivery quirk. Other channels tested multiples worse – and in my experience across consumer subscription products, Meta is the ceiling test: if it can't make the economics work, the other channels won't either.</li>
           <li><strong>The decision.</strong> With the economics below break-even at any meaningful volume, there was no viable scale to retreat to – the profitable niche was too small to sustain the company, let alone the raise it was chasing. Leadership wound the product down on decision-grade data, instead of pouring ~$900k/month into an audience that could never repay it.</li>
         </ul>
-        <h3>Deliverables</h3>
+        <h4>Deliverables</h4>
         <p><strong><a href="/cases/stealth/prevention-framework/">Prevention Framework</a></strong> – a pixel-overfit tripwire, pre-flight checks, and the processes that keep CPMs in check.</p>
         <p><strong><a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></strong> – an interactive tool answering: <em>does this growth math ever close?</em></p>
       </div>
@@ -559,7 +572,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/praktika.png" alt="Praktika" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Scaling to Series A</div>
+          <h3 class="case-title">Scaling to Series A</h3>
           <div class="case-company"><a href="https://praktika.ai" onclick="event.stopPropagation()">Praktika</a> · Senior Marketing Manager</div>
           <div class="case-role">EdTech · AI language learning · Series A stage</div>
           <div class="case-outcome">$30M Series A · 5× revenue in &lt;3 months</div>
@@ -568,15 +581,15 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/praktika/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://praktika.ai">Praktika</a> is an EdTech startup that uses AI avatars to create a personalized language-learning experience. It focuses on speaking practice for non-native English speakers through an accessible mobile app. Praktika has already found a product-market fit as a startup and was preparing for the Series A round for scaling.</p>
         <p>As Senior Marketing Manager at Praktika, I was responsible for the development of unit economy model benchmarks and establishing user acquisition at scale to achieve ROI-positive growth.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>At that startup stage, it's vital to establish new student acquisition via marketing channels while meeting ROI KPIs. This will be the base of revenue growth and lead the company to close the Series A round successfully.</p>
         <p>Thus, the challenge was to turn overall requirements into numbers, set the benchmarks, and plan and execute the scale while maintaining the ROI KPIs.</p>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>To meet these challenges, I've decided to divide the tasks into the following steps:</p>
         <ul>
           <li>digitalize the general, ambiguous goals of growth and revenue;</li>
@@ -598,7 +611,7 @@
         </ul>
         <p>It is also worth noting that the ROI-positive publications with influencers supported brand awareness and users' trust, boosting the performance of the Meta and Google channels.</p>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li>Achieved a <strong>x5 increase in revenue</strong> while exceeding Praktika's profit KPI targets.</li>
           <li>This success was instrumental in securing a <strong>$30 million Series A funding round</strong> within less than 3 months.</li>
@@ -612,7 +625,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Unit Economy Model for Media Buying</div>
+          <h3 class="case-title">Unit Economy Model for Media Buying</h3>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Unit economy model</div>
           <div class="case-outcome">44% acquisition budget cut · revenue unchanged</div>
@@ -621,12 +634,12 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-unit-economy/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd of workers worldwide to complete micro-tasks such as data labeling, image recognition, and content moderation.</p>
         <p>Toloka's revenue depends on client request fulfillment performed by workers. Two variables are critical for margins: the number of tasks completed per day, and how long a worker stays active on the platform.</p>
         <p>As Senior Marketing Manager, B2C, I was responsible for acquiring, engaging, and retaining workers.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>The goal was to increase Toloka's margins by optimizing the worker acquisition budget – specifically, reducing acquisition costs without sacrificing revenue.</p>
         <p>I focused on three areas to achieve this:</p>
         <ol style="padding-left:20px; margin-bottom:12px;">
@@ -636,7 +649,7 @@
         </ol>
         <p>This case covers area 1. Areas 2 and 3 are covered in separate cases.</p>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>To enable ROI-based acquisition decisions, I needed proxy metrics that could predict worker quality early – before full performance data was available.</p>
         <p>We defined worker quality along two dimensions: <strong>relevance</strong> (acceptance rate of completed tasks) and <strong>productivity</strong> (number of tasks completed while active). The goal was to pay more for high-quality workers and less for low-quality ones, rather than applying a flat acquisition cost across all cohorts.</p>
         <p>Working with the Analytics team, we identified <strong>money-per-hour (mph)</strong> as the best efficiency metric – the average income a worker earns per hour, factoring in time spent on tasks and access to higher-paying work. The higher the mph, the higher the ROI.</p>
@@ -646,7 +659,7 @@
           <p><em>If we acquire workers based on the mph proxy metric, we can pay more for high-efficiency workers and less for low-efficiency ones – reducing the acquisition budget by at least 30% while holding revenue flat.</em></p>
         </blockquote>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>Worker acquisition budget decreased by 44%</strong> while revenue remained unchanged</li>
           <li>Shifting from fixed to variable acquisition cost (based on efficiency) <strong>increased the share of relevant, high-quality workers by 21%</strong></li>
@@ -665,7 +678,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Finding Product-Market Fit</div>
+          <h3 class="case-title">Finding Product-Market Fit</h3>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Product-market fit</div>
           <div class="case-outcome">65% retention increase · 26% budget cut · revenue unchanged</div>
@@ -674,15 +687,15 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-pmf/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
         <p>Toloka's revenue is connected with client requests' fulfillment, which workers perform. The number of completed tasks per day and the number of days the worker stays active on the platform are critical variables for business margins.</p>
         <p>As Senior Marketing Manager, B2C, I was responsible for the acquisition, engagement, and retention of these workers.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>The task was to increase Toloka's margins through new workers' acquisition budget optimization. The significant subtask was strengthening product-market fit to grow workers' engagement and retention.</p>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>To meet the challenges, I've decided to focus on the following areas:</p>
         <ol style="padding-left:20px; margin-bottom:12px;">
           <li>find the metrics to evaluate worker's efficiency and calculate workers' unit economy;</li>
@@ -717,7 +730,7 @@
           <li>clear communication regarding projects' conditions and volume will increase workers' conversion and retention rate on this project by at least <strong>10%</strong>, since the worker's income would be much more predictable.</li>
         </ul>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>Retention into the projects with clear (from the worker's perspective) conditions and volume increased by 65%</strong>:
             <ul>
@@ -742,7 +755,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/toloka.svg" alt="Toloka" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Demand Forecasting</div>
+          <h3 class="case-title">Demand Forecasting</h3>
           <div class="case-company"><a href="https://toloka.ai" onclick="event.stopPropagation()">Toloka (Yandex)</a> · Senior Marketing Manager, B2C (Yandex)</div>
           <div class="case-role">AI/ML crowdsourcing · Demand forecasting</div>
           <div class="case-outcome">100% fulfillment rate maintained · 22% budget cut</div>
@@ -751,12 +764,12 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/toloka-forecasting/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://toloka.ai">Toloka</a> is a crowdsourcing platform developed by Yandex that connects businesses and researchers with a distributed crowd to complete various micro-tasks, such as data labeling, image recognition, and content moderation.</p>
         <p>Toloka's revenue is connected with client requests' fulfillment, which workers perform. The number of completed tasks per day and the number of days the worker stays active on the platform are critical variables for business margins.</p>
         <p>As Senior Marketing Manager, B2C, I was responsible for acquiring, engaging, and retaining these workers.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>For the Toloka Business Development team, it is critical to fulfill key clients' requests (big tech) entirely and on time, regardless of internal processes and optimization issues. These requests usually have a significant volume and obvious seasonality (meaning that their requests don't come gradually within a period of one year). As a result, a massive burst in the number of workers is needed immediately, significantly affecting the business margins and net margins of these requests.</p>
         <p>Tasks like these happen in different types of businesses that deal with substantial seasonal sales during holidays or other events. The common feature of this particular ask is that these sales have strict time limits and KPIs.</p>
         <p>The task was in handling big requests, handling standardization, and connected costs minimization, which are related to:</p>
@@ -765,7 +778,7 @@
           <li>acquiring too many workers in case of a gap between requests.</li>
         </ul>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>To meet the challenges, I've decided to focus on the following areas:</p>
         <ol style="padding-left:20px; margin-bottom:12px;">
           <li>find the metrics to evaluate worker's efficiency and calculate workers' unit economy;</li>
@@ -780,7 +793,7 @@
           <li>regular communication and planning, as well as building the reporting system between Marketing and BizDev teams.</li>
         </ol>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>The user acquisition budget for major language segments decreased by 22%</strong>, while Toloka's revenue remained unchanged.</li>
           <li><strong>Maintained the key requests' fulfillment success rate of 100%</strong>.</li>
@@ -805,7 +818,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/buddy.png" alt="Buddy AI" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Global User Acquisition</div>
+          <h3 class="case-title">Global User Acquisition</h3>
           <div class="case-company"><a href="https://buddy.ai" onclick="event.stopPropagation()">Buddy AI</a> · Senior Marketing Manager</div>
           <div class="case-role">AI EdTech · Global user acquisition</div>
           <div class="case-outcome">LTV +32% · LatAm ×1.5 · Turkey launch</div>
@@ -814,16 +827,16 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/buddy/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://buddy.ai">Buddy AI</a> is a language learning app that utilizes artificial intelligence to provide personalized English language instruction to children through a game. The idea of the app is that kids can start to talk to the virtual tutor right away, from the very first session. The app utilizes a subscription monetization model, and one of the most effective ways to acquire users at that time was to promote the app as a game for kids. Summing up, users' acquisition, retention, and monetization are the critical elements of the app's revenue.</p>
         <p>As Senior Marketing Manager at Buddy AI, I was responsible for improving those metrics to ensure sustainable business growth for successful fundraising and break-even point achievement.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>Upon my collaboration with Buddy AI, the app had active users from two primary geographies and one major and one minor user acquisition channel. After a closer look at the unit economy, I concluded that there is no way to scale while meeting the KPIs on ROI.</p>
         <p>The main reasons for that were the unstable economic situation in those geographies (depreciation of the national currency against the US dollar) and the introduction of the implicit consent for IDFA tracking by Apple (which led to a decline in attribution quality).</p>
         <p>To solve the business growth problem according to target ROI, I have focused on users' LTV improvement and the search for new geographies for user acquisition.</p>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>First, I've analyzed what prevents the app growth via given acquisition channels. Based on given conditions, I've decided to do the following:</p>
         <ol style="padding-left:20px; margin-bottom:12px;">
           <li>formed hypothesis on LTV improvement from both registered and paying users' perspectives;</li>
@@ -846,7 +859,7 @@
         <p>Besides the major hypothesis mentioned above, I've applied several typical optimizations like onboarding simplification, the process for creatives' handling, creative rotation, etc.</p>
         <p>I led the full-stack team to accomplish these tasks, including a data analyst, front-end developer, back-end developer, UA manager, and creative producer. Also, several teams were outsourced, like designers, video editors, localizers, and country advisers.</p>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>LTV increased by 32%</strong> due to:
             <ul>
@@ -869,7 +882,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Scaling UA via Operations</div>
+          <h3 class="case-title">Scaling UA via Operations</h3>
           <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · Senior Marketing Specialist</div>
           <div class="case-role">E-commerce subscription · UA operations</div>
           <div class="case-outcome">27% CAC reduction · Meta spend ×2 in 5 months</div>
@@ -878,13 +891,13 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/scentbird-ua/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://scentbird.com">Scentbird</a> is a subscription-based fragrance service that allows customers to discover and try new perfumes and colognes monthly in the United States.</p>
         <p>Scentbird utilizes the subscription model, and business growth is directly connected to active user base growth. Nevertheless, it's critical for business margins to optimize customer acquisition costs and focus on selling products with higher margins.</p>
         <p>At the beginning of 2017, Scentbird was a startup; thus, it was critical to demonstrate steady growth with all the KPIs met, primarily including ROI.</p>
         <p>In Scentbird, I began as a media buyer and was responsible for user acquisition on Meta.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>Meta was the major user acquisition channel for Scentbird, which brought the most valuable users from the ROI perspective. My tasks were to:</p>
         <ul>
           <li>optimize customer acquisition costs;</li>
@@ -892,7 +905,7 @@
           <li>automate usual processes and other operations to reduce the required FTE to maintain the channel.</li>
         </ul>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>The main area of improvement here was the operation processes in both different user acquisition channels and in creative and analytics streams.</p>
         <p>At the beginning of the journey, I stumbled upon the fact that Meta's media buying budget exceeds <strong>$5M annually</strong>. Keeping that in mind, I've concluded the following:</p>
         <ul>
@@ -913,7 +926,7 @@
           <li>transparent creative reporting implementation would decrease customer acquisition costs by at least <strong>25%</strong>, since it would simplify the creative picking process and let us turn off the creative immediately after burnout.</li>
         </ul>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li>Audience grid implementation decreased FTE for Meta maintenance by <strong>13%</strong>, due to the opportunity to duplicate the audiences instead of picking from scratch and to decrease the time for results analysis.</li>
           <li>No-code automation decreased customer acquisition cost by <strong>16%</strong> (based on statistically significant A/B test results).</li>
@@ -934,7 +947,7 @@
       <div class="case-header" onclick="toggle(this)">
         <img src="logos/scentbird.png" alt="Scentbird" class="case-logo">
         <div class="case-left">
-          <div class="case-title">Business Growth Framework</div>
+          <h3 class="case-title">Business Growth Framework</h3>
           <div class="case-company"><a href="https://scentbird.com" onclick="event.stopPropagation()">Scentbird</a> · Senior Marketing Specialist</div>
           <div class="case-role">E-commerce subscription · Growth modeling</div>
           <div class="case-outcome">20% user base growth during pandemic · 5% forecast accuracy</div>
@@ -943,12 +956,12 @@
       </div>
       <div class="case-body">
         <p style="padding-top:20px; margin-bottom:0;"><a href="/cases/scentbird-growth/" onclick="event.stopPropagation()">View full case study →</a></p>
-        <h3>Situation</h3>
+        <h4>Situation</h4>
         <p><a href="https://scentbird.com">Scentbird</a> is a subscription-based fragrance service that allows customers to discover and try new perfumes and colognes monthly in the United States.</p>
         <p>Scentbird utilizes the subscription model, and business growth is directly connected to active user base growth. Nevertheless, it's critical for business margins to optimize customer acquisition costs and focus on selling products with higher margins.</p>
         <p>In Scentbird, I was responsible for the whole performance marketing stream, the primary source of the company's growth. Also, I was responsible for growth (from the marketing point of view) prediction models.</p>
 
-        <h3>Task</h3>
+        <h4>Task</h4>
         <p>For growth forecasting and planning, we needed a framework which would let us:</p>
         <ul>
           <li>predict the active user base growth based on the historical data;</li>
@@ -958,7 +971,7 @@
           <li>help to plan and forecast the fulfillment based on user base growth.</li>
         </ul>
 
-        <h3>Action</h3>
+        <h4>Action</h4>
         <p>The task above can be divided into the following subtasks:</p>
         <ol style="padding-left:20px; margin-bottom:12px;">
           <li>LTV calculation and constant updates for each channel in the marketing mix;</li>
@@ -977,7 +990,7 @@
         </ul>
         <p>I formulated the following fundamental hypothesis: the model mentioned above would let us find the optimal balance between marketing spending (user base growth) and ROI with an accuracy of at least 7%.</p>
 
-        <h3>Result</h3>
+        <h4>Result</h4>
         <ul>
           <li><strong>The active user base grew by 20%</strong> within a few months of the March 2020 lockdown, with the KPIs met.</li>
           <li><strong>Actual model accuracy was 5%.</strong></li>
@@ -998,7 +1011,7 @@
 <!-- ── Tools ── -->
 <section class="articles" id="tools">
   <div class="container">
-    <div class="section-label">Tools · <a href="/tools/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All tools →</a></div>
+    <h2 class="section-label">Tools · <a href="/tools/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All tools →</a></h2>
     <ul class="article-list">
       <li>
         <a href="/tools/unit-economics-estimator/">Unit Economics Estimator – will this subscription app's growth math ever close?</a>
@@ -1015,7 +1028,7 @@
 <!-- ── Articles ── -->
 <section class="articles" id="writing">
   <div class="container">
-    <div class="section-label">Writing · <a href="/articles/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All articles →</a></div>
+    <h2 class="section-label">Writing · <a href="/articles/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All articles →</a></h2>
     <ul class="article-list">
       <li>
         <a href="https://hackernoon.com/stop-guessing-how-to-measure-influencer-marketing" target="_blank" rel="noopener">Stop Guessing: How to Measure Influencer Marketing</a>
@@ -1040,7 +1053,7 @@
 <!-- ── Research ── -->
 <section class="articles" id="research">
   <div class="container">
-    <div class="section-label">Systems &amp; Research · <a href="/research/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All research →</a></div>
+    <h2 class="section-label">Systems &amp; Research · <a href="/research/" style="font-size:0.75rem; font-weight:600; text-transform:none; letter-spacing:0; color:#6b7280;">All research →</a></h2>
     <p class="section-note">The same method I use for growth teams: define the criteria, build the dataset, test every obvious answer.</p>
     <ul class="article-list">
           <li>
@@ -1062,7 +1075,7 @@
 <!-- ── Footer ── -->
 <footer id="contact">
   <div class="container">
-    <div class="section-label">Contact</div>
+    <h2 class="section-label">Contact</h2>
     <div class="contact-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
       <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
