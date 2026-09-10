@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Unfashionable Four – The Long Bet – Maria Atamanova</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBDQ97WX4K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -28,150 +28,273 @@
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     html { scroll-behavior: smooth; scroll-padding-top: 50px; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.65; font-size: 16px; }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+
     a { color: #1e40af; text-decoration: none; }
+
     a:hover { text-decoration: underline; }
 
-    /* Site chrome */
-    .site-header { background: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 28px 24px; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+
     .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
-    .site-name a { color: #111827; text-decoration: none; }
-    .site-name a:hover { color: #1e40af; }
+
+    .site-name a { color: #111827; }
+
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+
     .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+
     .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+
     .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
-    .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; overflow-x: auto; scrollbar-width: none; }
-    .nav-inner::-webkit-scrollbar { display: none; }
-    @media (max-width: 480px) { .site-nav .nav-link { margin-right: 14px; font-size: 0.8125rem; } }
+
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; overflow-x: auto; scrollbar-width: none; }
+
+    .site-nav .container::-webkit-scrollbar { display: none; }
+
     .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+
     .nav-link:hover { color: #111827; text-decoration: none; }
+
     .nav-link.active { color: #111827; border-bottom-color: #111827; }
-    .breadcrumb { max-width: 680px; margin: 0 auto; padding: 16px 24px; font-size: 0.8125rem; color: #9ca3af; }
-    .breadcrumb a { color: #6b7280; text-decoration: none; }
+
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #9ca3af; }
+
+    .breadcrumb a { color: #6b7280; }
+
     .breadcrumb a:hover { color: #1e40af; }
+
     .breadcrumb span { margin: 0 6px; }
-    .site-footer { padding: 40px 24px 64px; }
-    .footer-inner { max-width: 680px; margin: 0 auto; }
-    .footer-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; text-decoration: none; }
-    .footer-links a:hover { color: #1e40af; }
 
-    /* Article */
-    .article { max-width: 680px; margin: 0 auto; padding: 40px 24px 100px; }
+    .page-header { padding: 40px 0 32px; }
+
     .page-series { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
-    h1 { font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; color: #111; margin-bottom: 10px; }
-    .subtitle { font-size: 18px; font-weight: 400; color: #4a6080; margin-bottom: 32px; line-height: 1.4; }
-    .standfirst { font-size: 17px; line-height: 1.7; color: #4a6080; border-left: 4px solid #4F7EC7; padding-left: 18px; margin-bottom: 48px; }
-    p { font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; }
-    h2 { font-size: 22px; font-weight: 700; color: #1e293b; margin: 52px 0 16px; letter-spacing: -0.3px; }
-    strong { color: #1e293b; }
-    hr { border: none; border-top: 1px solid #dde3ec; margin: 48px 0; }
-    ul { margin: 0 0 20px 0; padding-left: 24px; }
-    ul li { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 8px; }
 
-    /* Golden standard callout */
-    .golden { background: #1e293b; border-radius: 10px; padding: 28px 32px; margin: 36px 0; text-align: center; }
-    .golden .g-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4F7EC7; margin-bottom: 14px; }
-    .golden .g-subjects { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: 0.02em; line-height: 1.5; }
-    .golden .g-note { font-size: 13px; color: #4a6080; margin-top: 12px; line-height: 1.5; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
 
-    /* Finding callout */
-    .finding { background: #EEF2F7; border-radius: 10px; padding: 24px 28px; margin: 32px 0; border-left: 4px solid #4F7EC7; }
-    .finding .f-claim { font-size: 17px; font-weight: 700; line-height: 1.35; color: #1e293b; margin-bottom: 8px; }
-    .finding .f-detail { font-size: 14px; line-height: 1.65; color: #4a6080; }
+    .page-standfirst { font-size: 1.0625rem; color: #4a6080; line-height: 1.6; margin-bottom: 12px; }
 
-    /* Chart */
-    .chart-wrap { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 12px; padding: 24px 24px 20px; margin: 36px 0; }
-    .chart-title { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7a8fa6; margin-bottom: 6px; }
-    .chart-desc { font-size: 13px; color: #4a6080; margin-bottom: 18px; line-height: 1.5; }
-    .chart-wrap canvas { display: block; width: 100% !important; }
-    .chart-note { font-size: 11px; color: #7a8fa6; margin-top: 12px; line-height: 1.5; }
-    .chart-legend { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
-    .leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #7a8fa6; }
-    .leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
 
-    /* 1 vs 30 */
-    .vs-block { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 12px; padding: 32px 28px; margin: 36px 0; display: flex; gap: 0; align-items: stretch; }
-    .vs-side { flex: 1; text-align: center; padding: 0 20px; }
-    .vs-side:first-child { border-right: 1.5px solid #dde3ec; }
-    .vs-num { font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -4px; margin-bottom: 10px; }
-    .vs-num.low { color: #c0ccd8; }
-    .vs-num.high { color: #2E6AAD; }
-    .vs-subject { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; letter-spacing: 0.02em; }
-    .vs-label { font-size: 12px; color: #7a8fa6; line-height: 1.4; }
-    .vs-divider { display: flex; align-items: center; padding: 0 4px; color: #c0ccd8; font-size: 22px; font-weight: 300; flex-shrink: 0; }
+    .article-content { padding: 40px 0; }
 
-    /* 4th subject bars */
-    .subj-bars { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
-    .sbar-row { display: flex; align-items: center; gap: 12px; }
-    .sbar-label { width: 80px; font-size: 13px; font-weight: 600; color: #1e293b; flex-shrink: 0; text-align: right; }
-    .sbar-track { flex: 1; height: 28px; background: #dde3ec; border-radius: 6px; position: relative; overflow: hidden; }
-    .sbar-fill { height: 100%; border-radius: 6px; position: absolute; left: 0; top: 0; display: flex; align-items: center; padding-left: 10px; }
-    .sbar-fill span { font-size: 12px; font-weight: 700; color: #fff; white-space: nowrap; }
-    .sbar-fill.chem { background: #2E6AAD; width: 90.3%; }
-    .sbar-fill.bio  { background: #7a8fa6; width: 87.1%; }
-    .sbar-fill.comp { background: #c0ccd8; width: 80.6%; }
-    .sbar-fill.comp span { color: #4a6080; }
-    .sbar-pct { width: 44px; font-size: 12px; color: #7a8fa6; flex-shrink: 0; }
+    .article-content h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin: 36px 0 10px; }
 
-    /* Zero pills */
-    .zero-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0; }
-    .zero-pill { background: #fff; border: 1.5px solid #dde3ec; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 140px; flex: 1; }
-    .zero-pill .zp-num { font-size: 28px; font-weight: 800; color: #c0ccd8; line-height: 1; margin-bottom: 4px; }
-    .zero-pill .zp-subject { font-size: 12px; font-weight: 700; color: #4a6080; margin-bottom: 2px; }
-    .zero-pill .zp-label { font-size: 10px; color: #7a8fa6; }
+    .article-content h2:first-child { margin-top: 0; }
 
-    /* Andrey box */
-    .andrey-box { background: #1e293b; border-radius: 10px; padding: 32px 36px; margin: 36px 0; }
-    .andrey-box .ab-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4F7EC7; margin-bottom: 12px; }
-    .andrey-box .ab-answer { font-size: 20px; font-weight: 800; color: #fff; line-height: 1.5; margin-bottom: 16px; }
-    .andrey-box p { color: #8aaac4; margin-bottom: 16px; }
-    .andrey-box .ab-note { font-size: 13px; color: #4a6080; line-height: 1.6; border-top: 1px solid #2d3f55; padding-top: 16px; margin-top: 4px; }
+    .article-content p { color: #374151; font-size: 0.9375rem; margin-bottom: 12px; }
 
-    /* Series nav */
+    .article-content ul, .article-content ol { padding-left: 20px; margin-bottom: 12px; }
+
+    .article-content li { color: #374151; font-size: 0.9375rem; margin-bottom: 6px; }
+
+    .article-content strong { color: #111827; }
+
+    .article-content em { color: #374151; }
+
+    .article-content a { color: #1e40af; }
+
+
+    .back-link { padding: 32px 0 48px; }
+
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+
+    .back-link a:hover { color: #1e40af; }
+
+    footer { padding: 40px 0 64px; }
+
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 16px; }
+
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+
     .series-nav { margin-top: 48px; padding-top: 28px; border-top: 1px solid #dde3ec; }
+
     .series-nav-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 12px; }
+
     .series-nav-item { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px solid #f3f4f6; }
+
     .series-nav-item:last-child { border-bottom: none; }
+
     .series-nav-item a { font-size: 0.9375rem; font-weight: 500; color: #111827; margin-bottom: 3px; text-decoration: none; }
+
     .series-nav-item a:hover { color: #1e40af; }
+
     .series-nav-item span { font-size: 0.8125rem; color: #9ca3af; }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 26px; }
-      .vs-block { flex-direction: column; }
-      .vs-side:first-child { border-right: none; border-bottom: 1.5px solid #dde3ec; padding-bottom: 20px; margin-bottom: 20px; }
-    }
-    .tldr { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 10px; padding: 16px 20px; margin-bottom: 36px; }
-    .tldr-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a6080; font-weight: 700; margin-bottom: 10px; }
-    .tldr ul { padding-left: 20px; margin: 0; }
-    .tldr li { font-size: 15px; line-height: 1.65; color: #333; margin-bottom: 8px; }
-    .tldr li:last-child { margin-bottom: 0; }
-    .tldr strong { color: #1e293b; }
-    .author-box { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 10px; padding: 18px 20px; margin-top: 40px; }
-    .author-box-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #4a6080; font-weight: 700; margin-bottom: 10px; }
-    .author-box p { font-size: 14px; line-height: 1.7; color: #4a6080; margin-bottom: 10px; }
-    .author-box p:last-child { margin-bottom: 0; }
-    .author-box strong { color: #1e293b; }
-    .author-box a { color: #1e40af; font-weight: 600; }
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
 
-    details.datawrap { margin: -8px 0 28px; }
-    details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
-    details.datawrap > summary::-webkit-details-marker { display: none; }
-    details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
-    details.datawrap[open] > summary::before { content: "▾ "; }
-    details.datawrap > summary:hover { color: #1e40af; }
-    .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
-    table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
-    table.data th, table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
-    table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
-    table.data th.l, table.data td.l { text-align: left; white-space: normal; }
-    table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
-    p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
-    .callout.lead, .tldr.lead { margin-top: -4px; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
+
+    .callout ul { padding-left: 20px; margin: 0; }
+
+    .callout li { color: #374151; font-size: 0.9375rem; margin-bottom: 8px; }
+
+    .callout strong { color: #111827; }
+
+    .author-box { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 8px 0 0; background: #f9fafb; }
+
+    .author-box-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 10px; }
+
+    .author-box p { color: #374151; font-size: 0.9375rem; margin-bottom: 10px; }
+
+    .author-box p:last-child { margin-bottom: 0; }
+
+    .author-box strong { color: #111827; }
+
+    .author-box a { color: #1e40af; }
+
+    .callout.lead { margin-top: -44px; }
+
+    .article-content .standfirst { font-size: 17px; line-height: 1.7; color: #4a6080; border-left: 4px solid #4F7EC7; padding-left: 18px; margin-bottom: 48px; }
+
+    .article-content hr { border: none; border-top: 1px solid #dde3ec; margin: 48px 0; }
+
+
+    /* Golden standard callout */
+    .article-content .golden { background: #1e293b; border-radius: 10px; padding: 28px 32px; margin: 36px 0; text-align: center; }
+
+    .article-content .golden .g-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4F7EC7; margin-bottom: 14px; }
+
+    .article-content .golden .g-subjects { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: 0.02em; line-height: 1.5; }
+
+    .article-content .golden .g-note { font-size: 13px; color: #4a6080; margin-top: 12px; line-height: 1.5; }
+
+
+    /* Finding callout */
+    .article-content .finding { background: #EEF2F7; border-radius: 10px; padding: 24px 28px; margin: 32px 0; border-left: 4px solid #4F7EC7; }
+
+    .article-content .finding .f-claim { font-size: 17px; font-weight: 700; line-height: 1.35; color: #1e293b; margin-bottom: 8px; }
+
+    .article-content .finding .f-detail { font-size: 14px; line-height: 1.65; color: #4a6080; }
+
+
+    /* Chart */
+    .article-content .chart-wrap { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 12px; padding: 24px 24px 20px; margin: 36px 0; }
+
+    .article-content .chart-title { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #7a8fa6; margin-bottom: 6px; }
+
+    .article-content .chart-desc { font-size: 13px; color: #4a6080; margin-bottom: 18px; line-height: 1.5; }
+
+    .article-content .chart-wrap canvas { display: block; width: 100% !important; }
+
+    .article-content .chart-note { font-size: 11px; color: #7a8fa6; margin-top: 12px; line-height: 1.5; }
+
+    .article-content .chart-legend { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+
+    .article-content .leg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #7a8fa6; }
+
+    .article-content .leg-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+
+    /* 1 vs 30 */
+    .article-content .vs-block { background: #EEF2F7; border: 1.5px solid #dde3ec; border-radius: 12px; padding: 32px 28px; margin: 36px 0; display: flex; gap: 0; align-items: stretch; }
+
+    .article-content .vs-side { flex: 1; text-align: center; padding: 0 20px; }
+
+    .article-content .vs-side:first-child { border-right: 1.5px solid #dde3ec; }
+
+    .article-content .vs-num { font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -4px; margin-bottom: 10px; }
+
+    .article-content .vs-num.low { color: #c0ccd8; }
+
+    .article-content .vs-num.high { color: #2E6AAD; }
+
+    .article-content .vs-subject { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 4px; letter-spacing: 0.02em; }
+
+    .article-content .vs-label { font-size: 12px; color: #7a8fa6; line-height: 1.4; }
+
+    .article-content .vs-divider { display: flex; align-items: center; padding: 0 4px; color: #c0ccd8; font-size: 22px; font-weight: 300; flex-shrink: 0; }
+
+
+    /* 4th subject bars */
+    .article-content .subj-bars { margin: 32px 0; display: flex; flex-direction: column; gap: 10px; }
+
+    .article-content .sbar-row { display: flex; align-items: center; gap: 12px; }
+
+    .article-content .sbar-label { width: 80px; font-size: 13px; font-weight: 600; color: #1e293b; flex-shrink: 0; text-align: right; }
+
+    .article-content .sbar-track { flex: 1; height: 28px; background: #dde3ec; border-radius: 6px; position: relative; overflow: hidden; }
+
+    .article-content .sbar-fill { height: 100%; border-radius: 6px; position: absolute; left: 0; top: 0; display: flex; align-items: center; padding-left: 10px; }
+
+    .article-content .sbar-fill span { font-size: 12px; font-weight: 700; color: #fff; white-space: nowrap; }
+
+    .article-content .sbar-fill.chem { background: #2E6AAD; width: 90.3%; }
+
+    .article-content .sbar-fill.bio { background: #7a8fa6; width: 87.1%; }
+
+    .article-content .sbar-fill.comp { background: #c0ccd8; width: 80.6%; }
+
+    .article-content .sbar-fill.comp span { color: #4a6080; }
+
+    .article-content .sbar-pct { width: 44px; font-size: 12px; color: #7a8fa6; flex-shrink: 0; }
+
+
+    /* Zero pills */
+    .article-content .zero-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0; }
+
+    .article-content .zero-pill { background: #fff; border: 1.5px solid #dde3ec; border-radius: 8px; padding: 12px 16px; text-align: center; min-width: 140px; flex: 1; }
+
+    .article-content .zero-pill .zp-num { font-size: 28px; font-weight: 800; color: #c0ccd8; line-height: 1; margin-bottom: 4px; }
+
+    .article-content .zero-pill .zp-subject { font-size: 12px; font-weight: 700; color: #4a6080; margin-bottom: 2px; }
+
+    .article-content .zero-pill .zp-label { font-size: 10px; color: #7a8fa6; }
+
+
+    /* Andrey box */
+    .article-content .andrey-box { background: #1e293b; border-radius: 10px; padding: 32px 36px; margin: 36px 0; }
+
+    .article-content .andrey-box .ab-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4F7EC7; margin-bottom: 12px; }
+
+    .article-content .andrey-box .ab-answer { font-size: 20px; font-weight: 800; color: #fff; line-height: 1.5; margin-bottom: 16px; }
+
+    .article-content .andrey-box p { color: #8aaac4; margin-bottom: 16px; }
+
+    .article-content .andrey-box .ab-note { font-size: 13px; color: #4a6080; line-height: 1.6; border-top: 1px solid #2d3f55; padding-top: 16px; margin-top: 4px; }
+
+
+    .article-content details.datawrap { margin: -8px 0 28px; }
+
+    .article-content details.datawrap > summary { cursor: pointer; font-size: 13px; color: #4b5563; padding: 6px 0; list-style: none; }
+
+    .article-content details.datawrap > summary::-webkit-details-marker { display: none; }
+
+    .article-content details.datawrap > summary::before { content: "▸ "; color: #9ca3af; }
+
+    .article-content details.datawrap[open] > summary::before { content: "▾ "; }
+
+    .article-content details.datawrap > summary:hover { color: #1e40af; }
+
+    .article-content .tablewrap { overflow-x: auto; margin: 8px 0 10px; border: 1px solid #dde3ec; border-radius: 8px; background: #ffffff; }
+
+    .article-content table.data { border-collapse: collapse; font-size: 12.5px; line-height: 1.35; width: 100%; }
+
+    .article-content table.data th,
+    .article-content table.data td { padding: 6px 9px; border-bottom: 1px solid #eef2f7; text-align: right; color: #333; white-space: nowrap; }
+
+    .article-content table.data th { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #7a8fa6; border-bottom: 1px solid #dde3ec; background: #f9fafb; }
+
+    .article-content table.data th.l,
+    .article-content table.data td.l { text-align: left; white-space: normal; }
+
+    .article-content table.data td.c { text-align: left; font-weight: 600; color: #1e293b; white-space: normal; }
+
+    .article-content p.tcaption { font-size: 12px; font-style: italic; color: #6b7280; margin: 0 0 4px; line-height: 1.6; }
+
+    @media (max-width: 480px) { .site-nav .nav-link { margin-right: 14px; font-size: 0.8125rem; } }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } .data-pill { min-width: 80px; } .vs-block { flex-direction: column; } .vs-side:first-child { border-right: none; border-bottom: 1.5px solid #dde3ec; padding-bottom: 20px; margin-bottom: 20px; } }
   </style>
   <script type="application/ld+json">
 {
@@ -253,30 +376,27 @@
   </script>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="site-name"><a href="/">Maria Atamanova</a></div>
-  <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
-</header>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="/cases/" class="nav-link">Case Studies</a>
-    <a href="/articles/" class="nav-link">Writing</a>
-    <a href="/research/" class="nav-link active">Research</a>
-    <a href="/tools/" class="nav-link">Tools</a><a href="#contact" class="nav-link">Contact</a>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
   </div>
-</nav>
-<div class="breadcrumb">
-  <a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>The Unfashionable Four</strong>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link active">Research</a><a href="/tools/" class="nav-link">Tools</a><a href="#contact" class="nav-link">Contact</a></div></nav>
+<div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/research/">Research</a><span>›</span><a href="/research/long-bet/">The Long Bet</a><span>›</span><strong>The Unfashionable Four</strong></div></div>
+<div class="page-header">
+  <div class="container">
+    <div class="page-series">The Long Bet · Ongoing series</div>
+    <h1 class="page-title">The Unfashionable Four</h1>
+    <div class="page-standfirst">Why the A-level combination top universities have always wanted hasn't changed – and why most students don't pick it</div>
+    <div class="page-meta">Jul 2026 · Original research</div>
+  </div>
 </div>
+<div class="article-content">
+  <div class="container">
 
-<article class="article">
 
-  <div class="page-series">The Long Bet · Ongoing series</div>
-  <h1>The Unfashionable Four</h1>
-  <p class="subtitle">Why the A-level combination top universities have always wanted hasn't changed – and why most students don't pick it</p>
-
-  <div class="tldr lead"><div class="tldr-label">TL;DR</div>
+  <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
       <li>Four A-level subjects are load-bearing across the <strong>23 STEM programmes</strong> in this series that exist as UK degrees: <strong>Mathematics, Further Mathematics, Physics, Chemistry</strong>.</li>
       <li>Mathematics is named by <strong>22 of the 23</strong> programmes and is compulsory outright in <strong>20</strong>; at Cambridge Computer Science colleges usually want the A* in Mathematics or Further Mathematics. Further Mathematics: named by 2, recommended by 13 – at A*A*A entry, “recommended” is functionally required.</li>
@@ -486,19 +606,22 @@
       <span>Seven scarcity cycles since the 1880s. The compression curve that makes a four-year degree longer than a full cycle.</span>
     </div>
   </div>
+  </div>
+</div>
 
-  <div class="author-box">
-    <div class="author-box-label">About the author</div>
+<div class="author-box-wrap"><div class="container">
+<div class="author-box">
+<div class="author-box-label">About the author</div>
     <p><strong>Maria Atamanova</strong> – Senior Growth &amp; Performance Marketing Manager and applied mathematician; twelve years growing businesses – apps, e-commerce, EdTech, AI data platforms – on numbers, not gut feeling.</p>
     <p>The method here – define the criteria, build the dataset, test every obvious answer – is the same one I use for growth teams; see the <a href="/cases/">case studies</a>.</p>
     <p>Hiring a senior growth or performance lead? <a href="/cases/">See the case studies</a> · <a href="mailto:hello@mariascales.com">hello@mariascales.com</a> · <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a></p>
-  </div>
-</article>
-
-<footer class="site-footer" id="contact">
-  <div class="footer-inner">
-    <div class="footer-label">Contact</div>
-    <div class="footer-links">
+</div>
+</div></div>
+<div class="back-link"><div class="container"><a href="/research/long-bet/">&larr; Back to The Long Bet</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
       <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
       <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
@@ -506,13 +629,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  window.addEventListener('scroll', function() {
-    document.querySelector('.site-nav').classList.toggle('scrolled', window.scrollY > 0);
-  }, { passive: true });
-</script>
-
 <script>
 (function() {
   const ctx = document.getElementById('stackChart').getContext('2d');
@@ -560,6 +676,14 @@
   });
 })();
 </script>
-
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
