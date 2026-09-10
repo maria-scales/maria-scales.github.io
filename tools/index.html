@@ -28,13 +28,13 @@
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     .research-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; }
-    .research-card-title { font-size: 1.0625rem; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+    .research-card-title { font-size: 1.0625rem; font-weight: 700; color: #111827; margin-bottom: 6px; line-height: 1.4; }
     .research-card-title a { color: #111827; }
     .research-card-title a:hover { color: #1e40af; text-decoration: none; }
-    .research-card-meta { font-size: 0.8125rem; color: #9ca3af; margin-bottom: 12px; }
-    .research-card-teaser { font-size: 0.9375rem; color: #4b5563; line-height: 1.65; margin-bottom: 14px; }
-    .research-card-read { font-size: 0.875rem; font-weight: 500; color: #1e40af; display: inline-block; margin-bottom: 16px; }
-    .research-card-link { font-size: 0.8125rem; color: #9ca3af; margin-top: 8px; line-height: 1.7; }
+    .research-card-meta { font-size: 0.8125rem; color: #9ca3af; margin-bottom: 14px; }
+    .research-card-teaser { font-size: 0.9375rem; color: #4b5563; line-height: 1.65; margin-bottom: 12px; }
+    .research-card-read { font-size: 0.875rem; font-weight: 500; color: #1e40af; display: inline-block; }
+    .research-card-link { font-size: 0.8125rem; color: #9ca3af; margin-top: 14px; line-height: 1.7; }
     .research-card-link a { color: #6b7280; text-decoration: none; }
     .research-card-link a:hover { color: #1e40af; }
   </style>
@@ -189,16 +189,16 @@
     </div>
     <div class="research-card">
       <div class="research-card-title"><a href="/tools/unit-economics-estimator/">Unit Economics Estimator – will this subscription app's growth math ever close?</a></div>
-      <div style="font-size: 0.875rem; color: #6b7280; margin: 4px 0 10px;">LTV M13, cost per subscriber and payback from sourced benchmarks – or your own numbers.</div>
-      <div class="research-card-meta" style="font-size: 0.75rem;">Sep 2026 · v1.1 · Interactive tool · 24 benchmark inputs · 35 self-tests</div>
-      <a href="/tools/unit-economics-estimator/" class="research-card-read" style="margin-top: 14px; display: inline-block;">Open the tool →</a>
+      <div class="research-card-teaser">LTV M13, cost per subscriber and payback from sourced benchmarks – or your own numbers.</div>
+      <div class="research-card-meta">Sep 2026 · v1.1 · Interactive tool · 24 benchmark inputs · 35 self-tests</div>
+      <a href="/tools/unit-economics-estimator/" class="research-card-read">Open the tool →</a>
       <div class="research-card-link"><a href="/tools/unit-economics-estimator/design-decisions/">Design decisions</a> &middot; <a href="/tools/unit-economics-estimator/benchmarks/">Benchmark snapshots</a> &middot; grew out of <a href="/cases/stealth/">the stealth subscription case</a></div>
     </div>
-    <div class="research-card" style="margin-top: 12px;">
+    <div class="research-card">
       <div class="research-card-title"><a href="/tools/ltv-calculator/">LTV Calculator – what is one subscriber worth?</a></div>
-      <div style="font-size: 0.875rem; color: #6b7280; margin: 4px 0 10px;">Net LTV M13 per plan and blended from the retention curve – and payback against your own CPA. Benchmarks or your cohorts.</div>
-      <div class="research-card-meta" style="font-size: 0.75rem;">Sep 2026 · v1.0 · Interactive tool · the estimator's LTV engine, standalone · 24 self-tests</div>
-      <a href="/tools/ltv-calculator/" class="research-card-read" style="margin-top: 14px; display: inline-block;">Open the tool →</a>
+      <div class="research-card-teaser">Net LTV M13 per plan and blended from the retention curve – and payback against your own CPA. Benchmarks or your cohorts.</div>
+      <div class="research-card-meta">Sep 2026 · v1.0 · Interactive tool · the estimator's LTV engine, standalone · 24 self-tests</div>
+      <a href="/tools/ltv-calculator/" class="research-card-read">Open the tool →</a>
       <div class="research-card-link">Part of <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div>
     </div>
   </div>
@@ -207,7 +207,10 @@
 <footer id="contact">
   <div class="container">
     <div class="section-label">Contact</div>
-    <div class="contact-links">
+    <div class="contact-links"
+    .research-card + .research-card { margin-top: 16px; }
+    .research-card-teaser strong { color: #374151; font-weight: 600; }
+    .research-card-teaser a { color: #1e40af; }>
       <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
       <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
       <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
