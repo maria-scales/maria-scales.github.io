@@ -66,7 +66,7 @@
     .article-content code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #f3f4f6; padding: 1px 5px; border-radius: 3px; color: #111827; }
     hr { border: none; border-top: 1px solid #f3f4f6; margin: 36px 0; }
     .er-diagram { margin: 24px 0 8px; }
-    .er-diagram img { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .er-diagram img { max-width: 100%; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; }
     .er-caption { font-size: 0.8125rem; color: #9ca3af; margin-top: 8px; margin-bottom: 24px; }
     .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 28px 0; background: #f9fafb; }
     .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 14px; }
@@ -211,7 +211,7 @@
     <p>Before going into detail, here is the full structure at a glance:</p>
 
     <div class="er-diagram">
-      <img src="er_diagram.svg" alt="Database ER diagram showing six of the eight tables: companies, job_postings, applications, application_status_history, hard_stop_criteria, position_criteria; cv_versions and cover_letters are not drawn">
+      <img src="er_diagram.svg" alt="Database ER diagram showing six of the eight tables: companies, job_postings, applications, application_status_history, hard_stop_criteria, position_criteria; cv_versions and cover_letters are not drawn" width="1060" height="620">
     </div>
     <div class="er-caption">Six of the eight tables, two groups – operational and config – connected by foreign keys; cv_versions and cover_letters are in the schema but not in the picture. The scraper touches the left side; I touch the right side manually. The config tables sit in the background and drive both.</div>
 
