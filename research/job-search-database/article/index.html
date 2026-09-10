@@ -202,7 +202,7 @@
     </ul></div>
 
     <p class="series-note"><em>Sixty-one days and 41,441 postings later, three of the decisions below did not survive: <a href="/research/schema-vs-scale/article/">the repair log</a>.</em></p>
-    <p>In <a href="/research/job-search-automation/article/">Part 1</a>, I described the framework I use to run a structured job search: five lists – companies to watch, companies to skip, hard stops, fit criteria, and position criteria – updated on a weekly cycle. The problem was clear: manually maintaining those lists in Markdown files and spreadsheets doesn't scale past a few dozen companies. Checking career pages by hand, copy-pasting job titles, tracking application stages in a color-coded table – all of it becomes noise that competes with the actual work of applying.</p>
+    <p>In <a href="/research/job-search-automation/article/">"The Job Search Problem"</a>, I described the framework I use to run a structured job search: five lists – companies to watch, companies to skip, hard stops, fit criteria, and position criteria – updated on a weekly cycle. The problem was clear: manually maintaining those lists in Markdown files and spreadsheets doesn't scale past a few dozen companies. Checking career pages by hand, copy-pasting job titles, tracking application stages in a color-coded table – all of it becomes noise that competes with the actual work of applying.</p>
 
     <p>So I decided to build a proper database. Not to over-engineer a personal project, but because the structure of the problem maps almost perfectly to a relational model – and once that model exists, automation becomes straightforward. This article shows exactly how I translated the five-list framework into a working SQLite schema, and the design decisions I made along the way.</p>
 
@@ -217,7 +217,7 @@
 
     <h2>From Theory to Tables: Mapping the Five Lists</h2>
 
-    <p>The framework from Part 1 defined five conceptual lists. Here is how each one translates into the database:</p>
+    <p>That framework defined five conceptual lists. Here is how each one translates into the database:</p>
 
     <p><code>Company_fit_criteria_list</code> doesn't become a standalone table. Instead, the criteria live in <code>hard_stop_criteria</code> and <code>position_criteria</code>, and the verdict of applying those criteria to each company is stored as <code>watch_status</code> and <code>skip_reason</code> on the <code>companies</code> table. There's no point duplicating the criteria and the result – one source of truth is enough.</p>
 
