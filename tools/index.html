@@ -34,10 +34,9 @@
     .research-card-meta { font-size: 0.8125rem; color: #9ca3af; margin-bottom: 12px; }
     .research-card-teaser { font-size: 0.9375rem; color: #4b5563; line-height: 1.65; margin-bottom: 14px; }
     .research-card-read { font-size: 0.875rem; font-weight: 500; color: #1e40af; display: inline-block; margin-bottom: 16px; }
-    .research-card-sub { border-top: 1px solid #f3f4f6; padding-top: 14px; margin-top: 4px; }
-    .research-card-sub-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; margin-bottom: 8px; }
-    .research-card-sub a { display: block; font-size: 0.875rem; color: #6b7280; padding: 3px 0; text-decoration: none; }
-    .research-card-sub a:hover { color: #1e40af; }
+    .research-card-link { font-size: 0.8125rem; color: #9ca3af; margin-top: 8px; line-height: 1.7; }
+    .research-card-link a { color: #6b7280; text-decoration: none; }
+    .research-card-link a:hover { color: #1e40af; }
   </style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -133,7 +132,7 @@
       "https://hackernoon.com/u/mariascales"
     ]
   },
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-09-10",
   "hasPart": [
     {
       "@type": "SoftwareApplication",
@@ -194,25 +193,14 @@
       <div style="font-size: 0.875rem; color: #6b7280; margin: 4px 0 10px;">LTV M13, cost per subscriber and payback from sourced benchmarks – or your own numbers.</div>
       <div class="research-card-meta" style="font-size: 0.75rem;">Sep 2026 · v1.1 · Interactive tool · 24 benchmark inputs · 35 self-tests</div>
       <a href="/tools/unit-economics-estimator/" class="research-card-read" style="margin-top: 14px; display: inline-block;">Open the tool →</a>
-      <div class="research-card-sub">
-        <div class="research-card-sub-label">Behind it</div>
-        <a href="/tools/unit-economics-estimator/design-decisions/">Design decisions &ndash; the discrete payment schedule, the retention power law, VAT before LTV</a>
-        <a href="/tools/unit-economics-estimator/benchmarks/">Benchmark snapshots &ndash; every input the tool ships with, dated and sourced, as CSV</a>
-      </div>
-      <div class="research-card-sub">
-        <div class="research-card-sub-label">Grew out of</div>
-        <a href="/cases/stealth/">Growth That Doesn't Lie to Itself – the stealth subscription case</a>
-      </div>
+      <div class="research-card-link"><a href="/tools/unit-economics-estimator/design-decisions/">Design decisions</a> &middot; <a href="/tools/unit-economics-estimator/benchmarks/">Benchmark snapshots</a> &middot; grew out of <a href="/cases/stealth/">the stealth subscription case</a></div>
     </div>
     <div class="research-card" style="margin-top: 12px;">
       <div class="research-card-title"><a href="/tools/ltv-calculator/">LTV Calculator – what is one subscriber worth?</a></div>
       <div style="font-size: 0.875rem; color: #6b7280; margin: 4px 0 10px;">Net LTV M13 per plan and blended from the retention curve – and payback against your own CPA. Benchmarks or your cohorts.</div>
       <div class="research-card-meta" style="font-size: 0.75rem;">Sep 2026 · v1.0 · Interactive tool · the estimator's LTV engine, standalone · 24 self-tests</div>
       <a href="/tools/ltv-calculator/" class="research-card-read" style="margin-top: 14px; display: inline-block;">Open the tool →</a>
-      <div class="research-card-sub">
-        <div class="research-card-sub-label">Part of</div>
-        <a href="/tools/unit-economics-estimator/">Unit Economics Estimator – the full funnel: CPM → CPA → does the growth math close?</a>
-      </div>
+      <div class="research-card-link">Part of <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div>
     </div>
   </div>
 </section>
