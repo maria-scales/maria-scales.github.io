@@ -159,7 +159,7 @@
     "url": "https://mariascales.com/"
   },
   "datePublished": "2026-06-28",
-  "dateModified": "2026-09-10",
+  "dateModified": "2026-09-14",
   "keywords": [
     "job search database",
     "SQLite job tracker",
@@ -212,9 +212,9 @@
     <p>Before going into detail, here is the full structure at a glance:</p>
 
     <div class="er-diagram">
-      <img src="er_diagram.svg" alt="Database ER diagram showing six of the eight tables: companies, job_postings, applications, application_status_history, hard_stop_criteria, position_criteria; cv_versions and cover_letters are not drawn" width="1060" height="620">
+      <img src="er_diagram.svg" alt="Database ER diagram showing six of the eight tables: companies, job_postings, applications, application_status_history, hard_stop_criteria, position_criteria" width="1060" height="620">
     </div>
-    <div class="er-caption">Six of the eight tables, two groups – operational and config – connected by foreign keys; cv_versions and cover_letters are in the schema but not in the picture. The scraper touches the left side; I touch the right side manually. The config tables sit in the background and drive both.</div>
+    <div class="er-caption">Six of the eight tables, two groups – operational and config – connected by foreign keys; cv_versions and cover_letters are in the schema but not in the picture. The 118 rows in the companies box are the companies in the table, 54 of them watched. The scraper touches the left side; I touch the right side manually. The config tables sit in the background and drive both.</div>
 
     <h2>From Theory to Tables: Mapping the Five Lists</h2>
 
