@@ -98,7 +98,7 @@
   <rect x="848" y="158" width="56" height="16" rx="8" fill="#e65100" opacity="0.12"/>
   <text x="876" y="169" text-anchor="middle" font-size="9" fill="#e65100" font-weight="600">6 rows</text>
   <rect x="912" y="158" width="110" height="16" rx="3" fill="#fff3e0"/>
-  <text x="967" y="169" text-anchor="middle" font-size="9" fill="#e65100">config — no FK</text>
+  <text x="967" y="169" text-anchor="middle" font-size="9" fill="#e65100">config – no FK</text>
 
   <!-- ── POSITION_CRITERIA ── -->
   <rect x="830" y="240" width="210" height="152" rx="6" fill="#fff" stroke="#795548" stroke-width="1.5"/>
@@ -114,7 +114,7 @@
   <rect x="848" y="358" width="62" height="16" rx="8" fill="#795548" opacity="0.12"/>
   <text x="879" y="369" text-anchor="middle" font-size="9" fill="#795548" font-weight="600">18 rows</text>
   <rect x="918" y="358" width="104" height="16" rx="3" fill="#efebe9"/>
-  <text x="970" y="369" text-anchor="middle" font-size="9" fill="#795548">config — no FK</text>
+  <text x="970" y="369" text-anchor="middle" font-size="9" fill="#795548">config – no FK</text>
 
   <!-- ── RELATIONSHIPS ── -->
   <!-- companies 1→∞ job_postings -->
@@ -149,5 +149,5 @@
   <text x="177" y="572" font-size="9" fill="#c62828">trigger write</text>
 
   <!-- ── FOOTER ── -->
-  <text x="530" y="600" text-anchor="middle" font-size="10" fill="#aaa">jobsearch.db — Entity Relationship Diagram</text>
+  <text x="530" y="600" text-anchor="middle" font-size="10" fill="#aaa">jobsearch.db – Entity Relationship Diagram</text>
 </svg>
