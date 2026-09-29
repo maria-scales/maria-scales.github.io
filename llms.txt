@@ -59,5 +59,6 @@ All pages are static HTML with en-dash typography and typed JSON-LD: Article, Da
 ## Optional
 
 - [Sitemap](https://mariascales.com/sitemap.xml)
+- [Privacy policy](https://mariascales.com/privacy/): what the site collects - Google Analytics 4 via Tag Manager, the LinkedIn Insight Tag, GitHub Pages hosting logs; analytics kept 14 months; no forms, no accounts, nothing sold
 - [LinkedIn](https://linkedin.com/in/atamanova-m)
 - [GitHub](https://github.com/maria-scales)
