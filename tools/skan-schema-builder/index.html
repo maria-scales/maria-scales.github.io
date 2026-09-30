@@ -278,7 +278,7 @@ a.jl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;te
         "price": "0",
         "priceCurrency": "USD"
       },
-      "softwareVersion": "1.3",
+      "softwareVersion": "1.4",
       "datePublished": "2026-09-30",
       "dateModified": "2026-09-30",
       "inLanguage": "en",
@@ -409,7 +409,7 @@ a.jl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;te
   <div class="container">
     <h1 class="page-title">SKAN Schema Builder</h1>
     <div class="page-standfirst">What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.</div>
-    <div class="page-meta">Sep 2026 · v1.3 · Systems · Interactive · subscription apps and games</div>
+    <div class="page-meta">Sep 2026 · v1.4 · Systems · Interactive · subscription apps and games</div>
   </div>
 </div>
 <div class="container">
@@ -1518,7 +1518,7 @@ function renderGame(s, m){
   rows.push(`<tr><td class="num">${m.n-1}</td><td class="num">more than ${money$(m.cap)} (set a real upper edge in the MMP)</td></tr>`);
   h += `<div class="buckets"><table><thead><tr><th>Bucket</th><th>Revenue in days 0–2</th></tr></thead><tbody>${rows.join("")}</tbody></table></div></details>`;
   h += `<p class="small">A bucket's fine value is bucket × ${1<<m.e}${m.e?", plus the engagement bits":""}${m.paid?", plus 32 if the player made a purchase":""}. ${m.mon === "ads" ? "Edges come from your top amount and spacing; check them against your own ad revenue per player." : "For purchase revenue, put edges just above your price points ($0.99, $4.99, $9.99…) or at quantiles of your own data, and compare with your MMP's suggested ranges."}</p>`;
-  h += Q(`<span class="small">Give the last bucket a real upper edge in the MMP.</span>`, "Networks that bid on ROAS don't read bucket numbers: your MMP decodes each value to revenue and passes it on (AppsFlyer records the average of the range). An open-ended last bucket leaves the value of your biggest spenders undefined, so close it at a high percentile of your own day 0–2 revenue, for example P95–P99.");
+  h += Q(`<span class="small">Give the last bucket a real upper edge in the MMP.</span>`, "Networks that bid on ROAS don't read bucket numbers: your MMP decodes each value to revenue and passes it on (AppsFlyer records the average of the range). An open-ended last bucket leaves the value of your biggest spenders undefined, so close it at a high percentile of your own day 0–2 revenue, for example P95–P99. Which mapping each network expects differs; AppLovin doesn't publish it for SKAN ROAS campaigns, so confirm with your account manager.");
   h += `<h3>${JL("Coarse")} fallback</h3>` + Q(`<span class="small">Arrives when the source is too small for a fine value.</span>`, "Apple decides by crowd-anonymity tier whether postback 1 carries the fine value or only this coarse one. Small sources get coarse, so the coarse ladder has to make sense on its own.");
   h += coarseTable(m.rows.pb1c);
   h += pbTail(m);
@@ -1619,7 +1619,7 @@ function mmpHTML(s, m){
     steps.push(`${UI("Lock window")}: ${m.lock.on ? `on, condition ${UI("Time")}, 24 hours after install.` : m.lock.test ? `leave it off at launch. To test a lock later: condition ${UI("Time")}, 24 hours (AppsFlyer says "after install"; SKAN counts from first launch).` : `leave off.${m.game ? ` If a network needs a faster signal, use the ${UI("High coarse value")} condition.` : ""}`} The two conditions are ${UI("Time")} and ${UI("High coarse value")}.${TAG("B")}`);
     steps.push(`${UI("Window 2 (3-7 days)")}: ${coarseList(m.rows.pb2, true)}.${TAG("B")}`);
     steps.push(`${UI("Window 3 (8-35 days)")}: ${coarseList(m.rows.pb3, true)}.${TAG("B")}`);
-    steps.push(`${UI("Save")}, then check that partner postback mappings match the events you used here.${TAG("B")}${m.game ? ` For networks that bid on ROAS, map ${ev("af_skad_revenue")} in that partner's in-app event postbacks so it receives revenue per value.${TAG("A")}` : ""}`);
+    steps.push(`${UI("Save")}, then check that partner postback mappings match the events you used here.${TAG("B")}${m.game ? ` For networks that bid on ROAS, map ${ev("af_skad_revenue")} in that partner's in-app event postbacks so it receives revenue per value.${TAG("A")} AppLovin doesn't publish which value mapping its SKAN ROAS campaigns expect; confirm it with your AppLovin account manager.` : ""}`);
   } else {
     steps.push(`${UI("AppView → SKAN Conversion Hub")} → your app → ${UI("Map conversion values")} → ${UI("SKAdNetwork 4")} → ${UI("Advanced setup")}.${TAG("B")}`);
     steps.push(`Postback schedule: ${m.lock.on || m.lock.test ? `${m.lock.test ? "leave the default schedule at launch. To test a lock later, " : "To lock postback 1 at 24 hours, "}press ${UI("Edit")} → ${UI("Set a static window")} on the first window only. Adjust advises against changing the schedule or using a lockWindow in early testing and asks you to agree it with the network first; the lost hours show as a ${UI("measurement gap")}.` : `press ${UI("Next")} and leave the default schedule. Adjust also advises against lock windows in early testing.`}${TAG("B")}`);
@@ -1635,7 +1635,7 @@ function mmpHTML(s, m){
     steps.push(`${UI("Add Coarse conversion values")}: ${coarseList(m.rows.pb1c)}. Adjust also recommends Session on Low.${TAG("B")}`);
     steps.push(`Postback 2 (days 3–7), coarse: ${coarseList(m.rows.pb2)}.${TAG("B")}`);
     steps.push(`Postback 3 (days 8–35), coarse: ${coarseList(m.rows.pb3)}.${TAG("B")}`);
-    steps.push(`${UI("Review and save mapping")}. Adjust asks for the same mapping for SKAN 3 and SKAN 4; if you change it for SKAN 4, update the SKAN 3 mapping by hand.${TAG("B")}${m.game ? ` Networks that bid on ROAS need your value-to-revenue mapping; check that it is shared with each of them.${TAG("A")}` : ""}`);
+    steps.push(`${UI("Review and save mapping")}. Adjust asks for the same mapping for SKAN 3 and SKAN 4; if you change it for SKAN 4, update the SKAN 3 mapping by hand.${TAG("B")}${m.game ? ` Networks that bid on ROAS need your value-to-revenue mapping; check that it is shared with each of them.${TAG("A")} AppLovin doesn't publish which value mapping its SKAN ROAS campaigns expect; confirm it with your AppLovin account manager.` : ""}`);
   }
   const integ = integrations(s, s.mmp);
   let h = Q(`<span class="small">${steps.length} steps in ${af ? "AppsFlyer" : "Adjust"}${integ.length ? `, plus ${integ.length} for your channels` : ""}, from ${af ? "AppsFlyer's" : "Adjust's"} help pages, checked 28 Sep 2026. Your screens may differ.</span>`, `Screen names from ${MMP_SRC[s.mmp]}, checked 28 Sep 2026. MMP screens change; the help page is the source of truth. Tags: B – checked source (vendor help or published report) · A – assumption.`);
