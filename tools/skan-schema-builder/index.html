@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKAN Schema Builder · Maria Atamanova</title>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K7ZJJ8C6');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="icon" href="/favicon.svg">
+  <meta name="description" content="What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.">
+  <link rel="canonical" href="https://mariascales.com/tools/skan-schema-builder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SKAN Schema Builder · Maria Atamanova">
+  <meta property="og:description" content="What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.">
+  <meta property="og:url" content="https://mariascales.com/tools/skan-schema-builder/">
+  <meta property="og:image" content="https://mariascales.com/og-image.png">
+  <meta property="og:site_name" content="Maria Atamanova">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SKAN Schema Builder · Maria Atamanova">
+  <meta name="twitter:description" content="What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.">
+  <meta name="twitter:image" content="https://mariascales.com/og-image.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif; background: #ffffff; color: #111827; line-height: 1.65; font-size: 16px; }
+    a { color: #1e40af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 40px 0 32px; border-bottom: 1px solid #e5e7eb; }
+    .site-name { font-size: 1.125rem; font-weight: 700; color: #111827; letter-spacing: -0.01em; }
+    .site-name a { color: #111827; }
+    .site-name a:hover { text-decoration: none; color: #1e40af; }
+    .site-tagline { font-size: 0.875rem; color: #6b7280; margin-top: 4px; }
+    .site-nav { position: sticky; top: 0; z-index: 100; background: #ffffff; border-bottom: 1px solid #e5e7eb; transition: box-shadow 0.2s; }
+    .site-nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .site-nav .container { display: flex; align-items: center; padding-top: 0; padding-bottom: 0; overflow-x: auto; scrollbar-width: none; }
+    .site-nav .container::-webkit-scrollbar { display: none; }
+    @media (max-width: 480px) { .site-nav .nav-link { margin-right: 12px; font-size: 0.8125rem; }
+    .site-nav .nav-link:last-child { margin-right: 0; } }
+    .nav-link { font-size: 0.875rem; font-weight: 500; color: #6b7280; padding: 13px 0; margin-right: 28px; border-bottom: 2px solid transparent; text-decoration: none; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: #111827; text-decoration: none; }
+    .nav-link.active { color: #111827; border-bottom-color: #111827; }
+    .breadcrumb { padding: 16px 0; font-size: 0.8125rem; color: #6b7280;  }
+    .breadcrumb a { color: #6b7280; }
+    .breadcrumb a:hover { color: #1e40af; }
+    .breadcrumb span { margin: 0 6px; }
+    .page-header { padding: 40px 0 32px;  }
+    .page-standfirst { font-size: 1.0625rem; color: #4a6080; line-height: 1.6; margin-bottom: 12px; }
+    .page-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; color: #111827; margin-bottom: 10px; line-height: 1.25; }
+    .page-meta { font-size: 0.875rem; color: #6b7280; }
+    .back-link { padding: 32px 0 48px; }
+    .back-link a { font-size: 0.9375rem; color: #6b7280; font-weight: 500; }
+    .back-link a:hover { color: #1e40af; }
+    footer { padding: 40px 0 64px; }
+    .section-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; margin-bottom: 16px; }
+    .contact-links { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+    .contact-links a { color: #111827; font-size: 0.9375rem; font-weight: 500; }
+    .contact-links a:hover { color: #1e40af; text-decoration: none; }
+    @media (max-width: 600px) { .page-title { font-size: 1.375rem; } header { padding: 28px 0 24px; } }
+
+    .callout { border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px 24px; margin: 0 0 28px; background: #f9fafb; }
+    .callout-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; margin-bottom: 14px; }
+    .callout ul { padding-left: 20px; margin: 0; }
+    .callout li { color: #374151; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 8px; }
+    .callout li:last-child { margin-bottom: 0; }
+    .callout strong { color: #111827; }
+    .callout a { color: #1e40af; }
+    .callout code { font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace; font-size: 0.875em; background: #e9eaec; padding: 1px 5px; border-radius: 3px; color: #111827; }
+  </style>
+  <style>
+:root{
+  --ink:#111827; --ink2:#374151; --body:#4b5563; --lead:#4a6080; --muted:#6b7280; --faint:#6b7280;
+  --line:#e5e7eb; --soft:#f9fafb; --page:#ffffff; --link:#1e40af;
+  --pb1:#1e40af; --pb1f:#e8eefb; --pb2:#0f766e; --pb2f:#e3f3f1; --pb3:#b45309; --pb3f:#fbf0e3;
+  --money:#15803d; --moneyf:#e6f4ea; --trial:#475569; --trialf:#eef1f5;
+  --warnl:#fcd34d; --bad:#b91c1c; --badf:#fef2f2;
+  --r-core:#1e3a8a; --r-input:#2563eb; --r-opt:#64748b; --r-sec:#94a3b8; --r-nip:#cbd5e1; --r-own:#7c3aed;
+  --k-paid:#7c3aed; --k-paidf:#f3effd; --k-rev:#15803d; --k-revf:#e6f4ea; --k-eng:#0f766e; --k-engf:#e3f3f1;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+[hidden]{display:none!important}
+
+
+
+h2{font-size:1.3125rem;color:var(--ink);letter-spacing:-.01em;margin:44px 0 12px;line-height:1.3;text-wrap:balance}
+h3{font-size:1.0625rem;color:var(--ink);margin:28px 0 8px;line-height:1.35}
+p{margin:0 0 12px}
+.small{font-size:.875rem;color:var(--muted)}
+.ev{font-family:var(--mono);font-size:.8125rem;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}
+
+/* site canon: tools/unit-economics-estimator – howcard, mnotes, whyb, fsrc */
+.card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.howcard{margin:10px 0 4px;background:#fff;border-color:#dbe4f0}
+.howcard summary,.mnotes summary{cursor:pointer;font-size:.875rem;color:var(--link);font-weight:600;list-style:none}
+.howcard summary::-webkit-details-marker,.mnotes summary::-webkit-details-marker{display:none}
+.howcard summary::before,.mnotes summary::before{content:"▸ "}
+.howcard[open] summary::before,.mnotes[open] summary::before{content:"▾ "}
+.howcard[open] > summary{margin-bottom:8px}
+.howcard > :last-child{margin-bottom:0}
+.howcard .note{font-size:.875rem;color:var(--body);line-height:1.6}
+.howcard .note b{color:var(--ink)}
+.mnotes{font-size:.875rem;color:var(--muted);margin:6px 0}
+.mnotes summary{padding:4px 0}
+.mnotes[open] > summary{margin-bottom:4px}
+summary:focus{outline:none} summary:focus-visible{outline:2px solid #93c5fd;outline-offset:2px;border-radius:4px}
+.whyb{display:inline-block;vertical-align:middle;margin-left:6px;font-size:.625rem;line-height:1.4;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:0 6px;cursor:pointer;white-space:nowrap;background:#fff;user-select:none;text-transform:none;letter-spacing:0}
+.whyb:hover,.whyb.on{color:var(--link);border-color:var(--link)}
+.whyb:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+.fsrc{display:none;font-size:.8125rem;line-height:1.5;color:var(--muted);margin-top:6px;padding:8px 10px;background:var(--soft);border-left:3px solid #d1d5db;border-radius:0 6px 6px 0;font-weight:400}
+.fsrc p{margin:0 0 8px} .fsrc p:last-child{margin:0}
+.fsrc ul{margin:0 0 10px;padding-left:18px} .fsrc ul:last-child{margin:0} .fsrc li{margin:0 0 3px} .fsrc b{color:var(--ink2);font-weight:600}
+.qwrap.open > .fsrc{display:block}
+.oneline{font-size:.9375rem;color:var(--body);margin:0 0 8px}
+.callout p:last-child{margin:0}
+ol.steps,ul.plain{padding-left:22px;margin:0 0 12px}
+ol.steps li,ul.plain li{margin-bottom:6px}
+ol.steps li::marker{color:var(--faint);font-weight:600}
+
+.tablewrap{overflow-x:auto;margin:8px 0 16px}
+table{border-collapse:collapse;width:100%;font-size:.875rem;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;background:var(--soft)}
+td.rowh{font-weight:600;color:var(--ink);width:22%}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Setup */
+.setup{border:1px solid var(--line);border-radius:8px;padding:6px 20px 20px}
+.group{padding-block:14px;border-bottom:1px solid var(--line);display:grid;gap:8px}
+.glabel{font-size:.9375rem;font-weight:600;color:var(--ink)}
+.ghint{font-size:.8125rem;color:var(--muted);margin:0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{position:relative;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:6px;padding:6px 11px;font-size:.875rem;color:var(--ink2);cursor:pointer;background:var(--page);user-select:none}
+.seg label input{position:absolute;opacity:0;width:1px;height:1px}
+.seg label:has(input:checked){border-color:var(--link);background:var(--pb1f);color:var(--link);font-weight:600}
+.seg label:has(input:focus-visible){outline:2px solid var(--link);outline-offset:2px}
+.seg label:has(input:disabled){cursor:not-allowed;color:var(--faint);background:var(--soft);border-color:var(--line);font-weight:400}
+input[type=number],input[type=text],select{font:inherit;font-size:.875rem;border:1px solid var(--line);border-radius:6px;padding:6px 8px;color:var(--ink);background:var(--page)}
+input[type=number]{width:84px;font-variant-numeric:tabular-nums}
+input:disabled{color:var(--faint);background:var(--soft)}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.chan{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.chan:last-child{border-bottom:0}
+.chan .nm{font-size:.9375rem;color:var(--ink)}
+.chan .nm small{display:block;font-size:.75rem;color:var(--muted)}
+.chan .pct{display:flex;align-items:center;gap:4px;font-size:.8125rem;color:var(--muted)}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--link)}
+.sumline{font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.sumline.bad{color:var(--pb3)}
+.row2{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.funrows{display:grid;gap:6px;margin-top:6px}
+.funrow{display:flex;gap:8px;align-items:center}
+.funrow input[type=text]{flex:1;min-width:0;max-width:280px}
+.funrow input[type=text]:disabled{opacity:.45}
+.btn{font:inherit;font-size:.9375rem;font-weight:600;border-radius:6px;padding:9px 18px;cursor:pointer;border:1px solid var(--link);background:var(--link);color:#fff}
+.btn.ghost{background:var(--page);color:var(--link);font-weight:500;font-size:.875rem;padding:7px 14px}
+a.jl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-color:var(--faint)}
+.src{display:inline-block;font-size:.6875rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:0 4px;margin-left:4px;vertical-align:1px}
+.autonote{font-size:.8125rem;color:var(--pb1);background:var(--pb1f);border-radius:6px;padding:6px 10px;margin:0 0 10px}
+
+/* plan ranking */
+.rankcap{font-size:.75rem;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.rank{display:grid;gap:4px;max-width:420px;touch-action:none}
+.rrow{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:8px;border:1px solid var(--line);border-radius:6px;padding:5px 8px;background:var(--page);cursor:grab;user-select:none}
+.rrow.dragging{border-color:var(--link);background:var(--pb1f);box-shadow:0 2px 8px rgba(17,24,39,.12);cursor:grabbing}
+.rrow.off{background:var(--soft)}
+.rrow.off .pl{color:var(--faint)}
+.grip{color:var(--faint);font-size:.875rem;letter-spacing:-2px;text-align:center}
+.rrow .pl{display:flex;align-items:center;gap:8px;font-size:.9375rem;color:var(--ink);cursor:pointer}
+.rbtns{display:flex;gap:4px}
+.rbtns button{font:inherit;font-size:.8125rem;width:28px;height:26px;border:1px solid var(--line);border-radius:4px;background:var(--page);color:var(--muted);cursor:pointer}
+.rbtns button:disabled{opacity:.35;cursor:default}
+
+/* Results */
+.result{margin-top:8px}
+.rolebar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--soft);border:1px solid var(--line);margin:10px 0 8px}
+.rolebar span{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8125rem;color:var(--body);font-variant-numeric:tabular-nums}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.cards{display:grid;gap:10px;margin-top:14px}
+.ccard{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:4px}
+.ccard .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+.ccard .nm{font-weight:600;color:var(--ink)}
+.ccard .pc{font-size:.8125rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ccard .sees{font-size:.875rem;color:var(--body)}
+.ccard details{font-size:.8125rem;color:var(--muted)}
+.ccard summary{cursor:pointer;color:var(--link)}
+.badge{display:inline-block;font-size:.6875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:2px 7px;color:#fff}
+.verdict{font-size:.9375rem;color:var(--ink2);margin-top:10px}
+
+.tl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;padding:10px 0 4px;margin-top:8px}
+.tl svg{display:block}
+.tl text{font-family:var(--sans)}
+
+.pbhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:36px 0 6px}
+.pbhead h2{margin:0}
+.pbchip{font-size:.75rem;font-weight:600;border-radius:4px;padding:2px 8px}
+.pb1c{background:var(--pb1f);color:var(--pb1)}
+.pb2c{background:var(--pb2f);color:var(--pb2)}
+.pb3c{background:var(--pb3f);color:var(--pb3)}
+.pbwhy{font-size:.9375rem;color:var(--body);margin:0 0 10px}
+
+.bits{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:10px 0 6px}
+@media (max-width:640px){.bits{grid-template-columns:repeat(3,1fr)}}
+.bit{border:1px solid var(--line);border-radius:6px;padding:8px 8px 9px;background:var(--page);cursor:pointer;text-align:left;font:inherit;display:grid;gap:3px;min-width:0}
+.bit .bv{font-family:var(--mono);font-size:.75rem;color:var(--faint);font-variant-numeric:tabular-nums}
+.bit .be{font-family:var(--mono);font-size:.75rem;color:var(--ink);overflow-wrap:break-word;line-height:1.35}
+.bit.on{background:var(--pb1f);border-color:var(--pb1)}
+.bit.on .bv{color:var(--pb1);font-weight:700}
+.bit.free{border-style:dashed;cursor:default}
+.bit.free .be{color:var(--faint);font-family:var(--sans)}
+.bit.k-paid{background:var(--k-paidf);border-color:var(--k-paid);cursor:default}
+.bit.k-rev{background:var(--k-revf);border-color:var(--k-rev);cursor:default}
+.bit.k-eng{background:var(--k-engf);border-color:var(--k-eng);cursor:default}
+.cvline{font-size:.9375rem;color:var(--ink2);font-variant-numeric:tabular-nums;margin-bottom:12px}
+.cvline b{font-family:var(--mono);color:var(--pb1);font-size:1.0625rem}
+.why{font-size:.8125rem;color:var(--body);line-height:1.55}
+.lvl{font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em}
+.lvl.Low{color:var(--muted)} .lvl.Medium{color:var(--pb2)} .lvl.High{color:var(--pb1)}
+.grid64{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.grid64 td.n{text-align:center;color:var(--ink)}
+.grid64 td.n.cold{color:var(--faint)}
+.tryer{border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px;margin:10px 0}
+.tryer .row2 label{font-size:.875rem;display:inline-flex;gap:6px;align-items:center}
+.buckets{max-height:300px;overflow:auto;border:1px solid var(--line);border-radius:8px;margin:8px 0 16px}
+.buckets table{font-size:.8125rem}
+.buckets th{position:sticky;top:0}
+.strip{overflow-x:auto;margin:6px 0 4px}
+
+.lock{border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:6px;margin-top:8px}
+.lock .dec{font-weight:700;color:var(--ink);font-size:1rem}
+.pbwhy.qwrap{font-size:.9375rem}
+.warns{display:grid;gap:8px;margin-top:8px}
+.warn{border-left:3px solid var(--line);padding:4px 0 4px 12px;font-size:.9375rem;color:var(--ink2)}
+.warn.hot{border-left-color:var(--warnl)}
+
+.ref details{margin:0 0 8px}
+.ref details > *:not(summary){font-size:.9375rem}
+.sources{font-size:.8125rem;color:var(--body);padding-left:18px}
+.sources li{margin-bottom:4px}
+
+.testpanel{border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin-top:18px}
+.testpanel h2{margin:0 0 6px;font-size:1.0625rem}
+.testpanel .ok{color:var(--money);font-weight:700}
+.testpanel .fail{color:var(--bad);font-weight:700}
+.testpanel ol{font-size:.8125rem;padding-left:22px;margin:6px 0 0;max-height:320px;overflow:auto}
+.testpanel li.f{color:var(--bad)}
+
+.toast{font-size:.8125rem;color:var(--money);min-height:1.2em}
+@media (prefers-reduced-motion:no-preference){.bit{transition:background .12s,border-color .12s}}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "SKAN Schema Builder",
+      "alternateName": "SKAN conversion value schema builder",
+      "url": "https://mariascales.com/tools/skan-schema-builder/",
+      "description": "What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "SKAdNetwork 4 / AdAttributionKit conversion schema builder",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "softwareVersion": "1.0",
+      "datePublished": "2026-09-30",
+      "dateModified": "2026-09-30",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Maria Atamanova",
+        "url": "https://mariascales.com/",
+        "sameAs": [
+          "https://linkedin.com/in/atamanova-m",
+          "https://github.com/maria-scales",
+          "https://hackernoon.com/u/mariascales"
+        ]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Maria Atamanova",
+        "url": "https://mariascales.com/"
+      },
+      "image": "https://mariascales.com/og-image.png",
+      "about": [
+        "SKAdNetwork 4",
+        "AdAttributionKit",
+        "Conversion value schema",
+        "iOS attribution",
+        "Subscription apps",
+        "Mobile games"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mariascales.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://mariascales.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SKAN Schema Builder",
+          "item": "https://mariascales.com/tools/skan-schema-builder/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "url": "https://mariascales.com/tools/skan-schema-builder/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a SKAN conversion schema?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The mapping your MMP uses to turn what a user did after install into the values Apple sends back: a fine value from 0 to 63 (six bits) in postback 1, and a coarse value – low, medium or high – in postbacks 2 and 3 and for small sources. You set it once, in the MMP, for every network that buys iOS installs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the SKAN 4 conversion windows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three, counted from the first launch, not from the install: days 0–2 (the first 48 hours), 3–7 and 8–35. Postback 1 arrives 24–48 hours after its window closes; postbacks 2 and 3 arrive 24–144 hours after theirs. Only postback 1 can carry a fine value, and only on crowd-anonymity tiers 2–3."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is there no revenue in postback 1 for a subscription app with a trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because a trial has charged no one by 48 hours. Postback 1 codes the stage and the plan – a trial started on the monthly or the annual plan – and the money goes to the postback whose window holds the first charge: postback 2 for a 3–5-day trial, postback 3 for a trial of 7 days or longer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I lock postback 1 early?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if most trials or purchases happen on install day and you buy from ad networks that optimize on SKAN. A lock at 24 hours sends postback 1 about a day sooner and loses everything after the lock. Meta optimizes on AEM and Google on its own model, so for them the speed of the postback changes nothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SKAN work without tracking consent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Apps can call the SKAN APIs regardless of their tracking authorization status, so SKAN counts installs from ads whether users consented or not. It does not see organic installs, networks that don't use SKAN, or installs that are never opened."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "SKAdNetwork or AdAttributionKit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both work, with the same postback model: three windows, the same delays, a fine value only in postback 1. Apple recommends AdAttributionKit for new work and the SKAdNetwork class is not deprecated, so a schema carries over as it is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is anything I type sent anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The schema is computed in your browser and nothing you enter leaves the page. The tool is not affiliated with Apple, AppsFlyer or Adjust."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="site-name"><a href="/">Maria Atamanova</a></div>
+    <div class="site-tagline">Performance marketing for AI-era growth – backed by models, not gut feeling.</div>
+  </div>
+</header>
+<nav class="site-nav"><div class="container"><a href="/cases/" class="nav-link">Case Studies</a><a href="/articles/" class="nav-link">Writing</a><a href="/research/" class="nav-link">Research</a><a href="/tools/" class="nav-link active">Tools</a><a href="#contact" class="nav-link">Contact</a></div></nav><div class="breadcrumb"><div class="container"><a href="/">Home</a><span>›</span><a href="/tools/">Tools</a><span>›</span><strong>SKAN Schema Builder</strong></div></div>
+<div id="testpanel" hidden></div>
+<div class="page-header">
+  <div class="container">
+    <h1 class="page-title">SKAN Schema Builder</h1>
+    <div class="page-standfirst">What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.</div>
+    <div class="page-meta">Sep 2026 · v1.0 · Systems · Interactive · subscription apps and games</div>
+  </div>
+</div>
+<div class="container">
+  <div class="callout lead"><div class="callout-label">TL;DR</div>
+    <ul>
+      <li><strong>The schema follows when the money happens.</strong> A subscription with a trial has no revenue at 48 hours, so postback 1 codes the stage and the plan; a game earns from day one, so postback 1 codes revenue buckets.</li>
+      <li><strong>SKAN 4 gives up to three postbacks</strong> – for the first 48 hours, for 48–168 hours and up to day 35 after first launch; a fine value of 0–63 only in the first, low / medium / high after that, each arriving 24–48 or 24–144 hours after its window closes.</li>
+      <li><strong>Every row says why, and every assumption is tagged</strong> B (checked source) or A (assumption): no vendor bucket numbers, no invented crowd-anonymity thresholds, and the self-test runs in the page at <a href="#test">#test</a>.</li>
+    </ul>
+  </div>
+
+  <details class="card howcard" id="jargon" style="margin-top:18px">
+    <summary>Jargon: SKAN, AAK, postback, fine and coarse values, tier, non-install session, lockWindow, MMP, SAN / SRN, AEM</summary>
+    <p class="note"><b>SKAN</b> – SKAdNetwork, Apple's privacy-safe attribution for app installs from ads · <b>AAK</b> – AdAttributionKit, its successor with the same postback model · <b>postback</b> – the message Apple sends the ad network (and your MMP) about one install · <b>conversion window</b> – the period a postback covers, counted from first launch. Apple calls them days 0–2, 3–7 and 8–35; in hours that is 0–48, 48–168 and 168 to the end of day 35 · <b>fine value</b> – a number from 0 to 63 (6 bits), only in postback 1 · <b>coarse value</b> – low, medium or high; the only value in postbacks 2 and 3, and what small sources get in postback 1 · <b>tier</b> – the crowd-anonymity level Apple gives a source; it decides whether you get a fine value, a coarse one or nothing · <b>non-install session</b> – any app open after the first launch; the usual Low condition in postbacks 2 and 3 · <b>lockWindow</b> – closing postback 1 early so it is sent sooner · <b>MMP</b> – mobile measurement partner (AppsFlyer, Adjust and others) · <b>SAN / SRN</b> – self-attributing network: claims installs through its own API (Meta, Google, TikTok) · <b>AEM</b> – Meta's Aggregated Event Measurement.</p>
+  </details>
+
+  <details class="card howcard" open>
+  <summary>How to use – 30 seconds</summary>
+  <ol class="steps note">
+    <li>Pick your <b>product</b>: a subscription app, or a game that earns from purchases, ads or both.</li>
+    <li>Answer the <b>product questions</b>. Subscriptions: where people pay, trial length, when trials start, your one or two plans, purchases without a trial and upsells. Games: how far revenue buckets should reach and which early events matter.</li>
+    <li>Read the <b>schema</b>: postback 1 as six bits plus a coarse fallback, postbacks 2 and 3 as coarse values. Every row says why. Click the bits, or try a player, to see how one value is built.</li>
+    <li><b>Optional:</b> tick your iOS channels to see how much SKAN matters for you. They don't change the schema; they only settle the lockWindow advice.</li>
+    <li>Follow the <b>steps for your MMP</b>.</li>
+  </ol>
+  </details>
+
+  <details class="card howcard" id="faq">
+    <summary>Questions this tool gets asked</summary>
+    <div class="note">
+    <p style="margin:0 0 10px"><strong>What is a SKAN conversion schema?</strong><br>The mapping your MMP uses to turn what a user did after install into the values Apple sends back: a fine value from 0 to 63 (six bits) in postback 1, and a coarse value – low, medium or high – in postbacks 2 and 3 and for small sources. You set it once, in the MMP, for every network that buys iOS installs.</p>
+    <p style="margin:0 0 10px"><strong>What are the SKAN 4 conversion windows?</strong><br>Three, counted from the first launch, not from the install: days 0–2 (the first 48 hours), 3–7 and 8–35. Postback 1 arrives 24–48 hours after its window closes; postbacks 2 and 3 arrive 24–144 hours after theirs. Only postback 1 can carry a fine value, and only on crowd-anonymity tiers 2–3.</p>
+    <p style="margin:0 0 10px"><strong>Why is there no revenue in postback 1 for a subscription app with a trial?</strong><br>Because a trial has charged no one by 48 hours. Postback 1 codes the stage and the plan – a trial started on the monthly or the annual plan – and the money goes to the postback whose window holds the first charge: postback 2 for a 3–5-day trial, postback 3 for a trial of 7 days or longer.</p>
+    <p style="margin:0 0 10px"><strong>Should I lock postback 1 early?</strong><br>Only if most trials or purchases happen on install day and you buy from ad networks that optimize on SKAN. A lock at 24 hours sends postback 1 about a day sooner and loses everything after the lock. Meta optimizes on AEM and Google on its own model, so for them the speed of the postback changes nothing.</p>
+    <p style="margin:0 0 10px"><strong>Does SKAN work without tracking consent?</strong><br>Yes. Apps can call the SKAN APIs regardless of their tracking authorization status, so SKAN counts installs from ads whether users consented or not. It does not see organic installs, networks that don't use SKAN, or installs that are never opened.</p>
+    <p style="margin:0 0 10px"><strong>SKAdNetwork or AdAttributionKit?</strong><br>Both work, with the same postback model: three windows, the same delays, a fine value only in postback 1. Apple recommends AdAttributionKit for new work and the SKAdNetwork class is not deprecated, so a schema carries over as it is.</p>
+    <p style="margin:0 0 10px"><strong>Is anything I type sent anywhere?</strong><br>No. The schema is computed in your browser and nothing you enter leaves the page. The tool is not affiliated with Apple, AppsFlyer or Adjust.</p>
+    </div>
+  </details>
+
+  <h2>Why set up SKAN at all?</h2>
+  <div class="callout">
+    <div class="callout-label">Short answer</div>
+    <p>If you buy mostly Meta and Google, SKAN isn't what you optimize on – they, and since 2025 TikTok, run on their own data. It's insurance you set up before you need it: ad networks without their own measurement officially have nothing else, clean SKAN data takes weeks to build up, and it's an independent cross-check on what the platforms report.</p>
+  </div>
+  <details class="card howcard">
+  <summary>If Meta optimizes on AEM, Google on its own model, and part of the money comes through the web, why bother? Three reasons, and one honest limit.</summary>
+  <ol class="steps note">
+    <li><b>Ad networks without their own measurement run on it.</b> AppLovin, Unity, Moloco and similar networks work through MMP links. For users who said no to tracking, SKAN is officially the only signal they have. You may not buy them today – but the day you scale iOS beyond Meta and Google, they're often next.</li>
+    <li><b>Clean data takes weeks – so it has to be running before you need it.</b> Postback windows run to day 35, plus a delay of up to six days. Set SKAN up on the day you add a new network, and you spend the first six weeks half-blind. Set it up now, and the history is there when you need it.</li>
+    <li><b>It's an independent cross-check.</b> Apple signs every postback, and it doesn't depend on tracking consent or on what a platform reports about itself. It has its own blind spots – its own attribution rules, delays, empty postbacks at low volume, no organic installs – so treat it as a second opinion, not a referee.</li>
+  </ol>
+  <p class="small"><b>Honest limit:</b> Google uses SKAN as one input to its iOS modeling and shows a separate SKAN report – how much weight it gets, Google doesn't say.</p>
+  </details>
+  <p>Skipping the schema doesn't switch SKAN off – installs still get reported, just with no value attached, so networks bidding on SKAN can only optimize for installs, not for trials or revenue. That's why the schema matters – and why you only want to design it once.</p>
+
+  <h2>Why set it once</h2>
+  <p class="oneline">Changing the schema no longer pauses Meta ad sets, as it did in 2021–23. It still costs about six weeks of mixed data and a break in the series, so you design it once.</p>
+  <details class="card howcard">
+  <summary>Old reason vs today</summary>
+  <p class="note">The old advice was "if you change the schema, everything stops for a few days". The conclusion still holds; the reason changed.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th></th><th>Old reason (2021–23)</th><th>Today (2025–26)</th></tr></thead>
+      <tbody>
+        <tr><td class="rowh">What happened when you changed the schema</td><td>Meta paused the affected iOS ad sets that ran on SKAN. There, SKAN was the only optimization signal.</td><td>No pause. Meta optimizes on AEM, which does not use the SKAN schema. TikTok can run without SKAN. Google and Apple never paused.</td></tr>
+        <tr><td class="rowh">Where the cost is</td><td>Campaign downtime: lost money and volume.</td><td>Data. Postbacks from installs made under the old schema keep arriving for up to about 41 days (a 35-day window plus up to 144 hours of delay), and your MMP decodes them with the new schema. Networks that bid on SKAN relearn. Before/after comparison breaks.</td></tr>
+        <tr><td class="rowh">Who it hurts most</td><td>Anyone buying iOS on Meta through SKAN campaigns. The pause was Meta's own; Google and Apple didn't pause.</td><td>Anyone buying through networks without their own measurement: games, ad networks.</td></tr>
+        <tr><td class="rowh">So</td><td>Set the schema once and leave it.</td><td>The same. Design it once with spare bits, change it rarely and on purpose, and treat the next six weeks or so as a break in the series.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </details>
+
+  <h2 id="setup">Setup</h2>
+  <form class="setup" id="setupForm" autocomplete="off">
+    <div class="group">
+      <div class="glabel">Product</div>
+      <div class="seg" role="radiogroup" aria-label="Product">
+        <label><input type="radio" name="product" id="pr-sub" value="sub" checked> Subscription app</label>
+        <label><input type="radio" name="product" id="pr-iap" value="iap"> Game: purchases</label>
+        <label><input type="radio" name="product" id="pr-ads" value="ads"> Game: ads</label>
+        <label><input type="radio" name="product" id="pr-hyb" value="hybrid"> Game: hybrid</label>
+      </div>
+    </div>
+
+    <!-- subscription -->
+    <div class="group" data-if="sub">
+      <div class="glabel">Where do people pay?</div>
+      <div class="seg" role="radiogroup" aria-label="Where do people pay">
+        <label><input type="radio" name="money" id="mo-app" value="app" checked> In the app (App Store)</label>
+        <label><input type="radio" name="money" id="mo-web" value="web"> On the web, before the store</label>
+        <label><input type="radio" name="money" id="mo-mix" value="mixed"> Both</label>
+      </div>
+    </div>
+
+    <div class="group qwrap" data-if="sub-inapp">
+      <div class="glabel">Free trial<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="seg" role="radiogroup" aria-label="Free trial">
+        <label><input type="radio" name="trial" id="tr-0" value="0"> No trial</label>
+        <label><input type="radio" name="trial" id="tr-3" value="3"> 3 days</label>
+        <label><input type="radio" name="trial" id="tr-7" value="7" checked> 7 days</label>
+        <label><input type="radio" name="trial" id="tr-14" value="14"> Longer</label>
+      </div>
+      <div class="fsrc">Trial length only decides which postback gets the first charge. A trial started in the first 48 hours charges between T and T+2 days after first launch. A 3–5-day trial charges inside postback 2 (48–168 hours). A trial of 7 days or more charges from 168 hours on, in postback 3; a 6-day one crosses the border, so its money goes there too. Trials over 28 days leave too little time before day 35 for the app to report the charge. "Longer" is shown as 14 days on the timeline.</div>
+    </div>
+
+    <div class="group qwrap" data-if="sub-trial">
+      <div class="glabel">When do trials start<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="seg" role="radiogroup" aria-label="When do trials start">
+        <label><input type="radio" name="tstart" id="ts-d0" value="day0" checked> Mostly on install day</label>
+        <label><input type="radio" name="tstart" id="ts-sp" value="spread"> Spread over the first two days</label>
+        <label><input type="radio" name="tstart" id="ts-late" value="late"> Mostly after day 2</label>
+        <label><input type="radio" name="tstart" id="ts-unk" value="unknown"> Don't know</label>
+      </div>
+      <div class="fsrc">This decides whether trial bits in postback 1 fill up, and whether locking postback 1 early pays off. For reference: in RevenueCat's State of Subscription Apps 2026, 78–90% of trials start on the day of install, depending on the category, and another 5–12% on days 1–3. <a href="https://www.revenuecat.com/state-of-subscription-apps" target="_blank" rel="noopener">Source</a><span class="src">B</span></div>
+    </div>
+
+    <div class="group" data-if="sub-inapp">
+      <div class="glabel">How many plans do you sell?</div>
+      <div class="seg" role="radiogroup" aria-label="Number of plans">
+        <label><input type="radio" name="nplans" id="np-1" value="1"> One</label>
+        <label><input type="radio" name="nplans" id="np-2" value="2" checked> Two</label>
+        <label><input type="radio" name="nplans" id="np-3" value="3"> More than two</label>
+      </div>
+      <p class="autonote qwrap" id="moreNote" hidden>Pick your two main plans.<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><span class="fsrc" style="color:var(--muted)">This version works with one or two plans. Pick the two most new subscribers choose. Support for more plans comes later.</span></p>
+      <div class="row2"><select id="planA" aria-label="Plan 1"></select><span id="planBwrap" class="row2"><span class="small">and</span> <select id="planB" aria-label="Plan 2"></select></span></div>
+      <p class="ghint" id="samePlan" hidden>Pick two different plans. Until then the schema uses one.</p>
+      <div id="topQ" class="qwrap" style="display:grid;gap:6px">
+        <div class="small">Which of the two brings more money per new subscriber<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+        <div class="seg" role="radiogroup" aria-label="More valuable plan" id="topSeg"></div>
+        <div class="fsrc">Not always the longer one: a weekly plan can bring more per subscriber than a monthly one. The more valuable plan gets the higher bit and the High coarse level.</div>
+      </div>
+    </div>
+
+    <div class="group" data-if="sub-trial">
+      <div class="glabel">Can people buy right away, without a trial?</div>
+      <div class="seg" role="radiogroup" aria-label="Purchase without trial">
+        <label><input type="radio" name="direct" id="di-no" value="no" checked> No</label>
+        <label><input type="radio" name="direct" id="di-yes" value="yes"> Yes</label>
+      </div>
+    </div>
+
+    <div class="group qwrap" data-if="sub-inapp">
+      <div class="glabel">Is there an upsell in the first 48 hours<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="seg" role="radiogroup" aria-label="Upsell in the first 48 hours">
+        <label><input type="radio" name="upsell" id="up-no" value="no" checked> No</label>
+        <label><input type="radio" name="upsell" id="up-yes" value="yes"> Yes</label>
+      </div>
+      <div class="fsrc">Each "yes" here and in the question above takes one bit of postback 1 from the cheapest funnel event: first onboarding_start, then signup_successful.</div>
+    </div>
+
+    <div class="group qwrap" data-if="sub">
+      <div class="glabel">Funnel steps in your app<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <p class="ghint">Untick what your app doesn't have. Rename to the event names you use in your MMP.</p>
+      <div class="funrows">
+        <div class="funrow"><input type="checkbox" id="fu-signup" checked aria-label="Has sign-up"><input type="text" id="fn-signup" value="signup_successful" aria-label="Sign-up event" spellcheck="false"></div>
+        <div class="funrow"><input type="checkbox" id="fu-obs" checked aria-label="Has onboarding start"><input type="text" id="fn-obs" value="onboarding_start" aria-label="Onboarding start event" spellcheck="false"></div>
+        <div class="funrow"><input type="checkbox" id="fu-obe" checked aria-label="Has onboarding end"><input type="text" id="fn-obe" value="onboarding_end" aria-label="Onboarding end event" spellcheck="false"></div>
+        <div class="funrow"><input type="checkbox" id="fu-pw" checked aria-label="Has a paywall"><input type="text" id="fn-pw" value="paywall_view" aria-label="Paywall event" spellcheck="false"></div>
+      </div>
+      <div class="fsrc">These are the funnel events of postback 1 and its coarse fallback, from the cheapest to the deepest. A step you untick frees its bit for your key events below. The names are placeholders until you type your own. Sign-up is not used when money is taken on the web: there the app measures the login to the account bought on the web.</div>
+    </div>
+
+    <div class="group qwrap" data-if="sub">
+      <div class="glabel">Your two key product events<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <p class="ghint">Placeholders until you type your own.</p>
+      <div class="row2"><input type="text" id="ev1" value="core_feature_1_used" aria-label="Key event 1" spellcheck="false"> <input type="text" id="ev2" value="core_feature_2_used" aria-label="Key event 2" spellcheck="false"></div>
+      <div class="fsrc">The feature people subscribe for, and a second one that shows deeper use. They fill the engagement levels of postbacks 2 and 3.</div>
+    </div>
+
+    <div class="group qwrap" data-if="sub">
+      <div class="glabel">How to encode the six bits of postback 1<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <p class="oneline" style="margin:0">Flags suit most subscription apps. Stage × quality is for when you need more detail.</p>
+      <div class="fsrc">
+        <p>Postback 1 can carry one number from 0 to 63 – six bits. There are two ways to fill them.</p>
+        <p><b>Flags – one event per bit.</b></p>
+        <ul>
+          <li>Each bit answers yes or no: signed up, started onboarding, finished onboarding, saw the paywall, started a monthly trial, started an annual trial.</li>
+          <li>The number is just the set of ticks.</li>
+          <li><b>Plus:</b> easy to read and to set up in any MMP.</li>
+          <li><b>Limit:</b> a flag can't say "how much" – how many sessions, for example – and there's no room left to tell direct purchases apart by plan.</li>
+        </ul>
+        <p><b>Stage × quality – two parts in one number.</b></p>
+        <ul>
+          <li><b>Stage:</b> how far the user got – install, onboarding, paywall, trial or purchase per plan, optionally a direct purchase and an upsell. The exact list follows your Setup answers: up to nine steps.</li>
+          <li><b>Quality:</b> how many sessions in the first 48 hours, four levels.</li>
+          <li>Value = stage + 8 × quality; with nine stages the multiplier is 16. The schema below shows your numbers.</li>
+          <li><b>Plus:</b> keeps each plan's direct purchase apart and adds an engagement signal.</li>
+          <li><b>Cost:</b> harder to read, and your MMP must support counting sessions.</li>
+        </ul>
+      </div>
+      <details class="mnotes" id="encAdv">
+        <summary>Advanced</summary>
+        <div class="seg" role="radiogroup" aria-label="Encoding">
+          <label><input type="radio" name="enc" id="en-flags" value="flags" checked> Flags</label>
+          <label><input type="radio" name="enc" id="en-stage" value="stage"> Stage × quality</label>
+        </div>
+        <div class="qwrap" style="margin-top:6px">
+          <span class="ghint">Needs an MMP that can count sessions: Adjust can, AppsFlyer by its help can't.</span><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span>
+          <div class="fsrc">
+            <p>The quality part of the value is the number of sessions in the first 48 hours. So every value has to say "reached this stage <i>and</i> had 2–3 sessions", and your MMP has to be able to set a condition on the session count.</p>
+            <ul>
+              <li><b>Adjust:</b> yes. In <i>63 CVs</i> mode each value can take a <i>Session count</i> condition with Min and Max, next to the event for the stage. <a href="https://help.adjust.com/en/article/set-up-skan-4-mapping" target="_blank" rel="noopener">Help</a><span class="src">B</span></li>
+              <li><b>AppsFlyer:</b> Conversion Studio's help lists four measurement types – Revenue, In-app event, Funnel, Priority – and none of them counts sessions. <a href="https://support.appsflyer.com/hc/en-us/articles/4403727223185" target="_blank" rel="noopener">Help</a><span class="src">B</span></li>
+              <li><b>On AppsFlyer:</b> stay on flags, or keep only the stage part through a Funnel measurement and drop quality. Check your own account first: the interface may offer more than the help describes.<span class="src">A</span></li>
+            </ul>
+            <p>Checked against the MMPs' help on 28 Sep 2026.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- games -->
+    <div class="group qwrap" data-if="game">
+      <div class="glabel">How far should revenue buckets reach<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="row2"><span class="small">Up to</span> $<input type="number" id="gCap" min="0.01" step="any" value="100" aria-label="Top of revenue buckets, dollars"><span class="src">A</span> <span class="small">example – replace with your number</span></div>
+      <div class="seg" role="radiogroup" aria-label="Bucket spacing">
+        <label><input type="radio" name="gSpace" id="gs-even" value="even"> Even steps</label>
+        <label><input type="radio" name="gSpace" id="gs-low" value="low" checked> Finer at the low end</label>
+      </div>
+      <div class="fsrc"><p>Postback 1 splits revenue from days 0–2 into buckets up to this amount; everything above lands in the last bucket. A good anchor is the top of your own day 0–2 revenue per paying player, where differences stop changing buying decisions.</p><p>Finer at the low end helps when most of your players who pay in the first days spend small amounts. Check your own distribution.</p></div>
+    </div>
+
+    <div class="group qwrap" data-if="game">
+      <div class="glabel">Bits for early engagement<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="seg" role="radiogroup" aria-label="Engagement bits">
+        <label><input type="radio" name="gEng" id="ge-0" value="0"> None</label>
+        <label><input type="radio" name="gEng" id="ge-1" value="1" checked> One</label>
+        <label><input type="radio" name="gEng" id="ge-2" value="2"> Two</label>
+      </div>
+      <div class="row2"><input type="text" id="gEv1" value="tutorial_complete" aria-label="Engagement event 1" spellcheck="false"> <input type="text" id="gEv2" value="level_n_reached" aria-label="Engagement event 2" spellcheck="false"></div>
+      <div class="fsrc">Every engagement bit halves the number of revenue buckets. Use them if players who haven't paid yet still need to be told apart.</div>
+    </div>
+
+    <div class="group qwrap" data-if="hybrid">
+      <div class="glabel">Hybrid: keep a bit for "made a purchase"<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="seg" role="radiogroup" aria-label="Purchase bit">
+        <label><input type="radio" name="gPaid" id="gp-no" value="no" checked> No – one combined revenue</label>
+        <label><input type="radio" name="gPaid" id="gp-yes" value="yes"> Yes – separate payers from ad viewers</label>
+      </div>
+      <div class="fsrc">Default: one combined revenue (purchases + ads). Networks optimize on the value of a player, and separate buckets for each kind of money eat bits. The option spends one bit to tell payers from players who only watch ads.</div>
+    </div>
+
+    <div class="group qwrap" data-if="game-lines">
+      <div class="glabel">Revenue lines for coarse values (revenue so far)<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span></div>
+      <div class="row2">
+        <span class="small">by day 2</span> $<input type="number" id="gL1" min="0" step="any" value="20" aria-label="High-value line by day 2">
+        <span class="small">by day 7</span> $<input type="number" id="gL2" min="0" step="any" value="40" aria-label="High-value line by day 7">
+        <span class="small">by day 35</span> $<input type="number" id="gL3" min="0" step="any" value="80" aria-label="High-value line by day 35">
+        <span class="src">A</span>
+      </div>
+      <p class="ghint">High-value lines. Example values, not benchmarks.</p>
+      <div class="row2" data-if="game-mid" style="margin-top:8px">
+        <span class="small">by day 2</span> $<input type="number" id="gM1" min="0" step="any" placeholder="none" aria-label="Medium line by day 2">
+        <span class="small">by day 7</span> $<input type="number" id="gM2" min="0" step="any" placeholder="none" aria-label="Medium line by day 7">
+        <span class="small">by day 35</span> $<input type="number" id="gM3" min="0" step="any" placeholder="none" aria-label="Medium line by day 35">
+      </div>
+      <p class="ghint" data-if="game-mid">Medium lines, optional. Empty: Medium uses your engagement events.</p>
+      <div class="fsrc">Coarse "high" means a player has brought at least this much by the end of the window. Take the lines from your own revenue by day. With ads almost every player brings some revenue, so "more than $0" can't be the middle level: set a medium line, or leave it empty and Medium uses your engagement events.</div>
+    </div>
+
+    <div class="row2" style="padding-top:14px"><button type="submit" class="btn" id="calc">Calculate</button><span class="small">Results update as you change the setup.</span></div>
+  </form>
+
+  <section class="result" id="results" aria-live="polite">
+    <h2>Your first 35 days</h2>
+    <p class="small" id="tlNote">Trials start in the first 48 hours; a 7-day trial first charges 7–9 days after first launch. Postback 1 covers the first 48 hours, postback 2 runs to 168 hours, postback 3 to day 35.</p>
+    <div class="tl" id="timeline"></div>
+    <p class="small qwrap" style="margin-top:8px">Windows count from the first launch.<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><span class="fsrc">Windows count from the first launch, not from the install. Postback 1 arrives 24–48 hours after its window closes; postbacks 2 and 3 arrive 24–144 hours after theirs.</span></p>
+
+    <div id="schema"><div class="pbhead"><h2>Postback 1</h2><span class="pbchip pb1c">first 48 h · fine value + <a class="jl" href="#jargon">coarse</a> fallback</span></div><div class="qwrap pbwhy">Stage and plan, not money.<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">At 48 hours a trial has no revenue yet, so postback 1 codes the stage and the plan, not money. You configure both the fine and the coarse value; Apple decides which one arrives, by tier.</div></div><h3>Fine value: six flags</h3><div class="qwrap "><span class="small">Click the bits to build a value.</span><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The most valuable event sits on the highest bit, so a bigger number always means a more valuable user.</div></div><div class="bits" id="bits"><button type="button" class="bit on" data-i="0" aria-pressed="true"><span class="bv">bit 6 · 32</span><span class="be">trial_<wbr>annual_<wbr>started</span></button><button type="button" class="bit" data-i="1" aria-pressed="false"><span class="bv">bit 5 · 16</span><span class="be">trial_<wbr>monthly_<wbr>started</span></button><button type="button" class="bit on" data-i="2" aria-pressed="true"><span class="bv">bit 4 · 8</span><span class="be">paywall_<wbr>view</span></button><button type="button" class="bit on" data-i="3" aria-pressed="true"><span class="bv">bit 3 · 4</span><span class="be">onboarding_<wbr>end</span></button><button type="button" class="bit on" data-i="4" aria-pressed="true"><span class="bv">bit 2 · 2</span><span class="be">onboarding_<wbr>start</span></button><button type="button" class="bit on" data-i="5" aria-pressed="true"><span class="bv">bit 1 · 1</span><span class="be">signup_<wbr>successful</span></button></div><div class="cvline" id="cvline">Conversion value <b>47</b> = 32 + 8 + 4 + 2 + 1 · <span class="ev">trial_<wbr>annual_<wbr>started</span> + <span class="ev">paywall_<wbr>view</span> + <span class="ev">onboarding_<wbr>end</span> + <span class="ev">onboarding_<wbr>start</span> + <span class="ev">signup_<wbr>successful</span></div><div class="tablewrap"><table><thead><tr><th>Value</th><th>Event</th><th>What it means</th></tr></thead><tbody><tr><td class="grid64">32</td><td><span class="ev">trial_<wbr>annual_<wbr>started</span></td><td><div class="qwrap ">started a trial on the annual plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">You said the annual plan brings more money per subscriber. One shared trial_started would make the network treat an annual trial and a monthly trial as equal, and it would bring both just as happily. This is the most expensive pair of bits in the schema.</div></div></td></tr><tr><td class="grid64">16</td><td><span class="ev">trial_<wbr>monthly_<wbr>started</span></td><td><div class="qwrap ">started a trial on the monthly plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Its own bit, so a monthly trial isn't confused with an annual one.</div></div></td></tr><tr><td class="grid64">8</td><td><span class="ev">paywall_<wbr>view</span></td><td><div class="qwrap ">reached the paywall<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Mid-funnel diagnostics: separates people who saw the offer and passed from people who never got there.</div></div></td></tr><tr><td class="grid64">4</td><td><span class="ev">onboarding_<wbr>end</span></td><td><div class="qwrap ">finished onboarding<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The strongest non-money sign of intent in the first 48 hours.</div></div></td></tr><tr><td class="grid64">2</td><td><span class="ev">onboarding_<wbr>start</span></td><td><div class="qwrap ">started onboarding<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Separates people who opened and left from people who began.</div></div></td></tr><tr><td class="grid64">1</td><td><span class="ev">signup_<wbr>successful</span></td><td><div class="qwrap ">created an account<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The cheapest event in the funnel.</div></div></td></tr></tbody></table></div><h3><a class="jl" href="#jargon">Coarse</a> fallback</h3><div class="qwrap "><span class="small">Arrives when the source is too small for a fine value.</span><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Apple decides by crowd-anonymity tier whether postback 1 carries the fine value or only this coarse one. Small sources get coarse, so the coarse ladder has to make sense on its own.</div></div><div class="tablewrap"><table><thead><tr><th>Level</th><th>Condition</th><th>Value</th><th>What it means</th></tr></thead><tbody><tr><td><span class="lvl Low">Low</span></td><td>Session</td><td>Install</td><td><div class="qwrap ">installed, nothing else<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Something has to sit on Low, and 'installed and nothing more' is the one condition every install meets.</div></div></td></tr><tr><td><span class="lvl Medium">Medium</span></td><td>Event</td><td><span class="ev">trial_<wbr>monthly_<wbr>started</span></td><td><div class="qwrap ">trial on the monthly plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Coarse arrives exactly where volume is lowest. Keeping the plan split here means optimization isn't blind on the smallest sources.</div></div></td></tr><tr><td><span class="lvl High">High</span></td><td>Event</td><td><span class="ev">trial_<wbr>annual_<wbr>started</span></td><td><div class="qwrap ">trial on the annual plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The same plan split as the fine value. paywall_view drops out of coarse on purpose: losing mid-funnel diagnostics is cheaper than losing the difference in value.</div></div></td></tr></tbody></table></div><h3>lockWindow for postback 1</h3><div class="lock"><div class="qwrap "><span class="dec">Lock at 24 hours if you buy from ad networks that optimize on SKAN.</span><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc"><p>Most of your trials start on install day, so locking costs little: only the trials started on days 1–2. Whether it pays off depends on your channels. Ad networks without their own measurement (AppLovin, Unity, Moloco and similar) optimize on SKAN and get the signal a day sooner. Meta optimizes on AEM, so for Meta alone the speed of the postback doesn't matter. Tick your channels further down to get a firm answer. For reference, RevenueCat 2026: 78–90% of trials start on install day, another 5–12% on days 1–3 (see Setup, Source).</p><p>In the MMP: AppsFlyer Conversion Studio locks by time or when the high coarse value is reached. Adjust generally advises against lock windows and suggests agreeing with the network first.</p></div></div></div><div class="pbhead"><h2>Postback 2</h2><span class="pbchip pb2c">48–168 h · <a class="jl" href="#jargon">coarse</a> only</span></div><div class="qwrap pbwhy">Engagement in the trial.<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">A 7-day trial started in the first 48 hours charges at 168 hours or later, 7–9 days after first launch: from the first hour of postback 3's window. Postback 2 measures engagement in the trial.</div></div><div class="tablewrap"><table><thead><tr><th>Level</th><th>Condition</th><th>Value</th><th>What it means</th></tr></thead><tbody><tr><td><span class="lvl Low">Low</span></td><td>Session</td><td><a class="jl" href="#jargon">Non-install session</a></td><td><div class="qwrap ">came back to the app after install<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">You can't map the absence of an event, only something that happened. A session after install is the floor that still says the user came back.</div></div></td></tr><tr><td><span class="lvl Medium">Medium</span></td><td>Event</td><td><span class="ev">core_<wbr>feature_<wbr>1_<wbr>used</span></td><td><div class="qwrap ">used the main feature<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The feature people subscribe for. Using it in the trial is the earliest predictor of conversion you control.</div></div></td></tr><tr><td><span class="lvl High">High</span></td><td>Event</td><td><span class="ev">core_<wbr>feature_<wbr>2_<wbr>used</span></td><td><div class="qwrap ">reached the second key feature<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Moving on to a second feature means the person explored the product, not just looked once. If your MMP allows a count condition, repeat use of the main feature is a good alternative: habit predicts conversion better than a single action.</div></div></td></tr></tbody></table></div><div class="pbhead"><h2>Postback 3</h2><span class="pbchip pb3c">168 h – day 35 · <a class="jl" href="#jargon">coarse</a> only</span></div><div class="qwrap pbwhy">Money: the first charge.<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">First charge 7–9 days after first launch: the money is here.</div></div><div class="tablewrap"><table><thead><tr><th>Level</th><th>Condition</th><th>Value</th><th>What it means</th></tr></thead><tbody><tr><td><span class="lvl Low">Low</span></td><td>Session</td><td><a class="jl" href="#jargon">Non-install session</a></td><td><div class="qwrap ">came back, but no paid subscription<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">You can't map the absence of an event, only something that happened. A session after install is the floor that still says the user came back.</div></div></td></tr><tr><td><span class="lvl Medium">Medium</span></td><td>Event</td><td><span class="ev">trial_<wbr>monthly_<wbr>converted</span></td><td><div class="qwrap ">paid subscription on the monthly plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The plans you ranked lower sit on the middle level, so the two kinds of money stay apart.</div></div></td></tr><tr><td><span class="lvl High">High</span></td><td>Event</td><td><span class="ev">trial_<wbr>annual_<wbr>converted</span></td><td><div class="qwrap ">paid subscription on the annual plan<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">This mirrors postback 1. If you optimize on annual trials, this is where you check that annual money followed. Measuring 'any conversion' here would leave nothing to check.</div></div></td></tr></tbody></table></div><details class="card howcard" style="margin-top:24px"><summary>What this gives the buying team</summary><p class="note">Where a network optimizes on SKAN, optimize on postback 1: many signals, fast. Postbacks 2 and 3 are for checking, not for optimizing. When they diverge, that is a signal: postback 1 grows and postback 3 doesn't, so trials don't reach money; annual trials grow but <span class="ev">trial_<wbr>annual_<wbr>converted</span> doesn't, so the problem is the annual offer, not the buying.</p></details></div>
+
+    <h2>Where this schema will be blind</h2>
+    <div class="warns" id="warns"><div class="qwrap warn">Renewals fall too close to day 35 to code (annual: day 372–374, monthly: day 37–39)<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">The annual plan renews around day 372–374, after the window closes. The monthly plan renews around day 37–39, after the window closes. Don't spend a value on them; they will stay empty.</div></div><div class="qwrap warn">Small sources get less or nothing<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Apple sends a fine value only on the higher crowd-anonymity tiers; lower tiers get coarse or no value, and Apple doesn't publish the thresholds. Fewer, larger campaigns get more data, and the schema has to make sense on coarse alone.</div></div><div class="qwrap warn">Server-side events still need an app open to be reported<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">A trial converting or a renewal happens on Apple's server, but it only reaches postbacks 2 and 3 if the user opens the app later in the same window and the app reports it then. Log trial_*_converted and renewal_* from the app on its next open; a server-to-server event can't update SKAN by itself.</div></div><div class="qwrap warn">Changing the schema breaks the series<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Postbacks from old installs keep arriving for up to about 41 days and get decoded with the new schema. Keep spare values now.</div></div></div>
+
+    <h2 id="channels">How much does SKAN matter for you?</h2>
+    <p class="small qwrap"><b>Optional. Doesn't change your schema.</b><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><span class="fsrc">The schema follows your product, not the platform: one schema for every network. Your channels only settle one setting, the lockWindow advice for postback 1.</span></p>
+    <div class="setup" id="chanBox" style="padding-block:6px 12px">
+      <p class="ghint" style="margin-top:10px">Tick the channels you buy on iOS and, if you like, type rough shares of your iOS budget.</p>
+      <div id="chanList"></div>
+      <div class="sumline" id="chanSum"></div>
+    </div>
+    <div id="chanMap"><p class="small">Tick the channels you buy on iOS to see where SKAN sits for each of them.</p></div>
+
+    <h2>Set it up in your MMP</h2>
+    <div class="seg" role="radiogroup" aria-label="Your MMP" id="mmpBox" style="margin-bottom:12px">
+      <label><input type="radio" name="mmp" id="mm-af" value="appsflyer" checked> AppsFlyer</label>
+      <label><input type="radio" name="mmp" id="mm-adj" value="adjust"> Adjust</label>
+      <label><input type="radio" name="mmp" id="mm-oth" value="other"> Other / none</label>
+    </div>
+    <div id="mmp"><div class="qwrap "><span class="small">7 steps in AppsFlyer, from AppsFlyer's help pages, checked 28 Sep 2026. Your screens may differ.</span><span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span><div class="fsrc">Screen names from <a href="https://support.appsflyer.com/hc/en-us/articles/4403727223185-SKAN-Conversion-Studio" target="_blank" rel="noopener">AppsFlyer – SKAN Conversion Studio</a> (last updated April 26, 2026), checked 28 Sep 2026. MMP screens change; the help page is the source of truth. Tags: B – checked source (vendor help or published report) · A – assumption.</div></div><details class="card howcard" open=""><summary>Step by step in AppsFlyer</summary><ol class="steps note"><li>Open <b>Settings → SKAN Conversion Studio</b>. In the options menu (⋮) check that <b>SKAN measurement</b> is on, pick <b>SKAN 4.0</b>, press <b>Continue</b>.<span class="src">B</span></li><li><b>Window 1 (1-2 days)</b>, fine CV → <b>+ Add measurement</b> → <b>In-app event</b> for each flag, most valuable first: <span class="ev">trial_<wbr>annual_<wbr>started</span>, <span class="ev">trial_<wbr>monthly_<wbr>started</span>, <span class="ev">paywall_<wbr>view</span>, <span class="ev">onboarding_<wbr>end</span>, <span class="ev">onboarding_<wbr>start</span>, <span class="ev">signup_<wbr>successful</span>.<span class="src">B</span> Check <b>Conversion-value capacity</b> after each one; the help doesn't say how many bits one event takes, so the capacity bar is your guide.<span class="src">A</span> Optionally turn on <b>Single Source of Truth (SSOT)</b>.<span class="src">B</span></li><li><b>Coarse</b> tab (only <b>Revenue</b> and <b>In-app event</b> are available here): Low: user session (Install) · Medium: <span class="ev">trial_<wbr>monthly_<wbr>started</span> · High: <span class="ev">trial_<wbr>annual_<wbr>started</span>. AppsFlyer recommends a user session on Low, otherwise the postback may not be sent at all.<span class="src">B</span></li><li><b>Lock window</b>: on, condition <b>Time</b>, 24 hours after install, only if you buy from ad networks that optimize on SKAN; otherwise leave it off. The two conditions are <b>Time</b> and <b>High coarse value</b>.<span class="src">B</span></li><li><b>Window 2 (3-7 days)</b>: Low: user session (Non-install session) · Medium: <span class="ev">core_<wbr>feature_<wbr>1_<wbr>used</span> · High: <span class="ev">core_<wbr>feature_<wbr>2_<wbr>used</span>.<span class="src">B</span></li><li><b>Window 3 (8-35 days)</b>: Low: user session (Non-install session) · Medium: <span class="ev">trial_<wbr>monthly_<wbr>converted</span> · High: <span class="ev">trial_<wbr>annual_<wbr>converted</span>.<span class="src">B</span></li><li><b>Save</b>, then check that partner postback mappings match the events you used here.<span class="src">B</span></li></ol></details></div>
+
+    <h2>Take it with you</h2>
+    <div class="row2"><button type="button" class="btn ghost" id="copyCsv">Copy schema as CSV</button><span class="toast" id="toast" role="status"></span></div>
+    <textarea id="csvFallback" hidden readonly style="width:100%;height:160px;font-family:var(--mono);font-size:.75rem;margin-top:8px"></textarea>
+  </section>
+
+  <h2>Reference</h2>
+  <div class="ref">
+    <details class="card howcard">
+      <summary>What SKAN sees, and what it doesn't</summary>
+      <p><b>It counts installs from ads whether users consented to tracking or not.</b> Apple: apps "can call these APIs regardless of their tracking authorization status."</p>
+      <p><b>It does not see:</b></p>
+      <ul class="plain">
+        <li>organic installs, at all;</li>
+        <li>networks that don't use SKAN, for example TikTok with SKAN switched off;</li>
+        <li>installs that are never opened: the user has 60 days to launch the app, and without a launch there is no postback.</li>
+      </ul>
+      <p>So "SKAN covers every install" is wrong. The accurate version: SKAN sees everyone who came from an ad, consented or not. It doesn't see organic installs or networks without SKAN.</p>
+    </details>
+
+    <details class="card howcard">
+      <summary>Postbacks, windows, delays, fine and coarse values, tiers, lockWindow</summary>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Postback</th><th>Window</th><th>Delay after the window</th><th>What arrives</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>days 0–2 (first 48 h)</td><td>24–48 h</td><td>fine value (0–63) on tiers 2–3, otherwise coarse</td></tr>
+          <tr><td>2</td><td>days 3–7 (48–168 h)</td><td>24–144 h</td><td>coarse only</td></tr>
+          <tr><td>3</td><td>days 8–35 (from 168 h)</td><td>24–144 h</td><td>coarse only</td></tr>
+        </tbody></table></div>
+      <ul class="plain">
+        <li>Windows count from the <b>first launch</b>, not from the install. The delay is random.</li>
+        <li>You set the fine and the coarse value in one call; <b>Apple decides which one arrives</b>, by tier.</li>
+        <li>If the value was never updated, the field is <b>missing</b>. That is not 0 and not "low".</li>
+        <li>Postbacks 2 and 3 need a value update <b>inside their own window</b>, and a value can only be updated while the app is open. No app open on days 3–7 means postback 2 is empty or doesn't come.</li>
+        <li><b>lockWindow</b> (SKAN 4): the system prepares the postback at once and ignores later updates in that window; the random delay still applies. SKAN 3 had a rolling 24-hour timer that restarted with every higher value; SKAN 4 has fixed windows and no timer.</li>
+      </ul>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Tier</th><th>Postback 1</th><th>Postbacks 2–3</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>2-digit source identifier, no value</td><td>not sent</td></tr>
+          <tr><td>1</td><td>2 digits + coarse</td><td>2 digits + coarse</td></tr>
+          <tr><td>2</td><td>2, 3 or 4 digits + fine</td><td>2 digits + coarse</td></tr>
+          <tr><td>3</td><td>as tier 2 + source app ID (in-app ads) or source domain (web ads), optionally country code</td><td>2 digits + coarse</td></tr>
+        </tbody></table></div>
+      <p>Apple does not publish tier thresholds in installs. The tier can't be configured and can change between periods. It depends on the crowd size of the placement, the advertised app, the country and the identifier itself.</p>
+      <p><b>Web ads:</b> an ad in Safari that leads to the App Store is attributed too; the user has 30 days to install. SKAN stops mattering only when money is taken on the web before the store. <b>Attribution windows:</b> 30 days from click to install, 24 hours for view-through, 60 days to first launch. With AdAttributionKit on iOS 18.4, the developer can set them: click 1–30 days, view 1–7 days, plus a cooldown of 0–720 hours.</p>
+    </details>
+
+    <details class="card howcard">
+      <summary>Channels: SAN / SRN and networks without their own measurement</summary>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Channel</th><th>SAN / SRN?</th><th>How it sees iOS users who didn't consent</th><th>SKAN role</th></tr></thead>
+        <tbody id="refChannels"><tr><td class="rowh">Meta</td><td>Yes</td><td>AEM, Meta's own aggregated protocol.</td><td>Secondary</td></tr><tr><td class="rowh">Google Ads</td><td>Yes</td><td>Modeled conversions: IDFA of users who consented, on-device measurement, and SKAN as one input.</td><td>Input</td></tr><tr><td class="rowh">TikTok</td><td>Yes, since 2023</td><td>Data your MMP shares about all users: matched for users who consented, modeled for the rest. SKAN is a switch since May 2025.</td><td>Optional</td></tr><tr><td class="rowh">Apple Ads</td><td>Own attribution (AdServices)</td><td>The AdServices token, which attributes without ATT. Apple Ads registered with AdAttributionKit in April 2025, starting with SKAN versions 1–3.</td><td>Own attribution</td></tr><tr><td class="rowh">Ad networks<div class="small" style="font-weight:400">AppLovin, Unity, Moloco, ironSource, Mintegral, Liftoff</div></td><td>No – MMP links</td><td>Only SKAN. They work through MMP links, so for users who said no to tracking there is nothing else.</td><td>Core</td></tr><tr><td class="rowh">Web funnels<div class="small" style="font-weight:400">web2web; web2app with payment on the web</div></td><td>–</td><td>Pixel and Conversions API, click IDs, matching by login.</td><td>Not in path</td></tr></tbody></table></div>
+      <details class="mnotes"><summary>TikTok moved like Meta: a SAN since 2023, SKAN a switch since May 2025.</summary><p>It has been a SAN since 2023 (earlier it worked through MMP links). Since 2025 its iOS campaigns run on data the MMP shares about all users; since May 2025 SKAN is a switch in TikTok, and without it the iOS campaign quota is unlimited.</p></details>
+      <details class="mnotes"><summary>Networks without their own measurement see users who said no only through SKAN.</summary><p>AppLovin, Unity, Moloco, ironSource, Mintegral, Liftoff and similar networks work through MMP tracking links. A link carries a click ID and, if there is one, the IDFA. For users who consented, the MMP matches click and install. For users who didn't, probabilistic matching is not allowed on iOS, so the install ends up as organic in the MMP. For them the only official trace is the SKAN postback. The difference between SRN and non-SRN is not "SKAN or no SKAN", it is what covers users who said no: an SRN has its own protocols and modeling, a non-SRN has only SKAN.</p></details>
+    </details>
+
+    <details class="card howcard">
+      <summary>Double consent</summary>
+      <p>For a deterministic match on a paid install, the IDFA has to be available in two apps: the one that showed the ad and the one being advertised. The user has to allow tracking in both. So deterministic data on paid installs covers fewer people than your app's own opt-in rate suggests. This is one more reason SKAN matters for networks that have no other signal.</p>
+    </details>
+
+    <details class="card howcard">
+      <summary>What a schema change really costs</summary>
+      <ul class="plain">
+        <li>Your MMP decodes postbacks with the <b>latest</b> schema, while postbacks from installs made under the old one keep arriving for up to about 41 days (35-day window plus up to 144 hours of delay). Postbacks 2 and 3 suffer most.</li>
+        <li>Networks that optimize on SKAN relearn.</li>
+        <li>Before/after comparison breaks: it is a break in the time series.</li>
+        <li>In 2021–23 Meta paused affected iOS ad sets on SKAN when the configuration changed. Today Meta optimizes on AEM, which doesn't use the SKAN schema, so that pause no longer applies.</li>
+      </ul>
+    </details>
+
+    <details class="card howcard">
+      <summary>SKAN and AdAttributionKit</summary>
+      <ul class="plain">
+        <li>The SKAdNetwork class is not deprecated (only its old methods are). On its page Apple writes: "Use AdAttributionKit for app ad campaigns on the App Store and alternative marketplaces."</li>
+        <li>The two work together: only one impression wins, whether it came from AdAttributionKit or SKAdNetwork.</li>
+        <li><b>Same model:</b> three windows, the same delays, a fine value in postback 1 on tiers 2–3, coarse otherwise. A schema carries over.</li>
+        <li>AdAttributionKit adds re-engagement postbacks (iOS 18), configurable windows and cooldown, conversion tags and development postbacks (iOS 18.4).</li>
+        <li>Apple Ads registered with AdAttributionKit on April 10, 2025, starting with SKAdNetwork versions 1–3.</li>
+      </ul>
+    </details>
+
+    <details class="card howcard">
+      <summary>Three eras of iOS attribution</summary>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Era</th><th>What it was</th><th>SKAN</th><th>For buying</th></tr></thead>
+        <tbody>
+          <tr><td class="rowh">Before ATT (until iOS 14.5, April 2021)</td><td>IDFA by default for everyone who hadn't switched it off</td><td>not needed</td><td>Per-user deterministic attribution; revenue tied to campaign and creative</td></tr>
+          <tr><td class="rowh">ATT without enforcement (2021–23)</td><td>ATT prompt; fingerprinting against the rules but not checked in practice. MMPs kept probabilistic matching</td><td>SKAN 2–3: one postback, 6 bits, a 24-hour timer restarted by each higher value</td><td>For many, SKAN was a formality</td></tr>
+          <tr><td class="rowh">The closed door (2023/24 to now)</td><td>Privacy manifests and required-reason APIs, enforced from spring 2024; the large MMPs stopped probabilistic attribution on iOS. SRNs cover opted-out users with their own protocols and modeling</td><td>SKAN 4 (iOS 16.1): up to three postbacks, fine only in the first, coarse after, lockWindow instead of a timer. AdAttributionKit (iOS 17.4): same model</td><td>For non-SRN networks SKAN is the main signal, so games depend on it most. Subscription apps with web funnels can barely notice it</td></tr>
+        </tbody></table></div>
+      <p>This tool describes only the third era. Anything about a timer or a single postback belongs to history, not to the logic here.</p>
+    </details>
+
+    <details class="card howcard">
+      <summary>Design decisions</summary>
+      <ul class="plain">
+        <li><b>The schema follows when the money happens.</b> A subscription with a trial has no revenue at 48 hours, so postback 1 codes the stage and the plan. A game has revenue on day one, so postback 1 codes revenue buckets. Vendor templates with revenue buckets for every vertical miss this.</li>
+        <li><b>The most valuable event sits on the highest bit</b>, so a bigger number always means a more valuable user.</li>
+        <li><b>Flags by default, stage × quality on a switch.</b></li>
+        <li><b>One or two plans.</b> The classic pairs are monthly + annual or weekly + annual. You say which of the two brings more money per subscriber; it is not always the longer one. More plans come in a later version.</li>
+        <li><b>Purchases without a trial and upsells are optional bits.</b> Each takes the place of the cheapest funnel event: first onboarding_start, then signup_successful.</li>
+        <li><b>Your funnel, your names.</b> Untick the funnel steps your app doesn't have and rename the rest. Bits left free go to your key product events rather than staying empty; for trials that start after 48 hours, early feature use is the best predictor you have.</li>
+        <li><b>Games with ads: Medium is never "more than $0".</b> Almost every player brings some ad revenue, so Medium takes your medium revenue line, or an engagement event if you leave it empty.</li>
+        <li><b>Channels don't change the schema.</b> It follows the product, not the platform, and is one schema for every network. Channels only decide whether locking postback 1 early pays off.</li>
+        <li><b>Hybrid games: one combined revenue by default</b>, with an optional "made a purchase" bit.</li>
+        <li><b>No vendor bucket numbers and no invented crowd-anonymity thresholds.</b> Bucket edges and revenue lines come from your inputs; Apple doesn't publish tier thresholds.</li>
+        <li><b>Postback 3 mirrors postback 1</b> where money arrives there, so you can check that optimizing on a valuable trial brought valuable money.</li>
+        <li><b>Only the current era.</b> SKAN 4 and AdAttributionKit share the model; SKAN 2–3 logic is history.</li>
+      </ul>
+    </details>
+
+    <details class="card howcard">
+      <summary>Sources</summary>
+      <p class="small">Tags: <b>B</b> – checked source (vendor help or published report) · <b>A</b> – assumption. Platform facts checked 27–28 Sep 2026. <a href="#test">Run the built-in self-test</a>.</p>
+      <ul class="sources">
+        <li>Apple – <a href="https://developer.apple.com/documentation/storekit/receiving-postbacks-in-multiple-conversion-windows" target="_blank" rel="noopener">Receiving postbacks in multiple conversion windows</a> (windows, delays, fine/coarse, tiers, lockWindow)</li>
+        <li>Apple – <a href="https://developer.apple.com/documentation/storekit/skadnetwork/updatepostbackconversionvalue(_:coarsevalue:lockwindow:completionhandler:)" target="_blank" rel="noopener">updatePostbackConversionValue(_:coarseValue:lockWindow:)</a></li>
+        <li>Apple – <a href="https://developer.apple.com/documentation/storekit/receiving-ad-attributions-and-postbacks" target="_blank" rel="noopener">Receiving ad attributions and postbacks</a> (60 days to first launch, web ads, attribution windows)</li>
+        <li>Apple – <a href="https://developer.apple.com/documentation/storekit/skadnetwork" target="_blank" rel="noopener">SKAdNetwork</a> (works regardless of tracking authorization)</li>
+        <li>Apple – <a href="https://developer.apple.com/documentation/adattributionkit/receiving-postbacks-in-multiple-conversion-windows" target="_blank" rel="noopener">AdAttributionKit: postbacks in multiple windows</a> · <a href="https://developer.apple.com/documentation/adattributionkit/configuring-attribution-rules-for-your-app" target="_blank" rel="noopener">configuring attribution rules</a> · <a href="https://developer.apple.com/documentation/adattributionkit/adattributionkit-skadnetwork-interoperability" target="_blank" rel="noopener">interoperability</a></li>
+        <li>Apple Ads – <a href="https://ads.apple.com/app-store/help/attribution/0094-ad-attribution-overview" target="_blank" rel="noopener">Ad attribution overview</a></li>
+        <li>RevenueCat – <a href="https://www.revenuecat.com/state-of-subscription-apps" target="_blank" rel="noopener">State of Subscription Apps 2026</a> (trial starts by day) <span class="src">B</span></li>
+        <li>RevenueCat – <a href="https://www.revenuecat.com/blog/growth/ios-attribution-guide-skan-aem-probabilistic" target="_blank" rel="noopener">iOS attribution: SKAN, AEM, probabilistic</a> (AEM doesn't use SKAN)</li>
+        <li>Google Ads Help – <a href="https://support.google.com/google-ads/answer/16771743" target="_blank" rel="noopener">iOS App campaign measurement and reporting</a> · <a href="https://support.google.com/google-ads/answer/13286653" target="_blank" rel="noopener">SKAdNetwork conversion value schema</a></li>
+        <li>TikTok – <a href="https://ads.tiktok.com/help/article/about-ios-real-time-conversion-reporting" target="_blank" rel="noopener">iOS real-time conversion reporting</a> · <a href="https://ads.tiktok.com/business/en-US/blog/mobile-measurement-san-app-advertisers" target="_blank" rel="noopener">SAN for app advertisers (2023)</a></li>
+        <li>AppsFlyer – <a href="https://support.appsflyer.com/hc/en-us/articles/4403727223185" target="_blank" rel="noopener">SKAN Conversion Studio</a> · <a href="https://support.appsflyer.com/hc/en-us/articles/360001546905-Self-reporting-networks-SRNs" target="_blank" rel="noopener">SRN list</a></li>
+        <li>Adjust – <a href="https://help.adjust.com/en/article/set-up-skan-4-mapping" target="_blank" rel="noopener">Set up SKAN 4 mapping</a></li>
+      </ul>
+    </details>
+  </div>
+
+  <p class="small" style="margin-top:36px">Not affiliated with Apple, AppsFlyer or Adjust. Nothing you enter leaves this page. Other tools: <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a> · <a href="/tools/ltv-calculator/">LTV Calculator</a>.</p>
+</div>
+<div class="back-link"><div class="container"><a href="/tools/">← Back to Tools</a></div></div>
+<footer id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <div class="contact-links">
+      <a href="mailto:hello@mariascales.com">hello@mariascales.com</a>
+      <a href="https://t.me/Maria_Aaaaaaa" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://linkedin.com/in/atamanova-m" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/maria-scales" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-legal" style="margin-top: 20px; font-size: 0.8125rem;"><a href="/privacy/" style="color: #6b7280;">Privacy policy</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ev = s => `<span class="ev">${esc(s).replace(/_/g,"_<wbr>")}</span>`;
+const cap1 = t => t[0].toUpperCase()+t.slice(1);
+const WHYB = `<span class="whyb" role="button" tabindex="0" aria-expanded="false" title="Why?">?</span>`;
+/* one short visible line + the long text under "?" */
+const Q = (shortHtml, longHtml, tag="div", cls="") => `<${tag} class="qwrap ${cls}">${shortHtml}${WHYB}<div class="fsrc">${longHtml}</div></${tag}>`;
+
+const PLANS = {
+  weekly:{label:"weekly", days:7},
+  monthly:{label:"monthly", days:30},
+  quarterly:{label:"3-month", days:91},
+  annual:{label:"annual", days:365}
+};
+
+const ROLES = {
+  core:{name:"Core", color:"var(--r-core)", say:"SKAN is the main signal"},
+  input:{name:"Input", color:"var(--r-input)", say:"SKAN is one input to the platform's model"},
+  optional:{name:"Optional", color:"var(--r-opt)", say:"SKAN is a switch you can turn off"},
+  secondary:{name:"Secondary", color:"var(--r-sec)", say:"gets SKAN postbacks, but optimizes on its own protocol"},
+  own:{name:"Own attribution", color:"var(--r-own)", say:"attributes through Apple's AdServices token"},
+  nip:{name:"Not in path", color:"var(--r-nip)", say:"money is taken before the store"}
+};
+
+const CHANNELS = [
+  {id:"meta", name:"Meta", role:"secondary", on:false, san:"Yes",
+   sees:"AEM, Meta's own aggregated protocol.",
+   set:"AEM events in Events Manager or through the MMP. The SKAN schema is for reporting only."},
+  {id:"google", name:"Google Ads", role:"input", on:false, san:"Yes",
+   sees:"Modeled conversions: IDFA of users who consented, on-device measurement, and SKAN as one input.",
+   set:"Keep the SKAN schema in one place (Google Ads / Firebase or your MMP) and turn on on-device measurement."},
+  {id:"tiktok", name:"TikTok", role:"optional", on:false, san:"Yes, since 2023",
+   sees:"Data your MMP shares about all users: matched for users who consented, modeled for the rest. SKAN is a switch since May 2025.",
+   set:"Advanced SAN / data sharing in the MMP; decide whether SKAN stays on."},
+  {id:"apple", name:"Apple Ads", role:"own", on:false, san:"Own attribution (AdServices)",
+   sees:"The AdServices token, which attributes without ATT. Apple Ads registered with AdAttributionKit in April 2025, starting with SKAN versions 1–3.",
+   set:"AdServices integration in your MMP."},
+  {id:"networks", name:"Ad networks", sub:"AppLovin, Unity, Moloco, ironSource, Mintegral, Liftoff", role:"core", on:false, san:"No – MMP links",
+   sees:"Only SKAN. They work through MMP links, so for users who said no to tracking there is nothing else.",
+   set:"The SKAN schema in your MMP. This is where the schema matters most."},
+  {id:"web", name:"Web funnels", sub:"web2web; web2app with payment on the web", role:"nip", on:false, san:"–",
+   sees:"Pixel and Conversions API, click IDs, matching by login.",
+   set:"Conversions API and matching by email. A Safari ad that sends people straight to the App Store is still attributed by SKAN 4."}
+];
+
+const NOLOCK_PHRASE = {
+  meta: "Meta optimizes on AEM.",
+  google: "Google uses SKAN as one input to its model.",
+  apple: "Apple Ads attributes through AdServices.",
+  web: "Web funnels take money before the store.",
+  tiktok: "Since May 2025 TikTok can run without SKAN. If you keep it on, ask TikTok whether it bids on it before deciding."
+};
+function noLockPhrase(channels){
+  const on = (channels||[]).filter(c=>c.on).map(c=>c.id);
+  return on.map(id => NOLOCK_PHRASE[id]).filter(Boolean).join(" ");
+}
+
+const FDEF = {signup:"signup_successful", obs:"onboarding_start", obe:"onboarding_end", pw:"paywall_view"};
+const FMEANS = {signup:"created an account", obs:"started onboarding", obe:"finished onboarding", pw:"reached the paywall"};
+const GAME_DEFAULTS = {
+  iap:{cap:100, l:[20,40,80]},
+  ads:{cap:1, l:[0.2,0.5,1]},
+  hybrid:{cap:100, l:[20,40,80]}
+};
+
+let lastProduct = "sub";
+
+/* ---------- setup rendering ---------- */
+function renderChannels(){
+  $("chanList").innerHTML = CHANNELS.map(c => `
+    <div class="chan">
+      <input type="checkbox" id="ch-${c.id}" ${c.on?"checked":""} aria-label="${esc(c.name)}">
+      <label class="nm" for="ch-${c.id}">${esc(c.name)}${c.sub?`<small>${esc(c.sub)}</small>`:""}</label>
+      <span class="pct"><input type="number" id="chp-${c.id}" min="0" max="100" value="" placeholder="–" aria-label="${esc(c.name)} share of iOS budget, percent"> %</span>
+    </div>`).join("");
+  $("refChannels").innerHTML = CHANNELS.map(c => `<tr><td class="rowh">${esc(c.name)}${c.sub?`<div class="small" style="font-weight:400">${esc(c.sub)}</div>`:""}</td><td>${esc(c.san)}</td><td>${esc(c.sees)}</td><td>${ROLES[c.role].name}</td></tr>`).join("");
+}
+
+function renderPlanUI(){
+  const opts = sel => Object.keys(PLANS).map(p=>`<option value="${p}">${cap1(PLANS[p].label)}</option>`).join("");
+  $("planA").innerHTML = opts(); $("planB").innerHTML = opts();
+  $("planA").value = "monthly"; $("planB").value = "annual";
+  renderTopSeg();
+}
+function renderTopSeg(){
+  const A = $("planA").value, B = $("planB").value;
+  const prev = (document.querySelector('input[name="top"]:checked')||{}).value;
+  const list = A === B ? [A] : [A, B];
+  const def = list.includes(prev) ? prev : list.slice().sort((x,y)=>PLANS[y].days-PLANS[x].days)[0];
+  $("topSeg").innerHTML = list.map(p=>`<label><input type="radio" name="top" id="top-${p}" value="${p}" ${p===def?"checked":""}> ${cap1(PLANS[p].label)}</label>`).join("");
+}
+
+function readState(){
+  const f = $("setupForm");
+  const radio = n => (f.querySelector(`input[name="${n}"]:checked`)||{}).value;
+  const num = (id, d) => { const v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : d; };
+  const trial = parseInt(radio("trial"),10);
+  const nplans = parseInt(radio("nplans"),10);
+  const A = $("planA").value, B = $("planB").value;
+  const plans = nplans === 1 || A === B ? [A] : [A, B];
+  const top = (document.querySelector('input[name="top"]:checked')||{}).value;
+  const channels = CHANNELS.map(c => ({id:c.id, role:c.role, name:c.name, on:$("ch-"+c.id).checked, pct:Math.max(0, parseFloat($("chp-"+c.id).value)||0)}));
+  const clean = (v, d) => (v.trim()||d).replace(/\s+/g,"_");
+  return {
+    product: radio("product"), money: radio("money"), trial, trialStart: radio("tstart"),
+    nplans, plans, top: plans.includes(top) ? top : plans[0], direct: trial > 0 && radio("direct")==="yes", upsell: radio("upsell")==="yes",
+    ev1: clean($("ev1").value,"core_feature_1_used"), ev2: clean($("ev2").value,"core_feature_2_used"),
+    fun: Object.fromEntries(Object.keys(FDEF).map(k => [k, {on:$("fu-"+k).checked, name:clean($("fn-"+k).value, FDEF[k])}])),
+    enc: radio("enc"), channels, mmp: (document.querySelector('input[name="mmp"]:checked')||{}).value || "appsflyer",
+    gCap: Math.max(0.01, num("gCap", 100)), gSpace: radio("gSpace"), gEng: parseInt(radio("gEng"),10),
+    gEv1: clean($("gEv1").value,"tutorial_complete"), gEv2: clean($("gEv2").value,"level_n_reached"),
+    gPaid: radio("gPaid")==="yes", gL:[num("gL1",0), num("gL2",0), num("gL3",0)],
+    gM:["gM1","gM2","gM3"].map(id => { const v = parseFloat($(id).value); return isFinite(v) && v > 0 ? v : null; })
+  };
+}
+
+function applyGameDefaults(p){
+  const d = GAME_DEFAULTS[p]; if (!d) return;
+  $("gCap").value = d.cap; $("gL1").value = d.l[0]; $("gL2").value = d.l[1]; $("gL3").value = d.l[2];
+}
+
+function syncVisibility(s, m){
+  const game = s.product !== "sub";
+  const inapp = !game && s.money !== "web";
+  const show = {sub:!game, "sub-inapp":inapp, "sub-trial":inapp && s.trial > 0, game, "game-lines": game && !(s.product === "hybrid" && s.gPaid), "game-mid": game && s.product !== "iap" && !(s.product === "hybrid" && s.gPaid), hybrid: s.product === "hybrid"};
+  document.querySelectorAll("[data-if]").forEach(el => el.hidden = !show[el.dataset.if]);
+  if (!game){
+    $("moreNote").hidden = s.nplans !== 3;
+    $("planBwrap").hidden = s.nplans === 1;
+    $("samePlan").hidden = !(s.nplans !== 1 && $("planA").value === $("planB").value);
+    $("topQ").hidden = s.plans.length < 2;
+    Object.keys(FDEF).forEach(k => { $("fn-"+k).disabled = !$("fu-"+k).checked; });
+  } else {
+    const evForMid = show["game-mid"] && s.gM.some(v => !v); /* S3: engagement events also stand in for a missing medium line */
+    $("gEv1").disabled = s.gEng < 1 && !evForMid; $("gEv2").disabled = s.gEng < 2 && !evForMid;
+  }
+}
+
+/* ---------- shared helpers ---------- */
+/* time is elapsed days after first launch; windows end at 48 h, 168 h and day 35 (Apple: days 0–2, 3–7, 8–35) */
+const win = d => d < 2 ? 1 : d < 7 ? 2 : d < 35 ? 3 : 0;
+const winEnd = d => win(d - 1e-6);
+const money$ = v => {
+  if (v >= 100) return "$" + Math.round(v).toLocaleString("en-US");
+  if (v >= 1) return "$" + (Math.round(v*100)/100).toString();
+  if (v === 0) return "$0";
+  return "$" + Number(v.toPrecision(2)).toString();
+};
+
+function chanFacts(channels){
+  const on = (channels||[]).filter(c=>c.on);
+  return {any: on.length > 0, nets: on.some(c=>c.role==="core")};
+}
+function chanSplit(channels){
+  const on = channels.filter(c=>c.on);
+  const total = on.reduce((a,c)=>a+c.pct,0);
+  const by = {}; Object.keys(ROLES).forEach(k=>by[k]=0);
+  on.forEach(c => by[c.role] += total ? c.pct/total*100 : 0);
+  return {on, total, by};
+}
+
+const ALWAYS_WARNS = [
+  {hot:false, t:"<b>Small sources get less or nothing.</b> Apple sends a fine value only on the higher crowd-anonymity tiers; lower tiers get coarse or no value, and Apple doesn't publish the thresholds. Fewer, larger campaigns get more data, and the schema has to make sense on coarse alone."},
+  {hot:false, t:"<b>Server-side events still need an app open to be reported.</b> A trial converting or a renewal happens on Apple's server, but it only reaches postbacks 2 and 3 if the user opens the app later in the same window and the app reports it then. Log trial_*_converted and renewal_* from the app on its next open; a server-to-server event can't update SKAN by itself."},
+  {hot:false, t:"<b>Changing the schema breaks the series.</b> Postbacks from old installs keep arriving for up to about 41 days and get decoded with the new schema. Keep spare values now."}
+];
+const LOCK_MMP = "In the MMP: AppsFlyer Conversion Studio locks by time or when the high coarse value is reached. Adjust generally advises against lock windows and suggests agreeing with the network first.";
+
+/* ---------- subscription engine ---------- */
+function valueOrder(s){
+  return s.plans.slice().sort((a,b) => (b === s.top) - (a === s.top));
+}
+
+function buildSub(s){
+  const m = {game:false, warns:[], rows:{}, notes:{}};
+  const web = s.money === "web";
+  const plans = web ? [] : (s.plans.length ? valueOrder(s) : ["monthly"]);
+  const noPlanPicked = !web && !s.plans.length;
+  const T = web ? 0 : s.trial;
+  const late = T > 0 && s.trialStart === "late";
+  const ts = late ? [2,5] : [0,2];
+  const ch = T > 0 ? [ts[0]+T, ts[1]+T] : [0,2];
+  let moneyPB = 0;
+  if (!web){
+    const a = win(ch[0]), b = winEnd(ch[1]);
+    moneyPB = a === b ? a : (b === 0 ? a : Math.max(a,b));
+    if (T > 0 && ch[0] > 28) moneyPB = 0; /* same day-28 cutoff as renewals: too little time left for an app open */
+  }
+  const renew = plans.map(p => ({p, from:ch[0]+PLANS[p].days, to:ch[1]+PLANS[p].days}));
+  renew.forEach(r => { r.inWin = r.from <= 28; });
+  const enc = s.enc;
+  Object.assign(m, {web, plans, T, late, ts, ch, moneyPB, renew, enc});
+  const top = plans[0], cheaper = plans.slice(1);
+  const lbl = p => PLANS[p].label;
+  const F = {}; Object.keys(FDEF).forEach(k => { const f = (s.fun||{})[k]; F[k] = f ? (f.on ? f.name : null) : FDEF[k]; });
+  m.F = F;
+  const an = p => (/^[aeiou]/.test(lbl(p)) ? "an " : "a ") + lbl(p);
+
+  /* --- postback 1: flags --- */
+  let bits = [];
+  if (web){
+    bits.push({e:s.ev2, means:"reached the second key feature", why:"Money was taken on the web before install, so SKAN only judges install quality. The deepest activation event gets the top bit, so a bigger number always means a better install."});
+    bits.push({e:s.ev1, means:"used the main feature", why:"The feature people paid for on the web. Using it in the first 48 hours says the buyer actually got the value."});
+    if (F.obe) bits.push({e:F.obe, means:"finished onboarding", why:"A finished onboarding is the strongest early sign of intent that does not depend on your feature names."});
+    if (F.obs) bits.push({e:F.obs, means:"started onboarding", why:"Separates people who opened and left from people who began."});
+    bits.push({e:"login_successful", means:"logged in to the account bought on the web", why:"The web purchase is tied to an account. A login shows the buyer arrived in the app."});
+  } else {
+    const moneyBits = [];
+    if (s.direct && T > 0) moneyBits.push({e:"purchase_without_trial", means:"paid right away, no trial (any plan)", why:"Money in the first 48 hours is worth more than a trial that may not convert, so it sits on top. One bit covers every plan, so which plan was bought is lost; if that matters for you, switch to stage × quality, which gives each plan's direct purchase its own stage."});
+    if (s.upsell) moneyBits.push({e:"upsell_purchased", means:"bought an upsell in the first 48 hours", why:"An extra purchase in the first 48 hours is money now, so it ranks above trials and the funnel."});
+    const planBits = [];
+    if (T === 0){
+      plans.forEach((p,i) => planBits.push({e:`purchase_${p}`, means:`bought the ${lbl(p)} plan`, why: i===0
+        ? (plans.length>1 ? `No trial means money from day one, so postback 1 can carry the purchase and the plan. You said the ${lbl(p)} plan brings more per subscriber, so it gets the higher bit.` : "No trial means money from day one, so postback 1 carries the purchase itself.")
+        : `Its own bit, so ${an(p)} buyer isn't counted as equal to ${an(top)} one.`}));
+    } else if (!late){
+      plans.forEach((p,i) => planBits.push({e:`trial_${p}_started`, means:`started a trial on the ${lbl(p)} plan`, why: plans.length===1
+        ? "Your optimization event. At 48 hours a trial has no revenue yet, so postback 1 codes the stage, not money."
+        : i===0 ? `You said the ${lbl(p)} plan brings more money per subscriber. One shared trial_started would make the network treat ${an(p)} trial and ${an(plans[1])} trial as equal, and it would bring both just as happily. This is the most expensive pair of bits in the schema.`
+        : `Its own bit, so ${an(p)} trial isn't confused with ${an(top)} one.`}));
+    }
+    let funnel = [
+      {k:"pw", e:F.pw, means:"reached the paywall", why: late
+        ? "Your optimization event. Trials mostly start after day 2, so the last step that reliably happens within 48 hours is seeing the offer."
+        : "Mid-funnel diagnostics: separates people who saw the offer and passed from people who never got there."},
+      {k:"obe", e:F.obe, means:"finished onboarding", why:"The strongest non-money sign of intent in the first 48 hours."},
+      {k:"obs", e:F.obs, means:"started onboarding", why:"Separates people who opened and left from people who began."},
+      {k:"signup", e:F.signup, means:"created an account", why:"The cheapest event in the funnel."}].filter(f => f.e);
+    if (late && funnel.length && funnel[0].k !== "pw") funnel[0].why = "Your optimization event. Trials mostly start after day 2 and there is no paywall step, so the deepest funnel step within 48 hours stands in.";
+    const giveUp = ["obs","signup"].filter(k => F[k]);
+    const over = Math.max(0, moneyBits.length + planBits.length + funnel.length - 6);
+    const displacedK = giveUp.slice(0, over);
+    const displaced = displacedK.map(k => F[k]);
+    const WHY_LOST = {
+      obs: "Losing it only blurs 'opened and left' versus 'began'; the end of onboarding still shows who got through.",
+      signup: "An account is the least telling step once onboarding and the paywall are measured."
+    };
+    moneyBits.forEach((b, j) => {
+      const k = j - (moneyBits.length - over);
+      b.why += k >= 0
+        ? ` To make room it takes the place of ${displaced[k]}, the cheapest funnel event left. ${WHY_LOST[displacedK[k]]}`
+        : " It uses the spare bit, so no funnel event is lost.";
+    });
+    funnel = funnel.filter(f => !displacedK.includes(f.k));
+    m.displaced = displaced;
+    bits = [...moneyBits, ...planBits, ...funnel];
+    /* S4: free bits go to the key product events instead of staying empty */
+    const free = 6 - bits.length;
+    if (free > 0){
+      const RESERVE = " If you'd rather keep this bit in reserve for a new plan or event, leave it empty: adding an event to an empty bit later doesn't change the other values.";
+      const pick = [
+        {e:s.ev1, means:"used the main feature", why: late
+          ? "The feature people will pay for. Your trials start after this window, so using it in the first 48 hours is the best early predictor of a later trial you have. It takes a bit that would otherwise stay empty." + RESERVE
+          : "The feature people subscribe for. It takes a bit that would otherwise stay empty: using it in the first 48 hours says the user got the value." + RESERVE},
+        {e:s.ev2, means:"reached the second key feature", why:"Reaching a second feature means the person explored the product, not just looked once. It takes the last free bit." + RESERVE}
+      ].filter(x => x.e && !bits.some(b => b.e === x.e)).slice(0, free);
+      const ins = pick.length === 2 ? [pick[1], pick[0]] : pick;
+      const at = funnel.length ? bits.indexOf(funnel[0]) + 1 : bits.length;
+      bits.splice(at, 0, ...ins);
+    }
+  }
+  bits = bits.slice(0,6);
+  while (bits.length < 6) bits.push({e:null, means:"spare", why:"Spare bit. Keep it for a new plan or event instead of re-cutting the schema later: every change costs about six weeks of mixed data."});
+  bits.forEach((b,i) => b.v = 32 >> i);
+  m.bits = bits; m.displaced = m.displaced || [];
+
+  /* --- postback 1: stage × quality --- */
+  let stages;
+  if (web) stages = ["install only","login_successful",F.obs,F.obe,s.ev1,s.ev2].filter(Boolean);
+  else {
+    stages = ["install only",F.obs,F.obe,F.pw].filter(Boolean);
+    const asc = plans.slice().reverse();
+    if (T === 0) asc.forEach(p=>stages.push(`purchase_${p}`));
+    else {
+      if (!late) asc.forEach(p=>stages.push(`trial_${p}_started`));
+      if (s.direct) asc.forEach(p=>stages.push(`purchase_${p}_without_trial`));
+    }
+    if (s.upsell) stages.push("upsell_purchased");
+  }
+  const mult = stages.length <= 8 ? 8 : 16;
+  m.stage = {stages, mult, used: stages.length*4, maxCV: stages.length-1 + mult*3};
+
+  /* --- postback 1: coarse --- */
+  const low1 = {l:"Low", c:"Session", e:"Install", means:"installed, nothing else", why:"Something has to sit on Low, and 'installed and nothing more' is the one condition every install meets."};
+  let pb1c;
+  const deep = ["pw","obe","obs","signup"].filter(k => F[k]).map(k => ({e:F[k], means:FMEANS[k]}));
+  const deepW = [F.obe && {e:F.obe, means:FMEANS.obe}, F.obs && {e:F.obs, means:FMEANS.obs}, {e:"login_successful", means:"logged in to the account bought on the web"}].filter(Boolean);
+  /* same order as the bits: the second key feature ranks above the main one */
+  const ladderF = [...deep, {e:s.ev2, means:"reached the second key feature"}, {e:s.ev1, means:"used the main feature"}];
+  if (web) pb1c = [low1,
+    {l:"Medium", c:"Event", e:deepW[0].e, means:deepW[0].means, why:"The middle step of activation."},
+    {l:"High", c:"Event", e:s.ev1, means:"used the main feature", why:"The best install is one where the web buyer reached the value they paid for."}];
+  else if (late) pb1c = [low1,
+    {l:"Medium", c:"Event", e:ladderF[1].e, means:ladderF[1].means, why:"Trials start later than this window, so the ladder is built from the funnel."},
+    {l:"High", c:"Event", e:ladderF[0].e, means:ladderF[0].means, why:"The deepest step that reliably happens within 48 hours for your product."}];
+  else {
+    const verb = T === 0 ? (p=>`purchase_${p}`) : (p=>`trial_${p}_started`);
+    const noun = T === 0 ? "purchase" : "trial";
+    if (plans.length >= 2) pb1c = [low1,
+      {l:"Medium", c:"Event", e:cheaper.map(verb).join(" / "), means:`${noun} on the ${cheaper.map(lbl).join(" or ")} plan`, why:"Coarse arrives exactly where volume is lowest. Keeping the plan split here means optimization isn't blind on the smallest sources." + (s.upsell ? " The upsell doesn't get a coarse level of its own; it rides along with whichever plan brought it." : "")},
+      {l:"High", c:"Event", e:verb(top) + (s.direct && T>0 ? " / purchase_without_trial" : ""), means:`${noun} on the ${lbl(top)} plan` + (s.direct && T>0 ? ", or paid right away" : ""), why:`The same plan split as the fine value. ${F.pw ? F.pw + " drops out of coarse on purpose" : "The funnel stays out of coarse on purpose"}: losing mid-funnel diagnostics is cheaper than losing the difference in value.` + (s.direct && T>0 ? " Put the direct purchase here too if your MMP lets one level take two events." : "")}];
+    else pb1c = [low1,
+      {l:"Medium", c:"Event", e:ladderF[0].e, means:ladderF[0].means, why:"With one plan there is nothing to split, so the middle level is the " + (F.pw ? "step before the " + noun : "deepest step before the " + noun + " you have") + "." + (s.upsell ? " The upsell doesn't get a coarse level of its own either." : "")},
+      {l:"High", c:"Event", e:verb(top) + (s.direct && T>0 ? " / purchase_without_trial" : ""), means:(T === 0 ? `bought the ${lbl(top)} plan` : `${noun} started`) + (s.direct && T>0 ? ", or paid right away" : ""), why:"Your optimization event." + (s.direct && T>0 ? " Put the direct purchase here too if your MMP lets one level take two events." : "")}];
+  }
+  m.rows.pb1c = pb1c;
+
+  /* --- postbacks 2 and 3 --- */
+  const lowS = means => ({l:"Low", c:"Session", e:"Non-install session", means, why:"You can't map the absence of an event, only something that happened. A session after install is the floor that still says the user came back."});
+  const ladder = (ctx) => [lowS("came back to the app after install"),
+    {l:"Medium", c:"Event", e:s.ev1, means:"used the main feature", why: ctx === "after" ? "Still using the product after paying is the first sign the payment will stick." : ctx === "web" ? "The feature people paid for on the web. Using it in the first week says the buyer got the value." : "The feature people subscribe for. Using it in the trial is the earliest predictor of conversion you control."},
+    {l:"High", c:"Event", e:s.ev2, means:"reached the second key feature", why:"Moving on to a second feature means the person explored the product, not just looked once. If your MMP allows a count condition, repeat use of the main feature is a good alternative: habit predicts conversion better than a single action."}];
+  const moneyRows = (verbP, noun) => plans.length >= 2
+    ? [lowS(`came back, but no ${noun}`),
+       {l:"Medium", c:"Event", e:cheaper.map(verbP).join(" / "), means:`${noun} on the ${cheaper.map(lbl).join(" or ")} plan`, why:"The plans you ranked lower sit on the middle level, so the two kinds of money stay apart."},
+       {l:"High", c:"Event", e:verbP(top), means:`${noun} on the ${lbl(top)} plan`, why:`This mirrors postback 1. If you optimize on ${lbl(top)} trials, this is where you check that ${lbl(top)} money followed. Measuring 'any conversion' here would leave nothing to check.`}]
+    : [lowS(`came back, but no ${noun}`),
+       {l:"Medium", c:"Event", e:s.ev1, means:"used the main feature", why:"With one plan there is no plan split to spend a level on, so the middle level tracks engagement."},
+       {l:"High", c:"Event", e:verbP(top), means:noun, why:"The money event, and the check on what postback 1 optimized for."}];
+  const renewalRows = () => {
+    const inW = renew.filter(r=>r.inWin);
+    if (!inW.length) return null;
+    const hi = inW[0], mid = inW[1];
+    return [lowS("still opens the app"),
+      mid ? {l:"Medium", c:"Event", e:`renewal_${mid.p}`, means:`renewed the ${lbl(mid.p)} plan`, why:`The ${lbl(mid.p)} plan renews around day ${mid.from}–${Math.min(mid.to,35)}, inside this window and early enough to leave time for an app open. The day-28 cutoff is this tool's assumption, not Apple's rule.`}
+          : {l:"Medium", c:"Event", e:s.ev1, means:"still using the main feature after paying", why:"Still using the product after paying is the first sign the payment will stick."},
+      {l:"High", c:"Event", e:`renewal_${hi.p}`, means:`renewed the ${lbl(hi.p)} plan`, why:`The ${lbl(hi.p)} plan renews around day ${hi.from}–${Math.min(hi.to,35)}, inside this window and early enough to leave time for an app open: the first proof that the payment sticks. The day-28 cutoff is this tool's assumption, not Apple's rule.`}];
+  };
+
+  /* S6: a renewal that lands in the same window as the first charge */
+  const renewAlso = () => {
+    const r = renew.filter(x => x.inWin && x.from >= 7);
+    return r.length ? ` ${r.map(x => `The ${lbl(x.p)} renewal (${x.from}–${x.to} days after first launch)`).join(" and ")} also ${r.length > 1 ? "land" : "lands"} in this window; the first charge takes the levels, so ${r.length > 1 ? "they aren't" : "it isn't"} coded separately.` : "";
+  };
+  const cr = p => `trial_${p}_converted`;
+  let pb2, pb3, n2, n3;
+  if (web){
+    pb2 = ladder("web"); pb3 = ladder("after").map(r=>({...r}));
+    pb3[0] = lowS("still coming back after a week");
+    n2 = "Nothing to count in money here: people paid on the web. Postback 2 shows whether the install turned into use.";
+    n3 = "Postback 3 shows whether people from this campaign kept using the product for a month: the part of quality SKAN can still see.";
+  } else if (T === 0){
+    pb2 = ladder("after");
+    n2 = "Money already arrived in postback 1. This window shows whether buyers keep using the product.";
+    const rr = renewalRows();
+    pb3 = rr || ladder("after");
+    n3 = rr ? "First renewals land inside this window, so postback 3 checks that payments stick." : "No plan renews inside 35 days, so postback 3 tracks continued use. Don't spend a value on renewals you can't see.";
+  } else if (late){
+    pb2 = plans.length >= 2
+      ? [lowS("came back, no trial yet"),
+         {l:"Medium", c:"Event", e:cheaper.map(p=>`trial_${p}_started`).join(" / "), means:`trial on the ${cheaper.map(lbl).join(" or ")} plan`, why:"Your trials mostly start after day 2, so the trial start lives here as a coarse signal instead of in postback 1."},
+         {l:"High", c:"Event", e:`trial_${top}_started`, means:`trial on the ${lbl(top)} plan`, why:"The same plan split you would have had in postback 1, one window later."}]
+      : [lowS("came back, no trial yet"),
+         {l:"Medium", c:"Event", e:s.ev1, means:"used the main feature", why:"With one plan, the middle level tracks engagement."},
+         {l:"High", c:"Event", e:`trial_${top}_started`, means:"trial started", why:"Your trials mostly start after day 2, so the trial start lives here."}];
+    n2 = `Trials start after the first 48 hours (here about ${ts[0]}–${ts[1]} days after first launch, an illustration), which is postback 2's window.`;
+    if (moneyPB === 3){
+      pb3 = moneyRows(cr, "paid subscription");
+      n3 = win(ch[0]) !== winEnd(ch[1])
+        ? `The first charge lands about ${ch[0]}–${ch[1]} days after first launch, part in postback 2's window and part in postback 3's. Postback 2 already carries the trial start, so the money is coded here. Charges before day 7 only count here if your MMP maps postback 3 by the state so far, not only by events inside the window; check it (see the warning below).` + renewAlso()
+        : `The first charge lands about ${ch[0]}–${ch[1]} days after first launch, so the money is here.` + renewAlso();
+    }
+    else { pb3 = ladder("before"); n3 = "The first charge comes too close to day 35 or after it, so postback 3 tracks use."; }
+  } else {
+    if (moneyPB === 2){
+      pb2 = moneyRows(cr, "paid subscription");
+      n2 = `A ${T}-day trial started in the first 48 hours charges ${ch[0]}–${ch[1]} days after first launch, inside postback 2's window (48 to 168 hours), so the money goes here.`;
+      const rr = renewalRows();
+      pb3 = rr || ladder("after");
+      n3 = rr ? "Renewals of your shorter plans land inside this window." : "No renewal lands inside 35 days, so postback 3 tracks continued use after paying.";
+    } else if (moneyPB === 3){
+      pb2 = ladder("before");
+      const straddle = win(ch[0]) !== winEnd(ch[1]);
+      n2 = straddle
+        ? `A ${T}-day trial started in the first 48 hours charges ${ch[0]}–${ch[1]} days after first launch, across the border of postbacks 2 and 3 at 168 hours. Part of the charges would always miss postback 2, so money goes to postback 3 and postback 2 measures engagement in the trial.`
+        : `A ${T}-day trial started in the first 48 hours charges at ${T*24} hours or later, ${ch[0]}–${ch[1]} days after first launch: from the first hour of postback 3's window. Postback 2 measures engagement in the trial.`;
+      pb3 = moneyRows(cr, "paid subscription");
+      n3 = `First charge ${ch[0]}–${ch[1]} days after first launch: the money is here.` + (ch[1] > 35 ? " Some charges fall after day 35 and will not be counted." : "") + renewAlso();
+    } else {
+      pb2 = ladder("before"); pb3 = ladder("before");
+      n2 = `The first charge comes ${ch[0]}–${ch[1]} days after first launch, too close to day 35 or after it, so no postback sees money.`;
+      n3 = "SKAN can only measure engagement for this trial length.";
+    }
+  }
+  m.rows.pb2 = pb2; m.rows.pb3 = pb3; m.notes.pb2 = n2; m.notes.pb3 = n3;
+
+  m.short = {
+    pb1: web ? "Activation only – no revenue in this schema." : T === 0 ? "Purchase and plan – money can come on day one." : late ? "Funnel only – trials start after this window." : "Stage and plan, not money.",
+    pb2: web ? "Use after install." : T === 0 ? "Use after buying." : late ? "Trial start." : moneyPB === 2 ? "Money: the first charge." : "Engagement in the trial.",
+    pb3: web ? "Use over the month." : (T === 0 || moneyPB === 2) ? (renew.some(r=>r.inWin) ? "Renewals." : "Use after paying.") : moneyPB === 3 ? "Money: the first charge." : "Engagement – no money inside 35 days."
+  };
+  if (web) m.notes.pb1 = "People paid on the web before install, so SKAN only judges install quality. Postback 1 is built around activation; there is no revenue in this schema.";
+  else if (T === 0) m.notes.pb1 = "No trial: money can come on day one, so postback 1 carries the purchase and the plan.";
+  else if (late) m.notes.pb1 = "Your trials mostly start after day 2, so trial bits in postback 1 would stay empty. The optimization event moves to the last step that reliably happens within 48 hours, and the trial start moves to postback 2.";
+  else m.notes.pb1 = "At 48 hours a trial has no revenue yet, so postback 1 codes the stage and the plan, not money.";
+
+  const ch_ = chanFacts(s.channels);
+  let lock;
+  if (web) lock = {dec:"Leave postback 1 open.", why:"No money is taken in the app, and a postback one day sooner doesn't change a decision here.", on:false};
+  else if (T === 0) lock = {dec:"Don't lock by default.", why:"Lock at 24 hours only if your own data shows that first purchases happen almost entirely on install day, and only if you buy from ad networks that optimize on SKAN: for them postback 1 a day sooner is a faster signal. Everything after the lock is lost for this postback.", on:false};
+  else if (late) lock = {dec:"Don't lock.", why:"Postback 1 carries the funnel here. Locking early loses the onboarding and paywall events from days 1–2.", on:false};
+  else if (s.trialStart === "day0"){
+    const rc = " For reference, RevenueCat 2026: 78–90% of trials start on install day, another 5–12% on days 1–3 (see Setup, Source).";
+    if (ch_.nets) lock = {dec:"Lock postback 1 at 24 hours.", on:true,
+      why:"Most of your trials start on install day, so locking costs little: only the trials started on days 1–2. And you buy from ad networks without their own measurement, which optimize on SKAN: for them postback 1 a day sooner is a faster signal." + rc};
+    else if (ch_.any) lock = {dec:"No need to lock.", on:false,
+      why:"None of your channels optimizes on SKAN itself: " + noLockPhrase(s.channels) + " A postback a day sooner changes nothing for them, and locking would still lose the trials started on days 1–2."};
+    else lock = {dec:"Lock at 24 hours if you buy from ad networks that optimize on SKAN.", on:false, cond:true,
+      why:"Most of your trials start on install day, so locking costs little: only the trials started on days 1–2. Whether it pays off depends on your channels. Ad networks without their own measurement (AppLovin, Unity, Moloco and similar) optimize on SKAN and get the signal a day sooner. Meta optimizes on AEM, so for Meta alone the speed of the postback doesn't matter. Tick your channels further down to get a firm answer." + rc};
+  }
+  else if (s.trialStart === "spread") lock = {dec:"Don't lock.", why:"Your trials spread over the first 48 hours. Locking at 24 hours would drop the day-1 and day-2 starts, which are exactly what this postback exists for.", on:false};
+  else lock = {dec:"Don't lock yet.", why:"Look at hours from install to trial start in your data first. That one distribution decides this setting and most of the schema.", on:false};
+  lock.mmp = LOCK_MMP;
+  m.lock = lock;
+
+  const W = m.warns;
+  if (noPlanPicked) W.push({hot:true, t:"<b>No plan selected.</b> The schema assumes one monthly plan until you tick yours."});
+  const outR = web ? [] : renew.filter(r=>!r.inWin);
+  if (outR.length) W.push({hot:false, t:`<b>${outR.length > 1 ? `Renewals fall too close to day 35 to code (${outR.map(r=>`${lbl(r.p)}: day ${r.from}–${r.to}`).join(", ")}).` : `The ${lbl(outR[0].p)} renewal (day ${outR[0].from}–${outR[0].to}) falls too close to day 35 to code.`}</b> ${outR.map(r=>`The ${lbl(r.p)} plan renews around day ${r.from}–${r.to}${r.from >= 35 ? ", after the window closes" : ", leaving too little time for the app to reopen and report it"}.`).join(" ")} Don't spend a value on ${outR.length > 1 ? "them" : "it"}; ${outR.length > 1 ? "they" : "it"} will stay empty.`});
+  if (!web && T > 0 && moneyPB === 0) W.push({hot:true, t:`<b>The first charge (day ${ch[0]}–${ch[1]}) falls too close to day 35 or after it.</b> No postback will carry the money; the schema measures engagement instead. The day-28 cutoff is this tool's assumption, not Apple's rule.`});
+  else if (!web && T > 0 && ch[1] > 35) W.push({hot:true, t:`<b>Some first charges fall after day 35</b> (day ${ch[0]}–${ch[1]}). SKAN won't see them.`});
+  if (s.money === "mixed") W.push({hot:false, t:"<b>Web purchases never reach SKAN.</b> This schema covers installs from app ads; money taken on the web is measured by the web stack."});
+  ALWAYS_WARNS.forEach(w => W.push({...w, always:true}));
+  return m;
+}
+
+/* ---------- game engine ---------- */
+function buildGame(s){
+  const mon = s.product;
+  const m = {game:true, mon, warns:[], rows:{}, notes:{}};
+  const paid = mon === "hybrid" && s.gPaid;
+  const e = s.gEng;
+  const k = 6 - e - (paid ? 1 : 0);
+  const n = 1 << k;
+  const nb = n - 2;
+  const cap = s.gCap;
+  const edges = [0];
+  for (let j = 1; j <= nb; j++){ const t = j/nb; edges.push(cap * (s.gSpace === "low" ? t*t : t)); }
+  const bucketOf = rev => { if (!(rev > 0)) return 0; if (rev > cap) return n-1; for (let v = 1; v <= nb; v++) if (rev <= edges[v] + 1e-12) return v; return n-1; };
+  const engNames = [s.gEv1, s.gEv2].slice(0, e);
+  const revName = mon === "iap" ? "purchase revenue" : mon === "ads" ? "ad revenue" : "revenue (purchases + ads)";
+  const layout = [];
+  if (paid) layout.push({kind:"paid", label:"made_a_purchase", v:32});
+  for (let i = k-1; i >= 0; i--) layout.push({kind:"rev", label:"revenue", v:(1<<i) << e});
+  engNames.forEach((nm,i) => layout.push({kind:"eng", label:nm, v:1 << (e-1-i)}));
+  const cv = (rev, didPay, engOn) => (paid && didPay ? 32 : 0) + (bucketOf(rev) << e) + engNames.reduce((a,nm,i)=>a + (engOn[i] ? 1 << (e-1-i) : 0), 0);
+  Object.assign(m, {paid, e, k, n, nb, cap, edges, bucketOf, engNames, revName, layout, cv, maxCV: cv(cap*2, true, [true,true])});
+
+  const monWhy = mon === "iap"
+    ? "Players can pay on day one, so postback 1 carries revenue, not a funnel stage. That is the opposite of a subscription with a trial, where there is no money at 48 hours."
+    : mon === "ads"
+    ? "Ad revenue starts with the first session, so postback 1 carries revenue from days 0–2."
+    : "Money comes from both purchases and ads from day one. By default it is one combined number: networks optimize on how much a player is worth, and separate buckets for each kind of money would eat bits.";
+  m.short = {pb1:"Revenue buckets for days 0–2.", pb2: paid ? "Purchase vs ads only." : "Revenue so far by day 7.", pb3: paid ? "Purchase vs ads only." : "Revenue so far by day 35."};
+  m.notes.pb1 = monWhy + " Ad networks without their own measurement, which lead in games after Meta and Google, see nothing but SKAN for users who said no to tracking, so this number is what they optimize on.";
+
+  m.fineWhy = [
+    `Revenue gets ${k} bits: ${n} values. 0 means no revenue, 1–${nb} are buckets up to ${money$(cap)}, ${n-1} is everything above. Revenue sits in the high bits, so a bigger number always means more money.`,
+    s.gSpace === "low" ? "Buckets are finer at the low end and wider near the top." : "Buckets are evenly spaced.",
+    paid ? "The top bit marks a purchase. It separates payers from players who only watch ads, even when their revenue in 48 hours is the same, and it costs one revenue bit: half as many buckets." : "",
+    e ? `The lowest ${e===1?"bit marks":"bits mark"} early engagement (${engNames.join(", ")}). For players who haven't paid yet, revenue says nothing; ${e===1?"this bit still tells":"these bits still tell"} them apart. Each one halves the number of buckets.` : "No engagement bits: every bit goes to revenue."
+  ].filter(Boolean);
+
+  const lowI = {l:"Low", c:"Session", e:"Install", means:"installed, nothing else", why:"Something has to sit on Low, and 'installed and nothing more' is the one condition every install meets."};
+  const lowS = means => ({l:"Low", c:"Session", e:"Non-install session", means, why:"You can't map the absence of an event, only something that happened. A session after install says the player came back."});
+  const L = s.gL;
+  const MID_WHY = "In a game with ads almost every player who opens it brings some ad revenue, so 'more than $0' would put nearly everyone on Medium.";
+  const coarse = (low, day, line, idx) => paid
+    ? [low,
+       {l:"Medium", c:"Revenue", e:"ad revenue > $0", means:"watched ads, no purchase", why:"Players who bring ad money only. Almost every player who opens the game sees an ad, so Low stays nearly empty. That is by design: with the purchase bit, the split that matters is payer versus non-payer, and High carries it."},
+       {l:"High", c:"Event", e:"purchase (any)", means:"made a purchase", why:"The split you chose: a purchase marks a payer, whatever ad revenue a non-payer brings."}]
+    : [low,
+       mon === "iap"
+         ? {l:"Medium", c:"Revenue", e:"revenue so far > $0", means:"brought some money", why:"Any purchase separates payers from everyone else, the biggest split in a purchase-driven game."}
+         : (s.gM && s.gM[idx])
+         ? {l:"Medium", c:"Revenue", e:`revenue so far ≥ ${money$(s.gM[idx])}`, means:`brought at least ${money$(s.gM[idx])} by day ${day}`, why:`Your medium line. ${MID_WHY} The line splits them instead.`}
+         : {l:"Medium", c:"Event", e: idx === 0 ? s.gEv1 : s.gEv2, means: idx === 0 ? "reached your early engagement milestone" : "kept progressing in the game", why:`${MID_WHY} Without a medium revenue line, an engagement event splits them instead; enter a medium line in the setup to use money here.` + (idx === 0 ? "" : " Pick an event that can still happen in this window, such as a level, not one done in the first session.")},
+       {l:"High", c:"Revenue", e:`revenue so far ≥ ${money$(line)}`, means:`brought at least ${money$(line)} by day ${day}`, why:"Your high-value line. Coarse is what small sources get, so this is where optimization still sees who is valuable."}];
+  m.rows.pb1c = coarse(lowI, 2, L[0], 0);
+  m.rows.pb2 = coarse(lowS("came back after day 2"), 7, L[1], 1);
+  m.rows.pb3 = coarse(lowS("still playing after a week"), 35, L[2], 2);
+  m.notes.pb2 = paid ? "Whether the player has made a purchase yet, by day 7." : "Revenue so far by day 7 against your high-value line: does early money keep growing?";
+  m.notes.pb3 = paid ? "Whether the player has made a purchase yet, by day 35. Compared with postback 1 it shows whether early non-payers convert." : "Revenue so far by day 35. Compared with postback 1 it shows whether early spenders keep spending or stop.";
+
+  m.lock = {dec:"Don't lock by default.", on:false,
+    why:"Revenue keeps coming on days 1–2, and the fine value is the only place you see it in detail. If a network needs a faster signal, lock when the high coarse value is reached: " + (paid ? "the postback leaves as soon as a player makes a purchase" : "the postback leaves as soon as a player crosses your day-2 line") + ", though the 24–48 h delay still applies." + (chanFacts(s.channels).nets ? " You buy from ad networks that optimize on SKAN, so this is worth discussing with them." : chanFacts(s.channels).any ? " None of your channels optimizes on SKAN itself, so postback speed doesn't matter much for you." : ""), mmp:LOCK_MMP};
+
+  const W = m.warns;
+  W.push({hot:true, t:`<b>${paid ? "Bucket edges are your inputs." : "Bucket edges and high-value lines are your inputs."}</b> The pre-filled numbers are examples, not benchmarks. Set them from your own revenue by day.`});
+  if (!paid && L[0] > cap) W.push({hot:true, t:`<b>Your day-2 high-value line (${money$(L[0])}) is above the top bucket (${money$(cap)}).</b> Fine values won't tell apart the players who cross it.`});
+  if (!paid && mon !== "iap" && s.gM && s.gM.some((v,i) => v && v >= L[i])) W.push({hot:true, t:"<b>A medium line is at or above its high-value line.</b> Medium has to sit below High, or the middle level never fires."});
+  if (!paid && !(L[0] <= L[1] && L[1] <= L[2])) W.push({hot:true, t:"<b>High-value lines should grow by day.</b> They count revenue so far, so the day-35 line is at least the day-7 line."});
+  W.push({hot:false, t:`<b>Check how your MMP maps postbacks 2 and 3</b>: by what happened inside that window, or by the state so far. ${paid ? "\"Made a purchase\" here reads as \"has bought by the end of the window\"; if your MMP counts only events inside the window, a day-1 buyer with no purchase on days 3–7 lands on Medium." : "The lines here assume revenue so far."}`});
+  ALWAYS_WARNS.forEach(w => W.push({...w, always:true}));
+  return m;
+}
+
+function build(s){ return s.product === "sub" ? buildSub(s) : buildGame(s); }
+
+/* ---------- rendering ---------- */
+function renderChanMap(s){
+  const {on, total, by} = chanSplit(s.channels);
+  const sum = $("chanSum");
+  sum.textContent = !on.length ? "" : !total ? "Shares are optional: without them you see each channel's role, but not the budget split." : `Shares add up to ${Math.round(total*10)/10}%` + (Math.abs(total-100) > 0.5 ? " – results use your numbers as shares of that total." : "");
+  sum.className = "sumline" + (on.length && total && Math.abs(total-100) > 0.5 ? " bad" : "");
+  if (!on.length){ $("chanMap").innerHTML = `<p class="small">Tick the channels you buy on iOS to see where SKAN sits for each of them.</p>`; return; }
+  const pct = v => (Math.round(v*10)/10) + "%";
+  const keys = Object.keys(ROLES).filter(k=>by[k]>0);
+  const bar = keys.map(k=>`<span style="width:${by[k]}%;background:${ROLES[k].color}" title="${ROLES[k].name} ${pct(by[k])}"></span>`).join("");
+  const legend = keys.map(k=>`<span><i style="background:${ROLES[k].color}"></i>${ROLES[k].name} ${pct(by[k])}</span>`).join("");
+  let verdict;
+  if (!total) verdict = by && on.some(c=>c.role==="core") ? "You buy from ad networks without their own measurement: for them SKAN is the only signal about users who said no to tracking, and the schema above is what they optimize on." : "None of the channels you ticked optimizes on SKAN itself. You set SKAN up as insurance and a cross-check, once and properly, without optimizing on it.";
+  else if (by.core === 0) verdict = `None of your iOS budget goes through channels where SKAN is the main signal. You set SKAN up as insurance and a cross-check` + (by.input>0 ? ` and as an input to Google's model (${pct(by.input)} of budget)` : "") + ", once and properly, without optimizing on it.";
+  else verdict = `<b>${pct(by.core)} of your iOS budget</b> goes through channels where SKAN is the only thing the network sees about users who said no to tracking. For that money, the schema below is the optimization signal.` + (by.input>0 ? ` Another ${pct(by.input)} goes where SKAN is one input to a model.` : "");
+  const cards = on.slice().sort((a,b)=>b.pct-a.pct).map(c0 => { const c = CHANNELS.find(x=>x.id===c0.id); return `
+    <div class="ccard">
+      <div class="top"><span class="nm">${esc(c.name)}</span><span><span class="badge" style="background:${ROLES[c.role].color};${c.role==="nip"?"color:var(--ink2)":""}">${ROLES[c.role].name}</span> <span class="pc">${total?pct(c0.pct/total*100):"–"}</span></span></div>
+      <div class="sees">${esc(c.sees)}</div>
+      <details><summary>What to set up</summary>${esc(c.set)} SKAN role: ${ROLES[c.role].say}.</details>
+    </div>`; }).join("");
+  $("chanMap").innerHTML = (total ? `<div class="rolebar" role="img" aria-label="Budget by SKAN role">${bar}</div><div class="legend">${legend}</div>` : "") + `<p class="verdict">${verdict}</p><div class="cards">${cards}</div>`;
+}
+
+function renderTimeline(s, m){
+  const host = $("timeline");
+  const W = Math.max(300, Math.round(host.clientWidth || 720));
+  const narrow = W < 560;
+  const L = narrow ? 8 : 160, R = narrow ? 8 : 18, days = 35;
+  const x = d => L + (W-L-R) * Math.min(d, days) / days;
+  const rows = [];
+  if (m.game){
+    rows.push({label:"Fine revenue buckets", a:0, b:2, kind:"trial", txt:"first 48 h"});
+    rows.push({label: m.mon==="iap" ? "Purchases" : m.mon==="ads" ? "Ad revenue" : "Purchases + ad revenue", a:0, b:35, kind:"money", txt:""});
+  } else if (!m.web){
+    if (m.T > 0){
+      rows.push({label:"Trial starts", a:m.ts[0], b:m.ts[1], kind:"trial", txt: m.late ? `day ${m.ts[0]}–${m.ts[1]}` : "first 48 h"});
+      rows.push({label:"First charge", a:m.ch[0], b:m.ch[1], kind:"money", txt:`day ${m.ch[0]}–${m.ch[1]}`});
+    } else rows.push({label:"First purchase", a:0, b:2, kind:"money", txt:"from the first hour"});
+    m.renew.forEach(r => rows.push({label:`Renewal · ${PLANS[r.p].label}`, a:r.from, b:r.to, kind:"renew", txt:`day ${r.from}–${r.to}`}));
+  }
+  const top = 30, bandH = 30, rowH = narrow ? 44 : 30, y0 = top + bandH + 16;
+  const H = y0 + Math.max(rows.length,1)*rowH + (narrow ? 44 : 34);
+  const col = {trial:["var(--trialf)","var(--trial)"], money:["var(--moneyf)","var(--money)"], renew:["var(--page)","var(--money)"]};
+  let g = "";
+  [0,2,7,35].forEach(d => g += `<line x1="${x(d)}" x2="${x(d)}" y1="${top}" y2="${H-26}" stroke="var(--line)" stroke-width="1"/>`);
+  const wins = [[0,2,"Postback 1","var(--pb1f)","var(--pb1)"],[2,7,"Postback 2","var(--pb2f)","var(--pb2)"],[7,35,"Postback 3","var(--pb3f)","var(--pb3)"]];
+  wins.forEach(w => {
+    g += `<rect x="${x(w[0])+1}" y="${top}" width="${x(w[1])-x(w[0])-2}" height="${bandH}" rx="4" fill="${w[3]}"/>`;
+    const wpx = x(w[1])-x(w[0]);
+    const t = wpx > 76 ? w[2] : wpx > 30 ? "PB " + w[2].slice(-1) : w[2].slice(-1);
+    g += `<text x="${x(w[0])+6}" y="${top+19}" font-size="12" font-weight="600" fill="${w[4]}">${t}</text>`;
+  });
+  if (!narrow) g += `<text x="${L-10}" y="${top+19}" font-size="12" fill="var(--muted)" text-anchor="end">Windows</text>`;
+  if (m.lock.on){
+    g += `<line x1="${x(1)}" x2="${x(1)}" y1="${top-6}" y2="${H-26}" stroke="var(--pb1)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+    g += `<text x="${x(1)+4}" y="${top-10}" font-size="11" fill="var(--pb1)">lock at 24 h</text>`;
+  }
+  rows.forEach((r,i) => {
+    const y0r = y0 + i*rowH;
+    if (narrow) g += `<text x="${L}" y="${y0r+10}" font-size="11.5" fill="var(--ink2)">${esc(r.label)}${r.a >= 35 ? ` · ${r.txt}, after the window →` : ""}</text>`;
+    else g += `<text x="${L-10}" y="${y0r+15}" font-size="12" fill="var(--ink2)" text-anchor="end">${esc(r.label)}</text>`;
+    const y = narrow ? y0r + 14 : y0r;
+    if (r.a >= 35){
+      if (!narrow) g += `<text x="${W-R}" y="${y+15}" font-size="12" fill="var(--muted)" text-anchor="end">${r.txt}, after the window →</text>`;
+      return;
+    }
+    const c = col[r.kind];
+    const xa = x(r.a), xb = x(Math.min(r.b, days));
+    g += `<rect x="${xa}" y="${y+2}" width="${Math.max(3,xb-xa)}" height="18" rx="3" fill="${c[0]}" stroke="${c[1]}" stroke-width="1.5"/>`;
+    if (!r.txt) return;
+    const label = r.txt + (r.b > days ? " (part after day 35)" : "");
+    const room = (W-R) - xb;
+    if (room > label.length*6.2) g += `<text x="${xb+6}" y="${y+15}" font-size="11.5" fill="var(--muted)">${label}</text>`;
+    else if (xa - L > label.length*6.2) g += `<text x="${xa-6}" y="${y+15}" font-size="11.5" fill="var(--muted)" text-anchor="end">${label}</text>`;
+    else if (narrow) g += `<text x="${W-R}" y="${y0r+10}" font-size="11.5" fill="var(--muted)" text-anchor="end">${label}</text>`;
+  });
+  if (!rows.length) g += `<text x="${L}" y="${y0+15}" font-size="12" fill="var(--muted)">Payment happens on the web before install – no money to place on this timeline.</text>`;
+  const ay = narrow ? H-34 : H-20;
+  (narrow ? [0,2,7,14,21,28,35] : [0,1,2,7,14,21,28,35]).forEach(d => g += `<text x="${x(d)}" y="${ay+12}" font-size="11" fill="var(--faint)" text-anchor="${d===0?"start":d===35?"end":"middle"}">${d}</text>`);
+  if (narrow) g += `<text x="${L}" y="${ay+26}" font-size="11" fill="var(--faint)">days after first launch</text>`;
+  else g += `<text x="${L-10}" y="${ay+12}" font-size="11" fill="var(--faint)" text-anchor="end">days after first launch</text>`;
+  host.innerHTML = `<svg width="${W}" height="${H}" role="img" aria-label="Postback windows and money events over 35 days">${g}</svg>`;
+  $("tlNote").textContent = m.game ? "Money can come from day 0 and keeps coming. Only postback 1 sees it in detail; postbacks 2 and 3 see it as low, medium or high." :
+    m.web ? "Your money comes before the install, so the timeline only shows the windows." :
+    m.T > 0 ? `Trials start ${m.late ? `after the first 48 hours (day ${m.ts[0]}–${m.ts[1]} is an illustration)` : "in the first 48 hours"}; a ${m.T}-day trial first charges ${m.ch[0]}–${m.ch[1]} days after first launch. Postback 1 covers the first 48 hours, postback 2 runs to 168 hours, postback 3 to day 35.` : "No trial: money can arrive from the first hour. Postback 1 covers the first 48 hours, postback 2 runs to 168 hours, postback 3 to day 35.";
+}
+
+function coarseTable(rows){
+  return `<div class="tablewrap"><table><thead><tr><th>Level</th><th>Condition</th><th>Value</th><th>What it means</th></tr></thead><tbody>${
+    rows.map(r => `<tr><td><span class="lvl ${r.l}">${r.l}</span></td><td>${r.c}</td><td>${r.c==="Event" && !/[ ()]/.test(r.e.replace(/ \/ /g,"")) ? r.e.split(" / ").map(ev).join(" or<br>") : r.e === "Non-install session" ? JL(r.e) : esc(r.e)}</td><td>${Q(esc(r.means), esc(r.why))}</td></tr>`).join("")
+  }</tbody></table></div>`;
+}
+
+let bitOn = [];
+function defaultBits(m){
+  return m.bits.map(b => !!b.e && !/purchase_without_trial/.test(b.e) && !(m.plans.length>1 && (b.e===`trial_${m.plans[1]}_started` || b.e===`purchase_${m.plans[1]}`)));
+}
+
+function pbTail(m){
+  let h = `<h3>lockWindow for postback 1</h3><div class="lock">${Q(`<span class="dec">${esc(m.lock.dec)}</span>`, `<p>${esc(m.lock.why)}</p><p>${esc(m.lock.mmp)}</p>`)}</div>`;
+  h += `<div class="pbhead"><h2>Postback 2</h2><span class="pbchip pb2c">48–168 h · ${JL("coarse")} only</span></div>${Q(esc(m.short.pb2), esc(m.notes.pb2), "div", "pbwhy")}` + coarseTable(m.rows.pb2);
+  h += `<div class="pbhead"><h2>Postback 3</h2><span class="pbchip pb3c">168 h – day 35 · ${JL("coarse")} only</span></div>${Q(esc(m.short.pb3), esc(m.notes.pb3), "div", "pbwhy")}` + coarseTable(m.rows.pb3);
+  return h;
+}
+
+function renderSub(s, m){
+  let h = `<div class="pbhead"><h2>Postback 1</h2><span class="pbchip pb1c">first 48 h · fine value + ${JL("coarse")} fallback</span></div>`;
+  h += Q(esc(m.short.pb1), `${esc(m.notes.pb1)} You configure both the fine and the coarse value; Apple decides which one arrives, by tier.`, "div", "pbwhy");
+  if (m.enc === "flags"){
+    h += `<h3>Fine value: six flags</h3>` + Q(`<span class="small">Click the bits to build a value.</span>`, "The most valuable event sits on the highest bit, so a bigger number always means a more valuable user.");
+    h += `<div class="bits" id="bits">${m.bits.map((b,i)=>`<button type="button" class="bit${b.e?(bitOn[i]?" on":""):" free"}" data-i="${i}" ${b.e?`aria-pressed="${!!bitOn[i]}"`:"disabled"}><span class="bv">bit ${6-i} · ${b.v}</span><span class="be">${b.e?esc(b.e).replace(/_/g,"_<wbr>"):"spare"}</span></button>`).join("")}</div>`;
+    h += `<div class="cvline" id="cvline"></div>`;
+    if (m.displaced && m.displaced.length) h += `<p class="small">Given up to make room: ${m.displaced.map(ev).join(", ")}.</p>`;
+    h += `<div class="tablewrap"><table><thead><tr><th>Value</th><th>Event</th><th>What it means</th></tr></thead><tbody>${
+      m.bits.map(b=>`<tr><td class="grid64">${b.v}</td><td>${b.e?ev(b.e):'<span class="small">spare</span>'}</td><td>${Q(esc(b.means), esc(b.why))}</td></tr>`).join("")
+    }</tbody></table></div>`;
+  } else {
+    const st = m.stage;
+    h += `<h3>Fine value: stage × quality</h3>`;
+    if (s.mmp === "appsflyer") h += `<div class="warn hot">AppsFlyer's Conversion Studio has no measurement type for session counts. See the MMP steps below for what to use instead.</div>`;
+    h += Q(`<span class="small">Value = stage + ${st.mult} × quality.</span>`, `The stage is how far the user got in the first 48 hours; quality is how many sessions they had. ${st.stages.length} stages × 4 quality levels use ${st.used} of 64 values (0–${st.maxCV}); the rest stay free for new plans or events without re-cutting the schema.`);
+    h += `<div class="tablewrap"><table class="grid64"><thead><tr><th>Stage</th><th>Reached</th><th>Q0 · 1 session</th><th>Q1 · 2–3</th><th>Q2 · 4–6</th><th>Q3 · 7+</th></tr></thead><tbody>${
+      st.stages.map((e,a)=>`<tr><td>${a}</td><td style="font-family:var(--sans)">${a===0?'<span class="small">install only</span>':ev(e)}</td>${[0,1,2,3].map(q=>`<td class="n${a===0&&q===0?" cold":""}">${a+st.mult*q}</td>`).join("")}</tr>`).join("")
+    }</tbody></table></div>`;
+    h += Q(`<span class="small">Session boundaries are an example <span class="src">A</span>.</span>`, "Set the session boundaries from your own first-48-hour data. Stages run from the cheapest to the more valuable plan, so a higher stage means more value. The quality axis tells apart two users who both started a trial but only one of whom came back. Harder to read than flags, and in an MMP it goes in as a table of values.");
+  }
+  h += `<h3>${JL("Coarse")} fallback</h3>` + Q(`<span class="small">Arrives when the source is too small for a fine value.</span>`, "Apple decides by crowd-anonymity tier whether postback 1 carries the fine value or only this coarse one. Small sources get coarse, so the coarse ladder has to make sense on its own.");
+  h += coarseTable(m.rows.pb1c);
+  h += pbTail(m);
+  if (!m.web && m.T > 0) h += `<details class="card howcard" style="margin-top:24px"><summary>What this gives the buying team</summary><p class="note">Where a network optimizes on SKAN, optimize on postback 1: many signals, fast. Postbacks 2 and 3 are for checking, not for optimizing. When they diverge, that is a signal: postback 1 grows and postback 3 doesn't, so trials don't reach money; ${m.plans.length>1?`${PLANS[m.plans[0]].label} trials grow but ${ev("trial_"+m.plans[0]+"_converted")} doesn't, so the problem is the ${PLANS[m.plans[0]].label} offer, not the buying.`:"the proxy stopped predicting money."}</p></details>`;
+  $("schema").innerHTML = h;
+  if (m.enc === "flags") wireBits(m);
+}
+
+let tryState = {rev:null, paid:true, eng:[true,true]};
+function renderGame(s, m){
+  let h = `<div class="pbhead"><h2>Postback 1</h2><span class="pbchip pb1c">first 48 h · fine value + ${JL("coarse")} fallback</span></div>`;
+  h += Q(esc(m.short.pb1), esc(m.notes.pb1), "div", "pbwhy");
+  h += `<h3>Fine value: how the six bits are split</h3>`;
+  h += `<div class="bits">${m.layout.map(b=>`<div class="bit k-${b.kind}"><span class="bv">${b.v}</span><span class="be">${esc(b.label).replace(/_/g,"_<wbr>")}</span></div>`).join("")}</div>`;
+  h += Q(`<span class="small">${m.k} bits for revenue${m.paid?", 1 for a purchase":""}${m.e?`, ${m.e} for engagement`:""}.</span>`, m.fineWhy.map(t=>`<p>${esc(t)}</p>`).join(""));
+  h += `<div class="tryer"><div class="glabel">Try a player</div><div class="row2">
+      <label>${esc(cap1(m.revName))} in days 0–2, $ <input type="number" id="tryRev" min="0" step="any" value="${tryState.rev ?? s.gL[0]}"></label>
+      ${m.paid?`<label><input type="checkbox" id="tryPaid" ${tryState.paid?"checked":""}> made a purchase</label>`:""}
+      ${m.engNames.map((nm,i)=>`<label><input type="checkbox" id="tryEng${i}" ${tryState.eng[i]?"checked":""}> ${esc(nm)}</label>`).join("")}
+    </div><div class="cvline" id="tryOut" style="margin:0"></div></div>`;
+  h += `<h3>Revenue buckets</h3><p class="small">Edges up to ${money$(m.cap)}; each tick is a bucket border.</p><div class="strip" id="strip"></div><details class="mnotes"><summary>All ${m.n} buckets</summary>`;
+  const rows = [`<tr><td class="num">0</td><td>no revenue</td></tr>`];
+  for (let v = 1; v <= m.nb; v++) rows.push(`<tr><td class="num">${v}</td><td class="num">${v === 1 ? "> $0" : money$(m.edges[v-1])} – ${money$(m.edges[v])}</td></tr>`);
+  rows.push(`<tr><td class="num">${m.n-1}</td><td class="num">more than ${money$(m.cap)}</td></tr>`);
+  h += `<div class="buckets"><table><thead><tr><th>Bucket</th><th>Revenue in days 0–2</th></tr></thead><tbody>${rows.join("")}</tbody></table></div></details>`;
+  h += `<p class="small">A bucket's fine value is bucket × ${1<<m.e}${m.e?", plus the engagement bits":""}${m.paid?", plus 32 if the player made a purchase":""}. Edges come from your top amount and spacing, not from vendor templates.</p>`;
+  h += `<h3>${JL("Coarse")} fallback</h3>` + Q(`<span class="small">Arrives when the source is too small for a fine value.</span>`, "Apple decides by crowd-anonymity tier whether postback 1 carries the fine value or only this coarse one. Small sources get coarse, so the coarse ladder has to make sense on its own.");
+  h += coarseTable(m.rows.pb1c);
+  h += pbTail(m);
+  h += `<details class="card howcard" style="margin-top:24px"><summary>What this gives the buying team</summary><p class="note">${m.paid ? "Where a network optimizes on SKAN, it optimizes on postback 1 revenue and the purchase bit. Postbacks 2 and 3 check whether players who hadn't paid by 48 hours become payers later: no purchase in postback 1 but a purchase in postback 3 means late converters worth keeping." : "Where a network optimizes on SKAN, it optimizes on postback 1 revenue. Postbacks 2 and 3 check that early money keeps growing: postback 1 high but postback 3 flat means early spenders who stop."}</p></details>`;
+  $("schema").innerHTML = h;
+  drawStrip(m);
+  wireTry(m);
+}
+
+function drawStrip(m){
+  const host = $("strip");
+  const W = Math.max(320, Math.round(host.clientWidth || 700)), H = 40, L = 10, R = 10;
+  const x = v => L + (W-L-R) * v / m.cap;
+  let g = `<rect x="${L}" y="12" width="${W-L-R}" height="10" rx="2" fill="var(--k-revf)"/>`;
+  m.edges.slice(1).forEach(e => g += `<line x1="${x(e)}" x2="${x(e)}" y1="10" y2="24" stroke="var(--k-rev)" stroke-width="1"/>`);
+  g += `<text x="${L}" y="37" font-size="11" fill="var(--faint)">$0</text><text x="${W-R}" y="37" font-size="11" fill="var(--faint)" text-anchor="end">${money$(m.cap)}</text>`;
+  host.innerHTML = `<svg width="${W}" height="${H}" role="img" aria-label="Revenue bucket edges">${g}</svg>`;
+}
+
+function wireTry(m){
+  const upd = () => {
+    const rev = parseFloat($("tryRev").value) || 0;
+    const didPay = m.paid ? $("tryPaid").checked : false;
+    const eng = m.engNames.map((_,i)=>$("tryEng"+i).checked);
+    tryState = {rev: $("tryRev").value, paid: m.paid ? didPay : tryState.paid, eng:[eng[0] ?? tryState.eng[0], eng[1] ?? tryState.eng[1]]};
+    const b = m.bucketOf(rev), v = m.cv(rev, didPay, eng);
+    const parts = [];
+    if (m.paid && didPay) parts.push("32 (purchase)");
+    parts.push(`${b<<m.e} (bucket ${b} × ${1<<m.e})`);
+    m.engNames.forEach((nm,i)=>{ if (eng[i]) parts.push(`${1<<(m.e-1-i)} (${esc(nm)})`); });
+    $("tryOut").innerHTML = `Conversion value <b>${v}</b> = ${parts.join(" + ")}`;
+  };
+  $("tryRev").addEventListener("input", upd);
+  if (m.paid) $("tryPaid").addEventListener("change", upd);
+  m.engNames.forEach((_,i)=>$("tryEng"+i).addEventListener("change", upd));
+  upd();
+}
+
+function wireBits(m){
+  const upd = () => {
+    const cv = m.bits.reduce((a,b,i)=>a + (b.e && bitOn[i] ? b.v : 0), 0);
+    const names = m.bits.filter((b,i)=>b.e&&bitOn[i]);
+    $("cvline").innerHTML = names.length ? `Conversion value <b>${cv}</b> = ${names.map(b=>b.v).join(" + ")} · ${names.map(b=>ev(b.e)).join(" + ")}` : `Conversion value <b>0</b> · nothing mapped happened. If no value is ever set, Apple sends no value at all, not zero.`;
+  };
+  document.querySelectorAll("#bits .bit").forEach(btn => btn.addEventListener("click", () => {
+    const i = +btn.dataset.i; if (!m.bits[i].e) return;
+    bitOn[i] = !bitOn[i]; btn.classList.toggle("on", bitOn[i]); btn.setAttribute("aria-pressed", bitOn[i]); upd();
+  }));
+  upd();
+}
+
+/* ---------- MMP steps (from _mmp_ui/MMP_steps.md, checked 28 Sep 2026) ---------- */
+const MMP_SRC = {
+  appsflyer: `<a href="https://support.appsflyer.com/hc/en-us/articles/4403727223185-SKAN-Conversion-Studio" target="_blank" rel="noopener">AppsFlyer – SKAN Conversion Studio</a> (last updated April 26, 2026)`,
+  adjust: `<a href="https://help.adjust.com/en/article/set-up-skan-4-mapping" target="_blank" rel="noopener">Adjust – Set up a SKAN 4 mapping</a> · <a href="https://www.help.adjust.com/en/article/63-conversion-values-mode" target="_blank" rel="noopener">63 conversion values mode</a>`
+};
+const TAG = t => `<span class="src">${t}</span>`;
+const JL = w => `<a class="jl" href="#jargon">${w}</a>`;
+const UI = s => `<b>${esc(s)}</b>`;
+function coarseList(rows){
+  return rows.map(r => `${r.l}: ${r.c === "Event" && !/[ ()]/.test(r.e.replace(/ \/ /g,"")) ? r.e.split(" / ").map(ev).join(" or ") : esc(r.c === "Session" ? "user session (" + r.e + ")" : r.e)}`).join(" · ");
+}
+function integrations(s, mmp){
+  const on = id => s.channels.some(c => c.id === id && c.on);
+  const out = [];
+  if (mmp === "appsflyer"){
+    if (on("meta")) out.push(`<li><b>Meta.</b> After the schema is saved, turn on both ${UI("Allow Meta ads to share SKAN data with AppsFlyer")} and ${UI("Share CV schema with Meta ads")}. From then on the Facebook SDK stops updating conversion values and only the AppsFlyer SDK does. Meta still optimizes on AEM. <a href="https://support.appsflyer.com/hc/en-us/articles/360017095198-SKAdNetwork-SKAN-interoperation-with-Meta-ads" target="_blank" rel="noopener">Help</a>${TAG("B")}</li>`);
+    if (on("google")) out.push(`<li><b>Google Ads.</b> Conversion Studio stays the one place for the schema. ${UI("Collaborate → Active integrations → Google Ads")} → ${UI("Integration")} tab → ${UI("Activate Partner")}, turn on in-app event postbacks and map events (for revenue, ${ev("af_skad_revenue")} to the Google event) → ${UI("Save integration")}. To get SKAN postbacks back from Google: the ${UI("SKAN")} tab → ${UI("Connect Google Ads")}, signed in as an administrator. <a href="https://support.appsflyer.com/hc/en-us/articles/4403215779857-Get-SKAN-postback-data-from-Google-Ads" target="_blank" rel="noopener">Help</a>${TAG("B")}</li>`);
+    if (on("tiktok")) out.push(`<li><b>TikTok.</b> ${UI("Collaborate → Partner Marketplace")} (first time) or ${UI("Active integrations")} → ${UI("TikTok for Business")} → ${UI("Set up integration")} → ${UI("Integration")} tab → ${UI("Activate partner")} and ${UI("Advanced Data Sharing")}. Then turn on in-app event postbacks and check that your Conversion Studio events are mapped to TikTok events. <a href="https://support.appsflyer.com/hc/en-us/articles/6722785184913-TikTok-for-Business-Advanced-SRN-integration-setup" target="_blank" rel="noopener">Help</a>${TAG("B")} Whether SKAN stays on is a separate switch in TikTok Ads Manager${TAG("A")}. The exact place of the Advanced Data Sharing toggle inside the tab is not shown step by step in the help${TAG("A")}.</li>`);
+  } else {
+    if (on("meta")) out.push(`<li><b>Meta.</b> Connect your Meta account in ${UI("DataWorks")} (${UI("Connect partner credentials")}), map Adjust events to Meta events in ${UI("Campaign Lab")} (${UI("Set up event mapping")}), then set the schema in Conversion Hub. In Meta Events Manager → your app → ${UI("Settings")}: ${UI("SKAdNetwork for Facebook SDK")} off, and Adjust named as the partner in ${UI("Configure App Events for SKAdNetwork")}. Meta pulls the mapping through the API after you save. <a href="https://help.adjust.com/en/article/skad-facebook-integration" target="_blank" rel="noopener">Help</a>${TAG("B")}</li>`);
+    if (on("google")) out.push(`<li><b>Google Ads.</b> Conversion Hub is the one place for the schema; Adjust pushes it to Google. ${UI("DataWorks → Connections → New Connection")} → ${UI("Google Ads")} → tick ${UI("SKAdNetwork")} and ${UI("CV Mapping Sharing")} → ${UI("Authenticate")} → ${UI("Connect")}. <a href="https://help.adjust.com/en/article/skad-google-integration" target="_blank" rel="noopener">Help</a>${TAG("B")}</li>`);
+    if (on("tiktok")) out.push(`<li><b>TikTok.</b> ${UI("Campaign Lab → + New partner")} → ${UI("TikTok For Business SAN")} → your app → ${UI("Next")} → ${UI("Enabled")} (optionally the TikTok App ID). Map events in the ${UI("Data sharing")} tab → ${UI("Edit settings")} → ${UI("+ Map event")} → ${UI("Apply")}. The schema itself stays in Conversion Hub. <a href="https://help.adjust.com/en/article/skadnetwork-tiktok-for-business-integration" target="_blank" rel="noopener">Help</a>${TAG("B")}</li>`);
+  }
+  return out;
+}
+function renderMMP(s, m){ $("mmp").innerHTML = mmpHTML(s, m); }
+function mmpHTML(s, m){
+  if (s.mmp === "other"){ return `<p class="small">Step-by-step screens exist for AppsFlyer and Adjust so far. The tables above are MMP-neutral: every MMP maps events and revenue to fine and coarse values per postback.</p>`; }
+  const af = s.mmp === "appsflyer";
+  const steps = [];
+  const revCond = m.game ? (m.mon === "iap" ? "In-app purchases (IAP)" : m.mon === "ads" ? "Ad revenue" : "Total revenue") : "";
+  if (af){
+    steps.push(`Open ${UI("Settings → SKAN Conversion Studio")}. In the options menu (⋮) check that ${UI("SKAN measurement")} is on, pick ${UI("SKAN 4.0")}, press ${UI("Continue")}.${TAG("B")}`);
+    let fine;
+    if (m.game){
+      fine = `${UI("Window 1 (1-2 days)")}, fine CV → ${UI("+ Add measurement")} → ${UI("Revenue")}, with ranges up to ${money$(m.cap)} from the bucket table above.${TAG("B")}` +
+        (m.engNames.length ? ` Then ${UI("+ Add measurement")} → ${UI("In-app event")} for ${m.engNames.map(ev).join(" and ")}.${TAG("B")}` : "") +
+        (m.paid ? ` For the purchase bit, an ${UI("In-app event")} measurement on your purchase event.${TAG("A")}` : "") +
+        ` Watch ${UI("Conversion-value capacity")} at the top: the bits you set here should use all of it. How exactly Conversion Studio splits the six bits between measurements may differ from the layout above; match the capacity, not the drawing.${TAG("A")}`;
+    } else if (m.enc === "flags"){
+      fine = `${UI("Window 1 (1-2 days)")}, fine CV → ${UI("+ Add measurement")} → ${UI("In-app event")} for each flag, most valuable first: ${m.bits.filter(b=>b.e).map(b=>ev(b.e)).join(", ")}.${TAG("B")} Check ${UI("Conversion-value capacity")} after each one; the help doesn't say how many bits one event takes, so the capacity bar is your guide.${TAG("A")}`;
+    } else {
+      fine = `${UI("Window 1 (1-2 days)")}, fine CV → ${UI("+ Add measurement")} → ${UI("Funnel")} with the stages in order: ${m.stage.stages.slice(1).map(ev).join(" → ")}.${TAG("B")} The session-count axis of stage × quality has no measurement type of its own in the help; if your Conversion Studio doesn't offer one, use flags instead.${TAG("A")}`;
+    }
+    steps.push(fine + ` Optionally turn on ${UI("Single Source of Truth (SSOT)")}.${TAG("B")}`);
+    steps.push(`${UI("Coarse")} tab (only ${UI("Revenue")} and ${UI("In-app event")} are available here): ${coarseList(m.rows.pb1c)}. AppsFlyer recommends a user session on Low, otherwise the postback may not be sent at all.${TAG("B")}`);
+    steps.push(`${UI("Lock window")}: ${m.lock.on ? `on, condition ${UI("Time")}, 24 hours after install.` : m.lock.cond ? `on, condition ${UI("Time")}, 24 hours after install, only if you buy from ad networks that optimize on SKAN; otherwise leave it off.` : `leave off.${m.game ? ` If a network needs a faster signal, use the ${UI("High coarse value")} condition.` : ""}`} The two conditions are ${UI("Time")} and ${UI("High coarse value")}.${TAG("B")}`);
+    steps.push(`${UI("Window 2 (3-7 days)")}: ${coarseList(m.rows.pb2)}.${TAG("B")}`);
+    steps.push(`${UI("Window 3 (8-35 days)")}: ${coarseList(m.rows.pb3)}.${TAG("B")}`);
+    steps.push(`${UI("Save")}, then check that partner postback mappings match the events you used here.${TAG("B")}`);
+  } else {
+    steps.push(`${UI("AppView → SKAN Conversion Hub")} → your app → ${UI("Map conversion values")} → ${UI("SKAdNetwork 4")} → ${UI("Advanced setup")}.${TAG("B")}`);
+    steps.push(`Postback schedule: ${m.lock.on || m.lock.cond ? `${m.lock.cond ? "only if you buy from ad networks that optimize on SKAN: " : ""}to lock postback 1 at 24 hours, press ${UI("Edit")} → ${UI("Set a static window")} on the first window only. Adjust advises against changing the schedule or using a lockWindow in early testing and asks you to agree it with the network first; the lost hours show as a ${UI("measurement gap")}.` : `press ${UI("Next")} and leave the default schedule. Adjust also advises against lock windows in early testing.`}${TAG("B")}`);
+    let fine;
+    if (m.game){
+      fine = `Postback 1, fine: ${UI("Setup mode")} → ${UI("63 CVs")}. Condition ${UI(revCond)}, with ${UI("Min")} / ${UI("Max")} per value from the bucket table; start the first range at 0.${TAG("B")} ${m.engNames.length || m.paid ? `Values that include ${[m.paid ? "the purchase" : "", ...m.engNames].filter(Boolean).map(x=>esc(x)).join(" or ")} get an extra ${UI("Event")} condition (➕).${TAG("B")} ` : ""}${UI("Bulk mapping")} offers ${UI("Linear")} or ${UI("Exponential")} distribution; ${s.gSpace === "even" ? "Linear matches the even spacing." : "the “finer at the low end” edges here are neither, so fill Adjust's CSV template from the bucket table and use Upload CSV to keep them exact."}${TAG("B")}`;
+    } else if (m.enc === "flags"){
+      fine = `Postback 1, fine: ${UI("Setup mode")} → ${UI("6 bits")}. One event per bit, highest value first: ${m.bits.filter(b=>b.e).map(b=>`${b.v} ${ev(b.e)}`).join(", ")}.${TAG("B")}`;
+    } else {
+      fine = `Postback 1, fine: ${UI("Setup mode")} → ${UI("63 CVs")}. For each value in the stage table: an ${UI("Event")} condition for the stage and a ${UI("Session count")} condition with ${UI("Min")} / ${UI("Max")} for the quality level (1 · 2–3 · 4–6 · 7+). Easiest through CSV: ${UI("Download")} the template, fill it from the table, ${UI("Upload CSV")}.${TAG("B")}`;
+    }
+    steps.push(fine + ` Where the event tokens come from is not described in these help pages; they are presumably your regular Adjust events.${TAG("A")}`);
+    steps.push(`${UI("Add Coarse conversion values")}: ${coarseList(m.rows.pb1c)}. Adjust also recommends Session on Low.${TAG("B")}`);
+    steps.push(`Postback 2 (days 3–7), coarse: ${coarseList(m.rows.pb2)}.${TAG("B")}`);
+    steps.push(`Postback 3 (days 8–35), coarse: ${coarseList(m.rows.pb3)}.${TAG("B")}`);
+    steps.push(`${UI("Review and save mapping")}. Adjust asks for the same mapping for SKAN 3 and SKAN 4; if you change it for SKAN 4, update the SKAN 3 mapping by hand.${TAG("B")}`);
+  }
+  const integ = integrations(s, s.mmp);
+  let h = Q(`<span class="small">${steps.length} steps in ${af ? "AppsFlyer" : "Adjust"}${integ.length ? `, plus ${integ.length} for your channels` : ""}, from ${af ? "AppsFlyer's" : "Adjust's"} help pages, checked 28 Sep 2026. Your screens may differ.</span>`, `Screen names from ${MMP_SRC[s.mmp]}, checked 28 Sep 2026. MMP screens change; the help page is the source of truth. Tags: B – checked source (vendor help or published report) · A – assumption.`);
+  h += `<details class="card howcard" open><summary>Step by step in ${af ? "AppsFlyer" : "Adjust"}</summary><ol class="steps note">${steps.map(x=>`<li>${x}</li>`).join("")}</ol></details>`;
+  if (integ.length) h += `<details class="card howcard"><summary>Your channels in ${af ? "AppsFlyer" : "Adjust"}</summary><ul class="plain note">${integ.join("")}</ul></details>`;
+  return h;
+}
+
+function renderWarns(m){
+  $("warns").innerHTML = m.warns.map(w => {
+    const i = w.t.indexOf("</b>");
+    const head = (i >= 0 ? w.t.slice(0, i) : w.t).replace(/^<b>/, "").replace(/\.\s*$/, "");
+    const rest = i >= 0 ? w.t.slice(i+4).trim() : "";
+    return rest ? Q(head, rest, "div", "warn" + (w.hot ? " hot" : "")) : `<div class="warn${w.hot?" hot":""}">${head}</div>`;
+  }).join("");
+}
+
+function toCSV(s, m){
+  const q = v => `"${String(v).replace(/"/g,'""')}"`;
+  const out = [["postback","kind","level_or_value","condition","event_or_range","meaning"].join(",")];
+  if (m.game){
+    for (let b = 0; b < m.n; b++){
+      const range = b === 0 ? "no revenue" : b === m.n-1 ? `> ${money$(m.cap)}` : `${money$(m.edges[b-1])}–${money$(m.edges[b])}`;
+      out.push([1,"fine revenue bucket", b << m.e, "Revenue", range, `bucket ${b}` + (m.e ? "; add engagement bits" : "") + (m.paid ? "; add 32 for a purchase" : "")].map(q).join(","));
+    }
+    m.engNames.forEach((nm,i)=>out.push([1,"fine engagement bit", 1<<(m.e-1-i), "Event", nm, "added to the bucket value"].map(q).join(",")));
+    if (m.paid) out.push([1,"fine purchase bit",32,"Event","purchase (any)","added to the bucket value"].map(q).join(","));
+  } else if (m.enc === "flags") m.bits.forEach(b => out.push([1,"fine flag",b.v,"Event",b.e||"",b.means].map(q).join(",")));
+  else m.stage.stages.forEach((e,a)=>[0,1,2,3].forEach(k=>out.push([1,"fine stage x quality",a+m.stage.mult*k,"Event",e,`stage ${a}, quality ${k}`].map(q).join(","))));
+  [["1",m.rows.pb1c],["2",m.rows.pb2],["3",m.rows.pb3]].forEach(([n,rows]) => rows.forEach(r => out.push([n,"coarse",r.l,r.c,r.e,r.means].map(q).join(","))));
+  out.push([1,"lockWindow","","","",m.lock.dec].map(q).join(","));
+  return out.join("\n");
+}
+
+/* ---------- self-test (#test) ---------- */
+const defChannels = (ids) => CHANNELS.map(c=>({id:c.id, role:c.role, name:c.name, on:(ids||[]).includes(c.id), pct:0}));
+function baseSub(over){
+  return Object.assign({product:"sub", money:"app", trial:7, trialStart:"day0", nplans:2, plans:["monthly","annual"], top:"annual", direct:false, upsell:false,
+    ev1:"core_feature_1_used", ev2:"core_feature_2_used", enc:"flags", channels:defChannels(), mmp:"appsflyer"}, over||{});
+}
+function baseGame(product, over){
+  const d = GAME_DEFAULTS[product];
+  return Object.assign({product, gCap:d.cap, gSpace:"low", gEng:1, gEv1:"tutorial_complete", gEv2:"level_n_reached", gPaid:false, gL:d.l.slice(), gM:[null,null,null], channels:defChannels(), mmp:"appsflyer"}, over||{});
+}
+function selfTest(){
+  const R = []; const t = (name, cond) => R.push({name, pass: !!cond});
+  const hasE = (rows, e) => rows.some(r => r.e.split(" / ").includes(e));
+  const evs = m => m.bits.map(b=>b.e);
+  let m;
+  m = build(baseSub({trial:3})); t("3-day trial: money in postback 2", m.moneyPB === 2 && hasE(m.rows.pb2, "trial_annual_converted"));
+  m = build(baseSub({trial:7})); t("7-day trial: charge on day 7–9, money in postback 3", m.moneyPB === 3 && m.ch[0] === 7 && m.ch[1] === 9);
+  t("7-day trial: postback 2 measures engagement", hasE(m.rows.pb2, "core_feature_1_used") && !hasE(m.rows.pb2, "trial_annual_converted"));
+  t("7-day trial: postback 3 mirrors the plan split of postback 1", hasE(m.rows.pb3, "trial_annual_converted") && hasE(m.rows.pb3, "trial_monthly_converted"));
+  t("7-day trial, monthly plan: renewal on day 37–39 flagged outside the window", m.warns.some(w => /monthly plan renews around day 37–39/.test(w.t)));
+  m = build(baseSub({trial:14})); t("14-day trial: money in postback 3", m.moneyPB === 3);
+  m = build(baseSub({trial:0})); t("No trial: purchase of the more valuable plan on bit value 32", m.moneyPB === 1 && m.bits[0].e === "purchase_annual" && m.bits[0].v === 32);
+  t("No trial, monthly plan: renewal on day 30–32 is too close to day 35, not counted in postback 3", !hasE(m.rows.pb3, "renewal_monthly") && m.warns.some(w => /monthly plan renews around day 30–32/.test(w.t)));
+  m = build(baseSub({trial:0, plans:["weekly","annual"], top:"weekly"})); t("No trial, weekly plan: renewal on day 7–9 stays inside the 28-day cutoff, reaches postback 3", hasE(m.rows.pb3, "renewal_weekly"));
+  t("Blind-spot warning: server-side renewals need a later app open to reach SKAN", /only reaches postbacks 2 and 3 if the user opens the app/.test(ALWAYS_WARNS[1].t) && !/never reaches the postback/.test(ALWAYS_WARNS[1].t));
+  m = build(baseSub({money:"web"})); t("Web money: no revenue events, a login bit, no lock", evs(m).includes("login_successful") && !evs(m).some(e=>/trial|purchase|upsell/.test(e||"")) && !m.lock.on);
+  m = build(baseSub({nplans:1, plans:["monthly"], top:"monthly"})); t("One plan: coarse Medium = paywall_view, High = trial start; the free bit goes to the main feature", m.rows.pb1c[1].e === "paywall_view" && m.rows.pb1c[2].e === "trial_monthly_started" && evs(m).filter(e=>!e).length === 0 && evs(m)[2] === "core_feature_1_used");
+  m = build(baseSub({trial:7})); t("S1: 7-day trial started in the first 48 h charges from 168 h, no border with postback 2", m.moneyPB === 3 && /168 hours/.test(m.notes.pb2) && !/across the border/.test(m.notes.pb2));
+  m = build(baseSub({trial:3, trialStart:"late"})); t("S1: late 3-day trial straddles postbacks 2 and 3, and the note says so", m.moneyPB === 3 && /part in postback 2/.test(m.notes.pb3));
+  m = build(baseSub({trial:30})); t("S9: a first charge after day 28 is not coded as money and is flagged", m.moneyPB === 0 && m.warns.some(w => /first charge \(day 30–32\)/.test(w.t)));
+  m = build(baseSub({trial:7, plans:["weekly","annual"], top:"annual"})); t("S6: weekly renewal in the same window as the first charge is named in the note", /weekly renewal \(14–16/.test(m.notes.pb3));
+  m = build(baseSub({trialStart:"late"})); t("S4: late trials fill the free bits with both key events, nothing spare", evs(m).every(Boolean) && evs(m).includes("core_feature_1_used") && evs(m).includes("core_feature_2_used") && evs(m)[0] === "paywall_view");
+  const noSign = {signup:{on:false,name:"signup_successful"}, obs:{on:true,name:"onboarding_start"}, obe:{on:true,name:"onboarding_end"}, pw:{on:true,name:"offer_seen"}};
+  m = build(baseSub({fun:noSign, nplans:1, plans:["monthly"], top:"monthly"})); t("S5: no sign-up, renamed paywall: sign-up gone, new name in bits and coarse", !evs(m).includes("signup_successful") && evs(m).includes("offer_seen") && m.rows.pb1c[1].e === "offer_seen");
+  const noPw = {signup:{on:true,name:"signup_successful"}, obs:{on:true,name:"onboarding_start"}, obe:{on:true,name:"onboarding_end"}, pw:{on:false,name:"paywall_view"}};
+  const noFun = Object.fromEntries(["signup","obs","obe","pw"].map(k => [k, {on:false, name:k}]));
+  m = build(baseSub({fun:noFun, trialStart:"late"})); t("S5 edge: no funnel steps + late trials: coarse follows the bit order (High = second key feature)", evs(m)[0] === "core_feature_2_used" && m.rows.pb1c[2].e === "core_feature_2_used" && m.rows.pb1c[1].e === "core_feature_1_used");
+  m = build(baseGame("hybrid",{gPaid:true})); t("Hybrid with purchase bit: Medium why explains the nearly empty Low", /Low stays nearly empty/.test(m.rows.pb1c[1].why));
+  m = build(baseSub({fun:noPw, trialStart:"late"})); t("S5: late trials without a paywall: the deepest step becomes the optimization event and coarse High", evs(m)[0] === "onboarding_end" && m.rows.pb1c[2].e === "onboarding_end" && !evs(m).includes("paywall_view"));
+  m = build(baseSub({nplans:1, plans:["monthly"], top:"monthly", direct:true})); t("One plan + direct purchase: coarse High carries both the trial start and the direct purchase", m.rows.pb1c[2].e === "trial_monthly_started / purchase_without_trial");
+  m = build(baseSub({trial:3, plans:["weekly","annual"], top:"weekly"})); t("Weekly renewal inside the window: why names the day-28 cutoff as an assumption", m.rows.pb3.some(r => /renewal_weekly/.test(r.e) && /day-28 cutoff/.test(r.why) && /assumption/.test(r.why)));
+  m = build(baseSub()); t("Two plans (monthly + annual): flags, annual trial on the top bit, all six bits used", m.enc === "flags" && m.bits[0].e === "trial_annual_started" && evs(m).every(Boolean));
+  t("Two plans: coarse keeps the plan split", m.rows.pb1c[2].e === "trial_annual_started" && m.rows.pb1c[1].e === "trial_monthly_started");
+  m = build(baseSub({plans:["weekly","annual"], top:"weekly"})); t("Weekly + annual, weekly said to be more valuable: weekly trial on top", m.bits[0].e === "trial_weekly_started" && m.rows.pb1c[2].e === "trial_weekly_started");
+  m = build(baseSub({nplans:3})); t("'More than two': the schema still uses the two picked plans, flags stay on", m.plans.length === 2 && m.enc === "flags");
+  m = build(baseSub({direct:true})); t("Direct purchase, two plans: top bit, takes the place of onboarding_start", m.bits[0].e === "purchase_without_trial" && !evs(m).includes("onboarding_start") && evs(m).includes("signup_successful") && /onboarding_start/.test(m.bits[0].why));
+  t("Direct purchase: why says the plan is lost and points to stage × quality", /lost/.test(m.bits[0].why) && /stage × quality/.test(m.bits[0].why));
+  m = build(baseSub({direct:true, upsell:true})); t("Direct purchase + upsell, two plans: onboarding_start and signup_successful given up", !evs(m).includes("onboarding_start") && !evs(m).includes("signup_successful") && evs(m)[1] === "upsell_purchased" && m.displaced.join() === "onboarding_start,signup_successful");
+  m = build(baseSub({upsell:true})); t("Upsell only: takes the place of onboarding_start", evs(m)[0] === "upsell_purchased" && !evs(m).includes("onboarding_start"));
+  m = build(baseSub({nplans:1, plans:["monthly"], top:"monthly", direct:true})); t("One plan + direct purchase: uses the spare bit, no funnel event lost", evs(m).includes("onboarding_start") && evs(m).includes("signup_successful") && /spare bit/.test(m.bits[0].why));
+  m = build(baseSub({nplans:1, plans:["monthly"], top:"monthly", direct:true, upsell:true})); t("One plan + both: spare first, then onboarding_start", !evs(m).includes("onboarding_start") && evs(m).includes("signup_successful"));
+  m = build(baseSub({trial:0, upsell:true})); t("No trial: no direct-purchase bit, upsell still possible", !evs(m).includes("purchase_without_trial") && evs(m)[0] === "upsell_purchased");
+  m = build(baseSub({direct:true, upsell:true, enc:"stage"})); t("Stage × quality with both: 9 stages, ×16, fits in 63", m.stage.stages.length === 9 && m.stage.mult === 16 && m.stage.maxCV <= 63);
+  m = build(baseSub({trialStart:"day0", channels:defChannels(["networks","meta"])})); t("Trials on install day + ad networks: lock at 24 h", m.lock.on);
+  m = build(baseSub({trialStart:"day0", channels:defChannels(["meta"])})); t("Trials on install day + only Meta: no need to lock, speed doesn't matter", !m.lock.on && /AEM/.test(m.lock.why));
+  m = build(baseSub({trialStart:"day0"})); t("Trials on install day, no channels ticked: conditional advice", !m.lock.on && m.lock.cond && /ad networks/.test(m.lock.dec));
+  m = build(baseSub({trialStart:"spread", channels:defChannels(["networks"])})); t("Trials spread over two days: don't lock, even with ad networks", !m.lock.on);
+  m = build(baseSub({trialStart:"late"})); t("Late trials: no trial bits in postback 1, trial start in postback 2", !evs(m).some(e=>/trial_.*_started/.test(e||"")) && hasE(m.rows.pb2, "trial_annual_started"));
+  const key = x => JSON.stringify([x.bits, x.stage, x.rows]);
+  t("Channels don't change the schema (none / Meta / networks / all)", [[],["meta"],["networks"],CHANNELS.map(c=>c.id)].every(ids => key(build(baseSub({channels:defChannels(ids)}))) === key(build(baseSub()))));
+  m = build(baseGame("iap")); t("Game, purchases: 5 revenue bits + 1 engagement bit", m.k === 5 && m.e === 1 && m.layout.length === 6);
+  t("Game, purchases: bucket edges grow; above the cap goes to the last bucket; 0 = no revenue", m.edges.every((v,i,a)=> i===0 || v > a[i-1]) && m.bucketOf(m.cap*1.5) === m.n-1 && m.bucketOf(0) === 0);
+  t("Game, purchases: the largest value is 63", m.maxCV === 63);
+  m = build(baseGame("iap",{gEng:0})); t("No engagement bits: all 64 values for revenue", m.k === 6 && m.n === 64);
+  m = build(baseGame("ads")); t("Game, ads: don't lock by default", !m.lock.on);
+  t("S3: ads game without a medium line: Medium is the engagement event, not revenue > $0", m.rows.pb1c[1].e === "tutorial_complete" && m.rows.pb2[1].e === "level_n_reached" && !m.rows.pb1c.some(r => /> \$0/.test(r.e)));
+  m = build(baseGame("ads",{gM:[0.05,0.2,0.4]})); t("S3: ads game with medium lines: Medium is revenue ≥ the line", /≥ \$0.05/.test(m.rows.pb1c[1].e) && /≥ \$0.4/.test(m.rows.pb3[1].e));
+  m = build(baseGame("iap")); t("S3: purchase game keeps Medium = revenue > $0 (a payer)", m.rows.pb1c[1].e === "revenue so far > $0");
+  m = build(baseGame("hybrid")); t("Hybrid default: one combined revenue, no purchase bit", !m.paid && !m.layout.some(b=>b.kind==="paid"));
+  m = build(baseGame("hybrid",{gPaid:true, gEng:0})); t("Hybrid with purchase bit: bit 32 + 5 revenue bits", m.paid && m.layout[0].kind==="paid" && m.k === 5);
+  t("Hybrid with purchase bit: no high-value line left over in warnings, notes or lock", !m.warns.some(w => /high-value line/i.test(w.t)) && !/high-value line/.test(m.notes.pb2 + m.notes.pb3 + m.lock.why));
+  t("Hybrid with purchase bit: the window-vs-state warning stays and speaks about the purchase", m.warns.some(w => /maps postbacks 2 and 3/.test(w.t) && /Made a purchase/.test(w.t)));
+  t("Hybrid with purchase bit: a payer beats a non-payer at equal revenue", m.cv(10,true,[]) > m.cv(10,false,[]));
+  const meta = chanSplit(CHANNELS.map(c=>({id:c.id, role:c.role, on:c.id==="meta", pct:100})));
+  t("Only Meta: 100% Secondary, 0% Core", meta.by.secondary === 100 && meta.by.core === 0);
+  const nets = chanSplit(CHANNELS.map(c=>({id:c.id, role:c.role, on:["networks","meta"].includes(c.id), pct:c.id==="networks"?60:40})));
+  t("Ad networks at 60%: Core 60%", Math.abs(nets.by.core - 60) < 1e-9);
+  const all = [];
+  [0,3,7,14,30].forEach(T=>["day0","spread","late","unknown"].forEach(ts=>[[["monthly"],"monthly"],[["monthly","annual"],"annual"],[["weekly","annual"],"weekly"]].forEach(([pl,tp])=>[false,true].forEach(d=>[false,true].forEach(u=>["app","web","mixed"].forEach(mo=>["flags","stage"].forEach(en=>all.push(build(baseSub({trial:T,trialStart:ts,nplans:pl.length,plans:pl,top:tp,direct:d&&T>0,upsell:u,money:mo,enc:en}))))))))));
+  t(`All ${all.length} subscription setups: every fine value fits in 0–63`, all.every(x => x.enc === "flags" ? x.bits.reduce((a,b)=>a+(b.e?b.v:0),0) <= 63 : x.stage.maxCV <= 63));
+  t("All subscription setups: six bits, no event twice", all.every(x => x.bits.length === 6 && new Set(x.bits.filter(b=>b.e).map(b=>b.e)).size === x.bits.filter(b=>b.e).length));
+  t("All subscription setups: every postback has Low, Medium and High", all.every(x => [x.rows.pb1c,x.rows.pb2,x.rows.pb3].every(r => r.map(y=>y.l).join() === "Low,Medium,High")));
+  const games = [];
+  ["iap","ads","hybrid"].forEach(p=>[0,1,2].forEach(e=>[false,true].forEach(pd=>["even","low"].forEach(sp=>games.push(build(baseGame(p,{gEng:e,gPaid:pd,gSpace:sp})))))));
+  t(`All ${games.length} game setups: largest value is 63 and bits add up to six`, games.every(g => g.maxCV === 63 && g.layout.length === 6));
+  const mm = [];
+  [...all.filter((_,i)=>i%11===0), ...games].forEach(x0 => ["appsflyer","adjust"].forEach(mp => {
+    const st = x0.game ? baseGame(x0.mon,{mmp:mp}) : baseSub({mmp:mp});
+    mm.push(mmpHTML(st, x0));
+  }));
+  t(`MMP steps render for ${mm.length} setups without gaps`, mm.every(h => /Postback 3|Window 3/.test(h) && !/undefined|NaN/.test(h)));
+  const afMeta = mmpHTML(baseSub({mmp:"appsflyer", channels:defChannels(["meta"])}), build(baseSub()));
+  t("AppsFlyer + Meta ticked: Meta interoperation step shown", /Share CV schema with Meta ads/.test(afMeta));
+  const adjNoTik = mmpHTML(baseSub({mmp:"adjust", channels:defChannels(["meta"])}), build(baseSub()));
+  t("Adjust, only Meta ticked: no TikTok or Google steps", !/TikTok For Business SAN/.test(adjNoTik) && !/CV Mapping Sharing/.test(adjNoTik));
+  t("Adjust, lock recommended: static window step shown", /Set a static window/.test(mmpHTML(baseSub({mmp:"adjust"}), build(baseSub({channels:defChannels(["networks"])})))));
+  return R;
+}
+function showTests(){
+  const p = $("testpanel");
+  if (location.hash !== "#test"){ p.hidden = true; return; }
+  let R; try { R = selfTest(); } catch(e){ R = [{name:"Self-test crashed: "+e.message, pass:false}]; }
+  const passed = R.filter(r=>r.pass).length;
+  p.className = "testpanel"; p.hidden = false;
+  p.innerHTML = `<h2>Self-test</h2><div class="${passed===R.length?"ok":"fail"}">${passed} of ${R.length} checks passed</div><ol>${R.map(r=>`<li class="${r.pass?"":"f"}">${r.pass?"✓":"✗"} ${esc(r.name)}</li>`).join("")}</ol>`;
+}
+window.__skanSelfTest = selfTest;
+
+/* ---------- main loop ---------- */
+let lastKey = "", model = null, state = null;
+function run(){
+  state = readState();
+  if (state.product !== lastProduct){
+    if (state.product !== "sub") applyGameDefaults(state.product);
+    lastProduct = state.product; state = readState(); tryState = {rev:null, paid:true, eng:[true,true]};
+  }
+  model = build(state);
+  syncVisibility(state, model);
+  if (!model.game){
+    const key = JSON.stringify([state.money,state.trial,state.trialStart,state.plans,state.top,state.direct,state.upsell]);
+    if (key !== lastKey){ bitOn = defaultBits(model); lastKey = key; }
+  }
+  renderChanMap(state);
+  renderTimeline(state, model);
+  if (model.game) renderGame(state, model); else renderSub(state, model);
+  renderMMP(state, model);
+  renderWarns(model);
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".whyb"); if (!b) return;
+  e.preventDefault();
+  const w = b.closest(".qwrap"); if (!w) return;
+  const open = w.classList.toggle("open");
+  b.classList.toggle("on", open); b.setAttribute("aria-expanded", open);
+});
+document.addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("whyb")){ e.preventDefault(); e.target.click(); }
+});
+renderChannels();
+renderPlanUI();
+const form = $("setupForm");
+form.addEventListener("input", e => { if (e.target.id && e.target.id.startsWith("try")) return; run(); });
+form.addEventListener("change", e => { if (e.target.id === "planA" || e.target.id === "planB") renderTopSeg(); run(); });
+["chanBox","mmpBox"].forEach(id => { $(id).addEventListener("input", run); $(id).addEventListener("change", run); });
+form.addEventListener("submit", e => { e.preventDefault(); run(); $("results").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); });
+$("copyCsv").addEventListener("click", () => {
+  const csv = toCSV(state, model), t = $("toast");
+  const fb = () => { const ta = $("csvFallback"); ta.value = csv; ta.hidden = false; ta.select(); t.textContent = "Copy blocked here – the CSV is selected below."; };
+  try { navigator.clipboard.writeText(csv).then(() => { t.textContent = "Copied."; }, fb); } catch(e){ fb(); }
+});
+let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { if (!model) return; renderTimeline(state, model); if (model.game) drawStrip(model); }, 120); });
+addEventListener("hashchange", () => { showTests(); if (location.hash === "#test") $("testpanel").scrollIntoView(); if (location.hash === "#jargon") $("jargon").open = true; });
+document.addEventListener("click", e => { if (e.target.closest && e.target.closest('a[href="#jargon"]')) $("jargon").open = true; });
+run();
+showTests();
+})();
+</script>
+<script>
+  (function() {
+    var nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 0);
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>
