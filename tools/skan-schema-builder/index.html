@@ -278,9 +278,9 @@ a.jl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;te
         "price": "0",
         "priceCurrency": "USD"
       },
-      "softwareVersion": "1.4",
+      "softwareVersion": "1.5",
       "datePublished": "2026-09-30",
-      "dateModified": "2026-09-30",
+      "dateModified": "2026-10-02",
       "inLanguage": "en",
       "author": {
         "@type": "Person",
@@ -409,7 +409,7 @@ a.jl{color:inherit;text-decoration:underline dotted;text-underline-offset:3px;te
   <div class="container">
     <h1 class="page-title">SKAN Schema Builder</h1>
     <div class="page-standfirst">What should your SKAN schema look like? A SKAN 4 / AdAttributionKit conversion schema for subscription apps and games, with the reason for every row.</div>
-    <div class="page-meta">Sep 2026 · v1.4 · Systems · Interactive · subscription apps and games</div>
+    <div class="page-meta">Oct 2026 · v1.5 · Systems · Interactive · subscription apps and games</div>
   </div>
 </div>
 <div class="container">
@@ -1246,7 +1246,7 @@ function buildSub(s){
   m.short = {
     pb1: web ? "Activation only – no revenue in this schema." : T === 0 ? "Purchase and plan – money can come on day one." : late ? "Funnel only – trials start after this window." : "Stage and plan, not money.",
     pb2: web ? "Use after install." : T === 0 ? "Use after buying." : late ? "Trial start." : moneyPB === 2 ? "Money: the first charge." : "Engagement in the trial.",
-    pb3: web ? "Use over the month." : (T === 0 || moneyPB === 2) ? (renew.some(r=>r.inWin) ? "Renewals." : "Use after paying.") : moneyPB === 3 ? "Money: the first charge." : "Engagement – no money inside 35 days."
+    pb3: web ? "Use over the month." : (T === 0 || moneyPB === 2) ? (renew.some(r=>r.inWin) ? "Renewals." : "Use after paying.") : moneyPB === 3 ? "Money: the first charge." : "Engagement – the first charge comes too late for any postback."
   };
   if (web) m.notes.pb1 = "People paid on the web before install, so SKAN only judges install quality. Postback 1 is built around activation; there is no revenue in this schema.";
   else if (T === 0) m.notes.pb1 = "No trial: money can come on day one, so postback 1 carries the purchase and the plan.";
@@ -1332,7 +1332,7 @@ function buildGame(s){
   const L = s.gL;
   const MID_WHY = "In a game with ads almost every player who opens it brings some ad revenue, so 'more than $0' would put nearly everyone on Medium.";
   const midRow = (day, idx) => (!paid && s.gM && s.gM[idx])
-    ? {l:"Medium", c:"Revenue", e:`revenue so far ≥ ${money$(s.gM[idx])}`, means:`generated at least ${money$(s.gM[idx])} ${mon === "ads" ? "in ad revenue " : ""}by day ${day}`, why:`Your medium line. ${MID_WHY} The line splits them instead.`}
+    ? {l:"Medium", c:"Revenue", e:`revenue so far ≥ ${money$(s.gM[idx])}`, means:`${mon === "ads" ? "generated" : "spent or generated"} at least ${money$(s.gM[idx])} ${mon === "ads" ? "in ad revenue " : ""}by day ${day}`, why:`Your medium line. ${MID_WHY} The line splits them instead.`}
     : {l:"Medium", c:"Event", e: idx === 0 ? s.gEv1 : s.gEv2, means: idx === 0 ? "reached your early engagement milestone" : "kept progressing in the game", why:`${MID_WHY} Without a medium revenue line, an engagement event splits them instead; enter a medium line in the setup to use money here.` + (idx === 0 ? "" : " Pick an event that can still happen in this window, such as a level, not one done in the first session.")};
   const coarse = (low, day, line, idx) => paid
     ? [low,
@@ -1342,7 +1342,7 @@ function buildGame(s){
        mon === "iap"
          ? {l:"Medium", c:"Revenue", e:"revenue so far > $0", means:"paid", why:"Any purchase separates payers from everyone else, the biggest split in a purchase-driven game."}
          : midRow(day, idx),
-       {l:"High", c:"Revenue", e:`revenue so far ≥ ${money$(line)}`, means:`${mon === "ads" ? "generated" : "spent or generated"} at least ${money$(line)} by day ${day}`, why: idx === 0 ? "Your high-value line. Coarse is what small sources get, so this is where optimization still sees who is valuable." : "Your high-value line. Postbacks 2 and 3 are coarse for every source, so High is your only view of who keeps paying."}];
+       {l:"High", c:"Revenue", e:`revenue so far ≥ ${money$(line)}`, means:`${mon === "iap" ? "spent" : mon === "ads" ? "generated" : "spent or generated"} at least ${money$(line)} by day ${day}`, why: idx === 0 ? "Your high-value line. Coarse is what small sources get, so this is where optimization still sees who is valuable." : "Your high-value line. Postbacks 2 and 3 are coarse for every source, so High is your only view of who keeps paying."}];
   m.rows.pb1c = coarse(lowI, 2, L[0], 0);
   m.rows.pb2 = coarse(lowS("came back after day 2"), 7, L[1], 1);
   m.rows.pb3 = coarse(lowS("still playing after a week"), 35, L[2], 2);
@@ -1518,7 +1518,7 @@ function renderGame(s, m){
   rows.push(`<tr><td class="num">${m.n-1}</td><td class="num">more than ${money$(m.cap)} (set a real upper edge in the MMP)</td></tr>`);
   h += `<div class="buckets"><table><thead><tr><th>Bucket</th><th>Revenue in days 0–2</th></tr></thead><tbody>${rows.join("")}</tbody></table></div></details>`;
   h += `<p class="small">A bucket's fine value is bucket × ${1<<m.e}${m.e?", plus the engagement bits":""}${m.paid?", plus 32 if the player made a purchase":""}. ${m.mon === "ads" ? "Edges come from your top amount and spacing; check them against your own ad revenue per player." : "For purchase revenue, put edges just above your price points ($0.99, $4.99, $9.99…) or at quantiles of your own data, and compare with your MMP's suggested ranges."}</p>`;
-  h += Q(`<span class="small">Give the last bucket a real upper edge in the MMP.</span>`, "Networks that bid on ROAS don't read bucket numbers: your MMP decodes each value to revenue and passes it on (AppsFlyer records the average of the range). An open-ended last bucket leaves the value of your biggest spenders undefined, so close it at a high percentile of your own day 0–2 revenue, for example P95–P99. Which mapping each network expects differs; AppLovin doesn't publish it for SKAN ROAS campaigns, so confirm with your account manager.");
+  h += Q(`<span class="small">Give the last bucket a real upper edge in the MMP.</span>`, "Networks that bid on ROAS don't read bucket numbers: your MMP decodes each value to revenue and passes it on (AppsFlyer records the maximum of the range; the average only in Custom mode). An open-ended last bucket leaves the value of your biggest spenders undefined, so close it at a high percentile of your own day 0–2 revenue, for example P95–P99. Which mapping each network expects differs; AppLovin doesn't publish it for SKAN ROAS campaigns, so confirm with your account manager.");
   h += `<h3>${JL("Coarse")} fallback</h3>` + Q(`<span class="small">Arrives when the source is too small for a fine value.</span>`, "Apple decides by crowd-anonymity tier whether postback 1 carries the fine value or only this coarse one. Small sources get coarse, so the coarse ladder has to make sense on its own.");
   h += coarseTable(m.rows.pb1c);
   h += pbTail(m);
