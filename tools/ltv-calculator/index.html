@@ -364,11 +364,11 @@
 <div class="page-header">
   <div class="container">
     <h1 class="page-title">LTV Calculator</h1>
-    <div class="page-meta">Sep 2026 · v1.0 · Systems · Interactive · the LTV engine of the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a> as a standalone tool</div>
+    <div class="page-meta">Sep 2026 · v1.0 · Systems · Interactive · the LTV engine of the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> as a standalone tool</div>
   </div>
 </div>
 <div class="est-wrap">
-  <div class="meta"><strong>What is one subscriber worth?</strong> Net LTV at the M13 horizon – a month-by-month payment schedule built from the retention curve, net of VAT, store / PSP fee and refunds – per plan and blended, with payback against your own CPA. Retention starts from RevenueCat benchmarks; type your cohorts over them. Scope: subscription apps only; no acquisition funnel here – for CPM → CPA and the full "does the growth math close?" view use the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a> (same LTV engine, mirrored and self-tested). For iOS attribution, the <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a> builds a conversion schema from the same plans and trial. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
+  <div class="meta"><strong>What is one subscriber worth?</strong> Net LTV at the M13 horizon – a month-by-month payment schedule built from the retention curve, net of VAT, store / PSP fee and refunds – per plan and blended, with payback against your own CPA. Retention starts from RevenueCat benchmarks; type your cohorts over them. Scope: subscription apps only; no acquisition funnel here – for CPM → CPA and the full "does the growth math close?" view use the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> (same LTV engine, mirrored and self-tested). For iOS attribution, the <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a> builds a conversion schema from the same plans and trial. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
   <details class="mnotes" style="margin-top:6px"><summary>Jargon on this page</summary><p style="margin:4px 0 0"><strong>LTV M13</strong> – lifetime value over 13 months: the first payment, 12 months of renewals and the first annual renewal · <strong>RC</strong> – RevenueCat; <strong>SOSA</strong> – its State of Subscription Apps report · <strong>SBP</strong> – Apple's Small Business Program (15% commission under $1M/year; Google has the same 15% tier) · <strong>PSP</strong> – payment service provider on web checkout (Stripe, Paddle) · <strong>CPA</strong> – cost per new subscriber · <strong>ROAS</strong> – net LTV ÷ CPA · <strong>M1 / M6 / M12</strong> – share of a monthly cohort still paying at that renewal · <strong>a2a / w2w</strong> – app-store billing / web-checkout billing (the web cohort retains ×0.89 on benchmarks).</p></details>
 
   <div class="tabs">
@@ -384,7 +384,7 @@
       <li>Pick your <strong>vertical</strong> (refund rate, typical plan mix) and <strong>geo</strong> (VAT default – and a reminder to enter <em>local</em> prices). Retention benchmarks come from RevenueCat SOSA 2026; the <strong>scenario preset</strong> moves them P25 → P75.</li>
       <li>Enter <strong>your plans and prices</strong> – the only thing the tool can't know. 1st-period price if you run an intro offer; shares must sum to 100%.</li>
       <li>Retention: keep the <strong>benchmark curve</strong> and type over any anchor you have (M1 / M6 / M12, weekly renewals #1–#3, week-26 survival) – a typed field turns blue and is used as-is – or, if you only have two renewals so far, switch to <em>Fit from my first 2 renewals</em>. Where each number lives in your own systems – <a href="#" id="dslink" style="color:var(--link)">Reference › Data sources</a>.</li>
-      <li>Press <strong>Calculate</strong> (the default case is already computed). Enter <strong>your CPA</strong> – from Ads Manager or the Unit Economics Estimator – to see ROAS, payback month, target CPA and peak cash. Show a colleague your exact setup – <em>Copy share link</em>.</li>
+      <li>Press <strong>Calculate</strong> (the default case is already computed). Enter <strong>your CPA</strong> – from Ads Manager or the Unit Economics Calculator – to see ROAS, payback month, target CPA and peak cash. Show a colleague your exact setup – <em>Copy share link</em>.</li>
     </ol>
   </details>
   <h2>Setup</h2>
@@ -452,7 +452,7 @@
     <div><label>Your CPA – cost per new subscriber</label><span class="uin" style="display:block"><i class="unit pre">$</i><input type="number" id="cpa" value="" placeholder="e.g. 79.51" step="1" min="0" class="hasunit pre"></span></div>
     <div><label>Target ROAS (net LTV ÷ CPA)</label><input type="number" id="troas" value="1.3" step="0.1" min="0.1"></div>
     <div><label>Monthly ad budget</label><span class="uin" style="display:block"><i class="unit pre">$</i><input type="number" id="budget" value="10000" step="500" min="0" class="hasunit pre"></span></div>
-    <div class="note" style="font-size:.75rem;line-height:1.4">CPA from Ads Manager (cost per subscription / purchase) – or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a>. Leave blank to see LTV alone.</div>
+    <div class="note" style="font-size:.75rem;line-height:1.4">CPA from Ads Manager (cost per subscription / purchase) – or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a>. Leave blank to see LTV alone.</div>
   </div>
   <div class="out">
     <div class="kpi"><div class="v" id="o_roas">–</div><div class="l">ROAS (net LTV ÷ CPA)</div></div>
@@ -664,13 +664,13 @@
   </div><!-- /tab-vat -->
   <div id="tab-dd" style="display:none">
     <h2>Design decisions – the calculations, and why this way and not another</h2>
-    <p class="note" style="max-width:820px">The companion document to the Unit Economics Estimator – and to this calculator, whose LTV engine is the estimator's (§8–§9): for every block – what is computed → formula → why → what was rejected → status. Every number in it is the one in this tool's code, and the dated decision log is at the end. The method notes under the results link straight into its sections. <a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/" target="_blank" rel="noopener" style="color:var(--link);font-weight:600;white-space:nowrap">Open the full document →</a></p>
+    <p class="note" style="max-width:820px">The companion document to the Unit Economics Calculator – and to this calculator, whose LTV engine is the Unit Economics Calculator's (§8–§9): for every block – what is computed → formula → why → what was rejected → status. Every number in it is the one in this tool's code, and the dated decision log is at the end. The method notes under the results link straight into its sections. <a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/" target="_blank" rel="noopener" style="color:var(--link);font-weight:600;white-space:nowrap">Open the full document →</a></p>
     <ul class="ddtoc"><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s0" target="_blank" rel="noopener">0. Architecture: two modes for every field</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s1" target="_blank" rel="noopener">1. Scenarios = benchmark percentiles</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s2" target="_blank" rel="noopener">2. CPM</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s3" target="_blank" rel="noopener">3. From impression to install (a2a)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s4" target="_blank" rel="noopener">4. From install to trial</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s5" target="_blank" rel="noopener">5. From trial to subscriber</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s6" target="_blank" rel="noopener">6. Optimization event: AEO is the base, MAI is a discount</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s7" target="_blank" rel="noopener">7. w2w (quiz funnel, hard paywall at the end of the quiz)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s8" target="_blank" rel="noopener">8. LTV M13 – the payment schedule</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s9" target="_blank" rel="noopener">9. Net: what is deducted and in which order</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s10" target="_blank" rel="noopener">10. Verdict and targets</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s11" target="_blank" rel="noopener">11. Sensitivity – "where the headroom is"</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s12" target="_blank" rel="noopener">12. The Funnel diagnostics tab – iOS vs Android</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s13" target="_blank" rel="noopener">13. Cross-checks</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s14" target="_blank" rel="noopener">14. Minor decisions</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s15" target="_blank" rel="noopener">15. Deliberately not modeled (v1)</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s16" target="_blank" rel="noopener">16. Source check – what changed after an independent verification</a></li><li><a href="https://mariascales.com/tools/unit-economics-estimator/design-decisions/#s17" target="_blank" rel="noopener">17. Decision log</a></li></ul>
   </div><!-- /tab-dd -->
   <div id="tab-ds" style="display:none">
     <h2>Running this calculator on your own data – where each input comes from</h2>
     <p class="note dstoc" style="margin:8px 0 0">Jump to: <a href="#ds0" class="dsjump">0. Systems map</a> · <a href="#ds1" class="dsjump">1. Setup selectors</a> · <a href="#ds2" class="dsjump">2. LTV inputs</a> · <a href="#ds3" class="dsjump">3. Plans, prices &amp; your CPA</a></p>
-    <p class="note" style="max-width:820px;margin:8px 0 0">Every benchmarked field starts from a public industry number; the moment you type your own value it is used as is – no scenario, AI or web-cohort factor is applied on top. This tab lists, for every input, the definition the model uses (so that a similar-looking metric does not get pasted in), the report to read, the cut and history that make the number trustworthy, and the trap. It is the LTV part of the estimator's checklist – the acquisition-funnel fields live <a href="/tools/unit-economics-estimator/">there</a>.</p>
+    <p class="note" style="max-width:820px;margin:8px 0 0">Every benchmarked field starts from a public industry number; the moment you type your own value it is used as is – no scenario, AI or web-cohort factor is applied on top. This tab lists, for every input, the definition the model uses (so that a similar-looking metric does not get pasted in), the report to read, the cut and history that make the number trustworthy, and the trap. It is the LTV part of the Unit Economics Calculator's checklist – the acquisition-funnel fields live <a href="/tools/unit-economics-estimator/">there</a>.</p>
     <p class="note" style="max-width:820px;margin:8px 0 0">Notation. The calculator has 13 numeric inputs on the retention and money side (<span class="nw"><span class="tag tB">B</span> benchmark</span> · <span class="nw"><span class="tag tE">E</span> estimate</span> · <span class="nw"><span class="tag tA">A</span> assumption</span> until you overwrite them) plus your plans, prices, shares and CPA, which are never benchmarked.</p>
 <h3 id="ds0" style="font-size:.95rem;margin:18px 0 6px">0. The systems a subscription app needs for this (the map)</h3>
 <table class="ds">
@@ -715,7 +715,7 @@
 <tr><td>Price weekly / monthly / yearly</td><td><div><b class="dsl">Source</b> App Store Connect → Subscriptions → price tier by storefront; Play Console; Stripe products</div><div><b class="dsl">Trap</b> the price of the storefront you buy in, not the US default; enter the gross (sticker) price – the model removes VAT and the commission itself</div></td></tr>
 <tr><td>1st-period price (intro offer)</td><td><div><b class="dsl">Source</b> intro offer settings in the stores; Stripe coupons / trial price</div><div><b class="dsl">Trap</b> quiz funnels almost always have one – without it the LTV of the first payment is overstated</div></td></tr>
 <tr><td>Share of subscriptions</td><td><div><b class="dsl">Source</b> subscription tool: new subscriptions by product over 3 months (counts, not revenue)</div><div><b class="dsl">Trap</b> the dashboards show revenue shares; the table wants subscription shares – annual plans always look bigger in revenue</div></td></tr>
-<tr><td>Your CPA</td><td><div><b class="dsl">Definition</b> cost per new paying subscriber (not per trial, not per install)</div><div><b class="dsl">Source</b> Ads Manager: spend ÷ subscriptions (purchase / start-trial→paid events) for the campaigns that carry the geo you selected and the platform whose cohorts you typed; MMP cohort report spend → paid subscribers; or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Estimator</a></div><div><b class="dsl">Cut · history</b> same geo × platform as the retention you typed; 8+ weeks so the trials have converted</div><div><b class="dsl">Trap</b> cost per trial ÷ trial→paid is the CPA, cost per trial is not; SKAN / attribution windows under-report iOS conversions – take the MMP or the subscription tool's cohort, not the ad platform's own count</div></td></tr>
+<tr><td>Your CPA</td><td><div><b class="dsl">Definition</b> cost per new paying subscriber (not per trial, not per install)</div><div><b class="dsl">Source</b> Ads Manager: spend ÷ subscriptions (purchase / start-trial→paid events) for the campaigns that carry the geo you selected and the platform whose cohorts you typed; MMP cohort report spend → paid subscribers; or the modeled CPA of the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a></div><div><b class="dsl">Cut · history</b> same geo × platform as the retention you typed; 8+ weeks so the trials have converted</div><div><b class="dsl">Trap</b> cost per trial ÷ trial→paid is the CPA, cost per trial is not; SKAN / attribution windows under-report iOS conversions – take the MMP or the subscription tool's cohort, not the ad platform's own count</div></td></tr>
 <tr><td>Monthly ad budget</td><td><div><b class="dsl">Source</b> the media plan</div></td></tr>
 <tr><td>Target ROAS</td><td><div><b class="dsl">Source</b> the company's financial model: how much net LTV per $1 of CPA the margin and the payback need</div><div><b class="dsl">Trap</b> 1.3 is the tool's default; a company usually has its own number – or none, which is the first question to ask</div></td></tr>
 </table>
@@ -763,8 +763,8 @@
 <script>
 // ---------- benchmark data – MIRRORED from tools/unit-economics-estimator/index.html ----------
 // The LTV engine below (CONFIG, LTV_FIELDS, the LTV math functions, llInterp in the retention tab) is byte-identical to the
-// Unit Economics Estimator's and is copied from it by "Unit Economy Calc/build_ltv_calculator.py --sync"; every PR that
-// touches either tool runs check_ltv_mirror.py. Edit the engine in the estimator, sync it here – never in one place only.
+// Unit Economics Calculator's and is copied from it by "Unit Economy Calc/build_ltv_calculator.py --sync"; every PR that
+// touches either tool runs check_ltv_mirror.py. Edit the engine in the Unit Economics Calculator, sync it here – never in one place only.
 const CONFIG = {
   DIRECT_F: 0.4,              // no-trial paywall: direct purchases ≈ trial-start rate ×0.4 [E]. Adapty's cross-app per-impression
                               // ratio (0.82% purchases vs 1.35% trial starts) gives ×0.6 – a CEILING: apps running no-trial paywalls
@@ -851,7 +851,7 @@ const LTV_FIELDS = [
 ];
 
 // ---------- state ----------
-// Manual overrides are stored PER BILLING MODE (in-app vs web cohort), as in the estimator: what you type for the
+// Manual overrides are stored PER BILLING MODE (in-app vs web cohort), as in the Unit Economics Calculator: what you type for the
 // app cohort never leaks into the web cohort and vice versa; switching back restores your numbers.
 const manualStore = { a2a: {}, w2w: {} };
 let manual = manualStore.a2a; // k -> raw value (fraction), points at the current billing mode's store
@@ -861,7 +861,7 @@ function fmt$(x){
   const d = x >= 100 ? 0 : 2;
   return "$" + x.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
 }
-// benchVal – the LTV-side subset of the estimator's benchVal (no funnel stages here); same rules for every shared field
+// benchVal – the LTV-side subset of the Unit Economics Calculator's benchVal (no funnel stages here); same rules for every shared field
 function benchVal(f, sOverride){
   const s = sOverride || el("scenario").value, vert = VERT[el("vertical").value], geo = GEO[el("geo").value];
   if (f.k === "upsell") return 0; // honest default: no upsell machinery until you build it
@@ -1054,8 +1054,8 @@ function gather(){
     }
   };
 }
-// The LTV model as a pure-ish function – the "---- LTV ----" section of the estimator's computeModel, line for line
-// (same inputs → same net LTV; the estimator's self-test snapshot $63.29 is asserted here too). S = sensitivity
+// The LTV model as a pure-ish function – the "---- LTV ----" section of the Unit Economics Calculator's computeModel, line for line
+// (same inputs → same net LTV; the Unit Economics Calculator's self-test snapshot $63.29 is asserted here too). S = sensitivity
 // multipliers ({price:1.2}, {retP75:true}) applied on top of whatever the user configured.
 function computeModel(S){
   const M = k => (S && S[k] !== undefined) ? S[k] : 1;
@@ -1251,7 +1251,7 @@ function renderOut(m){
     if (manual["yren"] !== undefined) bits.push(`Yearly renewal ${(m.yren*100).toFixed(0)}% – yours, used as-is (no price ramp on top of your data)${dd("8")}.`);
     else bits.push((hp < 0.999 ? "⚠ " : "") + `Yearly renewal at M13: benchmark ${(val(getF(LTV_FIELDS,"yren"))*100).toFixed(0)}% × price ramp ×${hp.toFixed(2)} at ${fmt$(m.plans.yp)} = ${(m.yren*100).toFixed(1)}% [B/E, RC: high-price 1st-renewal churn 37% vs 24%; ramp ×1.0 at $50 → ×0.8 at $70]${hp < 0.999 ? " – a $49.99 yearly plan would renew at the full benchmark rate; type your observed renewal to drop the ramp" : ""}${dd("8")}.`);
   }
-  if (m.aiOn) bits.push(`AI product: monthly M6 / M12 anchors ×${CONFIG.AI.retention} on the benchmark [E – RC: AI apps churn ~30% faster / retain 36% worse over 12 months]${manual["m6"] !== undefined || manual["m12"] !== undefined ? "; not applied to the anchors you typed" : ""}; the acquisition-side AI factor (install→trial ×0.487) lives in the estimator, not here.`);
+  if (m.aiOn) bits.push(`AI product: monthly M6 / M12 anchors ×${CONFIG.AI.retention} on the benchmark [E – RC: AI apps churn ~30% faster / retain 36% worse over 12 months]${manual["m6"] !== undefined || manual["m12"] !== undefined ? "; not applied to the anchors you typed" : ""}; the acquisition-side AI factor (install→trial ×0.487) lives in the Unit Economics Calculator, not here.`);
   { const I = [];
     if (m.plans.won && m.plans.wi > 0) I.push(`weekly first payment ${fmt$(m.plans.wi)} then ${fmt$(m.plans.wp)}`);
     if (m.plans.mon && m.plans.mi > 0) I.push(`monthly first payment ${fmt$(m.plans.mi)} then ${fmt$(m.plans.mp)}`);
@@ -1580,7 +1580,7 @@ function runSelfTests(){
     const pbH = mH.ok ? paybackMonth(mH.cum, mH.cpa) : null, pbX = mX.ok ? paybackMonth(mX.cum, mX.cpa) : null;
     ok("payback month = first month the cumulative net curve reaches the CPA; CPA = 2 × LTV → not repaid by M13", mH.ok && mX.ok && pbH !== null && pbH >= 0 && mH.cum[pbH] >= mH.cpa && (pbH === 0 || mH.cum[pbH - 1] < mH.cpa) && pbX === -1, mH.ok ? `half-LTV CPA repaid in M${pbH}` : "");
   }
-  // snapshot – the SAME default case as the Unit Economics Estimator must give the same net LTV (mirror contract)
+  // snapshot – the SAME default case as the Unit Economics Calculator must give the same net LTV (mirror contract)
   {
     const saved = ["funnel","vertical","geo","scenario","ai","fee","retmode"].map(id => [id, el(id).value]), savedMan = manual;
     const P0 = ["wk_on","mo_on","yr_on"].map(id => el(id).checked), V0 = ["wk_p","mo_p","yr_p","wk_i","mo_i","yr_i","wk_s","mo_s","yr_s"].map(id => el(id).value);
@@ -1590,7 +1590,7 @@ function runSelfTests(){
     const mS = computeModel(null);
     saved.forEach(([id,v]) => el(id).value = v); manual = savedMan;
     ["wk_on","mo_on","yr_on"].forEach((id,i) => el(id).checked = P0[i]); ["wk_p","mo_p","yr_p","wk_i","mo_i","yr_i","wk_s","mo_s","yr_s"].forEach((id,i) => el(id).value = V0[i]);
-    ok("snapshot: the cross-tool reference case (H&F · NA · median · monthly $19.99 48% / yearly $59.99 52% · Store 15% – the estimator default until 5 Sep 2026) gives net LTV ≈ $63.29 here too – one engine, two tools", mS.ok && approxEq(mS.net, 63.29, 0.005), mS.ok ? fmt$(mS.net) : "");
+    ok("snapshot: the cross-tool reference case (H&F · NA · median · monthly $19.99 48% / yearly $59.99 52% · Store 15% – the Unit Economics Calculator default until 5 Sep 2026) gives net LTV ≈ $63.29 here too – one engine, two tools", mS.ok && approxEq(mS.net, 63.29, 0.005), mS.ok ? fmt$(mS.net) : "");
   }
   // VAT math via a temporary override
   const savedVat = manual["vat"];
