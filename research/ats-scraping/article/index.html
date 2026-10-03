@@ -165,7 +165,7 @@
     "url": "https://mariascales.com/"
   },
   "datePublished": "2026-06-27",
-  "dateModified": "2026-09-10",
+  "dateModified": "2026-10-03",
   "keywords": [
     "ATS API",
     "Greenhouse job board API",
@@ -204,7 +204,7 @@
     <ul>
     <li>Most career pages look JS-rendered, but the data behind them is public JSON fetched from an ATS API. Call the API directly and no browser automation is needed.</li>
     <li>Three tiers: documented public APIs with no authentication (<strong>Greenhouse, Lever, Ashby, BambooHR, SmartRecruiters</strong>), predictable internal endpoints (Workday's CXS JSON endpoint), and a headless browser (Playwright) only for fully custom pages.</li>
-    <li>Estimated share of a tech-heavy target list: Greenhouse ~<strong>30%</strong>, Workday ~25%, Lever ~15%, Ashby ~10%; the top four cover about <strong>80%</strong> of companies without a browser.</li>
+    <li>Estimated share of a tech-heavy target list: Greenhouse ~<strong>30%</strong>, Workday ~25%, Lever ~15%, Ashby ~10%; the top four cover about <strong>80%</strong> of companies without a browser. Measured in October on 1,457 live boards: the top four cover <strong>35%</strong> &ndash; see <a href="#measured">Measured</a>.</li>
     <li>ATS detection from the careers URL (greenhouse.io, lever.co, ashbyhq.com, myworkdayjobs.com); each posting is stored by its stable job_id with a first_seen_date, so the weekly run flags only new roles and deduplicates for free.</li>
     </ul></div>
 
@@ -298,6 +298,16 @@
       </tbody>
     </table>
     <p>Handling the top four ATSs with direct API calls covers approximately <strong>80%</strong> of the target company universe without a browser. The remaining ~20% (custom pages) fall back to Playwright – still automatable, just slower and more brittle.</p>
+
+    <h2 id="measured">Measured, October 2026</h2>
+    <p>The table above was an estimate for a tech-heavy list of 118 companies. Measured on <strong>1,457 companies with a live board</strong> in my list on 3 October 2026:</p>
+    <ul>
+      <li><strong>The top four cover 35%, not 80%</strong>: Ashby 13.8%, Greenhouse 11.0%, Workday 7.2%, Lever 3.0%.</li>
+      <li><strong>Other known platforms: 17.6%</strong> &ndash; Workable, Teamtailor, Personio, SuccessFactors and sixteen more.</li>
+      <li><strong>Own careers page: 40.2%</strong>; platform not identified: 7.3%.</li>
+      <li>The own-page share is somewhat overstated: a company that links to its own site while the jobs sit on an ATS is counted there.</li>
+      <li>My list was assembled for one person&rsquo;s job search; it is not a sample of employers.</li>
+    </ul>
 
     <div class="sources">
       <h2>Sources</h2>
