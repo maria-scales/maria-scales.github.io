@@ -105,6 +105,9 @@
   .est-wrap { max-width:800px; margin:0 auto; padding:0 24px; }
   h1 { font-size:1.6rem; margin:28px 0 4px; }
   .meta { color:var(--sub); font-size:.875rem; margin-bottom:20px; }
+  .meta .lead-q { margin:0 0 8px; color:var(--ink); font-size:.9375rem; }
+  .meta ul.lead-list { margin:0 0 10px; padding-left:18px; }
+  .meta ul.lead-list li { margin-bottom:5px; line-height:1.55; }
   h2 { font-size:1.05rem; margin:30px 0 10px; border-bottom:1px solid var(--line); padding-bottom:6px; }
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
   .card { background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
@@ -375,8 +378,16 @@
   </div>
 </div>
 <div class="est-wrap">
-  <div class="meta"><strong>What is one subscriber worth?</strong> Net LTV at the M13 horizon – a month-by-month payment schedule built from the retention curve, net of VAT, store / PSP fee and refunds – per plan and blended, with payback against your own CPA. Retention starts from RevenueCat benchmarks; type your cohorts over them. Scope: subscription apps only; no acquisition funnel here – for CPM → CPA and the full "does the growth math close?" view use the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> (same LTV engine, mirrored and self-tested). For iOS attribution, the <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a> builds a conversion schema from the same plans and trial. Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</div>
-  <details class="mnotes" style="margin-top:6px"><summary>Jargon on this page</summary><p style="margin:4px 0 0"><strong>LTV M13</strong> – lifetime value over 13 months: the first payment, 12 months of renewals and the first annual renewal · <strong>RC</strong> – RevenueCat; <strong>SOSA</strong> – its State of Subscription Apps report · <strong>SBP</strong> – Apple's Small Business Program (15% commission under $1M/year; Google has the same 15% tier) · <strong>PSP</strong> – payment service provider on web checkout (Stripe, Paddle) · <strong>CPA</strong> – cost per new subscriber · <strong>ROAS</strong> – net LTV ÷ CPA · <strong>M1 / M6 / M12</strong> – share of a monthly cohort still paying at that renewal · <strong>a2a / w2w</strong> – app-store billing / web-checkout billing (the web cohort retains ×0.89 on benchmarks).</p></details>
+  <div class="meta"><p class="lead-q"><strong>What is one subscriber worth?</strong></p>
+  <ul class="lead-list">
+    <li>Net LTV at the M13 horizon – a month-by-month payment schedule built from the retention curve, net of VAT, store / PSP fee and refunds – per plan and blended, with payback against your own CPA.</li>
+    <li>Retention starts from RevenueCat benchmarks; type your cohorts over them.</li>
+    <li>Scope: subscription apps only; no acquisition funnel here – for CPM → CPA and the full "does the growth math close?" view use the <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> (same LTV engine, mirrored and self-tested).</li>
+    <li>For iOS attribution, the <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a> builds a conversion schema from the same plans and trial.</li>
+    <li>Tags: <span class="tag tB">B</span> benchmark · <span class="tag tE">E</span> estimate · <span class="tag tA">A</span> assumption.</li>
+  </ul>
+  </div>
+  <details class="mnotes" style="margin-top:6px"><summary>Terms used on this page</summary><p style="margin:4px 0 0"><strong>LTV M13</strong> – lifetime value over 13 months: the first payment, 12 months of renewals and the first annual renewal · <strong>RC</strong> – RevenueCat; <strong>SOSA</strong> – its State of Subscription Apps report · <strong>SBP</strong> – Apple's Small Business Program (15% commission under $1M/year; Google has the same 15% tier) · <strong>PSP</strong> – payment service provider on web checkout (Stripe, Paddle) · <strong>CPA</strong> – cost per new subscriber · <strong>ROAS</strong> – net LTV ÷ CPA · <strong>M1 / M6 / M12</strong> – share of a monthly cohort still paying at that renewal · <strong>a2a / w2w</strong> – app-store billing / web-checkout billing (the web cohort retains ×0.89 on benchmarks).</p></details>
 
   <div class="tabs">
     <button id="tabbtn-calc" class="active">Calculator</button>
