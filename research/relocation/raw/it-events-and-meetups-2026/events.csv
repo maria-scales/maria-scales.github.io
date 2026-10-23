@@ -1,0 +1,73 @@
+country_en,city,cities_all,flagship_rel,regional_rel,local_rel,unknown_rel,alive_mp,alive_dev,events_language,nearest_flagship,scene_score,scene_level
+Germany,Berlin,Berlin,4,0,5,6,6,12,mixed,"Hamburg, ≈290 km, OMR Festival (marketing, 67,000+ in 2026, next 3–5 May 2027); Berlin itself has its own flagships by numbers — WeAreDevelopers, GITEX AI Europe, E-commerce Berlin Expo — but no marketing flagship at the OMR level",1.0,strong
+Israel,Tel Aviv-Yafo,Tel Aviv-Yafo,0,3,1,3,,,mixed,"Limassol, ≈330 km in a straight line, Doers Summit Limassol (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.688,strong
+Spain,Madrid,Madrid,2,0,1,6,4,7,mixed,,1.0,strong
+Australia,Canberra,Canberra,0,0,1,0,,,en,"Sydney, ≈250 km as the crow flies, Agentforce World Tour Sydney (Salesforce) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.062,weak
+Austria,Vienna,Vienna,0,0,3,6,2,11,mixed,"Brno, ≈110 km in a straight line, Marketing Festival (2027-04-20/21, 7,000+ participants claimed)",0.688,strong
+Azerbaijan,Baku,Baku,1,1,1,2,,,mixed,,0.562,notable
+Argentina,Buenos Aires,Buenos Aires,3,2,0,2,,,local,,0.5,notable
+Armenia,Yerevan,Yerevan,2,0,1,2,0,0,en,,0.688,strong
+Belgium,Brussels,Brussels,1,1,2,1,2,5,mixed,,0.688,strong
+Bulgaria,Sofia,Sofia,0,0,0,5,,,mixed,"Bucharest, ≈300 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.344,notable
+Bosnia,Sarajevo,Sarajevo,0,0,2,0,,,mixed,"Bucharest, ≈620 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+Brazil,Brasilia,Brasilia,0,0,0,1,,,local,"São Paulo, ≈870 km in a straight line, Fórum E-Commerce Brasil 2026 (28,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.031,weak
+United Kingdom,London,London,4,2,0,1,,,en,,1.0,strong
+Hungary,Budapest,Budapest,1,1,0,2,,,mixed,,0.5,notable
+Vietnam,Hanoi,Hanoi,1,0,0,2,,,mixed,,0.375,notable
+Greece,Athens,Athens,1,1,0,5,,,mixed,,0.719,strong
+Georgia,Tbilisi,Tbilisi,1,2,0,4,0,4,mixed,,0.75,strong
+Denmark,Copenhagen,Copenhagen,3,2,0,1,,,mixed,,1.0,strong
+Dominican Republic,Santo Domingo,Santo Domingo,0,1,2,3,,,local,"Medellín, ≈1490 km in a straight line, StartCo Medellín (18,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.219,weak
+Egypt,Cairo,Cairo,1,0,0,1,,,mixed,,0.312,weak
+India,Delhi,Delhi,2,0,0,2,,,en,,0.625,notable
+Indonesia,Bali,Bali,0,0,0,1,,,en,"Singapore, ≈1660 km as the crow flies, GITEX AI Asia (23,000 — in the list of flagships; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+Ireland,Dublin,Dublin,2,0,2,0,,,en,,0.688,strong
+Italy,Rome,Rome,0,0,0,3,0,5,mixed,"Milan, ≈480 km in a straight line, Netcomm Forum (35000; tier flagship; only events with relevant_for_profile = yes are counted)",0.188,weak
+Kazakhstan,Astana,Astana,1,0,1,0,,,mixed,,0.312,weak
+Canada,Toronto,Ottawa; Toronto; Vancouver,2,1,1,1,,,en,,0.781,strong
+Cyprus,Limassol,Nicosia; Limassol,1,1,0,1,0,4,en,,0.438,notable
+China,Beijing,Beijing,1,0,0,2,,,local,,0.188,weak
+Colombia,Bogota,Bogota,0,1,1,1,,,local,"Medellín, ≈240 km in a straight line, StartCo Medellín (18,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+Costa Rica,San Jose,San Jose,0,0,0,3,,,local,"Medellín, ≈1020 km in a straight line, StartCo Medellín (18,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.094,weak
+Kyrgyzstan,Bishkek,Bishkek,0,1,1,0,,,mixed,"Tashkent, ≈480 km in a straight line, ICT Week Uzbekistan (30,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.188,weak
+Latvia,Riga,Riga,0,2,1,1,,,en,"Bucharest, ≈1400 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.375,notable
+Lithuania,Vilnius,Vilnius,0,1,2,2,,,en,"Bucharest, ≈1140 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.406,notable
+Luxembourg,Luxembourg,Luxembourg,1,0,0,1,,,en,,0.312,weak
+Malaysia,Kuala Lumpur,Kuala Lumpur,0,2,0,4,,,en,"Singapore, ≈310 km in a straight line, GITEX AI Asia (23,000 — in the flagship list; tier flagship; only events with relevant_for_profile = yes are counted)",0.531,notable
+Malta,Valletta,Valletta,0,1,0,1,,,en,"Athens, ≈850 km in a straight line, BEYOND Expo (15,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.219,weak
+Mexico,Mexico City,Mexico City,2,4,0,1,,,mixed,,1.0,strong
+Moldova,Chisinau,Chisinau,0,3,1,0,,,mixed,"Bucharest, ≈360 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.438,notable
+Netherlands,Amsterdam,Amsterdam,2,3,2,5,8,10,en,,1.0,strong
+New Zealand,Wellington,Wellington,0,0,1,0,,,en,"Auckland, ≈490 km as the crow flies, Techweek NZ (Techweek26, Auckland Hub) (20,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.094,weak
+Norway,Oslo,Oslo,1,0,0,1,,,mixed,,0.344,notable
+UAE,Dubai,Dubai,4,0,1,3,4,10,en,,1.0,strong
+Paraguay,Asuncion,Asuncion,0,0,0,4,,,local,"Gramado, ≈800 km in a straight line, Gramado Summit (23,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+Poland,Warsaw,Warsaw,2,2,0,3,,,mixed,,0.969,strong
+Portugal,Lisbon,Lisbon,1,0,1,6,5,9,en,,1.0,strong
+Romania,Bucharest,Bucharest,1,2,2,0,,,mixed,,0.656,notable
+Northern Cyprus,Kyrenia,Kyrenia,0,0,0,0,,,local,"Bucharest, ≈1180 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.0,weak
+Serbia,Belgrade,Belgrade,0,1,5,3,2,6,mixed,"Budapest, ≈320 km in a straight line, Affiliate World Europe (on the flagship list); venue and dates from the Spain/Portugal collector's data, the organizer's page could not be opened (429) — not re-verified",0.75,strong
+Singapore,Singapore,Singapore,3,0,3,2,,,en,,1.0,strong
+Slovakia,Bratislava,Bratislava,0,0,2,1,,,local,"Budapest, ≈160 km in a straight line, Affiliate World Europe (7,000 — in the list of flagships; tier flagship)",0.094,weak
+Slovenia,Ljubljana,Ljubljana,0,1,0,3,,,mixed,"Zadar, ≈220 km in a straight line, Infobip Shift (5,500; flagship tier)",0.344,notable
+United States,San Francisco,New York; San Francisco; Austin,10,1,2,9,,,en,,1.0,strong
+Tajikistan,Dushanbe,Dushanbe,0,0,0,0,,,mixed,"Tashkent, ≈310 km in a straight line, ICT Week Uzbekistan (30,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.0,weak
+Thailand,Bangkok,Bangkok,3,0,0,1,,,en,,0.844,strong
+Turkey,Istanbul,Istanbul; Antalya,1,2,2,7,1,10,mixed,,1.0,strong
+Uzbekistan,Tashkent,Tashkent,2,2,1,2,,,mixed,,0.938,strong
+Uruguay,Montevideo,Montevideo,0,1,0,2,,,local,"Buenos Aires, ≈210 km in a straight line, Nerdearla Argentina 2026 (12,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+Philippines,Manila,Manila,0,1,2,3,,,en,"Ho Chi Minh City, ≈1610 km in a straight line, Vietnam Web Summit (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.438,notable
+Finland,Helsinki,Helsinki,1,1,2,2,3,12,en,,0.812,strong
+France,Paris,Paris,6,2,3,5,7,9,mixed,,1.0,strong
+Croatia,Zagreb,Zagreb,0,0,1,1,,,mixed,"Zadar, ≈200 km in a straight line, Infobip Shift (5,500; flagship tier)",0.125,weak
+Montenegro,Podgorica,Podgorica,0,0,0,2,0,1,local,"Montenegro has no flagship; the nearest regional one among the collected cities is Belgrade, ≈450 km by road, DSC Europe (3,500); no flagship by rule v2 within the radius of the collected cities",0.062,weak
+Czechia,Prague,Prague,0,3,3,8,3,8,mixed,"Brno, ≈185 km in a straight line, Marketing Festival (2027-04-20/21, 7,000+ participants claimed)",1.0,strong
+Chile,Santiago,Santiago,2,2,1,1,,,local,,0.438,notable
+Switzerland,Bern,Bern,0,0,0,0,,,mixed,"Zürich, ≈100 km in a straight line, Product Management Festival (in the list of flagships, number not published; tier flagship)",0.0,weak
+Sweden,Stockholm,Stockholm,1,2,1,2,,,en,,0.688,strong
+Sri Lanka,Colombo,Colombo,0,1,0,1,,,en,"Bengaluru, ≈720 km in a straight line, Bengaluru Tech Summit (100,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.219,weak
+Ecuador,Quito,Quito,0,2,0,2,,,local,"Medellín, ≈780 km in a straight line, StartCo Medellín (18,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.188,weak
+Estonia,Tallinn,Tallinn,0,1,0,2,,,en,"Bucharest, ≈1670 km as the crow flies, DevTalks Romania 2026 (13th edition) (10,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.25,weak
+South Africa,Pretoria,Pretoria,0,0,0,2,,,en,"Cairo, ≈6210 km in a straight line, RiseUp Summit (20,000; tier flagship; only events with relevant_for_profile = yes are counted)",0.125,weak
+South Korea,Seoul,Seoul,2,1,0,5,,,local,,0.469,notable
+Japan,Tokyo,Tokyo,3,0,1,2,,,mixed,,0.969,strong
