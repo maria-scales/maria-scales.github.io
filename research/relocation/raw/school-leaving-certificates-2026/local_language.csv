@@ -1,0 +1,73 @@
+country_en,school_language,language_en,total_speakers_mln,native_speakers_mln,official_in_countries,fsi_category,fsi_hours,ef_epi_2025,ef_band,english_medium_public_school
+Germany,German,German,133,76,6,2,900 (~36 wk),615,Very high,No; German-medium state schools
+Israel,Hebrew,Hebrew,9,5,1,3,1100 (~44 wk),524,Moderate,No; Hebrew-medium (Arabic-medium sector also exists)
+Spain,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),540,Moderate,No; Spanish-medium (some public bilingual programmes - not verified)
+Australia,English,English,1493,372,58,,,,native,"Yes, English is the medium"
+Austria,German,German,133,76,6,2,900 (~36 wk),616,Very high,No; German-medium
+Azerbaijan,Azerbaijani,Azerbaijani,,24,1,3,1100 (~44 wk),454,Low,No
+Argentina,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),575,High,No
+Armenia,Armenian,Armenian,,5.3,1,3,1100 (~44 wk),515,Moderate,No
+Belgium,French (or Dutch),French,334,75,26,1,600-750 (24-30 wk),608,Very high,No; Brussels has both French- and Dutch-medium public schools
+Bulgaria,Bulgarian,Bulgarian,7.9,6.8,1,3,1100 (~44 wk),594,High,No
+Bosnia,Bosnian,Bosnian,,3.1,2,3,1100 (~44 wk) - as Serbo-Croatian,591,High,No
+Brazil,Portuguese,Portuguese,269,252,8,1,600-750 (24-30 wk),482,Low,No
+United Kingdom,English,English,1493,372,58,,,,native,"Yes, English is the medium"
+Hungary,Hungarian,Hungarian,,12,1,3,1100 (~44 wk),590,High,No
+Vietnam,Vietnamese,Vietnamese,97,86,1,3,1100 (~44 wk),500,Moderate,No
+Greece,Greek,Greek,,13.5,2,3,1100 (~44 wk),592,High,No
+Georgia,Georgian,Georgian,3.91,3.76,1,3,1100 (~44 wk),541,Moderate,No
+Denmark,Danish,Danish,,5.5,1,1,600-750 (24-30 wk),611,Very high,No
+Dominican Republic,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),503,Moderate,No
+Egypt,Arabic,Arabic (Modern Standard),335,0,24,4,2200 (88 wk),458,Low,No in mainstream public schools (Arabic-medium)
+India,Hindi (and English),Hindi,611,347,2,3,1100 (~44 wk),484,Low,"Partly: English is widely used as medium, mainly in private schools; government schools vary by board/state (no Delhi-specific data found)"
+Indonesia,Indonesian,Indonesian,255,78,1,2,900 (~36 wk),471,Low,No in state schools
+Ireland,English,English,1493,372,58,,,,native,"Yes, English is the medium"
+Italy,Italian,Italian,66,60,4,1,600-750 (24-30 wk),513,Moderate,No
+Kazakhstan,Kazakh / Russian,Kazakh,,16,1,3,1100 (~44 wk),417,Very low,No
+Canada,English,English,1493,372,58,,,,native,"Yes, English is the medium (Ontario; French-language boards also exist)"
+Cyprus,Greek,Greek,,13.5,2,3,1100 (~44 wk),537,Moderate,No in public schools
+China,Chinese (Putonghua),Mandarin Chinese,1183,988,3,4,2200 (88 wk),464,Low,No
+Colombia,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),480,Low,No
+Costa Rica,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),516,Moderate,No
+Kyrgyzstan,Kyrgyz / Russian,Kyrgyz,,5.6,1,3,1100 (~44 wk),443,Very low,No
+Latvia,Latvian,Latvian,2.0,1.5,1,3,1100 (~44 wk),598,High,No
+Lithuania,Lithuanian,Lithuanian,,4.0,1,3,1100 (~44 wk),543,Moderate,No
+Luxembourg,Luxembourgish / German / French,German,133,76,6,2,900 (~36 wk),,,Mainstream no; public European Schools exist (for EU staff children; medium not confirmed)
+Malaysia,Malay,Malay,,90,3,2,900 (~36 wk),581,High,No (Malay-medium national schools; Chinese/Tamil vernacular schools)
+Malta,Maltese + English,Maltese,,0.57,1,,,,,"Yes: Maltese encouraged in primary, English is medium at all stages after primary"
+Mexico,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),440,Very low,No
+Moldova,Romanian,Romanian,,22,2,1,600-750 (24-30 wk),531,Moderate,No
+Netherlands,Dutch,Dutch,30,25,3,1,600-750 (24-30 wk),624,Very high,No
+New Zealand,English,English,1493,372,58,,,,native,"Yes, English is the medium"
+Norway,Norwegian,Norwegian,,4.32,1,1,600-750 (24-30 wk),613,Very high,No
+UAE,Arabic,Arabic (Modern Standard),335,0,24,4,2200 (88 wk),487,Low,Public schools Arabic-medium (not explicitly confirmed); most expat children in private English-medium/international schools (507 international schools in 2015)
+Paraguay,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),531,Moderate,No
+Poland,Polish,Polish,43,40,1,3,1100 (~44 wk),600,Very high,No
+Portugal,Portuguese,Portuguese,269,252,8,1,600-750 (24-30 wk),612,Very high,No
+Romania,Romanian,Romanian,,22,2,1,600-750 (24-30 wk),605,Very high,No
+Northern Cyprus,Turkish,Turkish,94,86,2,3,1100 (~44 wk),,,No (Turkish-medium state schools; English-medium universities - not verified)
+Serbia,Serbian,Serbian,,8.2,3,3,1100 (~44 wk) - as Serbo-Croatian,578,High,No
+Singapore,English,English,1493,372,58,,,,,Yes: English is the medium of instruction for all subjects except Mother Tongue (Mandarin/Malay/Tamil)
+Slovakia,Slovak,Slovak,7.1,5,1,3,1100 (~44 wk),606,Very high,No
+Slovenia,Slovenian,Slovene,,2.5,1,3,1100 (~44 wk),,,No
+United States,English,English,1493,372,58,,,,native,"Yes, English is the medium"
+Tajikistan,Tajik,Tajik,,10.5,1,3,1100 (~44 wk),409,Very low,No
+Thailand,Thai,Thai,71,27,1,3,1100 (~44 wk),402,Very low,No
+Turkey,Turkish,Turkish,94,86,2,3,1100 (~44 wk),488,Low,No
+Uzbekistan,Uzbek,Uzbek,,36,1,3,1100 (~44 wk),429,Very low,No
+Uruguay,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),542,Moderate,No
+Philippines,Filipino / English,Filipino (Tagalog),87,33,1,3,1100 (~44 wk) - as Tagalog,569,High,"Yes partly: Filipino and English are primary languages of instruction in secondary; MTB-MLE mother tongue in early grades (per Wikipedia, policy since 2012-13; later changes not verified)"
+Finland,Finnish,Finnish,,5.0,1,3,1100 (~44 wk),603,Very high,No
+France,French,French,334,75,26,1,600-750 (24-30 wk),539,Moderate,No
+Croatia,Croatian,Croatian,6.4,5.1,3,3,1100 (~44 wk) - as Serbo-Croatian,617,Very high,No
+Montenegro,Montenegrin,Montenegrin,,0.215,1,3,1100 (~44 wk) - as Serbo-Croatian,,,No
+Czechia,Czech,Czech,12,9.8,1,3,1100 (~44 wk),582,High,No
+Chile,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),517,Moderate,No
+Switzerland,German,German,133,76,6,2,900 (~36 wk),564,High,No
+Sweden,Swedish,Swedish,13,10,2,1,600-750 (24-30 wk),609,Very high,No
+Sri Lanka,Sinhala,Sinhala,20,18,1,3,1100 (~44 wk),486,Low,Partly - not verified
+Ecuador,Spanish,Spanish,561,487,21,1,600-750 (24-30 wk),466,Low,No
+Estonia,Estonian,Estonian,,1.2,1,3,1100 (~44 wk),561,High,No
+South Africa,English / Afrikaans,English,1493,372,58,,,602,Very high,"Yes, English-medium public schools are common (Afrikaans-medium also)"
+South Korea,Korean,Korean,82,82,2,4,2200 (88 wk),522,Moderate,No
+Japan,Japanese,Japanese,126,124,1,4,2200 (88 wk),446,Very low,No

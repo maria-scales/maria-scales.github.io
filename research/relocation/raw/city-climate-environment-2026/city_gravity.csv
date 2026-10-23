@@ -1,0 +1,79 @@
+country_en,city,airport_iata,nonstop_destinations,nonstop_countries,airlines,flightconnections_url,big_tech_offices_count_of_14,big_tech_offices,ef_epi_2025_score,ef_epi_2025_band,ef_epi_capital_city_score,collected_at
+Germany,Berlin,BER,170,53,72,https://www.flightconnections.com/flights-from-berlin-ber,12,Amazon; Apple; EPAM; Google; JetBrains; Meta; Oracle; Revolut; SAP; Salesforce; Uber; Wargaming,615,Very high,625,2026-09-25
+Israel,Tel Aviv-Yafo,TLV,119,50,58,https://www.flightconnections.com/flights-from-tel-aviv-tlv,10,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce,524,Moderate,498,2026-09-25
+Spain,Madrid,MAD,239,77,90,https://www.flightconnections.com/flights-from-madrid-mad,11,Amazon; Apple; EPAM; Google; JetBrains; Meta; Microsoft; Oracle; Revolut; SAP; Salesforce,540,Moderate,560,2026-09-25
+Australia,Canberra,CBR,12,2,7,https://www.flightconnections.com/flights-from-canberra-cbr,2,Amazon; Salesforce,,native,,2026-09-25
+Austria,Vienna,VIE,203,65,69,https://www.flightconnections.com/flights-from-vienna-vie,8,Amazon; Booking.com; EPAM; Google; Microsoft; Oracle; SAP; Salesforce,616,Very high,634,2026-09-25
+Azerbaijan,Baku,GYD,75,34,36,https://www.flightconnections.com/flights-from-baku-gyd,1,Microsoft,454,Low,464,2026-09-25
+Argentina,Buenos Aires,EZE,74,21,29,https://www.flightconnections.com/flights-from-buenos-aires-eze,9,Amazon; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce,575,High,594,2026-09-25
+Armenia,Yerevan,EVN,84,34,42,https://www.flightconnections.com/flights-from-yerevan-evn,2,EPAM; JetBrains,515,Moderate,530,2026-09-25
+Belgium,Brussels,BRU,189,73,70,https://www.flightconnections.com/flights-from-brussels-bru,7,Amazon; EPAM; Google; Meta; Microsoft; Oracle; Salesforce,608,Very high,588,2026-09-25
+Bulgaria,Sofia,SOF,90,29,27,https://www.flightconnections.com/flights-from-sofia-sof,5,Booking.com; EPAM; Microsoft; Oracle; SAP,594,High,616,2026-09-25
+Bosnia,Sarajevo,SJJ,40,25,25,https://www.flightconnections.com/flights-from-sarajevo-sjj,0,,591,High,587,2026-09-25
+Brazil,Brasilia,BSB,48,7,5,https://www.flightconnections.com/flights-from-brasilia-bsb,3,Amazon; Meta; Oracle,482,Low,544,2026-09-25
+United Kingdom,London,LHR,224,85,86,https://www.flightconnections.com/flights-from-london-lhr,12,Amazon; Apple; Booking.com; EPAM; Google; JetBrains; Meta; Oracle; Revolut; SAP; Salesforce; Uber,,native,,2026-09-25
+Hungary,Budapest,BUD,158,50,52,https://www.flightconnections.com/flights-from-budapest-bud,4,EPAM; Microsoft; Oracle; SAP,590,High,613,2026-09-25
+Vietnam,Hanoi,HAN,91,28,54,https://www.flightconnections.com/flights-from-hanoi-han,5,Amazon; Apple; Booking.com; EPAM; Microsoft,500,Moderate,532,2026-09-25
+Greece,Athens,ATH,174,54,70,https://www.flightconnections.com/flights-from-athens-ath,7,Amazon; Booking.com; EPAM; Google; Microsoft; Oracle; SAP,592,High,616,2026-09-25
+Georgia,Tbilisi,TBS,68,32,50,https://www.flightconnections.com/flights-from-tbilisi-tbs,2,Booking.com; EPAM,541,Moderate,550,2026-09-25
+Denmark,Copenhagen,CPH,195,55,65,https://www.flightconnections.com/flights-from-copenhagen-cph,7,Amazon; EPAM; Google; Microsoft; Oracle; SAP; Salesforce,611,Very high,644,2026-09-25
+Dominican Republic,Santo Domingo,SDQ,50,33,25,https://www.flightconnections.com/flights-from-santo-domingo-sdq,2,EPAM; Microsoft,503,Moderate,526,2026-09-25
+Egypt,Cairo,CAI,129,60,62,https://www.flightconnections.com/flights-from-cairo-cai,5,Amazon; Microsoft; Oracle; SAP; Uber,458,Low,478,2026-09-25
+India,Delhi,DEL,163,56,75,https://www.flightconnections.com/flights-from-delhi-del,10,Amazon; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Uber,484,Low,407,2026-09-25
+Indonesia,Bali,DPS,64,18,51,https://www.flightconnections.com/flights-from-denpasar-dps,1,Booking.com,471,Low,523,2026-09-25
+Ireland,Dublin,DUB,201,43,47,https://www.flightconnections.com/flights-from-dublin-dub,10,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce,,native,,2026-09-25
+Italy,Rome,FCO,253,82,102,https://www.flightconnections.com/flights-from-rome-fco,3,Amazon; Oracle; Salesforce,513,Moderate,538,2026-09-25
+Kazakhstan,Astana,NQZ,58,21,22,https://www.flightconnections.com/flights-from-astana-nqz,2,EPAM; Microsoft,417,Very low,460,2026-09-25
+Canada,Ottawa,YOW,46,11,9,https://www.flightconnections.com/flights-from-ottawa-yow,3,Amazon; EPAM; SAP,,native,,2026-09-25
+Cyprus,Nicosia,LCA,84,37,45,https://www.flightconnections.com/flights-from-larnaca-lca,3,Microsoft; Oracle; Wargaming,537,Moderate,552,2026-09-25
+Cyprus,Limassol,LCA,84,37,45,https://www.flightconnections.com/flights-from-larnaca-lca,1,JetBrains,537,Moderate,552,2026-09-25
+China,Beijing,PEK,214,58,47,https://www.flightconnections.com/flights-from-beijing-pek,8,Amazon; Apple; Booking.com; Google; Microsoft; Oracle; SAP; Salesforce,464,Low,514,2026-09-25
+Colombia,Bogota,BOG,107,31,32,https://www.flightconnections.com/flights-from-bogota-bog,10,Amazon; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Uber,480,Low,513,2026-09-25
+Costa Rica,San Jose,SJO,54,17,29,https://www.flightconnections.com/flights-from-san-jose-sjo,4,Amazon; Booking.com; Microsoft; Oracle,516,Moderate,546,2026-09-25
+Kyrgyzstan,Bishkek,FRU,34,12,22,https://www.flightconnections.com/flights-from-bishkek-fru,0,,443,Very low,485,2026-09-25
+Latvia,Riga,RIX,92,39,15,https://www.flightconnections.com/flights-from-riga-rix,3,EPAM; Microsoft; Oracle,598,High,611,2026-09-25
+Lithuania,Vilnius,VNO,59,31,19,https://www.flightconnections.com/flights-from-vilnius-vno,6,Booking.com; EPAM; Google; Microsoft; Revolut; Wargaming,543,Moderate,569,2026-09-25
+Luxembourg,Luxembourg,LUX,118,34,19,https://www.flightconnections.com/flights-from-luxembourg-lux,3,Amazon; Microsoft; Oracle,,,,2026-09-25
+Malaysia,Kuala Lumpur,KUL,142,40,79,https://www.flightconnections.com/flights-from-kuala-lumpur-kul,6,Amazon; Booking.com; Google; Meta; Microsoft; Oracle,581,High,588,2026-09-25
+Malta,Valletta,MLA,110,36,32,https://www.flightconnections.com/flights-from-malta-mla,2,EPAM; Microsoft,,,,2026-09-25
+Mexico,Mexico City,MEX,108,26,24,https://www.flightconnections.com/flights-from-mexico-city-mex,9,Amazon; Booking.com; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Uber,440,Very low,428,2026-09-25
+Moldova,Chisinau,RMO,76,33,23,https://www.flightconnections.com/flights-from-chi%C8%99in%C4%83u-rmo,1,Microsoft,531,Moderate,572,2026-09-25
+Netherlands,Amsterdam,AMS,282,90,81,https://www.flightconnections.com/flights-from-amsterdam-ams,11,Amazon; Booking.com; EPAM; Google; JetBrains; Meta; Microsoft; Oracle; Revolut; Salesforce; Uber,624,Very high,630,2026-09-25
+New Zealand,Wellington,WLG,20,2,6,https://www.flightconnections.com/flights-from-wellington-wlg,3,Amazon; Microsoft; Salesforce,,native,,2026-09-25
+Norway,Oslo,OSL,150,45,42,https://www.flightconnections.com/flights-from-oslo-osl,7,Amazon; Booking.com; Google; Microsoft; Oracle; SAP; Salesforce,613,Very high,615,2026-09-25
+UAE,Dubai,DXB,263,101,94,https://www.flightconnections.com/flights-from-dubai-dxb,11,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; Revolut; SAP; Salesforce,487,Low,484,2026-09-25
+Paraguay,Asuncion,ASU,16,9,10,https://www.flightconnections.com/flights-from-asuncion-asu,1,Microsoft,531,Moderate,563,2026-09-25
+Poland,Warsaw,WAW,156,59,35,https://www.flightconnections.com/flights-from-warsaw-waw,11,Amazon; EPAM; Google; JetBrains; Meta; Microsoft; Oracle; Revolut; SAP; Uber; Wargaming,600,Very high,591,2026-09-25
+Portugal,Lisbon,LIS,155,52,62,https://www.flightconnections.com/flights-from-lisbon-lis,8,Amazon; EPAM; Google; Microsoft; Oracle; Revolut; Salesforce; Uber,612,Very high,612,2026-09-25
+Romania,Bucharest,OTP,129,41,38,https://www.flightconnections.com/flights-from-bucharest-otp,7,Amazon; Booking.com; EPAM; Google; Microsoft; Oracle; SAP,605,Very high,608,2026-09-25
+Northern Cyprus,Kyrenia,ECN,12,1,4,https://www.flightconnections.com/flights-from-ercan-ecn,0,,,,,2026-09-25
+Serbia,Belgrade,BEG,114,41,27,https://www.flightconnections.com/flights-from-belgrade-beg,5,EPAM; JetBrains; Microsoft; Oracle; Wargaming,578,High,594,2026-09-25
+Singapore,Singapore,SIN,164,49,85,https://www.flightconnections.com/flights-from-singapore-sin,12,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Uber; Wargaming,,,,2026-09-25
+Slovakia,Bratislava,BTS,66,28,11,https://www.flightconnections.com/flights-from-bratislava-bts,4,Amazon; Microsoft; Oracle; SAP,606,Very high,601,2026-09-25
+Slovenia,Ljubljana,LJU,31,20,24,https://www.flightconnections.com/flights-from-ljubljana-lju,2,Microsoft; Oracle,,,,2026-09-25
+Tajikistan,Dushanbe,DYU,31,14,14,https://www.flightconnections.com/flights-from-dushanbe-dyu,0,,409,Very low,440,2026-09-25
+Thailand,Bangkok,BKK,151,57,121,https://www.flightconnections.com/flights-from-bangkok-bkk,9,Amazon; Apple; Booking.com; Google; Meta; Microsoft; Oracle; SAP; Salesforce,402,Very low,467,2026-09-25
+Turkey,Istanbul,IST,311,113,99,https://www.flightconnections.com/flights-from-istanbul-ist,7,Amazon; Booking.com; EPAM; Google; Microsoft; Oracle; SAP,488,Low,508,2026-09-25
+Turkey,Antalya,AYT,156,44,52,https://www.flightconnections.com/flights-from-antalya-ayt,1,EPAM,488,Low,508,2026-09-25
+Uzbekistan,Tashkent,TAS,103,37,41,https://www.flightconnections.com/flights-from-tashkent-tas,1,EPAM,429,Very low,469,2026-09-25
+Uruguay,Montevideo,MVD,22,10,14,https://www.flightconnections.com/flights-from-montevideo-mvd,2,Microsoft; Oracle,542,Moderate,544,2026-09-25
+Philippines,Manila,MNL,86,30,49,https://www.flightconnections.com/flights-from-manila-mnl,8,Amazon; Booking.com; Google; Meta; Microsoft; Oracle; Salesforce; Uber,569,High,603,2026-09-25
+Finland,Helsinki,HEL,135,46,23,https://www.flightconnections.com/flights-from-helsinki-hel,6,Amazon; Booking.com; Google; Microsoft; Oracle; Salesforce,603,Very high,628,2026-09-25
+France,Paris,CDG,286,110,116,https://www.flightconnections.com/flights-from-paris-cdg,13,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; Revolut; SAP; Salesforce; Uber; Wargaming,539,Moderate,583,2026-09-25
+Croatia,Zagreb,ZAG,66,27,24,https://www.flightconnections.com/flights-from-zagreb-zag,4,Booking.com; EPAM; Microsoft; Oracle,617,Very high,616,2026-09-25
+Montenegro,Podgorica,TGD,45,19,15,https://www.flightconnections.com/flights-from-podgorica-tgd,1,Microsoft,,,,2026-09-25
+Czechia,Prague,PRG,177,61,78,https://www.flightconnections.com/flights-from-prague-prg,10,Amazon; Apple; EPAM; Google; JetBrains; Meta; Microsoft; Oracle; SAP; Wargaming,582,High,576,2026-09-25
+Chile,Santiago,SCL,65,18,19,https://www.flightconnections.com/flights-from-santiago-scl,7,Amazon; Booking.com; Google; Microsoft; Oracle; Salesforce; Uber,517,Moderate,578,2026-09-25
+Switzerland,Bern,ZRH,217,71,61,https://www.flightconnections.com/flights-from-zurich-zrh,1,Amazon,564,High,601,2026-09-25
+Sweden,Stockholm,ARN,166,46,48,https://www.flightconnections.com/flights-from-stockholm-arn,9,Amazon; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce,609,Very high,633,2026-09-25
+Sri Lanka,Colombo,CMB,57,27,35,https://www.flightconnections.com/flights-from-colombo-cmb,2,Booking.com; Oracle,486,Low,543,2026-09-25
+Ecuador,Quito,UIO,29,13,14,https://www.flightconnections.com/flights-from-quito-uio,1,Microsoft,466,Low,517,2026-09-25
+Estonia,Tallinn,TLL,50,25,18,https://www.flightconnections.com/flights-from-tallinn-tll,3,Amazon; Microsoft; Oracle,561,High,582,2026-09-25
+South Africa,Pretoria,JNB,80,41,46,https://www.flightconnections.com/flights-from-johannesburg-jnb,0,,602,Very high,608,2026-09-25
+South Korea,Seoul,ICN,161,49,83,https://www.flightconnections.com/flights-from-seoul-icn,9,Amazon; Apple; Booking.com; Google; Meta; Microsoft; Oracle; Salesforce; Wargaming,522,Moderate,550,2026-09-25
+Japan,Tokyo,HND,103,26,45,https://www.flightconnections.com/flights-from-tokyo-hnd,13,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; Revolut; SAP; Salesforce; Uber; Wargaming,446,Very low,480,2026-09-25
+United States,New York,JFK,191,78,72,https://www.flightconnections.com/flights-from-new-york-jfk,12,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; Revolut; SAP; Salesforce; Uber,,native,,2026-09-25
+United States,San Francisco,SFO,149,35,54,https://www.flightconnections.com/flights-from-san-francisco-sfo,8,Amazon; Booking.com; Google; Meta; Microsoft; SAP; Salesforce; Uber,,native,,2026-09-25
+United States,Austin,AUS,103,10,19,https://www.flightconnections.com/flights-from-austin-aus,10,Amazon; Apple; Booking.com; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Wargaming,,native,,2026-09-25
+Canada,Toronto,YYZ,196,73,52,https://www.flightconnections.com/flights-from-toronto-yyz,11,Amazon; Apple; Booking.com; EPAM; Google; Meta; Microsoft; Oracle; SAP; Salesforce; Uber,,native,,2026-09-25
+Canada,Vancouver,YVR,120,23,44,https://www.flightconnections.com/flights-from-vancouver-yvr,7,Amazon; Apple; Booking.com; EPAM; Microsoft; SAP; Salesforce,,native,,2026-09-25
