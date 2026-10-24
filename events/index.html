@@ -245,7 +245,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .article-content table.data.full td.l { white-space: nowrap; }
     .article-content details.more { margin: 24px 0 0; }
     .ev-facts .aud { flex-basis: 100%; order: -1; color: #374151; }
-    .article-content .download + details.more { margin-top: 36px; }
+    .article-content .download + details.more, .article-content details.more.ov { margin-top: 36px; }
+    .article-content details.more.ov .tablewrap:first-of-type { margin-top: 12px; }
     .article-content details.more summary { cursor: pointer; color: #6b7280; }
     .article-content details.more summary h2 { display: inline; margin: 0 0 0 6px; }
     .article-content details.more ul.small { margin: 12px 0 0; }
@@ -983,7 +984,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <li class="ev" data-r="latin-america" data-c="Brazil" data-t="vendor_conference" data-p="martech b2b general" data-m="2027-10" data-o="0" data-l="local" data-a="hands-on leads" data-s="rd summit | são paulo | rd station (totvs)"><div class="ev-when">Oct 2027<span class="exp">unconfirmed</span></div><div><a class="ev-name" href="https://www.rdsummit.com.br/" target="_blank" rel="noopener">RD Summit</a><div class="ev-where">São Paulo, Brazil · Vendor conference · Martech &amp; CRM, B2B, Digital marketing <span class="ev-by">· RD Station (TOTVS)</span></div><div class="ev-facts"><span class="aud">Who attends: <b>marketing, sales and e-commerce professionals</b></span><span>Language: <b>Portuguese</b></span><span><b>≈20,000</b> people</span></div></div></li>
   </ul>
   </section>
-  <h2 id="overview">Marketing events by region and topic</h2>
+  <details class="more ov"><summary><h2 id="overview">Marketing events by region and topic</h2></summary>
 <div class="tablewrap"><table class="data">
 <thead><tr><th class="l">Region</th><th>Events</th><th>Countries</th><th>Dates confirmed</th><th>Call for speakers open</th></tr></thead>
 <tbody>
@@ -1011,6 +1012,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr><td class="l">App growth</td><td>10</td><td>4</td><td>1</td><td>0</td><td>1</td><td>3</td><td>1</td></tr>
 </tbody></table></div>
   <p class="caption">Table 2. Events by topic and region. An event can carry up to three topics, so the topic rows add up to more than the number of events.</p>
+  </details>
   <h2 id="table">All 402 events in one table</h2>
   <p>Every event from the list above, one row each, with ISO dates and plain values. Open it to read or copy; the CSV below adds the source of every fact.</p>
   <details class="full"><summary>Show the table (402 rows)</summary>
