@@ -1,0 +1,553 @@
+year,country,universities_in_top100,best_rank,best_ranked_university
+2003,United States,58,1,Harvard University
+2003,China (mainland),0,,
+2003,United Kingdom,9,5,University of Cambridge
+2003,Switzerland,3,25,Swiss Federal Institute of Technology Zurich
+2003,Australia,2,49,The Australian National University
+2003,Germany,5,48,University of Munich
+2003,France,2,65,Pierre and Marie Curie University - Paris 6
+2003,Canada,4,23,University of Toronto
+2003,Japan,5,19,The University of Tokyo
+2003,Netherlands,3,40,Utrecht University
+2003,Sweden,3,39,Karolinska Institute
+2003,Belgium,1,99,Ghent University
+2003,Denmark,1,65,University of Copenhagen
+2003,Israel,1,94,The Hebrew University of Jerusalem
+2003,Hong Kong SAR,0,,
+2003,Singapore,0,,
+2003,Norway,1,63,University of Oslo
+2003,South Korea,0,,
+2003,Austria,1,84,University of Vienna
+2003,Finland,1,74,University of Helsinki
+2003,Italy,1,70,University of Roma - La Sapienza
+2003,Russia,0,,
+2003,Saudi Arabia,0,,
+2004,United States,51,1,Harvard University
+2004,China (mainland),0,,
+2004,United Kingdom,11,3,University of Cambridge
+2004,Switzerland,3,27,Swiss Federal Institute of Technology Zurich
+2004,Australia,2,53,The Australian National University
+2004,Germany,7,45,Technical University Munich
+2004,France,4,41,Pierre and Marie Curie University - Paris 6
+2004,Canada,4,24,University of Toronto
+2004,Japan,5,14,The University of Tokyo
+2004,Netherlands,2,39,Utrecht University
+2004,Sweden,4,46,Karolinska Institute
+2004,Belgium,0,,
+2004,Denmark,1,59,University of Copenhagen
+2004,Israel,1,90,The Hebrew University of Jerusalem
+2004,Hong Kong SAR,0,,
+2004,Singapore,0,,
+2004,Norway,1,68,University of Oslo
+2004,South Korea,0,,
+2004,Austria,1,86,University of Vienna
+2004,Finland,1,72,University of Helsinki
+2004,Italy,1,93,University of Roma - La Sapienza
+2004,Russia,1,66,Moscow State University
+2004,Saudi Arabia,0,,
+2005,United States,53,1,Harvard University
+2005,China (mainland),0,,
+2005,United Kingdom,11,2,University of Cambridge
+2005,Switzerland,3,27,Swiss Federal Institute of Technology Zurich
+2005,Australia,2,56,The Australian National University
+2005,Germany,5,51,University of Munich
+2005,France,4,46,Pierre and Marie Curie University - Paris 6
+2005,Canada,4,24,University of Toronto
+2005,Japan,5,20,The University of Tokyo
+2005,Netherlands,2,41,Utrecht University
+2005,Sweden,4,45,Karolinska Institute
+2005,Belgium,0,,
+2005,Denmark,1,57,University of Copenhagen
+2005,Israel,1,78,The Hebrew University of Jerusalem
+2005,Hong Kong SAR,0,,
+2005,Singapore,0,,
+2005,Norway,1,69,University of Oslo
+2005,South Korea,0,,
+2005,Austria,1,85,University of Vienna
+2005,Finland,1,76,University of Helsinki
+2005,Italy,1,97,University of Roma - La Sapienza
+2005,Russia,1,67,Moscow State University
+2005,Saudi Arabia,0,,
+2006,United States,54,1,Harvard University
+2006,China (mainland),0,,
+2006,United Kingdom,11,2,University of Cambridge
+2006,Switzerland,3,27,Swiss Federal Institute of Technology Zurich
+2006,Australia,2,54,The Australian National University
+2006,Germany,5,51,University of Munich
+2006,France,4,45,Pierre and Marie Curie University - Paris 6
+2006,Canada,4,24,University of Toronto
+2006,Japan,6,19,The University of Tokyo
+2006,Netherlands,2,40,Utrecht University
+2006,Sweden,4,48,Karolinska Institute
+2006,Belgium,0,,
+2006,Denmark,1,56,University of Copenhagen
+2006,Israel,1,60,The Hebrew University of Jerusalem
+2006,Hong Kong SAR,0,,
+2006,Singapore,0,,
+2006,Norway,1,68,University of Oslo
+2006,South Korea,0,,
+2006,Austria,0,,
+2006,Finland,1,74,University of Helsinki
+2006,Italy,1,100,University of Roma - La Sapienza
+2006,Russia,1,70,Moscow State University
+2006,Saudi Arabia,0,,
+2007,United States,54,1,Harvard University
+2007,China (mainland),0,,
+2007,United Kingdom,11,4,University of Cambridge
+2007,Switzerland,3,27,Swiss Federal Institute of Technology Zurich
+2007,Australia,2,57,The Australian National University
+2007,Germany,6,53,University of Munich
+2007,France,4,39,Pierre and Marie Curie University - Paris 6
+2007,Canada,4,23,University of Toronto
+2007,Japan,6,20,The University of Tokyo
+2007,Netherlands,2,42,Utrecht University
+2007,Sweden,4,53,Karolinska Institute
+2007,Belgium,0,,
+2007,Denmark,1,46,University of Copenhagen
+2007,Israel,1,64,The Hebrew University of Jerusalem
+2007,Hong Kong SAR,0,,
+2007,Singapore,0,,
+2007,Norway,1,69,University of Oslo
+2007,South Korea,0,,
+2007,Austria,0,,
+2007,Finland,1,73,University of Helsinki
+2007,Italy,0,,
+2007,Russia,1,76,Moscow State University
+2007,Saudi Arabia,0,,
+2008,United States,54,1,Harvard University
+2008,China (mainland),0,,
+2008,United Kingdom,11,4,University of Cambridge
+2008,Switzerland,3,24,Swiss Federal Institute of Technology Zurich
+2008,Australia,3,59,The Australian National University
+2008,Germany,6,55,University of Munich
+2008,France,3,42,Pierre and Marie Curie University - Paris 6
+2008,Canada,4,24,University of Toronto
+2008,Japan,4,19,The University of Tokyo
+2008,Netherlands,2,47,Utrecht University
+2008,Sweden,4,51,Karolinska Institute
+2008,Belgium,0,,
+2008,Denmark,2,45,University of Copenhagen
+2008,Israel,1,65,The Hebrew University of Jerusalem
+2008,Hong Kong SAR,0,,
+2008,Singapore,0,,
+2008,Norway,1,64,University of Oslo
+2008,South Korea,0,,
+2008,Austria,0,,
+2008,Finland,1,68,University of Helsinki
+2008,Italy,0,,
+2008,Russia,1,70,Moscow State University
+2008,Saudi Arabia,0,,
+2009,United States,55,1,Harvard University
+2009,China (mainland),0,,
+2009,United Kingdom,11,4,University of Cambridge
+2009,Switzerland,3,23,Swiss Federal Institute of Technology Zurich
+2009,Australia,3,59,The Australian National University
+2009,Germany,5,55,University of Munich
+2009,France,3,40,Pierre and Marie Curie University - Paris 6
+2009,Canada,4,27,University of Toronto
+2009,Japan,5,20,The University of Tokyo
+2009,Netherlands,2,52,Utrecht University
+2009,Sweden,3,50,Karolinska Institute
+2009,Belgium,0,,
+2009,Denmark,2,43,University of Copenhagen
+2009,Israel,1,64,The Hebrew University of Jerusalem
+2009,Hong Kong SAR,0,,
+2009,Singapore,0,,
+2009,Norway,1,65,University of Oslo
+2009,South Korea,0,,
+2009,Austria,0,,
+2009,Finland,1,72,University of Helsinki
+2009,Italy,0,,
+2009,Russia,1,77,Moscow State University
+2009,Saudi Arabia,0,,
+2010,United States,54,1,Harvard University
+2010,China (mainland),0,,
+2010,United Kingdom,11,5,University of Cambridge
+2010,Switzerland,3,23,Swiss Federal Institute of Technology Zurich
+2010,Australia,3,59,The Australian National University
+2010,Germany,5,52,University of Munich
+2010,France,3,39,Pierre and Marie Curie University - Paris 6
+2010,Canada,4,27,University of Toronto
+2010,Japan,5,20,The University of Tokyo
+2010,Netherlands,2,50,Utrecht University
+2010,Sweden,3,42,Karolinska Institute
+2010,Belgium,1,90,Ghent University
+2010,Denmark,2,40,University of Copenhagen
+2010,Israel,1,72,The Hebrew University of Jerusalem
+2010,Hong Kong SAR,0,,
+2010,Singapore,0,,
+2010,Norway,1,75,University of Oslo
+2010,South Korea,0,,
+2010,Austria,0,,
+2010,Finland,1,72,University of Helsinki
+2010,Italy,0,,
+2010,Russia,1,74,Moscow State University
+2010,Saudi Arabia,0,,
+2011,United States,53,1,Harvard University
+2011,China (mainland),0,,
+2011,United Kingdom,10,5,University of Cambridge
+2011,Switzerland,4,23,Swiss Federal Institute of Technology Zurich
+2011,Australia,4,60,University of Melbourne
+2011,Germany,6,47,Technical University Munich
+2011,France,3,40,University of Paris Sud (Paris 11)
+2011,Canada,4,26,University of Toronto
+2011,Japan,5,21,The University of Tokyo
+2011,Netherlands,2,48,Utrecht University
+2011,Sweden,3,44,Karolinska Institute
+2011,Belgium,1,89,Ghent University
+2011,Denmark,2,43,University of Copenhagen
+2011,Israel,1,57,The Hebrew University of Jerusalem
+2011,Hong Kong SAR,0,,
+2011,Singapore,0,,
+2011,Norway,1,75,University of Oslo
+2011,South Korea,0,,
+2011,Austria,0,,
+2011,Finland,1,74,University of Helsinki
+2011,Italy,0,,
+2011,Russia,1,77,Moscow State University
+2011,Saudi Arabia,0,,
+2012,United States,53,1,Harvard University
+2012,China (mainland),0,,
+2012,United Kingdom,9,5,University of Cambridge
+2012,Switzerland,4,23,Swiss Federal Institute of Technology Zurich
+2012,Australia,5,57,University of Melbourne
+2012,Germany,4,53,Technical University Munich
+2012,France,3,37,University of Paris Sud (Paris 11)
+2012,Canada,4,27,University of Toronto
+2012,Japan,4,20,The University of Tokyo
+2012,Netherlands,2,53,Utrecht University
+2012,Sweden,3,42,Karolinska Institute
+2012,Belgium,1,89,Ghent University
+2012,Denmark,2,44,University of Copenhagen
+2012,Israel,3,53,The Hebrew University of Jerusalem
+2012,Hong Kong SAR,0,,
+2012,Singapore,0,,
+2012,Norway,1,67,University of Oslo
+2012,South Korea,0,,
+2012,Austria,0,,
+2012,Finland,1,73,University of Helsinki
+2012,Italy,0,,
+2012,Russia,1,80,Moscow State University
+2012,Saudi Arabia,0,,
+2013,United States,52,1,Harvard University
+2013,China (mainland),0,,
+2013,United Kingdom,9,5,University of Cambridge
+2013,Switzerland,4,20,Swiss Federal Institute of Technology Zurich
+2013,Australia,5,54,University of Melbourne
+2013,Germany,4,50,Technical University Munich
+2013,France,4,37,Pierre and Marie  Curie University - Paris 6
+2013,Canada,4,28,University of Toronto
+2013,Japan,3,21,The University of Tokyo
+2013,Netherlands,3,52,Utrecht University
+2013,Sweden,3,44,Karolinska Institute
+2013,Belgium,1,85,Ghent University
+2013,Denmark,2,42,University of Copenhagen
+2013,Israel,3,59,The Hebrew University of Jerusalem
+2013,Hong Kong SAR,0,,
+2013,Singapore,0,,
+2013,Norway,1,69,University of Oslo
+2013,South Korea,0,,
+2013,Austria,0,,
+2013,Finland,1,76,University of Helsinki
+2013,Italy,0,,
+2013,Russia,1,79,Moscow State University
+2013,Saudi Arabia,0,,
+2014,United States,52,1,Harvard University
+2014,China (mainland),0,,
+2014,United Kingdom,8,5,University of Cambridge
+2014,Switzerland,5,19,Swiss Federal Institute of Technology Zurich
+2014,Australia,4,44,The University of Melbourne
+2014,Germany,4,49,Heidelberg University; University of Munich
+2014,France,4,35,Pierre and Marie  Curie University - Paris 6
+2014,Canada,4,24,University of Toronto
+2014,Japan,3,21,The University of Tokyo
+2014,Netherlands,4,57,Utrecht University
+2014,Sweden,3,47,Karolinska Institute
+2014,Belgium,2,70,Ghent University
+2014,Denmark,2,39,University of Copenhagen
+2014,Israel,2,70,The Hebrew University of Jerusalem
+2014,Hong Kong SAR,0,,
+2014,Singapore,0,,
+2014,Norway,1,69,University of Oslo
+2014,South Korea,0,,
+2014,Austria,0,,
+2014,Finland,1,73,University of Helsinki
+2014,Italy,0,,
+2014,Russia,1,84,Moscow State University
+2014,Saudi Arabia,0,,
+2015,United States,51,1,Harvard University
+2015,China (mainland),0,,
+2015,United Kingdom,9,5,University of Cambridge
+2015,Switzerland,4,20,Swiss Federal Institute of Technology Zurich
+2015,Australia,4,44,The University of Melbourne
+2015,Germany,4,46,Heidelberg University
+2015,France,4,36,Pierre and Marie Curie University - Paris 6
+2015,Canada,4,25,University of Toronto
+2015,Japan,4,21,The University of Tokyo
+2015,Netherlands,4,56,Utrecht University
+2015,Sweden,3,48,Karolinska Institute
+2015,Belgium,2,71,Ghent University
+2015,Denmark,2,35,University of Copenhagen
+2015,Israel,2,67,The Hebrew University of Jerusalem
+2015,Hong Kong SAR,0,,
+2015,Singapore,0,,
+2015,Norway,1,58,University of Oslo
+2015,South Korea,0,,
+2015,Austria,0,,
+2015,Finland,1,67,University of Helsinki
+2015,Italy,0,,
+2015,Russia,1,86,Moscow State University
+2015,Saudi Arabia,0,,
+2016,United States,50,1,Harvard University
+2016,China (mainland),2,58,Tsinghua University
+2016,United Kingdom,8,4,University of Cambridge
+2016,Switzerland,4,19,Swiss Federal Institute of Technology Zurich
+2016,Australia,6,40,The University of Melbourne
+2016,Germany,3,47,Heidelberg University; Technical University Munich
+2016,France,3,39,Pierre and Marie  Curie University - Paris 6
+2016,Canada,4,27,University of Toronto
+2016,Japan,4,20,The University of Tokyo
+2016,Netherlands,3,65,Utrecht University
+2016,Sweden,3,44,Karolinska Institute
+2016,Belgium,2,62,Ghent University
+2016,Denmark,2,30,University of Copenhagen
+2016,Israel,2,69,Technion-Israel Institute of Technology
+2016,Hong Kong SAR,0,,
+2016,Singapore,1,83,National University of Singapore
+2016,Norway,1,67,University of Oslo
+2016,South Korea,0,,
+2016,Austria,0,,
+2016,Finland,1,56,University of Helsinki
+2016,Italy,0,,
+2016,Russia,1,87,Moscow State University
+2016,Saudi Arabia,0,,
+2017,United States,48,1,Harvard University
+2017,China (mainland),2,48,Tsinghua University
+2017,United Kingdom,9,3,University of Cambridge
+2017,Switzerland,5,19,Swiss Federal Institute of Technology Zurich
+2017,Australia,6,39,The University of Melbourne
+2017,Germany,4,42,Heidelberg University
+2017,France,3,40,Pierre and Marie Curie University - Paris 6
+2017,Canada,4,23,University of Toronto
+2017,Japan,3,24,The University of Tokyo
+2017,Netherlands,4,47,Utrecht University
+2017,Sweden,3,44,Karolinska Institute
+2017,Belgium,2,69,Ghent University
+2017,Denmark,2,30,University of Copenhagen
+2017,Israel,1,93,Technion-Israel Institute of Technology
+2017,Hong Kong SAR,0,,
+2017,Singapore,1,91,National University of Singapore
+2017,Norway,1,62,University of Oslo
+2017,South Korea,0,,
+2017,Austria,0,,
+2017,Finland,1,56,University of Helsinki
+2017,Italy,0,,
+2017,Russia,1,93,Moscow State University
+2017,Saudi Arabia,0,,
+2018,United States,46,1,Harvard University
+2018,China (mainland),3,45,Tsinghua University
+2018,United Kingdom,8,3,University of Cambridge
+2018,Switzerland,5,19,Swiss Federal Institute of Technology Zurich
+2018,Australia,6,38,The University of Melbourne
+2018,Germany,4,47,Heidelberg University
+2018,France,3,36,Sorbonne University
+2018,Canada,4,23,University of Toronto
+2018,Japan,3,22,The University of Tokyo
+2018,Netherlands,4,51,Utrecht University
+2018,Sweden,3,44,Karolinska Institute
+2018,Belgium,2,61,Ghent University
+2018,Denmark,2,29,University of Copenhagen
+2018,Israel,2,77,Technion-Israel Institute of Technology
+2018,Hong Kong SAR,0,,
+2018,Singapore,2,85,National University of Singapore
+2018,Norway,1,62,University of Oslo
+2018,South Korea,0,,
+2018,Austria,0,,
+2018,Finland,1,57,University of Helsinki
+2018,Italy,0,,
+2018,Russia,1,86,Moscow State University
+2018,Saudi Arabia,0,,
+2019,United States,45,1,Harvard University
+2019,China (mainland),4,43,Tsinghua University
+2019,United Kingdom,8,3,University of Cambridge
+2019,Switzerland,5,19,Swiss Federal Institute of Technology Zurich
+2019,Australia,7,41,The University of Melbourne
+2019,Germany,4,47,Heidelberg University
+2019,France,3,37,University of Paris-Sud (Paris 11)
+2019,Canada,4,24,University of Toronto
+2019,Japan,3,25,The University of Tokyo
+2019,Netherlands,4,49,Utrecht University
+2019,Sweden,3,38,Karolinska Institute
+2019,Belgium,2,66,Ghent University
+2019,Denmark,2,26,University of Copenhagen
+2019,Israel,1,85,Technion-Israel Institute of Technology
+2019,Hong Kong SAR,0,,
+2019,Singapore,2,67,National University of Singapore
+2019,Norway,1,59,University of Oslo
+2019,South Korea,0,,
+2019,Austria,0,,
+2019,Finland,1,63,University of Helsinki
+2019,Italy,0,,
+2019,Russia,1,87,Moscow State University
+2019,Saudi Arabia,0,,
+2020,United States,41,1,Harvard University
+2020,China (mainland),6,29,Tsinghua University
+2020,United Kingdom,8,3,University of Cambridge
+2020,Switzerland,5,20,ETH Zurich
+2020,Australia,7,35,The University of Melbourne
+2020,Germany,4,51,University of Munich
+2020,France,5,14,Paris-Saclay University
+2020,Canada,4,23,University of Toronto
+2020,Japan,3,26,The University of Tokyo
+2020,Netherlands,4,52,Utrecht University
+2020,Sweden,3,45,Karolinska Institute
+2020,Belgium,2,66,Ghent University
+2020,Denmark,2,33,University of Copenhagen
+2020,Israel,1,93,Weizmann Institute of Science
+2020,Hong Kong SAR,0,,
+2020,Singapore,2,80,National University of Singapore
+2020,Norway,1,60,University of Oslo
+2020,South Korea,0,,
+2020,Austria,0,,
+2020,Finland,1,74,University of Helsinki
+2020,Italy,0,,
+2020,Russia,1,93,Moscow State University
+2020,Saudi Arabia,0,,
+2021,United States,40,1,Harvard University
+2021,China (mainland),7,28,Tsinghua University
+2021,United Kingdom,8,3,University of Cambridge
+2021,Switzerland,5,21,ETH Zurich
+2021,Australia,7,33,The University of Melbourne
+2021,Germany,4,48,University of Munich
+2021,France,4,13,Paris-Saclay University
+2021,Canada,4,22,University of Toronto
+2021,Japan,3,24,The University of Tokyo
+2021,Netherlands,3,50,Utrecht University
+2021,Sweden,3,42,Karolinska Institute
+2021,Belgium,2,71,Ghent University
+2021,Denmark,2,30,University of Copenhagen
+2021,Israel,3,90,The Hebrew University of Jerusalem
+2021,Hong Kong SAR,0,,
+2021,Singapore,2,75,National University of Singapore
+2021,Norway,1,61,University of Oslo
+2021,South Korea,0,,
+2021,Austria,0,,
+2021,Finland,1,82,University of Helsinki
+2021,Italy,0,,
+2021,Russia,1,97,Moscow State University
+2021,Saudi Arabia,0,,
+2022,United States,39,1,Harvard University
+2022,China (mainland),8,26,Tsinghua University
+2022,United Kingdom,8,4,University of Cambridge
+2022,Switzerland,4,20,ETH Zurich
+2022,Australia,7,32,The University of Melbourne
+2022,Germany,4,56,Technical University of Munich
+2022,France,4,16,Paris-Saclay University
+2022,Canada,5,22,University of Toronto
+2022,Japan,2,24,The University of Tokyo
+2022,Netherlands,3,54,Utrecht University
+2022,Sweden,3,41,Karolinska Institute
+2022,Belgium,2,74,Ghent University
+2022,Denmark,2,39,University of Copenhagen
+2022,Israel,3,77,The Hebrew University of Jerusalem
+2022,Hong Kong SAR,1,96,The University of Hong Kong
+2022,Singapore,2,71,National University of Singapore
+2022,Norway,1,67,University of Oslo
+2022,South Korea,1,98,Seoul National University
+2022,Austria,0,,
+2022,Finland,1,92,University of Helsinki
+2022,Italy,0,,
+2022,Russia,0,,
+2022,Saudi Arabia,0,,
+2023,United States,38,1,Harvard University
+2023,China (mainland),10,22,Tsinghua University
+2023,United Kingdom,8,4,University of Cambridge
+2023,Switzerland,5,20,ETH Zurich
+2023,Australia,6,35,The University of Melbourne
+2023,Germany,4,55,Heidelberg University
+2023,France,4,15,Paris-Saclay University
+2023,Canada,5,24,University of Toronto
+2023,Japan,2,27,The University of Tokyo
+2023,Netherlands,3,52,Utrecht University
+2023,Sweden,3,37,Karolinska Institute
+2023,Belgium,2,84,Ghent University
+2023,Denmark,2,32,University of Copenhagen
+2023,Israel,3,68,Weizmann Institute of Science
+2023,Hong Kong SAR,1,88,The University of Hong Kong
+2023,Singapore,2,71,National University of Singapore
+2023,Norway,1,73,University of Oslo
+2023,South Korea,1,94,Seoul National University
+2023,Austria,0,,
+2023,Finland,0,,
+2023,Italy,0,,
+2023,Russia,0,,
+2023,Saudi Arabia,0,,
+2024,United States,38,1,Harvard University
+2024,China (mainland),13,22,Tsinghua University
+2024,United Kingdom,8,4,University of Cambridge
+2024,Switzerland,5,21,ETH Zurich
+2024,Australia,5,37,The University of Melbourne
+2024,Germany,4,43,University of Munich
+2024,France,4,12,Paris-Saclay University
+2024,Canada,3,26,University of Toronto
+2024,Japan,2,28,The University of Tokyo
+2024,Netherlands,2,55,Utrecht University
+2024,Sweden,2,43,Karolinska Institute
+2024,Belgium,2,78,KU Leuven
+2024,Denmark,2,32,University of Copenhagen
+2024,Israel,3,69,Weizmann Institute of Science
+2024,Hong Kong SAR,1,69,The University of Hong Kong
+2024,Singapore,2,68,National University of Singapore
+2024,Norway,1,72,University of Oslo
+2024,South Korea,1,86,Seoul National University
+2024,Austria,0,,
+2024,Finland,1,99,University of Helsinki
+2024,Italy,0,,
+2024,Russia,0,,
+2024,Saudi Arabia,1,90,King Saud University
+2025,United States,37,1,Harvard University
+2025,China (mainland),13,18,Tsinghua University
+2025,United Kingdom,8,4,University of Cambridge
+2025,Switzerland,5,22,ETH Zurich
+2025,Australia,5,38,The University of Melbourne
+2025,Germany,4,42,University of Munich
+2025,France,4,13,Paris-Saclay University
+2025,Canada,3,25,University of Toronto
+2025,Japan,2,31,The University of Tokyo
+2025,Netherlands,2,56,Utrecht University
+2025,Sweden,3,50,Karolinska Institute
+2025,Belgium,2,76,KU Leuven
+2025,Denmark,2,35,University of Copenhagen
+2025,Israel,3,71,Weizmann Institute of Science
+2025,Hong Kong SAR,2,67,The University of Hong Kong
+2025,Singapore,2,56,National University of Singapore
+2025,Norway,1,83,University of Oslo
+2025,South Korea,1,81,Seoul National University
+2025,Austria,0,,
+2025,Finland,1,94,University of Helsinki
+2025,Italy,0,,
+2025,Russia,0,,
+2025,Saudi Arabia,0,,
+2026,United States,37,1,Harvard University
+2026,China (mainland),16,18,Tsinghua University
+2026,United Kingdom,8,4,University of Cambridge
+2026,Switzerland,5,19,ETH Zurich
+2026,Australia,5,37,The University of Melbourne
+2026,Germany,4,45,Technical University of Munich
+2026,France,4,13,Paris-Saclay University
+2026,Canada,3,24,University of Toronto
+2026,Japan,2,30,The University of Tokyo
+2026,Netherlands,2,60,Utrecht University
+2026,Sweden,2,41,Karolinska Institute
+2026,Belgium,2,87,KU Leuven
+2026,Denmark,2,34,University of Copenhagen
+2026,Israel,2,71,Weizmann Institute of Science
+2026,Hong Kong SAR,2,62,The University of Hong Kong
+2026,Singapore,2,53,National University of Singapore
+2026,Norway,1,86,University of Oslo
+2026,South Korea,1,87,Seoul National University
+2026,Austria,0,,
+2026,Finland,0,,
+2026,Italy,0,,
+2026,Russia,0,,
+2026,Saudi Arabia,0,,
