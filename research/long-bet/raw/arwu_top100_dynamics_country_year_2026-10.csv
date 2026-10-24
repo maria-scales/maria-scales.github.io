@@ -1,0 +1,553 @@
+year,country_code,country_arwu,n_top100,n_top10,n_top50,best_rank,best_university_id,n_entries,n_exits
+2003,AU,Australia,2,0,1,49,australian-national-university,,
+2004,AU,Australia,2,0,0,53,australian-national-university,0,0
+2005,AU,Australia,2,0,0,56,australian-national-university,0,0
+2006,AU,Australia,2,0,0,54,australian-national-university,0,0
+2007,AU,Australia,2,0,0,57,australian-national-university,0,0
+2008,AU,Australia,3,0,0,59,australian-national-university,1,0
+2009,AU,Australia,3,0,0,59,australian-national-university,0,0
+2010,AU,Australia,3,0,0,59,australian-national-university,0,0
+2011,AU,Australia,4,0,0,60,the-university-of-melbourne,1,0
+2012,AU,Australia,5,0,0,57,the-university-of-melbourne,1,0
+2013,AU,Australia,5,0,0,54,the-university-of-melbourne,0,0
+2014,AU,Australia,4,0,1,44,the-university-of-melbourne,0,1
+2015,AU,Australia,4,0,1,44,the-university-of-melbourne,0,0
+2016,AU,Australia,6,0,1,40,the-university-of-melbourne,2,0
+2017,AU,Australia,6,0,1,39,the-university-of-melbourne,0,0
+2018,AU,Australia,6,0,1,38,the-university-of-melbourne,0,0
+2019,AU,Australia,7,0,1,41,the-university-of-melbourne,1,0
+2020,AU,Australia,7,0,1,35,the-university-of-melbourne,0,0
+2021,AU,Australia,7,0,1,33,the-university-of-melbourne,0,0
+2022,AU,Australia,7,0,2,32,the-university-of-melbourne,0,0
+2023,AU,Australia,6,0,1,35,the-university-of-melbourne,0,1
+2024,AU,Australia,5,0,1,37,the-university-of-melbourne,0,1
+2025,AU,Australia,5,0,1,38,the-university-of-melbourne,0,0
+2026,AU,Australia,5,0,1,37,the-university-of-melbourne,0,0
+2003,AT,Austria,1,0,0,84,universitat-wien,,
+2004,AT,Austria,1,0,0,86,universitat-wien,0,0
+2005,AT,Austria,1,0,0,85,universitat-wien,0,0
+2006,AT,Austria,0,0,0,,,0,1
+2007,AT,Austria,0,0,0,,,0,0
+2008,AT,Austria,0,0,0,,,0,0
+2009,AT,Austria,0,0,0,,,0,0
+2010,AT,Austria,0,0,0,,,0,0
+2011,AT,Austria,0,0,0,,,0,0
+2012,AT,Austria,0,0,0,,,0,0
+2013,AT,Austria,0,0,0,,,0,0
+2014,AT,Austria,0,0,0,,,0,0
+2015,AT,Austria,0,0,0,,,0,0
+2016,AT,Austria,0,0,0,,,0,0
+2017,AT,Austria,0,0,0,,,0,0
+2018,AT,Austria,0,0,0,,,0,0
+2019,AT,Austria,0,0,0,,,0,0
+2020,AT,Austria,0,0,0,,,0,0
+2021,AT,Austria,0,0,0,,,0,0
+2022,AT,Austria,0,0,0,,,0,0
+2023,AT,Austria,0,0,0,,,0,0
+2024,AT,Austria,0,0,0,,,0,0
+2025,AT,Austria,0,0,0,,,0,0
+2026,AT,Austria,0,0,0,,,0,0
+2003,BE,Belgium,1,0,0,99,ghent-university,,
+2004,BE,Belgium,0,0,0,,,0,1
+2005,BE,Belgium,0,0,0,,,0,0
+2006,BE,Belgium,0,0,0,,,0,0
+2007,BE,Belgium,0,0,0,,,0,0
+2008,BE,Belgium,0,0,0,,,0,0
+2009,BE,Belgium,0,0,0,,,0,0
+2010,BE,Belgium,1,0,0,90,ghent-university,1,0
+2011,BE,Belgium,1,0,0,89,ghent-university,0,0
+2012,BE,Belgium,1,0,0,89,ghent-university,0,0
+2013,BE,Belgium,1,0,0,85,ghent-university,0,0
+2014,BE,Belgium,2,0,0,70,ghent-university,1,0
+2015,BE,Belgium,2,0,0,71,ghent-university,0,0
+2016,BE,Belgium,2,0,0,62,ghent-university,0,0
+2017,BE,Belgium,2,0,0,69,ghent-university,0,0
+2018,BE,Belgium,2,0,0,61,ghent-university,0,0
+2019,BE,Belgium,2,0,0,66,ghent-university,0,0
+2020,BE,Belgium,2,0,0,66,ghent-university,0,0
+2021,BE,Belgium,2,0,0,71,ghent-university,0,0
+2022,BE,Belgium,2,0,0,74,ghent-university,0,0
+2023,BE,Belgium,2,0,0,84,ghent-university,0,0
+2024,BE,Belgium,2,0,0,78,ku-leuven,0,0
+2025,BE,Belgium,2,0,0,76,ku-leuven,0,0
+2026,BE,Belgium,2,0,0,87,ku-leuven,0,0
+2003,CA,Canada,4,0,2,23,university-of-toronto,,
+2004,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2005,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2006,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2007,CA,Canada,4,0,2,23,university-of-toronto,0,0
+2008,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2009,CA,Canada,4,0,2,27,university-of-toronto,0,0
+2010,CA,Canada,4,0,2,27,university-of-toronto,0,0
+2011,CA,Canada,4,0,2,26,university-of-toronto,0,0
+2012,CA,Canada,4,0,2,27,university-of-toronto,0,0
+2013,CA,Canada,4,0,2,28,university-of-toronto,0,0
+2014,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2015,CA,Canada,4,0,2,25,university-of-toronto,0,0
+2016,CA,Canada,4,0,2,27,university-of-toronto,0,0
+2017,CA,Canada,4,0,2,23,university-of-toronto,0,0
+2018,CA,Canada,4,0,2,23,university-of-toronto,0,0
+2019,CA,Canada,4,0,2,24,university-of-toronto,0,0
+2020,CA,Canada,4,0,2,23,university-of-toronto,0,0
+2021,CA,Canada,4,0,2,22,university-of-toronto,0,0
+2022,CA,Canada,5,0,2,22,university-of-toronto,1,0
+2023,CA,Canada,5,0,2,24,university-of-toronto,0,0
+2024,CA,Canada,3,0,2,26,university-of-toronto,0,2
+2025,CA,Canada,3,0,1,25,university-of-toronto,0,0
+2026,CA,Canada,3,0,1,24,university-of-toronto,0,0
+2003,CN,China,0,0,0,,,,
+2004,CN,China,0,0,0,,,0,0
+2005,CN,China,0,0,0,,,0,0
+2006,CN,China,0,0,0,,,0,0
+2007,CN,China,0,0,0,,,0,0
+2008,CN,China,0,0,0,,,0,0
+2009,CN,China,0,0,0,,,0,0
+2010,CN,China,0,0,0,,,0,0
+2011,CN,China,0,0,0,,,0,0
+2012,CN,China,0,0,0,,,0,0
+2013,CN,China,0,0,0,,,0,0
+2014,CN,China,0,0,0,,,0,0
+2015,CN,China,0,0,0,,,0,0
+2016,CN,China,2,0,0,58,tsinghua-university,2,0
+2017,CN,China,2,0,1,48,tsinghua-university,0,0
+2018,CN,China,3,0,1,45,tsinghua-university,1,0
+2019,CN,China,4,0,1,43,tsinghua-university,1,0
+2020,CN,China,6,0,2,29,tsinghua-university,2,0
+2021,CN,China,7,0,2,28,tsinghua-university,1,0
+2022,CN,China,8,0,3,26,tsinghua-university,1,0
+2023,CN,China,10,0,4,22,tsinghua-university,2,0
+2024,CN,China,13,0,6,22,tsinghua-university,3,0
+2025,CN,China,13,0,6,18,tsinghua-university,0,0
+2026,CN,China,16,0,6,18,tsinghua-university,3,0
+2003,HK,China-Hong Kong,0,0,0,,,,
+2004,HK,China-Hong Kong,0,0,0,,,0,0
+2005,HK,China-Hong Kong,0,0,0,,,0,0
+2006,HK,China-Hong Kong,0,0,0,,,0,0
+2007,HK,China-Hong Kong,0,0,0,,,0,0
+2008,HK,China-Hong Kong,0,0,0,,,0,0
+2009,HK,China-Hong Kong,0,0,0,,,0,0
+2010,HK,China-Hong Kong,0,0,0,,,0,0
+2011,HK,China-Hong Kong,0,0,0,,,0,0
+2012,HK,China-Hong Kong,0,0,0,,,0,0
+2013,HK,China-Hong Kong,0,0,0,,,0,0
+2014,HK,China-Hong Kong,0,0,0,,,0,0
+2015,HK,China-Hong Kong,0,0,0,,,0,0
+2016,HK,China-Hong Kong,0,0,0,,,0,0
+2017,HK,China-Hong Kong,0,0,0,,,0,0
+2018,HK,China-Hong Kong,0,0,0,,,0,0
+2019,HK,China-Hong Kong,0,0,0,,,0,0
+2020,HK,China-Hong Kong,0,0,0,,,0,0
+2021,HK,China-Hong Kong,0,0,0,,,0,0
+2022,HK,China-Hong Kong,1,0,0,96,the-university-of-hong-kong,1,0
+2023,HK,China-Hong Kong,1,0,0,88,the-university-of-hong-kong,0,0
+2024,HK,China-Hong Kong,1,0,0,69,the-university-of-hong-kong,0,0
+2025,HK,China-Hong Kong,2,0,0,67,the-university-of-hong-kong,1,0
+2026,HK,China-Hong Kong,2,0,0,62,the-university-of-hong-kong,0,0
+2003,DK,Denmark,1,0,0,65,university-of-copenhagen,,
+2004,DK,Denmark,1,0,0,59,university-of-copenhagen,0,0
+2005,DK,Denmark,1,0,0,57,university-of-copenhagen,0,0
+2006,DK,Denmark,1,0,0,56,university-of-copenhagen,0,0
+2007,DK,Denmark,1,0,1,46,university-of-copenhagen,0,0
+2008,DK,Denmark,2,0,1,45,university-of-copenhagen,1,0
+2009,DK,Denmark,2,0,1,43,university-of-copenhagen,0,0
+2010,DK,Denmark,2,0,1,40,university-of-copenhagen,0,0
+2011,DK,Denmark,2,0,1,43,university-of-copenhagen,0,0
+2012,DK,Denmark,2,0,1,44,university-of-copenhagen,0,0
+2013,DK,Denmark,2,0,1,42,university-of-copenhagen,0,0
+2014,DK,Denmark,2,0,1,39,university-of-copenhagen,0,0
+2015,DK,Denmark,2,0,1,35,university-of-copenhagen,0,0
+2016,DK,Denmark,2,0,1,30,university-of-copenhagen,0,0
+2017,DK,Denmark,2,0,1,30,university-of-copenhagen,0,0
+2018,DK,Denmark,2,0,1,29,university-of-copenhagen,0,0
+2019,DK,Denmark,2,0,1,26,university-of-copenhagen,0,0
+2020,DK,Denmark,2,0,1,33,university-of-copenhagen,0,0
+2021,DK,Denmark,2,0,1,30,university-of-copenhagen,0,0
+2022,DK,Denmark,2,0,1,39,university-of-copenhagen,0,0
+2023,DK,Denmark,2,0,1,32,university-of-copenhagen,0,0
+2024,DK,Denmark,2,0,1,32,university-of-copenhagen,0,0
+2025,DK,Denmark,2,0,1,35,university-of-copenhagen,0,0
+2026,DK,Denmark,2,0,1,34,university-of-copenhagen,0,0
+2003,FI,Finland,1,0,0,74,university-of-helsinki,,
+2004,FI,Finland,1,0,0,72,university-of-helsinki,0,0
+2005,FI,Finland,1,0,0,76,university-of-helsinki,0,0
+2006,FI,Finland,1,0,0,74,university-of-helsinki,0,0
+2007,FI,Finland,1,0,0,73,university-of-helsinki,0,0
+2008,FI,Finland,1,0,0,68,university-of-helsinki,0,0
+2009,FI,Finland,1,0,0,72,university-of-helsinki,0,0
+2010,FI,Finland,1,0,0,72,university-of-helsinki,0,0
+2011,FI,Finland,1,0,0,74,university-of-helsinki,0,0
+2012,FI,Finland,1,0,0,73,university-of-helsinki,0,0
+2013,FI,Finland,1,0,0,76,university-of-helsinki,0,0
+2014,FI,Finland,1,0,0,73,university-of-helsinki,0,0
+2015,FI,Finland,1,0,0,67,university-of-helsinki,0,0
+2016,FI,Finland,1,0,0,56,university-of-helsinki,0,0
+2017,FI,Finland,1,0,0,56,university-of-helsinki,0,0
+2018,FI,Finland,1,0,0,57,university-of-helsinki,0,0
+2019,FI,Finland,1,0,0,63,university-of-helsinki,0,0
+2020,FI,Finland,1,0,0,74,university-of-helsinki,0,0
+2021,FI,Finland,1,0,0,82,university-of-helsinki,0,0
+2022,FI,Finland,1,0,0,92,university-of-helsinki,0,0
+2023,FI,Finland,0,0,0,,,0,1
+2024,FI,Finland,1,0,0,99,university-of-helsinki,1,0
+2025,FI,Finland,1,0,0,94,university-of-helsinki,0,0
+2026,FI,Finland,0,0,0,,,0,1
+2003,FR,France,2,0,0,65,pierre-and-marie-curie-university-paris-6,,
+2004,FR,France,4,0,2,41,pierre-and-marie-curie-university-paris-6,2,0
+2005,FR,France,4,0,1,46,pierre-and-marie-curie-university-paris-6,0,0
+2006,FR,France,4,0,1,45,pierre-and-marie-curie-university-paris-6,0,0
+2007,FR,France,4,0,1,39,pierre-and-marie-curie-university-paris-6,0,0
+2008,FR,France,3,0,2,42,pierre-and-marie-curie-university-paris-6,0,1
+2009,FR,France,3,0,2,40,pierre-and-marie-curie-university-paris-6,0,0
+2010,FR,France,3,0,2,39,pierre-and-marie-curie-university-paris-6,0,0
+2011,FR,France,3,0,2,40,university-of-paris-sud-paris-11,0,0
+2012,FR,France,3,0,2,37,university-of-paris-sud-paris-11,0,0
+2013,FR,France,4,0,2,37,pierre-and-marie-curie-university-paris-6,1,0
+2014,FR,France,4,0,2,35,pierre-and-marie-curie-university-paris-6,0,0
+2015,FR,France,4,0,2,36,pierre-and-marie-curie-university-paris-6,0,0
+2016,FR,France,3,0,2,39,pierre-and-marie-curie-university-paris-6,0,1
+2017,FR,France,3,0,2,40,pierre-and-marie-curie-university-paris-6,0,0
+2018,FR,France,3,0,2,36,sorbonne-universite,1,1
+2019,FR,France,3,0,2,37,university-of-paris-sud-paris-11,0,0
+2020,FR,France,5,0,3,14,universite-paris-saclay,4,2
+2021,FR,France,4,0,3,13,universite-paris-saclay,0,1
+2022,FR,France,4,0,3,16,universite-paris-saclay,1,1
+2023,FR,France,4,0,3,15,universite-paris-saclay,0,0
+2024,FR,France,4,0,3,12,universite-paris-saclay,0,0
+2025,FR,France,4,0,3,13,universite-paris-saclay,0,0
+2026,FR,France,4,0,2,13,universite-paris-saclay,0,0
+2003,DE,Germany,5,0,1,48,ludwig-maximilians-universitat-munchen,,
+2004,DE,Germany,7,0,1,45,technische-universitat-munchen,3,1
+2005,DE,Germany,5,0,0,51,ludwig-maximilians-universitat-munchen,0,2
+2006,DE,Germany,5,0,0,51,ludwig-maximilians-universitat-munchen,0,0
+2007,DE,Germany,6,0,0,53,ludwig-maximilians-universitat-munchen,1,0
+2008,DE,Germany,6,0,0,55,ludwig-maximilians-universitat-munchen,0,0
+2009,DE,Germany,5,0,0,55,ludwig-maximilians-universitat-munchen,0,1
+2010,DE,Germany,5,0,0,52,ludwig-maximilians-universitat-munchen,0,0
+2011,DE,Germany,6,0,1,47,technische-universitat-munchen,1,0
+2012,DE,Germany,4,0,0,53,technische-universitat-munchen,1,3
+2013,DE,Germany,4,0,1,50,technische-universitat-munchen,0,0
+2014,DE,Germany,4,0,2,49,ludwig-maximilians-universitat-munchen; ruprecht-karls-universitat-heidelberg,1,1
+2015,DE,Germany,4,0,1,46,ruprecht-karls-universitat-heidelberg,0,0
+2016,DE,Germany,3,0,2,47,ruprecht-karls-universitat-heidelberg; technische-universitat-munchen,0,1
+2017,DE,Germany,4,0,2,42,ruprecht-karls-universitat-heidelberg,1,0
+2018,DE,Germany,4,0,2,47,ruprecht-karls-universitat-heidelberg,0,0
+2019,DE,Germany,4,0,1,47,ruprecht-karls-universitat-heidelberg,1,1
+2020,DE,Germany,4,0,0,51,ludwig-maximilians-universitat-munchen,0,0
+2021,DE,Germany,4,0,1,48,ludwig-maximilians-universitat-munchen,0,0
+2022,DE,Germany,4,0,0,56,technische-universitat-munchen,0,0
+2023,DE,Germany,4,0,0,55,ruprecht-karls-universitat-heidelberg,0,0
+2024,DE,Germany,4,0,3,43,ludwig-maximilians-universitat-munchen,0,0
+2025,DE,Germany,4,0,2,42,ludwig-maximilians-universitat-munchen,0,0
+2026,DE,Germany,4,0,2,45,technische-universitat-munchen,0,0
+2003,IL,Israel,1,0,0,94,the-hebrew-university-of-jerusalem,,
+2004,IL,Israel,1,0,0,90,the-hebrew-university-of-jerusalem,0,0
+2005,IL,Israel,1,0,0,78,the-hebrew-university-of-jerusalem,0,0
+2006,IL,Israel,1,0,0,60,the-hebrew-university-of-jerusalem,0,0
+2007,IL,Israel,1,0,0,64,the-hebrew-university-of-jerusalem,0,0
+2008,IL,Israel,1,0,0,65,the-hebrew-university-of-jerusalem,0,0
+2009,IL,Israel,1,0,0,64,the-hebrew-university-of-jerusalem,0,0
+2010,IL,Israel,1,0,0,72,the-hebrew-university-of-jerusalem,0,0
+2011,IL,Israel,1,0,0,57,the-hebrew-university-of-jerusalem,0,0
+2012,IL,Israel,3,0,0,53,the-hebrew-university-of-jerusalem,2,0
+2013,IL,Israel,3,0,0,59,the-hebrew-university-of-jerusalem,0,0
+2014,IL,Israel,2,0,0,70,the-hebrew-university-of-jerusalem,0,1
+2015,IL,Israel,2,0,0,67,the-hebrew-university-of-jerusalem,0,0
+2016,IL,Israel,2,0,0,69,technion-israel-institute-of-technology,0,0
+2017,IL,Israel,1,0,0,93,technion-israel-institute-of-technology,0,1
+2018,IL,Israel,2,0,0,77,technion-israel-institute-of-technology,1,0
+2019,IL,Israel,1,0,0,85,technion-israel-institute-of-technology,0,1
+2020,IL,Israel,1,0,0,93,weizmann-institute-of-science,1,1
+2021,IL,Israel,3,0,0,90,the-hebrew-university-of-jerusalem,2,0
+2022,IL,Israel,3,0,0,77,the-hebrew-university-of-jerusalem,0,0
+2023,IL,Israel,3,0,0,68,weizmann-institute-of-science,0,0
+2024,IL,Israel,3,0,0,69,weizmann-institute-of-science,0,0
+2025,IL,Israel,3,0,0,71,weizmann-institute-of-science,0,0
+2026,IL,Israel,2,0,0,71,weizmann-institute-of-science,0,1
+2003,IT,Italy,1,0,0,70,sapienza-university-of-rome,,
+2004,IT,Italy,1,0,0,93,sapienza-university-of-rome,0,0
+2005,IT,Italy,1,0,0,97,sapienza-university-of-rome,0,0
+2006,IT,Italy,1,0,0,100,sapienza-university-of-rome,0,0
+2007,IT,Italy,0,0,0,,,0,1
+2008,IT,Italy,0,0,0,,,0,0
+2009,IT,Italy,0,0,0,,,0,0
+2010,IT,Italy,0,0,0,,,0,0
+2011,IT,Italy,0,0,0,,,0,0
+2012,IT,Italy,0,0,0,,,0,0
+2013,IT,Italy,0,0,0,,,0,0
+2014,IT,Italy,0,0,0,,,0,0
+2015,IT,Italy,0,0,0,,,0,0
+2016,IT,Italy,0,0,0,,,0,0
+2017,IT,Italy,0,0,0,,,0,0
+2018,IT,Italy,0,0,0,,,0,0
+2019,IT,Italy,0,0,0,,,0,0
+2020,IT,Italy,0,0,0,,,0,0
+2021,IT,Italy,0,0,0,,,0,0
+2022,IT,Italy,0,0,0,,,0,0
+2023,IT,Italy,0,0,0,,,0,0
+2024,IT,Italy,0,0,0,,,0,0
+2025,IT,Italy,0,0,0,,,0,0
+2026,IT,Italy,0,0,0,,,0,0
+2003,JP,Japan,5,0,2,19,the-university-of-tokyo,,
+2004,JP,Japan,5,0,2,14,the-university-of-tokyo,0,0
+2005,JP,Japan,5,0,2,20,the-university-of-tokyo,1,1
+2006,JP,Japan,6,0,2,19,the-university-of-tokyo,1,0
+2007,JP,Japan,6,0,2,20,the-university-of-tokyo,0,0
+2008,JP,Japan,4,0,2,19,the-university-of-tokyo,0,2
+2009,JP,Japan,5,0,2,20,the-university-of-tokyo,1,0
+2010,JP,Japan,5,0,2,20,the-university-of-tokyo,0,0
+2011,JP,Japan,5,0,2,21,the-university-of-tokyo,0,0
+2012,JP,Japan,4,0,2,20,the-university-of-tokyo,0,1
+2013,JP,Japan,3,0,2,21,the-university-of-tokyo,0,1
+2014,JP,Japan,3,0,2,21,the-university-of-tokyo,0,0
+2015,JP,Japan,4,0,2,21,the-university-of-tokyo,1,0
+2016,JP,Japan,4,0,2,20,the-university-of-tokyo,0,0
+2017,JP,Japan,3,0,2,24,the-university-of-tokyo,0,1
+2018,JP,Japan,3,0,2,22,the-university-of-tokyo,0,0
+2019,JP,Japan,3,0,2,25,the-university-of-tokyo,0,0
+2020,JP,Japan,3,0,2,26,the-university-of-tokyo,0,0
+2021,JP,Japan,3,0,2,24,the-university-of-tokyo,0,0
+2022,JP,Japan,2,0,2,24,the-university-of-tokyo,0,1
+2023,JP,Japan,2,0,2,27,the-university-of-tokyo,0,0
+2024,JP,Japan,2,0,2,28,the-university-of-tokyo,0,0
+2025,JP,Japan,2,0,2,31,the-university-of-tokyo,0,0
+2026,JP,Japan,2,0,2,30,the-university-of-tokyo,0,0
+2003,NL,Netherlands,3,0,1,40,utrecht-university,,
+2004,NL,Netherlands,2,0,1,39,utrecht-university,0,1
+2005,NL,Netherlands,2,0,1,41,utrecht-university,0,0
+2006,NL,Netherlands,2,0,1,40,utrecht-university,0,0
+2007,NL,Netherlands,2,0,1,42,utrecht-university,0,0
+2008,NL,Netherlands,2,0,1,47,utrecht-university,0,0
+2009,NL,Netherlands,2,0,0,52,utrecht-university,0,0
+2010,NL,Netherlands,2,0,1,50,utrecht-university,0,0
+2011,NL,Netherlands,2,0,1,48,utrecht-university,0,0
+2012,NL,Netherlands,2,0,0,53,utrecht-university,0,0
+2013,NL,Netherlands,3,0,0,52,utrecht-university,1,0
+2014,NL,Netherlands,4,0,0,57,utrecht-university,1,0
+2015,NL,Netherlands,4,0,0,56,utrecht-university,0,0
+2016,NL,Netherlands,3,0,0,65,utrecht-university,0,1
+2017,NL,Netherlands,4,0,1,47,utrecht-university,1,0
+2018,NL,Netherlands,4,0,0,51,utrecht-university,0,0
+2019,NL,Netherlands,4,0,1,49,utrecht-university,0,0
+2020,NL,Netherlands,4,0,0,52,utrecht-university,0,0
+2021,NL,Netherlands,3,0,1,50,utrecht-university,0,1
+2022,NL,Netherlands,3,0,0,54,utrecht-university,1,1
+2023,NL,Netherlands,3,0,0,52,utrecht-university,0,0
+2024,NL,Netherlands,2,0,0,55,utrecht-university,0,1
+2025,NL,Netherlands,2,0,0,56,utrecht-university,0,0
+2026,NL,Netherlands,2,0,0,60,utrecht-university,0,0
+2003,NO,Norway,1,0,0,63,university-of-oslo,,
+2004,NO,Norway,1,0,0,68,university-of-oslo,0,0
+2005,NO,Norway,1,0,0,69,university-of-oslo,0,0
+2006,NO,Norway,1,0,0,68,university-of-oslo,0,0
+2007,NO,Norway,1,0,0,69,university-of-oslo,0,0
+2008,NO,Norway,1,0,0,64,university-of-oslo,0,0
+2009,NO,Norway,1,0,0,65,university-of-oslo,0,0
+2010,NO,Norway,1,0,0,75,university-of-oslo,0,0
+2011,NO,Norway,1,0,0,75,university-of-oslo,0,0
+2012,NO,Norway,1,0,0,67,university-of-oslo,0,0
+2013,NO,Norway,1,0,0,69,university-of-oslo,0,0
+2014,NO,Norway,1,0,0,69,university-of-oslo,0,0
+2015,NO,Norway,1,0,0,58,university-of-oslo,0,0
+2016,NO,Norway,1,0,0,67,university-of-oslo,0,0
+2017,NO,Norway,1,0,0,62,university-of-oslo,0,0
+2018,NO,Norway,1,0,0,62,university-of-oslo,0,0
+2019,NO,Norway,1,0,0,59,university-of-oslo,0,0
+2020,NO,Norway,1,0,0,60,university-of-oslo,0,0
+2021,NO,Norway,1,0,0,61,university-of-oslo,0,0
+2022,NO,Norway,1,0,0,67,university-of-oslo,0,0
+2023,NO,Norway,1,0,0,73,university-of-oslo,0,0
+2024,NO,Norway,1,0,0,72,university-of-oslo,0,0
+2025,NO,Norway,1,0,0,83,university-of-oslo,0,0
+2026,NO,Norway,1,0,0,86,university-of-oslo,0,0
+2003,RU,Russia,0,0,0,,,,
+2004,RU,Russia,1,0,0,66,moscow-state-university,1,0
+2005,RU,Russia,1,0,0,67,moscow-state-university,0,0
+2006,RU,Russia,1,0,0,70,moscow-state-university,0,0
+2007,RU,Russia,1,0,0,76,moscow-state-university,0,0
+2008,RU,Russia,1,0,0,70,moscow-state-university,0,0
+2009,RU,Russia,1,0,0,77,moscow-state-university,0,0
+2010,RU,Russia,1,0,0,74,moscow-state-university,0,0
+2011,RU,Russia,1,0,0,77,moscow-state-university,0,0
+2012,RU,Russia,1,0,0,80,moscow-state-university,0,0
+2013,RU,Russia,1,0,0,79,moscow-state-university,0,0
+2014,RU,Russia,1,0,0,84,moscow-state-university,0,0
+2015,RU,Russia,1,0,0,86,moscow-state-university,0,0
+2016,RU,Russia,1,0,0,87,moscow-state-university,0,0
+2017,RU,Russia,1,0,0,93,moscow-state-university,0,0
+2018,RU,Russia,1,0,0,86,moscow-state-university,0,0
+2019,RU,Russia,1,0,0,87,moscow-state-university,0,0
+2020,RU,Russia,1,0,0,93,moscow-state-university,0,0
+2021,RU,Russia,1,0,0,97,moscow-state-university,0,0
+2022,RU,Russia,0,0,0,,,0,1
+2023,RU,Russia,0,0,0,,,0,0
+2024,RU,Russia,0,0,0,,,0,0
+2025,RU,Russia,0,0,0,,,0,0
+2026,RU,Russia,0,0,0,,,0,0
+2003,SA,Saudi Arabia,0,0,0,,,,
+2004,SA,Saudi Arabia,0,0,0,,,0,0
+2005,SA,Saudi Arabia,0,0,0,,,0,0
+2006,SA,Saudi Arabia,0,0,0,,,0,0
+2007,SA,Saudi Arabia,0,0,0,,,0,0
+2008,SA,Saudi Arabia,0,0,0,,,0,0
+2009,SA,Saudi Arabia,0,0,0,,,0,0
+2010,SA,Saudi Arabia,0,0,0,,,0,0
+2011,SA,Saudi Arabia,0,0,0,,,0,0
+2012,SA,Saudi Arabia,0,0,0,,,0,0
+2013,SA,Saudi Arabia,0,0,0,,,0,0
+2014,SA,Saudi Arabia,0,0,0,,,0,0
+2015,SA,Saudi Arabia,0,0,0,,,0,0
+2016,SA,Saudi Arabia,0,0,0,,,0,0
+2017,SA,Saudi Arabia,0,0,0,,,0,0
+2018,SA,Saudi Arabia,0,0,0,,,0,0
+2019,SA,Saudi Arabia,0,0,0,,,0,0
+2020,SA,Saudi Arabia,0,0,0,,,0,0
+2021,SA,Saudi Arabia,0,0,0,,,0,0
+2022,SA,Saudi Arabia,0,0,0,,,0,0
+2023,SA,Saudi Arabia,0,0,0,,,0,0
+2024,SA,Saudi Arabia,1,0,0,90,king-saud-university,1,0
+2025,SA,Saudi Arabia,0,0,0,,,0,1
+2026,SA,Saudi Arabia,0,0,0,,,0,0
+2003,SG,Singapore,0,0,0,,,,
+2004,SG,Singapore,0,0,0,,,0,0
+2005,SG,Singapore,0,0,0,,,0,0
+2006,SG,Singapore,0,0,0,,,0,0
+2007,SG,Singapore,0,0,0,,,0,0
+2008,SG,Singapore,0,0,0,,,0,0
+2009,SG,Singapore,0,0,0,,,0,0
+2010,SG,Singapore,0,0,0,,,0,0
+2011,SG,Singapore,0,0,0,,,0,0
+2012,SG,Singapore,0,0,0,,,0,0
+2013,SG,Singapore,0,0,0,,,0,0
+2014,SG,Singapore,0,0,0,,,0,0
+2015,SG,Singapore,0,0,0,,,0,0
+2016,SG,Singapore,1,0,0,83,national-university-of-singapore,1,0
+2017,SG,Singapore,1,0,0,91,national-university-of-singapore,0,0
+2018,SG,Singapore,2,0,0,85,national-university-of-singapore,1,0
+2019,SG,Singapore,2,0,0,67,national-university-of-singapore,0,0
+2020,SG,Singapore,2,0,0,80,national-university-of-singapore,0,0
+2021,SG,Singapore,2,0,0,75,national-university-of-singapore,0,0
+2022,SG,Singapore,2,0,0,71,national-university-of-singapore,0,0
+2023,SG,Singapore,2,0,0,71,national-university-of-singapore,0,0
+2024,SG,Singapore,2,0,0,68,national-university-of-singapore,0,0
+2025,SG,Singapore,2,0,0,56,national-university-of-singapore,0,0
+2026,SG,Singapore,2,0,0,53,national-university-of-singapore,0,0
+2003,KR,South Korea,0,0,0,,,,
+2004,KR,South Korea,0,0,0,,,0,0
+2005,KR,South Korea,0,0,0,,,0,0
+2006,KR,South Korea,0,0,0,,,0,0
+2007,KR,South Korea,0,0,0,,,0,0
+2008,KR,South Korea,0,0,0,,,0,0
+2009,KR,South Korea,0,0,0,,,0,0
+2010,KR,South Korea,0,0,0,,,0,0
+2011,KR,South Korea,0,0,0,,,0,0
+2012,KR,South Korea,0,0,0,,,0,0
+2013,KR,South Korea,0,0,0,,,0,0
+2014,KR,South Korea,0,0,0,,,0,0
+2015,KR,South Korea,0,0,0,,,0,0
+2016,KR,South Korea,0,0,0,,,0,0
+2017,KR,South Korea,0,0,0,,,0,0
+2018,KR,South Korea,0,0,0,,,0,0
+2019,KR,South Korea,0,0,0,,,0,0
+2020,KR,South Korea,0,0,0,,,0,0
+2021,KR,South Korea,0,0,0,,,0,0
+2022,KR,South Korea,1,0,0,98,seoul-national-university,1,0
+2023,KR,South Korea,1,0,0,94,seoul-national-university,0,0
+2024,KR,South Korea,1,0,0,86,seoul-national-university,0,0
+2025,KR,South Korea,1,0,0,81,seoul-national-university,0,0
+2026,KR,South Korea,1,0,0,87,seoul-national-university,0,0
+2003,SE,Sweden,3,0,1,39,karolinska-institute,,
+2004,SE,Sweden,4,0,1,46,karolinska-institute,1,0
+2005,SE,Sweden,4,0,1,45,karolinska-institute,0,0
+2006,SE,Sweden,4,0,1,48,karolinska-institute,0,0
+2007,SE,Sweden,4,0,0,53,karolinska-institute,0,0
+2008,SE,Sweden,4,0,0,51,karolinska-institute,0,0
+2009,SE,Sweden,3,0,1,50,karolinska-institute,0,1
+2010,SE,Sweden,3,0,1,42,karolinska-institute,0,0
+2011,SE,Sweden,3,0,1,44,karolinska-institute,0,0
+2012,SE,Sweden,3,0,1,42,karolinska-institute,0,0
+2013,SE,Sweden,3,0,1,44,karolinska-institute,0,0
+2014,SE,Sweden,3,0,1,47,karolinska-institute,0,0
+2015,SE,Sweden,3,0,1,48,karolinska-institute,0,0
+2016,SE,Sweden,3,0,1,44,karolinska-institute,0,0
+2017,SE,Sweden,3,0,1,44,karolinska-institute,0,0
+2018,SE,Sweden,3,0,1,44,karolinska-institute,0,0
+2019,SE,Sweden,3,0,1,38,karolinska-institute,0,0
+2020,SE,Sweden,3,0,1,45,karolinska-institute,0,0
+2021,SE,Sweden,3,0,1,42,karolinska-institute,0,0
+2022,SE,Sweden,3,0,1,41,karolinska-institute,0,0
+2023,SE,Sweden,3,0,1,37,karolinska-institute,0,0
+2024,SE,Sweden,2,0,1,43,karolinska-institute,0,1
+2025,SE,Sweden,3,0,1,50,karolinska-institute,1,0
+2026,SE,Sweden,2,0,1,41,karolinska-institute,0,1
+2003,CH,Switzerland,3,0,2,25,eth-zurich,,
+2004,CH,Switzerland,3,0,1,27,eth-zurich,0,0
+2005,CH,Switzerland,3,0,1,27,eth-zurich,0,0
+2006,CH,Switzerland,3,0,1,27,eth-zurich,0,0
+2007,CH,Switzerland,3,0,1,27,eth-zurich,0,0
+2008,CH,Switzerland,3,0,1,24,eth-zurich,0,0
+2009,CH,Switzerland,3,0,1,23,eth-zurich,0,0
+2010,CH,Switzerland,3,0,1,23,eth-zurich,0,0
+2011,CH,Switzerland,4,0,1,23,eth-zurich,1,0
+2012,CH,Switzerland,4,0,1,23,eth-zurich,0,0
+2013,CH,Switzerland,4,0,1,20,eth-zurich,0,0
+2014,CH,Switzerland,5,0,1,19,eth-zurich,1,0
+2015,CH,Switzerland,4,0,1,20,eth-zurich,0,1
+2016,CH,Switzerland,4,0,1,19,eth-zurich,1,1
+2017,CH,Switzerland,5,0,1,19,eth-zurich,1,0
+2018,CH,Switzerland,5,0,1,19,eth-zurich,0,0
+2019,CH,Switzerland,5,0,1,19,eth-zurich,0,0
+2020,CH,Switzerland,5,0,1,20,eth-zurich,0,0
+2021,CH,Switzerland,5,0,1,21,eth-zurich,0,0
+2022,CH,Switzerland,4,0,1,20,eth-zurich,0,1
+2023,CH,Switzerland,5,0,2,20,eth-zurich,1,0
+2024,CH,Switzerland,5,0,1,21,eth-zurich,0,0
+2025,CH,Switzerland,5,0,2,22,eth-zurich,0,0
+2026,CH,Switzerland,5,0,2,19,eth-zurich,0,0
+2003,GB,United Kingdom,9,2,5,5,university-of-cambridge,,
+2004,GB,United Kingdom,11,2,5,3,university-of-cambridge,2,0
+2005,GB,United Kingdom,11,2,5,2,university-of-cambridge,0,0
+2006,GB,United Kingdom,11,2,5,2,university-of-cambridge,0,0
+2007,GB,United Kingdom,11,2,5,4,university-of-cambridge,0,0
+2008,GB,United Kingdom,11,2,5,4,university-of-cambridge,0,0
+2009,GB,United Kingdom,11,2,5,4,university-of-cambridge,0,0
+2010,GB,United Kingdom,11,2,5,5,university-of-cambridge,0,0
+2011,GB,United Kingdom,10,2,5,5,university-of-cambridge,0,1
+2012,GB,United Kingdom,9,2,5,5,university-of-cambridge,0,1
+2013,GB,United Kingdom,9,2,5,5,university-of-cambridge,0,0
+2014,GB,United Kingdom,8,2,6,5,university-of-cambridge,0,1
+2015,GB,United Kingdom,9,2,6,5,university-of-cambridge,1,0
+2016,GB,United Kingdom,8,2,7,4,university-of-cambridge,0,1
+2017,GB,United Kingdom,9,2,7,3,university-of-cambridge,1,0
+2018,GB,United Kingdom,8,2,6,3,university-of-cambridge,0,1
+2019,GB,United Kingdom,8,2,6,3,university-of-cambridge,0,0
+2020,GB,United Kingdom,8,2,7,3,university-of-cambridge,0,0
+2021,GB,United Kingdom,8,2,7,3,university-of-cambridge,0,0
+2022,GB,United Kingdom,8,2,7,4,university-of-cambridge,0,0
+2023,GB,United Kingdom,8,2,6,4,university-of-cambridge,0,0
+2024,GB,United Kingdom,8,2,5,4,university-of-cambridge,0,0
+2025,GB,United Kingdom,8,2,6,4,university-of-cambridge,0,0
+2026,GB,United Kingdom,8,2,5,4,university-of-cambridge,0,0
+2003,US,United States,58,8,35,1,harvard-university,,
+2004,US,United States,51,8,35,1,harvard-university,0,7
+2005,US,United States,53,8,37,1,harvard-university,2,0
+2006,US,United States,54,8,37,1,harvard-university,2,1
+2007,US,United States,54,8,37,1,harvard-university,0,0
+2008,US,United States,54,8,36,1,harvard-university,1,1
+2009,US,United States,55,8,37,1,harvard-university,1,0
+2010,US,United States,54,8,35,1,harvard-university,0,1
+2011,US,United States,53,8,34,1,harvard-university,0,1
+2012,US,United States,53,8,36,1,harvard-university,0,0
+2013,US,United States,52,8,35,1,harvard-university,0,1
+2014,US,United States,52,8,32,1,harvard-university,3,3
+2015,US,United States,51,8,33,1,harvard-university,1,2
+2016,US,United States,50,8,31,1,harvard-university,3,4
+2017,US,United States,48,8,29,1,harvard-university,1,3
+2018,US,United States,46,8,31,1,harvard-university,1,3
+2019,US,United States,45,8,31,1,harvard-university,1,2
+2020,US,United States,41,8,30,1,harvard-university,0,4
+2021,US,United States,40,8,28,1,harvard-university,0,1
+2022,US,United States,39,8,28,1,harvard-university,2,3
+2023,US,United States,38,8,28,1,harvard-university,0,1
+2024,US,United States,38,8,26,1,harvard-university,1,1
+2025,US,United States,37,8,25,1,harvard-university,0,1
+2026,US,United States,37,8,27,1,harvard-university,1,1
