@@ -208,6 +208,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .article-content table.data.matrix th, .article-content table.data.matrix td { font-size: 0.75rem; padding: 4px 6px; }
     .article-content table.data.matrix td.y { color: #111827; font-weight: 600; }
     .article-content table.data.matrix td.n { color: #d1d5db; }
+    .article-content .download p.also { font-size: 0.8125rem; color: #6b7280; margin-top: 8px; }
+    .article-content .download p.also a { font-weight: 500; }
   </style>
     <script type="application/ld+json">
 {
@@ -218,6 +220,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "A-level requirements by STEM programme, 2026 and 2027 entry",
       "description": "Required and recommended A-level subjects for 31 canonical STEM degree programmes, each read off a live UK university admissions page and linked to it. Mathematics is named by 22 of the 23 programmes taught in the UK; the other 8 have no UK undergraduate degree.",
       "url": "https://mariascales.com/research/long-bet/data/a-levels/",
+      "sameAs": [
+        "https://www.kaggle.com/datasets/mariaatamanova/a-level-requirements-for-uk-stem-degrees"
+      ],
       "creator": {
         "@type": "Person",
         "name": "Maria Atamanova",
@@ -229,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "url": "https://mariascales.com/"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-10-23",
+      "dateModified": "2026-10-26",
       "inLanguage": "en",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "temporalCoverage": "2026/2027",
@@ -390,6 +395,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <code>subject, required_by, recommended_by, total_mentions, role</code>.</p>
     <p><a href="/research/long-bet/raw/ALevel_Prerequisites.xlsx">ALevel_Prerequisites.xlsx</a>
     &ndash; the same sheets as one workbook.</p>
+    <p class="also">Also on <a href="https://www.kaggle.com/datasets/mariaatamanova/a-level-requirements-for-uk-stem-degrees" target="_blank" rel="noopener">Kaggle</a></p>
   </div>
   <h2>Requirements by programme</h2>
   <p>One row per canonical programme. &ldquo;Required&rdquo; is what the entry requirements

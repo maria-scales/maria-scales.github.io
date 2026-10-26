@@ -208,6 +208,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .article-content table.data.matrix th, .article-content table.data.matrix td { font-size: 0.75rem; padding: 4px 6px; }
     .article-content table.data.matrix td.y { color: #111827; font-weight: 600; }
     .article-content table.data.matrix td.n { color: #d1d5db; }
+    .article-content .download p.also { font-size: 0.8125rem; color: #6b7280; margin-top: 8px; }
+    .article-content .download p.also a { font-weight: 500; }
   </style>
     <script type="application/ld+json">
 {
@@ -218,6 +220,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "STEM programme coverage in the ARWU top 100 universities, 2025",
       "description": "Which of 31 canonical STEM programmes each of the 100 highest-ranked universities teaches: 1,258 university-programme pairs across 19 countries, with the 176-pair synonym table used to normalise programme names.",
       "url": "https://mariascales.com/research/long-bet/data/programmes/",
+      "sameAs": [
+        "https://www.kaggle.com/datasets/mariaatamanova/stem-programmes-at-the-top-100-universities-2025",
+        "https://huggingface.co/datasets/MariaScales/stem-programmes-top-100-universities-2025"
+      ],
       "creator": {
         "@type": "Person",
         "name": "Maria Atamanova",
@@ -229,7 +235,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "url": "https://mariascales.com/"
       },
       "datePublished": "2026-09-08",
-      "dateModified": "2026-10-24",
+      "dateModified": "2026-10-26",
       "inLanguage": "en",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "temporalCoverage": "2025",
@@ -362,6 +368,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <code>raw_name, canonical_name</code>: the normalisation table.</p>
     <p><a href="/research/long-bet/raw/cleaned_stem_programs.xlsx">cleaned_stem_programs.xlsx</a>
     &ndash; the same three sheets as one workbook.</p>
+    <p class="also">Also on <a href="https://www.kaggle.com/datasets/mariaatamanova/stem-programmes-at-the-top-100-universities-2025" target="_blank" rel="noopener">Kaggle</a> · <a href="https://huggingface.co/datasets/MariaScales/stem-programmes-top-100-universities-2025" target="_blank" rel="noopener">Hugging Face</a></p>
   </div>
   <h2>Programmes by coverage</h2>
   <p>How many of the 100 universities teach each canonical programme, and how many of the
