@@ -1,0 +1,913 @@
+university_id,subject_code,subject_category,subject,gras_2026_rank,published_list_length,source_url,source_type,checked_at
+tsinghua-university,AS0101,Natural Sciences,Mathematics,26,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+peking-university,AS0101,Natural Sciences,Mathematics,32,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+zhejiang-university,AS0101,Natural Sciences,Mathematics,50,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+shanghai-jiao-tong-university,AS0101,Natural Sciences,Mathematics,42,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+university-of-science-and-technology-of-china,AS0101,Natural Sciences,Mathematics,49,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+fudan-university,AS0101,Natural Sciences,Mathematics,34,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+sun-yat-sen-university,AS0101,Natural Sciences,Mathematics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0101,Natural Sciences,Mathematics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+nanjing-university,AS0101,Natural Sciences,Mathematics,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+wuhan-university,AS0101,Natural Sciences,Mathematics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+sichuan-university,AS0101,Natural Sciences,Mathematics,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+xi-an-jiaotong-university,AS0101,Natural Sciences,Mathematics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+central-south-university,AS0101,Natural Sciences,Mathematics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+the-university-of-hong-kong,AS0101,Natural Sciences,Mathematics,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+city-university-of-hong-kong,AS0101,Natural Sciences,Mathematics,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0101,Natural Sciences,Mathematics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0101,official,2026-10-23
+tsinghua-university,AS0102,Natural Sciences,Physics,18,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+peking-university,AS0102,Natural Sciences,Physics,13,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+zhejiang-university,AS0102,Natural Sciences,Physics,31,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+shanghai-jiao-tong-university,AS0102,Natural Sciences,Physics,22,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+university-of-science-and-technology-of-china,AS0102,Natural Sciences,Physics,15,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+fudan-university,AS0102,Natural Sciences,Physics,35,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+sun-yat-sen-university,AS0102,Natural Sciences,Physics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0102,Natural Sciences,Physics,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+nanjing-university,AS0102,Natural Sciences,Physics,36,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+wuhan-university,AS0102,Natural Sciences,Physics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+sichuan-university,AS0102,Natural Sciences,Physics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+xi-an-jiaotong-university,AS0102,Natural Sciences,Physics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+central-south-university,AS0102,Natural Sciences,Physics,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+the-university-of-hong-kong,AS0102,Natural Sciences,Physics,39,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+city-university-of-hong-kong,AS0102,Natural Sciences,Physics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0102,Natural Sciences,Physics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0102,official,2026-10-23
+tsinghua-university,AS0103,Natural Sciences,Chemistry,1,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+peking-university,AS0103,Natural Sciences,Chemistry,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+zhejiang-university,AS0103,Natural Sciences,Chemistry,6,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+shanghai-jiao-tong-university,AS0103,Natural Sciences,Chemistry,10,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+university-of-science-and-technology-of-china,AS0103,Natural Sciences,Chemistry,5,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+fudan-university,AS0103,Natural Sciences,Chemistry,20,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+sun-yat-sen-university,AS0103,Natural Sciences,Chemistry,24,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0103,Natural Sciences,Chemistry,47,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+nanjing-university,AS0103,Natural Sciences,Chemistry,15,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+wuhan-university,AS0103,Natural Sciences,Chemistry,40,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+sichuan-university,AS0103,Natural Sciences,Chemistry,18,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+xi-an-jiaotong-university,AS0103,Natural Sciences,Chemistry,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+central-south-university,AS0103,Natural Sciences,Chemistry,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+the-university-of-hong-kong,AS0103,Natural Sciences,Chemistry,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+city-university-of-hong-kong,AS0103,Natural Sciences,Chemistry,30,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0103,Natural Sciences,Chemistry,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0103,official,2026-10-23
+tsinghua-university,AS0104,Natural Sciences,Earth Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+peking-university,AS0104,Natural Sciences,Earth Sciences,12,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+zhejiang-university,AS0104,Natural Sciences,Earth Sciences,27,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+shanghai-jiao-tong-university,AS0104,Natural Sciences,Earth Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+university-of-science-and-technology-of-china,AS0104,Natural Sciences,Earth Sciences,24,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+fudan-university,AS0104,Natural Sciences,Earth Sciences,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+sun-yat-sen-university,AS0104,Natural Sciences,Earth Sciences,27,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0104,Natural Sciences,Earth Sciences,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+nanjing-university,AS0104,Natural Sciences,Earth Sciences,9,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+wuhan-university,AS0104,Natural Sciences,Earth Sciences,36,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+sichuan-university,AS0104,Natural Sciences,Earth Sciences,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+xi-an-jiaotong-university,AS0104,Natural Sciences,Earth Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+central-south-university,AS0104,Natural Sciences,Earth Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+the-university-of-hong-kong,AS0104,Natural Sciences,Earth Sciences,46,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+city-university-of-hong-kong,AS0104,Natural Sciences,Earth Sciences,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0104,Natural Sciences,Earth Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0104,official,2026-10-23
+tsinghua-university,AS0105,Natural Sciences,Geography,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+peking-university,AS0105,Natural Sciences,Geography,2,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+zhejiang-university,AS0105,Natural Sciences,Geography,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+shanghai-jiao-tong-university,AS0105,Natural Sciences,Geography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+university-of-science-and-technology-of-china,AS0105,Natural Sciences,Geography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+fudan-university,AS0105,Natural Sciences,Geography,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+sun-yat-sen-university,AS0105,Natural Sciences,Geography,16,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0105,Natural Sciences,Geography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+nanjing-university,AS0105,Natural Sciences,Geography,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+wuhan-university,AS0105,Natural Sciences,Geography,4,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+sichuan-university,AS0105,Natural Sciences,Geography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+xi-an-jiaotong-university,AS0105,Natural Sciences,Geography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+central-south-university,AS0105,Natural Sciences,Geography,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+the-university-of-hong-kong,AS0105,Natural Sciences,Geography,6,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+city-university-of-hong-kong,AS0105,Natural Sciences,Geography,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0105,Natural Sciences,Geography,5,200,https://www.shanghairanking.com/rankings/gras/2026/AS0105,official,2026-10-23
+tsinghua-university,AS0106,Natural Sciences,Ecology,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+peking-university,AS0106,Natural Sciences,Ecology,29,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+zhejiang-university,AS0106,Natural Sciences,Ecology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+shanghai-jiao-tong-university,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+university-of-science-and-technology-of-china,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+fudan-university,AS0106,Natural Sciences,Ecology,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+sun-yat-sen-university,AS0106,Natural Sciences,Ecology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+nanjing-university,AS0106,Natural Sciences,Ecology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+wuhan-university,AS0106,Natural Sciences,Ecology,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+sichuan-university,AS0106,Natural Sciences,Ecology,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+xi-an-jiaotong-university,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+central-south-university,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+the-university-of-hong-kong,AS0106,Natural Sciences,Ecology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+city-university-of-hong-kong,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0106,Natural Sciences,Ecology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0106,official,2026-10-23
+tsinghua-university,AS0107,Natural Sciences,Oceanography,50,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+peking-university,AS0107,Natural Sciences,Oceanography,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+zhejiang-university,AS0107,Natural Sciences,Oceanography,20,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+shanghai-jiao-tong-university,AS0107,Natural Sciences,Oceanography,5,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+university-of-science-and-technology-of-china,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+fudan-university,AS0107,Natural Sciences,Oceanography,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+sun-yat-sen-university,AS0107,Natural Sciences,Oceanography,22,200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+nanjing-university,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+wuhan-university,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+sichuan-university,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+xi-an-jiaotong-university,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+central-south-university,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+the-university-of-hong-kong,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+city-university-of-hong-kong,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0107,Natural Sciences,Oceanography,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0107,official,2026-10-23
+tsinghua-university,AS0108,Natural Sciences,Atmospheric Science,31,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+peking-university,AS0108,Natural Sciences,Atmospheric Science,20,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+zhejiang-university,AS0108,Natural Sciences,Atmospheric Science,50,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+shanghai-jiao-tong-university,AS0108,Natural Sciences,Atmospheric Science,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+university-of-science-and-technology-of-china,AS0108,Natural Sciences,Atmospheric Science,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+fudan-university,AS0108,Natural Sciences,Atmospheric Science,28,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+sun-yat-sen-university,AS0108,Natural Sciences,Atmospheric Science,13,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0108,Natural Sciences,Atmospheric Science,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+nanjing-university,AS0108,Natural Sciences,Atmospheric Science,11,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+wuhan-university,AS0108,Natural Sciences,Atmospheric Science,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+sichuan-university,AS0108,Natural Sciences,Atmospheric Science,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+xi-an-jiaotong-university,AS0108,Natural Sciences,Atmospheric Science,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+central-south-university,AS0108,Natural Sciences,Atmospheric Science,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+the-university-of-hong-kong,AS0108,Natural Sciences,Atmospheric Science,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+city-university-of-hong-kong,AS0108,Natural Sciences,Atmospheric Science,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0108,Natural Sciences,Atmospheric Science,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0108,official,2026-10-23
+tsinghua-university,AS0201,Engineering,Mechanical Engineering,1,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+peking-university,AS0201,Engineering,Mechanical Engineering,50,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+zhejiang-university,AS0201,Engineering,Mechanical Engineering,15,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+shanghai-jiao-tong-university,AS0201,Engineering,Mechanical Engineering,9,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+university-of-science-and-technology-of-china,AS0201,Engineering,Mechanical Engineering,25,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+fudan-university,AS0201,Engineering,Mechanical Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+sun-yat-sen-university,AS0201,Engineering,Mechanical Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0201,Engineering,Mechanical Engineering,16,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+nanjing-university,AS0201,Engineering,Mechanical Engineering,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+wuhan-university,AS0201,Engineering,Mechanical Engineering,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+sichuan-university,AS0201,Engineering,Mechanical Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+xi-an-jiaotong-university,AS0201,Engineering,Mechanical Engineering,4,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+central-south-university,AS0201,Engineering,Mechanical Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+the-university-of-hong-kong,AS0201,Engineering,Mechanical Engineering,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+city-university-of-hong-kong,AS0201,Engineering,Mechanical Engineering,37,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0201,Engineering,Mechanical Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0201,official,2026-10-23
+tsinghua-university,AS0202,Engineering,Electrical & Electronic Engineering,2,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+peking-university,AS0202,Engineering,Electrical & Electronic Engineering,41,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+zhejiang-university,AS0202,Engineering,Electrical & Electronic Engineering,7,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+shanghai-jiao-tong-university,AS0202,Engineering,Electrical & Electronic Engineering,18,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+university-of-science-and-technology-of-china,AS0202,Engineering,Electrical & Electronic Engineering,42,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+fudan-university,AS0202,Engineering,Electrical & Electronic Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+sun-yat-sen-university,AS0202,Engineering,Electrical & Electronic Engineering,43,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0202,Engineering,Electrical & Electronic Engineering,33,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+nanjing-university,AS0202,Engineering,Electrical & Electronic Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+wuhan-university,AS0202,Engineering,Electrical & Electronic Engineering,14,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+sichuan-university,AS0202,Engineering,Electrical & Electronic Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+xi-an-jiaotong-university,AS0202,Engineering,Electrical & Electronic Engineering,20,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+central-south-university,AS0202,Engineering,Electrical & Electronic Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+the-university-of-hong-kong,AS0202,Engineering,Electrical & Electronic Engineering,25,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+city-university-of-hong-kong,AS0202,Engineering,Electrical & Electronic Engineering,24,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0202,Engineering,Electrical & Electronic Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0202,official,2026-10-23
+tsinghua-university,AS0205,Engineering,Automation & Control,16,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+peking-university,AS0205,Engineering,Automation & Control,43,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+zhejiang-university,AS0205,Engineering,Automation & Control,14,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+shanghai-jiao-tong-university,AS0205,Engineering,Automation & Control,7,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+university-of-science-and-technology-of-china,AS0205,Engineering,Automation & Control,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+fudan-university,AS0205,Engineering,Automation & Control,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+sun-yat-sen-university,AS0205,Engineering,Automation & Control,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0205,Engineering,Automation & Control,27,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+nanjing-university,AS0205,Engineering,Automation & Control,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+wuhan-university,AS0205,Engineering,Automation & Control,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+sichuan-university,AS0205,Engineering,Automation & Control,31,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+xi-an-jiaotong-university,AS0205,Engineering,Automation & Control,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+central-south-university,AS0205,Engineering,Automation & Control,20,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+the-university-of-hong-kong,AS0205,Engineering,Automation & Control,19,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+city-university-of-hong-kong,AS0205,Engineering,Automation & Control,11,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0205,Engineering,Automation & Control,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0205,official,2026-10-23
+tsinghua-university,AS0206,Engineering,Telecommunication Engineering,3,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+peking-university,AS0206,Engineering,Telecommunication Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+zhejiang-university,AS0206,Engineering,Telecommunication Engineering,10,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+shanghai-jiao-tong-university,AS0206,Engineering,Telecommunication Engineering,7,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+university-of-science-and-technology-of-china,AS0206,Engineering,Telecommunication Engineering,42,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+fudan-university,AS0206,Engineering,Telecommunication Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+sun-yat-sen-university,AS0206,Engineering,Telecommunication Engineering,26,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0206,Engineering,Telecommunication Engineering,45,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+nanjing-university,AS0206,Engineering,Telecommunication Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+wuhan-university,AS0206,Engineering,Telecommunication Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+sichuan-university,AS0206,Engineering,Telecommunication Engineering,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+xi-an-jiaotong-university,AS0206,Engineering,Telecommunication Engineering,32,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+central-south-university,AS0206,Engineering,Telecommunication Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+the-university-of-hong-kong,AS0206,Engineering,Telecommunication Engineering,39,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+city-university-of-hong-kong,AS0206,Engineering,Telecommunication Engineering,22,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0206,Engineering,Telecommunication Engineering,14,400,https://www.shanghairanking.com/rankings/gras/2026/AS0206,official,2026-10-23
+tsinghua-university,AS0207,Engineering,Instruments Science & Technology,8,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+peking-university,AS0207,Engineering,Instruments Science & Technology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+zhejiang-university,AS0207,Engineering,Instruments Science & Technology,3,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+shanghai-jiao-tong-university,AS0207,Engineering,Instruments Science & Technology,6,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+university-of-science-and-technology-of-china,AS0207,Engineering,Instruments Science & Technology,28,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+fudan-university,AS0207,Engineering,Instruments Science & Technology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+sun-yat-sen-university,AS0207,Engineering,Instruments Science & Technology,33,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0207,Engineering,Instruments Science & Technology,7,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+nanjing-university,AS0207,Engineering,Instruments Science & Technology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+wuhan-university,AS0207,Engineering,Instruments Science & Technology,23,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+sichuan-university,AS0207,Engineering,Instruments Science & Technology,22,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+xi-an-jiaotong-university,AS0207,Engineering,Instruments Science & Technology,5,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+central-south-university,AS0207,Engineering,Instruments Science & Technology,21,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+the-university-of-hong-kong,AS0207,Engineering,Instruments Science & Technology,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+city-university-of-hong-kong,AS0207,Engineering,Instruments Science & Technology,38,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0207,Engineering,Instruments Science & Technology,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0207,official,2026-10-23
+tsinghua-university,AS0208,Engineering,Biomedical Engineering,17,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+peking-university,AS0208,Engineering,Biomedical Engineering,13,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+zhejiang-university,AS0208,Engineering,Biomedical Engineering,3,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+shanghai-jiao-tong-university,AS0208,Engineering,Biomedical Engineering,2,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+university-of-science-and-technology-of-china,AS0208,Engineering,Biomedical Engineering,23,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+fudan-university,AS0208,Engineering,Biomedical Engineering,7,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+sun-yat-sen-university,AS0208,Engineering,Biomedical Engineering,4,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0208,Engineering,Biomedical Engineering,20,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+nanjing-university,AS0208,Engineering,Biomedical Engineering,40,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+wuhan-university,AS0208,Engineering,Biomedical Engineering,45,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+sichuan-university,AS0208,Engineering,Biomedical Engineering,1,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+xi-an-jiaotong-university,AS0208,Engineering,Biomedical Engineering,43,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+central-south-university,AS0208,Engineering,Biomedical Engineering,37,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+the-university-of-hong-kong,AS0208,Engineering,Biomedical Engineering,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+city-university-of-hong-kong,AS0208,Engineering,Biomedical Engineering,50,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0208,Engineering,Biomedical Engineering,33,300,https://www.shanghairanking.com/rankings/gras/2026/AS0208,official,2026-10-23
+tsinghua-university,AS0210,Engineering,Computer Science & Engineering,2,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+peking-university,AS0210,Engineering,Computer Science & Engineering,17,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+zhejiang-university,AS0210,Engineering,Computer Science & Engineering,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+shanghai-jiao-tong-university,AS0210,Engineering,Computer Science & Engineering,4,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+university-of-science-and-technology-of-china,AS0210,Engineering,Computer Science & Engineering,31,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+fudan-university,AS0210,Engineering,Computer Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+sun-yat-sen-university,AS0210,Engineering,Computer Science & Engineering,26,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0210,Engineering,Computer Science & Engineering,11,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+nanjing-university,AS0210,Engineering,Computer Science & Engineering,44,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+wuhan-university,AS0210,Engineering,Computer Science & Engineering,18,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+sichuan-university,AS0210,Engineering,Computer Science & Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+xi-an-jiaotong-university,AS0210,Engineering,Computer Science & Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+central-south-university,AS0210,Engineering,Computer Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+the-university-of-hong-kong,AS0210,Engineering,Computer Science & Engineering,32,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+city-university-of-hong-kong,AS0210,Engineering,Computer Science & Engineering,47,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0210,Engineering,Computer Science & Engineering,16,500,https://www.shanghairanking.com/rankings/gras/2026/AS0210,official,2026-10-23
+tsinghua-university,AS0211,Engineering,Civil Engineering,4,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+peking-university,AS0211,Engineering,Civil Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+zhejiang-university,AS0211,Engineering,Civil Engineering,8,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+shanghai-jiao-tong-university,AS0211,Engineering,Civil Engineering,18,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+university-of-science-and-technology-of-china,AS0211,Engineering,Civil Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+fudan-university,AS0211,Engineering,Civil Engineering,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+sun-yat-sen-university,AS0211,Engineering,Civil Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0211,Engineering,Civil Engineering,22,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+nanjing-university,AS0211,Engineering,Civil Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+wuhan-university,AS0211,Engineering,Civil Engineering,34,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+sichuan-university,AS0211,Engineering,Civil Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+xi-an-jiaotong-university,AS0211,Engineering,Civil Engineering,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+central-south-university,AS0211,Engineering,Civil Engineering,10,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+the-university-of-hong-kong,AS0211,Engineering,Civil Engineering,12,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+city-university-of-hong-kong,AS0211,Engineering,Civil Engineering,36,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0211,Engineering,Civil Engineering,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0211,official,2026-10-23
+tsinghua-university,AS0212,Engineering,Chemical Engineering,1,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+peking-university,AS0212,Engineering,Chemical Engineering,37,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+zhejiang-university,AS0212,Engineering,Chemical Engineering,3,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+shanghai-jiao-tong-university,AS0212,Engineering,Chemical Engineering,6,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+university-of-science-and-technology-of-china,AS0212,Engineering,Chemical Engineering,7,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+fudan-university,AS0212,Engineering,Chemical Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+sun-yat-sen-university,AS0212,Engineering,Chemical Engineering,36,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0212,Engineering,Chemical Engineering,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+nanjing-university,AS0212,Engineering,Chemical Engineering,34,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+wuhan-university,AS0212,Engineering,Chemical Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+sichuan-university,AS0212,Engineering,Chemical Engineering,4,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+xi-an-jiaotong-university,AS0212,Engineering,Chemical Engineering,9,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+central-south-university,AS0212,Engineering,Chemical Engineering,13,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+the-university-of-hong-kong,AS0212,Engineering,Chemical Engineering,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+city-university-of-hong-kong,AS0212,Engineering,Chemical Engineering,44,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0212,Engineering,Chemical Engineering,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0212,official,2026-10-23
+tsinghua-university,AS0213,Engineering,Materials Science & Engineering,1,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+peking-university,AS0213,Engineering,Materials Science & Engineering,14,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+zhejiang-university,AS0213,Engineering,Materials Science & Engineering,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+shanghai-jiao-tong-university,AS0213,Engineering,Materials Science & Engineering,3,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+university-of-science-and-technology-of-china,AS0213,Engineering,Materials Science & Engineering,23,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+fudan-university,AS0213,Engineering,Materials Science & Engineering,17,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+sun-yat-sen-university,AS0213,Engineering,Materials Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0213,Engineering,Materials Science & Engineering,25,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+nanjing-university,AS0213,Engineering,Materials Science & Engineering,43,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+wuhan-university,AS0213,Engineering,Materials Science & Engineering,35,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+sichuan-university,AS0213,Engineering,Materials Science & Engineering,26,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+xi-an-jiaotong-university,AS0213,Engineering,Materials Science & Engineering,12,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+central-south-university,AS0213,Engineering,Materials Science & Engineering,36,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+the-university-of-hong-kong,AS0213,Engineering,Materials Science & Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+city-university-of-hong-kong,AS0213,Engineering,Materials Science & Engineering,34,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0213,Engineering,Materials Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0213,official,2026-10-23
+tsinghua-university,AS0214,Engineering,Nanoscience & Nanotechnology,1,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+peking-university,AS0214,Engineering,Nanoscience & Nanotechnology,7,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+zhejiang-university,AS0214,Engineering,Nanoscience & Nanotechnology,2,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+shanghai-jiao-tong-university,AS0214,Engineering,Nanoscience & Nanotechnology,3,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+university-of-science-and-technology-of-china,AS0214,Engineering,Nanoscience & Nanotechnology,4,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+fudan-university,AS0214,Engineering,Nanoscience & Nanotechnology,8,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+sun-yat-sen-university,AS0214,Engineering,Nanoscience & Nanotechnology,16,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0214,Engineering,Nanoscience & Nanotechnology,12,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+nanjing-university,AS0214,Engineering,Nanoscience & Nanotechnology,13,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+wuhan-university,AS0214,Engineering,Nanoscience & Nanotechnology,33,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+sichuan-university,AS0214,Engineering,Nanoscience & Nanotechnology,9,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+xi-an-jiaotong-university,AS0214,Engineering,Nanoscience & Nanotechnology,11,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+central-south-university,AS0214,Engineering,Nanoscience & Nanotechnology,29,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+the-university-of-hong-kong,AS0214,Engineering,Nanoscience & Nanotechnology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+city-university-of-hong-kong,AS0214,Engineering,Nanoscience & Nanotechnology,18,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0214,Engineering,Nanoscience & Nanotechnology,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0214,official,2026-10-23
+tsinghua-university,AS0215,Engineering,Energy Science & Engineering,1,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+peking-university,AS0215,Engineering,Energy Science & Engineering,22,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+zhejiang-university,AS0215,Engineering,Energy Science & Engineering,11,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+shanghai-jiao-tong-university,AS0215,Engineering,Energy Science & Engineering,2,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+university-of-science-and-technology-of-china,AS0215,Engineering,Energy Science & Engineering,10,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+fudan-university,AS0215,Engineering,Energy Science & Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+sun-yat-sen-university,AS0215,Engineering,Energy Science & Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0215,Engineering,Energy Science & Engineering,5,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+nanjing-university,AS0215,Engineering,Energy Science & Engineering,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+wuhan-university,AS0215,Engineering,Energy Science & Engineering,41,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+sichuan-university,AS0215,Engineering,Energy Science & Engineering,36,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+xi-an-jiaotong-university,AS0215,Engineering,Energy Science & Engineering,3,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+central-south-university,AS0215,Engineering,Energy Science & Engineering,18,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+the-university-of-hong-kong,AS0215,Engineering,Energy Science & Engineering,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+city-university-of-hong-kong,AS0215,Engineering,Energy Science & Engineering,9,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0215,Engineering,Energy Science & Engineering,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0215,official,2026-10-23
+tsinghua-university,AS0216,Engineering,Environmental Science & Engineering,1,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+peking-university,AS0216,Engineering,Environmental Science & Engineering,2,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+zhejiang-university,AS0216,Engineering,Environmental Science & Engineering,4,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+shanghai-jiao-tong-university,AS0216,Engineering,Environmental Science & Engineering,17,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+university-of-science-and-technology-of-china,AS0216,Engineering,Environmental Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+fudan-university,AS0216,Engineering,Environmental Science & Engineering,25,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+sun-yat-sen-university,AS0216,Engineering,Environmental Science & Engineering,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0216,Engineering,Environmental Science & Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+nanjing-university,AS0216,Engineering,Environmental Science & Engineering,3,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+wuhan-university,AS0216,Engineering,Environmental Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+sichuan-university,AS0216,Engineering,Environmental Science & Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+xi-an-jiaotong-university,AS0216,Engineering,Environmental Science & Engineering,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+central-south-university,AS0216,Engineering,Environmental Science & Engineering,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+the-university-of-hong-kong,AS0216,Engineering,Environmental Science & Engineering,16,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+city-university-of-hong-kong,AS0216,Engineering,Environmental Science & Engineering,14,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0216,Engineering,Environmental Science & Engineering,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0216,official,2026-10-23
+tsinghua-university,AS0217,Engineering,Water Resources,2,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+peking-university,AS0217,Engineering,Water Resources,28,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+zhejiang-university,AS0217,Engineering,Water Resources,26,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+shanghai-jiao-tong-university,AS0217,Engineering,Water Resources,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+university-of-science-and-technology-of-china,AS0217,Engineering,Water Resources,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+fudan-university,AS0217,Engineering,Water Resources,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+sun-yat-sen-university,AS0217,Engineering,Water Resources,13,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0217,Engineering,Water Resources,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+nanjing-university,AS0217,Engineering,Water Resources,21,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+wuhan-university,AS0217,Engineering,Water Resources,3,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+sichuan-university,AS0217,Engineering,Water Resources,27,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+xi-an-jiaotong-university,AS0217,Engineering,Water Resources,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+central-south-university,AS0217,Engineering,Water Resources,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+the-university-of-hong-kong,AS0217,Engineering,Water Resources,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+city-university-of-hong-kong,AS0217,Engineering,Water Resources,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0217,Engineering,Water Resources,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0217,official,2026-10-23
+tsinghua-university,AS0219,Engineering,Food Science & Technology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+peking-university,AS0219,Engineering,Food Science & Technology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+zhejiang-university,AS0219,Engineering,Food Science & Technology,2,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+shanghai-jiao-tong-university,AS0219,Engineering,Food Science & Technology,23,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+university-of-science-and-technology-of-china,AS0219,Engineering,Food Science & Technology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+fudan-university,AS0219,Engineering,Food Science & Technology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+sun-yat-sen-university,AS0219,Engineering,Food Science & Technology,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0219,Engineering,Food Science & Technology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+nanjing-university,AS0219,Engineering,Food Science & Technology,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+wuhan-university,AS0219,Engineering,Food Science & Technology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+sichuan-university,AS0219,Engineering,Food Science & Technology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+xi-an-jiaotong-university,AS0219,Engineering,Food Science & Technology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+central-south-university,AS0219,Engineering,Food Science & Technology,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+the-university-of-hong-kong,AS0219,Engineering,Food Science & Technology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+city-university-of-hong-kong,AS0219,Engineering,Food Science & Technology,not in published list (top 400),400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0219,Engineering,Food Science & Technology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0219,official,2026-10-23
+tsinghua-university,AS0220,Engineering,Biotechnology,7,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+peking-university,AS0220,Engineering,Biotechnology,32,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+zhejiang-university,AS0220,Engineering,Biotechnology,2,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+shanghai-jiao-tong-university,AS0220,Engineering,Biotechnology,6,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+university-of-science-and-technology-of-china,AS0220,Engineering,Biotechnology,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+fudan-university,AS0220,Engineering,Biotechnology,26,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+sun-yat-sen-university,AS0220,Engineering,Biotechnology,29,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0220,Engineering,Biotechnology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+nanjing-university,AS0220,Engineering,Biotechnology,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+wuhan-university,AS0220,Engineering,Biotechnology,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+sichuan-university,AS0220,Engineering,Biotechnology,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+xi-an-jiaotong-university,AS0220,Engineering,Biotechnology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+central-south-university,AS0220,Engineering,Biotechnology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+the-university-of-hong-kong,AS0220,Engineering,Biotechnology,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+city-university-of-hong-kong,AS0220,Engineering,Biotechnology,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0220,Engineering,Biotechnology,39,400,https://www.shanghairanking.com/rankings/gras/2026/AS0220,official,2026-10-23
+tsinghua-university,AS0221,Engineering,Aerospace Engineering,8,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+peking-university,AS0221,Engineering,Aerospace Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+zhejiang-university,AS0221,Engineering,Aerospace Engineering,28,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+shanghai-jiao-tong-university,AS0221,Engineering,Aerospace Engineering,12,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+university-of-science-and-technology-of-china,AS0221,Engineering,Aerospace Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+fudan-university,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+sun-yat-sen-university,AS0221,Engineering,Aerospace Engineering,48,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0221,Engineering,Aerospace Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+nanjing-university,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+wuhan-university,AS0221,Engineering,Aerospace Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+sichuan-university,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+xi-an-jiaotong-university,AS0221,Engineering,Aerospace Engineering,22,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+central-south-university,AS0221,Engineering,Aerospace Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+the-university-of-hong-kong,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+city-university-of-hong-kong,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0221,Engineering,Aerospace Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0221,official,2026-10-23
+tsinghua-university,AS0222,Engineering,Marine/Ocean Engineering,14,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+peking-university,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+zhejiang-university,AS0222,Engineering,Marine/Ocean Engineering,9,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+shanghai-jiao-tong-university,AS0222,Engineering,Marine/Ocean Engineering,1,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+university-of-science-and-technology-of-china,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+fudan-university,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+sun-yat-sen-university,AS0222,Engineering,Marine/Ocean Engineering,18,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0222,Engineering,Marine/Ocean Engineering,29,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+nanjing-university,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+wuhan-university,AS0222,Engineering,Marine/Ocean Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+sichuan-university,AS0222,Engineering,Marine/Ocean Engineering,33,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+xi-an-jiaotong-university,AS0222,Engineering,Marine/Ocean Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+central-south-university,AS0222,Engineering,Marine/Ocean Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+the-university-of-hong-kong,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+city-university-of-hong-kong,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0222,Engineering,Marine/Ocean Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0222,official,2026-10-23
+tsinghua-university,AS0223,Engineering,Transportation Science & Technology,5,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+peking-university,AS0223,Engineering,Transportation Science & Technology,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+zhejiang-university,AS0223,Engineering,Transportation Science & Technology,11,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+shanghai-jiao-tong-university,AS0223,Engineering,Transportation Science & Technology,19,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+university-of-science-and-technology-of-china,AS0223,Engineering,Transportation Science & Technology,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+fudan-university,AS0223,Engineering,Transportation Science & Technology,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+sun-yat-sen-university,AS0223,Engineering,Transportation Science & Technology,29,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0223,Engineering,Transportation Science & Technology,40,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+nanjing-university,AS0223,Engineering,Transportation Science & Technology,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+wuhan-university,AS0223,Engineering,Transportation Science & Technology,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+sichuan-university,AS0223,Engineering,Transportation Science & Technology,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+xi-an-jiaotong-university,AS0223,Engineering,Transportation Science & Technology,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+central-south-university,AS0223,Engineering,Transportation Science & Technology,12,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+the-university-of-hong-kong,AS0223,Engineering,Transportation Science & Technology,10,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+city-university-of-hong-kong,AS0223,Engineering,Transportation Science & Technology,20,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0223,Engineering,Transportation Science & Technology,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0223,official,2026-10-23
+tsinghua-university,AS0224,Engineering,Remote Sensing,8,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+peking-university,AS0224,Engineering,Remote Sensing,12,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+zhejiang-university,AS0224,Engineering,Remote Sensing,18,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+shanghai-jiao-tong-university,AS0224,Engineering,Remote Sensing,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+university-of-science-and-technology-of-china,AS0224,Engineering,Remote Sensing,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+fudan-university,AS0224,Engineering,Remote Sensing,44,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+sun-yat-sen-university,AS0224,Engineering,Remote Sensing,5,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0224,Engineering,Remote Sensing,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+nanjing-university,AS0224,Engineering,Remote Sensing,31,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+wuhan-university,AS0224,Engineering,Remote Sensing,1,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+sichuan-university,AS0224,Engineering,Remote Sensing,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+xi-an-jiaotong-university,AS0224,Engineering,Remote Sensing,26,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+central-south-university,AS0224,Engineering,Remote Sensing,30,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+the-university-of-hong-kong,AS0224,Engineering,Remote Sensing,14,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+city-university-of-hong-kong,AS0224,Engineering,Remote Sensing,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0224,Engineering,Remote Sensing,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0224,official,2026-10-23
+tsinghua-university,AS0226,Engineering,Mining & Mineral Engineering,28,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+peking-university,AS0226,Engineering,Mining & Mineral Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+zhejiang-university,AS0226,Engineering,Mining & Mineral Engineering,42,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+shanghai-jiao-tong-university,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+university-of-science-and-technology-of-china,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+fudan-university,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+sun-yat-sen-university,AS0226,Engineering,Mining & Mineral Engineering,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+nanjing-university,AS0226,Engineering,Mining & Mineral Engineering,35,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+wuhan-university,AS0226,Engineering,Mining & Mineral Engineering,17,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+sichuan-university,AS0226,Engineering,Mining & Mineral Engineering,8,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+xi-an-jiaotong-university,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+central-south-university,AS0226,Engineering,Mining & Mineral Engineering,1,100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+the-university-of-hong-kong,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+city-university-of-hong-kong,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0226,Engineering,Mining & Mineral Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0226,official,2026-10-23
+tsinghua-university,AS0227,Engineering,Metallurgical Engineering,15,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+peking-university,AS0227,Engineering,Metallurgical Engineering,45,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+zhejiang-university,AS0227,Engineering,Metallurgical Engineering,26,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+shanghai-jiao-tong-university,AS0227,Engineering,Metallurgical Engineering,4,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+university-of-science-and-technology-of-china,AS0227,Engineering,Metallurgical Engineering,10,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+fudan-university,AS0227,Engineering,Metallurgical Engineering,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+sun-yat-sen-university,AS0227,Engineering,Metallurgical Engineering,38,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0227,Engineering,Metallurgical Engineering,22,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+nanjing-university,AS0227,Engineering,Metallurgical Engineering,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+wuhan-university,AS0227,Engineering,Metallurgical Engineering,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+sichuan-university,AS0227,Engineering,Metallurgical Engineering,30,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+xi-an-jiaotong-university,AS0227,Engineering,Metallurgical Engineering,8,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+central-south-university,AS0227,Engineering,Metallurgical Engineering,2,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+the-university-of-hong-kong,AS0227,Engineering,Metallurgical Engineering,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+city-university-of-hong-kong,AS0227,Engineering,Metallurgical Engineering,9,300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0227,Engineering,Metallurgical Engineering,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0227,official,2026-10-23
+tsinghua-university,AS0228,Engineering,Textile Science & Engineering,31,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+peking-university,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+zhejiang-university,AS0228,Engineering,Textile Science & Engineering,21,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+shanghai-jiao-tong-university,AS0228,Engineering,Textile Science & Engineering,10,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+university-of-science-and-technology-of-china,AS0228,Engineering,Textile Science & Engineering,47,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+fudan-university,AS0228,Engineering,Textile Science & Engineering,28,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+sun-yat-sen-university,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0228,Engineering,Textile Science & Engineering,32,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+nanjing-university,AS0228,Engineering,Textile Science & Engineering,46,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+wuhan-university,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+sichuan-university,AS0228,Engineering,Textile Science & Engineering,49,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+xi-an-jiaotong-university,AS0228,Engineering,Textile Science & Engineering,41,50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+central-south-university,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+the-university-of-hong-kong,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+city-university-of-hong-kong,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0228,Engineering,Textile Science & Engineering,not in published list (top 50),50,https://www.shanghairanking.com/rankings/gras/2026/AS0228,official,2026-10-23
+tsinghua-university,AS0229,Engineering,Artificial Intelligence,2,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+peking-university,AS0229,Engineering,Artificial Intelligence,16,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+zhejiang-university,AS0229,Engineering,Artificial Intelligence,4,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+shanghai-jiao-tong-university,AS0229,Engineering,Artificial Intelligence,20,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+university-of-science-and-technology-of-china,AS0229,Engineering,Artificial Intelligence,29,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+fudan-university,AS0229,Engineering,Artificial Intelligence,50,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+sun-yat-sen-university,AS0229,Engineering,Artificial Intelligence,41,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0229,Engineering,Artificial Intelligence,7,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+nanjing-university,AS0229,Engineering,Artificial Intelligence,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+wuhan-university,AS0229,Engineering,Artificial Intelligence,25,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+sichuan-university,AS0229,Engineering,Artificial Intelligence,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+xi-an-jiaotong-university,AS0229,Engineering,Artificial Intelligence,22,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+central-south-university,AS0229,Engineering,Artificial Intelligence,76-100,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+the-university-of-hong-kong,AS0229,Engineering,Artificial Intelligence,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+city-university-of-hong-kong,AS0229,Engineering,Artificial Intelligence,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0229,Engineering,Artificial Intelligence,31,400,https://www.shanghairanking.com/rankings/gras/2026/AS0229,official,2026-10-23
+tsinghua-university,AS0230,Engineering,Robotic Science & Engineering,7,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+peking-university,AS0230,Engineering,Robotic Science & Engineering,15,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+zhejiang-university,AS0230,Engineering,Robotic Science & Engineering,9,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+shanghai-jiao-tong-university,AS0230,Engineering,Robotic Science & Engineering,6,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+university-of-science-and-technology-of-china,AS0230,Engineering,Robotic Science & Engineering,43,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+fudan-university,AS0230,Engineering,Robotic Science & Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+sun-yat-sen-university,AS0230,Engineering,Robotic Science & Engineering,48,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0230,Engineering,Robotic Science & Engineering,21,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+nanjing-university,AS0230,Engineering,Robotic Science & Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+wuhan-university,AS0230,Engineering,Robotic Science & Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+sichuan-university,AS0230,Engineering,Robotic Science & Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+xi-an-jiaotong-university,AS0230,Engineering,Robotic Science & Engineering,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+central-south-university,AS0230,Engineering,Robotic Science & Engineering,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+the-university-of-hong-kong,AS0230,Engineering,Robotic Science & Engineering,17,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+city-university-of-hong-kong,AS0230,Engineering,Robotic Science & Engineering,41,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0230,Engineering,Robotic Science & Engineering,20,100,https://www.shanghairanking.com/rankings/gras/2026/AS0230,official,2026-10-23
+tsinghua-university,AS0301,Life Sciences,Biological Sciences,36,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+peking-university,AS0301,Life Sciences,Biological Sciences,32,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+zhejiang-university,AS0301,Life Sciences,Biological Sciences,19,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+shanghai-jiao-tong-university,AS0301,Life Sciences,Biological Sciences,49,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+university-of-science-and-technology-of-china,AS0301,Life Sciences,Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+fudan-university,AS0301,Life Sciences,Biological Sciences,43,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+sun-yat-sen-university,AS0301,Life Sciences,Biological Sciences,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0301,Life Sciences,Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+nanjing-university,AS0301,Life Sciences,Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+wuhan-university,AS0301,Life Sciences,Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+sichuan-university,AS0301,Life Sciences,Biological Sciences,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+xi-an-jiaotong-university,AS0301,Life Sciences,Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+central-south-university,AS0301,Life Sciences,Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+the-university-of-hong-kong,AS0301,Life Sciences,Biological Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+city-university-of-hong-kong,AS0301,Life Sciences,Biological Sciences,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0301,Life Sciences,Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0301,official,2026-10-23
+tsinghua-university,AS0302,Life Sciences,Human Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+peking-university,AS0302,Life Sciences,Human Biological Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+zhejiang-university,AS0302,Life Sciences,Human Biological Sciences,44,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+shanghai-jiao-tong-university,AS0302,Life Sciences,Human Biological Sciences,31,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+university-of-science-and-technology-of-china,AS0302,Life Sciences,Human Biological Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+fudan-university,AS0302,Life Sciences,Human Biological Sciences,30,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+sun-yat-sen-university,AS0302,Life Sciences,Human Biological Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0302,Life Sciences,Human Biological Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+nanjing-university,AS0302,Life Sciences,Human Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+wuhan-university,AS0302,Life Sciences,Human Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+sichuan-university,AS0302,Life Sciences,Human Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+xi-an-jiaotong-university,AS0302,Life Sciences,Human Biological Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+central-south-university,AS0302,Life Sciences,Human Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+the-university-of-hong-kong,AS0302,Life Sciences,Human Biological Sciences,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+city-university-of-hong-kong,AS0302,Life Sciences,Human Biological Sciences,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0302,Life Sciences,Human Biological Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0302,official,2026-10-23
+tsinghua-university,AS0303,Life Sciences,Agricultural Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+peking-university,AS0303,Life Sciences,Agricultural Sciences,47,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+zhejiang-university,AS0303,Life Sciences,Agricultural Sciences,6,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+shanghai-jiao-tong-university,AS0303,Life Sciences,Agricultural Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+university-of-science-and-technology-of-china,AS0303,Life Sciences,Agricultural Sciences,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+fudan-university,AS0303,Life Sciences,Agricultural Sciences,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+sun-yat-sen-university,AS0303,Life Sciences,Agricultural Sciences,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0303,Life Sciences,Agricultural Sciences,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+nanjing-university,AS0303,Life Sciences,Agricultural Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+wuhan-university,AS0303,Life Sciences,Agricultural Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+sichuan-university,AS0303,Life Sciences,Agricultural Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+xi-an-jiaotong-university,AS0303,Life Sciences,Agricultural Sciences,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+central-south-university,AS0303,Life Sciences,Agricultural Sciences,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+the-university-of-hong-kong,AS0303,Life Sciences,Agricultural Sciences,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+city-university-of-hong-kong,AS0303,Life Sciences,Agricultural Sciences,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0303,Life Sciences,Agricultural Sciences,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0303,official,2026-10-23
+tsinghua-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+peking-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+zhejiang-university,AS0304,Life Sciences,Veterinary Sciences,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+shanghai-jiao-tong-university,AS0304,Life Sciences,Veterinary Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+university-of-science-and-technology-of-china,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+fudan-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+sun-yat-sen-university,AS0304,Life Sciences,Veterinary Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+nanjing-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+wuhan-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+sichuan-university,AS0304,Life Sciences,Veterinary Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+xi-an-jiaotong-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+central-south-university,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+the-university-of-hong-kong,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+city-university-of-hong-kong,AS0304,Life Sciences,Veterinary Sciences,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0304,Life Sciences,Veterinary Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0304,official,2026-10-23
+tsinghua-university,AS0401,Medical Sciences,Clinical Medicine,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+peking-university,AS0401,Medical Sciences,Clinical Medicine,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+zhejiang-university,AS0401,Medical Sciences,Clinical Medicine,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+shanghai-jiao-tong-university,AS0401,Medical Sciences,Clinical Medicine,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+university-of-science-and-technology-of-china,AS0401,Medical Sciences,Clinical Medicine,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+fudan-university,AS0401,Medical Sciences,Clinical Medicine,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+sun-yat-sen-university,AS0401,Medical Sciences,Clinical Medicine,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0401,Medical Sciences,Clinical Medicine,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+nanjing-university,AS0401,Medical Sciences,Clinical Medicine,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+wuhan-university,AS0401,Medical Sciences,Clinical Medicine,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+sichuan-university,AS0401,Medical Sciences,Clinical Medicine,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+xi-an-jiaotong-university,AS0401,Medical Sciences,Clinical Medicine,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+central-south-university,AS0401,Medical Sciences,Clinical Medicine,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+the-university-of-hong-kong,AS0401,Medical Sciences,Clinical Medicine,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+city-university-of-hong-kong,AS0401,Medical Sciences,Clinical Medicine,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0401,Medical Sciences,Clinical Medicine,11,500,https://www.shanghairanking.com/rankings/gras/2026/AS0401,official,2026-10-23
+tsinghua-university,AS0402,Medical Sciences,Public Health,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+peking-university,AS0402,Medical Sciences,Public Health,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+zhejiang-university,AS0402,Medical Sciences,Public Health,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+shanghai-jiao-tong-university,AS0402,Medical Sciences,Public Health,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+university-of-science-and-technology-of-china,AS0402,Medical Sciences,Public Health,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+fudan-university,AS0402,Medical Sciences,Public Health,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+sun-yat-sen-university,AS0402,Medical Sciences,Public Health,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0402,Medical Sciences,Public Health,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+nanjing-university,AS0402,Medical Sciences,Public Health,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+wuhan-university,AS0402,Medical Sciences,Public Health,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+sichuan-university,AS0402,Medical Sciences,Public Health,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+xi-an-jiaotong-university,AS0402,Medical Sciences,Public Health,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+central-south-university,AS0402,Medical Sciences,Public Health,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+the-university-of-hong-kong,AS0402,Medical Sciences,Public Health,26,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+city-university-of-hong-kong,AS0402,Medical Sciences,Public Health,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0402,Medical Sciences,Public Health,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0402,official,2026-10-23
+tsinghua-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+peking-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+zhejiang-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+shanghai-jiao-tong-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,21,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+university-of-science-and-technology-of-china,AS0403,Medical Sciences,Dentistry & Oral Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+fudan-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+sun-yat-sen-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0403,Medical Sciences,Dentistry & Oral Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+nanjing-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+wuhan-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+sichuan-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,4,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+xi-an-jiaotong-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+central-south-university,AS0403,Medical Sciences,Dentistry & Oral Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+the-university-of-hong-kong,AS0403,Medical Sciences,Dentistry & Oral Sciences,11,300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+city-university-of-hong-kong,AS0403,Medical Sciences,Dentistry & Oral Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0403,Medical Sciences,Dentistry & Oral Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0403,official,2026-10-23
+tsinghua-university,AS0404,Medical Sciences,Nursing,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+peking-university,AS0404,Medical Sciences,Nursing,50,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+zhejiang-university,AS0404,Medical Sciences,Nursing,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+shanghai-jiao-tong-university,AS0404,Medical Sciences,Nursing,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+university-of-science-and-technology-of-china,AS0404,Medical Sciences,Nursing,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+fudan-university,AS0404,Medical Sciences,Nursing,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+sun-yat-sen-university,AS0404,Medical Sciences,Nursing,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0404,Medical Sciences,Nursing,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+nanjing-university,AS0404,Medical Sciences,Nursing,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+wuhan-university,AS0404,Medical Sciences,Nursing,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+sichuan-university,AS0404,Medical Sciences,Nursing,37,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+xi-an-jiaotong-university,AS0404,Medical Sciences,Nursing,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+central-south-university,AS0404,Medical Sciences,Nursing,36,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+the-university-of-hong-kong,AS0404,Medical Sciences,Nursing,28,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+city-university-of-hong-kong,AS0404,Medical Sciences,Nursing,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0404,Medical Sciences,Nursing,5,300,https://www.shanghairanking.com/rankings/gras/2026/AS0404,official,2026-10-23
+tsinghua-university,AS0405,Medical Sciences,Medical Technology,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+peking-university,AS0405,Medical Sciences,Medical Technology,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+zhejiang-university,AS0405,Medical Sciences,Medical Technology,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+shanghai-jiao-tong-university,AS0405,Medical Sciences,Medical Technology,37,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+university-of-science-and-technology-of-china,AS0405,Medical Sciences,Medical Technology,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+fudan-university,AS0405,Medical Sciences,Medical Technology,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+sun-yat-sen-university,AS0405,Medical Sciences,Medical Technology,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0405,Medical Sciences,Medical Technology,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+nanjing-university,AS0405,Medical Sciences,Medical Technology,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+wuhan-university,AS0405,Medical Sciences,Medical Technology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+sichuan-university,AS0405,Medical Sciences,Medical Technology,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+xi-an-jiaotong-university,AS0405,Medical Sciences,Medical Technology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+central-south-university,AS0405,Medical Sciences,Medical Technology,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+the-university-of-hong-kong,AS0405,Medical Sciences,Medical Technology,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+city-university-of-hong-kong,AS0405,Medical Sciences,Medical Technology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0405,Medical Sciences,Medical Technology,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0405,official,2026-10-23
+tsinghua-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+peking-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,9,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+zhejiang-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,13,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+shanghai-jiao-tong-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,18,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+university-of-science-and-technology-of-china,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+fudan-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,16,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+sun-yat-sen-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,24,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+nanjing-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+wuhan-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+sichuan-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,11,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+xi-an-jiaotong-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+central-south-university,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,34,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+the-university-of-hong-kong,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+city-university-of-hong-kong,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0406,Medical Sciences,Pharmacy & Pharmaceutical Sciences,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0406,official,2026-10-23
+tsinghua-university,AS0501,Social Sciences,Economics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+peking-university,AS0501,Social Sciences,Economics,23,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+zhejiang-university,AS0501,Social Sciences,Economics,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+shanghai-jiao-tong-university,AS0501,Social Sciences,Economics,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+university-of-science-and-technology-of-china,AS0501,Social Sciences,Economics,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+fudan-university,AS0501,Social Sciences,Economics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+sun-yat-sen-university,AS0501,Social Sciences,Economics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0501,Social Sciences,Economics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+nanjing-university,AS0501,Social Sciences,Economics,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+wuhan-university,AS0501,Social Sciences,Economics,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+sichuan-university,AS0501,Social Sciences,Economics,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+xi-an-jiaotong-university,AS0501,Social Sciences,Economics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+central-south-university,AS0501,Social Sciences,Economics,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+the-university-of-hong-kong,AS0501,Social Sciences,Economics,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+city-university-of-hong-kong,AS0501,Social Sciences,Economics,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0501,Social Sciences,Economics,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0501,official,2026-10-23
+tsinghua-university,AS0502,Social Sciences,Statistics,43,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+peking-university,AS0502,Social Sciences,Statistics,24,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+zhejiang-university,AS0502,Social Sciences,Statistics,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+shanghai-jiao-tong-university,AS0502,Social Sciences,Statistics,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+university-of-science-and-technology-of-china,AS0502,Social Sciences,Statistics,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+fudan-university,AS0502,Social Sciences,Statistics,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+sun-yat-sen-university,AS0502,Social Sciences,Statistics,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0502,Social Sciences,Statistics,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+nanjing-university,AS0502,Social Sciences,Statistics,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+wuhan-university,AS0502,Social Sciences,Statistics,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+sichuan-university,AS0502,Social Sciences,Statistics,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+xi-an-jiaotong-university,AS0502,Social Sciences,Statistics,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+central-south-university,AS0502,Social Sciences,Statistics,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+the-university-of-hong-kong,AS0502,Social Sciences,Statistics,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+city-university-of-hong-kong,AS0502,Social Sciences,Statistics,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0502,Social Sciences,Statistics,47,300,https://www.shanghairanking.com/rankings/gras/2026/AS0502,official,2026-10-23
+tsinghua-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+peking-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+zhejiang-university,AS0503,Social Sciences,Law,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+shanghai-jiao-tong-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+university-of-science-and-technology-of-china,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+fudan-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+sun-yat-sen-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+nanjing-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+wuhan-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+sichuan-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+xi-an-jiaotong-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+central-south-university,AS0503,Social Sciences,Law,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+the-university-of-hong-kong,AS0503,Social Sciences,Law,40,200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+city-university-of-hong-kong,AS0503,Social Sciences,Law,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0503,Social Sciences,Law,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0503,official,2026-10-23
+tsinghua-university,AS0504,Social Sciences,Political Sciences,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+peking-university,AS0504,Social Sciences,Political Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+zhejiang-university,AS0504,Social Sciences,Political Sciences,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+shanghai-jiao-tong-university,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+university-of-science-and-technology-of-china,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+fudan-university,AS0504,Social Sciences,Political Sciences,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+sun-yat-sen-university,AS0504,Social Sciences,Political Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+nanjing-university,AS0504,Social Sciences,Political Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+wuhan-university,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+sichuan-university,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+xi-an-jiaotong-university,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+central-south-university,AS0504,Social Sciences,Political Sciences,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+the-university-of-hong-kong,AS0504,Social Sciences,Political Sciences,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+city-university-of-hong-kong,AS0504,Social Sciences,Political Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0504,Social Sciences,Political Sciences,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0504,official,2026-10-23
+tsinghua-university,AS0505,Social Sciences,Sociology,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+peking-university,AS0505,Social Sciences,Sociology,101-150,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+zhejiang-university,AS0505,Social Sciences,Sociology,151-200,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+shanghai-jiao-tong-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+university-of-science-and-technology-of-china,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+fudan-university,AS0505,Social Sciences,Sociology,201-300,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+sun-yat-sen-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+nanjing-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+wuhan-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+sichuan-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+xi-an-jiaotong-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+central-south-university,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+the-university-of-hong-kong,AS0505,Social Sciences,Sociology,51-75,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+city-university-of-hong-kong,AS0505,Social Sciences,Sociology,not in published list (top 300),300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0505,Social Sciences,Sociology,76-100,300,https://www.shanghairanking.com/rankings/gras/2026/AS0505,official,2026-10-23
+tsinghua-university,AS0506,Social Sciences,Education,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+peking-university,AS0506,Social Sciences,Education,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+zhejiang-university,AS0506,Social Sciences,Education,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+shanghai-jiao-tong-university,AS0506,Social Sciences,Education,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+university-of-science-and-technology-of-china,AS0506,Social Sciences,Education,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+fudan-university,AS0506,Social Sciences,Education,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+sun-yat-sen-university,AS0506,Social Sciences,Education,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0506,Social Sciences,Education,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+nanjing-university,AS0506,Social Sciences,Education,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+wuhan-university,AS0506,Social Sciences,Education,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+sichuan-university,AS0506,Social Sciences,Education,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+xi-an-jiaotong-university,AS0506,Social Sciences,Education,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+central-south-university,AS0506,Social Sciences,Education,401-500,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+the-university-of-hong-kong,AS0506,Social Sciences,Education,2,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+city-university-of-hong-kong,AS0506,Social Sciences,Education,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0506,Social Sciences,Education,8,500,https://www.shanghairanking.com/rankings/gras/2026/AS0506,official,2026-10-23
+tsinghua-university,AS0507,Social Sciences,Communication,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+peking-university,AS0507,Social Sciences,Communication,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+zhejiang-university,AS0507,Social Sciences,Communication,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+shanghai-jiao-tong-university,AS0507,Social Sciences,Communication,51-75,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+university-of-science-and-technology-of-china,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+fudan-university,AS0507,Social Sciences,Communication,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+sun-yat-sen-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+nanjing-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+wuhan-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+sichuan-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+xi-an-jiaotong-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+central-south-university,AS0507,Social Sciences,Communication,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+the-university-of-hong-kong,AS0507,Social Sciences,Communication,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+city-university-of-hong-kong,AS0507,Social Sciences,Communication,34,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0507,Social Sciences,Communication,7,200,https://www.shanghairanking.com/rankings/gras/2026/AS0507,official,2026-10-23
+tsinghua-university,AS0508,Social Sciences,Psychology,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+peking-university,AS0508,Social Sciences,Psychology,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+zhejiang-university,AS0508,Social Sciences,Psychology,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+shanghai-jiao-tong-university,AS0508,Social Sciences,Psychology,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+university-of-science-and-technology-of-china,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+fudan-university,AS0508,Social Sciences,Psychology,301-400,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+sun-yat-sen-university,AS0508,Social Sciences,Psychology,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+nanjing-university,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+wuhan-university,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+sichuan-university,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+xi-an-jiaotong-university,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+central-south-university,AS0508,Social Sciences,Psychology,not in published list (top 500),500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+the-university-of-hong-kong,AS0508,Social Sciences,Psychology,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+city-university-of-hong-kong,AS0508,Social Sciences,Psychology,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0508,Social Sciences,Psychology,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0508,official,2026-10-23
+tsinghua-university,AS0509,Social Sciences,Business Administration,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+peking-university,AS0509,Social Sciences,Business Administration,51-75,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+zhejiang-university,AS0509,Social Sciences,Business Administration,40,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+shanghai-jiao-tong-university,AS0509,Social Sciences,Business Administration,41,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+university-of-science-and-technology-of-china,AS0509,Social Sciences,Business Administration,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+fudan-university,AS0509,Social Sciences,Business Administration,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+sun-yat-sen-university,AS0509,Social Sciences,Business Administration,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0509,Social Sciences,Business Administration,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+nanjing-university,AS0509,Social Sciences,Business Administration,101-150,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+wuhan-university,AS0509,Social Sciences,Business Administration,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+sichuan-university,AS0509,Social Sciences,Business Administration,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+xi-an-jiaotong-university,AS0509,Social Sciences,Business Administration,151-200,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+central-south-university,AS0509,Social Sciences,Business Administration,301-400,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+the-university-of-hong-kong,AS0509,Social Sciences,Business Administration,45,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+city-university-of-hong-kong,AS0509,Social Sciences,Business Administration,18,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0509,Social Sciences,Business Administration,201-300,400,https://www.shanghairanking.com/rankings/gras/2026/AS0509,official,2026-10-23
+tsinghua-university,AS0510,Social Sciences,Finance,18,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+peking-university,AS0510,Social Sciences,Finance,16,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+zhejiang-university,AS0510,Social Sciences,Finance,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+shanghai-jiao-tong-university,AS0510,Social Sciences,Finance,45,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+university-of-science-and-technology-of-china,AS0510,Social Sciences,Finance,not in published list (top 200),200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+fudan-university,AS0510,Social Sciences,Finance,45,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+sun-yat-sen-university,AS0510,Social Sciences,Finance,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0510,Social Sciences,Finance,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+nanjing-university,AS0510,Social Sciences,Finance,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+wuhan-university,AS0510,Social Sciences,Finance,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+sichuan-university,AS0510,Social Sciences,Finance,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+xi-an-jiaotong-university,AS0510,Social Sciences,Finance,101-150,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+central-south-university,AS0510,Social Sciences,Finance,151-200,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+the-university-of-hong-kong,AS0510,Social Sciences,Finance,3,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+city-university-of-hong-kong,AS0510,Social Sciences,Finance,76-100,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0510,Social Sciences,Finance,48,200,https://www.shanghairanking.com/rankings/gras/2026/AS0510,official,2026-10-23
+tsinghua-university,AS0511,Social Sciences,Management,3,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+peking-university,AS0511,Social Sciences,Management,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+zhejiang-university,AS0511,Social Sciences,Management,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+shanghai-jiao-tong-university,AS0511,Social Sciences,Management,22,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+university-of-science-and-technology-of-china,AS0511,Social Sciences,Management,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+fudan-university,AS0511,Social Sciences,Management,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+sun-yat-sen-university,AS0511,Social Sciences,Management,76-100,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0511,Social Sciences,Management,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+nanjing-university,AS0511,Social Sciences,Management,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+wuhan-university,AS0511,Social Sciences,Management,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+sichuan-university,AS0511,Social Sciences,Management,151-200,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+xi-an-jiaotong-university,AS0511,Social Sciences,Management,101-150,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+central-south-university,AS0511,Social Sciences,Management,201-300,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+the-university-of-hong-kong,AS0511,Social Sciences,Management,39,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+city-university-of-hong-kong,AS0511,Social Sciences,Management,35,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0511,Social Sciences,Management,51-75,500,https://www.shanghairanking.com/rankings/gras/2026/AS0511,official,2026-10-23
+tsinghua-university,AS0512,Social Sciences,Public Administration,11,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+peking-university,AS0512,Social Sciences,Public Administration,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+zhejiang-university,AS0512,Social Sciences,Public Administration,48,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+shanghai-jiao-tong-university,AS0512,Social Sciences,Public Administration,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+university-of-science-and-technology-of-china,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+fudan-university,AS0512,Social Sciences,Public Administration,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+sun-yat-sen-university,AS0512,Social Sciences,Public Administration,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+nanjing-university,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+wuhan-university,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+sichuan-university,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+xi-an-jiaotong-university,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+central-south-university,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+the-university-of-hong-kong,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+city-university-of-hong-kong,AS0512,Social Sciences,Public Administration,10,100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0512,Social Sciences,Public Administration,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0512,official,2026-10-23
+tsinghua-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+peking-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+zhejiang-university,AS0513,Social Sciences,Hospitality & Tourism Management,35,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+shanghai-jiao-tong-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+university-of-science-and-technology-of-china,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+fudan-university,AS0513,Social Sciences,Hospitality & Tourism Management,76-100,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+sun-yat-sen-university,AS0513,Social Sciences,Hospitality & Tourism Management,4,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+nanjing-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+wuhan-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+sichuan-university,AS0513,Social Sciences,Hospitality & Tourism Management,38,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+xi-an-jiaotong-university,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+central-south-university,AS0513,Social Sciences,Hospitality & Tourism Management,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+the-university-of-hong-kong,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+city-university-of-hong-kong,AS0513,Social Sciences,Hospitality & Tourism Management,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0513,Social Sciences,Hospitality & Tourism Management,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0513,official,2026-10-23
+tsinghua-university,AS0515,Social Sciences,Library & Information Science,15,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+peking-university,AS0515,Social Sciences,Library & Information Science,24,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+zhejiang-university,AS0515,Social Sciences,Library & Information Science,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+shanghai-jiao-tong-university,AS0515,Social Sciences,Library & Information Science,38,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+university-of-science-and-technology-of-china,AS0515,Social Sciences,Library & Information Science,43,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+fudan-university,AS0515,Social Sciences,Library & Information Science,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+sun-yat-sen-university,AS0515,Social Sciences,Library & Information Science,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+huazhong-university-of-science-and-technology,AS0515,Social Sciences,Library & Information Science,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+nanjing-university,AS0515,Social Sciences,Library & Information Science,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+wuhan-university,AS0515,Social Sciences,Library & Information Science,13,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+sichuan-university,AS0515,Social Sciences,Library & Information Science,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+xi-an-jiaotong-university,AS0515,Social Sciences,Library & Information Science,51-75,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+central-south-university,AS0515,Social Sciences,Library & Information Science,not in published list (top 100),100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+the-university-of-hong-kong,AS0515,Social Sciences,Library & Information Science,5,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+city-university-of-hong-kong,AS0515,Social Sciences,Library & Information Science,3,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23
+the-chinese-university-of-hong-kong,AS0515,Social Sciences,Library & Information Science,29,100,https://www.shanghairanking.com/rankings/gras/2026/AS0515,official,2026-10-23

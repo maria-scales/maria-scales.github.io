@@ -1,0 +1,680 @@
+{
+ "name": "china-subject-strength",
+ "title": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
+ "version": "2026.10",
+ "description": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025: Places of the 16 universities in all 57 GRAS 2026 subjects, top-10 counts by region, ARWU indicator means 2010-2025 and Highly Cited Researcher counts without names. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "homepage": "https://mariascales.com/research/long-bet/data/china-subject-strength/",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "Creative Commons Attribution 4.0 International"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Original research: The Long Bet (mariascales.com)",
+   "path": "https://mariascales.com/research/long-bet/"
+  },
+  {
+   "title": "ShanghaiRanking Consultancy: ARWU and GRAS",
+   "path": "https://www.shanghairanking.com/"
+  },
+  {
+   "title": "Clarivate Highly Cited Researchers 2025",
+   "path": "https://clarivate.com/highly-cited-researchers/"
+  },
+  {
+   "title": "59 pages listed in sources.csv",
+   "path": "sources.csv"
+  }
+ ],
+ "resources": [
+  {
+   "name": "data",
+   "path": "data.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "subject_code",
+      "type": "string",
+      "description": "ShanghaiRanking subject code (e.g. `AS0101` Mathematics).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "subject_category",
+      "type": "string",
+      "description": "GRAS subject category: Natural Sciences, Engineering, Life Sciences, Medical Sciences, Social Sciences."
+     },
+     {
+      "name": "subject",
+      "type": "string",
+      "description": "GRAS subject name."
+     },
+     {
+      "name": "gras_2026_rank",
+      "type": "string",
+      "description": "Rank in the GRAS 2026 subject list as published: a number for places 1-50, a band (e.g. `51-75`, `151-200`) beyond, or `not in published list (top N)` when the university is not in a list that is published to place N."
+     },
+     {
+      "name": "published_list_length",
+      "type": "integer",
+      "description": "How far down the subject list is published (50, 100, 200, 300, 400 or 500 places)."
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) the figure was read from, \"; \"-separated."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` (ranking publisher).",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date read, ISO 8601."
+     }
+    ],
+    "primaryKey": [
+     "university_id",
+     "subject_code"
+    ]
+   }
+  },
+  {
+   "name": "china_hk_in_top10",
+   "path": "china_hk_in_top10.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "subject_code",
+      "type": "string",
+      "description": "ShanghaiRanking subject code (e.g. `AS0101` Mathematics).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "subject_category",
+      "type": "string",
+      "description": "GRAS subject category: Natural Sciences, Engineering, Life Sciences, Medical Sciences, Social Sciences."
+     },
+     {
+      "name": "subject",
+      "type": "string",
+      "description": "GRAS subject name."
+     },
+     {
+      "name": "gras_2026_rank",
+      "type": "integer",
+      "description": "Rank in the GRAS 2026 subject list as published: a number for places 1-50, a band (e.g. `51-75`, `151-200`) beyond, or `not in published list (top N)` when the university is not in a list that is published to place N."
+     },
+     {
+      "name": "university_slug",
+      "type": "string",
+      "description": "ShanghaiRanking institution slug; for the 16 universities of this dataset it equals `university_id`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "description": "Region as printed by ShanghaiRanking (`China`, `China-Hong Kong`)."
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) the figure was read from, \"; \"-separated."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` (ranking publisher).",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date read, ISO 8601."
+     }
+    ],
+    "primaryKey": [
+     "subject_code",
+     "university_slug"
+    ]
+   }
+  },
+  {
+   "name": "subject_profile",
+   "path": "subject_profile.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "all_top10",
+      "type": "integer",
+      "description": "Number of the 57 GRAS 2026 subjects in which the university is in places 1-10."
+     },
+     {
+      "name": "all_11_50",
+      "type": "integer",
+      "description": "Number of the 57 subjects with places 11-50."
+     },
+     {
+      "name": "all_51_100",
+      "type": "integer",
+      "description": "Number of the 57 subjects with places 51-100."
+     },
+     {
+      "name": "all_beyond_100",
+      "type": "integer",
+      "description": "Number of the 57 subjects with a published place beyond 100."
+     },
+     {
+      "name": "all_not_in_list_top100plus",
+      "type": "integer",
+      "description": "Number of the 57 subjects where the university is not in a list published to 100 places or more."
+     },
+     {
+      "name": "all_not_in_list_top50",
+      "type": "integer",
+      "description": "Number of the 57 subjects where the university is not in a list published only to 50 places (rank unknown beyond 50)."
+     },
+     {
+      "name": "all_outside_top100",
+      "type": "integer",
+      "description": "Number of the 57 subjects with no place in the top 100 (`all_beyond_100` + `all_not_in_list_top100plus`)."
+     },
+     {
+      "name": "stem_top10",
+      "type": "integer",
+      "description": "Same as `all_top10` for the 37 STEM subjects (Natural Sciences, Engineering, Life Sciences)."
+     },
+     {
+      "name": "stem_11_50",
+      "type": "integer",
+      "description": "Same as `all_11_50` for the 37 STEM subjects."
+     },
+     {
+      "name": "stem_51_100",
+      "type": "integer",
+      "description": "Same as `all_51_100` for the 37 STEM subjects."
+     },
+     {
+      "name": "stem_beyond_100",
+      "type": "integer",
+      "description": "Same as `all_beyond_100` for the 37 STEM subjects."
+     },
+     {
+      "name": "stem_not_in_list_top100plus",
+      "type": "integer",
+      "description": "Same as `all_not_in_list_top100plus` for the 37 STEM subjects."
+     },
+     {
+      "name": "stem_not_in_list_top50",
+      "type": "integer",
+      "description": "Same as `all_not_in_list_top50` for the 37 STEM subjects."
+     },
+     {
+      "name": "stem_outside_top100",
+      "type": "integer",
+      "description": "Same as `all_outside_top100` for the 37 STEM subjects."
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) the figure was read from, \"; \"-separated."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` (ranking publisher).",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date read, ISO 8601."
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats."
+     }
+    ],
+    "primaryKey": [
+     "university_id"
+    ]
+   }
+  },
+  {
+   "name": "top10_by_subject_region",
+   "path": "top10_by_subject_region.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "subject_category",
+      "type": "string",
+      "description": "GRAS subject category: Natural Sciences, Engineering, Life Sciences, Medical Sciences, Social Sciences."
+     },
+     {
+      "name": "subject",
+      "type": "string",
+      "description": "GRAS subject name.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "top10_cn",
+      "type": "integer",
+      "description": "Places 1-10 of the subject held by mainland Chinese universities (all of them)."
+     },
+     {
+      "name": "top10_cn_13",
+      "type": "integer",
+      "description": "Of `top10_cn`, places held by the 13 mainland universities of this dataset."
+     },
+     {
+      "name": "top10_us",
+      "type": "integer",
+      "description": "Places 1-10 held by US universities."
+     },
+     {
+      "name": "top10_uk",
+      "type": "integer",
+      "description": "Places 1-10 held by UK universities."
+     },
+     {
+      "name": "top10_europe",
+      "type": "integer",
+      "description": "Places 1-10 held by universities of continental Europe (UK excluded)."
+     }
+    ],
+    "primaryKey": [
+     "subject"
+    ]
+   }
+  },
+  {
+   "name": "arwu_indicators_by_region",
+   "path": "arwu_indicators_by_region.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer",
+      "description": "ARWU edition year.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "arwu_region",
+      "type": "string",
+      "description": "Group of top-100 universities: `CN` mainland China, `HK` Hong Kong, `US`, `UK`, `EU` continental Europe (UK excluded), `OT` all other countries.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "n_in_top100",
+      "type": "integer",
+      "description": "Number of universities of the group in the ARWU top 100 of that edition."
+     },
+     {
+      "name": "alumni",
+      "type": "number",
+      "description": "ARWU indicator Alumni (alumni winning Nobel Prizes and Fields Medals, weight 10%), score 0-100; mean over the group for the regional table."
+     },
+     {
+      "name": "award",
+      "type": "number",
+      "description": "ARWU indicator Award (staff winning Nobel Prizes and Fields Medals, weight 20%), score 0-100."
+     },
+     {
+      "name": "hici",
+      "type": "number",
+      "description": "ARWU indicator HiCi (highly cited researchers, weight 20%), score 0-100."
+     },
+     {
+      "name": "ns",
+      "type": "number",
+      "description": "ARWU indicator N&S (papers in Nature and Science, weight 20%), score 0-100."
+     },
+     {
+      "name": "pub",
+      "type": "number",
+      "description": "ARWU indicator PUB (papers indexed in SCIE and SSCI, weight 20%), score 0-100."
+     },
+     {
+      "name": "pcp",
+      "type": "number",
+      "description": "ARWU indicator PCP (per capita performance, weight 10%), score 0-100."
+     }
+    ],
+    "primaryKey": [
+     "year",
+     "arwu_region"
+    ]
+   }
+  },
+  {
+   "name": "arwu_tsinghua_indicators",
+   "path": "arwu_tsinghua_indicators.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "year",
+      "type": "integer",
+      "description": "ARWU edition year.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "rank",
+      "type": "string",
+      "description": "Tsinghua University ARWU world rank in that edition (band beyond 100)."
+     },
+     {
+      "name": "alumni",
+      "type": "number",
+      "description": "ARWU indicator Alumni (alumni winning Nobel Prizes and Fields Medals, weight 10%), score 0-100; mean over the group for the regional table."
+     },
+     {
+      "name": "award",
+      "type": "integer",
+      "description": "ARWU indicator Award (staff winning Nobel Prizes and Fields Medals, weight 20%), score 0-100."
+     },
+     {
+      "name": "hici",
+      "type": "number",
+      "description": "ARWU indicator HiCi (highly cited researchers, weight 20%), score 0-100."
+     },
+     {
+      "name": "ns",
+      "type": "number",
+      "description": "ARWU indicator N&S (papers in Nature and Science, weight 20%), score 0-100."
+     },
+     {
+      "name": "pub",
+      "type": "number",
+      "description": "ARWU indicator PUB (papers indexed in SCIE and SSCI, weight 20%), score 0-100."
+     },
+     {
+      "name": "pcp",
+      "type": "number",
+      "description": "ARWU indicator PCP (per capita performance, weight 10%), score 0-100."
+     }
+    ],
+    "primaryKey": [
+     "year"
+    ]
+   }
+  },
+  {
+   "name": "hcr_by_university_category",
+   "path": "hcr_by_university_category.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "cross_field",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Cross-Field."
+     },
+     {
+      "name": "chemistry",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Chemistry."
+     },
+     {
+      "name": "materials_science",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Materials Science."
+     },
+     {
+      "name": "engineering",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Engineering."
+     },
+     {
+      "name": "computer_science",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Computer Science."
+     },
+     {
+      "name": "physics",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Physics."
+     },
+     {
+      "name": "mathematics",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Mathematics."
+     },
+     {
+      "name": "geosciences",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Geosciences."
+     },
+     {
+      "name": "environment_and_ecology",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Environment and Ecology."
+     },
+     {
+      "name": "clinical_medicine",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Clinical Medicine."
+     },
+     {
+      "name": "social_sciences",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Social Sciences."
+     },
+     {
+      "name": "agricultural_sciences",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Agricultural Sciences."
+     },
+     {
+      "name": "biology_and_biochemistry",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Biology and Biochemistry."
+     },
+     {
+      "name": "economics_and_business",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Economics and Business."
+     },
+     {
+      "name": "immunology",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Immunology."
+     },
+     {
+      "name": "microbiology",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Microbiology."
+     },
+     {
+      "name": "molecular_biology_and_genetics",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Molecular Biology and Genetics."
+     },
+     {
+      "name": "pharmacology_and_toxicology",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Pharmacology and Toxicology."
+     },
+     {
+      "name": "plant_and_animal_science",
+      "type": "integer",
+      "description": "Highly Cited Researchers 2025 entries of the university in the category Plant and Animal Science."
+     }
+    ],
+    "primaryKey": [
+     "university_id"
+    ]
+   }
+  },
+  {
+   "name": "hcr_by_region_category",
+   "path": "hcr_by_region_category.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "hcr_region",
+      "type": "string",
+      "description": "Country or region as listed by Clarivate (`China Mainland`, `United States`, `United Kingdom` and 15 European countries).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "category",
+      "type": "string",
+      "description": "Clarivate Highly Cited Researchers category; `ALL` = all categories together; `Cross-Field` = influence across several fields.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "awards",
+      "type": "integer",
+      "description": "Number of Highly Cited Researchers 2025 entries. 1 entry = researcher x category."
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) the figure was read from, \"; \"-separated."
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date read, ISO 8601."
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats."
+     }
+    ],
+    "primaryKey": [
+     "hcr_region",
+     "category"
+    ]
+   }
+  },
+  {
+   "name": "sources",
+   "path": "sources.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "source_id",
+      "type": "string",
+      "description": "Source id, S001 upwards."
+     },
+     {
+      "name": "url",
+      "type": "string",
+      "description": "URL as cited in the data (spaces encoded as %20)."
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "description": "Publisher and host of the page."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official`, `law` or `secondary` (most frequent type of the rows citing it)."
+     },
+     {
+      "name": "accessed_at",
+      "type": "string",
+      "description": "Latest date a row citing the URL was checked, ISO 8601."
+     },
+     {
+      "name": "used_for",
+      "type": "string",
+      "description": "File, column and number of rows that cite the URL."
+     }
+    ],
+    "primaryKey": [
+     "source_id"
+    ]
+   }
+  }
+ ]
+}

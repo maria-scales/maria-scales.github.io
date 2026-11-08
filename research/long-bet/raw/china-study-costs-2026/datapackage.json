@@ -1,0 +1,1041 @@
+{
+ "name": "china-study-costs",
+ "title": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026)",
+ "version": "2026.10",
+ "description": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026): Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "homepage": "https://mariascales.com/research/long-bet/data/china-study-costs/",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "Creative Commons Attribution 4.0 International"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Original research: The Long Bet (mariascales.com)",
+   "path": "https://mariascales.com/research/long-bet/"
+  },
+  {
+   "title": "140 pages listed in sources.csv",
+   "path": "sources.csv"
+  }
+ ],
+ "resources": [
+  {
+   "name": "data",
+   "path": "data.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "cost_id",
+      "type": "string",
+      "description": "Row id: `<university_id or city>__<item>__<nn>`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`)."
+     },
+     {
+      "name": "city",
+      "type": "string",
+      "description": "City in English."
+     },
+     {
+      "name": "item",
+      "type": "string",
+      "description": "Cost item (snake_case), e.g. `dorm_single`, `canteen_meals`, `insurance`, `residence_permit_fee`."
+     },
+     {
+      "name": "period",
+      "type": "string",
+      "description": "Period the amount refers to, e.g. `per_year`, `per_month`, `one_off`.",
+      "constraints": {
+       "enum": [
+        "one_off",
+        "per_day",
+        "per_month",
+        "per_semester",
+        "per_trip",
+        "per_year"
+       ]
+      }
+     },
+     {
+      "name": "academic_cycle",
+      "type": "string",
+      "description": "Year or cycle of the published amount."
+     },
+     {
+      "name": "condition",
+      "type": "string",
+      "description": "What the amount applies to (room type, campus, who pays)."
+     },
+     {
+      "name": "currency",
+      "type": "string",
+      "description": "ISO 4217 code of the local amounts in this row."
+     },
+     {
+      "name": "amount_local",
+      "type": "number",
+      "description": "Amount in local currency when the source gives one figure. Unit: `currency` per `period`."
+     },
+     {
+      "name": "amount_usd",
+      "type": "integer",
+      "description": "`amount_local` / `fx_rate`, rounded. Unit: USD per `period`."
+     },
+     {
+      "name": "amount_min_local",
+      "type": "integer",
+      "description": "Lower end of a published range. Unit: `currency` per `period`."
+     },
+     {
+      "name": "amount_min_usd",
+      "type": "integer",
+      "description": "`amount_min_local` / `fx_rate`, rounded. Unit: USD per `period`."
+     },
+     {
+      "name": "amount_max_local",
+      "type": "integer",
+      "description": "Upper end of a published range. Unit: `currency` per `period`."
+     },
+     {
+      "name": "amount_max_usd",
+      "type": "integer",
+      "description": "`amount_max_local` / `fx_rate`, rounded. Unit: USD per `period`."
+     },
+     {
+      "name": "fx_rate",
+      "type": "number",
+      "description": "Units of `currency` per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0)."
+     },
+     {
+      "name": "fx_date",
+      "type": "string",
+      "description": "Date of the exchange rate, ISO 8601 (2026-10-21)."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found",
+        "not_found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "law",
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "cost_id"
+    ]
+   }
+  },
+  {
+   "name": "tuition",
+   "path": "tuition.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "track",
+      "type": "string",
+      "description": "Programme track: `zh_taught`, `en_taught` (run by the university), `en_taught_joint_institute`, `en_taught_international_college`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "en_taught",
+        "en_taught_international_college",
+        "en_taught_joint_institute",
+        "zh_taught"
+       ]
+      }
+     },
+     {
+      "name": "institute",
+      "type": "string",
+      "description": "Joint institute or separate college for that track; null for the university's own programmes."
+     },
+     {
+      "name": "currency",
+      "type": "string",
+      "description": "ISO 4217 code of the local amounts in this row."
+     },
+     {
+      "name": "period",
+      "type": "string",
+      "description": "Always `per_year`.",
+      "constraints": {
+       "enum": [
+        "per_year"
+       ]
+      }
+     },
+     {
+      "name": "tariff_cycle",
+      "type": "string",
+      "description": "Intake or year the tuition was published for."
+     },
+     {
+      "name": "amount_min_local",
+      "type": "integer",
+      "description": "Tuition per year, lower end (equal to `amount_max_local` when one figure is published). Unit: `currency` per year."
+     },
+     {
+      "name": "amount_min_usd",
+      "type": "integer",
+      "description": "`amount_min_local` / `fx_rate`, rounded. Unit: USD per year."
+     },
+     {
+      "name": "amount_max_local",
+      "type": "integer",
+      "description": "Tuition per year, upper end. Unit: `currency` per year."
+     },
+     {
+      "name": "amount_max_usd",
+      "type": "integer",
+      "description": "`amount_max_local` / `fx_rate`, rounded. Unit: USD per year."
+     },
+     {
+      "name": "fx_rate",
+      "type": "number",
+      "description": "Units of `currency` per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0)."
+     },
+     {
+      "name": "fx_date",
+      "type": "string",
+      "description": "Date of the exchange rate, ISO 8601 (2026-10-21)."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate",
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id",
+     "track"
+    ]
+   }
+  },
+  {
+   "name": "year_total",
+   "path": "year_total.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "region",
+      "type": "string",
+      "description": "`mainland` (mainland China) or `hong_kong` (Hong Kong SAR).",
+      "constraints": {
+       "enum": [
+        "hong_kong",
+        "mainland"
+       ]
+      }
+     },
+     {
+      "name": "track",
+      "type": "string",
+      "description": "Programme track: `zh_taught`, `en_taught` (run by the university), `en_taught_joint_institute`, `en_taught_international_college`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "en_taught",
+        "en_taught_international_college",
+        "en_taught_joint_institute",
+        "zh_taught"
+       ]
+      }
+     },
+     {
+      "name": "institute",
+      "type": "string",
+      "description": "Joint institute or separate college for that track; null for the university's own programmes."
+     },
+     {
+      "name": "currency",
+      "type": "string",
+      "description": "ISO 4217 code of the local amounts in this row."
+     },
+     {
+      "name": "tuition_local",
+      "type": "string",
+      "description": "Tuition per year, min-max range. Unit: `currency` per year."
+     },
+     {
+      "name": "dorm_local",
+      "type": "string",
+      "description": "Dormitory per person per year (10 months), min-max range. Unit: `currency` per year."
+     },
+     {
+      "name": "insurance_local",
+      "type": "integer",
+      "description": "Student medical insurance per year. Unit: `currency` per year."
+     },
+     {
+      "name": "residence_permit_local",
+      "type": "integer",
+      "description": "Residence permit fee for one year (mainland only). Unit: `currency`."
+     },
+     {
+      "name": "living_local",
+      "type": "string",
+      "description": "Food and daily living for 10 months, min-max range. Unit: `currency` per year."
+     },
+     {
+      "name": "living_basis",
+      "type": "string",
+      "description": "What `living_local` is based on: the university's own official estimate, canteen prices, or an envelope of other universities' official estimates."
+     },
+     {
+      "name": "total_min_local",
+      "type": "integer",
+      "description": "Sum of the lower ends of the components. Unit: `currency` per year."
+     },
+     {
+      "name": "total_max_local",
+      "type": "integer",
+      "description": "Sum of the upper ends of the components. Unit: `currency` per year."
+     },
+     {
+      "name": "total_min_usd",
+      "type": "integer",
+      "description": "`total_min_local` / `fx_rate`, rounded. Unit: USD per year."
+     },
+     {
+      "name": "total_max_usd",
+      "type": "integer",
+      "description": "`total_max_local` / `fx_rate`, rounded. Unit: USD per year."
+     },
+     {
+      "name": "fx_rate",
+      "type": "number",
+      "description": "Units of `currency` per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0)."
+     },
+     {
+      "name": "fx_date",
+      "type": "string",
+      "description": "Date of the exchange rate, ISO 8601 (2026-10-21)."
+     },
+     {
+      "name": "components_missing",
+      "type": "string",
+      "description": "Components that were not published and how they were handled; the total is a floor when this is not empty."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id",
+     "track"
+    ]
+   }
+  },
+  {
+   "name": "scholarships",
+   "path": "scholarships.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "scholarship_id",
+      "type": "string",
+      "description": "Row id: `<provider-slug>__<name-slug>`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the scholarship."
+     },
+     {
+      "name": "provider",
+      "type": "string",
+      "description": "Who provides it."
+     },
+     {
+      "name": "provider_type",
+      "type": "string",
+      "description": "Type of provider: `university`, `government`, `foundation`.",
+      "constraints": {
+       "enum": [
+        "foundation",
+        "government",
+        "university"
+       ]
+      }
+     },
+     {
+      "name": "country_code",
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2: `CN` mainland China, `HK` Hong Kong."
+     },
+     {
+      "name": "country",
+      "type": "string",
+      "description": "Country or region name in English."
+     },
+     {
+      "name": "universities",
+      "type": "string",
+      "description": "Universities covered."
+     },
+     {
+      "name": "university_ids",
+      "type": "string",
+      "description": "University slugs covered, \"; \"-separated."
+     },
+     {
+      "name": "programmes",
+      "type": "string",
+      "description": "Programmes covered."
+     },
+     {
+      "name": "level",
+      "type": "string",
+      "description": "Study level: `bachelor` or `all`.",
+      "constraints": {
+       "enum": [
+        "all",
+        "bachelor"
+       ]
+      }
+     },
+     {
+      "name": "mechanism",
+      "type": "string",
+      "description": "How the money is awarded: `merit_at_admission` or `government_scholarship`."
+     },
+     {
+      "name": "covers_summary",
+      "type": "string",
+      "description": "What is covered (tuition, stipend, housing, insurance, travel, renewal)."
+     },
+     {
+      "name": "covers_tuition_pct",
+      "type": "integer",
+      "description": "Share of tuition covered, 0-100 (only when stated). Unit: percent."
+     },
+     {
+      "name": "covers_housing",
+      "type": "boolean",
+      "description": "Housing covered (null when not stated)."
+     },
+     {
+      "name": "stipend_amount",
+      "type": "integer",
+      "description": "Stipend amount when stated. Unit: `stipend_currency` per `stipend_period`."
+     },
+     {
+      "name": "stipend_currency",
+      "type": "string",
+      "description": "ISO 4217 currency of the stipend."
+     },
+     {
+      "name": "stipend_period",
+      "type": "string",
+      "description": "Period of the stipend: `month` or `year`.",
+      "constraints": {
+       "enum": [
+        "month",
+        "year"
+       ]
+      }
+     },
+     {
+      "name": "citizenship_restrictions",
+      "type": "string",
+      "description": "Nationality rule: \"open to all\", \"excluded: ...\", \"only: ...\" or \"unclear: ...\"."
+     },
+     {
+      "name": "residence_constraints",
+      "type": "string",
+      "description": "Residence conditions."
+     },
+     {
+      "name": "age_limit",
+      "type": "string",
+      "description": "Age limit."
+     },
+     {
+      "name": "language_required",
+      "type": "string",
+      "description": "Language or language test required."
+     },
+     {
+      "name": "tests_required",
+      "type": "string",
+      "description": "Admission tests required."
+     },
+     {
+      "name": "what_it_takes",
+      "type": "string",
+      "description": "Grades, essays, interview, recommendations, separate application."
+     },
+     {
+      "name": "obligations",
+      "type": "string",
+      "description": "Obligations after the award (bond, return, work)."
+     },
+     {
+      "name": "numbers_awards",
+      "type": "string",
+      "description": "Number of awards, competition, typical award."
+     },
+     {
+      "name": "deadline_cycle",
+      "type": "string",
+      "description": "Deadlines of the latest published cycle (2026/27 or 2027/28 as stated)."
+     },
+     {
+      "name": "online_school_recognition",
+      "type": "string",
+      "description": "Does the scheme accept online-school diplomas?"
+     },
+     {
+      "name": "grade_criterion",
+      "type": "string",
+      "description": "What grades the award asks for, as published."
+     },
+     {
+      "name": "grade_band_min",
+      "type": "string",
+      "description": "Threshold on the A-level scale A*A*A*A* > AAAA > ABB > BBC. `none` = not expressed in A-levels or not published; it does NOT mean \"no threshold\"."
+     },
+     {
+      "name": "grade_sensitivity",
+      "type": "string",
+      "description": "How grades act on the money: `merit_decisive` or `admission_competitive`.",
+      "constraints": {
+       "enum": [
+        "admission_competitive",
+        "merit_decisive"
+       ]
+      }
+     },
+     {
+      "name": "automatic_consideration",
+      "type": "boolean",
+      "description": "`true` = considered automatically with the admission application; `false` = separate application or nomination."
+     },
+     {
+      "name": "full_ride",
+      "type": "boolean",
+      "description": "`true` only if the source states that tuition, housing and living costs are all covered."
+     },
+     {
+      "name": "online_school_note",
+      "type": "string",
+      "description": "What the scheme or university page says about online or distance schools."
+     },
+     {
+      "name": "covers_max",
+      "type": "string",
+      "description": "What the award covers at its top level (amounts and duration)."
+     },
+     {
+      "name": "covers_tuition_pct_max",
+      "type": "integer",
+      "description": "Share of tuition covered at the top level of the award, 0-100. Unit: percent."
+     },
+     {
+      "name": "covers_ge_50pct",
+      "type": "string",
+      "description": "Does the top level of the award cover at least 50% of tuition: `yes`, `no`, `unknown`.",
+      "constraints": {
+       "enum": [
+        "no",
+        "unknown",
+        "yes"
+       ]
+      }
+     },
+     {
+      "name": "req_grades",
+      "type": "string",
+      "description": "Grades asked for, verbatim or condensed."
+     },
+     {
+      "name": "req_tests",
+      "type": "string",
+      "description": "Tests asked for (entrance, subject or language tests)."
+     },
+     {
+      "name": "req_essays",
+      "type": "string",
+      "description": "Essays or written answers."
+     },
+     {
+      "name": "req_recommendations",
+      "type": "string",
+      "description": "Recommendations and school documents."
+     },
+     {
+      "name": "req_nomination",
+      "type": "string",
+      "description": "Whether a school or another body must nominate the applicant."
+     },
+     {
+      "name": "nomination_required",
+      "type": "boolean",
+      "description": "`true` = a university, an embassy or a government body has to nominate the applicant; `false` = direct application or automatic consideration."
+     },
+     {
+      "name": "req_interview",
+      "type": "string",
+      "description": "Interview: whether, when and how."
+     },
+     {
+      "name": "req_extracurricular",
+      "type": "string",
+      "description": "What the selectors value beyond grades."
+     },
+     {
+      "name": "req_documents",
+      "type": "string",
+      "description": "Documents asked for."
+     },
+     {
+      "name": "req_deadline",
+      "type": "string",
+      "description": "Deadlines as published for the latest cycle."
+     },
+     {
+      "name": "recipient_profile",
+      "type": "string",
+      "description": "Who typically wins (published numbers, profiles)."
+     },
+     {
+      "name": "renewal_conditions",
+      "type": "string",
+      "description": "Conditions to keep the award after year 1."
+     },
+     {
+      "name": "stackable",
+      "type": "string",
+      "description": "Whether the award can be combined with other awards."
+     },
+     {
+      "name": "online_school_ok",
+      "type": "string",
+      "description": "What the provider says about diplomas from online or distance schools."
+     },
+     {
+      "name": "online_school_status",
+      "type": "string",
+      "description": "Classification of `online_school_ok`: `no_exclusion_found`, `not_stated`, `excludes`.",
+      "constraints": {
+       "enum": [
+        "excludes",
+        "no_exclusion_found",
+        "not_stated"
+       ]
+      }
+     },
+     {
+      "name": "citizenship_note",
+      "type": "string",
+      "description": "Nationality rule as read from the source for a generic applicant."
+     },
+     {
+      "name": "req_source_url",
+      "type": "string",
+      "description": "Page(s) the requirement columns (`req_*`) were read from, \"; \"-separated."
+     },
+     {
+      "name": "req_checked_at",
+      "type": "string",
+      "description": "Date the requirement columns were checked, ISO 8601."
+     },
+     {
+      "name": "req_confidence",
+      "type": "string",
+      "description": "Confidence of the requirement columns: `verified`, `partial`.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate",
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "scholarship_id"
+    ]
+   }
+  },
+  {
+   "name": "csc_quotas",
+   "path": "csc_quotas.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "country",
+      "type": "string",
+      "description": "Country (lowercase English) or group the quota belongs to, e.g. `turkey`, `eu`, `all`, `hong_kong_designated_6`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "all",
+        "eu",
+        "france",
+        "germany",
+        "hong_kong_designated_6",
+        "hungary",
+        "indonesia_reference",
+        "italy",
+        "poland",
+        "russia",
+        "serbia",
+        "turkey"
+       ]
+      }
+     },
+     {
+      "name": "programme",
+      "type": "string",
+      "description": "Scholarship programme.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "places",
+      "type": "integer",
+      "description": "Number of places in the cycle, as published; null = not published."
+     },
+     {
+      "name": "cycle",
+      "type": "string",
+      "description": "Cycle or intake of `places`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "levels_covered",
+      "type": "string",
+      "description": "Study levels covered and who may apply."
+     },
+     {
+      "name": "dispatching_authority",
+      "type": "string",
+      "description": "Body that selects or nominates candidates."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found",
+        "not_found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate",
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "country",
+     "programme",
+     "cycle"
+    ]
+   }
+  },
+  {
+   "name": "sources",
+   "path": "sources.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "source_id",
+      "type": "string",
+      "description": "Source id, S001 upwards."
+     },
+     {
+      "name": "url",
+      "type": "string",
+      "description": "URL as cited in the data (spaces encoded as %20)."
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "description": "Publisher and host of the page."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official`, `law` or `secondary` (most frequent type of the rows citing it)."
+     },
+     {
+      "name": "accessed_at",
+      "type": "string",
+      "description": "Latest date a row citing the URL was checked, ISO 8601."
+     },
+     {
+      "name": "used_for",
+      "type": "string",
+      "description": "File, column and number of rows that cite the URL."
+     }
+    ],
+    "primaryKey": [
+     "source_id"
+    ]
+   }
+  }
+ ]
+}

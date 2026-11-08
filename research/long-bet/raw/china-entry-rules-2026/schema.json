@@ -1,0 +1,111 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026)",
+ "type": "object",
+ "properties": {
+  "university_id": {
+   "type": "string",
+   "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`)."
+  },
+  "certificate": {
+   "type": "string",
+   "description": "School-leaving certificate: `ru_attestat_ege` (Russian attestat with EGE), `tr_lise_diplomasi` (Turkish lise diploma), `rs_matura` (Serbian matura), `eu_school_leaving` (EU school-leaving certificates such as Abitur, baccalaureat, maturita), `uk_a_level`.",
+   "enum": [
+    "eu_school_leaving",
+    "rs_matura",
+    "ru_attestat_ege",
+    "tr_lise_diplomasi",
+    "uk_a_level"
+   ]
+  },
+  "accepted": {
+   "type": "string",
+   "description": "`yes` = the certificate is named as accepted; `yes_generic_hs_diploma` = any high school diploma accepted, certificate not named; `conditional` = accepted with an extra step; `not_stated`.",
+   "enum": [
+    "conditional",
+    "not_stated",
+    "yes",
+    "yes_generic_hs_diploma"
+   ]
+  },
+  "certificate_named": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Name of the certificate as written on the page, when named."
+  },
+  "extra_requirements": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Tests, language and other requirements on top of the certificate."
+  },
+  "document_rules": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Rules on transcripts, translations, notarisation and apostille."
+  },
+  "min_grades": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Minimum grades for this certificate, when published."
+  },
+  "intake": {
+   "type": "string",
+   "description": "Intake the page refers to."
+  },
+  "status": {
+   "type": "string",
+   "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+   "enum": [
+    "found"
+   ]
+  },
+  "source_url": {
+   "type": "string",
+   "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+  },
+  "source_type": {
+   "type": "string",
+   "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+   "enum": [
+    "official"
+   ]
+  },
+  "checked_at": {
+   "type": "string",
+   "description": "Date the row was last read on the source, ISO 8601."
+  },
+  "confidence": {
+   "type": "string",
+   "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+   "enum": [
+    "partial",
+    "verified"
+   ]
+  },
+  "note": {
+   "type": "string",
+   "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+  }
+ },
+ "required": [
+  "university_id",
+  "certificate",
+  "accepted",
+  "intake",
+  "status",
+  "source_url",
+  "source_type",
+  "checked_at",
+  "confidence",
+  "note"
+ ],
+ "additionalProperties": false
+}

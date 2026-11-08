@@ -1,0 +1,39 @@
+source_id,url,title,source_type,accessed_at,used_for
+S001,https://international.join-tsinghua.edu.cn/Divisions1.htm,international.join-tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 80 rows; programmes_summary.csv (source_url): 1 row
+S002,https://international.join-tsinghua.edu.cn/Admission1/Fees.htm,international.join-tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 80 rows; programmes_summary.csv (source_url): 1 row
+S003,https://international.join-tsinghua.edu.cn/Admission1/FAQ.htm,international.join-tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 80 rows; programmes_summary.csv (source_url): 1 row
+S004,https://www.isd.pku.edu.cn/Uploads/Bdlb/Picture/2023/11/08/u654b49958031a.pdf,www.isd.pku.edu.cn,official,2026-10-23,data.csv (source_url): 101 rows; programmes_summary.csv (source_url): 1 row
+S005,https://www.isd.pku.edu.cn/en/detail.php?id=818,www.isd.pku.edu.cn,official,2026-10-23,data.csv (source_url): 101 rows; programmes_summary.csv (source_url): 1 row
+S006,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/3300a725-ca29-443b-845f-8c1a3c15c929.pdf,iczu.zju.edu.cn,official,2026-10-23,data.csv (source_url): 95 rows; programmes_summary.csv (source_url): 1 row
+S007,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/1d3febe7-07aa-4da8-a235-c69546ef0f5f.pdf,iczu.zju.edu.cn,official,2026-10-23,data.csv (source_url): 95 rows; programmes_summary.csv (source_url): 1 row
+S008,https://isc.sjtu.edu.cn/kindeditor/Upload/file/20251124/20251124162925_6451.pdf,isc.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 53 rows; programmes_summary.csv (source_url): 1 row
+S009,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/278,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 53 rows; programmes_summary.csv (source_url): 1 row
+S010,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/778,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 53 rows; programmes_summary.csv (source_url): 1 row
+S011,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/794,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 53 rows; programmes_summary.csv (source_url): 1 row
+S012,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/279,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 53 rows; programmes_summary.csv (source_url): 1 row
+S013,https://ic.ustc.edu.cn/?abroad=schools-programs,ic.ustc.edu.cn,official,2026-10-23,data.csv (source_url): 35 rows; programmes_summary.csv (source_url): 1 row
+S014,https://ic.ustc.edu.cn/?abroad=introduction,ic.ustc.edu.cn,official,2026-10-23,data.csv (source_url): 35 rows; programmes_summary.csv (source_url): 1 row
+S015,https://iso.fudan.edu.cn/f2/b6/c52157a783030/page.htm,iso.fudan.edu.cn,secondary,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
+S016,https://study.dongzong.my/wp-content/uploads/2021/12/2026-List-of-English-taught-Undergraduate-Programs-of-Fudan-University.pdf,study.dongzong.my,secondary,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
+S017,https://iso.sysu.edu.cn/docs/2025-12/20251216151112045540.pdf,iso.sysu.edu.cn,official,2026-10-23,data.csv (source_url): 67 rows; programmes_summary.csv (source_url): 1 row
+S018,https://iso.hust.edu.cn/2026UndergraduatePrograms.pdf,iso.hust.edu.cn,official,2026-10-23,data.csv (source_url): 45 rows; programmes_summary.csv (source_url): 1 row
+S019,https://iso.hust.edu.cn/info/1194/4638.htm,iso.hust.edu.cn,official,2026-10-23,data.csv (source_url): 45 rows; programmes_summary.csv (source_url): 1 row
+S020,https://sie.whu.edu.cn/info/1271/20581.htm,sie.whu.edu.cn,official,2026-10-23,data.csv (source_url): 68 rows; programmes_summary.csv (source_url): 1 row
+S021,https://admission.whu.edu.cn/ADMISSION/PROGRAMS/ENGLISH_MEDIUM_PROGRAM/UNDERGRADUATE.htm,admission.whu.edu.cn,official,2026-10-23,data.csv (source_url): 68 rows; programmes_summary.csv (source_url): 1 row
+S022,https://admission.whu.edu.cn/FRESHMEN_RELATED/FEES.htm,admission.whu.edu.cn,official,2026-10-23,data.csv (source_url): 68 rows; programmes_summary.csv (source_url): 1 row
+S023,https://global.scu.edu.cn/oso/article/index/1096,global.scu.edu.cn,official,2026-10-23,data.csv (source_url): 78 rows; programmes_summary.csv (source_url): 1 row
+S024,https://global.scu.edu.cn/oso/article/index/1095,global.scu.edu.cn,official,2026-10-23,data.csv (source_url): 78 rows; programmes_summary.csv (source_url): 1 row
+S025,https://sie.xjtu.edu.cn/en/bke.pdf,sie.xjtu.edu.cn,official,2026-10-23,data.csv (source_url): 48 rows; programmes_summary.csv (source_url): 1 row
+S026,https://sie.xjtu.edu.cn/en/XJTUEnglish-taughtUndergraduate.pdf,sie.xjtu.edu.cn,official,2026-10-23,data.csv (source_url): 48 rows; programmes_summary.csv (source_url): 1 row
+S027,https://intl.csu.edu.cn/English/Admission/Undergraduate_Programs/English_taught_Programs.htm,intl.csu.edu.cn,official,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
+S028,https://intl.csu.edu.cn/English/Admission/Undergraduate_Programs/Chinese_taught_Programs.htm,intl.csu.edu.cn,official,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
+S029,https://dii.csu.edu.cn/EN/ADMISSIONS.htm,dii.csu.edu.cn,official,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
+S030,https://admissions.hku.hk/sites/default/files/2025-10/HKU-International-Admissions-Information-2026.pdf,admissions.hku.hk,official,2026-10-23,data.csv (source_url): 61 rows; programmes_summary.csv (source_url): 1 row
+S031,https://cityu.edu.hk/admo/news/2026%20Programme%20Flyer%20%E2%80%8B%28For%20International%20Students%29.pdf,cityu.edu.hk,official,2026-10-23,data.csv (source_url): 45 rows; programmes_summary.csv (source_url): 1 row
+S032,https://iso.fudan.edu.cn/6f/6d/c51269a749421/page.htm,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S033,https://iso.fudan.edu.cn/_upload/article/files/bc/87/d68baf454947aab64eadcb8b218c/245269df-13c2-4734-aa0b-ffeccca47ac3.pdf,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S034,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/zyml/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S035,https://hwxy.nju.edu.cn/DFS//file/2026/09/16/20260916100252482kuny5s.pdf,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S036,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S037,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/sbzn/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S038,https://admission.cuhk.edu.hk/programmes/list/,admission.cuhk.edu.hk,official,2026-10-23,programmes_summary.csv (source_url): 1 row
