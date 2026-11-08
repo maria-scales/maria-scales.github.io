@@ -1,0 +1,96 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Bachelor Programmes Open to International Students at Chinese Universities (2026)",
+ "type": "object",
+ "properties": {
+  "programme_id": {
+   "type": "string",
+   "description": "Row id: `<university_id>__<programme slug>` (a suffix -2, -3 separates programmes of the same name in different schools or languages)."
+  },
+  "university_id": {
+   "type": "string",
+   "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`)."
+  },
+  "programme_name_en": {
+   "type": "string",
+   "description": "Programme (major) name in English as listed in the catalogue."
+  },
+  "school_or_faculty": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "School, faculty or department that runs the programme."
+  },
+  "language": {
+   "type": "string",
+   "description": "Language of instruction: `zh` Chinese, `en` English, `zh_en` bilingual, `fr` French.",
+   "enum": [
+    "en",
+    "fr",
+    "zh",
+    "zh_en"
+   ]
+  },
+  "is_stem": {
+   "type": "boolean",
+   "description": "`true` for natural sciences, mathematics, computing, engineering, materials, earth, environmental and life sciences, biomedical engineering; `false` for medicine, pharmacy, architecture, economics, business, humanities and social sciences. Classified from the programme name."
+  },
+  "joint_institute": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Name of the joint institute or partner university when the programme is run with one; null otherwise."
+  },
+  "status": {
+   "type": "string",
+   "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+   "enum": [
+    "found"
+   ]
+  },
+  "source_url": {
+   "type": "string",
+   "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+  },
+  "source_type": {
+   "type": "string",
+   "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+   "enum": [
+    "official",
+    "secondary"
+   ]
+  },
+  "checked_at": {
+   "type": "string",
+   "description": "Date the row was last read on the source, ISO 8601."
+  },
+  "confidence": {
+   "type": "string",
+   "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+   "enum": [
+    "partial",
+    "verified"
+   ]
+  },
+  "note": {
+   "type": "string",
+   "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+  }
+ },
+ "required": [
+  "programme_id",
+  "university_id",
+  "programme_name_en",
+  "language",
+  "is_stem",
+  "status",
+  "source_url",
+  "source_type",
+  "checked_at",
+  "confidence",
+  "note"
+ ],
+ "additionalProperties": false
+}

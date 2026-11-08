@@ -1,0 +1,58 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
+ "type": "object",
+ "properties": {
+  "university_id": {
+   "type": "string",
+   "description": "Stable slug of the university, the same id as in the other Long Bet datasets."
+  },
+  "subject_code": {
+   "type": "string",
+   "description": "ShanghaiRanking subject code (e.g. `AS0101` Mathematics)."
+  },
+  "subject_category": {
+   "type": "string",
+   "description": "GRAS subject category: Natural Sciences, Engineering, Life Sciences, Medical Sciences, Social Sciences."
+  },
+  "subject": {
+   "type": "string",
+   "description": "GRAS subject name."
+  },
+  "gras_2026_rank": {
+   "type": "string",
+   "description": "Rank in the GRAS 2026 subject list as published: a number for places 1-50, a band (e.g. `51-75`, `151-200`) beyond, or `not in published list (top N)` when the university is not in a list that is published to place N."
+  },
+  "published_list_length": {
+   "type": "integer",
+   "description": "How far down the subject list is published (50, 100, 200, 300, 400 or 500 places)."
+  },
+  "source_url": {
+   "type": "string",
+   "description": "Page(s) the figure was read from, \"; \"-separated."
+  },
+  "source_type": {
+   "type": "string",
+   "description": "`official` (ranking publisher).",
+   "enum": [
+    "official"
+   ]
+  },
+  "checked_at": {
+   "type": "string",
+   "description": "Date read, ISO 8601."
+  }
+ },
+ "required": [
+  "university_id",
+  "subject_code",
+  "subject_category",
+  "subject",
+  "gras_2026_rank",
+  "published_list_length",
+  "source_url",
+  "source_type",
+  "checked_at"
+ ],
+ "additionalProperties": false
+}

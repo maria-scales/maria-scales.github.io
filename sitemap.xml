@@ -170,7 +170,7 @@
   </url>
   <url>
     <loc>https://mariascales.com/research/long-bet/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -200,6 +200,30 @@
   <url>
     <loc>https://mariascales.com/research/long-bet/data/a-levels/</loc>
     <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mariascales.com/research/long-bet/data/china-study-costs/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mariascales.com/research/long-bet/data/china-subject-strength/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mariascales.com/research/long-bet/data/china-bachelor-programmes/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mariascales.com/research/long-bet/data/china-entry-rules/</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

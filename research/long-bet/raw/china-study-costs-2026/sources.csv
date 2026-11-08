@@ -1,0 +1,141 @@
+source_id,url,title,source_type,accessed_at,used_for
+S001,https://international.join-tsinghua.edu.cn/Admission1/Fees.htm,international.join-tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 2 rows; year_total.csv (source_url): 2 rows
+S002,https://intl-nondegree.tsinghua.edu.cn/f/yzlxs/yz_lxs_kstzb/view?id=254607,intl-nondegree.tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 2 rows
+S003,https://is.tsinghua.edu.cn/info/1348/1378.htm,is.tsinghua.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows
+S004,https://www.ucalgary.ca/international/study-abroad/tsinghua,www.ucalgary.ca,secondary,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 2 rows
+S005,https://www.isd.pku.edu.cn/en/detail.php?id=818,www.isd.pku.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; scholarships.csv (req_source_url): 2 rows; scholarships.csv (source_url): 2 rows
+S006,https://admission.pku.edu.cn/docs/20251020095346239221.pdf,admission.pku.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S007,https://www.isd.pku.edu.cn/en/detail.php?id=774,www.isd.pku.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S008,https://isdplus.pku.edu.cn/ORIENTATION/English/BEFORE_YOULEAVE_HOME/Finances.htm,isdplus.pku.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S009,https://iczu.zju.edu.cn/admissionsen/2024/1030/c68988a2981659/page.htm,iczu.zju.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; year_total.csv (source_url): 3 rows
+S010,https://iczu.zju.edu.cn/iczuen/wccommodation/list.htm,iczu.zju.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 2 rows
+S011,https://zje.zju.edu.cn/zje/FeesandScholarships/list.htm,zje.zju.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 1 row; scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S012,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/387,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 3 rows; scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S013,https://en.sjtu.edu.cn/study-sjtu/prospective/degree-programs/278,en.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 3 rows; scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S014,https://lec.sjtu.edu.cn/en/InternationalCourses/info.aspx?itemid=475,lec.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 3 rows
+S015,https://kyb.seiee.sjtu.edu.cn/english/info/8374.htm,kyb.seiee.sjtu.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 3 rows
+S016,https://ic.ustc.edu.cn/?abroad=faq,ic.ustc.edu.cn,official,2026-10-23,data.csv (source_url): 4 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S017,https://iso.fudan.edu.cn/_upload/article/files/16/79/757e35a645bca80f8d429bb5d11e/ee5986a3-fc7e-4de0-9e73-dfbf9da86888.pdf,iso.fudan.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row; scholarships.csv (source_url): 1 row
+S018,https://iso.fudan.edu.cn/isoenglish/f1/fd/c55677a782845/page.htm,iso.fudan.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 2 rows
+S019,https://iss.fudan.edu.cn/Admitted_Students/Accommodation.htm,iss.fudan.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 2 rows
+S020,https://iso.sysu.edu.cn/en/application/guide/1420575.htm,iso.sysu.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S021,https://sti.sysu.edu.cn/en/node/387,sti.sysu.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 1 row
+S022,https://xxgk.sysu.edu.cn/sites/default/files/2026-08/2026%E5%AD%A6%E5%B9%B4%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A6%E6%95%99%E8%82%B2%E6%94%B6%E8%B4%B9%E5%85%AC%E7%A4%BA%E8%A1%A8.pdf,xxgk.sysu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S023,https://iso.hust.edu.cn/info/1194/4638.htm,iso.hust.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 2 rows
+S024,https://iso.hust.edu.cn/Policies___Regulations/Fee_Policy.htm,iso.hust.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; year_total.csv (source_url): 2 rows
+S025,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/sbzn/index.html,hwxy.nju.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; year_total.csv (source_url): 1 row
+S026,https://hwxy.nju.edu.cn/lxnd/xyfw/zsbx/zs/index.html,hwxy.nju.edu.cn,official,2026-10-23,data.csv (source_url): 4 rows; year_total.csv (source_url): 1 row
+S027,https://admission.whu.edu.cn/FRESHMEN_RELATED/FEES.htm,admission.whu.edu.cn,official,2026-10-23,data.csv (source_url): 6 rows; tuition.csv (source_url): 2 rows; year_total.csv (source_url): 2 rows
+S028,https://global.scu.edu.cn/oso/article/index/1094,global.scu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S029,https://global.scu.edu.cn/oso/article/details/c601b4e1-b44e-4d95-9095-0f6884488b2d,global.scu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S030,https://global.scu.edu.cn/oso/article/index/18,global.scu.edu.cn,official,2026-10-23,data.csv (source_url): 4 rows; year_total.csv (source_url): 1 row
+S031,https://sie.xjtu.edu.cn/en/info/1119/2943.htm,sie.xjtu.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 2 rows; scholarships.csv (source_url): 1 row
+S032,https://sie.xjtu.edu.cn/en/info/1141/1364.htm,sie.xjtu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 2 rows
+S033,https://en.csu.edu.cn/info/1457/1929.htm,en.csu.edu.cn,official,2026-10-23,data.csv (source_url): 5 rows; year_total.csv (source_url): 1 row
+S034,https://intl.csu.edu.cn/info/1150/1435.htm,intl.csu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S035,https://intl.csu.edu.cn/English/CampusLife/Insurance.htm,intl.csu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S036,https://dii.csu.edu.cn/EN/ADMISSIONS.htm,dii.csu.edu.cn,official,2026-10-23,data.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S037,https://admissions.hku.hk/sites/default/files/2026-09/HKU_General_Information_NJ_2027.pdf,admissions.hku.hk,official,2026-10-23,data.csv (source_url): 2 rows
+S038,https://www.admissions.hku.hk/fees-and-scholarships/fees,www.admissions.hku.hk,official,2026-10-23,data.csv (source_url): 3 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S039,https://www.cityu.edu.hk/admo/fees-and-scholarships,www.cityu.edu.hk,official,2026-10-23,data.csv (source_url): 5 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S040,https://www.cityu.edu.hk/admo/non-local-students/insurance,www.cityu.edu.hk,official,2026-10-23,data.csv (source_url): 2 rows; year_total.csv (source_url): 1 row
+S041,https://admission.cuhk.edu.hk/fees-financing-your-studies/fees/,admission.cuhk.edu.hk,official,2026-10-23,data.csv (source_url): 5 rows; tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S042,https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202504/t20250423_4072294.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,data.csv (source_url): 1 row
+S043,https://english.shanghai.gov.cn/en-TravelYourWay/20251010/6f1beb560360472b8edaffd6187f4988.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,data.csv (source_url): 2 rows
+S044,https://en.cug.edu.cn/Campus/Transportation.htm,en.cug.edu.cn,official,2026-10-23,data.csv (source_url): 1 row
+S045,https://www.mtr.com.hk/en/customer/tickets/student_travel_scheme.html,www.mtr.com.hk,official,2026-10-23,data.csv (source_url): 1 row
+S046,https://www.smartone.com/en/home/mobile-service-plans/student-listing/,www.smartone.com,official,2026-10-23,data.csv (source_url): 1 row
+S047,https://iso.fudan.edu.cn/isoenglish/ResidencePermitforNewStudents/list.htm,iso.fudan.edu.cn,official,2026-10-23,data.csv (source_url): 2 rows
+S048,https://www.chinaservicesinfo.com/s/202608/04/WS6a718936498e23165e0719ae/im-planning-to-visit-beijing-in-september-and-want-to-know-how-public-transportation-fares-work-i-want-to-make-sure-i-budget-everything-properly.html,www.chinaservicesinfo.com,secondary,2026-10-23,data.csv (source_url): 1 row
+S049,https://english.shanghai.gov.cn/en-Transportation/20231214/c727f5e15eff4b8c9340651dd95f3f7c.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,data.csv (source_url): 1 row
+S050,https://www.newsgd.com/node_99363c4f3b/content_184946772_2.htm,www.newsgd.com,secondary,2026-10-23,data.csv (source_url): 1 row
+S051,https://www.gz.gov.cn/guangzhouinternational/home/citynews/photonews/content/post_3011942.html,Chinese government (www.gz.gov.cn),secondary,2026-10-23,data.csv (source_url): 1 row
+S052,https://english.shanghai.gov.cn/en-visas/20241211/08d823d812774bdb92876977619b76be.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,data.csv (source_url): 1 row
+S053,https://english.beijing.gov.cn/mostrequested/residencepermit/,Chinese government (english.beijing.gov.cn),official,2026-10-23,data.csv (source_url): 1 row
+S054,https://en.nantong.gov.cn/2017-12/08/c_258329_4.htm,Chinese government (en.nantong.gov.cn),law,2026-10-23,data.csv (source_url): 1 row
+S055,https://english.shanghai.gov.cn/en-VisaApplication/20240613/b1d87f63a65541c8bef5607778da71ab.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,data.csv (source_url): 1 row
+S056,https://handbook.hku.hk/ug/full-time-2026-27/notes-for-non-local-students/medical-insurance.html,handbook.hku.hk,official,2026-10-23,data.csv (source_url): 1 row
+S057,https://admission.whu.edu.cn/FRESHMEN_RELATED/ACCOMMODATION.htm,admission.whu.edu.cn,official,2026-10-23,data.csv (source_url): 3 rows; year_total.csv (source_url): 2 rows
+S058,https://www.gs.cuhk.edu.hk/admissions/registration/visa-application,www.gs.cuhk.edu.hk,official,2026-10-23,data.csv (source_url): 1 row
+S059,https://isdplus.pku.edu.cn/info/1465/5618.htm,isdplus.pku.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S060,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/3300a725-ca29-443b-845f-8c1a3c15c929.pdf,iczu.zju.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S061,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/1d3febe7-07aa-4da8-a235-c69546ef0f5f.pdf,iczu.zju.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S062,https://iso.fudan.edu.cn/_upload/article/files/bc/ed/37f712cb4e3f8316f4ec2ebc4ba2/6c9fce5d-d137-4934-b484-1c4630f18aa5.pdf,iso.fudan.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S063,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row; scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S064,https://global.scu.edu.cn/oso/article/index/1095,global.scu.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S065,https://intl.csu.edu.cn/English/Admission/Undergraduate_Programs/English_taught_Programs.htm,intl.csu.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S066,https://iczu.zju.edu.cn/,iczu.zju.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S067,https://isc.sjtu.edu.cn/kindeditor/Upload/file/20251124/20251124162925_6451.pdf,isc.sjtu.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S068,https://iso.hust.edu.cn/2026UndergraduatePrograms.pdf,iso.hust.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row
+S069,https://sie.xjtu.edu.cn/en/XJTUEnglish-taughtUndergraduate.pdf,sie.xjtu.edu.cn,official,2026-10-23,tuition.csv (source_url): 1 row; year_total.csv (source_url): 1 row; scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S070,https://gc.sjtu.edu.cn/campus-life/scholarship-financial-aid/for-undergraduate/,gc.sjtu.edu.cn,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S071,https://gc.sjtu.edu.cn/admission/international-undergraduate-admission/application-requirements/,gc.sjtu.edu.cn,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S072,https://gc.sjtu.edu.cn/?p=57663,gc.sjtu.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S073,https://gc.sjtu.edu.cn/?p=69641,gc.sjtu.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S074,https://wentchina.com/sjtu-scholarships-2026/,wentchina.com,official,2026-10-21,scholarships.csv (source_url): 1 row
+S075,https://english.beijing.gov.cn/studyinginbeijing/news/202601/t20260123_4459326.html,Chinese government (english.beijing.gov.cn),official,2026-10-10,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S076,https://www.zsc.tsinghua.edu.cn/en/Join_Zhishan_College/Scholarships_and_Financial_Aid.htm,www.zsc.tsinghua.edu.cn,official,2026-10-10,scholarships.csv (source_url): 1 row
+S077,https://sie.xjtu.edu.cn/en/SCHOLARSHIPS1/International_Undergraduate_Freshman_Scholarship.htm,sie.xjtu.edu.cn,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S078,https://sie.xjtu.edu.cn/en/info/1107/3162.htm,sie.xjtu.edu.cn,official,2026-10-10,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S079,https://zje.zju.edu.cn/zje/EntryRequirements/list.htm,zje.zju.edu.cn,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S080,https://zje.zju.edu.cn/zje/Howtoapply/list.htm,zje.zju.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S081,https://iczu.zju.edu.cn/iczuen/2025/1021/c63325a3094255/page.htm,iczu.zju.edu.cn,official,2026-10-10,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S082,https://iczu.zju.edu.cn/admissionsen/www/list.htm,iczu.zju.edu.cn,official,2026-10-10,scholarships.csv (source_url): 1 row
+S083,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=17,ic.ustc.edu.cn,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S084,https://iso.fudan.edu.cn/6f/97/c51269a749463/page.htm,iso.fudan.edu.cn,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S085,https://iso.fudan.edu.cn/_upload/article/files/1f/b8/52989e8e48ceb8fde3dbc077a262/02c42c61-a420-4c51-92ed-50a030e1800c.pdf,iso.fudan.edu.cn,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S086,https://iso.fudan.edu.cn/_upload/article/files/57/73/705fe7f44aebab32b316c3a8a22d/74cb9068-3844-442d-9022-bf71c12d48dd.pdf,iso.fudan.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S087,https://lxsy.nau.edu.cn/NanjingMunicipalScholarship/list.htm,lxsy.nau.edu.cn,official,2026-10-10,scholarships.csv (source_url): 1 row
+S088,https://english.shanghai.gov.cn/en-Editor%27sPick-StudyinShanghai/20251204/7fd409f1a816449b870742843534be27.html,Chinese government (english.shanghai.gov.cn),official,2026-10-10,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S089,https://admissions.hku.hk/fees-and-scholarships/scholarships?field_hkuad_apply_student_target_id=23&field_hkuad_qualification_target_id=20,admissions.hku.hk,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 3 rows
+S090,https://admissions.hku.hk/node/891,admissions.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S091,https://admissions.hku.hk/sites/default/files/2022-11/Conditions%20of%20Award%20(Non-Local)%20%20FTAAAL.pdf,admissions.hku.hk,official,2026-10-21,scholarships.csv (source_url): 2 rows
+S092,https://admissions.hku.hk/apply/international-qualifications,admissions.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S093,https://admissions.hku.hk/fees-and-scholarships/fees,admissions.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S094,https://admissions.hku.hk/node/941,admissions.hku.hk,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S095,https://admissions.hku.hk/taxonomy/term/4,admissions.hku.hk,,2026-10-21,scholarships.csv (req_source_url): 2 rows
+S096,https://scholar.aas.hku.hk/?action=showonesscheme&ss_id=640,scholar.aas.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S097,https://scholar.aas.hku.hk/?action=showonesscheme&ss_id=631,scholar.aas.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S098,https://admissions.hku.hk/fees-and-scholarships/scholarships/HeForShe-IMPACT-Champion-Scholarship,admissions.hku.hk,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S099,https://www.studyinhongkong.edu.hk/en/hong-kong-education/scholarships.php,www.studyinhongkong.edu.hk,official,2026-10-23,scholarships.csv (req_source_url): 2 rows; scholarships.csv (source_url): 2 rows; csc_quotas.csv (source_url): 2 rows
+S100,https://www.info.gov.hk/gia/general/202607/15/P2026071500327.htm,Hong Kong SAR government (www.info.gov.hk),official,2026-10-23,scholarships.csv (req_source_url): 1 row; csc_quotas.csv (source_url): 6 rows
+S101,https://admission.cuhk.edu.hk/fees-financing-your-studies/scholarships/admission-scholarships-for-undergraduates-only/,admission.cuhk.edu.hk,official,2026-10-21,scholarships.csv (req_source_url): 3 rows; scholarships.csv (source_url): 3 rows
+S102,https://admissions.hku.hk/fees-and-scholarships/scholarships/belt-and-road-scholarship,admissions.hku.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S103,https://www.cityu.edu.hk/admo/entrance-scholarship-international-students,www.cityu.edu.hk,official,2026-10-21,scholarships.csv (source_url): 3 rows; scholarships.csv (req_source_url): 2 rows
+S104,https://www.cityu.edu.hk/admo/admissions/non-jupas-year-1-admission,www.cityu.edu.hk,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S105,https://cityu.edu.hk/international/fees-scholarships/scholarships,cityu.edu.hk,official,2026-10-21,scholarships.csv (source_url): 1 row
+S106,https://misis.ru/events/6659/,misis.ru,official,2026-10-23,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row; csc_quotas.csv (source_url): 2 rows
+S107,https://kpfu.ru/international/obuchenie-i-stazhirovki-za-rubezhom/stipendiya-pravitelstva-kitaya-na-20262027-476168.html,kpfu.ru,secondary,2026-10-23,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row; csc_quotas.csv (source_url): 1 row
+S108,https://www.utmn.ru/international/studentam/mobility/stipendii-dlya-obucheniya-za-rubezhom/1333691/,www.utmn.ru,secondary,2026-10-11,scholarships.csv (source_url): 1 row
+S109,https://www.igm.nsc.ru/images/news/grand/2024_11_07/poryadok-uchastiya_2025_2026.pdf,www.igm.nsc.ru,official,2026-10-23,scholarships.csv (source_url): 1 row; csc_quotas.csv (source_url): 2 rows
+S110,https://www.nngasu.ru/content/news/index.php?news=24091,www.nngasu.ru,secondary,2026-10-11,scholarships.csv (source_url): 1 row
+S111,https://sev-in.ru/en/node/3963,sev-in.ru,secondary,2026-10-11,scholarships.csv (source_url): 1 row
+S112,https://international.join-tsinghua.edu.cn/Admission1/Freshmen_Scholarships1.htm,international.join-tsinghua.edu.cn,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 2 rows
+S113,https://international.join-tsinghua.edu.cn/Admission1/Eligibility.htm,international.join-tsinghua.edu.cn,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S114,https://international.join-tsinghua.edu.cn/Admission1/Schedule.htm,international.join-tsinghua.edu.cn,,2026-10-21,scholarships.csv (req_source_url): 1 row
+S115,https://international.join-tsinghua.edu.cn/Admission1/FAQ.htm,international.join-tsinghua.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S116,https://english.shanghai.gov.cn/en-Individuals-Education-CSCA/20260813/9565875c1c214744971b07e9236da16f.html,Chinese government (english.shanghai.gov.cn),official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S117,https://www.tsinghua.edu.cn/en/Admissions/International_Students1/Financial_Aid.htm,www.tsinghua.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S118,https://isdplus.pku.edu.cn/info/1515/2544.htm,isdplus.pku.edu.cn,official,2026-10-21,scholarships.csv (source_url): 1 row
+S119,https://admission.cuhk.edu.hk/wp-content/uploads/2026/01/hkjc_cm_2627_en.pdf,admission.cuhk.edu.hk,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S120,https://admissions.hku.hk/fees-and-scholarships/scholarships/hong-kong-jockey-club-chairmans-scholarship,admissions.hku.hk,official,2026-10-21,scholarships.csv (req_source_url): 1 row; scholarships.csv (source_url): 1 row
+S121,https://www.spbgasu.ru/en/news-and-events/calendar-of-events/stipendiya-pravitelstva-kitaya/,www.spbgasu.ru,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S122,https://minobrnauki.gov.ru/,minobrnauki.gov.ru,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S123,https://dosyalar.nevsehir.edu.tr/c477e099ed5b2b2bd3c1af1efa1f811f/cin-hukumet-bursu-2026-2027.pdf,dosyalar.nevsehir.edu.tr,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S124,https://med.bg.ac.rs/wp-content/uploads/2024/04/2025_01_15_MP_Stipendije_NR-Kina.pdf,med.bg.ac.rs,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S125,https://www.uni-marburg.de/de/international/ins-ausland/studierende/finanzierung/csc-dokumente/anlage-1-merkblatt-csc-stipendium-2024-2025.pdf,www.uni-marburg.de,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S126,https://www.uni-heidelberg.de/en/node/29963,www.uni-heidelberg.de,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S127,http://france.lxgz.org.cn/,france.lxgz.org.cn,secondary,2026-10-23,csc_quotas.csv (source_url): 1 row
+S128,https://lepetitjournal.com/shanghai/bourses-pour-etudier-en-chine-le-guide-pour-les-francais-455269,lepetitjournal.com,secondary,2026-10-23,csc_quotas.csv (source_url): 1 row
+S129,https://istitutoconfucio.unikore.it/wp-content/uploads/2025/10/Borse-di-Studio-del-Governo-della-Repubblica-Popolare-Cinese-Annuali-20262027-1.pdf,istitutoconfucio.unikore.it,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S130,https://nawa.gov.pl/en/students/polish-students,nawa.gov.pl,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S131,https://medan.china-consulate.gov.cn/indo/lsfw_16/zytz/202510/t20251027_11741719.htm,Chinese consulate (medan.china-consulate.gov.cn),official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S132,https://www.yidaiyilu.gov.cn/country,Chinese government (www.yidaiyilu.gov.cn),official,2026-10-23,csc_quotas.csv (source_url): 4 rows
+S133,https://abdigm.meb.gov.tr/meb_iys_dosyalar/2024_11/18155157_cin2.pdf,abdigm.meb.gov.tr,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S134,https://www.studienstiftung.de/pool/sdv/public/documents/STIPENDIUM/China/FAQ_2027_28.pdf,www.studienstiftung.de,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S135,https://www.nawa.gov.pl/images/ZAWACKA-NAWA/2025/Zalacznik-1.-Lista-krajow-z-ktorymi-prowadzona-jest-wspolpraca-wraz-z-opisem-dostepnych-form-wyjazdu.pdf,www.nawa.gov.pl,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S136,https://nki.bme.hu/node/5722,nki.bme.hu,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S137,https://tka.hu/docs/palyazatok/felhivas_ki_reszkepzes_2026_27.pdf,tka.hu,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S138,https://www.konfuzius-institut.at/programme/chinese-government-scholarship-application-20262027,www.konfuzius-institut.at,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S139,https://iso.hust.edu.cn/info/1194/4898.htm,iso.hust.edu.cn,official,2026-10-23,csc_quotas.csv (source_url): 1 row
+S140,https://www.tu-darmstadt.de/media/daa_responsives_design/01_die_universitaet_medien/international_medien/02_strategische_partnerschaften/tongji_shanghai_medien/info_stipendien_2026___27.pdf,www.tu-darmstadt.de,official,2026-10-23,csc_quotas.csv (source_url): 1 row

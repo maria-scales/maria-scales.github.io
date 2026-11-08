@@ -1,0 +1,1101 @@
+{
+ "name": "china-entry-rules",
+ "title": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026)",
+ "version": "2026.10",
+ "description": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026): Which school certificates are accepted, admission calendars, language and preparatory routes, the HSK 3.0 transition, apostille, study visas by passport and work rules for students. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "homepage": "https://mariascales.com/research/long-bet/data/china-entry-rules/",
+ "licenses": [
+  {
+   "name": "CC-BY-4.0",
+   "path": "https://creativecommons.org/licenses/by/4.0/",
+   "title": "Creative Commons Attribution 4.0 International"
+  }
+ ],
+ "sources": [
+  {
+   "title": "Original research: The Long Bet (mariascales.com)",
+   "path": "https://mariascales.com/research/long-bet/"
+  },
+  {
+   "title": "116 pages listed in sources.csv",
+   "path": "sources.csv"
+  }
+ ],
+ "resources": [
+  {
+   "name": "data",
+   "path": "data.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "certificate",
+      "type": "string",
+      "description": "School-leaving certificate: `ru_attestat_ege` (Russian attestat with EGE), `tr_lise_diplomasi` (Turkish lise diploma), `rs_matura` (Serbian matura), `eu_school_leaving` (EU school-leaving certificates such as Abitur, baccalaureat, maturita), `uk_a_level`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "eu_school_leaving",
+        "rs_matura",
+        "ru_attestat_ege",
+        "tr_lise_diplomasi",
+        "uk_a_level"
+       ]
+      }
+     },
+     {
+      "name": "accepted",
+      "type": "string",
+      "description": "`yes` = the certificate is named as accepted; `yes_generic_hs_diploma` = any high school diploma accepted, certificate not named; `conditional` = accepted with an extra step; `not_stated`.",
+      "constraints": {
+       "enum": [
+        "conditional",
+        "not_stated",
+        "yes",
+        "yes_generic_hs_diploma"
+       ]
+      }
+     },
+     {
+      "name": "certificate_named",
+      "type": "string",
+      "description": "Name of the certificate as written on the page, when named."
+     },
+     {
+      "name": "extra_requirements",
+      "type": "string",
+      "description": "Tests, language and other requirements on top of the certificate."
+     },
+     {
+      "name": "document_rules",
+      "type": "string",
+      "description": "Rules on transcripts, translations, notarisation and apostille."
+     },
+     {
+      "name": "min_grades",
+      "type": "string",
+      "description": "Minimum grades for this certificate, when published."
+     },
+     {
+      "name": "intake",
+      "type": "string",
+      "description": "Intake the page refers to."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id",
+     "certificate"
+    ]
+   }
+  },
+  {
+   "name": "admission_cycle",
+   "path": "admission_cycle.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "intake",
+      "type": "string",
+      "description": "Intake the page refers to."
+     },
+     {
+      "name": "application_open",
+      "type": "string",
+      "description": "Application opening date (ISO 8601 where the page gives one date; text where routes or rounds differ)."
+     },
+     {
+      "name": "application_deadline",
+      "type": "string",
+      "description": "Application deadline (ISO date where the page gives one date; text where there are several rounds)."
+     },
+     {
+      "name": "results_date",
+      "type": "string",
+      "description": "When decisions are published."
+     },
+     {
+      "name": "study_start",
+      "type": "string",
+      "description": "Start of study."
+     },
+     {
+      "name": "csca_required",
+      "type": "string",
+      "description": "China Scholastic Competency Assessment (CSCA): `true` required, `false` not required, `optional` accepted as evidence.",
+      "constraints": {
+       "enum": [
+        "false",
+        "optional",
+        "true"
+       ]
+      }
+     },
+     {
+      "name": "own_exam",
+      "type": "string",
+      "description": "University entrance exam or interview."
+     },
+     {
+      "name": "intl_quota_or_competition",
+      "type": "string",
+      "description": "Published quota or competition figures for international applicants."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id"
+    ]
+   }
+  },
+  {
+   "name": "apostille",
+   "path": "apostille.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "record_id",
+      "type": "string",
+      "description": "Row id: `<party_a slug>__<topic>__<n>`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "topic",
+      "type": "string",
+      "description": "Topic: `bilateral_in_force`, `mainland_hong_kong`, `hong_kong_status`, `objection` and others.",
+      "constraints": {
+       "enum": [
+        "bilateral_in_force",
+        "china_mainland_accession",
+        "hong_kong_status",
+        "mainland_hong_kong",
+        "objection"
+       ]
+      }
+     },
+     {
+      "name": "party_a",
+      "type": "string",
+      "description": "Jurisdiction on one side (China mainland or Hong Kong SAR)."
+     },
+     {
+      "name": "party_b",
+      "type": "string",
+      "description": "Other party (country or group of countries)."
+     },
+     {
+      "name": "since",
+      "type": "string",
+      "description": "Date the Apostille Convention applies between the parties, ISO 8601."
+     },
+     {
+      "name": "detail",
+      "type": "string",
+      "description": "What applies."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "record_id"
+    ]
+   }
+  },
+  {
+   "name": "visa_by_passport",
+   "path": "visa_by_passport.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "passport",
+      "type": "string",
+      "description": "Passport, ISO 3166-1 alpha-2 (`RU`, `TR`, `RS`, `DE`, `FR`, `IT`, `PL`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "destination",
+      "type": "string",
+      "description": "`mainland` or `hong_kong`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "hong_kong",
+        "mainland"
+       ]
+      }
+     },
+     {
+      "name": "short_stay_visa_free_days",
+      "type": "integer",
+      "description": "Visa-free stay for short visits. Unit: days (0 = a visa is needed). Never covers study."
+     },
+     {
+      "name": "short_stay_basis",
+      "type": "string",
+      "description": "Legal basis of the visa-free stay."
+     },
+     {
+      "name": "study_visa_type",
+      "type": "string",
+      "description": "Visa or entry permit needed for a bachelor programme."
+     },
+     {
+      "name": "where_to_apply",
+      "type": "string",
+      "description": "Where the study visa is applied for."
+     },
+     {
+      "name": "visa_fee_amount_local",
+      "type": "integer",
+      "description": "Consular visa fee, single entry. Unit: `visa_fee_currency` (one-off)."
+     },
+     {
+      "name": "visa_fee_currency",
+      "type": "string",
+      "description": "ISO 4217 currency of the visa fee; null when the source does not state it."
+     },
+     {
+      "name": "visa_fee_period",
+      "type": "string",
+      "description": "Always `one_off`.",
+      "constraints": {
+       "enum": [
+        "one_off"
+       ]
+      }
+     },
+     {
+      "name": "service_fee_amount_local",
+      "type": "string",
+      "description": "Visa centre service fee, as text with its currency (standard, express, urgent)."
+     },
+     {
+      "name": "processing_days",
+      "type": "string",
+      "description": "Processing time."
+     },
+     {
+      "name": "passport_validity",
+      "type": "string",
+      "description": "Passport validity required."
+     },
+     {
+      "name": "documents",
+      "type": "string",
+      "description": "Documents for the study visa."
+     },
+     {
+      "name": "criminal_record_rule",
+      "type": "string",
+      "description": "Whether a criminal-record certificate is required and by whom."
+     },
+     {
+      "name": "residence_permit",
+      "type": "string",
+      "description": "Residence permit after arrival: deadline, fee, validity."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate",
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "passport",
+     "destination"
+    ]
+   }
+  },
+  {
+   "name": "work_rules",
+   "path": "work_rules.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "region",
+      "type": "string",
+      "description": "`mainland` (mainland China) or `hong_kong` (Hong Kong SAR).",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "hong_kong",
+        "mainland"
+       ]
+      }
+     },
+     {
+      "name": "topic",
+      "type": "string",
+      "description": "Rule topic, e.g. `part_time_work`, `internship`, `off_campus_permission`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "general_rule",
+        "illegal_employment",
+        "illegal_employment_penalty",
+        "internship",
+        "off_campus_permission",
+        "on_campus",
+        "part_time_work",
+        "post_graduation_work",
+        "summer",
+        "temporary_relaxation"
+       ]
+      }
+     },
+     {
+      "name": "rule",
+      "type": "string",
+      "description": "The rule, in words."
+     },
+     {
+      "name": "legal_basis",
+      "type": "string",
+      "description": "Law, regulation or scheme the rule is based on."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "law",
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "region",
+     "topic"
+    ]
+   }
+  },
+  {
+   "name": "language_requirements",
+   "path": "language_requirements.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "track",
+      "type": "string",
+      "description": "Programme track: `zh_taught`, `en_taught` (run by the university), `en_taught_joint_institute`, `en_taught_international_college`.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "en_taught",
+        "zh_taught"
+       ]
+      }
+     },
+     {
+      "name": "track_offered",
+      "type": "string",
+      "description": "`yes` if the university offers this track to international bachelor applicants, `no` if not.",
+      "constraints": {
+       "enum": [
+        "no",
+        "yes"
+       ]
+      }
+     },
+     {
+      "name": "intake_cycle",
+      "type": "string",
+      "description": "Intake or cycle the requirement was published for."
+     },
+     {
+      "name": "hsk_level_required",
+      "type": "string",
+      "description": "HSK level required at application or enrolment; `none` = not required."
+     },
+     {
+      "name": "hsk_min_score",
+      "type": "string",
+      "description": "Minimum HSK score as published (text: some pages give alternatives)."
+     },
+     {
+      "name": "hsk_section_min",
+      "type": "string",
+      "description": "Minimum score per HSK section, when published."
+     },
+     {
+      "name": "hsk_scale",
+      "type": "string",
+      "description": "Which HSK version the threshold refers to (2.0 or 3.0), as far as the page says."
+     },
+     {
+      "name": "english_test_required",
+      "type": "string",
+      "description": "English test and minimum score required."
+     },
+     {
+      "name": "hsk_required_to_graduate",
+      "type": "string",
+      "description": "Chinese-language requirement to graduate."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found",
+        "not_found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id",
+     "track"
+    ]
+   }
+  },
+  {
+   "name": "prep_programmes",
+   "path": "prep_programmes.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "university_id",
+      "type": "string",
+      "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`).",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "prep_programme_name",
+      "type": "string",
+      "description": "Name of the preparatory (pre-university, foundation) programme; text starting with `none` = no such programme found."
+     },
+     {
+      "name": "provider",
+      "type": "string",
+      "description": "Who runs it."
+     },
+     {
+      "name": "language_of_prep",
+      "type": "string",
+      "description": "Language of instruction of the preparatory programme."
+     },
+     {
+      "name": "duration_months",
+      "type": "string",
+      "description": "Duration. Unit: months (range as text)."
+     },
+     {
+      "name": "cost_amount_local",
+      "type": "integer",
+      "description": "Tuition of the preparatory programme. Unit: `currency` per `period`."
+     },
+     {
+      "name": "currency",
+      "type": "string",
+      "description": "ISO 4217 currency of `cost_amount_local`."
+     },
+     {
+      "name": "period",
+      "type": "string",
+      "description": "Period the amount refers to, e.g. `per_year`, `per_month`, `one_off`.",
+      "constraints": {
+       "enum": [
+        "one_off",
+        "per_semester",
+        "per_year"
+       ]
+      }
+     },
+     {
+      "name": "intake_cycle",
+      "type": "string",
+      "description": "Intake or cycle the requirement was published for."
+     },
+     {
+      "name": "entry_level",
+      "type": "string",
+      "description": "Language or academic level needed to start."
+     },
+     {
+      "name": "target_level",
+      "type": "string",
+      "description": "Level the programme leads to, or the condition to enter the bachelor."
+     },
+     {
+      "name": "progression_guaranteed",
+      "type": "string",
+      "description": "Whether finishing the programme guarantees a bachelor place, as stated."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found",
+        "not_found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "university_id"
+    ]
+   }
+  },
+  {
+   "name": "hsk_status",
+   "path": "hsk_status.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "topic",
+      "type": "string",
+      "description": "Topic of the HSK 2.0 to HSK 3.0 transition, e.g. `hsk3_released`, `last_hsk2_sitting`.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "value",
+      "type": "string",
+      "description": "The fact, in words."
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "topic"
+    ]
+   }
+  },
+  {
+   "name": "language_realism_evidence",
+   "path": "language_realism_evidence.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "claim",
+      "type": "string",
+      "description": "Statement about how realistic the language route is.",
+      "constraints": {
+       "required": true
+      }
+     },
+     {
+      "name": "figure",
+      "type": "string",
+      "description": "The number behind the statement, as published."
+     },
+     {
+      "name": "population",
+      "type": "string",
+      "description": "Whom the figure refers to."
+     },
+     {
+      "name": "evidence_type",
+      "type": "string",
+      "description": "`official_statistic` or `university_statement`.",
+      "constraints": {
+       "enum": [
+        "official_statistic",
+        "university_statement"
+       ]
+      }
+     },
+     {
+      "name": "status",
+      "type": "string",
+      "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "found"
+       ]
+      }
+     },
+     {
+      "name": "source_url",
+      "type": "string",
+      "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+      "constraints": {
+       "enum": [
+        "official",
+        "secondary"
+       ]
+      }
+     },
+     {
+      "name": "checked_at",
+      "type": "string",
+      "description": "Date the row was last read on the source, ISO 8601."
+     },
+     {
+      "name": "confidence",
+      "type": "string",
+      "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+      "constraints": {
+       "enum": [
+        "estimate",
+        "partial",
+        "verified"
+       ]
+      }
+     },
+     {
+      "name": "note",
+      "type": "string",
+      "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+     }
+    ],
+    "primaryKey": [
+     "claim"
+    ]
+   }
+  },
+  {
+   "name": "sources",
+   "path": "sources.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "schema": {
+    "fields": [
+     {
+      "name": "source_id",
+      "type": "string",
+      "description": "Source id, S001 upwards."
+     },
+     {
+      "name": "url",
+      "type": "string",
+      "description": "URL as cited in the data (spaces encoded as %20)."
+     },
+     {
+      "name": "title",
+      "type": "string",
+      "description": "Publisher and host of the page."
+     },
+     {
+      "name": "source_type",
+      "type": "string",
+      "description": "`official`, `law` or `secondary` (most frequent type of the rows citing it)."
+     },
+     {
+      "name": "accessed_at",
+      "type": "string",
+      "description": "Latest date a row citing the URL was checked, ISO 8601."
+     },
+     {
+      "name": "used_for",
+      "type": "string",
+      "description": "File, column and number of rows that cite the URL."
+     }
+    ],
+    "primaryKey": [
+     "source_id"
+    ]
+   }
+  }
+ ]
+}

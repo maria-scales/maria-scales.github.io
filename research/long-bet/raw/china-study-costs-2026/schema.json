@@ -1,0 +1,175 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026)",
+ "type": "object",
+ "properties": {
+  "cost_id": {
+   "type": "string",
+   "description": "Row id: `<university_id or city>__<item>__<nn>`."
+  },
+  "university_id": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Stable slug of the university, the same id as in the other Long Bet datasets (e.g. `tsinghua-university`)."
+  },
+  "city": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "City in English."
+  },
+  "item": {
+   "type": "string",
+   "description": "Cost item (snake_case), e.g. `dorm_single`, `canteen_meals`, `insurance`, `residence_permit_fee`."
+  },
+  "period": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Period the amount refers to, e.g. `per_year`, `per_month`, `one_off`.",
+   "enum": [
+    "one_off",
+    "per_day",
+    "per_month",
+    "per_semester",
+    "per_trip",
+    "per_year",
+    null
+   ]
+  },
+  "academic_cycle": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Year or cycle of the published amount."
+  },
+  "condition": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "What the amount applies to (room type, campus, who pays)."
+  },
+  "currency": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "ISO 4217 code of the local amounts in this row."
+  },
+  "amount_local": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Amount in local currency when the source gives one figure. Unit: `currency` per `period`."
+  },
+  "amount_usd": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "`amount_local` / `fx_rate`, rounded. Unit: USD per `period`."
+  },
+  "amount_min_local": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Lower end of a published range. Unit: `currency` per `period`."
+  },
+  "amount_min_usd": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "`amount_min_local` / `fx_rate`, rounded. Unit: USD per `period`."
+  },
+  "amount_max_local": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "Upper end of a published range. Unit: `currency` per `period`."
+  },
+  "amount_max_usd": {
+   "type": [
+    "integer",
+    "null"
+   ],
+   "description": "`amount_max_local` / `fx_rate`, rounded. Unit: USD per `period`."
+  },
+  "fx_rate": {
+   "type": [
+    "number",
+    "null"
+   ],
+   "description": "Units of `currency` per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0)."
+  },
+  "fx_date": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Date of the exchange rate, ISO 8601 (2026-10-21)."
+  },
+  "status": {
+   "type": "string",
+   "description": "`found` = the fact was read on the source page; `not_found` = the page was checked and the fact is not there: the row records what was looked for, `source_url` gives the URL tried and `note` says what was missing.",
+   "enum": [
+    "found",
+    "not_found"
+   ]
+  },
+  "source_url": {
+   "type": "string",
+   "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
+  },
+  "source_type": {
+   "type": "string",
+   "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
+   "enum": [
+    "law",
+    "official",
+    "secondary"
+   ]
+  },
+  "checked_at": {
+   "type": "string",
+   "description": "Date the row was last read on the source, ISO 8601."
+  },
+  "confidence": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "`verified` = read on an official or legal page for the current cycle; `partial` = official but older cycle or incomplete, or a reputable secondary source; `estimate` = derived or calculated, method in `note`. Empty for `not_found` rows.",
+   "enum": [
+    "partial",
+    "verified",
+    null
+   ]
+  },
+  "note": {
+   "type": [
+    "string",
+    "null"
+   ],
+   "description": "Caveats in English. \"Updated 2026-10-23:\" marks text added by the second verification pass of 23 October 2026."
+  }
+ },
+ "required": [
+  "cost_id",
+  "item",
+  "status",
+  "source_url",
+  "source_type",
+  "checked_at"
+ ],
+ "additionalProperties": false
+}
