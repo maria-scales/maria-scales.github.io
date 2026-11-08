@@ -12,11 +12,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-K7ZJJ8C6');</script>
 <!-- End Google Tag Manager -->
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="Tuition, 110 published cost items, full-year estimates and 25 scholarships for international bachelor students at 16 Chinese universities. CSV, CC BY 4.0.">
+  <meta name="description" content="Tuition, 132 published cost items, full-year estimates and 35 scholarships for international bachelor students at 19 Chinese universities. CSV, CC BY 4.0.">
   <link rel="canonical" href="https://mariascales.com/research/long-bet/data/china-study-costs/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="China Study Costs 2026 – Maria Atamanova">
-  <meta property="og:description" content="Tuition, 110 published cost items, full-year estimates and 25 scholarships for international bachelor students at 16 Chinese universities. CSV, CC BY 4.0.">
+  <meta property="og:description" content="Tuition, 132 published cost items, full-year estimates and 35 scholarships for international bachelor students at 19 Chinese universities. CSV, CC BY 4.0.">
   <meta property="og:url" content="https://mariascales.com/research/long-bet/data/china-study-costs/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <meta property="og:site_name" content="Maria Atamanova">
@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:alt" content="Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026). Maria Atamanova, The Long Bet.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="China Study Costs 2026 – Maria Atamanova">
-  <meta name="twitter:description" content="Tuition, 110 published cost items, full-year estimates and 25 scholarships for international bachelor students at 16 Chinese universities. CSV, CC BY 4.0.">
+  <meta name="twitter:description" content="Tuition, 132 published cost items, full-year estimates and 35 scholarships for international bachelor students at 19 Chinese universities. CSV, CC BY 4.0.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
 
@@ -243,7 +243,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  "@context": "https://schema.org",
  "@type": "Dataset",
  "name": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026)",
- "description": "Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students. Scope: the 13 mainland Chinese universities and 2 Hong Kong universities in the ARWU 2025 top 100, plus CUHK as a reference.",
+ "description": "Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students. Scope: 16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong (HKU and CityUHK are in the top 100, CUHK is kept as a reference).",
  "url": "https://mariascales.com/research/long-bet/data/china-study-costs/",
  "creator": {
   "@type": "Person",
@@ -279,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  },
  "datePublished": "2026-11-08",
  "dateModified": "2026-11-08",
- "version": "2026.10",
+ "version": "2026.11",
  "inLanguage": "en",
  "temporalCoverage": "2024/2028",
  "keywords": [
@@ -411,8 +411,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   },
   {
    "@type": "PropertyValue",
+   "name": "campus",
+   "description": "main = the main campus, or the institute named in institute; shenzhen = the Shenzhen campus of Harbin Institute of Technology, which admits separately from the Harbin campus."
+  },
+  {
+   "@type": "PropertyValue",
    "name": "institute",
-   "description": "Joint institute or separate college for that track; null for the university's own programmes."
+   "description": "Joint institute, separate college or separately admitting campus for that track; null for the university's own programmes on the main campus."
   },
   {
    "@type": "PropertyValue",
@@ -844,7 +849,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="page-series">The Long Bet · Dataset · Nov 2026</div>
     <h1 class="page-title">Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026)</h1>
     <div class="page-standfirst">Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students.</div>
-    <div class="page-meta">Nov 2026 · Original research · v2026.10 · data checked up to 2026-10-23</div>
+    <div class="page-meta">Nov 2026 · Original research · v2026.11 · data checked up to 2026-11-08</div>
   </div>
 </div>
 <div class="article-content">
@@ -852,169 +857,171 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div class="callout lead"><div class="callout-label">TL;DR</div>
     <ul>
-      <li>110 published cost items (dormitory, canteen, insurance, residence permit, transport and others) for 16 universities and their cities; 13 of 110 rows are <code>not_found</code> and record which page was checked.</li>
-      <li>25 tuition rows. At 7 universities with both tracks, the university's own English-taught programme costs 1.2 to 8.2 times the Chinese-taught one (Tsinghua: 100,000 against 30,000 CNY, ×3.3).</li>
-      <li>Estimated full year: 5,869 to 13,955 USD on the Chinese-taught track at 12 mainland universities; 35,170 to 46,886 USD on the English-taught track at the 3 Hong Kong universities (CUHK included as a reference). 15 of 25 totals are a floor because a component is not published.</li>
-      <li>7 of the 12 mainland universities publish no living-cost estimate; their totals carry the full range of the other universities' estimates (8,000 to 20,000 CNY a year), so their ranges are wider than in the article, which uses the midpoint of 14,000 CNY.</li>
-      <li>25 scholarships for international bachelor students. 19 state what they cover; 8 of these 19 cover tuition, housing and living (<code>full_ride</code>).</li>
+      <li>132 published cost items (dormitory, canteen, insurance, residence permit, transport and others) for 19 universities and their cities; 17 of 132 rows are <code>not_found</code> and record which page was checked.</li>
+      <li>32 tuition rows. At 10 universities with both tracks, the university's own English-taught programme costs 1.2 to 8.2 times the Chinese-taught one, lowest published fee of each track (Tsinghua: 100,000 against 30,000 CNY, ×3.3).</li>
+      <li>Estimated full year: 4,537 to 13,955 USD on the Chinese-taught track at 15 mainland universities; 35,170 to 46,886 USD on the English-taught track at the 3 Hong Kong universities (CUHK included as a reference). 22 of 32 totals are a floor because a component is not published.</li>
+      <li>10 of the 15 mainland universities publish no living-cost estimate; their totals carry the full range of the other universities' estimates (8,000 to 20,000 CNY a year), so their ranges are wider than in the article, which uses the midpoint of 14,000 CNY and gets 5.4K to 9.5K USD a year for 13 of the 15 (Fudan and Peking cost more).</li>
+      <li>35 scholarships for international bachelor students. 25 state what they cover; 9 of these 25 cover tuition, housing and living (<code>full_ride</code>).</li>
       <li>Chinese Government Scholarship Type A places for 2026/27 are published for 3 of 6 countries checked (Russia 120, Turkey 13, Italy 23).</li>
     </ul></div>
 
   <div class="download"><div class="download-label">Download</div>
-    <p><a href="/research/long-bet/raw/china-study-costs-2026/data.csv">data.csv</a>. 110 rows, 22 columns.</p>
+    <p><a href="/research/long-bet/raw/china-study-costs-2026/data.csv">data.csv</a>. 132 rows, 22 columns.</p>
     <p><a href="/research/long-bet/raw/china-study-costs-2026/csc_quotas.csv">csc_quotas.csv</a>. 22 rows, 12 columns.</p>
-    <p><a href="/research/long-bet/raw/china-study-costs-2026/scholarships.csv">scholarships.csv</a>. 25 rows, 61 columns.</p>
-    <p><a href="/research/long-bet/raw/china-study-costs-2026/tuition.csv">tuition.csv</a>. 25 rows, 18 columns.</p>
-    <p><a href="/research/long-bet/raw/china-study-costs-2026/year_total.csv">year_total.csv</a>. 25 rows, 24 columns.</p>
-    <p><a href="/research/long-bet/raw/china-study-costs-2026/sources.csv">sources.csv</a>. 140 rows, 6 columns.</p>
+    <p><a href="/research/long-bet/raw/china-study-costs-2026/scholarships.csv">scholarships.csv</a>. 35 rows, 61 columns.</p>
+    <p><a href="/research/long-bet/raw/china-study-costs-2026/tuition.csv">tuition.csv</a>. 32 rows, 19 columns.</p>
+    <p><a href="/research/long-bet/raw/china-study-costs-2026/year_total.csv">year_total.csv</a>. 32 rows, 25 columns.</p>
+    <p><a href="/research/long-bet/raw/china-study-costs-2026/sources.csv">sources.csv</a>. 163 rows, 6 columns.</p>
     <p><a href="/research/long-bet/raw/china-study-costs-2026/data.json">data.json</a>: the rows of data.csv as JSON.</p>
     <p><a href="/research/long-bet/raw/china-study-costs-2026/schema.json">schema.json</a>: JSON Schema of data.json.</p>
     <p><a href="/research/long-bet/raw/china-study-costs-2026/datapackage.json">datapackage.json</a>: Frictionless Data descriptor of every CSV.</p>
   </div>
 
   <h2>Scope</h2>
-  <p>The 13 mainland Chinese universities and 2 Hong Kong universities in the ARWU 2025 top 100, plus CUHK as a reference.</p>
+  <p>16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong (HKU and CityUHK are in the top 100, CUHK is kept as a reference).</p>
 
   <h2>Codebook</h2>
-  <p class="file"><code>data.csv</code>, 110 rows. Unique key: <code>cost_id</code>.</p>
+  <p class="file"><code>data.csv</code>, 132 rows. Unique key: <code>cost_id</code>.</p>
 <div class="tablewrap"><table class="data cb"><thead><tr><th class="c">Column</th><th class="l">Type</th><th class="l">Values / unit</th><th class="l">What it holds</th></tr></thead><tbody>
-<tr><td class="c"><code>cost_id</code></td><td class="l">string</td><td class="l v">text (110 distinct)</td><td class="l d">Row id: <code>&lt;university_id or city&gt;__&lt;item&gt;__&lt;nn&gt;</code>.</td></tr>
-<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 12</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
-<tr><td class="c"><code>city</code></td><td class="l">string</td><td class="l v">text (12 distinct); null in 6</td><td class="l d">City in English.</td></tr>
+<tr><td class="c"><code>cost_id</code></td><td class="l">string</td><td class="l v">text (132 distinct)</td><td class="l d">Row id: <code>&lt;university_id or city&gt;__&lt;item&gt;__&lt;nn&gt;</code>.</td></tr>
+<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 14</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
+<tr><td class="c"><code>city</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 6</td><td class="l d">City in English.</td></tr>
 <tr><td class="c"><code>item</code></td><td class="l">string</td><td class="l v">text (16 distinct)</td><td class="l d">Cost item (snake_case), e.g. <code>dorm_single</code>, <code>canteen_meals</code>, <code>insurance</code>, <code>residence_permit_fee</code>.</td></tr>
-<tr><td class="c"><code>period</code></td><td class="l">string</td><td class="l v"><code>one_off</code>, <code>per_day</code>, <code>per_month</code>, <code>per_semester</code>, <code>per_trip</code>, <code>per_year</code>; null in 15</td><td class="l d">Period the amount refers to, e.g. <code>per_year</code>, <code>per_month</code>, <code>one_off</code>.</td></tr>
-<tr><td class="c"><code>academic_cycle</code></td><td class="l">string</td><td class="l v">text (30 distinct); null in 22</td><td class="l d">Year or cycle of the published amount.</td></tr>
-<tr><td class="c"><code>condition</code></td><td class="l">string</td><td class="l v">text (63 distinct); null in 47</td><td class="l d">What the amount applies to (room type, campus, who pays).</td></tr>
+<tr><td class="c"><code>period</code></td><td class="l">string</td><td class="l v"><code>one_off</code>, <code>per_day</code>, <code>per_month</code>, <code>per_semester</code>, <code>per_trip</code>, <code>per_year</code>; null in 19</td><td class="l d">Period the amount refers to, e.g. <code>per_year</code>, <code>per_month</code>, <code>one_off</code>.</td></tr>
+<tr><td class="c"><code>academic_cycle</code></td><td class="l">string</td><td class="l v">text (32 distinct); null in 29</td><td class="l d">Year or cycle of the published amount.</td></tr>
+<tr><td class="c"><code>condition</code></td><td class="l">string</td><td class="l v">text (75 distinct); null in 55</td><td class="l d">What the amount applies to (room type, campus, who pays).</td></tr>
 <tr><td class="c"><code>currency</code></td><td class="l">string</td><td class="l v">text (3 distinct); null in 3</td><td class="l d">ISO 4217 code of the local amounts in this row.</td></tr>
-<tr><td class="c"><code>amount_local</code></td><td class="l">number</td><td class="l v">0.0 to 50000.0; null in 47</td><td class="l d">Amount in local currency when the source gives one figure. Unit: <code>currency</code> per <code>period</code>.</td></tr>
-<tr><td class="c"><code>amount_usd</code></td><td class="l">integer</td><td class="l v">0 to 6371; null in 47</td><td class="l d"><code>amount_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
-<tr><td class="c"><code>amount_min_local</code></td><td class="l">integer</td><td class="l v">2 to 50000; null in 82</td><td class="l d">Lower end of a published range. Unit: <code>currency</code> per <code>period</code>.</td></tr>
-<tr><td class="c"><code>amount_min_usd</code></td><td class="l">integer</td><td class="l v">0 to 6371; null in 85</td><td class="l d"><code>amount_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
-<tr><td class="c"><code>amount_max_local</code></td><td class="l">integer</td><td class="l v">6 to 60000; null in 84</td><td class="l d">Upper end of a published range. Unit: <code>currency</code> per <code>period</code>.</td></tr>
-<tr><td class="c"><code>amount_max_usd</code></td><td class="l">integer</td><td class="l v">1 to 7646; null in 87</td><td class="l d"><code>amount_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_local</code></td><td class="l">number</td><td class="l v">0.0 to 50000.0; null in 55</td><td class="l d">Amount in local currency when the source gives one figure. Unit: <code>currency</code> per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_usd</code></td><td class="l">integer</td><td class="l v">0 to 6371; null in 55</td><td class="l d"><code>amount_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_min_local</code></td><td class="l">integer</td><td class="l v">2 to 50000; null in 100</td><td class="l d">Lower end of a published range. Unit: <code>currency</code> per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_min_usd</code></td><td class="l">integer</td><td class="l v">0 to 6371; null in 103</td><td class="l d"><code>amount_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_max_local</code></td><td class="l">integer</td><td class="l v">5 to 60000; null in 102</td><td class="l d">Upper end of a published range. Unit: <code>currency</code> per <code>period</code>.</td></tr>
+<tr><td class="c"><code>amount_max_usd</code></td><td class="l">integer</td><td class="l v">1 to 7646; null in 105</td><td class="l d"><code>amount_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per <code>period</code>.</td></tr>
 <tr><td class="c"><code>fx_rate</code></td><td class="l">number</td><td class="l v">1.0 to 7.8476; null in 21</td><td class="l d">Units of <code>currency</code> per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0).</td></tr>
 <tr><td class="c"><code>fx_date</code></td><td class="l">string</td><td class="l v">text (1 distinct); null in 21</td><td class="l d">Date of the exchange rate, ISO 8601 (2026-10-21).</td></tr>
 <tr><td class="c"><code>status</code></td><td class="l">string</td><td class="l v"><code>found</code>, <code>not_found</code></td><td class="l d"><code>found</code> = the fact was read on the source page; <code>not_found</code> = the page was checked and the fact is not there: the row records what was looked for, <code>source_url</code> gives the URL tried and <code>note</code> says what was missing.</td></tr>
-<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (57 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
-<tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>law</code>, <code>official</code>, <code>secondary</code></td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
-<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (1 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
-<tr><td class="c"><code>confidence</code></td><td class="l">string</td><td class="l v"><code>partial</code>, <code>verified</code>; null in 13</td><td class="l d"><code>verified</code> = read on an official or legal page for the current cycle; <code>partial</code> = official but older cycle or incomplete, or a reputable secondary source; <code>estimate</code> = derived or calculated, method in <code>note</code>. Empty for <code>not_found</code> rows.</td></tr>
-<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (66 distinct); null in 36</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
+<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (66 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
+<tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>law</code>, <code>official</code>, <code>secondary</code>; null in 4</td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
+<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
+<tr><td class="c"><code>confidence</code></td><td class="l">string</td><td class="l v"><code>partial</code>, <code>verified</code>; null in 17</td><td class="l d"><code>verified</code> = read on an official or legal page for the current cycle; <code>partial</code> = official but older cycle or incomplete, or a reputable secondary source; <code>estimate</code> = derived or calculated, method in <code>note</code>. Empty for <code>not_found</code> rows.</td></tr>
+<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (82 distinct); null in 41</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
 </tbody></table></div>
   <p class="caption">Table 1. Columns of <code>data.csv</code>.</p>
-  <p class="file"><code>tuition.csv</code>, 25 rows. Unique key: <code>university_id</code> + <code>track</code>.</p>
+  <p class="file"><code>tuition.csv</code>, 32 rows. Unique key: <code>university_id</code> + <code>track</code> + <code>campus</code>.</p>
 <div class="tablewrap"><table class="data cb"><thead><tr><th class="c">Column</th><th class="l">Type</th><th class="l">Values / unit</th><th class="l">What it holds</th></tr></thead><tbody>
-<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (16 distinct)</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
+<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (19 distinct)</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
 <tr><td class="c"><code>track</code></td><td class="l">string</td><td class="l v"><code>en_taught</code>, <code>en_taught_international_college</code>, <code>en_taught_joint_institute</code>, <code>zh_taught</code></td><td class="l d">Programme track: <code>zh_taught</code>, <code>en_taught</code> (run by the university), <code>en_taught_joint_institute</code>, <code>en_taught_international_college</code>.</td></tr>
-<tr><td class="c"><code>institute</code></td><td class="l">string</td><td class="l v">text (3 distinct); null in 22</td><td class="l d">Joint institute or separate college for that track; null for the university's own programmes.</td></tr>
+<tr><td class="c"><code>campus</code></td><td class="l">string</td><td class="l v"><code>main</code>, <code>shenzhen</code></td><td class="l d"><code>main</code> = the main campus, or the institute named in <code>institute</code>; <code>shenzhen</code> = the Shenzhen campus of Harbin Institute of Technology, which admits separately from the Harbin campus.</td></tr>
+<tr><td class="c"><code>institute</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 28</td><td class="l d">Joint institute, separate college or separately admitting campus for that track; null for the university's own programmes on the main campus.</td></tr>
 <tr><td class="c"><code>currency</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">ISO 4217 code of the local amounts in this row.</td></tr>
 <tr><td class="c"><code>period</code></td><td class="l">string</td><td class="l v"><code>per_year</code></td><td class="l d">Always <code>per_year</code>.</td></tr>
-<tr><td class="c"><code>tariff_cycle</code></td><td class="l">string</td><td class="l v">text (19 distinct)</td><td class="l d">Intake or year the tuition was published for.</td></tr>
-<tr><td class="c"><code>amount_min_local</code></td><td class="l">integer</td><td class="l v">22000 to 280000</td><td class="l d">Tuition per year, lower end (equal to <code>amount_max_local</code> when one figure is published). Unit: <code>currency</code> per year.</td></tr>
-<tr><td class="c"><code>amount_min_usd</code></td><td class="l">integer</td><td class="l v">3294 to 35680</td><td class="l d"><code>amount_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
-<tr><td class="c"><code>amount_max_local</code></td><td class="l">integer</td><td class="l v">22000 to 280000</td><td class="l d">Tuition per year, upper end. Unit: <code>currency</code> per year.</td></tr>
-<tr><td class="c"><code>amount_max_usd</code></td><td class="l">integer</td><td class="l v">3294 to 35680</td><td class="l d"><code>amount_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
+<tr><td class="c"><code>tariff_cycle</code></td><td class="l">string</td><td class="l v">text (21 distinct)</td><td class="l d">Intake or year the tuition was published for.</td></tr>
+<tr><td class="c"><code>amount_min_local</code></td><td class="l">integer</td><td class="l v">16000 to 280000</td><td class="l d">Tuition per year, lower end (equal to <code>amount_max_local</code> when one figure is published). Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>amount_min_usd</code></td><td class="l">integer</td><td class="l v">2396 to 35680</td><td class="l d"><code>amount_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
+<tr><td class="c"><code>amount_max_local</code></td><td class="l">integer</td><td class="l v">20000 to 280000</td><td class="l d">Tuition per year, upper end. Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>amount_max_usd</code></td><td class="l">integer</td><td class="l v">2995 to 35680</td><td class="l d"><code>amount_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
 <tr><td class="c"><code>fx_rate</code></td><td class="l">number</td><td class="l v">6.6786 to 7.8476</td><td class="l d">Units of <code>currency</code> per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0).</td></tr>
 <tr><td class="c"><code>fx_date</code></td><td class="l">string</td><td class="l v">text (1 distinct)</td><td class="l d">Date of the exchange rate, ISO 8601 (2026-10-21).</td></tr>
 <tr><td class="c"><code>status</code></td><td class="l">string</td><td class="l v"><code>found</code></td><td class="l d"><code>found</code> = the fact was read on the source page; <code>not_found</code> = the page was checked and the fact is not there: the row records what was looked for, <code>source_url</code> gives the URL tried and <code>note</code> says what was missing.</td></tr>
-<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (23 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
+<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (27 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
 <tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>official</code></td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
-<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
+<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (3 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
 <tr><td class="c"><code>confidence</code></td><td class="l">string</td><td class="l v"><code>estimate</code>, <code>partial</code>, <code>verified</code></td><td class="l d"><code>verified</code> = read on an official or legal page for the current cycle; <code>partial</code> = official but older cycle or incomplete, or a reputable secondary source; <code>estimate</code> = derived or calculated, method in <code>note</code>. Empty for <code>not_found</code> rows.</td></tr>
-<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 21</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
+<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (11 distinct); null in 21</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
 </tbody></table></div>
   <p class="caption">Table 2. Columns of <code>tuition.csv</code>.</p>
-  <p class="file"><code>year_total.csv</code>, 25 rows. Unique key: <code>university_id</code> + <code>track</code>.</p>
+  <p class="file"><code>year_total.csv</code>, 32 rows. Unique key: <code>university_id</code> + <code>track</code> + <code>campus</code>.</p>
 <div class="tablewrap"><table class="data cb"><thead><tr><th class="c">Column</th><th class="l">Type</th><th class="l">Values / unit</th><th class="l">What it holds</th></tr></thead><tbody>
-<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (16 distinct)</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
+<tr><td class="c"><code>university_id</code></td><td class="l">string</td><td class="l v">text (19 distinct)</td><td class="l d">Stable slug of the university, the same id as in the other Long Bet datasets (e.g. <code>tsinghua-university</code>).</td></tr>
 <tr><td class="c"><code>region</code></td><td class="l">string</td><td class="l v"><code>hong_kong</code>, <code>mainland</code></td><td class="l d"><code>mainland</code> (mainland China) or <code>hong_kong</code> (Hong Kong SAR).</td></tr>
 <tr><td class="c"><code>track</code></td><td class="l">string</td><td class="l v"><code>en_taught</code>, <code>en_taught_international_college</code>, <code>en_taught_joint_institute</code>, <code>zh_taught</code></td><td class="l d">Programme track: <code>zh_taught</code>, <code>en_taught</code> (run by the university), <code>en_taught_joint_institute</code>, <code>en_taught_international_college</code>.</td></tr>
-<tr><td class="c"><code>institute</code></td><td class="l">string</td><td class="l v">text (3 distinct); null in 22</td><td class="l d">Joint institute or separate college for that track; null for the university's own programmes.</td></tr>
+<tr><td class="c"><code>campus</code></td><td class="l">string</td><td class="l v"><code>main</code>, <code>shenzhen</code></td><td class="l d"><code>main</code> = the main campus, or the institute named in <code>institute</code>; <code>shenzhen</code> = the Shenzhen campus of Harbin Institute of Technology, which admits separately from the Harbin campus.</td></tr>
+<tr><td class="c"><code>institute</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 28</td><td class="l d">Joint institute, separate college or separately admitting campus for that track; null for the university's own programmes on the main campus.</td></tr>
 <tr><td class="c"><code>currency</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">ISO 4217 code of the local amounts in this row.</td></tr>
-<tr><td class="c"><code>tuition_local</code></td><td class="l">string</td><td class="l v">text (20 distinct)</td><td class="l d">Tuition per year, min-max range. Unit: <code>currency</code> per year.</td></tr>
-<tr><td class="c"><code>dorm_local</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 1</td><td class="l d">Dormitory per person per year (10 months), min-max range. Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>tuition_local</code></td><td class="l">string</td><td class="l v">text (24 distinct)</td><td class="l d">Tuition per year, min-max range. Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>dorm_local</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 1</td><td class="l d">Dormitory per person per year (10 months), min-max range. Unit: <code>currency</code> per year.</td></tr>
 <tr><td class="c"><code>insurance_local</code></td><td class="l">integer</td><td class="l v">152 to 1000; null in 2</td><td class="l d">Student medical insurance per year. Unit: <code>currency</code> per year.</td></tr>
 <tr><td class="c"><code>residence_permit_local</code></td><td class="l">integer</td><td class="l v">400 to 400; null in 3</td><td class="l d">Residence permit fee for one year (mainland only). Unit: <code>currency</code>.</td></tr>
 <tr><td class="c"><code>living_local</code></td><td class="l">string</td><td class="l v">text (9 distinct)</td><td class="l d">Food and daily living for 10 months, min-max range. Unit: <code>currency</code> per year.</td></tr>
 <tr><td class="c"><code>living_basis</code></td><td class="l">string</td><td class="l v">text (4 distinct)</td><td class="l d">What <code>living_local</code> is based on: the university's own official estimate, canteen prices, or an envelope of other universities' official estimates.</td></tr>
-<tr><td class="c"><code>total_min_local</code></td><td class="l">integer</td><td class="l v">39200 to 347290</td><td class="l d">Sum of the lower ends of the components. Unit: <code>currency</code> per year.</td></tr>
-<tr><td class="c"><code>total_max_local</code></td><td class="l">integer</td><td class="l v">53200 to 367940</td><td class="l d">Sum of the upper ends of the components. Unit: <code>currency</code> per year.</td></tr>
-<tr><td class="c"><code>total_min_usd</code></td><td class="l">integer</td><td class="l v">5869 to 44254</td><td class="l d"><code>total_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
-<tr><td class="c"><code>total_max_usd</code></td><td class="l">integer</td><td class="l v">7966 to 46886</td><td class="l d"><code>total_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
+<tr><td class="c"><code>total_min_local</code></td><td class="l">integer</td><td class="l v">30300 to 347290</td><td class="l d">Sum of the lower ends of the components. Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>total_max_local</code></td><td class="l">integer</td><td class="l v">50200 to 367940</td><td class="l d">Sum of the upper ends of the components. Unit: <code>currency</code> per year.</td></tr>
+<tr><td class="c"><code>total_min_usd</code></td><td class="l">integer</td><td class="l v">4537 to 44254</td><td class="l d"><code>total_min_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
+<tr><td class="c"><code>total_max_usd</code></td><td class="l">integer</td><td class="l v">7517 to 46886</td><td class="l d"><code>total_max_local</code> / <code>fx_rate</code>, rounded. Unit: USD per year.</td></tr>
 <tr><td class="c"><code>fx_rate</code></td><td class="l">number</td><td class="l v">6.6786 to 7.8476</td><td class="l d">Units of <code>currency</code> per 1 USD used for the *_usd columns (CNY 6.6786, HKD 7.8476, USD 1.0).</td></tr>
 <tr><td class="c"><code>fx_date</code></td><td class="l">string</td><td class="l v">text (1 distinct)</td><td class="l d">Date of the exchange rate, ISO 8601 (2026-10-21).</td></tr>
 <tr><td class="c"><code>components_missing</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 10</td><td class="l d">Components that were not published and how they were handled; the total is a floor when this is not empty.</td></tr>
 <tr><td class="c"><code>status</code></td><td class="l">string</td><td class="l v"><code>found</code></td><td class="l d"><code>found</code> = the fact was read on the source page; <code>not_found</code> = the page was checked and the fact is not there: the row records what was looked for, <code>source_url</code> gives the URL tried and <code>note</code> says what was missing.</td></tr>
-<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (23 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
+<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (27 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
 <tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>official</code></td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
-<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (1 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
+<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
 <tr><td class="c"><code>confidence</code></td><td class="l">string</td><td class="l v"><code>estimate</code></td><td class="l d"><code>verified</code> = read on an official or legal page for the current cycle; <code>partial</code> = official but older cycle or incomplete, or a reputable secondary source; <code>estimate</code> = derived or calculated, method in <code>note</code>. Empty for <code>not_found</code> rows.</td></tr>
 <tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (1 distinct)</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
 </tbody></table></div>
   <p class="caption">Table 3. Columns of <code>year_total.csv</code>.</p>
-  <p class="file"><code>scholarships.csv</code>, 25 rows. Unique key: <code>scholarship_id</code>.</p>
+  <p class="file"><code>scholarships.csv</code>, 35 rows. Unique key: <code>scholarship_id</code>.</p>
 <div class="tablewrap"><table class="data cb"><thead><tr><th class="c">Column</th><th class="l">Type</th><th class="l">Values / unit</th><th class="l">What it holds</th></tr></thead><tbody>
-<tr><td class="c"><code>scholarship_id</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Row id: <code>&lt;provider-slug&gt;__&lt;name-slug&gt;</code>.</td></tr>
-<tr><td class="c"><code>name</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Name of the scholarship.</td></tr>
-<tr><td class="c"><code>provider</code></td><td class="l">string</td><td class="l v">text (24 distinct)</td><td class="l d">Who provides it.</td></tr>
+<tr><td class="c"><code>scholarship_id</code></td><td class="l">string</td><td class="l v">text (35 distinct)</td><td class="l d">Row id: <code>&lt;provider-slug&gt;__&lt;name-slug&gt;</code>.</td></tr>
+<tr><td class="c"><code>name</code></td><td class="l">string</td><td class="l v">text (35 distinct)</td><td class="l d">Name of the scholarship.</td></tr>
+<tr><td class="c"><code>provider</code></td><td class="l">string</td><td class="l v">text (32 distinct)</td><td class="l d">Who provides it.</td></tr>
 <tr><td class="c"><code>provider_type</code></td><td class="l">string</td><td class="l v"><code>foundation</code>, <code>government</code>, <code>university</code></td><td class="l d">Type of provider: <code>university</code>, <code>government</code>, <code>foundation</code>.</td></tr>
 <tr><td class="c"><code>country_code</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">ISO 3166-1 alpha-2: <code>CN</code> mainland China, <code>HK</code> Hong Kong.</td></tr>
 <tr><td class="c"><code>country</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">Country or region name in English.</td></tr>
-<tr><td class="c"><code>universities</code></td><td class="l">string</td><td class="l v">text (20 distinct)</td><td class="l d">Universities covered.</td></tr>
-<tr><td class="c"><code>university_ids</code></td><td class="l">string</td><td class="l v">text (14 distinct); null in 1</td><td class="l d">University slugs covered, "; "-separated.</td></tr>
-<tr><td class="c"><code>programmes</code></td><td class="l">string</td><td class="l v">text (20 distinct)</td><td class="l d">Programmes covered.</td></tr>
+<tr><td class="c"><code>universities</code></td><td class="l">string</td><td class="l v">text (24 distinct)</td><td class="l d">Universities covered.</td></tr>
+<tr><td class="c"><code>university_ids</code></td><td class="l">string</td><td class="l v">text (17 distinct); null in 1</td><td class="l d">University slugs covered, "; "-separated.</td></tr>
+<tr><td class="c"><code>programmes</code></td><td class="l">string</td><td class="l v">text (26 distinct); null in 4</td><td class="l d">Programmes covered.</td></tr>
 <tr><td class="c"><code>level</code></td><td class="l">string</td><td class="l v"><code>all</code>, <code>bachelor</code></td><td class="l d">Study level: <code>bachelor</code> or <code>all</code>.</td></tr>
-<tr><td class="c"><code>mechanism</code></td><td class="l">string</td><td class="l v">text (2 distinct)</td><td class="l d">How the money is awarded: <code>merit_at_admission</code> or <code>government_scholarship</code>.</td></tr>
-<tr><td class="c"><code>covers_summary</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">What is covered (tuition, stipend, housing, insurance, travel, renewal).</td></tr>
-<tr><td class="c"><code>covers_tuition_pct</code></td><td class="l">integer</td><td class="l v">100 to 100; null in 17</td><td class="l d">Share of tuition covered, 0-100 (only when stated). Unit: percent.</td></tr>
-<tr><td class="c"><code>covers_housing</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 17</td><td class="l d">Housing covered (null when not stated).</td></tr>
-<tr><td class="c"><code>stipend_amount</code></td><td class="l">integer</td><td class="l v">2500 to 80000; null in 16</td><td class="l d">Stipend amount when stated. Unit: <code>stipend_currency</code> per <code>stipend_period</code>.</td></tr>
-<tr><td class="c"><code>stipend_currency</code></td><td class="l">string</td><td class="l v">text (2 distinct); null in 15</td><td class="l d">ISO 4217 currency of the stipend.</td></tr>
-<tr><td class="c"><code>stipend_period</code></td><td class="l">string</td><td class="l v"><code>month</code>, <code>year</code>; null in 16</td><td class="l d">Period of the stipend: <code>month</code> or <code>year</code>.</td></tr>
-<tr><td class="c"><code>citizenship_restrictions</code></td><td class="l">string</td><td class="l v">text (24 distinct)</td><td class="l d">Nationality rule: "open to all", "excluded: ...", "only: ..." or "unclear: ...".</td></tr>
-<tr><td class="c"><code>residence_constraints</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 19</td><td class="l d">Residence conditions.</td></tr>
-<tr><td class="c"><code>age_limit</code></td><td class="l">string</td><td class="l v">text (11 distinct); null in 13</td><td class="l d">Age limit.</td></tr>
-<tr><td class="c"><code>language_required</code></td><td class="l">string</td><td class="l v">text (20 distinct); null in 2</td><td class="l d">Language or language test required.</td></tr>
-<tr><td class="c"><code>tests_required</code></td><td class="l">string</td><td class="l v">text (17 distinct); null in 8</td><td class="l d">Admission tests required.</td></tr>
-<tr><td class="c"><code>what_it_takes</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Grades, essays, interview, recommendations, separate application.</td></tr>
-<tr><td class="c"><code>obligations</code></td><td class="l">string</td><td class="l v">text (9 distinct); null in 16</td><td class="l d">Obligations after the award (bond, return, work).</td></tr>
-<tr><td class="c"><code>numbers_awards</code></td><td class="l">string</td><td class="l v">text (21 distinct)</td><td class="l d">Number of awards, competition, typical award.</td></tr>
-<tr><td class="c"><code>deadline_cycle</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Deadlines of the latest published cycle (2026/27 or 2027/28 as stated).</td></tr>
-<tr><td class="c"><code>online_school_recognition</code></td><td class="l">string</td><td class="l v">text (11 distinct); null in 5</td><td class="l d">Does the scheme accept online-school diplomas?</td></tr>
-<tr><td class="c"><code>grade_criterion</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 20</td><td class="l d">What grades the award asks for, as published.</td></tr>
-<tr><td class="c"><code>grade_band_min</code></td><td class="l">string</td><td class="l v">text (2 distinct); null in 20</td><td class="l d">Threshold on the A-level scale A*A*A*A* &gt; AAAA &gt; ABB &gt; BBC. <code>none</code> = not expressed in A-levels or not published; it does NOT mean "no threshold".</td></tr>
-<tr><td class="c"><code>grade_sensitivity</code></td><td class="l">string</td><td class="l v"><code>admission_competitive</code>, <code>merit_decisive</code>; null in 20</td><td class="l d">How grades act on the money: <code>merit_decisive</code> or <code>admission_competitive</code>.</td></tr>
-<tr><td class="c"><code>automatic_consideration</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 20</td><td class="l d"><code>true</code> = considered automatically with the admission application; <code>false</code> = separate application or nomination.</td></tr>
-<tr><td class="c"><code>full_ride</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 6</td><td class="l d"><code>true</code> only if the source states that tuition, housing and living costs are all covered.</td></tr>
-<tr><td class="c"><code>online_school_note</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 21</td><td class="l d">What the scheme or university page says about online or distance schools.</td></tr>
-<tr><td class="c"><code>covers_max</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">What the award covers at its top level (amounts and duration).</td></tr>
-<tr><td class="c"><code>covers_tuition_pct_max</code></td><td class="l">integer</td><td class="l v">8 to 100; null in 4</td><td class="l d">Share of tuition covered at the top level of the award, 0-100. Unit: percent.</td></tr>
-<tr><td class="c"><code>covers_ge_50pct</code></td><td class="l">string</td><td class="l v"><code>no</code>, <code>unknown</code>, <code>yes</code></td><td class="l d">Does the top level of the award cover at least 50% of tuition: <code>yes</code>, <code>no</code>, <code>unknown</code>.</td></tr>
-<tr><td class="c"><code>req_grades</code></td><td class="l">string</td><td class="l v">text (18 distinct); null in 6</td><td class="l d">Grades asked for, verbatim or condensed.</td></tr>
-<tr><td class="c"><code>req_tests</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 6</td><td class="l d">Tests asked for (entrance, subject or language tests).</td></tr>
-<tr><td class="c"><code>req_essays</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 6</td><td class="l d">Essays or written answers.</td></tr>
-<tr><td class="c"><code>req_recommendations</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 6</td><td class="l d">Recommendations and school documents.</td></tr>
-<tr><td class="c"><code>req_nomination</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 6</td><td class="l d">Whether a school or another body must nominate the applicant.</td></tr>
-<tr><td class="c"><code>nomination_required</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 6</td><td class="l d"><code>true</code> = a university, an embassy or a government body has to nominate the applicant; <code>false</code> = direct application or automatic consideration.</td></tr>
-<tr><td class="c"><code>req_interview</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 6</td><td class="l d">Interview: whether, when and how.</td></tr>
-<tr><td class="c"><code>req_extracurricular</code></td><td class="l">string</td><td class="l v">text (6 distinct); null in 6</td><td class="l d">What the selectors value beyond grades.</td></tr>
-<tr><td class="c"><code>req_documents</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 6</td><td class="l d">Documents asked for.</td></tr>
-<tr><td class="c"><code>req_deadline</code></td><td class="l">string</td><td class="l v">text (17 distinct); null in 6</td><td class="l d">Deadlines as published for the latest cycle.</td></tr>
-<tr><td class="c"><code>recipient_profile</code></td><td class="l">string</td><td class="l v">text (8 distinct); null in 6</td><td class="l d">Who typically wins (published numbers, profiles).</td></tr>
-<tr><td class="c"><code>renewal_conditions</code></td><td class="l">string</td><td class="l v">text (18 distinct); null in 6</td><td class="l d">Conditions to keep the award after year 1.</td></tr>
-<tr><td class="c"><code>stackable</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 6</td><td class="l d">Whether the award can be combined with other awards.</td></tr>
-<tr><td class="c"><code>online_school_ok</code></td><td class="l">string</td><td class="l v">text (12 distinct); null in 6</td><td class="l d">What the provider says about diplomas from online or distance schools.</td></tr>
-<tr><td class="c"><code>online_school_status</code></td><td class="l">string</td><td class="l v"><code>excludes</code>, <code>no_exclusion_found</code>, <code>not_stated</code>; null in 6</td><td class="l d">Classification of <code>online_school_ok</code>: <code>no_exclusion_found</code>, <code>not_stated</code>, <code>excludes</code>.</td></tr>
-<tr><td class="c"><code>citizenship_note</code></td><td class="l">string</td><td class="l v">text (5 distinct)</td><td class="l d">Nationality rule as read from the source for a generic applicant.</td></tr>
-<tr><td class="c"><code>req_source_url</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Page(s) the requirement columns (<code>req_*</code>) were read from, "; "-separated.</td></tr>
-<tr><td class="c"><code>req_checked_at</code></td><td class="l">string</td><td class="l v">text (3 distinct)</td><td class="l d">Date the requirement columns were checked, ISO 8601.</td></tr>
-<tr><td class="c"><code>req_confidence</code></td><td class="l">string</td><td class="l v"><code>partial</code>, <code>verified</code></td><td class="l d">Confidence of the requirement columns: <code>verified</code>, <code>partial</code>.</td></tr>
+<tr><td class="c"><code>mechanism</code></td><td class="l">string</td><td class="l v">text (3 distinct)</td><td class="l d">How the money is awarded: <code>merit_at_admission</code> or <code>government_scholarship</code>.</td></tr>
+<tr><td class="c"><code>covers_summary</code></td><td class="l">string</td><td class="l v">text (35 distinct)</td><td class="l d">What is covered (tuition, stipend, housing, insurance, travel, renewal).</td></tr>
+<tr><td class="c"><code>covers_tuition_pct</code></td><td class="l">string</td><td class="l v">text (2 distinct); null in 26</td><td class="l d">Share of tuition covered, 0-100 (only when stated). Unit: percent.</td></tr>
+<tr><td class="c"><code>covers_housing</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 25</td><td class="l d">Housing covered (null when not stated).</td></tr>
+<tr><td class="c"><code>stipend_amount</code></td><td class="l">integer</td><td class="l v">1000 to 80000; null in 21</td><td class="l d">Stipend amount when stated. Unit: <code>stipend_currency</code> per <code>stipend_period</code>.</td></tr>
+<tr><td class="c"><code>stipend_currency</code></td><td class="l">string</td><td class="l v">text (2 distinct); null in 19</td><td class="l d">ISO 4217 currency of the stipend.</td></tr>
+<tr><td class="c"><code>stipend_period</code></td><td class="l">string</td><td class="l v"><code>month</code>, <code>year</code>; null in 21</td><td class="l d">Period of the stipend: <code>month</code> or <code>year</code>.</td></tr>
+<tr><td class="c"><code>citizenship_restrictions</code></td><td class="l">string</td><td class="l v">text (24 distinct); null in 10</td><td class="l d">Nationality rule: "open to all", "excluded: ...", "only: ..." or "unclear: ...".</td></tr>
+<tr><td class="c"><code>residence_constraints</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 29</td><td class="l d">Residence conditions.</td></tr>
+<tr><td class="c"><code>age_limit</code></td><td class="l">string</td><td class="l v">text (12 distinct); null in 20</td><td class="l d">Age limit.</td></tr>
+<tr><td class="c"><code>language_required</code></td><td class="l">string</td><td class="l v">text (22 distinct); null in 10</td><td class="l d">Language or language test required.</td></tr>
+<tr><td class="c"><code>tests_required</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 16</td><td class="l d">Admission tests required.</td></tr>
+<tr><td class="c"><code>what_it_takes</code></td><td class="l">string</td><td class="l v">text (27 distinct); null in 8</td><td class="l d">Grades, essays, interview, recommendations, separate application.</td></tr>
+<tr><td class="c"><code>obligations</code></td><td class="l">string</td><td class="l v">text (10 distinct); null in 25</td><td class="l d">Obligations after the award (bond, return, work).</td></tr>
+<tr><td class="c"><code>numbers_awards</code></td><td class="l">string</td><td class="l v">text (21 distinct); null in 10</td><td class="l d">Number of awards, competition, typical award.</td></tr>
+<tr><td class="c"><code>deadline_cycle</code></td><td class="l">string</td><td class="l v">text (30 distinct); null in 5</td><td class="l d">Deadlines of the latest published cycle (2026/27 or 2027/28 as stated).</td></tr>
+<tr><td class="c"><code>online_school_recognition</code></td><td class="l">string</td><td class="l v">text (11 distinct); null in 15</td><td class="l d">Does the scheme accept online-school diplomas?</td></tr>
+<tr><td class="c"><code>grade_criterion</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 30</td><td class="l d">What grades the award asks for, as published.</td></tr>
+<tr><td class="c"><code>grade_band_min</code></td><td class="l">string</td><td class="l v">text (2 distinct); null in 30</td><td class="l d">Threshold on the A-level scale A*A*A*A* &gt; AAAA &gt; ABB &gt; BBC. <code>none</code> = not expressed in A-levels or not published; it does NOT mean "no threshold".</td></tr>
+<tr><td class="c"><code>grade_sensitivity</code></td><td class="l">string</td><td class="l v"><code>admission_competitive</code>, <code>merit_decisive</code>; null in 30</td><td class="l d">How grades act on the money: <code>merit_decisive</code> or <code>admission_competitive</code>.</td></tr>
+<tr><td class="c"><code>automatic_consideration</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 30</td><td class="l d"><code>true</code> = considered automatically with the admission application; <code>false</code> = separate application or nomination.</td></tr>
+<tr><td class="c"><code>full_ride</code></td><td class="l">string</td><td class="l v"><code>false</code>, <code>true</code>, <code>unknown</code>; null in 10</td><td class="l d"><code>true</code> only if the source states that tuition, housing and living costs are all covered.</td></tr>
+<tr><td class="c"><code>online_school_note</code></td><td class="l">string</td><td class="l v">text (4 distinct); null in 31</td><td class="l d">What the scheme or university page says about online or distance schools.</td></tr>
+<tr><td class="c"><code>covers_max</code></td><td class="l">string</td><td class="l v">text (25 distinct); null in 10</td><td class="l d">What the award covers at its top level (amounts and duration).</td></tr>
+<tr><td class="c"><code>covers_tuition_pct_max</code></td><td class="l">integer</td><td class="l v">8 to 100; null in 12</td><td class="l d">Share of tuition covered at the top level of the award, 0-100. Unit: percent.</td></tr>
+<tr><td class="c"><code>covers_ge_50pct</code></td><td class="l">string</td><td class="l v"><code>no</code>, <code>unknown</code>, <code>yes</code>; null in 10</td><td class="l d">Does the top level of the award cover at least 50% of tuition: <code>yes</code>, <code>no</code>, <code>unknown</code>.</td></tr>
+<tr><td class="c"><code>req_grades</code></td><td class="l">string</td><td class="l v">text (18 distinct); null in 16</td><td class="l d">Grades asked for, verbatim or condensed.</td></tr>
+<tr><td class="c"><code>req_tests</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 16</td><td class="l d">Tests asked for (entrance, subject or language tests).</td></tr>
+<tr><td class="c"><code>req_essays</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 16</td><td class="l d">Essays or written answers.</td></tr>
+<tr><td class="c"><code>req_recommendations</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 16</td><td class="l d">Recommendations and school documents.</td></tr>
+<tr><td class="c"><code>req_nomination</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 16</td><td class="l d">Whether a school or another body must nominate the applicant.</td></tr>
+<tr><td class="c"><code>nomination_required</code></td><td class="l">boolean</td><td class="l v"><code>true</code>, <code>false</code>; null in 16</td><td class="l d"><code>true</code> = a university, an embassy or a government body has to nominate the applicant; <code>false</code> = direct application or automatic consideration.</td></tr>
+<tr><td class="c"><code>req_interview</code></td><td class="l">string</td><td class="l v">text (16 distinct); null in 16</td><td class="l d">Interview: whether, when and how.</td></tr>
+<tr><td class="c"><code>req_extracurricular</code></td><td class="l">string</td><td class="l v">text (6 distinct); null in 16</td><td class="l d">What the selectors value beyond grades.</td></tr>
+<tr><td class="c"><code>req_documents</code></td><td class="l">string</td><td class="l v">text (15 distinct); null in 16</td><td class="l d">Documents asked for.</td></tr>
+<tr><td class="c"><code>req_deadline</code></td><td class="l">string</td><td class="l v">text (17 distinct); null in 16</td><td class="l d">Deadlines as published for the latest cycle.</td></tr>
+<tr><td class="c"><code>recipient_profile</code></td><td class="l">string</td><td class="l v">text (8 distinct); null in 16</td><td class="l d">Who typically wins (published numbers, profiles).</td></tr>
+<tr><td class="c"><code>renewal_conditions</code></td><td class="l">string</td><td class="l v">text (20 distinct); null in 14</td><td class="l d">Conditions to keep the award after year 1.</td></tr>
+<tr><td class="c"><code>stackable</code></td><td class="l">string</td><td class="l v">text (6 distinct); null in 15</td><td class="l d">Whether the award can be combined with other awards.</td></tr>
+<tr><td class="c"><code>online_school_ok</code></td><td class="l">string</td><td class="l v">text (12 distinct); null in 16</td><td class="l d">What the provider says about diplomas from online or distance schools.</td></tr>
+<tr><td class="c"><code>online_school_status</code></td><td class="l">string</td><td class="l v"><code>excludes</code>, <code>no_exclusion_found</code>, <code>not_stated</code>; null in 16</td><td class="l d">Classification of <code>online_school_ok</code>: <code>no_exclusion_found</code>, <code>not_stated</code>, <code>excludes</code>.</td></tr>
+<tr><td class="c"><code>citizenship_note</code></td><td class="l">string</td><td class="l v">text (5 distinct); null in 10</td><td class="l d">Nationality rule as read from the source for a generic applicant.</td></tr>
+<tr><td class="c"><code>req_source_url</code></td><td class="l">string</td><td class="l v">text (25 distinct); null in 10</td><td class="l d">Page(s) the requirement columns (<code>req_*</code>) were read from, "; "-separated.</td></tr>
+<tr><td class="c"><code>req_checked_at</code></td><td class="l">string</td><td class="l v">text (3 distinct); null in 10</td><td class="l d">Date the requirement columns were checked, ISO 8601.</td></tr>
+<tr><td class="c"><code>req_confidence</code></td><td class="l">string</td><td class="l v"><code>partial</code>, <code>verified</code>; null in 10</td><td class="l d">Confidence of the requirement columns: <code>verified</code>, <code>partial</code>.</td></tr>
 <tr><td class="c"><code>status</code></td><td class="l">string</td><td class="l v"><code>found</code></td><td class="l d"><code>found</code> = the fact was read on the source page; <code>not_found</code> = the page was checked and the fact is not there: the row records what was looked for, <code>source_url</code> gives the URL tried and <code>note</code> says what was missing.</td></tr>
-<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (25 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
-<tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>official</code>, <code>secondary</code></td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
-<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (3 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
+<tr><td class="c"><code>source_url</code></td><td class="l">string</td><td class="l v">text (35 distinct)</td><td class="l d">Page(s) where the fact is stated, "; "-separated, primary pages first. For <code>not_found</code> rows: the page(s) tried.</td></tr>
+<tr><td class="c"><code>source_type</code></td><td class="l">string</td><td class="l v"><code>law</code>, <code>official</code>, <code>secondary</code></td><td class="l d"><code>official</code> = university, government, embassy, airport or ranking publisher page; <code>law</code> = legal act; <code>secondary</code> = media, Wikipedia, agencies, aggregators.</td></tr>
+<tr><td class="c"><code>checked_at</code></td><td class="l">string</td><td class="l v">text (4 distinct)</td><td class="l d">Date the row was last read on the source, ISO 8601.</td></tr>
 <tr><td class="c"><code>confidence</code></td><td class="l">string</td><td class="l v"><code>estimate</code>, <code>partial</code>, <code>verified</code></td><td class="l d"><code>verified</code> = read on an official or legal page for the current cycle; <code>partial</code> = official but older cycle or incomplete, or a reputable secondary source; <code>estimate</code> = derived or calculated, method in <code>note</code>. Empty for <code>not_found</code> rows.</td></tr>
-<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (19 distinct); null in 6</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
+<tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (29 distinct); null in 6</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
 </tbody></table></div>
   <p class="caption">Table 4. Columns of <code>scholarships.csv</code>.</p>
   <p class="file"><code>csc_quotas.csv</code>, 22 rows. Unique key: <code>country</code> + <code>programme</code> + <code>cycle</code>.</p>
@@ -1033,22 +1040,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr><td class="c"><code>note</code></td><td class="l">string</td><td class="l v">text (22 distinct)</td><td class="l d">Caveats in English. "Updated 2026-10-23:" marks text added by the second verification pass of 23 October 2026.</td></tr>
 </tbody></table></div>
   <p class="caption">Table 5. Columns of <code>csc_quotas.csv</code>.</p>
-  <p><code>sources.csv</code>, 140 rows. Unique key: <code>source_id</code>. One row per distinct URL in the columns whose name ends in <code>source_url</code>: <code>source_id</code>, <code>url</code>, <code>title</code> (publisher and host), <code>source_type</code>, <code>accessed_at</code> (latest date a row citing it was checked), <code>used_for</code> (file, column and number of rows).</p>
+  <p><code>sources.csv</code>, 163 rows. Unique key: <code>source_id</code>. One row per distinct URL in the columns whose name ends in <code>source_url</code>: <code>source_id</code>, <code>url</code>, <code>title</code> (publisher and host), <code>source_type</code>, <code>accessed_at</code> (latest date a row citing it was checked), <code>used_for</code> (file, column and number of rows).</p>
 
   <h2>Method</h2>
-  <p>Data were collected between 9 and 23 October 2026 from official pages of the universities (admission and international-office pages, fee tables, catalogues), governments, embassies and visa centres, ranking publishers and, for stable facts only, secondary sources; a second verification pass on 23 October 2026 re-read the rows with gaps. An independent re-check of 69 random rows against the source found 64 matching; the 5 differences were corrected or given a lower <code>confidence</code> before release.</p>
+  <p>Data for 13 mainland and 3 Hong Kong universities were collected between 9 and 23 October 2026 from official pages of the universities (admission and international-office pages, fee tables, catalogues), governments, embassies and visa centres, ranking publishers and, for stable facts only, secondary sources; a second verification pass on 23 October 2026 re-read the rows with gaps. An independent re-check of 69 random rows against the source found 64 matching; the 5 differences were corrected or given a lower <code>confidence</code> before release. The three universities that entered the ARWU top 100 in 2026 (Southeast University, Harbin Institute of Technology, Tianjin University) were collected on 8 November 2026 into the same columns; an independent re-check of 20 random rows of that collection found no difference: 8 matching, 6 matching on a secondary or previous-cycle page (marked <code>partial</code>), 6 whose page could not be opened automatically. A second check of 20 other random rows of the three universities, read in a browser on the same day, found 15 matching, 1 matching in part, 1 whose page is no longer online and 3 differences (Southeast University's 2027 admission brochure had replaced the 2025 language and calendar rules; Tianjin University names A-Level results in its scholarship notice); the 3 were corrected before release.</p>
   <p>Every row carries its provenance: <code>source_url</code> (the page where the fact is stated; several pages "; "-separated), <code>source_type</code> (<code>official</code>, <code>law</code>, <code>secondary</code>), <code>checked_at</code> (date read), <code>confidence</code> (<code>verified</code>, <code>partial</code>, <code>estimate</code>) and <code>note</code>. <code>status</code> is <code>found</code> or <code>not_found</code>: a <code>not_found</code> row records what was checked and not found, with the URL tried in <code>source_url</code> and the reason in <code>note</code>; its value columns are empty. Empty means unknown; no value is guessed.</p>
   <p>Money is kept as published, in local currency with its ISO 4217 code and period. USD columns are computed with one rate for the whole snapshot: 6.6786 CNY and 7.8476 HKD per USD on 2026-10-21 (<code>fx_rate</code>, <code>fx_date</code>), rounded to whole dollars. Academic cycles are stated per row (e.g. "2026 intake", "2027/28").</p>
   <p>Text added by the second verification pass starts with "Updated 2026-10-23:". Ids follow the other Long Bet datasets (<code>university_id</code> slugs).</p>
-  <p><code>data.csv</code> lists each published cost item as the source gives it (one figure in <code>amount_local</code>, or a range in <code>amount_min_local</code> / <code>amount_max_local</code>). <code>year_total.csv</code> adds up, per university and track, tuition, a dormitory place for one person, medical insurance, the residence permit (mainland) and living costs for one academic year of 10 months (300 days); one-off fees (application, deposit, medical check) are left out. Living costs use the university's own official estimate where it publishes one, canteen prices where it does not, and otherwise the envelope of the other universities' official estimates (<code>living_basis</code>); <code>components_missing</code> says what was assumed, and the total is a floor when it is not empty. All year totals are <code>estimate</code>. <code>csc_quotas.csv</code> records the Chinese Government Scholarship and Hong Kong Belt and Road places published by the sending country or the Hong Kong government, by cycle.</p>
+  <p><code>data.csv</code> lists each published cost item as the source gives it (one figure in <code>amount_local</code>, or a range in <code>amount_min_local</code> / <code>amount_max_local</code>). <code>year_total.csv</code> adds up, per university and track, tuition, a dormitory place for one person, medical insurance, the residence permit (mainland) and living costs for one academic year of 10 months (300 days); one-off fees (application, deposit, medical check) are left out. Harbin Institute of Technology has a second English-taught row for its Shenzhen campus (<code>campus</code> = <code>shenzhen</code>), which admits separately and has its own fees. Living costs use the university's own official estimate where it publishes one, canteen prices where it does not, and otherwise the envelope of the other universities' official estimates (<code>living_basis</code>); <code>components_missing</code> says what was assumed, and the total is a floor when it is not empty. All year totals are <code>estimate</code>. <code>csc_quotas.csv</code> records the Chinese Government Scholarship and Hong Kong Belt and Road places published by the sending country or the Hong Kong government, by cycle.</p>
 
   <h2>Known limitations</h2>
   <ul>
-    <li>Only 8 of 16 universities publish an official estimate of living costs; the others are filled from canteen prices or from the range of the other universities (<code>living_basis</code>).</li>
+    <li>Only 8 of 19 universities publish an official estimate of living costs; the others are filled from canteen prices or from the range of the other universities (<code>living_basis</code>).</li>
     <li>Transport and phone costs were collected for a few cities only (rows with <code>item</code> <code>metro_single_fare</code>, <code>transport_monthly_discount</code>, <code>transport_student_scheme</code>, <code>sim_phone</code>) and are not part of the year totals. Medical insurance amounts are not published by Peking University, Central South University, HKU and CUHK.</li>
     <li>Chinese Government Scholarship places for 2026/27 were not found for France, Poland and Hungary; the 2027/28 call for Russia was not yet published on 2026-10-23.</li>
     <li>Tuition tables of several universities carry no year; they are marked by <code>tariff_cycle</code> and <code>confidence</code> = <code>partial</code>.</li>
-    <li>Across all files of this package, 17 of 207 rows are <code>not_found</code> and 31 are <code>estimate</code>.</li>
+    <li>Across all files of this package, 21 of 253 rows are <code>not_found</code> and 40 are <code>estimate</code>.</li>
   </ul>
 
   <h2>How to verify</h2>
@@ -1061,8 +1068,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <span>The article whose tables are built from this dataset.</span>
     </div>
     <div class="series-nav-item">
-      <a href="/research/long-bet/data/china-subject-strength/">Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025</a>
-      <span>Places of the 16 universities in all 57 GRAS 2026 subjects, top-10 counts by region, ARWU indicator means 2010-2025 and Highly Cited Researcher counts without names.</span>
+      <a href="/research/long-bet/data/china-subject-strength/">Subject Strength of 19 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025</a>
+      <span>Places of the 19 universities in all 57 GRAS 2026 subjects, top-10 counts by region, ARWU indicator means 2010-2026 and Highly Cited Researcher counts without names.</span>
     </div>
     <div class="series-nav-item">
       <a href="/research/long-bet/data/china-bachelor-programmes/">Bachelor Programmes Open to International Students at Chinese Universities (2026)</a>

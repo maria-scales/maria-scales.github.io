@@ -1,6 +1,6 @@
 {
  "$schema": "http://json-schema.org/draft-07/schema#",
- "title": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
+ "title": "Subject Strength of 19 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
  "type": "object",
  "properties": {
   "university_id": {

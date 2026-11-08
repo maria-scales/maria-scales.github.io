@@ -1,8 +1,8 @@
 {
  "name": "china-bachelor-programmes",
  "title": "Bachelor Programmes Open to International Students at Chinese Universities (2026)",
- "version": "2026.10",
- "description": "Bachelor Programmes Open to International Students at Chinese Universities (2026): Every bachelor programme in the international catalogues of the universities, with language of instruction and a STEM flag, plus counts per university. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "version": "2026.11",
+ "description": "Bachelor Programmes Open to International Students at Chinese Universities (2026): Every bachelor programme in the international catalogues of the universities, with language of instruction and a STEM flag, plus counts per university. Scope: 16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong. The Long Bet, original research by M. Atamanova. Version 2026.11, data checked up to 2026-11-08.",
  "homepage": "https://mariascales.com/research/long-bet/data/china-bachelor-programmes/",
  "licenses": [
   {
@@ -17,7 +17,7 @@
    "path": "https://mariascales.com/research/long-bet/"
   },
   {
-   "title": "38 pages listed in sources.csv",
+   "title": "55 pages listed in sources.csv",
    "path": "sources.csv"
   }
  ],
@@ -83,7 +83,8 @@
       "constraints": {
        "required": true,
        "enum": [
-        "found"
+        "found",
+        "not_found"
        ]
       }
      },

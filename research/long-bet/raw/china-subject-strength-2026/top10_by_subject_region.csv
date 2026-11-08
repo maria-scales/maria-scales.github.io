@@ -1,28 +1,28 @@
-subject_category,subject,top10_cn,top10_cn_13,top10_us,top10_uk,top10_europe
-Engineering,Aerospace Engineering,7,1,2,0,1
-Engineering,Artificial Intelligence,4,3,2,0,0
-Engineering,Automation & Control,4,1,2,2,0
+subject_category,subject,top10_cn,top10_cn_16,top10_us,top10_uk,top10_europe
+Engineering,Aerospace Engineering,7,2,2,0,1
+Engineering,Artificial Intelligence,4,4,2,0,0
+Engineering,Automation & Control,4,2,2,2,0
 Engineering,Biomedical Engineering,5,5,2,1,0
 Engineering,Biotechnology,4,3,4,1,1
-Engineering,Chemical Engineering,10,7,0,0,0
-Engineering,Civil Engineering,9,3,0,0,0
+Engineering,Chemical Engineering,10,9,0,0,0
+Engineering,Civil Engineering,9,5,0,0,0
 Engineering,Computer Science & Engineering,3,3,5,0,0
-Engineering,Electrical & Electronic Engineering,4,2,5,0,0
+Engineering,Electrical & Electronic Engineering,4,4,5,0,0
 Engineering,Energy Science & Engineering,6,5,0,1,0
-Engineering,Environmental Science & Engineering,8,5,0,0,1
+Engineering,Environmental Science & Engineering,8,6,0,0,1
 Engineering,Food Science & Technology,8,1,1,0,1
-Engineering,Instruments Science & Technology,10,5,0,0,0
-Engineering,Marine/Ocean Engineering,8,2,0,0,2
+Engineering,Instruments Science & Technology,10,8,0,0,0
+Engineering,Marine/Ocean Engineering,8,3,0,0,2
 Engineering,Materials Science & Engineering,3,3,7,0,0
-Engineering,Mechanical Engineering,5,3,2,1,0
-Engineering,Metallurgical Engineering,9,4,0,0,0
+Engineering,Mechanical Engineering,5,4,2,1,0
+Engineering,Metallurgical Engineering,9,5,0,0,0
 Engineering,Mining & Mineral Engineering,8,2,1,0,0
 Engineering,Nanoscience & Nanotechnology,8,7,0,0,0
 Engineering,Remote Sensing,10,3,0,0,0
 Engineering,Robotic Science & Engineering,4,3,4,0,2
-Engineering,Telecommunication Engineering,7,3,1,0,0
+Engineering,Telecommunication Engineering,7,4,1,0,0
 Engineering,Textile Science & Engineering,8,1,0,0,0
-Engineering,Transportation Science & Technology,6,1,0,0,1
+Engineering,Transportation Science & Technology,6,2,0,0,1
 Engineering,Water Resources,7,2,2,0,0
 Life Sciences,Agricultural Sciences,6,1,1,0,3
 Life Sciences,Biological Sciences,0,0,8,2,0

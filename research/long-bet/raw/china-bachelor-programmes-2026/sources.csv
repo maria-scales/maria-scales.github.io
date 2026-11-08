@@ -30,10 +30,27 @@ S028,https://intl.csu.edu.cn/English/Admission/Undergraduate_Programs/Chinese_ta
 S029,https://dii.csu.edu.cn/EN/ADMISSIONS.htm,dii.csu.edu.cn,official,2026-10-23,data.csv (source_url): 5 rows; programmes_summary.csv (source_url): 1 row
 S030,https://admissions.hku.hk/sites/default/files/2025-10/HKU-International-Admissions-Information-2026.pdf,admissions.hku.hk,official,2026-10-23,data.csv (source_url): 61 rows; programmes_summary.csv (source_url): 1 row
 S031,https://cityu.edu.hk/admo/news/2026%20Programme%20Flyer%20%E2%80%8B%28For%20International%20Students%29.pdf,cityu.edu.hk,official,2026-10-23,data.csv (source_url): 45 rows; programmes_summary.csv (source_url): 1 row
-S032,https://iso.fudan.edu.cn/6f/6d/c51269a749421/page.htm,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S033,https://iso.fudan.edu.cn/_upload/article/files/bc/87/d68baf454947aab64eadcb8b218c/245269df-13c2-4734-aa0b-ffeccca47ac3.pdf,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S034,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/zyml/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S035,https://hwxy.nju.edu.cn/DFS//file/2026/09/16/20260916100252482kuny5s.pdf,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S036,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S037,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/sbzn/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
-S038,https://admission.cuhk.edu.hk/programmes/list/,admission.cuhk.edu.hk,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S032,https://cis.seu.edu.cn/_upload/article/files/2f/1c/fde7acea4d2896bd086a8d7d58c1/e0e38a42-4e2b-4611-b267-f41cff2de6cb.pdf,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 70 rows; programmes_summary.csv (source_url): 1 row
+S033,https://cis.seu.edu.cn/hwenglish/2023/1013/c13997a468318/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 64 rows
+S034,https://cis.seu.edu.cn/hwenglish/2026/1027/c14041a587685/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S035,https://cis.seu.edu.cn/hwenglish/2026/1027/c14041a587688/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S036,https://cis.seu.edu.cn/hwenglish/2026/1027/c14041a587689/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S037,https://cis.seu.edu.cn/hwenglish/2025/0929/c14041a541072/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S038,https://cis.seu.edu.cn/hwenglish/2026/1103/c14041a588501/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S039,https://cis.seu.edu.cn/hwenglish/2026/1103/c14041a588504/page.htm,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 1 row
+S040,https://studyathit.hit.edu.cn/_upload/article/files/96/2d/cc4244394e8f9d67e13e22595fe3/aae8fc6b-2fb7-4847-a1d3-545348cc1433.xls,studyathit.hit.edu.cn,official,2026-11-08,data.csv (source_url): 97 rows; programmes_summary.csv (source_url): 1 row
+S041,https://studyathit.hit.edu.cn/18338/list.htm,studyathit.hit.edu.cn,official,2026-11-08,data.csv (source_url): 97 rows; programmes_summary.csv (source_url): 1 row
+S042,https://en.hitsz.edu.cn/__local/3/28/34/93FAE9A2DB2126960BCB9567033_D6038EC1_2636E.pdf,en.hitsz.edu.cn,official,2026-11-08,data.csv (source_url): 8 rows
+S043,https://en.hitsz.edu.cn/info/1125/1714.htm,en.hitsz.edu.cn,official,2026-11-08,data.csv (source_url): 8 rows
+S044,https://www.hitwh.edu.cn/,www.hitwh.edu.cn,,2026-11-08,data.csv (source_url): 1 row
+S045,https://sie.tju.edu.cn/en/jxj/tjdxjxj/202410/W020260105593270066614.xls,sie.tju.edu.cn,official,2026-11-08,data.csv (source_url): 67 rows; programmes_summary.csv (source_url): 1 row
+S046,https://sie.tju.edu.cn/en/jxj/tjdxjxj/202410/t20241015_323982.html,sie.tju.edu.cn,official,2026-11-08,data.csv (source_url): 67 rows
+S047,https://iso.fudan.edu.cn/6f/6d/c51269a749421/page.htm,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S048,https://iso.fudan.edu.cn/_upload/article/files/bc/87/d68baf454947aab64eadcb8b218c/245269df-13c2-4734-aa0b-ffeccca47ac3.pdf,iso.fudan.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S049,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/zyml/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S050,https://hwxy.nju.edu.cn/DFS//file/2026/09/16/20260916100252482kuny5s.pdf,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S051,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S052,https://hwxy.nju.edu.cn/lxnd/zsxx/bkxm/sbzn/index.html,hwxy.nju.edu.cn,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S053,https://admission.cuhk.edu.hk/programmes/list/,admission.cuhk.edu.hk,official,2026-10-23,programmes_summary.csv (source_url): 1 row
+S054,https://cis.seu.edu.cn/hwenglish/2008/0508/c13933a137794/page.htm,cis.seu.edu.cn,official,2026-11-08,programmes_summary.csv (source_url): 1 row
+S055,https://en.tju.edu.cn/info/1017/11196.htm,en.tju.edu.cn,official,2026-11-08,programmes_summary.csv (source_url): 1 row
