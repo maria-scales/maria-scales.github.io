@@ -26,92 +26,108 @@ S024,https://admissions.hku.hk/node/2305,admissions.hku.hk,official,2026-10-23,d
 S025,https://admissions.hku.hk/node/2326,admissions.hku.hk,official,2026-10-23,data.csv (source_url): 1 row
 S026,https://www.cityu.edu.hk/international/admissions/entrance-requirements,www.cityu.edu.hk,official,2026-10-23,data.csv (source_url): 5 rows; admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 2 rows; prep_programmes.csv (source_url): 1 row
 S027,https://admission.cuhk.edu.hk/application/overseas-other-qualifications-non-local-international-team/requirements/,admission.cuhk.edu.hk,official,2026-10-23,data.csv (source_url): 5 rows
-S028,https://international.join-tsinghua.edu.cn/Admission1/Schedule.htm,international.join-tsinghua.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
-S029,https://edufair.dongzong.my/images/school/ANHUI/ZHONGGUOKEXUEJISHUDAXUE/WENJIAN/ZHAOSHENGJIANZHANG.pdf,edufair.dongzong.my,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
-S030,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=5,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
-S031,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=17,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
-S032,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=7,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
-S033,https://iso.hust.edu.cn/info/1194/3858.htm,iso.hust.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
-S034,https://global.scu.edu.cn/oso/article/index/1111,global.scu.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
-S035,https://admissions.hku.hk/apply/international-qualifications,admissions.hku.hk,official,2026-10-23,admission_cycle.csv (source_url): 1 row; visa_by_passport.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row
-S036,https://www.info.gov.hk/gia/general/202509/17/P2025091700566.htm,Hong Kong SAR government (www.info.gov.hk),official,2026-10-23,admission_cycle.csv (source_url): 3 rows
-S037,https://admission.cuhk.edu.hk/application/non-jupas/important-dates/,admission.cuhk.edu.hk,official,2026-10-23,admission_cycle.csv (source_url): 1 row
-S038,https://www.hcch.net/en/instruments/conventions/status-table/?cid=41,HCCH (Hague Conference) (www.hcch.net),official,2026-10-23,apostille.csv (source_url): 7 rows
-S039,https://www.hcch.net/en/instruments/conventions/status-table/print/?cid=41,HCCH (Hague Conference) (www.hcch.net),official,2026-10-23,apostille.csv (source_url): 7 rows
-S040,https://www.mfa.gov.cn/wjbxw_673019/202310/t20231023_11165858.shtml,Chinese government (www.mfa.gov.cn),official,2026-10-23,apostille.csv (source_url): 1 row
-S041,https://www.dorsey.com/newsresources/blogs/tmca/2024/02/china-abolishes-legalization-requirement-on-foreig,www.dorsey.com,secondary,2026-10-23,apostille.csv (source_url): 1 row
-S042,https://english.shanghai.gov.cn/en-VisaLatest/20260520/0b86f04686c84c4a8bdca4f77dbee1eb.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S043,https://bio.visaforchina.cn/MOW3_ZH/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S044,https://english.shanghai.gov.cn/en-VisaLatest/20260709/d70a1231ba4641ff9a024e53751ad480.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
-S045,https://visaforchina.cn/MTL2_EN/generalinformation/downloads/283375.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
-S046,https://www.gov.cn/zhengce/2017-06/02/content_5713392.htm,Chinese government (www.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows; work_rules.csv (source_url): 2 rows
-S047,https://bio.visaforchina.cn/IST4_ZH/upload/20250330/789db9f42a744f5e8e9c5631858c201b.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S048,https://adelaide.china-consulate.gov.cn/eng/gg_1_1/202511/t20251104_11746678.htm,Chinese consulate (adelaide.china-consulate.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 5 rows
-S049,https://bio.visaforchina.cn/LON3_EN/tongzhigonggao/315858144490295296.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 5 rows
-S050,https://rs.china-embassy.gov.cn/lsyw/tongzhi/202601/t20260101_11796675.htm,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 2 rows
-S051,https://visaforchina.cn/BOM2_EN/generalinformation/news/283543.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S052,https://www.srbija.gov.rs/vest/en/119306/agreement-on-abolishment-of-visas-between-serbia-china-signed.php,www.srbija.gov.rs,official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S053,https://mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/china,mfa.gov.rs,official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S054,https://en.wikipedia.org/wiki/Visa_policy_of_mainland_China,Wikipedia (en.wikipedia.org),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S055,https://rs.china-embassy.gov.cn/,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S056,https://rs.china-embassy.gov.cn/lsyw/lingshizhengjian/laihuaqianzheng/202503/t20250307_11570549.htm,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S057,https://bio.visaforchina.cn/BER3_ZH/upload/20260605/5335c18efc234f229be7a38d30a6d268.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S058,https://www.action-visas.com/visa/Chine-tout-inclus,www.action-visas.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S059,https://bio.visaforchina.cn/PAR3_FR/upload/content/TARIFS%20DES%20VISAS.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S060,https://bio.visaforchina.cn/PAR3_EN/upload/content/fees.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S061,https://fr.china-embassy.gov.cn/fra/zgzfg/zgsg/lsb/202512/t20251226_11788011.htm,Chinese embassy (fr.china-embassy.gov.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 2 rows
-S062,https://visasnews.com/la-chine-prolonge-la-reduction-de-ses-frais-de-visa-jusquau-31-decembre-2026/,visasnews.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S063,https://www.action-visas.com/quel-est-le-prix-dun-visa/pour-la-chine,www.action-visas.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S064,https://www.visaforchina.cn/PAR3_FR/upload/content/TARIFS%20DES%20VISAS.pdf,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S065,https://www.visaforchina.cn/PAR3_FR/tongzhigonggao/451004014579027968.html,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S066,https://www.visaforchina.cn/PAR3_FR/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S067,https://bio.visaforchina.cn/ROM3_ZH/upload/20250910/fc44febe67e04b618198425fa62dc66f.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S068,https://visaforchina.cn/WAW2_EN/generalinformation/news/283492.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S069,https://bio.visaforchina.cn/WAW3_EN/upload/content/fees.png,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S070,https://bio.visaforchina.cn/WAW3_ZH/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S071,https://bio.visaforchina.cn/WAW4_EN/tongzhigonggao/552375332662022181.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S072,https://bio.visaforchina.cn/WAW4_EN/tongzhigonggao/552375332662022179.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S073,https://bio.visaforchina.cn/WAW4_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
-S074,https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
-S075,https://www.immd.gov.hk/eng/services/visas/study.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows; work_rules.csv (source_url): 5 rows
-S076,https://www.immd.gov.hk/eng/services/fee-tables/index.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
-S077,https://isc.bit.edu.cn/resourcesoffices/resources/careerservice/Policies/e04fdeb5e22b4425ab8c283f9ba7ce4f.htm,isc.bit.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
-S078,https://isdplus.pku.edu.cn/info/1209/6503.htm,isdplus.pku.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
-S079,https://english.beijing.gov.cn/specials/talent/policy/MoreTalentPolicies/202106/t20210623_2419356.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,work_rules.csv (source_url): 1 row
-S080,https://cdn.shanghai.nyu.edu/sites/default/files/foreign_students_full-time_employee.pdf,cdn.shanghai.nyu.edu,official,2026-10-23,work_rules.csv (source_url): 1 row
-S081,https://www.immd.gov.hk/eng/services/visas/IANG.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,work_rules.csv (source_url): 1 row
-S082,https://eco.szu.edu.cn/info/1060/1386.htm,eco.szu.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
-S083,https://is.tsinghua.edu.cn/vp/FIS/RRR.htm,is.tsinghua.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
-S084,https://admission.pku.edu.cn/docs/20251020095346239221.pdf,admission.pku.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S085,https://www.isd.pku.edu.cn/en/detail.php?id=774,www.isd.pku.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 2 rows
-S086,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/3300a725-ca29-443b-845f-8c1a3c15c929.pdf,iczu.zju.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
-S087,https://ic.ustc.edu.cn/?abroad=introduction,ic.ustc.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S088,https://iso.fudan.edu.cn/_upload/article/files/bc/ed/37f712cb4e3f8316f4ec2ebc4ba2/6c9fce5d-d137-4934-b484-1c4630f18aa5.pdf,iso.fudan.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S089,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S090,https://www.scifac.hku.hk/current/ug/about/bsc/curriculum,www.scifac.hku.hk,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S091,https://admissions.hku.hk/node/2304,admissions.hku.hk,official,2026-10-23,language_requirements.csv (source_url): 2 rows
-S092,https://cityu.edu.hk/mse/documents/programmes/Requirements/CIR-Common%20Requirements_Jan%202025.pdf,cityu.edu.hk,official,2026-10-23,language_requirements.csv (source_url): 1 row
-S093,https://admission.cuhk.edu.hk/international/,admission.cuhk.edu.hk,official,2026-10-23,language_requirements.csv (source_url): 2 rows; prep_programmes.csv (source_url): 1 row
-S094,https://intl-nondegree.tsinghua.edu.cn/f/yzlxs/yz_lxs_kstzb/view?id=254607,intl-nondegree.tsinghua.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S095,https://english.beijing.gov.cn/studyinginbeijing/programsnews/202409/t20240906_3791415.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S096,https://isd.pku.edu.cn/en/yuke_pre_university_program.php,isd.pku.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S097,https://lec.sjtu.edu.cn/en/InternationalCourses/info.aspx?itemid=475,lec.sjtu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
-S098,https://iso.fudan.edu.cn/_upload/article/files/cf/f6/007090b64a9c8fdc7e2e8f9cafb3/c607e358-4aa0-4b57-ac9e-cdda20fea135.pdf,iso.fudan.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
-S099,https://iso.hust.edu.cn/info/1194/4635.htm,iso.hust.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S100,https://hwxy.nju.edu.cn/lxnd/zsxx/hyxx/zqhyjx/index.html,hwxy.nju.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S101,https://admission.whu.edu.cn/info/1181/5722.htm,admission.whu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S102,https://sie.xjtu.edu.cn/en/info/1165/2902.htm,sie.xjtu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 3 rows
-S103,https://en.csu.edu.cn/info/1457/1929.htm,en.csu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S104,https://intl.csu.edu.cn/info/1141/3563.htm,intl.csu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
-S105,https://english.beijing.gov.cn/studyinginbeijing/news/202512/t20251222_4355931.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,hsk_status.csv (source_url): 5 rows
-S106,https://edu.sh.gov.cn/study_en_hsk/20260107/5292266eca744a959c1db43237fbc185.html,Chinese government (edu.sh.gov.cn),official,2026-10-23,hsk_status.csv (source_url): 1 row
-S107,https://www.crosslineedu.com/zh-cn/blog/new-hsk-for-international-students-in-china,www.crosslineedu.com,official,2026-10-23,hsk_status.csv (source_url): 4 rows
-S108,https://sheffield.ac.uk/confucius/proficiency-tests/hsk,sheffield.ac.uk,secondary,2026-10-23,hsk_status.csv (source_url): 2 rows
-S109,https://www.confuciobarcelona.cat/zh/exams/cambios-hsk,www.confuciobarcelona.cat,secondary,2026-10-23,hsk_status.csv (source_url): 5 rows; language_realism_evidence.csv (source_url): 1 row
-S110,https://hskmock.com/en/blog/618.html,hskmock.com,secondary,2026-10-23,hsk_status.csv (source_url): 3 rows
-S111,https://studycli.org/learn-chinese/the-new-hsk,studycli.org,secondary,2026-10-23,hsk_status.csv (source_url): 2 rows
-S112,https://www.confuciusinstitute.ac.uk/hsk/hsk-levels-explained/,www.confuciusinstitute.ac.uk,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
-S113,https://sie.xjtu.edu.cn/2026CLP.pdf,sie.xjtu.edu.cn,official,2026-10-23,language_realism_evidence.csv (source_url): 1 row
-S114,https://www.igm.nsc.ru/images/news/grand/2024_11_07/poryadok-uchastiya_2025_2026.pdf,www.igm.nsc.ru,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
-S115,https://kpfu.ru/international/obuchenie-i-stazhirovki-za-rubezhom/stipendiya-pravitelstva-kitaya-na-20262027-476168.html,kpfu.ru,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
-S116,https://english.beijing.gov.cn/studyinginbeijing/news/202601/t20260123_4459326.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,language_realism_evidence.csv (source_url): 1 row
+S028,https://cis.seu.edu.cn/_upload/article/files/2d/c9/d078d2474634af26c4d4149f03a8/b9e258ef-4a63-47b1-bea3-9a1da573f801.pdf,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows; admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 2 rows
+S029,https://arch.seu.edu.cn/jz_en/40843/list.htm,arch.seu.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows; language_requirements.csv (source_url): 1 row
+S030,https://cis.seu.edu.cn/_upload/article/files/90/f0/e1c2400046bd9ad50f47d86053ae/92c62a60-2fb9-45c5-94eb-975b1c8e3b51.pdf,cis.seu.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows
+S031,https://studyathit.hit.edu.cn/18338/list.htm,studyathit.hit.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows; admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 2 rows
+S032,https://en.tju.edu.cn/info/1017/11196.htm,en.tju.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows; admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 1 row
+S033,https://sie.tju.edu.cn/en/jxj/tjdxjxj/202410/t20241015_323982.html,sie.tju.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows; admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 2 rows
+S034,https://sie.tju.edu.cn/en/jxj/tjdxjxj/202410/W020260105594724884927.pdf,sie.tju.edu.cn,official,2026-11-08,data.csv (source_url): 5 rows
+S035,https://international.join-tsinghua.edu.cn/Admission1/Schedule.htm,international.join-tsinghua.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
+S036,https://edufair.dongzong.my/images/school/ANHUI/ZHONGGUOKEXUEJISHUDAXUE/WENJIAN/ZHAOSHENGJIANZHANG.pdf,edufair.dongzong.my,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
+S037,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=5,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
+S038,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=17,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
+S039,https://ic.ustc.edu.cn/en/v7info.php?Nav_x=7,ic.ustc.edu.cn,secondary,2026-10-23,admission_cycle.csv (source_url): 1 row
+S040,https://iso.hust.edu.cn/info/1194/3858.htm,iso.hust.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
+S041,https://global.scu.edu.cn/oso/article/index/1111,global.scu.edu.cn,official,2026-10-23,admission_cycle.csv (source_url): 1 row
+S042,https://admissions.hku.hk/apply/international-qualifications,admissions.hku.hk,official,2026-10-23,admission_cycle.csv (source_url): 1 row; visa_by_passport.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row
+S043,https://www.info.gov.hk/gia/general/202509/17/P2025091700566.htm,Hong Kong SAR government (www.info.gov.hk),official,2026-10-23,admission_cycle.csv (source_url): 3 rows
+S044,https://admission.cuhk.edu.hk/application/non-jupas/important-dates/,admission.cuhk.edu.hk,official,2026-10-23,admission_cycle.csv (source_url): 1 row
+S045,https://cis.seu.edu.cn/_upload/article/files/2f/1c/fde7acea4d2896bd086a8d7d58c1/e0e38a42-4e2b-4611-b267-f41cff2de6cb.pdf,cis.seu.edu.cn,official,2026-11-08,admission_cycle.csv (source_url): 1 row
+S046,https://sie.tju.edu.cn/en/xwxm/UNDERGRADUATE/202410/t20241015_323978.html,sie.tju.edu.cn,official,2026-11-08,admission_cycle.csv (source_url): 1 row; language_requirements.csv (source_url): 2 rows
+S047,https://www.hcch.net/en/instruments/conventions/status-table/?cid=41,HCCH (Hague Conference) (www.hcch.net),official,2026-10-23,apostille.csv (source_url): 7 rows
+S048,https://www.hcch.net/en/instruments/conventions/status-table/print/?cid=41,HCCH (Hague Conference) (www.hcch.net),official,2026-10-23,apostille.csv (source_url): 7 rows
+S049,https://www.mfa.gov.cn/wjbxw_673019/202310/t20231023_11165858.shtml,Chinese government (www.mfa.gov.cn),official,2026-10-23,apostille.csv (source_url): 1 row
+S050,https://www.dorsey.com/newsresources/blogs/tmca/2024/02/china-abolishes-legalization-requirement-on-foreig,www.dorsey.com,secondary,2026-10-23,apostille.csv (source_url): 1 row
+S051,https://english.shanghai.gov.cn/en-VisaLatest/20260520/0b86f04686c84c4a8bdca4f77dbee1eb.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S052,https://bio.visaforchina.cn/MOW3_ZH/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S053,https://english.shanghai.gov.cn/en-VisaLatest/20260709/d70a1231ba4641ff9a024e53751ad480.html,Chinese government (english.shanghai.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
+S054,https://visaforchina.cn/MTL2_EN/generalinformation/downloads/283375.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
+S055,https://www.gov.cn/zhengce/2017-06/02/content_5713392.htm,Chinese government (www.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows; work_rules.csv (source_url): 2 rows
+S056,https://bio.visaforchina.cn/IST4_ZH/upload/20250330/789db9f42a744f5e8e9c5631858c201b.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S057,https://adelaide.china-consulate.gov.cn/eng/gg_1_1/202511/t20251104_11746678.htm,Chinese consulate (adelaide.china-consulate.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 5 rows
+S058,https://bio.visaforchina.cn/LON3_EN/tongzhigonggao/315858144490295296.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 5 rows
+S059,https://rs.china-embassy.gov.cn/lsyw/tongzhi/202601/t20260101_11796675.htm,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 2 rows
+S060,https://visaforchina.cn/BOM2_EN/generalinformation/news/283543.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S061,https://www.srbija.gov.rs/vest/en/119306/agreement-on-abolishment-of-visas-between-serbia-china-signed.php,www.srbija.gov.rs,official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S062,https://mfa.gov.rs/en/citizens/travel-abroad/visas-and-states-travel-advisory/china,mfa.gov.rs,official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S063,https://en.wikipedia.org/wiki/Visa_policy_of_mainland_China,Wikipedia (en.wikipedia.org),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S064,https://rs.china-embassy.gov.cn/,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S065,https://rs.china-embassy.gov.cn/lsyw/lingshizhengjian/laihuaqianzheng/202503/t20250307_11570549.htm,Chinese embassy (rs.china-embassy.gov.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S066,https://bio.visaforchina.cn/BER3_ZH/upload/20260605/5335c18efc234f229be7a38d30a6d268.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S067,https://www.action-visas.com/visa/Chine-tout-inclus,www.action-visas.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S068,https://bio.visaforchina.cn/PAR3_FR/upload/content/TARIFS%20DES%20VISAS.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S069,https://bio.visaforchina.cn/PAR3_EN/upload/content/fees.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S070,https://fr.china-embassy.gov.cn/fra/zgzfg/zgsg/lsb/202512/t20251226_11788011.htm,Chinese embassy (fr.china-embassy.gov.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 2 rows
+S071,https://visasnews.com/la-chine-prolonge-la-reduction-de-ses-frais-de-visa-jusquau-31-decembre-2026/,visasnews.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S072,https://www.action-visas.com/quel-est-le-prix-dun-visa/pour-la-chine,www.action-visas.com,secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S073,https://www.visaforchina.cn/PAR3_FR/upload/content/TARIFS%20DES%20VISAS.pdf,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S074,https://www.visaforchina.cn/PAR3_FR/tongzhigonggao/451004014579027968.html,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S075,https://www.visaforchina.cn/PAR3_FR/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (www.visaforchina.cn),secondary,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S076,https://bio.visaforchina.cn/ROM3_ZH/upload/20250910/fc44febe67e04b618198425fa62dc66f.pdf,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S077,https://visaforchina.cn/WAW2_EN/generalinformation/news/283492.shtml,Chinese Visa Application Service Center (visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S078,https://bio.visaforchina.cn/WAW3_EN/upload/content/fees.png,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S079,https://bio.visaforchina.cn/WAW3_ZH/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S080,https://bio.visaforchina.cn/WAW4_EN/tongzhigonggao/552375332662022181.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S081,https://bio.visaforchina.cn/WAW4_EN/tongzhigonggao/552375332662022179.html,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S082,https://bio.visaforchina.cn/WAW4_EN/qianzhengyewu/jichuzhishi/feiyongbiaozhunjishixian,Chinese Visa Application Service Center (bio.visaforchina.cn),official,2026-10-23,visa_by_passport.csv (source_url): 1 row
+S083,https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
+S084,https://www.immd.gov.hk/eng/services/visas/study.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows; work_rules.csv (source_url): 5 rows
+S085,https://www.immd.gov.hk/eng/services/fee-tables/index.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,visa_by_passport.csv (source_url): 7 rows
+S086,https://isc.bit.edu.cn/resourcesoffices/resources/careerservice/Policies/e04fdeb5e22b4425ab8c283f9ba7ce4f.htm,isc.bit.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
+S087,https://isdplus.pku.edu.cn/info/1209/6503.htm,isdplus.pku.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
+S088,https://english.beijing.gov.cn/specials/talent/policy/MoreTalentPolicies/202106/t20210623_2419356.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,work_rules.csv (source_url): 1 row
+S089,https://cdn.shanghai.nyu.edu/sites/default/files/foreign_students_full-time_employee.pdf,cdn.shanghai.nyu.edu,official,2026-10-23,work_rules.csv (source_url): 1 row
+S090,https://www.immd.gov.hk/eng/services/visas/IANG.html,Hong Kong Immigration Department (www.immd.gov.hk),official,2026-10-23,work_rules.csv (source_url): 1 row
+S091,https://eco.szu.edu.cn/info/1060/1386.htm,eco.szu.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
+S092,https://is.tsinghua.edu.cn/vp/FIS/RRR.htm,is.tsinghua.edu.cn,law,2026-10-23,work_rules.csv (source_url): 1 row
+S093,https://admission.pku.edu.cn/docs/20251020095346239221.pdf,admission.pku.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S094,https://www.isd.pku.edu.cn/en/detail.php?id=774,www.isd.pku.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 2 rows
+S095,https://iczu.zju.edu.cn/_upload/article/files/e7/8c/1be7b2df433fb9427df707571d84/3300a725-ca29-443b-845f-8c1a3c15c929.pdf,iczu.zju.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row; prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
+S096,https://ic.ustc.edu.cn/?abroad=introduction,ic.ustc.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S097,https://iso.fudan.edu.cn/_upload/article/files/bc/ed/37f712cb4e3f8316f4ec2ebc4ba2/6c9fce5d-d137-4934-b484-1c4630f18aa5.pdf,iso.fudan.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S098,https://hwxy.nju.edu.cn/English/StudyatNJU/Admissions/BachelorsPrograms/index.html,hwxy.nju.edu.cn,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S099,https://www.scifac.hku.hk/current/ug/about/bsc/curriculum,www.scifac.hku.hk,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S100,https://admissions.hku.hk/node/2304,admissions.hku.hk,official,2026-10-23,language_requirements.csv (source_url): 2 rows
+S101,https://cityu.edu.hk/mse/documents/programmes/Requirements/CIR-Common%20Requirements_Jan%202025.pdf,cityu.edu.hk,official,2026-10-23,language_requirements.csv (source_url): 1 row
+S102,https://admission.cuhk.edu.hk/international/,admission.cuhk.edu.hk,official,2026-10-23,language_requirements.csv (source_url): 2 rows; prep_programmes.csv (source_url): 1 row
+S103,https://intl-nondegree.tsinghua.edu.cn/f/yzlxs/yz_lxs_kstzb/view?id=254607,intl-nondegree.tsinghua.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S104,https://english.beijing.gov.cn/studyinginbeijing/programsnews/202409/t20240906_3791415.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S105,https://isd.pku.edu.cn/en/yuke_pre_university_program.php,isd.pku.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S106,https://lec.sjtu.edu.cn/en/InternationalCourses/info.aspx?itemid=475,lec.sjtu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
+S107,https://iso.fudan.edu.cn/_upload/article/files/cf/f6/007090b64a9c8fdc7e2e8f9cafb3/c607e358-4aa0-4b57-ac9e-cdda20fea135.pdf,iso.fudan.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 1 row
+S108,https://iso.hust.edu.cn/info/1194/4635.htm,iso.hust.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S109,https://hwxy.nju.edu.cn/lxnd/zsxx/hyxx/zqhyjx/index.html,hwxy.nju.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S110,https://admission.whu.edu.cn/info/1181/5722.htm,admission.whu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S111,https://sie.xjtu.edu.cn/en/info/1165/2902.htm,sie.xjtu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row; language_realism_evidence.csv (source_url): 3 rows
+S112,https://en.csu.edu.cn/info/1457/1929.htm,en.csu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S113,https://intl.csu.edu.cn/info/1141/3563.htm,intl.csu.edu.cn,official,2026-10-23,prep_programmes.csv (source_url): 1 row
+S114,https://cis.seu.edu.cn/hwenglish/2863/list.htm,cis.seu.edu.cn,official,2026-11-08,prep_programmes.csv (source_url): 1 row
+S115,https://cis.seu.edu.cn/hwenglish/2008/0508/c13933a137794/page.htm,cis.seu.edu.cn,official,2026-11-08,prep_programmes.csv (source_url): 1 row
+S116,https://en.hit.edu.cn/2025/0710/c11960a238525/page.htm,en.hit.edu.cn,official,2026-11-08,prep_programmes.csv (source_url): 2 rows
+S117,https://www.e-square.com.my/hit/admission-guide-26=preparetory,www.e-square.com.my,secondary,2026-11-08,prep_programmes.csv (source_url): 3 rows
+S118,https://sie.tju.edu.cn/en/xwxm/FOUNDATIONPROGRAM/202510/t20251013_324451.html,sie.tju.edu.cn,official,2026-11-08,prep_programmes.csv (source_url): 2 rows
+S119,https://tju.edu.cn/english/Admissions/Chinese_Language_Programs.htm,tju.edu.cn,secondary,2026-11-08,prep_programmes.csv (source_url): 1 row
+S120,https://citiesinsider.com/country/china/tianjin/language-&-schools/en,citiesinsider.com,secondary,2026-11-08,prep_programmes.csv (source_url): 1 row
+S121,https://english.beijing.gov.cn/studyinginbeijing/news/202512/t20251222_4355931.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,hsk_status.csv (source_url): 5 rows
+S122,https://edu.sh.gov.cn/study_en_hsk/20260107/5292266eca744a959c1db43237fbc185.html,Chinese government (edu.sh.gov.cn),official,2026-10-23,hsk_status.csv (source_url): 1 row
+S123,https://www.crosslineedu.com/zh-cn/blog/new-hsk-for-international-students-in-china,www.crosslineedu.com,official,2026-10-23,hsk_status.csv (source_url): 4 rows
+S124,https://sheffield.ac.uk/confucius/proficiency-tests/hsk,sheffield.ac.uk,secondary,2026-10-23,hsk_status.csv (source_url): 2 rows
+S125,https://www.confuciobarcelona.cat/zh/exams/cambios-hsk,www.confuciobarcelona.cat,secondary,2026-10-23,hsk_status.csv (source_url): 5 rows; language_realism_evidence.csv (source_url): 1 row
+S126,https://hskmock.com/en/blog/618.html,hskmock.com,secondary,2026-10-23,hsk_status.csv (source_url): 3 rows
+S127,https://studycli.org/learn-chinese/the-new-hsk,studycli.org,secondary,2026-10-23,hsk_status.csv (source_url): 2 rows
+S128,https://www.confuciusinstitute.ac.uk/hsk/hsk-levels-explained/,www.confuciusinstitute.ac.uk,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
+S129,https://sie.xjtu.edu.cn/2026CLP.pdf,sie.xjtu.edu.cn,official,2026-10-23,language_realism_evidence.csv (source_url): 1 row
+S130,https://www.igm.nsc.ru/images/news/grand/2024_11_07/poryadok-uchastiya_2025_2026.pdf,www.igm.nsc.ru,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
+S131,https://kpfu.ru/international/obuchenie-i-stazhirovki-za-rubezhom/stipendiya-pravitelstva-kitaya-na-20262027-476168.html,kpfu.ru,secondary,2026-10-23,language_realism_evidence.csv (source_url): 1 row
+S132,https://english.beijing.gov.cn/studyinginbeijing/news/202601/t20260123_4459326.html,Chinese government (english.beijing.gov.cn),official,2026-10-23,language_realism_evidence.csv (source_url): 1 row

@@ -131,12 +131,16 @@
    "description": "Page(s) where the fact is stated, \"; \"-separated, primary pages first. For `not_found` rows: the page(s) tried."
   },
   "source_type": {
-   "type": "string",
+   "type": [
+    "string",
+    "null"
+   ],
    "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
    "enum": [
     "law",
     "official",
-    "secondary"
+    "secondary",
+    null
    ]
   },
   "checked_at": {
@@ -168,7 +172,6 @@
   "item",
   "status",
   "source_url",
-  "source_type",
   "checked_at"
  ],
  "additionalProperties": false

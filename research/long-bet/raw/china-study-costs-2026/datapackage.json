@@ -1,8 +1,8 @@
 {
  "name": "china-study-costs",
  "title": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026)",
- "version": "2026.10",
- "description": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026): Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "version": "2026.11",
+ "description": "Studying in China: Tuition, Living Costs, Year Totals and Scholarships (2026): Tuition by track, published living-cost items, an estimated full year and the scholarships and government quotas open to international bachelor students. Scope: 16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong. The Long Bet, original research by M. Atamanova. Version 2026.11, data checked up to 2026-11-08.",
  "homepage": "https://mariascales.com/research/long-bet/data/china-study-costs/",
  "licenses": [
   {
@@ -17,7 +17,7 @@
    "path": "https://mariascales.com/research/long-bet/"
   },
   {
-   "title": "140 pages listed in sources.csv",
+   "title": "163 pages listed in sources.csv",
    "path": "sources.csv"
   }
  ],
@@ -210,9 +210,21 @@
       }
      },
      {
+      "name": "campus",
+      "type": "string",
+      "description": "`main` = the main campus, or the institute named in `institute`; `shenzhen` = the Shenzhen campus of Harbin Institute of Technology, which admits separately from the Harbin campus.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "main",
+        "shenzhen"
+       ]
+      }
+     },
+     {
       "name": "institute",
       "type": "string",
-      "description": "Joint institute or separate college for that track; null for the university's own programmes."
+      "description": "Joint institute, separate college or separately admitting campus for that track; null for the university's own programmes on the main campus."
      },
      {
       "name": "currency",
@@ -315,7 +327,8 @@
     ],
     "primaryKey": [
      "university_id",
-     "track"
+     "track",
+     "campus"
     ]
    }
   },
@@ -361,9 +374,21 @@
       }
      },
      {
+      "name": "campus",
+      "type": "string",
+      "description": "`main` = the main campus, or the institute named in `institute`; `shenzhen` = the Shenzhen campus of Harbin Institute of Technology, which admits separately from the Harbin campus.",
+      "constraints": {
+       "required": true,
+       "enum": [
+        "main",
+        "shenzhen"
+       ]
+      }
+     },
+     {
       "name": "institute",
       "type": "string",
-      "description": "Joint institute or separate college for that track; null for the university's own programmes."
+      "description": "Joint institute, separate college or separately admitting campus for that track; null for the university's own programmes on the main campus."
      },
      {
       "name": "currency",
@@ -484,7 +509,8 @@
     ],
     "primaryKey": [
      "university_id",
-     "track"
+     "track",
+     "campus"
     ]
    }
   },
@@ -574,7 +600,7 @@
      },
      {
       "name": "covers_tuition_pct",
-      "type": "integer",
+      "type": "string",
       "description": "Share of tuition covered, 0-100 (only when stated). Unit: percent."
      },
      {
@@ -681,8 +707,15 @@
      },
      {
       "name": "full_ride",
-      "type": "boolean",
-      "description": "`true` only if the source states that tuition, housing and living costs are all covered."
+      "type": "string",
+      "description": "`true` only if the source states that tuition, housing and living costs are all covered.",
+      "constraints": {
+       "enum": [
+        "false",
+        "true",
+        "unknown"
+       ]
+      }
      },
      {
       "name": "online_school_note",
@@ -841,6 +874,7 @@
       "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
       "constraints": {
        "enum": [
+        "law",
         "official",
         "secondary"
        ]

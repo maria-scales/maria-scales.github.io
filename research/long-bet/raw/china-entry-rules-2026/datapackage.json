@@ -1,8 +1,8 @@
 {
  "name": "china-entry-rules",
  "title": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026)",
- "version": "2026.10",
- "description": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026): Which school certificates are accepted, admission calendars, language and preparatory routes, the HSK 3.0 transition, apostille, study visas by passport and work rules for students. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "version": "2026.11",
+ "description": "China and Hong Kong Entry Rules for International Bachelor Applicants (2026): Which school certificates are accepted, admission calendars, language and preparatory routes, the HSK 3.0 transition, apostille, study visas by passport and work rules for students. Scope: 16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong. The Long Bet, original research by M. Atamanova. Version 2026.11, data checked up to 2026-11-08.",
  "homepage": "https://mariascales.com/research/long-bet/data/china-entry-rules/",
  "licenses": [
   {
@@ -17,7 +17,7 @@
    "path": "https://mariascales.com/research/long-bet/"
   },
   {
-   "title": "116 pages listed in sources.csv",
+   "title": "132 pages listed in sources.csv",
    "path": "sources.csv"
   }
  ],
@@ -773,7 +773,10 @@
      {
       "name": "prep_programme_name",
       "type": "string",
-      "description": "Name of the preparatory (pre-university, foundation) programme; text starting with `none` = no such programme found."
+      "description": "Name of the preparatory (pre-university, foundation) programme; text starting with `none` = no such programme found.",
+      "constraints": {
+       "required": true
+      }
      },
      {
       "name": "provider",
@@ -855,7 +858,8 @@
       "description": "`official` = university, government, embassy, airport or ranking publisher page; `law` = legal act; `secondary` = media, Wikipedia, agencies, aggregators.",
       "constraints": {
        "enum": [
-        "official"
+        "official",
+        "secondary"
        ]
       }
      },
@@ -882,7 +886,8 @@
      }
     ],
     "primaryKey": [
-     "university_id"
+     "university_id",
+     "prep_programme_name"
     ]
    }
   },

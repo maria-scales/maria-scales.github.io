@@ -1,8 +1,8 @@
 {
  "name": "china-subject-strength",
- "title": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
- "version": "2026.10",
- "description": "Subject Strength of 16 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025: Places of the 16 universities in all 57 GRAS 2026 subjects, top-10 counts by region, ARWU indicator means 2010-2025 and Highly Cited Researcher counts without names. The Long Bet, original research by M. Atamanova. Snapshot 2026-10-23.",
+ "title": "Subject Strength of 19 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025",
+ "version": "2026.11",
+ "description": "Subject Strength of 19 Chinese Universities: GRAS 2026, ARWU Indicators and Highly Cited Researchers 2025: Places of the 19 universities in all 57 GRAS 2026 subjects, top-10 counts by region, ARWU indicator means 2010-2026 and Highly Cited Researcher counts without names. Scope: 16 mainland universities in the ARWU 2026 top 100 plus 3 in Hong Kong. The Long Bet, original research by M. Atamanova. Version 2026.11, data checked up to 2026-11-08.",
  "homepage": "https://mariascales.com/research/long-bet/data/china-subject-strength/",
  "licenses": [
   {
@@ -135,7 +135,7 @@
      {
       "name": "university_slug",
       "type": "string",
-      "description": "ShanghaiRanking institution slug; for the 16 universities of this dataset it equals `university_id`.",
+      "description": "ShanghaiRanking institution slug; for the 19 universities of this dataset it equals `university_id`.",
       "constraints": {
        "required": true
       }
@@ -316,9 +316,9 @@
       "description": "Places 1-10 of the subject held by mainland Chinese universities (all of them)."
      },
      {
-      "name": "top10_cn_13",
+      "name": "top10_cn_16",
       "type": "integer",
-      "description": "Of `top10_cn`, places held by the 13 mainland universities of this dataset."
+      "description": "Of `top10_cn`, places held by the 16 mainland universities of this dataset."
      },
      {
       "name": "top10_us",
