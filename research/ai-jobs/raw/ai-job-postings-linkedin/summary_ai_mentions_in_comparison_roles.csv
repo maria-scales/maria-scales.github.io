@@ -1,0 +1,229 @@
+level,unit,variant,employer_group,n,n_mention_ai,share_mention_ai,n_mention_ai_3plus,share_mention_ai_3plus,small_n
+all,All 12 countries,all_texts,tech,1456,897,61.6,533,36.6,0
+all,All 12 countries,all_texts,consulting,1452,542,37.3,247,17.0,0
+all,All 12 countries,all_texts,non_tech,2823,655,23.2,260,9.2,0
+all,All 12 countries,all_texts,all_known,5731,2094,36.5,1040,18.1,0
+all,All 12 countries,english_texts,tech,1265,854,67.5,512,40.5,0
+all,All 12 countries,english_texts,consulting,812,400,49.3,196,24.1,0
+all,All 12 countries,english_texts,non_tech,1896,561,29.6,229,12.1,0
+all,All 12 countries,english_texts,all_known,3973,1815,45.7,937,23.6,0
+all,All 12 countries,multilingual_marker,tech,1456,957,65.7,562,38.6,0
+all,All 12 countries,multilingual_marker,consulting,1452,672,46.3,324,22.3,0
+all,All 12 countries,multilingual_marker,non_tech,2823,757,26.8,309,10.9,0
+all,All 12 countries,multilingual_marker,all_known,5731,2386,41.6,1195,20.9,0
+region,US,all_texts,tech,256,185,72.3,109,42.6,0
+region,US,all_texts,consulting,93,52,55.9,24,25.8,0
+region,US,all_texts,non_tech,467,124,26.6,48,10.3,0
+region,US,all_texts,all_known,816,361,44.2,181,22.2,0
+region,US,english_texts,tech,256,185,72.3,109,42.6,0
+region,US,english_texts,consulting,93,52,55.9,24,25.8,0
+region,US,english_texts,non_tech,467,124,26.6,48,10.3,0
+region,US,english_texts,all_known,816,361,44.2,181,22.2,0
+region,US,multilingual_marker,tech,256,186,72.7,109,42.6,0
+region,US,multilingual_marker,consulting,93,52,55.9,24,25.8,0
+region,US,multilingual_marker,non_tech,467,127,27.2,48,10.3,0
+region,US,multilingual_marker,all_known,816,365,44.7,181,22.2,0
+region,UK,all_texts,tech,182,121,66.5,66,36.3,0
+region,UK,all_texts,consulting,143,70,49.0,34,23.8,0
+region,UK,all_texts,non_tech,282,104,36.9,44,15.6,0
+region,UK,all_texts,all_known,607,295,48.6,144,23.7,0
+region,UK,english_texts,tech,182,121,66.5,66,36.3,0
+region,UK,english_texts,consulting,143,70,49.0,34,23.8,0
+region,UK,english_texts,non_tech,281,104,37.0,44,15.7,0
+region,UK,english_texts,all_known,606,295,48.7,144,23.8,0
+region,UK,multilingual_marker,tech,182,121,66.5,66,36.3,0
+region,UK,multilingual_marker,consulting,143,70,49.0,34,23.8,0
+region,UK,multilingual_marker,non_tech,282,104,36.9,44,15.6,0
+region,UK,multilingual_marker,all_known,607,295,48.6,144,23.7,0
+region,Western Europe,all_texts,tech,741,444,59.9,275,37.1,0
+region,Western Europe,all_texts,consulting,908,288,31.7,130,14.3,0
+region,Western Europe,all_texts,non_tech,1388,272,19.6,108,7.8,0
+region,Western Europe,all_texts,all_known,3037,1004,33.1,513,16.9,0
+region,Western Europe,english_texts,tech,573,405,70.7,257,44.9,0
+region,Western Europe,english_texts,consulting,309,158,51.1,82,26.5,0
+region,Western Europe,english_texts,non_tech,646,201,31.1,83,12.8,0
+region,Western Europe,english_texts,all_known,1528,764,50.0,422,27.6,0
+region,Western Europe,multilingual_marker,tech,741,503,67.9,304,41.0,0
+region,Western Europe,multilingual_marker,consulting,908,416,45.8,206,22.7,0
+region,Western Europe,multilingual_marker,non_tech,1388,371,26.7,155,11.2,0
+region,Western Europe,multilingual_marker,all_known,3037,1290,42.5,665,21.9,0
+region,Central and Eastern Europe,all_texts,tech,169,99,58.6,53,31.4,0
+region,Central and Eastern Europe,all_texts,consulting,205,95,46.3,39,19.0,0
+region,Central and Eastern Europe,all_texts,non_tech,437,107,24.5,43,9.8,0
+region,Central and Eastern Europe,all_texts,all_known,811,301,37.1,135,16.6,0
+region,Central and Eastern Europe,english_texts,tech,151,95,62.9,50,33.1,0
+region,Central and Eastern Europe,english_texts,consulting,171,83,48.5,36,21.1,0
+region,Central and Eastern Europe,english_texts,non_tech,320,92,28.8,39,12.2,0
+region,Central and Eastern Europe,english_texts,all_known,642,270,42.1,125,19.5,0
+region,Central and Eastern Europe,multilingual_marker,tech,169,99,58.6,53,31.4,0
+region,Central and Eastern Europe,multilingual_marker,consulting,205,96,46.8,39,19.0,0
+region,Central and Eastern Europe,multilingual_marker,non_tech,437,107,24.5,44,10.1,0
+region,Central and Eastern Europe,multilingual_marker,all_known,811,302,37.2,136,16.8,0
+region,Cyprus,all_texts,tech,60,25,41.7,15,25.0,0
+region,Cyprus,all_texts,consulting,63,18,28.6,7,11.1,0
+region,Cyprus,all_texts,non_tech,88,27,30.7,11,12.5,0
+region,Cyprus,all_texts,all_known,211,70,33.2,33,15.6,0
+region,Cyprus,english_texts,tech,58,25,43.1,15,25.9,0
+region,Cyprus,english_texts,consulting,63,18,28.6,7,11.1,0
+region,Cyprus,english_texts,non_tech,80,26,32.5,10,12.5,0
+region,Cyprus,english_texts,all_known,201,69,34.3,32,15.9,0
+region,Cyprus,multilingual_marker,tech,60,25,41.7,15,25.0,0
+region,Cyprus,multilingual_marker,consulting,63,18,28.6,7,11.1,0
+region,Cyprus,multilingual_marker,non_tech,88,27,30.7,11,12.5,0
+region,Cyprus,multilingual_marker,all_known,211,70,33.2,33,15.6,0
+region,Turkey,all_texts,tech,48,23,47.9,15,31.2,0
+region,Turkey,all_texts,consulting,40,19,47.5,13,32.5,0
+region,Turkey,all_texts,non_tech,161,21,13.0,6,3.7,0
+region,Turkey,all_texts,all_known,249,63,25.3,34,13.7,0
+region,Turkey,english_texts,tech,45,23,51.1,15,33.3,0
+region,Turkey,english_texts,consulting,33,19,57.6,13,39.4,0
+region,Turkey,english_texts,non_tech,102,14,13.7,5,4.9,0
+region,Turkey,english_texts,all_known,180,56,31.1,33,18.3,0
+region,Turkey,multilingual_marker,tech,48,23,47.9,15,31.2,0
+region,Turkey,multilingual_marker,consulting,40,20,50.0,14,35.0,0
+region,Turkey,multilingual_marker,non_tech,161,21,13.0,7,4.3,0
+region,Turkey,multilingual_marker,all_known,249,64,25.7,36,14.5,0
+country,US,all_texts,tech,256,185,72.3,109,42.6,0
+country,US,all_texts,consulting,93,52,55.9,24,25.8,0
+country,US,all_texts,non_tech,467,124,26.6,48,10.3,0
+country,US,all_texts,all_known,816,361,44.2,181,22.2,0
+country,US,english_texts,tech,256,185,72.3,109,42.6,0
+country,US,english_texts,consulting,93,52,55.9,24,25.8,0
+country,US,english_texts,non_tech,467,124,26.6,48,10.3,0
+country,US,english_texts,all_known,816,361,44.2,181,22.2,0
+country,US,multilingual_marker,tech,256,186,72.7,109,42.6,0
+country,US,multilingual_marker,consulting,93,52,55.9,24,25.8,0
+country,US,multilingual_marker,non_tech,467,127,27.2,48,10.3,0
+country,US,multilingual_marker,all_known,816,365,44.7,181,22.2,0
+country,UK,all_texts,tech,182,121,66.5,66,36.3,0
+country,UK,all_texts,consulting,143,70,49.0,34,23.8,0
+country,UK,all_texts,non_tech,282,104,36.9,44,15.6,0
+country,UK,all_texts,all_known,607,295,48.6,144,23.7,0
+country,UK,english_texts,tech,182,121,66.5,66,36.3,0
+country,UK,english_texts,consulting,143,70,49.0,34,23.8,0
+country,UK,english_texts,non_tech,281,104,37.0,44,15.7,0
+country,UK,english_texts,all_known,606,295,48.7,144,23.8,0
+country,UK,multilingual_marker,tech,182,121,66.5,66,36.3,0
+country,UK,multilingual_marker,consulting,143,70,49.0,34,23.8,0
+country,UK,multilingual_marker,non_tech,282,104,36.9,44,15.6,0
+country,UK,multilingual_marker,all_known,607,295,48.6,144,23.7,0
+country,DE,all_texts,tech,160,90,56.2,51,31.9,0
+country,DE,all_texts,consulting,149,46,30.9,21,14.1,0
+country,DE,all_texts,non_tech,314,53,16.9,23,7.3,0
+country,DE,all_texts,all_known,623,189,30.3,95,15.2,0
+country,DE,english_texts,tech,99,73,73.7,44,44.4,0
+country,DE,english_texts,consulting,25,11,44.0,8,32.0,0
+country,DE,english_texts,non_tech,85,35,41.2,17,20.0,0
+country,DE,english_texts,all_known,209,119,56.9,69,33.0,0
+country,DE,multilingual_marker,tech,160,113,70.6,62,38.8,0
+country,DE,multilingual_marker,consulting,149,78,52.3,41,27.5,0
+country,DE,multilingual_marker,non_tech,314,97,30.9,42,13.4,0
+country,DE,multilingual_marker,all_known,623,288,46.2,145,23.3,0
+country,FR,all_texts,tech,149,68,45.6,38,25.5,0
+country,FR,all_texts,consulting,225,43,19.1,10,4.4,0
+country,FR,all_texts,non_tech,309,36,11.7,9,2.9,0
+country,FR,all_texts,all_known,683,147,21.5,57,8.3,0
+country,FR,english_texts,tech,82,58,70.7,33,40.2,0
+country,FR,english_texts,consulting,33,12,36.4,4,12.1,0
+country,FR,english_texts,non_tech,82,22,26.8,6,7.3,0
+country,FR,english_texts,all_known,197,92,46.7,43,21.8,0
+country,FR,multilingual_marker,tech,149,93,62.4,49,32.9,0
+country,FR,multilingual_marker,consulting,225,113,50.2,54,24.0,0
+country,FR,multilingual_marker,non_tech,309,71,23.0,25,8.1,0
+country,FR,multilingual_marker,all_known,683,277,40.6,128,18.7,0
+country,NL,all_texts,tech,134,90,67.2,57,42.5,0
+country,NL,all_texts,consulting,174,82,47.1,39,22.4,0
+country,NL,all_texts,non_tech,304,86,28.3,35,11.5,0
+country,NL,all_texts,all_known,612,258,42.2,131,21.4,0
+country,NL,english_texts,tech,121,82,67.8,51,42.1,0
+country,NL,english_texts,consulting,55,36,65.5,14,25.5,0
+country,NL,english_texts,non_tech,171,53,31.0,21,12.3,0
+country,NL,english_texts,all_known,347,171,49.3,86,24.8,0
+country,NL,multilingual_marker,tech,134,90,67.2,57,42.5,0
+country,NL,multilingual_marker,consulting,174,84,48.3,39,22.4,0
+country,NL,multilingual_marker,non_tech,304,86,28.3,35,11.5,0
+country,NL,multilingual_marker,all_known,612,260,42.5,131,21.4,0
+country,ES,all_texts,tech,156,100,64.1,57,36.5,0
+country,ES,all_texts,consulting,227,56,24.7,27,11.9,0
+country,ES,all_texts,non_tech,277,52,18.8,20,7.2,0
+country,ES,all_texts,all_known,660,208,31.5,104,15.8,0
+country,ES,english_texts,tech,131,96,73.3,57,43.5,0
+country,ES,english_texts,consulting,78,41,52.6,25,32.1,0
+country,ES,english_texts,non_tech,156,47,30.1,18,11.5,0
+country,ES,english_texts,all_known,365,184,50.4,100,27.4,0
+country,ES,multilingual_marker,tech,156,110,70.5,63,40.4,0
+country,ES,multilingual_marker,consulting,227,80,35.2,38,16.7,0
+country,ES,multilingual_marker,non_tech,277,68,24.5,28,10.1,0
+country,ES,multilingual_marker,all_known,660,258,39.1,129,19.5,0
+country,IE,all_texts,tech,82,58,70.7,44,53.7,0
+country,IE,all_texts,consulting,57,29,50.9,14,24.6,0
+country,IE,all_texts,non_tech,90,25,27.8,10,11.1,0
+country,IE,all_texts,all_known,229,112,48.9,68,29.7,0
+country,IE,english_texts,tech,82,58,70.7,44,53.7,0
+country,IE,english_texts,consulting,57,29,50.9,14,24.6,0
+country,IE,english_texts,non_tech,90,25,27.8,10,11.1,0
+country,IE,english_texts,all_known,229,112,48.9,68,29.7,0
+country,IE,multilingual_marker,tech,82,58,70.7,44,53.7,0
+country,IE,multilingual_marker,consulting,57,29,50.9,14,24.6,0
+country,IE,multilingual_marker,non_tech,90,25,27.8,10,11.1,0
+country,IE,multilingual_marker,all_known,229,112,48.9,68,29.7,0
+country,PT,all_texts,tech,60,38,63.3,28,46.7,0
+country,PT,all_texts,consulting,76,32,42.1,19,25.0,0
+country,PT,all_texts,non_tech,94,20,21.3,11,11.7,0
+country,PT,all_texts,all_known,230,90,39.1,58,25.2,0
+country,PT,english_texts,tech,58,38,65.5,28,48.3,0
+country,PT,english_texts,consulting,61,29,47.5,17,27.9,0
+country,PT,english_texts,non_tech,62,19,30.6,11,17.7,0
+country,PT,english_texts,all_known,181,86,47.5,56,30.9,0
+country,PT,multilingual_marker,tech,60,39,65.0,29,48.3,0
+country,PT,multilingual_marker,consulting,76,32,42.1,20,26.3,0
+country,PT,multilingual_marker,non_tech,94,24,25.5,15,16.0,0
+country,PT,multilingual_marker,all_known,230,95,41.3,64,27.8,0
+country,PL,all_texts,tech,122,69,56.6,33,27.0,0
+country,PL,all_texts,consulting,133,66,49.6,29,21.8,0
+country,PL,all_texts,non_tech,359,90,25.1,38,10.6,0
+country,PL,all_texts,all_known,614,225,36.6,100,16.3,0
+country,PL,english_texts,tech,105,65,61.9,30,28.6,0
+country,PL,english_texts,consulting,102,54,52.9,26,25.5,0
+country,PL,english_texts,non_tech,251,75,29.9,34,13.5,0
+country,PL,english_texts,all_known,458,194,42.4,90,19.7,0
+country,PL,multilingual_marker,tech,122,69,56.6,33,27.0,0
+country,PL,multilingual_marker,consulting,133,67,50.4,29,21.8,0
+country,PL,multilingual_marker,non_tech,359,90,25.1,39,10.9,0
+country,PL,multilingual_marker,all_known,614,226,36.8,101,16.4,0
+country,RS,all_texts,tech,47,30,63.8,20,42.6,0
+country,RS,all_texts,consulting,72,29,40.3,10,13.9,0
+country,RS,all_texts,non_tech,78,17,21.8,5,6.4,0
+country,RS,all_texts,all_known,197,76,38.6,35,17.8,0
+country,RS,english_texts,tech,46,30,65.2,20,43.5,0
+country,RS,english_texts,consulting,69,29,42.0,10,14.5,0
+country,RS,english_texts,non_tech,69,17,24.6,5,7.2,0
+country,RS,english_texts,all_known,184,76,41.3,35,19.0,0
+country,RS,multilingual_marker,tech,47,30,63.8,20,42.6,0
+country,RS,multilingual_marker,consulting,72,29,40.3,10,13.9,0
+country,RS,multilingual_marker,non_tech,78,17,21.8,5,6.4,0
+country,RS,multilingual_marker,all_known,197,76,38.6,35,17.8,0
+country,CY,all_texts,tech,60,25,41.7,15,25.0,0
+country,CY,all_texts,consulting,63,18,28.6,7,11.1,0
+country,CY,all_texts,non_tech,88,27,30.7,11,12.5,0
+country,CY,all_texts,all_known,211,70,33.2,33,15.6,0
+country,CY,english_texts,tech,58,25,43.1,15,25.9,0
+country,CY,english_texts,consulting,63,18,28.6,7,11.1,0
+country,CY,english_texts,non_tech,80,26,32.5,10,12.5,0
+country,CY,english_texts,all_known,201,69,34.3,32,15.9,0
+country,CY,multilingual_marker,tech,60,25,41.7,15,25.0,0
+country,CY,multilingual_marker,consulting,63,18,28.6,7,11.1,0
+country,CY,multilingual_marker,non_tech,88,27,30.7,11,12.5,0
+country,CY,multilingual_marker,all_known,211,70,33.2,33,15.6,0
+country,TR,all_texts,tech,48,23,47.9,15,31.2,0
+country,TR,all_texts,consulting,40,19,47.5,13,32.5,0
+country,TR,all_texts,non_tech,161,21,13.0,6,3.7,0
+country,TR,all_texts,all_known,249,63,25.3,34,13.7,0
+country,TR,english_texts,tech,45,23,51.1,15,33.3,0
+country,TR,english_texts,consulting,33,19,57.6,13,39.4,0
+country,TR,english_texts,non_tech,102,14,13.7,5,4.9,0
+country,TR,english_texts,all_known,180,56,31.1,33,18.3,0
+country,TR,multilingual_marker,tech,48,23,47.9,15,31.2,0
+country,TR,multilingual_marker,consulting,40,20,50.0,14,35.0,0
+country,TR,multilingual_marker,non_tech,161,21,13.0,7,4.3,0
+country,TR,multilingual_marker,all_known,249,64,25.7,36,14.5,0

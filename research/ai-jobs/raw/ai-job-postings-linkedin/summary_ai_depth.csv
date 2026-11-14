@@ -1,0 +1,5 @@
+employer_group,postings,ai_sentences_0,ai_sentences_1,ai_sentences_2_3,ai_sentences_4_plus,pct_ai_sentences_0,pct_ai_sentences_1,pct_ai_sentences_2_3,pct_ai_sentences_4_plus,median_ai_sentences_if_any,median_sentences_if_any
+tech,1265,411,207,253,394,32.5,16.4,20.0,31.1,3.0,50.5
+consulting,812,412,131,130,139,50.7,16.1,16.0,17.1,2.0,48.5
+non_tech,1896,1335,223,188,150,70.4,11.8,9.9,7.9,2,48
+all_known,3973,2158,561,571,683,54.3,14.1,14.4,17.2,3,49

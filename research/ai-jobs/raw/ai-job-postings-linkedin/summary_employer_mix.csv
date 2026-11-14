@@ -1,0 +1,22 @@
+level,unit,employer_group,n_ai_roles,n_ai_roles_known,share_of_ai_roles,n_comparison_roles,n_comparison_known,share_of_comparison_roles,small_n
+all,All 12 countries,tech,599,2398,25.0,1456,5731,25.4,0
+all,All 12 countries,consulting,955,2398,39.8,1452,5731,25.3,0
+all,All 12 countries,non_tech,844,2398,35.2,2823,5731,49.3,0
+region,US,tech,188,574,32.8,256,816,31.4,0
+region,US,consulting,122,574,21.3,93,816,11.4,0
+region,US,non_tech,264,574,46.0,467,816,57.2,0
+region,UK,tech,106,396,26.8,182,607,30.0,0
+region,UK,consulting,154,396,38.9,143,607,23.6,0
+region,UK,non_tech,136,396,34.3,282,607,46.5,0
+region,Western Europe,tech,253,1186,21.3,741,3037,24.4,0
+region,Western Europe,consulting,572,1186,48.2,908,3037,29.9,0
+region,Western Europe,non_tech,361,1186,30.4,1388,3037,45.7,0
+region,Central and Eastern Europe,tech,44,203,21.7,169,811,20.8,0
+region,Central and Eastern Europe,consulting,87,203,42.9,205,811,25.3,0
+region,Central and Eastern Europe,non_tech,72,203,35.5,437,811,53.9,0
+region,Cyprus,tech,3,11,27.3,60,211,28.4,1
+region,Cyprus,consulting,5,11,45.5,63,211,29.9,1
+region,Cyprus,non_tech,3,11,27.3,88,211,41.7,1
+region,Turkey,tech,5,28,17.9,48,249,19.3,0
+region,Turkey,consulting,15,28,53.6,40,249,16.1,0
+region,Turkey,non_tech,8,28,28.6,161,249,64.7,0
