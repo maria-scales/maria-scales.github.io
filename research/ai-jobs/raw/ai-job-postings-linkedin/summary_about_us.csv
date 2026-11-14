@@ -1,0 +1,4 @@
+employer_group,postings,postings_mentioning_ai,about_us_found,pct_about_us_found,about_us_and_ai,ai_only_in_about_us,pct_ai_only_in_about_us,ai_sentences_in_about_us,ai_sentences_in_these_postings,pct_ai_sentences_in_about_us,pct_mention_ai,pct_mention_ai_without_about_us_only,pct_mention_ai_if_rest_alike
+tech,1265,854,559,44.2,403,97,24.1,657,1693,38.8,67.5,59.8,51.3
+consulting,812,400,246,30.3,153,34,22.2,148,562,26.3,49.3,45.1,38.3
+non_tech,1896,561,593,31.3,211,31,14.7,149,650,22.9,29.6,28.0,25.2
