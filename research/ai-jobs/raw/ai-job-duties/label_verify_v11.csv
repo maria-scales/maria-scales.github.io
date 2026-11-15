@@ -1,100 +1,100 @@
 posting_id,label_round,kind,employer_group,title,codes_main_v11,codes_verify_v11
-4385080956,2,ai_role,consulting,Senior Consultant - Intelligent Automation Consultant - AI & Data - Technology Consulting - Belfast,CUSTOMER,CUSTOMER
-4441844527,1,ai_role,consulting,AI Enablement & Governance - AI Security & Controls Lead,,
-4444370950,2,ai_role,consulting,"AI & Automation Careers at EY GDS Poland - Power Platform, Copilot Studio and FDE",CUSTOMER,CUSTOMER
-4450591473,1,ai_role,consulting,Director - IT Strategy Consulting - AI,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
-4450805118,2,ai_role,consulting,NextGen AI Technical Manager,AI_STRATEGY,AI_STRATEGY
-4462292174,2,ai_role,consulting,Graduate AI Consultant,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
-4465930031,2,ai_role,consulting,"Senior Project Manager/ Dyrektor Operacyjny Projektu (Transformacja AI) - Warszawa (Mazowieckie), Polska K/M",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4466908635,2,ai_role,consulting,(Senior-) Consultant AI Strategy & Governance (all genders),AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
-4470362511,1,ai_role,consulting,"Senior Associate, Operations (AI)",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4472304190,2,ai_role,consulting,VP of AI Center of Excellence,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
-4473159736,2,ai_role,consulting,AI IT IP Lawyer,,
-4473215224,2,ai_role,consulting,Principal Consultant – Project and Programme Delivery (Data and AI),AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
-4473280796,2,ai_role,consulting,Head of Data and AI,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
-4474554287,1,ai_role,consulting,AI Governance Sr Associate,CUSTOMER,CUSTOMER
-4475756024,1,ai_role,consulting,"Executive Director, Responsible AI & Enterprise Governance",,
-4476816498,2,ai_role,consulting,AI-Native Growth & Operations Lead,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
-4476930730,1,ai_role,consulting,Vice President – AI Governance,AI_MEASURE,AI_MEASURE
-4478551652,2,ai_role,consulting,Manager Change AI (H/F),AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
-4478690315,2,ai_role,consulting,Bulut Çözümleri Uzmanı / AI & Data,CUSTOMER AI_STRATEGY,CUSTOMER AI_STRATEGY
-4478853086,2,ai_role,consulting,AI Industry Associate/Lead,AI_STRATEGY,AI_STRATEGY
-4480430887,2,ai_role,consulting,Consultant AI & Digital Strategy,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
-4480462413,2,ai_role,consulting,AI Associate,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4480798046,2,ai_role,consulting,Product Manager GenAI / Global Deployment Lead – Consultant confirmé (H/F) – Paris,AI_ROLLOUT CUSTOMER AI_MEASURE,AI_ROLLOUT CUSTOMER AI_MEASURE
-4481205874,2,ai_role,consulting,Associate Forward Deployed AI Consultant | Warsaw,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
-4482117062,2,ai_role,consulting,Project Manager with Digital Banking Operations and Artificial Intelligence AI,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
-4432432594,2,ai_role,non_tech,"Director, Applied AI",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4459182312,2,ai_role,non_tech,AI Product Expert,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4464105915,2,ai_role,non_tech,"Director, AI Enablement & Delivery",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4464971154,1,ai_role,non_tech,"Asset & Wealth Management - Product Manager, Applied AI & Data Products - Vice President",AI_STRATEGY,AI_STRATEGY
-4468184315,1,ai_role,non_tech,"Director, Agentic Automation",AI_ROLLOUT AI_MEASURE,AI_ROLLOUT AI_MEASURE
-4468583482,1,ai_role,non_tech,AI & Automation Specialist,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
-4469771150,2,ai_role,non_tech,AI Automation Specialist,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
-4470891874,2,ai_role,non_tech,"Executive Director, AI Risk & Governance",,
-4471119391,2,ai_role,non_tech,Technical AI Program Manager,AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
-4471394859,2,ai_role,non_tech,AI Model Risk & Governance Lead,AI_MEASURE,
-4471915011,2,ai_role,non_tech,AI Consultant,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
-4472367253,1,ai_role,non_tech,"Director, Field AI & GPro Enablement - HIV Treatment",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
-4473296596,1,ai_role,non_tech,AI Automation Specialist (remote in CA),AI_ROLLOUT AI_MEASURE,AI_ROLLOUT AI_MEASURE
-4474763524,1,ai_role,non_tech,AVP Enterprise AI and Automation,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4475574203,2,ai_role,non_tech,Insurance - AI Transformation Lead,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4475848750,1,ai_role,non_tech,AI Strategy and Portfolio Principal,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
-4478397649,2,ai_role,non_tech,Product Manager | Kimchi AI Coding Platform| Europe,,AI_PRODUCT
-4478472615,2,ai_role,non_tech,Global Product Lead - AI Security Platforms,,
-4479417008,2,ai_role,non_tech,"Senior Program Manager, AI Programs",AI_MEASURE,AI_MEASURE
-4479638480,2,ai_role,non_tech,MARKETING & AI SPECIALIST - SINTRA (Manique de Cima),,AI_STRATEGY
-4479849435,2,ai_role,non_tech,AI Solutions Lead - Development Tools (Claude Code),AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
-4479880459,2,ai_role,non_tech,AI Opportunity Lead,AI_STRATEGY,AI_STRATEGY
-4481756474,2,ai_role,non_tech,"Global AI, Technology, and Innovation Lead",AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
-4482062266,2,ai_role,non_tech,"Senior Product Manager, AI Platform & Ecosystem",AI_PRODUCT,AI_PRODUCT
+J00424,2,ai_role,consulting,Senior Consultant - Intelligent Automation Consultant - AI & Data - Technology Consulting - Belfast,CUSTOMER,CUSTOMER
+J02176,1,ai_role,consulting,AI Enablement & Governance - AI Security & Controls Lead,,
+J02347,2,ai_role,consulting,"AI & Automation Careers at EY GDS Poland - Power Platform, Copilot Studio and FDE",CUSTOMER,CUSTOMER
+J02900,1,ai_role,consulting,Director - IT Strategy Consulting - AI,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
+J02929,2,ai_role,consulting,NextGen AI Technical Manager,AI_STRATEGY,AI_STRATEGY
+J04420,2,ai_role,consulting,Graduate AI Consultant,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
+J05179,2,ai_role,consulting,"Senior Project Manager/ Dyrektor Operacyjny Projektu (Transformacja AI) - Warszawa (Mazowieckie), Polska K/M",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J05426,2,ai_role,consulting,(Senior-) Consultant AI Strategy & Governance (all genders),AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
+J06862,1,ai_role,consulting,"Senior Associate, Operations (AI)",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J08109,2,ai_role,consulting,VP of AI Center of Excellence,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
+J08768,2,ai_role,consulting,AI IT IP Lawyer,,
+J08825,2,ai_role,consulting,Principal Consultant – Project and Programme Delivery (Data and AI),AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
+J08906,2,ai_role,consulting,Head of Data and AI,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
+J09929,1,ai_role,consulting,AI Governance Sr Associate,CUSTOMER,CUSTOMER
+J10830,1,ai_role,consulting,"Executive Director, Responsible AI & Enterprise Governance",,
+J11883,2,ai_role,consulting,AI-Native Growth & Operations Lead,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
+J11942,1,ai_role,consulting,Vice President – AI Governance,AI_MEASURE,AI_MEASURE
+J13658,2,ai_role,consulting,Manager Change AI (H/F),AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
+J13898,2,ai_role,consulting,Bulut Çözümleri Uzmanı / AI & Data,CUSTOMER AI_STRATEGY,CUSTOMER AI_STRATEGY
+J14092,2,ai_role,consulting,AI Industry Associate/Lead,AI_STRATEGY,AI_STRATEGY
+J15863,2,ai_role,consulting,Consultant AI & Digital Strategy,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
+J15920,2,ai_role,consulting,AI Associate,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J16285,2,ai_role,consulting,Product Manager GenAI / Global Deployment Lead – Consultant confirmé (H/F) – Paris,AI_ROLLOUT CUSTOMER AI_MEASURE,AI_ROLLOUT CUSTOMER AI_MEASURE
+J16658,2,ai_role,consulting,Associate Forward Deployed AI Consultant | Warsaw,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
+J17327,2,ai_role,consulting,Project Manager with Digital Banking Operations and Artificial Intelligence AI,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
+J01476,2,ai_role,non_tech,"Director, Applied AI",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J03955,2,ai_role,non_tech,AI Product Expert,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J04748,2,ai_role,non_tech,"Director, AI Enablement & Delivery",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J04939,1,ai_role,non_tech,"Asset & Wealth Management - Product Manager, Applied AI & Data Products - Vice President",AI_STRATEGY,AI_STRATEGY
+J05779,1,ai_role,non_tech,"Director, Agentic Automation",AI_ROLLOUT AI_MEASURE,AI_ROLLOUT AI_MEASURE
+J05867,1,ai_role,non_tech,AI & Automation Specialist,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
+J06591,2,ai_role,non_tech,AI Automation Specialist,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
+J07113,2,ai_role,non_tech,"Executive Director, AI Risk & Governance",,
+J07272,2,ai_role,non_tech,Technical AI Program Manager,AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
+J07400,2,ai_role,non_tech,AI Model Risk & Governance Lead,AI_MEASURE,
+J07819,2,ai_role,non_tech,AI Consultant,AI_ROLLOUT CUSTOMER AI_STRATEGY,AI_ROLLOUT CUSTOMER AI_STRATEGY
+J08170,1,ai_role,non_tech,"Director, Field AI & GPro Enablement - HIV Treatment",AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
+J08928,1,ai_role,non_tech,AI Automation Specialist (remote in CA),AI_ROLLOUT AI_MEASURE,AI_ROLLOUT AI_MEASURE
+J10099,1,ai_role,non_tech,AVP Enterprise AI and Automation,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J10741,2,ai_role,non_tech,Insurance - AI Transformation Lead,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J10947,1,ai_role,non_tech,AI Strategy and Portfolio Principal,AI_ROLLOUT AI_MEASURE AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
+J13445,2,ai_role,non_tech,Product Manager | Kimchi AI Coding Platform| Europe,,AI_PRODUCT
+J13540,2,ai_role,non_tech,Global Product Lead - AI Security Platforms,,
+J14791,2,ai_role,non_tech,"Senior Program Manager, AI Programs",AI_MEASURE,AI_MEASURE
+J15087,2,ai_role,non_tech,MARKETING & AI SPECIALIST - SINTRA (Manique de Cima),,AI_STRATEGY
+J15284,2,ai_role,non_tech,AI Solutions Lead - Development Tools (Claude Code),AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_STRATEGY
+J15314,2,ai_role,non_tech,AI Opportunity Lead,AI_STRATEGY,AI_STRATEGY
+J17060,2,ai_role,non_tech,"Global AI, Technology, and Innovation Lead",AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
+J17194,2,ai_role,non_tech,"Senior Product Manager, AI Platform & Ecosystem",AI_PRODUCT,AI_PRODUCT
 577692,1,ai_role,non_tech,Video Editor and Producer (AI & Performance Ads) Remote in Dubai,,
 170145,1,ai_role,tech,Lead AI Consultant (Field),AI_PRODUCT AI_ROLLOUT CUSTOMER,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE
 348379,1,ai_role,tech,"Analytics & AI Account Executive, Sales",CUSTOMER,CUSTOMER
 390305,1,ai_role,tech,Senior Enterprise AI Account Executive — Deasy Labs,AI_PRODUCT CUSTOMER,AI_PRODUCT CUSTOMER
-4417859609,2,ai_role,tech,Lead Product Owner – Agentic API Design & Governance,AI_PRODUCT,AI_PRODUCT
-4441888197,1,ai_role,tech,Senior Product Manager - C3 Generative AI,AI_PRODUCT,AI_PRODUCT
-4452782605,2,ai_role,tech,"Technical Program Manager - AI/ML, GOPs AI",AI_STRATEGY,AI_STRATEGY
-4453462318,2,ai_role,tech,"Lead, Product Strategy & Operations – AI Agents",AI_PRODUCT,AI_PRODUCT
-4466222929,2,ai_role,tech,AI Success Strategist,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
-4469717211,2,ai_role,tech,"Director AI Solutions, EMEA-LATAM",AI_PRODUCT CUSTOMER,AI_PRODUCT CUSTOMER
-4473513375,2,ai_role,tech,Security risk expert - AI & emerging technology,,
-4476636024,2,ai_role,tech,"Domain Consultant – Business Transformation, AI & Data Strategy - R01572474",CUSTOMER AI_STRATEGY,CUSTOMER AI_STRATEGY
-4476715438,2,ai_role,tech,AI Performance Marketing & SEO/GEO Specialist,AI_PRODUCT,AI_PRODUCT
-4476773611,2,ai_role,tech,Senior Product Manager (AI Pilled),,
-4478689182,2,ai_role,tech,Senior Product Manager – JetBrains Air (Agentic Development in IDEs),AI_PRODUCT,AI_PRODUCT
-4478855805,2,ai_role,tech,"Product Marketing Manager, AI & Automation",AI_PRODUCT,AI_PRODUCT
-4480421558,2,ai_role,tech,Head of AI,AI_PRODUCT,AI_PRODUCT
-4480447930,2,ai_role,tech,"Director, AI Solution and Industry Marketing",AI_PRODUCT,AI_PRODUCT
-4480560380,1,ai_role,tech,VP Marketing - Agentic AI SaaS,AI_PRODUCT,AI_PRODUCT
-4480700014,2,ai_role,tech,"Staff Product Manager, Generative AI Platform",AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
-4482199333,2,ai_role,tech,"Senior Product Marketing Manager, AI Compute",AI_PRODUCT,AI_PRODUCT
+J00948,2,ai_role,tech,Lead Product Owner – Agentic API Design & Governance,AI_PRODUCT,AI_PRODUCT
+J02178,1,ai_role,tech,Senior Product Manager - C3 Generative AI,AI_PRODUCT,AI_PRODUCT
+J03037,2,ai_role,tech,"Technical Program Manager - AI/ML, GOPs AI",AI_STRATEGY,AI_STRATEGY
+J03101,2,ai_role,tech,"Lead, Product Strategy & Operations – AI Agents",AI_PRODUCT,AI_PRODUCT
+J05259,2,ai_role,tech,AI Success Strategist,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
+J06516,2,ai_role,tech,"Director AI Solutions, EMEA-LATAM",AI_PRODUCT CUSTOMER,AI_PRODUCT CUSTOMER
+J09043,2,ai_role,tech,Security risk expert - AI & emerging technology,,
+J11653,2,ai_role,tech,"Domain Consultant – Business Transformation, AI & Data Strategy - R01572474",CUSTOMER AI_STRATEGY,CUSTOMER AI_STRATEGY
+J11771,2,ai_role,tech,AI Performance Marketing & SEO/GEO Specialist,AI_PRODUCT,AI_PRODUCT
+J11829,2,ai_role,tech,Senior Product Manager (AI Pilled),,
+J13894,2,ai_role,tech,Senior Product Manager – JetBrains Air (Agentic Development in IDEs),AI_PRODUCT,AI_PRODUCT
+J14098,2,ai_role,tech,"Product Marketing Manager, AI & Automation",AI_PRODUCT,AI_PRODUCT
+J15860,2,ai_role,tech,Head of AI,AI_PRODUCT,AI_PRODUCT
+J15878,2,ai_role,tech,"Director, AI Solution and Industry Marketing",AI_PRODUCT,AI_PRODUCT
+J16110,1,ai_role,tech,VP Marketing - Agentic AI SaaS,AI_PRODUCT,AI_PRODUCT
+J16135,2,ai_role,tech,"Staff Product Manager, Generative AI Platform",AI_MEASURE AI_STRATEGY,AI_MEASURE AI_STRATEGY
+J17451,2,ai_role,tech,"Senior Product Marketing Manager, AI Compute",AI_PRODUCT,AI_PRODUCT
 535499,1,ai_role,tech,Senior Enterprise Account Executive (Agentic AI Automation),AI_PRODUCT CUSTOMER,AI_PRODUCT CUSTOMER
 578602,1,ai_role,tech,Applied AI Transformation Manager,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY,AI_PRODUCT AI_ROLLOUT CUSTOMER AI_MEASURE AI_STRATEGY
 580223,1,ai_role,tech,Senior Data & AI Governance Specialist,AI_ROLLOUT,AI_ROLLOUT
 580286,1,ai_role,tech,Head of Product - AI Shared Services,AI_ROLLOUT AI_STRATEGY,AI_ROLLOUT AI_MEASURE AI_STRATEGY
 627965,1,ai_role,tech,AI Product Counsel,AI_PRODUCT CUSTOMER,AI_PRODUCT CUSTOMER
-4472152967,2,comparison_role,consulting,Marketing Manager,,
-4474538569,2,comparison_role,consulting,"Pre-Sales Solution Consultant, Network & Issuing Payments",CUSTOMER,CUSTOMER
-4479577335,2,comparison_role,consulting,Marketing Manager,,CUSTOMER
+J08014,2,comparison_role,consulting,Marketing Manager,,
+J09917,2,comparison_role,consulting,"Pre-Sales Solution Consultant, Network & Issuing Payments",CUSTOMER,CUSTOMER
+J15043,2,comparison_role,consulting,Marketing Manager,,CUSTOMER
 35346,1,comparison_role,non_tech,"Sales Manager, Mid-Market",CUSTOMER,CUSTOMER
-4399565820,1,comparison_role,non_tech,"Manager, Financial Advisor Client Marketing",,
-4441358137,2,comparison_role,non_tech,"Analyst, GBM AML Risk Assessment",,
-4466569007,1,comparison_role,non_tech,"Manager, KYC Due Diligence Policy & Strategy",,AI_STRATEGY
-4469506378,2,comparison_role,non_tech,Sales Enablement Manager,,
-4470987892,1,comparison_role,non_tech,REGIONAL MARKETING MANAGER,CUSTOMER,CUSTOMER
-4473506274,2,comparison_role,non_tech,"Senior Product Manager, Poker",,
-4473600171,2,comparison_role,non_tech,Regional Trade Marketing Manager – SDA (Small Domestic Appliances),,CUSTOMER
-4477634195,1,comparison_role,non_tech,"U.S. Commercial Enablement Manager, Enabling Technologies- VELYS",CUSTOMER,
-4477856520,2,comparison_role,non_tech,Assistenz der Geschäftsführung Operations (m/w/d),AI_ROLLOUT,AI_ROLLOUT
-4480499075,2,comparison_role,non_tech,Head of UK and Western Europe CCB Onboarding,AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
-4481559838,2,comparison_role,non_tech,Head of Enterprise Technology,,
-4481757404,1,comparison_role,non_tech,"Director, Technology Strategy and Transformation (Convenience)",AI_STRATEGY,AI_STRATEGY
+J00617,1,comparison_role,non_tech,"Manager, Financial Advisor Client Marketing",,
+J02138,2,comparison_role,non_tech,"Analyst, GBM AML Risk Assessment",,
+J05355,1,comparison_role,non_tech,"Manager, KYC Due Diligence Policy & Strategy",,AI_STRATEGY
+J06344,2,comparison_role,non_tech,Sales Enablement Manager,,
+J07242,1,comparison_role,non_tech,REGIONAL MARKETING MANAGER,CUSTOMER,CUSTOMER
+J09034,2,comparison_role,non_tech,"Senior Product Manager, Poker",,
+J09082,2,comparison_role,non_tech,Regional Trade Marketing Manager – SDA (Small Domestic Appliances),,CUSTOMER
+J12686,1,comparison_role,non_tech,"U.S. Commercial Enablement Manager, Enabling Technologies- VELYS",CUSTOMER,
+J12991,2,comparison_role,non_tech,Assistenz der Geschäftsführung Operations (m/w/d),AI_ROLLOUT,AI_ROLLOUT
+J16020,2,comparison_role,non_tech,Head of UK and Western Europe CCB Onboarding,AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
+J16903,2,comparison_role,non_tech,Head of Enterprise Technology,,
+J17063,1,comparison_role,non_tech,"Director, Technology Strategy and Transformation (Convenience)",AI_STRATEGY,AI_STRATEGY
 547910,1,comparison_role,non_tech,Senior Product Analyst (Pricing),,
 164546,1,comparison_role,tech,Creative Marketing Manager - Duomo,,
 34583,1,comparison_role,tech,"Strategic Projects Lead, Safety",CUSTOMER,CUSTOMER
-4436305113,1,comparison_role,tech,"Senior Manager, Sales Enablement",,
-4482128062,2,comparison_role,tech,Group Operations & Implementation Manager,AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
+J01683,1,comparison_role,tech,"Senior Manager, Sales Enablement",,
+J17355,2,comparison_role,tech,Group Operations & Implementation Manager,AI_ROLLOUT CUSTOMER,AI_ROLLOUT CUSTOMER
 580266,1,comparison_role,tech,Global Strategy Manager,AI_ROLLOUT,AI_ROLLOUT
 586351,1,comparison_role,tech,"Senior manager, lifecycle & audience marketing",AI_STRATEGY,AI_STRATEGY
 63870,1,comparison_role,tech,"Group Product Manager, Compliance Automation",AI_STRATEGY,AI_STRATEGY

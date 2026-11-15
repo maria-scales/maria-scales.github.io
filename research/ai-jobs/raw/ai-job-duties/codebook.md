@@ -1,6 +1,6 @@
 # Codebook: what the hire actually does
 
-This is the instruction used to label `labels.csv`. Each posting came with an `id`, the job family it was filed under and the responsibilities part of the posting text (sometimes the start of the full text, sometimes in German or another language, sometimes with HTML left in).
+This is the instruction used to label `labels.csv`. Each posting came with an `id`, the job family it was filed under and the responsibilities part of the posting text (sometimes the start of the full text, sometimes in German or another language, sometimes with formatting left in).
 
 For every posting, record which duties the posting explicitly assigns to the person being hired. Code only what the text says the hire will do. Company descriptions, product blurbs ("our AI-powered platform…"), benefits and requirement lists (skills, experience) are no duties; ignore them unless phrased as something the hire will do. Multi-label: assign every code that applies, or none.
 
@@ -23,7 +23,7 @@ For every posting, record which duties the posting explicitly assigns to the per
 
 - `ai_share`: how much of the listed duties are about AI (any AI code, or AI as the subject of the work): `0` (nothing), `low` (under a quarter), `mid` (a quarter to three quarters), `high` (over three quarters). In `labels.csv` the value `0` is written as `none`.
 - `core`: 3 to 8 plain English words on what this person mainly does all day. In `labels.csv` this is `main_duty`.
-- `quality`: `ok` if the text contains real duties; `boiler` if it is mostly navigation, cookie banner, JSON or company blurb with no duties (then nothing else is coded and `ai_share` is `0`). In `labels.csv` these are `duties_found` and `no_duties_in_text`.
+- `quality`: `ok` if the text contains real duties; `boiler` if it is mostly page boilerplate or company blurb with no duties (then nothing else is coded and `ai_share` is `0`). In `labels.csv` these are `duties_found` and `no_duties_in_text`.
 
 ## Rules
 
