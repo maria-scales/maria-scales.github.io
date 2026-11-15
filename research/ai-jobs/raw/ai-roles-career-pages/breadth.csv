@@ -1,0 +1,7 @@
+date,cohort_companies,companies_with_ai_role,companies_with_ai_role_pct,companies_with_non_engineering_ai_role,companies_with_non_engineering_ai_role_pct,ai_roles_per_company_median,ai_roles_per_company_mean,top10_companies_share_pct,stable_cohort_companies,stable_companies_with_ai_role,stable_companies_with_non_engineering_ai_role
+2026-08-05,348,111,31.9,71,20.4,2,5.21,43.1,317,106,66
+2026-08-23,348,109,31.3,67,19.3,3,4.94,35.3,317,97,58
+2026-09-04,348,112,32.2,68,19.5,2.0,4.79,34.6,317,99,59
+2026-09-18,348,125,35.9,77,22.1,2,5.34,38.4,317,108,63
+2026-10-07,348,129,37.1,79,22.7,2,5.11,39.8,317,112,66
+2026-10-17,348,136,39.1,81,23.3,2.0,5.29,40.0,317,113,64

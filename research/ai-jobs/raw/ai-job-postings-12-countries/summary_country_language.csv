@@ -1,0 +1,13 @@
+country,postings,english_postings,local_language_postings,pct_mention_ai_all_languages,pct_mention_ai_english_marker_only,pct_mention_ai_in_english_postings,pct_mention_ai_in_local_language_postings,pct_tech_among_english_postings,pct_tech_among_all_postings
+CY,211,201,10,33.2,33.2,34.3,10.0,28.9,28.4
+DE,623,209,414,46.2,30.3,56.9,40.8,47.4,25.7
+ES,660,365,295,39.1,31.5,50.7,24.7,35.9,23.6
+FR,683,197,486,40.6,21.5,48.2,37.4,41.6,21.8
+IE,229,229,0,48.9,48.9,48.9,,35.8,35.8
+NL,612,347,265,42.5,42.2,49.3,33.6,34.9,21.9
+PL,614,458,156,36.8,36.6,42.4,20.5,22.9,19.9
+PT,230,181,49,41.3,39.1,47.5,18.4,32.0,26.1
+RS,197,184,13,38.6,38.6,41.3,0.0,25.0,23.9
+TR,249,180,69,25.7,25.3,31.1,11.6,25.0,19.3
+UK,607,606,1,48.6,48.6,48.7,0.0,30.0,30.0
+US,816,816,0,44.7,44.2,44.7,,31.4,31.4

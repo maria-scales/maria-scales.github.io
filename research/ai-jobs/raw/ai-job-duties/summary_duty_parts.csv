@@ -1,0 +1,9 @@
+duty_code,duty,ai_roles_with_duty,ai_roles_total,ai_roles_pct,ordinary_roles_with_duty,ordinary_roles_total,ordinary_roles_pct,ai_roles_tech_pct,ai_roles_consulting_pct,ai_roles_non_tech_pct
+duty_ai_strategy,"Decide where AI goes: strategy, roadmap, use cases",409,801,51.1,26,452,5.8,36.2,58.4,69.1
+duty_ai_rollout,Roll AI out across teams and processes,328,801,40.9,35,452,7.7,27.9,42.1,60.6
+duty_ai_build,Build automations and agents,286,801,35.7,18,452,4.0,33.1,37.6,37.7
+duty_ai_govern,"Set AI policy, risk and compliance",284,801,35.5,14,452,3.1,21.7,41.1,51.7
+duty_ai_measure,Measure the impact of AI,229,801,28.6,8,452,1.8,21.2,22.3,45.8
+duty_ai_train,Train and coach people on AI,190,801,23.7,9,452,2.0,16.7,23.9,34.7
+duty_ai_vendor,Pick and manage AI vendors,149,801,18.6,2,452,0.4,13.4,19.3,26.3
+duty_ai_use,Use AI tools in own daily work,78,801,9.7,35,452,7.7,11.7,4.6,8.9

@@ -1,0 +1,151 @@
+check_n,posting_id,label_round,kind,employer_group,title,codes_main,codes_check,ai_share_main,ai_share_check
+1,358682,1,ai_role,tech,Marketing Intelligence & AI Automation Manager,AI_BUILD AI_GOVERN AI_STRATEGY AI_TRAIN AI_USE AI_VENDOR CORE,AI_BUILD AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_USE AI_VENDOR CORE,high,mid
+2,J13658,2,ai_role,consulting,Manager Change AI (H/F),AI_ROLLOUT CORE CUSTOMER LEAD,AI_ROLLOUT CORE CUSTOMER LEAD,low,mid
+3,J14707,2,ai_role,non_tech,Product Manager Data & AI (m/w/d),AI_ROLLOUT AI_STRATEGY CORE,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE,high,high
+4,J07400,2,ai_role,non_tech,AI Model Risk & Governance Lead,AI_GOVERN CORE,AI_GOVERN CORE,mid,high
+5,J03065,1,comparison_role,non_tech,"Senior Product Manager - Aladdin Trader, Vice President",CORE CUSTOMER,CORE CUSTOMER,none,none
+6,J14942,2,comparison_role,non_tech,Senior Cyber Risk Analyst,CORE,CORE,none,none
+7,J10032,1,comparison_role,tech,"Staff Product Manager: Virtual Expert Platform, Connect Team",CORE,CORE,none,none
+8,118141,1,ai_role,tech,AI Transformation Lead,AI_PRODUCT AI_ROLLOUT AI_TRAIN CORE CUSTOMER,AI_PRODUCT AI_ROLLOUT AI_TRAIN CORE CUSTOMER,high,high
+9,J02969,2,comparison_role,non_tech,Pre-Sales Consultant,CORE CUSTOMER,CORE CUSTOMER,none,none
+10,425073,1,ai_role,tech,GTM Lead - AI Optimization Product,AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+11,J16461,2,comparison_role,tech,VP Value Creation,CORE,CORE,none,none
+12,J14508,1,ai_role,tech,"Sr. Technical Program Manager, AI Enablement for Enterprise",CORE,CORE,none,none
+13,J01874,2,comparison_role,consulting,Marketing Manager - Consumer Brands,CORE,CORE,none,none
+14,J12873,1,comparison_role,consulting,FSO - Insurance - Life & Group Transformation - Technology Consulting - Senior Manager,AI_ROLLOUT CORE CUSTOMER LEAD,AI_ROLLOUT CORE CUSTOMER LEAD,low,low
+15,J03351,2,ai_role,non_tech,VP of AI,AI_PRODUCT AI_STRATEGY CORE LEAD,AI_BUILD AI_PRODUCT AI_STRATEGY LEAD,high,high
+16,J03664,1,ai_role,non_tech,AI Enablement Partner,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR,high,high
+17,J02166,1,comparison_role,non_tech,Governance Risk and Compliance Analyst,CORE,CORE,none,none
+18,J08026,2,ai_role,non_tech,Data & AI Project Lead,CORE,AI_BUILD CORE,low,mid
+19,J00793,2,ai_role,non_tech,AI Enablement Specialist,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN,high,high
+20,J03086,1,ai_role,non_tech,"Director, Global Support Services (GSS) AI Initiatives",AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR,high,high
+21,586022,1,comparison_role,tech,Associate Principal Graphic Designer,CORE LEAD,CORE LEAD,none,none
+22,15920,1,comparison_role,tech,"Associate Counsel, Innovation and Thought Leadership",AI_GOVERN CORE,AI_GOVERN CORE,low,low
+23,170163,1,ai_role,tech,Lead / Principal Consultant - Data and AI,AI_USE CORE CUSTOMER,AI_PRODUCT AI_USE CORE CUSTOMER,mid,mid
+24,J03101,2,ai_role,tech,"Lead, Product Strategy & Operations – AI Agents",AI_PRODUCT CORE,AI_PRODUCT CORE,mid,high
+25,J17158,2,ai_role,non_tech,"Senior Product Manager, AI Platform & Ecosystem",AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+26,170210,1,ai_role,tech,Senior AI Transformation & Innovation Consultant,AI_BUILD AI_PRODUCT CORE CUSTOMER,AI_BUILD AI_MEASURE AI_PRODUCT AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,high,high
+27,J01476,2,ai_role,non_tech,"Director, Applied AI",AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR LEAD,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR LEAD,high,high
+28,J09034,2,comparison_role,non_tech,"Senior Product Manager, Poker",CORE,CORE,none,none
+29,J00648,2,ai_role,consulting,Head of AI Innovation – Private Equity (Build & Scale Applied AI Solutions),AI_BUILD AI_ROLLOUT AI_STRATEGY AI_USE LEAD,AI_BUILD AI_ROLLOUT AI_STRATEGY AI_USE LEAD,high,high
+30,584692,1,ai_role,unknown,AI-Native Auditor,AI_USE CORE,AI_USE CORE,mid,mid
+31,J14065,2,ai_role,consulting,AI Native Delivery Manager (AI/Run practice),AI_ROLLOUT CORE CUSTOMER LEAD,AI_ROLLOUT AI_USE CORE CUSTOMER LEAD,mid,mid
+32,J16296,1,ai_role,non_tech,Director of Franchise Digital Strategy & AI Innovation,AI_ROLLOUT AI_USE CORE,AI_ROLLOUT CORE,mid,mid
+33,J17424,2,ai_role,non_tech,AI Analyst,AI_BUILD AI_TRAIN CORE,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,high,high
+34,J05646,2,ai_role,non_tech,Lead AI Solutions Partner,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE LEAD,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN LEAD,high,high
+35,J10023,1,ai_role,non_tech,Sr Product Manager-Agentic Delivery,CORE,CORE,none,none
+36,170145,1,ai_role,tech,Lead AI Consultant (Field),AI_USE CORE CUSTOMER LEAD,AI_PRODUCT AI_USE CORE CUSTOMER LEAD,mid,mid
+37,17983,1,ai_role,tech,AI Experience Lead - Operations,AI_MEASURE AI_PRODUCT AI_STRATEGY CORE LEAD,AI_BUILD AI_MEASURE AI_STRATEGY CORE LEAD,high,high
+38,J12317,2,ai_role,consulting,AI Consultant for the Chemicals and Natural Resources Industry,AI_PRODUCT AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,AI_BUILD AI_ROLLOUT AI_STRATEGY CUSTOMER,high,high
+39,157868,1,ai_role,tech,Senior GTM Insights Automation Manager,AI_BUILD,AI_BUILD CORE,mid,mid
+40,J11653,2,ai_role,tech,"Domain Consultant – Business Transformation, AI & Data Strategy - R01572474",AI_STRATEGY CORE CUSTOMER,AI_STRATEGY CORE CUSTOMER,mid,mid
+41,J11136,2,ai_role,tech,Head of Applied AI,AI_BUILD AI_MEASURE AI_STRATEGY AI_VENDOR LEAD,AI_BUILD AI_MEASURE AI_PRODUCT AI_STRATEGY AI_VENDOR LEAD,high,high
+42,J04719,2,ai_role,tech,Product Manager - AI Inference,AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+43,J07866,1,comparison_role,non_tech,Director of Business Operations,CORE LEAD,CORE LEAD,none,none
+44,36548,1,ai_role,tech,AI Marketing Technologist Lead,AI_BUILD AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR,AI_BUILD AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CORE,high,high
+45,J08133,2,ai_role,non_tech,"Global Head of Digital, Data & AI",AI_ROLLOUT AI_STRATEGY CORE LEAD,AI_ROLLOUT AI_STRATEGY CORE LEAD,mid,mid
+46,J03809,1,comparison_role,non_tech,"Marketing Manager, Pharma Solutions",CORE,CORE,none,none
+47,J11419,2,ai_role,non_tech,AI Technical Product Manager (QVAC) (100% remote),AI_PRODUCT AI_USE CORE,AI_PRODUCT AI_USE CORE,high,high
+48,580166,1,comparison_role,non_tech,"Senior Manager, Strategic Accounts - Independent Practices",CORE CUSTOMER,CORE CUSTOMER,none,none
+49,J14455,2,ai_role,consulting,Lead AI Consultant,CORE CUSTOMER,CORE CUSTOMER,none,none
+50,J12235,2,ai_role,non_tech,Head of AI for IT,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CORE,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN,high,high
+51,J09622,2,comparison_role,non_tech,Head of UK Compliance & MLRO,CORE LEAD,CORE LEAD,none,none
+52,J15149,1,ai_role,tech,"Principal Technical Product Manager, Enterprise AI Workflow Enablement",AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_TRAIN,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_TRAIN,high,high
+53,J11032,2,comparison_role,tech,Senior Product Manager,AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,mid,high
+54,62731,1,ai_role,consulting,AI Consultant,AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,high,high
+55,J10830,1,ai_role,consulting,"Executive Director, Responsible AI & Enterprise Governance",AI_GOVERN CORE LEAD,AI_GOVERN CORE LEAD,high,high
+56,J06851,1,ai_role,tech,"Manager, Technical Program Manager, GenAI Safety, DeepMind",AI_GOVERN AI_PRODUCT CORE,AI_BUILD AI_GOVERN AI_PRODUCT CORE,high,high
+57,J04212,1,ai_role,tech,A.I. Marketing Manger,AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,low,high
+58,J11352,2,ai_role,consulting,Head of Applied AI,AI_BUILD AI_PRODUCT AI_STRATEGY LEAD,AI_BUILD AI_PRODUCT AI_STRATEGY LEAD,high,high
+59,J06017,2,ai_role,consulting,AI Value & Transformation Lead – Gas Utilities,AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CORE,AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CUSTOMER,high,high
+60,J14141,1,ai_role,tech,"Product Manager, Machine Learning",CORE LEAD,CORE LEAD,none,none
+61,438519,1,ai_role,tech,"Senior GTM AI Advisor, EMEA",AI_PRODUCT AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE CUSTOMER,AI_MEASURE AI_PRODUCT AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_USE CORE CUSTOMER,high,high
+62,J11302,2,ai_role,tech,"Director, Product Management — Core Database Engine & AI",AI_PRODUCT CORE,AI_PRODUCT CORE,mid,mid
+63,J04507,2,comparison_role,non_tech,Automation Specialist – RPA Specialist,AI_BUILD CORE,AI_BUILD CORE,mid,mid
+64,J00953,1,comparison_role,tech,Technical Sales Consultant - Insurance,CORE CUSTOMER,CORE CUSTOMER,none,none
+65,J14937,2,comparison_role,non_tech,Directeur Bedrijfsvoering Kinderopvang,CORE LEAD,AI_STRATEGY CORE LEAD,low,low
+66,J00262,2,comparison_role,consulting,Consultant Senior Avant-Vente ServiceNow (F/H),CORE CUSTOMER,CORE CUSTOMER,none,none
+67,J15691,1,comparison_role,tech,Technical Enablement Manager,CORE,CORE,none,none
+68,J16659,2,ai_role,tech,Manager Agentic AI,AI_BUILD AI_MEASURE AI_ROLLOUT CORE LEAD,AI_BUILD AI_MEASURE AI_ROLLOUT LEAD,high,high
+69,J07423,2,ai_role,non_tech,"Sr. Advisor, Product Marketing - AI Solutions",AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,high
+70,83703,1,ai_role,tech,Account Executive - AI Software Sales,AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,low,mid
+71,J15241,2,ai_role,tech,Project Manager Machine Learning & AI,AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,AI_BUILD AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,high,high
+72,J02861,2,ai_role,tech,AI Development Builder,AI_BUILD AI_USE CORE,AI_BUILD AI_USE CORE,mid,high
+73,J07974,1,ai_role,non_tech,AI & Marketing Automation Manager,AI_BUILD AI_TRAIN AI_USE AI_VENDOR CORE,AI_BUILD AI_TRAIN AI_USE AI_VENDOR CORE,high,high
+74,J04232,2,ai_role,non_tech,Manager AI Innovation & Deployment for Segmentation,AI_BUILD AI_VENDOR,AI_BUILD AI_VENDOR,high,high
+75,J06977,1,comparison_role,consulting,Senior Product Manager,AI_USE CORE CUSTOMER,AI_USE CORE,low,mid
+76,35346,1,comparison_role,non_tech,"Sales Manager, Mid-Market",CORE LEAD,CORE LEAD,none,none
+77,J03383,2,ai_role,tech,"Principal GenAI GTM Specialist, WWSO",AI_PRODUCT AI_STRATEGY CORE CUSTOMER,AI_PRODUCT AI_STRATEGY CORE CUSTOMER,high,high
+78,703625,1,comparison_role,tech,Driver Operations Associate (Fleet Onboarding | 6-month contract),CORE,CORE CUSTOMER,none,none
+79,J06074,2,ai_role,consulting,Lead Agentic AI Consultant,AI_BUILD AI_GOVERN AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE CUSTOMER,AI_BUILD AI_GOVERN AI_STRATEGY AI_TRAIN CORE CUSTOMER,high,high
+80,J08545,2,comparison_role,non_tech,Director of Operations,CORE LEAD,CORE LEAD,none,none
+81,J02720,2,ai_role,tech,Artificial Intelligence Ingenieur,AI_BUILD CUSTOMER,AI_BUILD CUSTOMER,mid,high
+82,J02347,2,ai_role,consulting,"AI & Automation Careers at EY GDS Poland - Power Platform, Copilot Studio and FDE",AI_BUILD CUSTOMER,AI_BUILD CUSTOMER,high,high
+83,J06547,2,ai_role,consulting,Program Manager - AI,AI_PRODUCT AI_ROLLOUT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,high
+84,J13791,1,ai_role,tech,"Chief of Staff, AI & Data Operations",AI_ROLLOUT AI_STRATEGY CORE,AI_ROLLOUT AI_STRATEGY CORE,low,mid
+85,J17451,2,ai_role,tech,"Senior Product Marketing Manager, AI Compute",AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+86,J13685,2,ai_role,tech,"Business Analyst, Operations Integration & AI Transformation",AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE,high,high
+87,J04198,1,ai_role,non_tech,Principal Technical Program Manager - AI Product Development Lifecycle,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_USE,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_USE CORE,high,high
+88,J15323,2,ai_role,non_tech,AI & Automation Team Lead (f/m/d),AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CORE LEAD,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR LEAD,high,high
+89,J02155,1,comparison_role,tech,"Marketing Manager – Integrated Marketing, B2B & B2C",CORE,CORE,none,none
+90,580287,1,ai_role,tech,Lead Product Manager - AI Enablement,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,high,high
+91,J07123,2,comparison_role,tech,Senior Product Manager,AI_MEASURE AI_PRODUCT AI_USE CORE,AI_PRODUCT AI_USE CORE,high,high
+92,J14934,2,ai_role,consulting,Copilot Technical Lead,AI_BUILD AI_GOVERN AI_ROLLOUT,AI_BUILD AI_GOVERN AI_ROLLOUT AI_STRATEGY,high,high
+93,J12111,2,ai_role,tech,"Product Manager - SaaS Product - AI-Driven Product Development - Düsseldorf Hybrid - €110,000",CORE,CORE,none,none
+94,J16020,2,comparison_role,non_tech,Head of UK and Western Europe CCB Onboarding,AI_ROLLOUT AI_TRAIN CORE CUSTOMER LEAD,AI_ROLLOUT CORE CUSTOMER LEAD,low,low
+95,J11829,2,ai_role,tech,Senior Product Manager (AI Pilled),CORE,CORE,none,none
+96,57011,1,ai_role,tech,"Principal, Enterprise AI Transformation",AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,low,low
+97,J11350,2,ai_role,tech,AI Strategist,AI_PRODUCT AI_ROLLOUT CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,mid
+98,J08997,2,ai_role,tech,"Senior Product Manager, AI Studio",AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,high
+99,J16481,2,comparison_role,non_tech,German Programme Manager,CORE CUSTOMER LEAD,CORE CUSTOMER LEAD,none,none
+100,124191,1,ai_role,tech,"GTM Leader, AI Native",AI_PRODUCT CORE CUSTOMER LEAD,AI_PRODUCT CORE CUSTOMER LEAD,mid,mid
+101,581940,1,comparison_role,tech,"Operations Associate, Brentwood Area, #617",CUSTOMER,CORE,none,none
+102,J17140,2,ai_role,consulting,Applied AI Associate,AI_BUILD AI_PRODUCT AI_ROLLOUT AI_STRATEGY CUSTOMER,AI_BUILD AI_ROLLOUT AI_STRATEGY CUSTOMER,high,high
+103,J05159,1,ai_role,tech,Senior Product Manager - AI Trust & Transparency,AI_GOVERN AI_PRODUCT AI_ROLLOUT AI_TRAIN CORE,AI_GOVERN AI_PRODUCT AI_TRAIN CORE,high,high
+104,J08637,1,ai_role,tech,"Product Marketing Manager, AI Models",AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+105,J09146,2,comparison_role,non_tech,Product Manager Impact Positif/Décarbonation - H/F,AI_USE CORE,AI_USE CORE,low,low
+106,J07336,2,ai_role,consulting,VP of Data Analytics & AI,AI_BUILD AI_GOVERN AI_MEASURE AI_STRATEGY AI_VENDOR CORE LEAD,AI_BUILD AI_GOVERN AI_MEASURE AI_STRATEGY AI_VENDOR CORE LEAD,mid,high
+107,J00594,1,ai_role,tech,"Director, Product Marketing, AI",AI_PRODUCT CORE LEAD,AI_PRODUCT CORE LEAD,mid,high
+108,51620,1,ai_role,tech,Business Automation Manager,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_VENDOR CORE LEAD,AI_BUILD AI_MEASURE AI_STRATEGY AI_VENDOR CORE LEAD,high,high
+109,J08574,2,ai_role,tech,AI Governance (Senior) Consultant (m/w/d),AI_GOVERN CORE CUSTOMER,AI_GOVERN CORE CUSTOMER,high,high
+110,J02208,2,comparison_role,tech,Sales Enablement Manager,AI_USE CORE,AI_USE CORE,low,low
+111,J13734,2,comparison_role,non_tech,Channel Enablement Manager (Sales / Partner Training),CORE CUSTOMER,CORE CUSTOMER,none,none
+112,J03431,2,ai_role,tech,AI Consultant,AI_BUILD AI_MEASURE AI_PRODUCT AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,AI_BUILD AI_PRODUCT AI_ROLLOUT AI_STRATEGY CUSTOMER,high,high
+113,J07840,2,ai_role,non_tech,Program Manager - AI Transformation & Workforce Strategy,AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE,high,high
+114,596647,1,comparison_role,tech,"People Operations Partner, Equity",CORE,CORE,none,none
+115,J06767,2,ai_role,consulting,Consultant / Manager – Data & AI Transformation (Financial Services),AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_VENDOR CORE CUSTOMER,AI_BUILD AI_ROLLOUT AI_STRATEGY AI_VENDOR CORE CUSTOMER,high,high
+116,J15920,2,ai_role,consulting,AI Associate,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY,high,high
+117,J15863,2,ai_role,consulting,Consultant AI & Digital Strategy,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE CUSTOMER,high,high
+118,104135,1,comparison_role,tech,Sorting Center Operations Responsible,CORE LEAD,CORE LEAD,none,none
+119,J12802,2,ai_role,non_tech,AI Growth & Performance Marketing Manager,AI_BUILD AI_GOVERN AI_USE CORE,AI_BUILD AI_GOVERN AI_USE AI_VENDOR CORE,high,high
+120,J15243,2,ai_role,consulting,Manager AI Transformation,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE CUSTOMER,AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE CUSTOMER LEAD,high,high
+121,18307,1,comparison_role,tech,Working Student People Ops & Payroll,CORE,CORE,none,none
+122,J03115,2,comparison_role,non_tech,"RCM Automation, Data & CMMS Specialist",CORE,CORE,none,none
+123,J12537,2,comparison_role,non_tech,Business Manager Transverse – Fixed Income & Equity Derivatives Trading H/F,CORE,CORE,none,none
+124,J16437,2,comparison_role,non_tech,Product Manager Portioned Coffee,CORE,CORE,none,none
+125,J12979,1,ai_role,non_tech,"Director, Marketing Analytics & AI Transformation",AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE LEAD,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN CORE LEAD,high,high
+126,584129,1,comparison_role,tech,Commercial Counsel,CORE CUSTOMER,AI_GOVERN CORE,none,low
+127,J05813,2,ai_role,non_tech,"Program Manager, Foundation AI",CORE,AI_BUILD CORE,high,high
+128,J11417,1,comparison_role,non_tech,"Director, Compliance Risk Assurance",CORE LEAD,CORE LEAD,none,none
+129,J08273,2,ai_role,non_tech,Head of CX Automation & AI,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_VENDOR CORE LEAD,AI_BUILD AI_GOVERN AI_MEASURE AI_STRATEGY AI_VENDOR CORE LEAD,high,high
+130,J09176,2,comparison_role,non_tech,"Senior Manager, Competitive Intelligence & Positioning",CORE,CORE,none,none
+131,J01683,1,comparison_role,tech,"Senior Manager, Sales Enablement",CORE,CORE,none,none
+132,657186,1,comparison_role,tech,"Senior Marketing Manager, EMEA",CORE CUSTOMER,CORE,none,none
+133,J17054,2,ai_role,tech,"EMEA AI Marketing & Digital, Senior Manager",AI_BUILD AI_MEASURE AI_ROLLOUT AI_USE AI_VENDOR CORE LEAD,AI_MEASURE AI_ROLLOUT AI_USE AI_VENDOR CORE LEAD,mid,mid
+134,J01243,2,ai_role,tech,Senior Product Manager - AI,AI_PRODUCT CORE,AI_PRODUCT CORE,high,high
+135,J02288,2,ai_role,consulting,Consultant senior Microsoft Power platform et Copilot Studio H/F,AI_BUILD AI_ROLLOUT AI_TRAIN CUSTOMER,AI_BUILD AI_GOVERN AI_ROLLOUT AI_TRAIN CORE CUSTOMER,mid,mid
+136,33831,1,ai_role,tech,Head of Revenue Operations & AI,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_VENDOR CORE LEAD,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN AI_VENDOR CORE LEAD,mid,mid
+137,J05810,2,comparison_role,tech,Senior Solution Consultant,AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,low
+138,J10905,1,comparison_role,non_tech,Brand Marketing Manager,CORE,CORE,none,none
+139,583992,1,ai_role,unknown,AI-First Marketing Generalist & Agent Manager,AI_BUILD AI_PRODUCT AI_USE CORE,AI_BUILD AI_PRODUCT AI_USE CORE,high,high
+140,J05521,2,comparison_role,unknown,Marketing Manager – IMRG,CORE,CORE,none,none
+141,J17251,1,comparison_role,unknown,Director of Business and Digital Transformation,CORE,CORE,none,none
+142,J02227,2,ai_role,tech,"Technical Program Manager, AI Delivery for Public Sector & Defence, UK",AI_PRODUCT CORE CUSTOMER,AI_PRODUCT CORE CUSTOMER,high,high
+143,580286,1,ai_role,tech,Head of Product - AI Shared Services,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE,AI_BUILD AI_ROLLOUT AI_STRATEGY CORE,mid,high
+144,J06249,1,ai_role,tech,"Principal Product Manager, Agentic Operations",AI_BUILD AI_GOVERN AI_MEASURE AI_PRODUCT AI_USE CORE CUSTOMER,AI_BUILD AI_GOVERN AI_PRODUCT AI_USE CORE CUSTOMER,high,high
+145,J02176,1,ai_role,consulting,AI Enablement & Governance - AI Security & Controls Lead,AI_GOVERN CORE,AI_GOVERN CORE,high,high
+146,J12803,1,ai_role,non_tech,AI Development and Enablement Analyst,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN,AI_BUILD AI_GOVERN AI_MEASURE AI_ROLLOUT AI_STRATEGY AI_TRAIN,high,high
+147,J07540,2,ai_role,non_tech,"Vice President, AI Deployment & Strategy (United Kingdom)",AI_MEASURE AI_ROLLOUT AI_STRATEGY CORE CUSTOMER LEAD,AI_BUILD AI_MEASURE AI_ROLLOUT AI_STRATEGY CUSTOMER LEAD,high,high
+148,J11841,2,comparison_role,non_tech,Designated Person for Regulatory Compliance,CORE LEAD,CORE LEAD,none,none
+149,J02303,2,comparison_role,tech,Senior Solution Consultant CPG / Manufacturing,CORE CUSTOMER,CORE CUSTOMER,none,none
+150,J10928,2,ai_role,consulting,Principal Product Manager - Data & AI Products,AI_PRODUCT AI_USE CORE CUSTOMER LEAD,AI_PRODUCT AI_USE CORE CUSTOMER LEAD,low,low
