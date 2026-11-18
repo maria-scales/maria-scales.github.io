@@ -6,7 +6,7 @@ All pages are static HTML with en-dash typography and typed JSON-LD: Article, Da
 
 - [Home](https://mariascales.com/): eight case studies with the numbers, the research series, and the three interactive tools, on one page.
 - [How I use AI](https://mariascales.com/how-i-use-ai/): how Maria works – repeating work is written down as a process, the mechanical part goes to AI tools, every run and decision is recorded, and each process is revised every week when new and at least twice a year when mature.
-- [Work with me](https://mariascales.com/work-with-me/): how Maria works with a company – five stages (goal and limits, audit, goal model, implementation, weekly review), each with what she does and what she does with leadership and the team; the six groups of the audit; what repeats every week, month and quarter, and what is revised only on an event.
+- [How I work](https://mariascales.com/how-i-work/): how Maria works with a company – five stages (goal and limits, audit, goal model, implementation, weekly review), each with what she does and what she does with leadership and the team; the six groups of the audit; what repeats every week, month and quarter, and what is revised only on an event.
 
 ## Tools
 
