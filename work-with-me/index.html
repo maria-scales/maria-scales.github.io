@@ -12,12 +12,11 @@
   })(window,document,'script','dataLayer','GTM-K7ZJJ8C6');</script>
   <!-- End Google Tag Manager -->
   <link rel="icon" href="/favicon.svg">
-  <meta name="robots" content="noindex">
-  <meta name="description" content="How I work with a company, from the first weeks to reporting and feedback.">
+  <meta name="description" content="How I work with a company: five stages from the goal to the weekly review, the six parts of the audit, and how often each part repeats.">
   <link rel="canonical" href="https://mariascales.com/work-with-me/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Work with me – Maria Atamanova">
-  <meta property="og:description" content="How I work with a company, from the first weeks to reporting and feedback.">
+  <meta property="og:description" content="How I work with a company: five stages from the goal to the weekly review, the six parts of the audit, and how often each part repeats.">
   <meta property="og:url" content="https://mariascales.com/work-with-me/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <meta property="og:site_name" content="Maria Atamanova">
@@ -25,7 +24,7 @@
   <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Work with me – Maria Atamanova">
-  <meta name="twitter:description" content="How I work with a company, from the first weeks to reporting and feedback.">
+  <meta name="twitter:description" content="How I work with a company: five stages from the goal to the weekly review, the six parts of the audit, and how often each part repeats.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -136,6 +135,42 @@
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
     .callout.lead, .tldr.lead { margin-top: -44px; }
+
+    /* Work with me: stages, audit grid, cadence (page-only, 18.11.2026, Maria: "разукрасим, чтобы не plain текст") */
+    .article-content .stages { list-style: none; padding: 0; margin: 14px 0 0; }
+    .article-content .stages li { position: relative; padding: 0 0 24px 54px; margin: 0; }
+    .article-content .stages li::before { content: attr(data-n); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #d1d5db; background: #fff; color: #111827; font-weight: 700; font-size: 0.9375rem; display: flex; align-items: center; justify-content: center; }
+    .article-content .stages li::after { content: ""; position: absolute; left: 17px; top: 40px; bottom: 4px; width: 1px; background: #e5e7eb; }
+    .article-content .stages li:last-child { padding-bottom: 0; }
+    .article-content .stages li:last-child::after { display: none; }
+    .article-content .stages li.loop::before { background: #1e40af; border-color: #1e40af; color: #fff; }
+    .stage-title { font-size: 1.0625rem; font-weight: 700; color: #111827; line-height: 34px; margin-bottom: 2px; }
+    .article-content .stage-out { font-size: 0.8125rem; color: #6b7280; margin: 6px 0 0; }
+    .stage-out strong { color: #374151; font-weight: 600; }
+    .article-content .stage-q { position: relative; padding-left: 18px; margin-bottom: 6px; }
+    .stage-q::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: #1e40af; }
+    .stage-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: start; }
+    .stage-team { background: #f9fafb; border-left: 3px solid #1e40af; padding: 10px 14px; }
+    .stage-team-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1e40af; margin-bottom: 4px; }
+    .article-content .stage-team p { font-size: 0.875rem; margin: 0; }
+    .loop-tag { display: inline-block; margin-top: 10px; font-size: 0.8125rem; color: #1e40af; background: #eff6ff; border-radius: 6px; padding: 3px 10px; }
+    .audit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
+    .audit-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; }
+    .audit-card svg { width: 24px; height: 24px; stroke: #1e40af; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; display: block; margin-bottom: 10px; }
+    .audit-card h3 { font-size: 0.9375rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+    .article-content .audit-card p { font-size: 0.875rem; margin-bottom: 0; }
+    .article-content .audit-card p + p { margin-top: 8px; font-size: 0.8125rem; color: #6b7280; }
+    .cadence { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+    .cad { border-top: 3px solid #1e40af; background: #f9fafb; border-radius: 0 0 8px 8px; padding: 14px; }
+    .cad:nth-child(2) { border-top-color: #5b7bd5; }
+    .cad:nth-child(3) { border-top-color: #a5b8ea; }
+    .cad:nth-child(4) { border-top: 3px dashed #9ca3af; }
+    .cad-n { font-size: 1.0625rem; font-weight: 700; color: #111827; line-height: 1.3; }
+    .cad-l { font-size: 0.75rem; color: #6b7280; margin-bottom: 10px; }
+    .article-content .cad ul { padding-left: 16px; margin: 0; }
+    .article-content .cad-then { font-size: 0.8125rem; color: #6b7280; margin: 10px 0 0; }
+    .article-content .cad li { font-size: 0.8125rem; margin-bottom: 4px; }
+    @media (max-width: 640px) { .stage-grid { grid-template-columns: 1fr; gap: 10px; } .audit-grid { grid-template-columns: 1fr; } .cadence { grid-template-columns: 1fr 1fr; } }
   </style>
   <script type="application/ld+json">
 {
@@ -162,7 +197,7 @@
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "Work with me",
-  "description": "How I work with a company, from the first weeks to reporting and feedback.",
+  "description": "How I work with a company: five stages from the goal to the weekly review, the six parts of the audit, and how often each part repeats.",
   "url": "https://mariascales.com/work-with-me/",
   "inLanguage": "en",
   "image": "https://mariascales.com/og-image.png",
@@ -207,13 +242,172 @@
 <div class="page-header">
   <div class="container">
     <h1 class="page-title">Work with me</h1>
-    <div class="page-standfirst">How I work with a company, from the first weeks to reporting and feedback.</div>
+    <div class="page-standfirst">How I work with a company: five stages from the goal to the weekly review, the six parts of the audit, and how often each part repeats.</div>
     <div class="page-meta">Nov 2026 · About</div>
   </div>
 </div>
 <div class="article-content">
   <div class="container">
-    <p>Coming soon.</p>
+    <h2>Five stages</h2>
+    <p>This is the order I follow when I join a company. Each stage feeds the next one. What I do and what I do with people run side by side.</p>
+    <ol class="stages">
+      <li data-n="0">
+        <div class="stage-title">Goal and limits</div>
+        <div class="stage-grid">
+          <div>
+            <p>I turn the goal into numbers I can calculate against: budget, payback period, CAC ceiling, and the date by which it has to be reached.</p>
+            <p class="stage-out"><strong>Output:</strong> a goal with limits and a timeline</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">With leadership</div>
+            <p>We agree the goal, its limits and the timeline before any work starts. Often this is the founder.</p>
+          </div>
+        </div>
+      </li>
+      <li data-n="1">
+        <div class="stage-title">Audit</div>
+        <div class="stage-grid">
+          <div>
+            <p>I look at how everything works now, in six groups.</p>
+            <p class="stage-out"><strong>Output:</strong> the current state, a list of fixes and hypotheses for experiments</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">With the team</div>
+            <p>Before I start, I ask the people who run the channels, creatives, product and analytics how they work, which experiments they ran, what worked and what failed. When the audit is done, we go through the findings together, and they correct me where I misread the picture. After that the findings go to leadership.</p>
+          </div>
+        </div>
+      </li>
+      <li data-n="2">
+        <div class="stage-title">Goal model</div>
+        <div class="stage-grid">
+          <div>
+            <p>The model answers three questions.</p>
+            <p class="stage-q">How does it work now?</p>
+            <p class="stage-q">If we keep working this way, do we reach the goal? In most cases the answer is no.</p>
+            <p class="stage-q">Then how would we need to grow?</p>
+            <p class="stage-out"><strong>Output:</strong> a plan with dates and stop rules</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Team buy-in</div>
+            <p>Each channel has an owner, and the owner agrees to the number in the plan. A number the owner agreed to holds better than a number handed down.</p>
+          </div>
+        </div>
+      </li>
+      <li data-n="3">
+        <div class="stage-title">Implementation</div>
+        <div class="stage-grid">
+          <div>
+            <p>First the fixes from the audit, then the growth strategy by channel, then the experiments by channel. The fixes come first because growth multiplies whatever is left unfixed.</p>
+            <p class="stage-out"><strong>Output:</strong> work that follows the plan</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">With the team</div>
+            <p>Every fix, every channel and every experiment has one owner and a date.</p>
+          </div>
+        </div>
+      </li>
+      <li data-n="4" class="loop">
+        <div class="stage-title">Every week</div>
+        <div class="stage-grid">
+          <div>
+            <p>Fact against plan. The results of the experiments go into the log and into decisions. The plan is updated when the facts call for it.</p>
+            <p class="stage-out"><strong>Output:</strong> a new version of the plan</p>
+            <span class="loop-tag">↻ Back to stage 2 with the new facts</span>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">With the team and leadership</div>
+            <p>We review fact against plan together. Each owner gives their own read of their numbers first. The week ends with a report to leadership.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <h2>The audit: six groups</h2>
+    <p>Stage 1 in detail: six groups, each about one part of how the company works now.</p>
+    <div class="audit-grid">
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M15 9.5h-4a2 2 0 0 0 0 4h2a2 2 0 0 1 0 4H9"/></svg>
+        <h3>Money</h3>
+        <p>Unit economics and LTV.</p>
+        <p>Tools: <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a>, <a href="/tools/ltv-calculator/">LTV Calculator</a></p>
+      </div>
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <h3>Measurement</h3>
+        <p>SKAN schema, event structure, tracking playbook, and a check of the ad account against the real money.</p>
+        <p>Tool: <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a></p>
+      </div>
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>
+        <h3>Ad accounts</h3>
+        <p>Campaign structure and one report across all accounts.</p>
+      </div>
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 17l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg>
+        <h3>Creatives</h3>
+        <p>Naming first, statistics second. With consistent naming the statistics are much easier to pull.</p>
+      </div>
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9L3 4z"/></svg>
+        <h3>Funnel after the click</h3>
+        <p>Onboarding, paywall, prices, retention.</p>
+      </div>
+      <div class="audit-card">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Outside view</h3>
+        <p>Benchmarks and competitors: their ads, prices and paywalls.</p>
+      </div>
+    </div>
+
+    <h2>How often each part repeats</h2>
+    <p>The audit is done once in full. After that its parts repeat, each at its own pace.</p>
+    <div class="cadence">
+      <div class="cad">
+        <div class="cad-n">Every week</div>
+        <div class="cad-l">52 times a year</div>
+        <ul>
+          <li>Fact against plan</li>
+          <li>Results of the experiments</li>
+          <li>Creative statistics</li>
+          <li>Competitors' ads</li>
+          <li>Report across the ad accounts</li>
+          <li>Ad account against the real money</li>
+          <li>Report to leadership</li>
+        </ul>
+      </div>
+      <div class="cad">
+        <div class="cad-n">Every month</div>
+        <div class="cad-l">12 times a year</div>
+        <ul>
+          <li>Unit economics, LTV and the funnel after the click, on new cohorts</li>
+          <li>The model and the plan</li>
+          <li>Budget split across channels</li>
+          <li>Review of the experiment log</li>
+          <li>Summary of the month for leadership</li>
+        </ul>
+      </div>
+      <div class="cad">
+        <div class="cad-n">Every quarter</div>
+        <div class="cad-l">4 times a year</div>
+        <ul>
+          <li>Goal, limits and timeline with leadership</li>
+          <li>Benchmarks, competitors' prices and paywalls</li>
+          <li>Campaign structure</li>
+        </ul>
+      </div>
+      <div class="cad">
+        <div class="cad-n">On an event</div>
+        <div class="cad-l">when it happens</div>
+        <ul>
+          <li>Changes on the ad platforms</li>
+          <li>A new market, price or release</li>
+          <li>A move by a competitor</li>
+          <li>A change of goal or budget</li>
+          <li>An anomaly in the data</li>
+        </ul>
+        <p class="cad-then">Then I revise the model, the plan and whatever else the event touches.</p>
+      </div>
+    </div>
 
     <div class="series-nav">
       <div class="series-nav-label">Also</div>
