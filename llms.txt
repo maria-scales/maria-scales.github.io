@@ -5,6 +5,7 @@
 All pages are static HTML with en-dash typography and typed JSON-LD: Article, Dataset, SoftwareApplication, TechArticle, CollectionPage, HowTo, FAQPage, Person, BreadcrumbList. Research articles, case studies and dataset pages open with a TL;DR block carrying the main numbers; hub and index pages open with a “What is in here” block that does the same job under a different label; the two calculators lead with a summary paragraph and the design-decisions page with a contents list. Numbers on research pages come from the author's own datasets; sources and limitations are stated on each page.
 
 - [Home](https://mariascales.com/): eight case studies with the numbers, the research series, and the three interactive tools, on one page.
+- [How I use AI](https://mariascales.com/how-i-use-ai/): how Maria works – repeating work is written down as a process, the mechanical part goes to AI tools, every run and decision is recorded, and each process is revised every week when new and at least twice a year when mature.
 
 ## Tools
 
