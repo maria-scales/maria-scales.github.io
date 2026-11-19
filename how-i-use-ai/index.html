@@ -12,11 +12,11 @@
   })(window,document,'script','dataLayer','GTM-K7ZJJ8C6');</script>
   <!-- End Google Tag Manager -->
   <link rel="icon" href="/favicon.svg">
-  <meta name="description" content="I run everything here myself, with AI tools, doing the work of a marketer, analyst, tool developer, editor and designer.">
+  <meta name="description" content="How AI tools fit into the seven stages of my work: what goes to them, what stays with me and what it gives.">
   <link rel="canonical" href="https://mariascales.com/how-i-use-ai/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="How I Use AI – Maria Atamanova">
-  <meta property="og:description" content="I run everything here myself, with AI tools, doing the work of a marketer, analyst, tool developer, editor and designer.">
+  <meta property="og:description" content="How AI tools fit into the seven stages of my work: what goes to them, what stays with me and what it gives.">
   <meta property="og:url" content="https://mariascales.com/how-i-use-ai/">
   <meta property="og:image" content="https://mariascales.com/og-image.png">
   <meta property="og:site_name" content="Maria Atamanova">
@@ -24,7 +24,7 @@
   <meta property="og:image:alt" content="Maria Atamanova – performance marketing for AI-era growth, backed by models">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How I Use AI – Maria Atamanova">
-  <meta name="twitter:description" content="I run everything here myself, with AI tools, doing the work of a marketer, analyst, tool developer, editor and designer.">
+  <meta name="twitter:description" content="How AI tools fit into the seven stages of my work: what goes to them, what stays with me and what it gives.">
   <meta name="twitter:image" content="https://mariascales.com/og-image.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -135,6 +135,37 @@
     .author-box strong { color: #111827; }
     .author-box a { color: #1e40af; }
     .callout.lead, .tldr.lead { margin-top: -44px; }
+    .article-content .stages { list-style: none; padding: 0; margin: 14px 0 0; }
+    .article-content .stages li { position: relative; padding: 0 0 24px 54px; margin: 0; }
+    .article-content .stages li::before { content: attr(data-n); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; border: 1px solid #d1d5db; background: #fff; color: #111827; font-weight: 700; font-size: 0.9375rem; display: flex; align-items: center; justify-content: center; }
+    .article-content .stages li::after { content: ""; position: absolute; left: 17px; top: 40px; bottom: 4px; width: 1px; background: #e5e7eb; }
+    .article-content .stages li:last-child { padding-bottom: 0; }
+    .article-content .stages li:last-child::after { display: none; }
+    .article-content .stages li.loop::before { background: #1e40af; border-color: #1e40af; color: #fff; }
+    .stage-title { font-size: 1.0625rem; font-weight: 700; color: #111827; line-height: 34px; margin-bottom: 2px; }
+    .article-content .stage-out { font-size: 0.8125rem; color: #6b7280; margin: 6px 0 0; }
+    .stage-out strong { color: #374151; font-weight: 600; }
+    .article-content .stage-q { position: relative; padding-left: 18px; margin-bottom: 6px; }
+    .stage-q::before { content: ""; position: absolute; left: 4px; top: 0.62em; width: 5px; height: 5px; border-radius: 50%; background: #1e40af; }
+    .article-content .stage-practice { font-size: 0.8125rem; color: #6b7280; margin: 12px 0 0; padding-top: 8px; border-top: 1px solid #e5e7eb; }
+    .stage-practice strong { color: #374151; font-weight: 600; }
+    .stage-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; align-items: start; }
+    .stage-team { background: #f9fafb; border-left: 3px solid #1e40af; padding: 10px 14px; }
+    .stage-team-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #1e40af; margin-bottom: 4px; }
+    .article-content .stage-team p { font-size: 0.875rem; margin: 0; }
+    .loop-tag { display: inline-block; margin-top: 10px; font-size: 0.8125rem; color: #1e40af; background: #eff6ff; border-radius: 6px; padding: 3px 10px; }
+    .article-content .stage-ai-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #6b7280; margin-bottom: 6px; }
+    .stage-grid.even { grid-template-columns: 1fr 1fr; }
+    details.faq { border: 1px solid #dbe4f0; border-radius: 8px; padding: 14px 18px; margin: 36px 0 0; }
+    details.faq > summary { cursor: pointer; font-size: 1rem; font-weight: 600; color: #1e40af; list-style: none; }
+    details.faq > summary::-webkit-details-marker { display: none; }
+    details.faq > summary::before { content: "\25B8 "; }
+    details.faq[open] > summary::before { content: "\25BE "; }
+    details.faq[open] > summary { margin-bottom: 12px; }
+    details.faq > summary::before { margin-right: 6px; }
+    .article-content details.faq p:last-child { margin-bottom: 0; }
+    .article-content .stage-team .stage-q { margin-bottom: 6px; }
+    @media (max-width: 760px) { .stage-grid { grid-template-columns: 1fr; gap: 12px; } .stage-grid.even { grid-template-columns: 1fr; } .article-content .stages li { padding-left: 46px; } }
   </style>
   <script type="application/ld+json">
 {
@@ -161,7 +192,7 @@
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "How I Use AI",
-  "description": "I run everything here myself, with AI tools, doing the work of a marketer, analyst, tool developer, editor and designer.",
+  "description": "How AI tools fit into the seven stages of my work: what goes to them, what stays with me and what it gives.",
   "url": "https://mariascales.com/how-i-use-ai/",
   "inLanguage": "en",
   "image": "https://mariascales.com/og-image.png",
@@ -206,7 +237,7 @@
 <div class="page-header">
   <div class="container">
     <h1 class="page-title">How I Use AI</h1>
-    <div class="page-standfirst">I run everything here myself, with AI tools, doing the work of a marketer, analyst, tool developer, editor and designer.</div>
+    <div class="page-standfirst">How AI tools fit into the seven stages of my work: what goes to them, what stays with me and what it gives.</div>
     <div class="page-meta">Nov 2026 · About</div>
   </div>
 </div>
@@ -223,8 +254,179 @@
     <li>The review finds the errors, the inaccuracies, the inefficiencies and the gaps.</li>
     <li>I also revise each process on a schedule, even when it looks optimal, because the environment changes: every week for a new process, at least twice a year for a mature one.</li>
     <li>Over time I work faster, make fewer errors and have more time and attention for the creative tasks.</li>
-    <li>I arrive at a new company with this toolkit ready: the processes and the tools. The typical tasks take little time, so my first weeks go fully to learning this company's business.</li>
+    <li>I bring this toolkit to a new company: the tools and the written processes, which I keep building. The typical tasks take little time, so my first weeks go fully to learning this company's business.</li>
     </ul>
+
+    <h2>AI in each stage</h2>
+    <p>These are the stages from <a href="/how-i-work/">How I Work</a>. The work itself is what I did by hand before AI tools. With them each stage takes less time and carries fewer errors. The tools collect, calculate, compare and draft. The questions, the judgement and the decisions stay with me.</p>
+    <ol class="stages">
+      <li data-n="0">
+        <div class="stage-title">Goal and limits</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">Preparation before the first conversation, from public sources: how the company earns, its prices, its competitors and the benchmarks in the category.</p>
+            <p class="stage-q">The numbers leadership shares around the goal put side by side: the date, the budget, the payback period and the CAC ceiling. From this come my questions.</p>
+            <p class="stage-q">The written record: the goal, the limits, the dates and the assumptions on one page.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The conversation with leadership.</p>
+            <p class="stage-q">The bigger picture: where the goal comes from, what it serves in the business and what comes after it.</p>
+            <p class="stage-q">The questions that help me understand each limit.</p>
+            <p class="stage-q">The agreement on the goal, the limits and the timeline.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> I come to the first conversation ready to discuss the goal and the details around it, and to understand it in depth.</p>
+        <p class="stage-practice"><strong>On this site:</strong> <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> · <a href="/tools/ltv-calculator/">LTV Calculator</a></p>
+      </li>
+      <li data-n="1">
+        <div class="stage-title">Audit</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">The calculations: unit economics and LTV on the company's exports, in the first week.</p>
+            <p class="stage-q">The map of measurement: which services each team relies on, the events and schemes (UTM, SKAN, AEM) and the history of changes.</p>
+            <p class="stage-q">The ad accounts, the funnel and the creatives with their history, plus the competitors' ads, prices and funnels and the benchmarks in the category.</p>
+            <p class="stage-q">The ad account figures checked against real revenue, and the team's past experiments put into one log.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">First, the conversations with the people who run the channels, creatives, product and analytics: how they work, which experiments they ran, what worked and what did not.</p>
+            <p class="stage-q">The decision history in the ad accounts, the funnel and the creatives: which hypotheses the team worked through, in what order, and why each one gave way to the next. Only the team can tell it. It shows the vision the team has been acting on and where it can go next.</p>
+            <p class="stage-q">The team's mindset and philosophy: how they think about growth and what they hold important. I take this in before I interpret the numbers.</p>
+            <p class="stage-q">What to look at first and which numbers to rely on.</p>
+            <p class="stage-q">The reading of the numbers: why they look the way they do, in the light of what the team was aiming for.</p>
+            <p class="stage-q">The review of the findings with the team first. They correct me where I misread the picture. After that the findings go to leadership.</p>
+            <p class="stage-q">The list of what can be improved and the new hypotheses for the ad accounts, the funnel and the creatives, agreed with the team.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> All <a href="/how-i-work/">six groups of the audit</a> are covered in the first weeks. Each finding comes with its data, so the team can check it. I join the work the team is already doing with the full picture of it.</p>
+        <p class="stage-practice"><strong>On this site:</strong> <a href="/tools/unit-economics-estimator/">Unit Economics Calculator</a> · <a href="/tools/ltv-calculator/">LTV Calculator</a> · <a href="/tools/skan-schema-builder/">SKAN Schema Builder</a> · <a href="/cases/stealth/prevention-framework/">Prevention Framework</a></p>
+      </li>
+      <li data-n="2">
+        <div class="stage-title">Goal model</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">The funnel rebuilt step by step from the audit data, by channel, checked on past months and given a second pass over the formulas.</p>
+            <p class="stage-q">The baseline: where the current way of working gets to by the date.</p>
+            <p class="stage-q">The scenarios and the sensitivity: which combinations reach the goal and which lever moves the result most.</p>
+            <p class="stage-q">The plan by month and by channel from the chosen scenario.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The structure of the model and its assumptions, including how CAC changes as the spend grows and as the channel mix changes.</p>
+            <p class="stage-q">Which levers to work on first: the ones that move the result most and that the owners of each step of the funnel see as realistic.</p>
+            <p class="stage-q">The choice of the scenario and the stop rules.</p>
+            <p class="stage-q">The number for each channel and each step of the funnel, agreed with its owner.</p>
+            <p class="stage-q">The plan, its dates and the conversation about it with leadership.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> A model checked against history, and a clear view of which lever matters most.</p>
+      </li>
+      <li data-n="3">
+        <div class="stage-title">Implementation</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">The improvements from the audit as one tracked list with owners, dates and status.</p>
+            <p class="stage-q">The experiment backlog scored by the agreed model, with the sample and the duration each test needs.</p>
+            <p class="stage-q">The checks before each launch and the daily monitoring of the ad accounts against the plan.</p>
+            <p class="stage-q">Variants of the onboarding, paywall and creative texts for the ideas the team has chosen.</p>
+            <p class="stage-q">The experiment log and the change log, kept from now on.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The agreement with the team on how we score hypotheses: which scoring model we use, where the bottleneck is and which part of the team each experiment needs.</p>
+            <p class="stage-q">The priorities, agreed with the team: which improvement and which experiment goes first.</p>
+            <p class="stage-q">The decisions in the ad accounts, taken together with the owner of the channel: launch, budget, stop.</p>
+            <p class="stage-q">The changes in the funnel and the paywalls, decided together with the product team.</p>
+            <p class="stage-q">The creative ideas and angles, worked out together with the people who make the creatives.</p>
+            <p class="stage-q">One owner and one date for every improvement and every experiment.</p>
+            <p class="stage-q">The call on each experiment: whether it has given an answer and what follows from it.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> The effort of the team goes first to the lever that moves the result most, and what the team learns stays with the team.</p>
+      </li>
+      <li data-n="4">
+        <div class="stage-title">Every week</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">Fact against plan by channel and by step of the funnel, with the deviations flagged.</p>
+            <p class="stage-q">The ad account figures checked against real revenue.</p>
+            <p class="stage-q">The numbers sent to each owner before the review, and the draft of the report to leadership.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The review with the team: each owner gives their read of the numbers in their area first.</p>
+            <p class="stage-q">The read of the deviations together: noise or a reason to act.</p>
+            <p class="stage-q">What each experiment result changes in the work of the next week.</p>
+            <p class="stage-q">The conclusions in the report to leadership, and the answer for the result.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> A change in the numbers is noticed in the week it appears.</p>
+      </li>
+      <li data-n="5" class="loop">
+        <div class="stage-title">Every month</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">How close the forecast of the month was to the fact.</p>
+            <p class="stage-q">The model refreshed with the new cohorts, and the options run through it: to scale, to add a channel, to scale down or to optimise.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The read of where we stand against the big goal. The weeks show whether we reach the month. The months show whether we reach the quarter and the year.</p>
+            <p class="stage-q">The review of the plan, every month at the least. A plan rarely holds on the first try: the market, the auction and the competitors move, and we may have missed something ourselves.</p>
+            <p class="stage-q">The corrections to the model: where an assumption of mine was off and what was not taken into account.</p>
+            <p class="stage-q">The decision what to change: to scale, to add a channel, to scale down or to optimise. It is agreed with the owners of the areas and with leadership, and the work goes back to the goal model with the new facts.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> The aim is that with each month the forecast lands closer to the fact.</p>
+        <span class="loop-tag">↻ Back to stage 2 with the new facts</span>
+      </li>
+      <li data-n="6" class="loop">
+        <div class="stage-title">Every quarter</div>
+        <div class="stage-grid even">
+          <div>
+            <div class="stage-ai-label">Goes to AI</div>
+            <p class="stage-q">The quarter put together from the logs, with unit economics and LTV on the cohorts that have matured.</p>
+            <p class="stage-q">The outside view collected again, and the scenarios for the next quarter run through the model.</p>
+          </div>
+          <div class="stage-team">
+            <div class="stage-team-label">Stays with me</div>
+            <p class="stage-q">The goal, the limits and the timeline looked at again with leadership.</p>
+            <p class="stage-q">The look back with the team: what we learned in the quarter and which experiments changed how we work.</p>
+            <p class="stage-q">The review of the processes themselves: which ones hold and which ones need to change.</p>
+            <p class="stage-q">The channel mix and the structure of the campaigns for the next quarter, agreed with the owners of the areas.</p>
+            <p class="stage-q">The new plan and what it needs: the budget, the creative production and the people.</p>
+          </div>
+        </div>
+        <p class="stage-out"><strong>What it gives:</strong> Every quarter the plan is formed anew from three months of facts.</p>
+        <span class="loop-tag">↻ Back to stage 0 with the new plan</span>
+      </li>
+    </ol>
+
+    <h2>How I work in the ad accounts</h2>
+    <p class="stage-out">Coming soon.</p>
+
+    <h2>How I work with the creatives</h2>
+    <p class="stage-out">Coming soon.</p>
+
+    <details class="faq" id="faq">
+      <summary>Questions I get asked</summary>
+      <p><strong>Have you done all of this, or is it a plan?</strong><br>I have done each of these steps by hand in my past roles. The AI part I am building now into my own toolkit, process by process. This page describes how the work is set up.</p>
+      <p><strong>Which AI tools do you use?</strong><br>In my own work, Claude and Claude Code, and Cursor when I need it. In a company, the tool the company has approved.</p>
+      <p><strong>Do you put our data into ChatGPT?</strong><br>No. I use the AI tool the company has approved, inside the company's domain and on the company's drive. Where a company does not work with AI tools, the work is done by hand, as it was before.</p>
+      <p><strong>How long does the audit take?</strong><br>A full audit is usually given a few weeks. What sets the time most often is how fast the access to the data is given and how the records were kept. In a mature company with mature processes it takes much less, sometimes a week. Where the logs or the creative naming have to be put together first, it takes much longer.</p>
+      <p><strong>How much faster is it?</strong><br>By my feel, three to five times faster than by hand. A clean experiment is hardly possible: each task would have to be done twice, once by hand and once with the tools.</p>
+      <p><strong>What if the AI gives a wrong number?</strong><br>The cross-checks are on me. Every number can be traced to its source. Where it is possible, one number is taken from two places. The model is run on past months before it is used. I check a sample by hand. A number without a source does not go into a document.</p>
+      <p><strong>Does AI replace the team?</strong><br>No. The philosophy, the decision-making process, the ideas and the decisions themselves come from people. The tools take the mechanical part: they help to collect the data faster and to analyse it for what can be improved. If a mistake of the AI costs money, I answer for it, and this is why AI does not replace people.</p>
+      <p><strong>What happens if the tool changes?</strong><br>Each process is written down as steps. The data also lies in mirrors: a database with dashboards, or CSV tables with HTML pages. At any moment the tables can be taken as CSV and the work continued by hand, from the exact place where the tool changed or stopped being available.</p>
+      <p><strong>How is this different from a marketer who uses a chatbot?</strong><br>In the system around the tool. The process is written down, every run is logged and the results are consistent from run to run. The work goes through files and structured data, so it does not depend on the context of one chat.</p>
+    </details>
 
     <div class="series-nav">
       <div class="series-nav-label">Next</div>
